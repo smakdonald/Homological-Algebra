@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Maps of Complexes</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Homological Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="ch-chain-complexes.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chain-complexes.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-ses.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+\newcommand{\Ass}{\operatorname{Ass}}
+\def\Aut{\operatorname{Aut}}
+\def\can{{\mathrm {can}}}
+\def\char{\operatorname{char}}
+\def\cp{\operatorname{CharPoly}}
+\def\codim{\operatorname{codim}} 
+\def\coker{\operatorname{coker}}
+\DeclareMathOperator*{\colim}{colim} 
+\def\cont{\operatorname{cont}} 
+\def\diam{\operatorname{diam}} 
+\def\dm{\operatorname{dim}} 
+\DeclareMathOperator{\edim}{embdim} 
+\def\End{\operatorname{End}} 
+\def\eval{\operatorname{eval}} 
+\def\Ext{\operatorname{Ext}} 
+\def\Frac{\operatorname{Frac}}
+\def\Fun{\operatorname{Fun}}
+\def\Gal{\operatorname{Gal}}
+\def\gcd{\operatorname{gcd}}
+\newcommand{\GL}{\operatorname{GL}} 
+\newcommand{\ht}{\operatorname{height}} 
+\def\Hom{\operatorname{Hom}} 
+\def\id{\operatorname{id}} 
+\def\im{\operatorname{im}} 
+\def\Inn{\operatorname{Inn}}
+\def\ker{\operatorname{ker}}
+\def\lcm{\operatorname{lcm}} 
+\def\Mat{\operatorname{Mat}}
+\newcommand{\Min}{\operatorname{Min}}
+\def\mp{\operatorname{MinPoly}}
+\def\mSpec{\operatorname{mSpec}}
+\def\MSpec{\operatorname{MSpec}}
+\def\null{\operatorname{Nul}}
+\DeclareMathOperator{\ns}{nullspace}
+\newcommand{\opp}{\operatorname{opp}}
+\def\Orb{\operatorname{Orb}} 
+\def\Out{\operatorname{Out}}
+\def\Perm{\operatorname{Perm}}
+\def\ptstab{\operatorname{PtStab}} 
+\def\rad{\operatorname{rad}}
+\DeclareMathOperator{\range}{range}
+\def\rank{\operatorname{rank}}
+\def\res{\operatorname{res}}
+\def\setstab{\operatorname{SetStab}}
+\def\sign{{\operatorname{sign}}}
+\newcommand{\SL}{\operatorname{SL}}
+\def\Span{\operatorname{Span}}
+\def\Spec{\operatorname{Spec}}
+\def\Stab{\operatorname{Stab}} 
+\DeclareMathOperator{\Supp}{Supp}
+\def\Syl{\operatorname{Syl}}
+\def\Tor{\operatorname{Tor}}
+\def\trace{\operatorname{trace}}
+\def\uSpec{\operatorname{\underline{Spec}}}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}{-\mathbf{Mod}}
+\newcommand{\mod}{-\mathbf{mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\lx{\lambda_x}
+\newcommand{\a}{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd} 
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\def\xdots{x_1, \dots, x_n} 
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\udots{u_1, \dots, u_n} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth3 parts"><ul class="structural">
+<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li>
+<div class="toc-item"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li><div class="toc-item"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li><div class="toc-item"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite and Subcategories</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed 'er!</span></a></div></li>
+<li><div class="toc-item"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural">
+<li class="active"><div class="toc-item"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div></li>
+<li><div class="toc-item"><a href="sec-ses.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Short Exact Sequences</span></a></div></li>
+<li><div class="toc-item"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">Introducing <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li><div class="toc-item"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li><div class="toc-item"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div></li>
+<li><div class="toc-item"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div></li>
+<li><div class="toc-item"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-compelx-maps"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span>
+</h2>
+<div class="para" id="p-236">Unsurprisingly, we can form a category of complexes, but to do that we need the right definition of maps between complexes. We also take this section as a chance to set up some definitions we will need later. One thing to keep in mind as we build our basic definitions: we also want homology to be functorial.</div>
+<article class="definition definition-like" id="def-2.1"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-237">Let <span class="process-math">\(\left(F_{\bullet}, \partial_{\bullet}^{F}\right)\)</span> and <span class="process-math">\(\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> be complexes. A map of complexes or a chain map, which we write as <span class="process-math">\(h:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> or simply <span class="process-math">\(h: F \longrightarrow G\text{,}\)</span> is a sequence of homomorphisms of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(h_{n}: F_{n} \longrightarrow G_{n}\)</span> such that the following diagram commutes:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-051.jpg" class="contained"></div> <div class="para" id="p-238">This means that <span class="process-math">\(h_{n} \partial_{n+1}^{F}=\partial_{n+1}^{G} h_{n+1}\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+</div></article><div class="para" id="p-239">Note that throughout, whenever we call a function <span class="process-math">\(f: M \rightarrow N\)</span> between <span class="process-math">\(R\)</span>-modules <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> a map, we really mean to say it is a homomorphism of <span class="process-math">\(R\)</span>-modules.</div>
+<article class="example example-like" id="example-24"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-240">Example 2.2. The zero and the identity maps of complexes <span class="process-math">\(\left(F_{\bullet}, \partial_{\bullet}\right) \longrightarrow\left(F_{\bullet}, \partial_{\bullet}\right)\)</span> are exactly what they sound like: the zero map <span class="process-math">\(0_{F_{\bullet}}\)</span> is 0 in every homological degree, and the identity map <span class="process-math">\(1_{F_{\bullet}}\)</span> is the identity in every homological degree.</div></article><div class="para" id="p-241">This is the notion of morphism we would want to form a category of chain complexes.</div>
+<article class="definition definition-like" id="def-2.3"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-242">Let <span class="process-math">\(R\)</span> be a ring. The category of chain complexes of <span class="process-math">\(R\)</span>-modules, denoted <span class="process-math">\(\mathrm{Ch}(R\)</span>-mod <span class="process-math">\()\)</span> or simply <span class="process-math">\(\mathrm{Ch}(R)\text{,}\)</span> is the category with objects all chain complexes of <span class="process-math">\(R\)</span>-modules and arrows all maps of complexes of <span class="process-math">\(R\)</span>-modules. When <span class="process-math">\(R=\mathbb{Z}\text{,}\)</span> we write <span class="process-math">\(\mathrm{Ch}(\mathrm{Ab})\)</span> for <span class="process-math">\(\mathrm{Ch}(\mathbb{Z})\text{,}\)</span> the category of chain complexes of abelian groups.</div></article><div class="para" id="p-243">Note that the identity maps defined above are precisely the identity arrows in the category of chain complexes.</div>
+<article class="exercise exercise-like" id="exercise-1"><a href="" data-knowl="" class="id-ref exercise-knowl original has-image" data-refid="hk-exercise-1"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.4</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like"><div class="para" id="p-244">Exercise 25. Show that the isomorphisms in the category <span class="process-math">\(\mathrm{Ch}(R)\)</span> are precisely the maps of complexes</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-052.jpg" class="contained"></div>
+<div class="para" id="p-245">such that <span class="process-math">\(h_{n}\)</span> is an isomorphism for all <span class="process-math">\(n\text{.}\)</span>
+</div></article></div>
+<div class="para" id="p-246">This is a good notion of map of complexes: it induces homomorphisms in homology, which in particular allows us to say that homology is a functor.</div>
+<article class="lemma theorem-like" id="lem-2.4"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-247">Let <span class="process-math">\(h:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> be a map of complexes. For all <span class="process-math">\(n, h_{n}\)</span> restricts to homomorphisms <span class="process-math">\(B_{n}(h): B_{n}\left(F_{\bullet}\right) \longrightarrow B_{n}\left(G_{\bullet}\right)\)</span> and <span class="process-math">\(Z_{n}(h): Z_{n}\left(F_{\bullet}\right) \longrightarrow Z_{n}\left(G_{\bullet}\right)\text{.}\)</span> As a consequence, <span class="process-math">\(h\)</span> induces homomorphisms on homology <span class="process-math">\(\mathrm{H}_{n}(h): \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right)\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-3"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><div class="para logical" id="p-248">
+<div class="para">Since <span class="process-math">\(h_{n} \partial_{n+1}^{F}=\partial_{n+1}^{G} h_{n+1}\text{,}\)</span> any element <span class="process-math">\(a \in B_{n}\left(F_{\bullet}\right)\text{,}\)</span> say <span class="process-math">\(a=\partial_{n+1}^{F}(b)\text{,}\)</span> is taken to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_{n}(a)=h_{n} \partial_{n+1}^{F}(b)=\partial_{n+1}^{G} h_{n+1}(b) \in \operatorname{im} \partial_{n+1}^{G}=B_{n}\left(G_{\bullet}\right)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-249">
+<div class="para">Similarly, if <span class="process-math">\(a \in Z_{n}\left(F_{\bullet}\right)=\operatorname{ker} \partial_{n}^{F}\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\partial_{n} h_{n}(a)=h_{n-1} \partial_{n}^{F}(a)=0
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(h_{n}(a) \in \operatorname{ker} \partial_{n}^{G}=Z_{n}\left(G_{\bullet}\right)\text{.}\)</span> Finally, the restriction of <span class="process-math">\(h_{n}\)</span> to <span class="process-math">\(Z_{n}\left(F_{\bullet}\right) \longrightarrow Z_{n}\left(G_{\bullet}\right)\)</span> sends <span class="process-math">\(B_{n}\left(F_{\bullet}\right)\)</span> into <span class="process-math">\(B_{n}\left(G_{\bullet}\right)\text{,}\)</span> and thus it induces a well-defined homomorphism on the quotients <span class="process-math">\(\mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right)\text{.}\)</span>
+</div>
+</div></article></div>
+<article class="definition definition-like" id="def-2.5"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-250">
+<div class="para">Let <span class="process-math">\(h:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> be a map of complexes. We call the map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\mathrm{H}_{n}(h): &amp; \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right) \\
+&amp; a+B_{n}(F) \longmapsto h_{n}(a)+B_{n}(G)
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">the induced map in homology, and sometimes denote it by <span class="process-math">\(h_{*}\text{.}\)</span>
+</div>
+</div></article><div class="para logical" id="p-251">
+<div class="para">One can show that <span class="process-math">\(\mathrm{H}_{n}\)</span> preserves compositions, and that moreover, the map in homology induced by the identity is the identity. Thus taking <span class="process-math">\(n\)</span>th homology is a functor</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}: \mathrm{Ch}(R) \longrightarrow R \text {-Mod }
+\end{equation*}
+</div>
+<div class="para">which takes each map of complexes <span class="process-math">\(h: F_{\bullet}, \longrightarrow G_{\bullet}\)</span> to the <span class="process-math">\(R\)</span>-module homomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}(h): \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right)
+\end{equation*}
+</div>
+</div>
+<article class="definition definition-like" id="def-2.6"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-252">A map of chain complexes <span class="process-math">\(h\)</span> is a quasi-isomorphism if it induces an isomorphism in homology, meaning <span class="process-math">\(\mathrm{H}_{n}(h)\)</span> is an isomorphism of <span class="process-math">\(R\)</span>-modules for all <span class="process-math">\(n\text{.}\)</span> If there exists a quasi-isomorphism between two complexes <span class="process-math">\(C\)</span> and <span class="process-math">\(D\text{,}\)</span> we say that <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> are quasi-isomorphic, and write <span class="process-math">\(C \simeq D\text{.}\)</span>
+</div></article><article class="remark remark-like" id="remark-16"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.8</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-253">Remark 2.7. Note that saying that if <span class="process-math">\(f\)</span> is a quasi-isomorphism between <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> is a stronger statement that the fact that <span class="process-math">\(\mathrm{H}_{n}(F) \cong \mathrm{H}_{n}(G)\)</span> for all <span class="process-math">\(n\text{:}\)</span> it also says that there are isomorphisms <span class="process-math">\(\mathrm{H}_{n}(F) \cong \mathrm{H}_{n}(G)\)</span> that are all induced by <span class="process-math">\(f\text{.}\)</span>
+</div></article><div class="para" id="p-254">Not all quasi-isomorphisms are isomorphisms, as the following example shows:</div>
+<article class="exercise exercise-like" id="exercise-2"><a href="" data-knowl="" class="id-ref exercise-knowl original has-image" data-refid="hk-exercise-2"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.9</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-2"><article class="exercise exercise-like"><div class="para" id="p-255">Exercise 26. Let <span class="process-math">\(\pi\)</span> denote the projection map from <span class="process-math">\(\mathbb{Z}\)</span> to <span class="process-math">\(\mathbb{Z} / 2 \mathbb{Z}\text{.}\)</span> The chain map</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-053.jpg" class="contained"></div>
+<div class="para" id="p-256">is a quasi-isomorphism.</div></article></div>
+<article class="definition definition-like" id="def-2.8"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.10</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-257">Let <span class="process-math">\(f, g: F \longrightarrow G\)</span> be maps complexes. A homotopy, sometimes referred to as a chain homotopy, between <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> is a sequence of maps <span class="process-math">\(h_{n}: F_{n} \longrightarrow G_{n+1}\)</span>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-053(1).jpg" class="contained"></div> <div class="para logical" id="p-258">
+<div class="para">such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\partial_{n+1} h_{n}+h_{n-1} \partial_{n}=f_{n}-g_{n}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n\text{.}\)</span> If there exists a homotopy between <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{,}\)</span> we say that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are homotopic or that they have the same homotopy type. We write <span class="process-math">\(f \simeq g\)</span> to say that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are homotopic. If <span class="process-math">\(f\)</span> is homotopic to the zero map, we say <span class="process-math">\(f\)</span> is nullhomotopic, and write <span class="process-math">\(f \simeq 0\text{.}\)</span> This should not be confused with the notation <span class="process-math">\(C \simeq D\)</span> on complexes.</div>
+</div></article><article class="exercise exercise-like" id="exercise-3"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-3"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.11</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-3"><article class="exercise exercise-like"><div class="para" id="p-259">Exercise 27. Homotopy is an equivalence relation.</div></article></div>
+<div class="para" id="p-260">The equivalence classes under homotopy are called homotopy classes. Homotopy is an interesting equivalence relation because homotopic maps induce the same map on homology.</div>
+<article class="lemma theorem-like" id="lem-2.9"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.12</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-261">Let <span class="process-math">\(f, g:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> be maps of complexes. If <span class="process-math">\(f\)</span> is homotopic to <span class="process-math">\(g\text{,}\)</span> then <span class="process-math">\(\mathrm{H}_{n}(f)=\mathrm{H}_{n}(g)\)</span> for all <span class="process-math">\(n\text{.}\)</span> In particular, every nullhomotopic map induces the zero map in homology.</div></article><article class="hiddenproof" id="proof-4"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><div class="para logical" id="p-262">
+<div class="para">Let <span class="process-math">\(f, g:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> be homotopic maps of complexes, and let <span class="process-math">\(h\)</span> be a homotopy between <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span> We claim that the map of complexes <span class="process-math">\(f-g\)</span> (defined in the obvious way) sends cycles to boundaries. If <span class="process-math">\(a \in Z_{n}\left(F_{\bullet}\right)\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(f-g)_{n}(a)=\partial_{n+1} h_{n}(a)+h_{n-1} \underbrace{\partial_{n}(a)}_{0}=\partial_{n+1}\left(h_{n}(a)\right) \in B_{n}\left(G_{\bullet}\right)
+\end{equation*}
+</div>
+<div class="para">The map on homology induced by <span class="process-math">\(f-g\)</span> must then be the 0 map, so <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> induce the same map on homology. Here we are implicitly using the fact that <span class="process-math">\(\mathrm{H}_{n}(f+h)=\mathrm{H}_{n}(f)+\mathrm{H}_{n}(g)\text{,}\)</span> which we leave as an exercise to be further explored in Remark 3.4.</div>
+</div></article></div>
+<div class="para" id="p-263">Notice, however, that the converse is false: the induced map in homology can be the zero map (for all homological degrees) even if the original map of complexes is not nullhomotopic.</div>
+<article class="exercise exercise-like" id="exercise-4"><a href="" data-knowl="" class="id-ref exercise-knowl original has-image" data-refid="hk-exercise-4"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.13</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-4"><article class="exercise exercise-like"><div class="para" id="p-264">Exercise 28. Consider the following map of complexes:</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-054(1).jpg" class="contained"></div>
+<div class="para" id="p-265">Show that this map is not nullhomotopic, but that the induced map in homology is zero.</div></article></div>
+<article class="definition definition-like" id="def-2.10"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.14</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-266">If <span class="process-math">\(f:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> and <span class="process-math">\(g:\left(G_{\bullet}, \partial_{\bullet}^{G}\right) \longrightarrow\left(F_{\bullet}, \partial_{\bullet}^{F}\right)\)</span> are maps of complexes such that <span class="process-math">\(f g\)</span> is homotopic to the identity map on <span class="process-math">\(\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> and <span class="process-math">\(g f\)</span> is homotopic to the identity chain map on <span class="process-math">\(\left(F_{\bullet}, \partial_{\bullet}^{F}\right)\text{,}\)</span> we say that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are homotopy equivalences and <span class="process-math">\(\left(F_{\bullet}, \partial_{\bullet}^{F}\right)\)</span> and <span class="process-math">\(\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> are homotopy equivalent.</div></article><article class="corollary theorem-like" id="cor-2.11"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.15</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-267">Homotopy equivalences are quasi-isomorphisms.</div></article><article class="hiddenproof" id="proof-5"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><div class="para logical" id="p-268">
+<div class="para">If <span class="process-math">\(f:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)\)</span> and <span class="process-math">\(g:\left(G_{\bullet}, \partial_{\bullet}^{G}\right) \longrightarrow\left(F_{\bullet}, \partial_{\bullet}^{F}\right)\)</span> are such that <span class="process-math">\(f g\)</span> is homotopic to <span class="process-math">\(1_{G_{\bullet}}\)</span> and <span class="process-math">\(g f\)</span> is homotopic to <span class="process-math">\(1_{F_{\bullet}}\text{,}\)</span> then by Lemma 2.9 the map <span class="process-math">\(f g\)</span> induces the identity map on homology. So for all <span class="process-math">\(n\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}(f) \mathrm{H}_{n}(g)=\mathrm{H}_{n}(f g)=\mathrm{H}_{n}(1)=1.
+\end{equation*}
+</div>
+<div class="para">Therefore, <span class="process-math">\(\mathrm{H}_{n}(f)\)</span> and <span class="process-math">\(\mathrm{H}_{n}(g)\)</span> must both be isomorphisms.</div>
+</div></article></div>
+<div class="para" id="p-269">The converse is false.</div>
+<article class="exercise exercise-like" id="exercise-5"><a href="" data-knowl="" class="id-ref exercise-knowl original has-image" data-refid="hk-exercise-5"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.16</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-5"><article class="exercise exercise-like"><div class="para" id="p-270">Exercise 29. Let <span class="process-math">\(\pi\)</span> denote the projection map from <span class="process-math">\(\mathbb{Z}\)</span> to <span class="process-math">\(\mathbb{Z} / 2 \mathbb{Z}\text{.}\)</span> The chain map</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-054.jpg" class="contained"></div>
+<div class="para" id="p-271">is a quasi-isomorphism but not a homotopy equivalence.</div></article></div>
+<article class="remark remark-like" id="remark-17"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.17</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-272">Remark 2.12. The relation <span class="process-math">\(F \simeq G\text{,}\)</span> meaning "there is a quasi-isomorphism from <span class="process-math">\(F\)</span> to <span class="process-math">\(G\)</span> ", is not symmetric: in Exercise 29, there is no quasi-isomorphism going in the opposite direction of the one given.</div></article><div class="para" id="p-273">Now that we know about maps between complexes, it's time to point out that we can also talk about complexes of complexes and exact sequences of complexes. While we will later formalize this a little better when we discover that <span class="process-math">\(\mathrm{Ch}(R)\)</span> is an abelian category, let's for now give quick definitions that we can use.</div>
+<article class="definition definition-like" id="def-2.13"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.18</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-274">Given complexes <span class="process-math">\(B\)</span> and <span class="process-math">\(C, B\)</span> is a subcomplex of <span class="process-math">\(C\)</span> if <span class="process-math">\(B_{n}\)</span> is a submodule of <span class="process-math">\(C_{n}\)</span> for all <span class="process-math">\(n\text{,}\)</span> and the inclusion maps <span class="process-math">\(\iota_{n}: B_{n} \subseteq C_{n}\)</span> define a map of complexes <span class="process-math">\(\iota: B \longrightarrow C\text{.}\)</span> Given a subcomplex <span class="process-math">\(B\)</span> of <span class="process-math">\(C\text{,}\)</span> the quotient of <span class="process-math">\(C\)</span> by <span class="process-math">\(B\)</span> is the complex <span class="process-math">\(C / B\)</span> that has <span class="process-math">\(C_{n} / B_{n}\)</span> in homological degree <span class="process-math">\(n\text{,}\)</span> with differential induced by the differential on <span class="process-math">\(C_{n}\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercise-6"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-6"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.19</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-6"><article class="exercise exercise-like"><div class="para" id="p-275">Exercise 30. If <span class="process-math">\(B\)</span> is a subcomplex of <span class="process-math">\(C\text{,}\)</span> then the differential <span class="process-math">\(d\)</span> on <span class="process-math">\(C\)</span> satisfies <span class="process-math">\(d_{n}\left(B_{n}\right) \subseteq B_{n-1}\text{.}\)</span> Therefore, <span class="process-math">\(d_{n}\)</span> induces a map of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(C_{n} / B_{n} \longrightarrow C_{n-1} / B_{n-1}\)</span> for all <span class="process-math">\(n\text{,}\)</span> so that our definition of the differential on <span class="process-math">\(C / B\)</span> actually makes sense.</div></article></div>
+<div class="para" id="p-276">We can also talk about kernels and cokernels of maps of complexes.</div>
+<article class="definition definition-like" id="def-2.14"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.20</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-277">
+<div class="para">Given any map of complexes <span class="process-math">\(f: B_{\bullet} \longrightarrow C_{\bullet}\text{,}\)</span> the kernel of <span class="process-math">\(f\)</span> is the subcomplex <span class="process-math">\(\ker f\)</span> of <span class="process-math">\(B_{\bullet}\)</span> that we can assemble from the the kernels <span class="process-math">\(\ker f_{n}\text{.}\)</span> More precisely, <span class="process-math">\(\operatorname{ker} f\)</span> is the complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow \operatorname{ker} f_{n+1} \longrightarrow \operatorname{ker} f_{n} \longrightarrow \operatorname{ker} f_{n-1} \longrightarrow \cdots
+\end{equation*}
+</div>
+<div class="para">where the differentials are simply the corresponding restrictions of the differentials on <span class="process-math">\(B_{\bullet}\text{.}\)</span> Similarly, the image of <span class="process-math">\(f\)</span> is the subcomplex of <span class="process-math">\(C\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow \operatorname{im} f_{n+1} \longrightarrow \operatorname{im} f_{n} \longrightarrow \operatorname{im} f_{n-1} \longrightarrow \cdots
+\end{equation*}
+</div>
+<div class="para">where the differentials are given by restriction of the corresponding differentials in <span class="process-math">\(C_{\bullet}\text{.}\)</span> The cokernel of <span class="process-math">\(f\)</span> is the quotient complex <span class="process-math">\(C_{\bullet} / \operatorname{im} f\text{.}\)</span>
+</div>
+</div></article><div class="para" id="p-278">Again, there are some details to check.</div>
+<article class="exercise exercise-like" id="exercise-7"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-7"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.21</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-7"><article class="exercise exercise-like"><div class="para" id="p-279">Exercise 31. Show that the kernel, image, and cokernel of a complex map are indeed complexes.</div></article></div>
+<article class="definition definition-like" id="def-2.15"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.22</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-280">
+<div class="para">A complex in <span class="process-math">\(\mathrm{Ch}(R)\)</span> is a sequence of complexes of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(C_{n}\)</span> and chain maps <span class="process-math">\(d_{n}: C_{n} \longrightarrow C_{n-1}\)</span> between them</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow C_{n+1} \stackrel{d_{n+1}}{\longrightarrow} C_{n} \stackrel{d_{n}}{\longrightarrow} C_{n-1} \longrightarrow \cdots
+\end{equation*}
+</div>
+<div class="para">such that <span class="process-math">\(d_{n} d_{n+1}=0\)</span> for all <span class="process-math">\(n\text{.}\)</span> A complex of complexes is a diagram of the form</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-055.jpg" class="contained"></div> <div class="para" id="p-281">where <span class="process-math">\(C_{i, j}\)</span> is the module in homological degree <span class="process-math">\(j\)</span> in the complex <span class="process-math">\(C_{i}\text{.}\)</span> The <span class="process-math">\(n\)</span>th column corresponds to the complex <span class="process-math">\(C_{n}\text{,}\)</span> and every row is also a complex. The vertical maps are the differentials on each individual complex; the horizontal maps are the differentials on the complex of complexes.</div></article><div class="para" id="p-282">Given a complex <span class="process-math">\(C\)</span> in <span class="process-math">\(\operatorname{Ch}(R)\text{,}\)</span> we can talk about cycles and boundaries, which are a sequence of subcomplexes of the complexes in <span class="process-math">\(C\text{,}\)</span> and thus its homology. Such a complex is exact if <span class="process-math">\(\operatorname{im} d_{n+1}=\operatorname{ker} d_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="def-2.16"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.23</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-283">
+<div class="para">Definition 2.16. A short exact sequence of complexes is an exact complex in <span class="process-math">\(\mathrm{Ch}(R)\)</span> of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0 .
+\end{equation*}
+</div>
+<div class="para">Equivalently, a short exact sequence of complexes is a commutative diagram</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-056.jpg" class="contained"></div> <div class="para" id="p-284">where the rows are exact and the columns are complexes.</div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-chain-complexes.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-ses.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

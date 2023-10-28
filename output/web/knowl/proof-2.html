@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para logical">
+<div class="para">First, note that our functors are injective on objects because the Hom-sets in our category are all disjoint. We need to check that given objects <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> we have bijections</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{\mathscr{C}}(A, B) \cong \operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(-, A), \operatorname{Hom}_{\mathscr{C}}(-, B)\right)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{\mathscr{C} \text { op }}(A, B) \cong \operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(A,-) \operatorname{Hom}_{\mathscr{C}}(B,-)\right).
+\end{equation*}
+</div>
+</div> <div class="para">We will do the details for the first one, and leave the second as an exercise.</div> <div class="para">First, let us take a sanity check and confirm that indeed our proposed functors take arrows <span class="process-math">\(f: A \longrightarrow B\)</span> in <span class="process-math">\(\mathscr{C}\)</span> to natural transformations between <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(-, A)\)</span> and <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(-, B)\text{.}\)</span> This is essentially the content of Remark 1.43, but let's carefully check the details. The <a href="" class="xref" data-knowl="./knowl/thm-yoneda.html" title="Theorem 1.42: Yoneda Lemma">Yoneda Lemma</a> applied here tells us that each natural transformation <span class="process-math">\(\varphi\)</span> between <span class="process-math">\(\mathrm{Hom}_{\mathscr{C}}(-, A)\)</span> and <span class="process-math">\(F=\operatorname{Hom}_{\mathscr{C}}(-, B)\)</span> corresponds to an element <span class="process-math">\(u \in \operatorname{Hom}_{\mathscr{C}}(A, B)\text{,}\)</span> which we obtain by taking <span class="process-math">\(u:=\varphi_{A}\left(1_{A}\right)\text{.}\)</span> As we discussed in the proof of the <a href="" class="xref" data-knowl="./knowl/thm-yoneda.html" title="Theorem 1.42: Yoneda Lemma">Yoneda Lemma</a>, we can recover <span class="process-math">\(\varphi\)</span> from <span class="process-math">\(u\)</span> by taking the natural transformation <span class="process-math">\(\varphi\)</span> that for each object <span class="process-math">\(X\)</span> in <span class="process-math">\(\mathscr{C}\)</span> has <span class="process-math">\(\varphi_{X}: \operatorname{Hom}_{\mathscr{C}}(X, A) \longrightarrow \operatorname{Hom}_{\mathscr{C}}(X, B)\)</span> given by <span class="process-math">\(\varphi_{X}(f)=\operatorname{Hom}_{\mathscr{C}}(f, B)(u)=f_{*}(u)\text{.}\)</span>
+</div> <div class="para">We can see that different arrows <span class="process-math">\(f\)</span> give rise to different natural transformations by applying the resulting natural transformation <span class="process-math">\(f_{;} *\)</span> to the identity arrow <span class="process-math">\(1_{A}\text{,}\)</span> which takes it to <span class="process-math">\(f\text{.}\)</span> Moreover, the <a href="" class="xref" data-knowl="./knowl/thm-yoneda.html" title="Theorem 1.42: Yoneda Lemma">Yoneda Lemma</a> tells us that every natural transformation <span class="process-math">\(\varphi\)</span> between <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(-, A)\)</span> and <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(-, B)\)</span> is the image of some <span class="process-math">\(u\text{,}\)</span> as described above.</div></article><span class="incontext"><a href="sec-natural-transformations.html#proof-2" class="internal">in-context</a></span>
+</body>
+</html>

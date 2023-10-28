@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para">First, we will show that c implies a and b. If the sequence splits, then consider an isomorphism of complexes</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-057.jpg" class="contained"></div> <div class="para logical">
+<div class="para">meaning that the diagram commutes and <span class="process-math">\(a, b\text{,}\)</span> and <span class="process-math">\(c\)</span> are isomorphisms of <span class="process-math">\(R\)</span>-modules, <span class="process-math">\(i\)</span> is the inclusion in the first component, and <span class="process-math">\(p\)</span> is the projection onto the second component. Let <span class="process-math">\(\pi: A \oplus C \longrightarrow A\)</span> be the projection onto the first component, and <span class="process-math">\(j: C \longrightarrow A \oplus C\)</span> be the inclusion onto the first component. Now consider the maps <span class="process-math">\(q:=a^{-1} \pi b\)</span> and <span class="process-math">\(r:=b^{-1} j c\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rlr}
+q f &amp; =a^{-1} \pi b f &amp; \\
+&amp; =a^{-1} \pi i a &amp; \text { by commutativity } \\
+&amp; =a^{-1} a &amp; \text { because } \pi i=\mathrm{id}_{A} \\
+&amp; =1_{A} &amp;
+\end{array}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+g r &amp; =g b^{-1} j c &amp; &amp; \\
+&amp; =c^{-1}(c g) b^{-1} j c &amp; &amp; \text { multiplying by } c^{-1} c=1_{C} \\
+&amp; =c^{-1}(p b) b^{-1} j c &amp; &amp; \text { by commutativity } \\
+&amp; =c^{-1} p j c &amp; &amp; \text { because } b b^{-1}=1_{B} \\
+&amp; =c^{-1} c &amp; &amp; \text { because } p j=\mathrm{id}_{C} \\
+&amp; =1_{C} . &amp; &amp;
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Therefore, c implies a and b.</div>
+</div> <div class="para logical">
+<div class="para">Now suppose that a holds, and let's show that the sequence splits. First, we need to show that <span class="process-math">\(B \cong A \oplus C\text{.}\)</span> Every <span class="process-math">\(b \in B\)</span> can be written as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b=(b-f q(b))+f q(b)
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(f q(b) \in \operatorname{im} f \cong A\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+q(b-f q(b))=q(b)-\underbrace{q f}_{\operatorname{id}_{A}}(q(b))=q(b)-q(b)=0
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(b-f q(b) \in \operatorname{ker} q\text{.}\)</span> This shows that <span class="process-math">\(B=\operatorname{im} f+\operatorname{ker} q\text{.}\)</span> Moreover, if <span class="process-math">\(f(a) \in \operatorname{ker} q\text{,}\)</span> then <span class="process-math">\(a=q f(a)=0\text{,}\)</span> so <span class="process-math">\(\operatorname{im} f \cap \operatorname{ker} q=0\text{,}\)</span> and <span class="process-math">\(B=\operatorname{im} f \oplus \operatorname{ker} q\text{.}\)</span> Now when we restrict <span class="process-math">\(g\)</span> to <span class="process-math">\(\operatorname{ker} q, g\)</span> becomes injective. We claim it is also surjective, and thus an isomorphism. Indeed, for any <span class="process-math">\(c \in C\)</span> we can pick <span class="process-math">\(b \in B\)</span> such that <span class="process-math">\(g(b)=c\text{,}\)</span> since <span class="process-math">\(g\)</span> is surjective, and we showed that we can write <span class="process-math">\(b=f(a)+k\)</span> for some <span class="process-math">\(k \in \operatorname{ker} q\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(k)=\underbrace{g f}_{0}(a)+g(k)=g(b)=c.
+\end{equation*}
+</div>
+<div class="para">Finally, note that <span class="process-math">\(\operatorname{im} f \cong A\text{,}\)</span> so we conclude that <span class="process-math">\(B \cong A \oplus C\text{,}\)</span> via the isomorphism <span class="process-math">\(\varphi\)</span> given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; B \longrightarrow \operatorname{im} f \oplus \operatorname{ker} q \longrightarrow A \oplus C \\
+&amp; b \longmapsto(f q(b), b-f q(b)) \longmapsto(q(b), g(b)) .
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(g f=0\)</span> and <span class="process-math">\(q f=\operatorname{id}_{A}, \varphi f(a)=(q f(a), 0)=(a, 0)\text{,}\)</span> so <span class="process-math">\(\varphi f=i\text{,}\)</span> where <span class="process-math">\(i: A \longrightarrow A \oplus C\)</span> is the inclusion on the first factor. If <span class="process-math">\(p: A \oplus C \longrightarrow C\)</span> denotes the projection onto the second factor, <span class="process-math">\(p \varphi=g\text{.}\)</span> Together, these two facts say that the following is a map of complexes:</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-058.jpg" class="contained"></div> <div class="para">Since <span class="process-math">\(\varphi\)</span> is an isomorphism, so is our map of complexes, and thus our original sequence is a split exact sequence. This shows that a implies <span class="process-math">\(c\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Now assume b holds. Every <span class="process-math">\(b \in B\)</span> can be written as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b=(b-r g(b))+r g(b)
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(r g(b) \in \operatorname{im} r\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(b-r g(b))=g(b)-\underbrace{g r}_{\mathrm{id}_{C}}(g(b))=g(b)-g(b)=0
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(b-r g(b) \in \operatorname{ker} g\text{.}\)</span> This shows that <span class="process-math">\(B=\operatorname{ker} g+\operatorname{im} r\text{.}\)</span> Moreover, if <span class="process-math">\(r(c) \in \operatorname{ker} g\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c=\operatorname{id}_{C}(c)=g r(c)=0
+\end{equation*}
+</div>
+<div class="para">Therefore, <span class="process-math">\(B=\operatorname{ker} g \oplus \operatorname{im} r\text{.}\)</span> Now <span class="process-math">\(r\)</span> is injective, since <span class="process-math">\(r(c)=0 \Longrightarrow c=g r(c)=0\text{,}\)</span> and thus <span class="process-math">\(\operatorname{im} r \cong C\text{.}\)</span> Since <span class="process-math">\(\operatorname{ker} g=\operatorname{im} f \cong A\text{,}\)</span> we conclude that <span class="process-math">\(B \cong A \oplus C\text{,}\)</span> via the isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; A \oplus C \stackrel{\psi}{\longrightarrow} B \\
+&amp; (a, c) \longmapsto f(a)+r(c) .
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Finally, let <span class="process-math">\(i: A \longrightarrow A \oplus C\)</span> denote the inclusion of the first factor, and <span class="process-math">\(p: A \oplus C \longrightarrow C\)</span> denote the projection onto the second factor. By construction, <span class="process-math">\(\psi i=f\text{.}\)</span> Moreover,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g \psi(a, c)=\underbrace{g f}_{0}(a)+\underbrace{g r}_{\mathrm{id}_{C}}(c)=c
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(g \psi=p\text{.}\)</span> Together, these say that the diagram</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-059.jpg" class="contained"></div> <div class="para">commutes, and must then be an isomorphism of short exact sequences.</div></article><span class="incontext"><a href="sec-ses.html#proof-6" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Proof. The universal property of the tensor product says that to give an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(M \otimes_{R} N \longrightarrow P\)</span> is the same as giving an <span class="process-math">\(R\)</span>-bilinear map <span class="process-math">\(M \times N \longrightarrow P\text{.}\)</span> Given such a bilinear map <span class="process-math">\(f\text{,}\)</span> the map <span class="process-math">\(n \mapsto f(m \otimes n)\)</span> is <span class="process-math">\(R\)</span>-linear for each <span class="process-math">\(m \in M\text{,}\)</span> so it defines an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(N \longrightarrow P\text{.}\)</span> Now the assignment</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; M \longrightarrow \operatorname{Hom}_{S}(N, P) \\
+&amp; m \longrightarrow(n \mapsto f(m \otimes n))
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para">is <span class="process-math">\(R\)</span>-linear, <span class="process-math">\(f\)</span> is an <span class="process-math">\(R\)</span>-module homomorphism, and <span class="process-math">\(m \mapsto m \otimes n\)</span> is <span class="process-math">\(R\)</span>-linear on <span class="process-math">\(m\text{.}\)</span>
+</div> <div class="para">Conversely, given an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f \in \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{R}(N, P)\right)\text{,}\)</span> one can check (exercise!) that <span class="process-math">\((m, n) \mapsto f(m)(n)\)</span> is an <span class="process-math">\(R\)</span>-bilinear map, so it induces an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(M \otimes_{R} N \longrightarrow P\text{.}\)</span> Moreover, the two constructions are inverse to each other.</div> <div class="para">So we have constructed a bijection of Hom-sets</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\operatorname{Hom}_{R}\left(M \otimes_{R} N, P\right) \stackrel{\tau}{\longrightarrow} \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{R}(N, P)\right) . \\
+f \longmapsto(m \mapsto(n \mapsto f(m \otimes n))) \\
+(m \otimes n \mapsto g(m)(n)) \longleftrightarrow g
+\end{gathered}
+\end{equation*}
+</div></div> <div class="para">It's routine to check that both of these bijections are indeed homomorphisms of <span class="process-math">\(R\)</span>-modules, so we leave it as an exercise.</div> <div class="para">Finally, naturality means we have the following commutative diagrams:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-106(1).jpg" class="contained"></div> <div class="para">and</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-106.jpg" class="contained"></div> <div class="para">We leave checking these do indeed commute as an exercise.</div></article></body>
+</html>
