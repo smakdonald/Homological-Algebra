@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>\Hom</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Homological Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="ch-rmod.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-rmod.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-tensor.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+\newcommand{\Ass}{\operatorname{Ass}}
+\def\Aut{\operatorname{Aut}}
+\def\can{{\mathrm {can}}}
+\def\char{\operatorname{char}}
+\def\cp{\operatorname{CharPoly}}
+\def\codim{\operatorname{codim}} 
+\def\coker{\operatorname{coker}}
+\DeclareMathOperator*{\colim}{colim} 
+\def\cont{\operatorname{cont}} 
+\def\diam{\operatorname{diam}} 
+\def\dm{\operatorname{dim}} 
+\DeclareMathOperator{\edim}{embdim} 
+\def\End{\operatorname{End}} 
+\def\eval{\operatorname{eval}} 
+\def\Ext{\operatorname{Ext}} 
+\def\Frac{\operatorname{Frac}}
+\def\Fun{\operatorname{Fun}}
+\def\Gal{\operatorname{Gal}}
+\def\gcd{\operatorname{gcd}}
+\newcommand{\GL}{\operatorname{GL}} 
+\newcommand{\ht}{\operatorname{height}} 
+\def\Hom{\operatorname{Hom}} 
+\def\id{\operatorname{id}} 
+\def\im{\operatorname{im}} 
+\def\Inn{\operatorname{Inn}}
+\def\ker{\operatorname{ker}}
+\def\lcm{\operatorname{lcm}} 
+\def\Mat{\operatorname{Mat}}
+\newcommand{\Min}{\operatorname{Min}}
+\def\mp{\operatorname{MinPoly}}
+\def\mSpec{\operatorname{mSpec}}
+\def\MSpec{\operatorname{MSpec}}
+\def\null{\operatorname{Nul}}
+\DeclareMathOperator{\ns}{nullspace}
+\newcommand{\opp}{\operatorname{opp}}
+\def\Orb{\operatorname{Orb}} 
+\def\Out{\operatorname{Out}}
+\def\Perm{\operatorname{Perm}}
+\def\ptstab{\operatorname{PtStab}} 
+\def\rad{\operatorname{rad}}
+\DeclareMathOperator{\range}{range}
+\def\rank{\operatorname{rank}}
+\def\res{\operatorname{res}}
+\def\setstab{\operatorname{SetStab}}
+\def\sign{{\operatorname{sign}}}
+\newcommand{\SL}{\operatorname{SL}}
+\def\Span{\operatorname{Span}}
+\def\Spec{\operatorname{Spec}}
+\def\Stab{\operatorname{Stab}} 
+\DeclareMathOperator{\Supp}{Supp}
+\def\Syl{\operatorname{Syl}}
+\def\Tor{\operatorname{Tor}}
+\def\trace{\operatorname{trace}}
+\def\uSpec{\operatorname{\underline{Spec}}}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}{-\mathbf{Mod}}
+\newcommand{\mod}{-\mathbf{mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\lx{\lambda_x}
+\newcommand{\a}{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd} 
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\def\xdots{x_1, \dots, x_n} 
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\udots{u_1, \dots, u_n} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth3 parts"><ul class="structural">
+<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li>
+<div class="toc-item"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li><div class="toc-item"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li><div class="toc-item"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite and Subcategories</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed 'er!</span></a></div></li>
+<li><div class="toc-item"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div></li>
+<li><div class="toc-item"><a href="sec-ses.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Short Exact Sequences</span></a></div></li>
+<li><div class="toc-item"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural">
+<li class="active">
+<div class="toc-item"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">Introducing <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li><div class="toc-item"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li><div class="toc-item"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div></li>
+<li><div class="toc-item"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div></li>
+<li><div class="toc-item"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-hom"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span>
+</h2>
+<section class="subsection" id="subsec-hom"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Introducing <span class="process-math">\(\Hom\)</span></span>
+</h3>
+<div class="para" id="p-452">From now on, let's fix a ring <span class="process-math">\(R\text{.}\)</span> Recall that whenever we say an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> we mean a left <span class="process-math">\(R\)</span>-module; any general facts about left modules can be naturally converted into statements about right <span class="process-math">\(R\)</span>-modules, under small appropriate corrections. When <span class="process-math">\(M\)</span> is commutative, left and right module structures agree, so the distinction is not relevant.</div>
+<div class="para" id="p-453">Our goal is to get to know the category <span class="process-math">\(R\)</span>-Mod, which as we are about to discover is a very nice category. One of the many nice things about <span class="process-math">\(R\)</span>-Mod is that the Hom-sets have an extra structure. (Roughly speaking, a locally small category where the Hom-sets are objects in some other category is called an enriched category).</div>
+<div class="para" id="p-454">To make the notation less heavy, we write <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> instead of <span class="process-math">\(\operatorname{Hom}_{R-\operatorname{Mod}}(M, N)\)</span> for the Hom-set between <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> in <span class="process-math">\(R\)</span>-Mod. The arrows in <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> are all the <span class="process-math">\(R\)</span>-module homomorphisms from <span class="process-math">\(M\)</span> to <span class="process-math">\(N\text{.}\)</span> This is a locally small category, meaning that the Hom-sets are actual sets, but more even is true: the Hom-sets are actually abelian groups, and when <span class="process-math">\(R\)</span> is commutative, they are even <span class="process-math">\(R\)</span>-modules.</div>
+<div class="para logical" id="p-455">
+<div class="para">Given <span class="process-math">\(f, g \in \operatorname{Hom}_{R}(M, N), f+g\)</span> is the <span class="process-math">\(R\)</span>-module homomorphism defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(f+g)(m):=f(m)+g(m)
+\end{equation*}
+</div>
+<div class="para">When <span class="process-math">\(R\)</span> is a commutative ring, given <span class="process-math">\(r \in R\)</span> and <span class="process-math">\(f \in \operatorname{Hom}_{R}(M, N), r \cdot f\)</span> is the <span class="process-math">\(R\)</span>-module homomorphism defined by</div>
+</div>
+<div class="para logical" id="p-456"><div class="displaymath process-math">
+\begin{equation*}
+(r \cdot f)(m):=f(r m)
+\end{equation*}
+</div></div>
+<article class="exercise exercise-like" id="exe-36"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-36"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.1</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-36"><article class="exercise exercise-like"><div class="para" id="p-457">Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules. Then <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> is an abelian group under the sum defined above.</div></article></div>
+<article class="exercise exercise-like" id="exe-37"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-37"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.2</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-37"><article class="exercise exercise-like"><div class="para" id="p-458">Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules over a commutative <span class="process-math">\(\operatorname{ring} R\text{.}\)</span> Then <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> is an <span class="process-math">\(R\)</span>-module.</div></article></div>
+<article class="remark remark-like" id="rem-3.1"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-459">
+<div class="para">The main reason we need commutativity for <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> to be a module is that given any <span class="process-math">\(r \in R\)</span> and <span class="process-math">\(f \in \operatorname{Hom}_{R}(M, N)\text{,}\)</span> we need <span class="process-math">\(r f\)</span> to be an <span class="process-math">\(R\)</span>-module homomorphism, so in particular for any <span class="process-math">\(a \in M\)</span> and any <span class="process-math">\(s \in R\)</span> we need</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(r f)(s a)=s(r f)(a)
+\end{equation*}
+</div>
+<div class="para">So</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(r s) f(a)=r f(s a)=(r f)(s a)=s(r f)(a)=s(r f(a))=(s r) f(a) .
+\end{equation*}
+</div>
+<div class="para">This holds whenever <span class="process-math">\(r s=s r\text{,}\)</span> but not in general.</div>
+</div></article><div class="para" id="p-460">Some Hom-sets can easily be identified with other well-understood modules.</div>
+<article class="exercise exercise-like" id="exe-38"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-38"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.4</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-38"><article class="exercise exercise-like"><div class="para logical" id="p-461">
+<div class="para">Let <span class="process-math">\(R\)</span> be a commutative ring. Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module, and <span class="process-math">\(I\)</span> an ideal in <span class="process-math">\(R\text{.}\)</span> Then we have the following isomorphisms of <span class="process-math">\(R\)</span>-modules:</div>
+<ol class="decimal">
+<li id="li-63"><div class="para" id="p-462"><span class="process-math">\(\operatorname{Hom}_{R}(R, M) \cong M\text{.}\)</span></div></li>
+<li id="li-64"><div class="para" id="p-463">
+<span class="process-math">\(\operatorname{Hom}_{R}\left(R^{n}, M\right) \cong M^{n}\)</span> for any <span class="process-math">\(n \geqslant 1\text{.}\)</span>
+</div></li>
+<li id="li-65"><div class="para" id="p-464"><span class="process-math">\(\operatorname{Hom}_{R}(R / I, M) \cong\left(0:_{M} I\right):=\{m \in M \mid I m=0\}\text{.}\)</span></div></li>
+</ol>
+</div></article></div></section><section class="subsection" id="subsec-additive-functors"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Additive Functors</span>
+</h3>
+<div class="para" id="p-465">Since <span class="process-math">\(R\)</span>-Mod is a locally small category, we saw in Definition 1.34 that there are two Hom-functors from <span class="process-math">\(R\)</span>-Mod to Set, the covariant functor <span class="process-math">\(\operatorname{Hom}_{R}(M,-): R\)</span>-Mod <span class="process-math">\(\longrightarrow\)</span> Set and the contravariant functor <span class="process-math">\(\operatorname{Hom}_{R}(-, N): R\)</span>-Mod <span class="process-math">\(\longrightarrow\)</span> Set. In light of <a href="" class="xref" data-knowl="./knowl/exe-37.html" title="Exercise 3.2">Exercise 3.2</a>, we can upgrade these functors to land in <span class="process-math">\(\mathbf{A b}\text{,}\)</span> or in <span class="process-math">\(R\)</span>-Mod when <span class="process-math">\(R\)</span> is commutative, not just in Set. Note that while there are two Hom-functors, we will sometimes refer to the Hom functor when talking about properties that are common to both of them.</div>
+<div class="para" id="p-466">A functor that lands in <span class="process-math">\(\mathbb{R}-\bmod\text{,}\)</span> or <span class="process-math">\(\mathbf{A b}\)</span> in particular, can have some additional good properties.</div>
+<article class="definition definition-like" id="def-3.2"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Additive Functor.</span>
+</h4> <div class="para logical" id="p-467">
+<div class="para">Let <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> be rings. A functor <span class="process-math">\(T: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod is an <em class="emphasis">additive functor</em> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(f+g)=T(f)+T(g)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(f, g \in \operatorname{Hom}_{R}(M, N)\text{.}\)</span>
+</div>
+</div></article><div class="para logical" id="p-468">
+<div class="para">Note that to say that <span class="process-math">\(T\)</span> is a covariant additive functor is to say that for all <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> the map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\operatorname{Hom}(A, B) \longrightarrow \operatorname{Hom}(T(A), T(B)) \\
+f \longmapsto T(f)
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">induced by <span class="process-math">\(T\)</span> is a homomorphism of abelian groups. Similarly, a contravariant additive functor <span class="process-math">\(T\)</span> is one such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\operatorname{Hom}(A, B) \longrightarrow \operatorname{Hom}(T(B), T(A)) \\
+f \longmapsto T(f)
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">is a homomorphism of abelian groups. Notice moreover that this definition makes sense more generally in any category <span class="process-math">\(\mathscr{C}\)</span> whose objects have an abelian group structure.</div>
+</div>
+<article class="exercise exercise-like" id="exe-39"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-39"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Hom\)</span> is Additive.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-39"><article class="exercise exercise-like"><div class="para" id="p-469">Show that <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}(-, N)\)</span> are both additive functors.</div></article></div>
+<div class="para" id="p-470">Note that in <a href="" class="xref" data-knowl="./knowl/exe-39.html" title="Exercise 3.6: \Hom is Additive">Exercise 3.6</a> we were purposely vague about where <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}(-, N)\)</span> land: these are additive functors whether we consider them as functors with target <span class="process-math">\(\mathbf{A b}\)</span> or target <span class="process-math">\(R\)</span>-Mod, when appropriate.</div>
+<div class="para" id="p-471">Additive functors have many nice properties.</div>
+<article class="lemma theorem-like" id="lem-3.3"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Additive Functors.</span>
+</h4>
+<div class="para logical" id="p-472">
+<div class="para">Let <span class="process-math">\(T: R-\)</span> Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod be an additive functor.</div>
+<ol class="decimal">
+<li id="li-66"><div class="para" id="p-473">Let 0 denote the 0-map between any two <span class="process-math">\(R\)</span>-modules <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{.}\)</span> Then <span class="process-math">\(T(0)=0\)</span> is the <span class="process-math">\(0-\operatorname{map} T(M) \rightarrow T(N)\text{.}\)</span>
+</div></li>
+<li id="li-67"><div class="para" id="p-474">Let 0 denote the zero <span class="process-math">\(R\)</span>-module. Then <span class="process-math">\(T(0)=0\)</span> is the zero <span class="process-math">\(S\)</span>-module.</div></li>
+</ol>
+</div></article><article class="hiddenproof" id="proof-10"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><div class="para logical" id="p-475"><ol class="decimal">
+<li id="li-68"><div class="para" id="p-476">As a function defined on each fixed <span class="process-math">\(\operatorname{Hom}_{R}(M, N), T\)</span> is a group homomorphism, so it must send <span class="process-math">\(0\)</span> to <span class="process-math">\(0\text{.}\)</span>
+</div></li>
+<li id="li-69"><div class="para" id="p-477">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is the zero module if and only if the zero and identity maps on <span class="process-math">\(M\)</span> coincide. Let <span class="process-math">\(N\)</span> be the image of the zero <span class="process-math">\(R\)</span>-module via <span class="process-math">\(T\text{.}\)</span> On the one hand, any functor must send identity maps to identity maps, so the identity map on the zero module must be sent to the identity on <span class="process-math">\(N\text{.}\)</span> On the other hand, we have shown that the zero map must be sent to the zero map on <span class="process-math">\(N\text{,}\)</span> so the zero and identity maps on <span class="process-math">\(N\)</span> must coincide, so <span class="process-math">\(N=0\text{.}\)</span>
+</div></li>
+</ol></div></article></div>
+<article class="remark remark-like" id="rem-3.4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-478">
+<div class="para">Note that the category of chain complexes also has a similar structure to <span class="process-math">\(R\)</span>-Mod: given two maps of complexes <span class="process-math">\(f, g: C \rightarrow D\text{,}\)</span> we define a map of complexes <span class="process-math">\(f+g\)</span> : <span class="process-math">\(C \rightarrow D\)</span> given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.3.html">
+\begin{equation*}
+(f+g)_{n}:=f_{n}+g_{n}
+\end{equation*}
+</div>
+<div class="para">It is routine to check that this again gives a map of complexes, and that this operation gives the <span class="process-math">\(\Hom\)</span>-sets in <span class="process-math">\(\operatorname{Ch}(R)\)</span> the structure of an abelian group. In fact, this abelian group structure can be upgraded to an <span class="process-math">\(R\)</span>-module structure when <span class="process-math">\(R\)</span> is commutative, by setting</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.3.html">
+\begin{equation*}
+(r f)_{n}:=r f_{n}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(r \in R\text{.}\)</span> This allows us to talk about additive functors to and from the category <span class="process-math">\(\operatorname{Ch}(R)\text{,}\)</span> and there is a version of <a href="" class="xref" data-knowl="./knowl/lem-3.3.html" title="Lemma 3.7: Properties of Additive Functors">Lemma 3.7</a> in <span class="process-math">\(\mathrm{Ch}(R)\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="exe-40"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-40"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Homology is Additive.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-40"><article class="exercise exercise-like"><div class="para" id="p-479">Show that homology is an additive functor.</div></article></div>
+<div class="para" id="p-480">Most functors between categories or modules or chain complexes are additive. In fact, we will spend the rest of this chapter studying three very important additive functors: the two <span class="process-math">\(\Hom\)</span> functors, and a third functor we have yet to define.</div>
+<article class="exercise exercise-like" id="exe-41"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-41"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Additive Functors Preserve Direct Sums.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-41"><article class="exercise exercise-like"><div class="para logical" id="p-481">
+<div class="para">Let <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> be rings and let <span class="process-math">\(T: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod be an additive functor. Show that for all <span class="process-math">\(R\)</span>-modules <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(A \oplus B) \cong T(A) \oplus T(B)
+\end{equation*}
+</div>
+</div></article></div>
+<div class="para" id="p-482">
+<span class="process-math">\(\Hom\)</span> satisfies a stronger version of this property.</div>
+<article class="theorem theorem-like" id="thm-3.5"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-483">
+<div class="para">For all <span class="process-math">\(R\)</span>-modules <span class="process-math">\(M, N, M_{i}, N_{i}\text{,}\)</span> there are isomorphisms of abelian groups</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{R}\left(M, \prod_{i} N_{i}\right) \cong \prod_{i} \operatorname{Hom}_{R}\left(M, N_{i}\right) \text { and } \operatorname{Hom}_{R}\left(\bigoplus_{i} M_{i}, N\right) \cong \prod_{i} \operatorname{Hom}_{R}\left(M_{i}, N\right)
+\end{equation*}
+</div>
+<div class="para">Moreover, when <span class="process-math">\(R\)</span> is commutative, these are in fact isomorphisms of <span class="process-math">\(R\)</span>-modules.</div>
+</div> <div class="para logical" id="p-484">
+<div class="para">In particular,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{R}(A \oplus B, C) \cong \operatorname{Hom}_{R}(A, C) \oplus \operatorname{Hom}_{R}(B, C)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{R}(A, B \oplus C) \cong \operatorname{Hom}_{R}(A, B) \oplus \operatorname{Hom}_{R}(A, C) .
+\end{equation*}
+</div>
+</div></article><article class="hiddenproof" id="proof-11"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-11"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><div class="para logical" id="p-485">
+<div class="para">For each <span class="process-math">\(i\text{,}\)</span> let <span class="process-math">\(\pi_{i}: \prod_{j} N_{j} \longrightarrow N_{i}\)</span> be the canonical projection map. Consider the map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\operatorname{Hom}_{R}\left(M, \prod_{i} N_{i}\right) \stackrel{\alpha}{\longrightarrow} \prod_{i} \operatorname{Hom}_{R}\left(M, N_{i}\right) \\
+f \longmapsto\left(\pi_{i} f\right)
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">We claim this map is the desired isomorphism. We leave it as an exercise to show that <span class="process-math">\(\alpha\)</span> is a homomorphism of abelian groups, and a homomorphism of <span class="process-math">\(R\)</span>-modules when <span class="process-math">\(R\)</span> is commutative; we focus on proving that <span class="process-math">\(\alpha\)</span> is a bijection. First, take <span class="process-math">\(\left(f_{i}\right)_{i} \in \prod_{i} \operatorname{Hom}_{R}\left(M, N_{i}\right)\text{.}\)</span> Define a map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; M \stackrel{\psi}{\longrightarrow} \prod_{i} N_{i} \\
+&amp; m \longmapsto\left(f_{i}(m)\right)
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">This makes the diagram</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-073.jpg" class="contained"></div> <div class="para" id="p-486">commute, so that <span class="process-math">\(\alpha(\psi)=\left(\pi_{i} \psi\right)_{i}=\left(f_{i}\right)\text{.}\)</span> This shows that <span class="process-math">\(\alpha\)</span> us surjective. Now let us show that <span class="process-math">\(\alpha\)</span> is injective. Suppose <span class="process-math">\(f \in \operatorname{Hom}_{R}\left(M, \prod_{i} N_{i}\right)\)</span> is such that <span class="process-math">\(\alpha(f)=0\text{.}\)</span> For each <span class="process-math">\(m \in M\text{,}\)</span> let <span class="process-math">\(f(m)=\left(n_{i}\right)_{i}\text{,}\)</span> so <span class="process-math">\(\pi_{i} f(m)=n_{i}\text{.}\)</span> By assumption, <span class="process-math">\(\left(\pi_{i} f(m)\right)=0\text{,}\)</span> which means that <span class="process-math">\(\pi_{i} \alpha=0\)</span> for all <span class="process-math">\(i\text{,}\)</span> and thus <span class="process-math">\(n_{i}=0\)</span> for all <span class="process-math">\(i\text{.}\)</span> So <span class="process-math">\(f=0\text{.}\)</span> We conclude that <span class="process-math">\(\alpha\)</span> is an isomorphism.</div> <div class="para logical" id="p-487">
+<div class="para">Now consider the map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\operatorname{Hom}_{R}\left(\bigoplus_{i} M_{i}, N\right) \stackrel{\beta}{\longrightarrow} \prod_{i} \operatorname{Hom}_{R}\left(M_{i}, N\right) \\
+f \longmapsto\left(f \iota_{i}\right)
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\iota_{j}: M_{j} \longrightarrow \bigoplus_{i} M_{i}\)</span> is the inclusion of the <span class="process-math">\(j\)</span> th factor. We leave it as an exercise to prove that <span class="process-math">\(\beta\)</span> is a homomorphism of abelian groups, and that whenever <span class="process-math">\(R\)</span> is commutative, <span class="process-math">\(\beta\)</span> is in fact a homomorphism of <span class="process-math">\(R\)</span>-modules.</div>
+</div> <div class="para" id="p-488">Given <span class="process-math">\(\left(f_{i}\right)_{i} \in \prod_{i} \operatorname{Hom}_{R}\left(M_{i}, N\right)\text{,}\)</span> let</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-074.jpg" class="contained"></div> <div class="para" id="p-489">Then <span class="process-math">\(\beta(\psi)=\left(\psi \iota_{i}\right)_{i}\text{,}\)</span> so for each <span class="process-math">\(i\)</span> and each <span class="process-math">\(m_{i} \in M_{i}, \psi \iota_{i}\left(m_{i}\right)=f_{i}\left(m_{i}\right)\text{,}\)</span> and <span class="process-math">\(\beta(\psi)=\left(f_{i}\right)_{i}\text{.}\)</span> This shows that <span class="process-math">\(\beta\)</span> is surjective.</div> <div class="para" id="p-490">Now assume <span class="process-math">\(\beta(f)=0\text{,}\)</span> which implies that <span class="process-math">\(f \iota_{i}\)</span> is the zero map for each <span class="process-math">\(i\text{.}\)</span> Consider any <span class="process-math">\(\left(m_{i}\right)_{i} \in \bigoplus_{i} M_{i}\text{.}\)</span> For each <span class="process-math">\(i, f \iota_{i}\left(m_{i}\right)=0\text{.}\)</span> On the other hand, <span class="process-math">\(\left(m_{i}\right)_{i}=\sum_{i} \iota_{i}\left(m_{i}\right)\text{,}\)</span> so <span class="process-math">\(f\left(\left(m_{i}\right)_{i}\right)=\sum_{i} \iota_{i}\left(m_{i}\right)=0\text{.}\)</span> We conclude that <span class="process-math">\(f=0\text{,}\)</span> and <span class="process-math">\(\beta\)</span> is injective.</div></article></div>
+<div class="para" id="p-491">These two properties, however, are consequences of <a href="" class="xref" data-knowl="./knowl/exe-39.html" title="Exercise 3.6: \Hom is Additive">Exercise 3.6</a> and <a href="" class="xref" data-knowl="./knowl/exe-41.html" title="Exercise 3.10: Additive Functors Preserve Direct Sums">Exercise 3.10</a>: <span class="process-math">\(\Hom\)</span> is additive, and additive functors preserve finite direct sums.</div>
+<article class="exercise exercise-like" id="exe-42"><a href="" data-knowl="" class="id-ref exercise-knowl original has-image" data-refid="hk-exe-42"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.12</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-42"><article class="exercise exercise-like"><div class="para" id="p-492">Show that the isomorphisms in <a href="" class="xref" data-knowl="./knowl/thm-3.5.html" title="Theorem 3.11">Theorem 3.11</a> are natural on both components. More precisely, given any other family of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(L_{i}\)</span> such that for each <span class="process-math">\(i\)</span> there exists <span class="process-math">\(j\text{,}\)</span> a map <span class="process-math">\(\sigma_{i j}\)</span> there exist <span class="process-math">\(R\)</span>-module maps making the following diagrams commute:</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-074(1).jpg" class="contained"></div>
+<div class="para" id="p-493">In fact, one can show that more generally, <span class="process-math">\(\Hom\)</span> behaves well with limits and colimits.</div></article></div>
+<article class="exercise exercise-like" id="exe-43"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-43"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.13</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-43"><article class="exercise exercise-like"><div class="para logical" id="p-494">
+<div class="para">Let <span class="process-math">\(R\)</span> be any ring and consider <span class="process-math">\(R\)</span>-modules <span class="process-math">\(A\)</span> and <span class="process-math">\(\left\{M_{i}\right\}\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="li-70"><div class="para logical" id="p-495">
+<div class="para">For any inverse system <span class="process-math">\(\left\{M_{i}\right\}\text{,}\)</span> there is a natural isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{R}\left(A, \lim _{i} M_{i}\right) \cong \lim _{i} \operatorname{Hom}_{R}\left(A, M_{i}\right)
+\end{equation*}
+</div>
+</div></li>
+<li id="li-71"><div class="para logical" id="p-496">
+<div class="para">For any direct system <span class="process-math">\(\left\{M_{i}\right\}\)</span> or <span class="process-math">\(R\)</span>-modules, there is a natural isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{R}\left(\operatorname{colim}_{i} M_{i}, A\right) \cong \lim _{i} \operatorname{Hom}_{R}\left(M_{i}, B\right)
+\end{equation*}
+</div>
+</div></li>
+</ol>
+<div class="para">Moreover, when <span class="process-math">\(R\)</span> is commutative, these are isomorphisms of modules.</div>
+</div></article></div></section><section class="subsection" id="subsec-exact-functors"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Exact Functors</span>
+</h3>
+<div class="para" id="p-497">Another important property of <span class="process-math">\(\Hom\)</span> is how it interacts with exact sequences. First, an important note about general additive functors:</div>
+<article class="remark remark-like" id="rem-3.6"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.14</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-498">
+<div class="para">Let <span class="process-math">\(F: R\)</span>-Mod <span class="process-math">\(\rightarrow S\)</span>-Mod be an additive functor. Thanks to <a href="" class="xref" data-knowl="./knowl/lem-3.3.html" title="Lemma 3.7: Properties of Additive Functors">Lemma 3.7</a>, if <span class="process-math">\(g f=0\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.3.html">
+\begin{equation*}
+F(g f)=F(g) F(f)=F(0)=0.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(F\)</span> must send complexes to complexes, and in fact, <span class="process-math">\(F\)</span> induces a functor <span class="process-math">\(\operatorname{Ch}(R) \rightarrow \operatorname{Ch}(S)\text{,}\)</span> which we also call <span class="process-math">\(F\text{.}\)</span> Now if <span class="process-math">\(h\)</span> is a homotopy between two maps of complexes, <span class="process-math">\(F\)</span> must preserve the identities</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.3.html">
+\begin{equation*}
+\delta_{n+1} h_{n}+h_{n-1} \delta_{n}=f_{n}-g_{n}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n\text{,}\)</span> so <span class="process-math">\(F(h)\)</span> is a homotopy between <span class="process-math">\(F(f)\)</span> and <span class="process-math">\(F(g)\text{.}\)</span>
+</div>
+</div></article><div class="para" id="p-499">While additive functors send complexes to complexes, they don't have to preserve exactness. Functors that do preserve exactness are very special.</div>
+<article class="definition definition-like" id="def-3.7"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Exact Functors.</span>
+</h4> <div class="para logical" id="p-500">
+<div class="para">An additive functor <span class="process-math">\(T: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod is an <em class="emphasis">exact functor</em> if it preserves short exact sequences. When <span class="process-math">\(T\)</span> is covariant, this means that every short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is taken to the short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow T(A) \stackrel{T(f)}{\longrightarrow} T(B) \stackrel{T(g)}{\longrightarrow} T(C) \longrightarrow 0
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-501">
+<div class="para">When <span class="process-math">\(T\)</span> is contravariant, this means that any short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is taken to the short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow T(C) \stackrel{T(g)}{\longrightarrow} T(B) \stackrel{T(f)}{\longrightarrow} T(A) \longrightarrow 0
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="exe-44"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-44"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Functors are Exact iff They Commute with Homology.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-44"><article class="exercise exercise-like"><div class="para logical" id="p-502">
+<div class="para">Show that an additive functor <span class="process-math">\(T\)</span> is exact if it commutes with homology, that is, for all complexes <span class="process-math">\(C\)</span> and all <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}(T(C))=T\left(\mathrm{H}_{n}(C)\right)
+\end{equation*}
+</div>
+</div></article></div>
+<div class="para" id="p-503">As we will soon see, most functors are not exact. However, many functors of interest preserve some exactness.</div>
+<article class="definition definition-like" id="def-3.8"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Left and Right Exact Functors.</span>
+</h4> <div class="para logical" id="p-504">
+<div class="para">A covariant additive functor <span class="process-math">\(T: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod is left exact if it takes every exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules to the exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow T(A) \stackrel{T(f)}{\longrightarrow} T(B) \stackrel{T(g)}{\longrightarrow} T(C)
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(S\)</span>-modules, and right exact if it takes every exact sequence of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">to the exact sequence of <span class="process-math">\(S\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(A) \stackrel{T(f)}{\longrightarrow} T(B) \stackrel{T(g)}{\longrightarrow} T(C) \longrightarrow 0 .
+\end{equation*}
+</div>
+</div></article><article class="definition definition-like" id="def-3.9"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Left and Right Exact Functors.</span>
+</h4> <div class="para logical" id="p-505">
+<div class="para">A contravariant additive functor <span class="process-math">\(T: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod is left exact if it takes every exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules to the exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow T(C) \stackrel{T(g)}{\longrightarrow} T(B) \stackrel{T(f)}{\longrightarrow} T(A)
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(S\)</span>-modules, and right exact if it takes every exact sequence of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
+\end{equation*}
+</div>
+<div class="para">to the exact sequence of <span class="process-math">\(S\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(C) \stackrel{T(g)}{\longrightarrow} T(B) \stackrel{T(f)}{\longrightarrow} T(A) \longrightarrow 0 .
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="exe-45"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-45"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.19</span><span class="period">.</span><span class="space"> </span><span class="title">Exactness and SESs.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-45"><article class="exercise exercise-like"><div class="para logical" id="p-506">
+<div class="para">The definitions above all stay unchanged if for each condition we start with a short exact sequence. For example, a covariant additive functor <span class="process-math">\(T\)</span> is left exact if and only if for every short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow T(A) \stackrel{T(f)}{\longrightarrow} T(B) \stackrel{T(g)}{\longrightarrow} T(C)
+\end{equation*}
+</div>
+<div class="para">is exact.</div>
+</div></article></div>
+<article class="remark remark-like" id="rem-3.10"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.20</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-507">
+<div class="para">Left exact covariant functors take kernels to kernels, while right exact covariant functors take cokernels to cokernels: the kernel of <span class="process-math">\(f\)</span> fits in an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} f \longrightarrow A \stackrel{f}{\longrightarrow} B
+\end{equation*}
+</div>
+<div class="para">and applying a left exact functor <span class="process-math">\(F\)</span> gives us an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow F(\operatorname{ker} f) \longrightarrow F(A) \stackrel{F(f)}{\longrightarrow} F(B)
+\end{equation*}
+</div>
+<div class="para">Exactness tells us that <span class="process-math">\(F(\operatorname{ker} f)\)</span> is the kernel of <span class="process-math">\(F(f)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-508">
+<div class="para">Similarly, the cokernel of <span class="process-math">\(f\)</span> fits into an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \stackrel{f}{\longrightarrow} B \longrightarrow \operatorname{coker} f \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">which any right exact functor <span class="process-math">\(G\)</span> will take to an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+G(A) \stackrel{G(f)}{\longrightarrow} G(B) \longrightarrow G(\operatorname{coker} f) \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">Exactness says that <span class="process-math">\(G(\operatorname{coker} f)\)</span> is the cokernel of <span class="process-math">\(G(f)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-509">
+<div class="para">Similarly, left exact contravariant functors take cokernels to kernels, and right exact contravariant functors take kernels to cokernels. A left exact contravariant functor <span class="process-math">\(F\)</span> will take the exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \stackrel{f}{\longrightarrow} B \longrightarrow \operatorname{coker} f \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">to an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow F(\operatorname{coker} f) \longrightarrow F(B) \stackrel{F(f)}{\longrightarrow} F(A)
+\end{equation*}
+</div>
+<div class="para">and exactness tells us that <span class="process-math">\(F(\operatorname{coker} f)\)</span> is the kernel of <span class="process-math">\(F(f)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-510">
+<div class="para">A right exact contravariant functor <span class="process-math">\(G\)</span> will take the exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} f \longrightarrow A \stackrel{f}{\longrightarrow} B
+\end{equation*}
+</div>
+<div class="para">to the exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+G(B) \stackrel{G(f)}{\longrightarrow} G(A) \longrightarrow G(\operatorname{ker} f) \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">and exactness says that <span class="process-math">\(G(\operatorname{ker} f)\)</span> is the cokernel of <span class="process-math">\(G(f)\text{.}\)</span>
+</div>
+</div></article><div class="para" id="p-511">Exactness is preserved by natural isomorphisms.</div>
+<article class="remark remark-like" id="rem-3.11"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.21</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-512">
+<div class="para">Suppose that <span class="process-math">\(F, G: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod are naturally isomorphic additive functors. We claim that <span class="process-math">\(F\)</span> is exact if and only if <span class="process-math">\(G\)</span> is exact. Let's prove it in the case when <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are covariant. Given any short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">applying each of our functors yields complexes of <span class="process-math">\(R\)</span>-modules which may or may not be exact. Our natural isomorphism gives us an isomorphism of complexes</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-077.jpg" class="contained"></div> <div class="para" id="p-513">Isomorphisms of complexes induce isomorphisms in homology, so the top sequence is exact if and only if the bottom sequence is exact. Thus <span class="process-math">\(F\)</span> preserves the short exact sequence if and only if <span class="process-math">\(G\)</span> does.</div> <div class="para" id="p-514">A similar argument shows that <span class="process-math">\(F\)</span> is left (respectively, right) exact if and only if <span class="process-math">\(G\)</span> is left (respectively, right) exact; we leave the details as an exercise.</div></article><div class="para" id="p-515">However, an additive functor does not have to be left exact nor right exact. There are even some functors that preserve exactness in the middle.</div>
+<article class="example example-like" id="ex-3.12"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.22</span><span class="period">.</span><span class="space"> </span><span class="title">Homology is Exact in the Middle.</span>
+</h4> <div class="para logical" id="p-516">
+<div class="para">The homology functor is exact in the middle: given a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">the exactness of the long exact sequence in homology says in particular that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}(A) \stackrel{\mathrm{H}_{n}(f)}{\longrightarrow} \mathrm{H}_{n}(B) \stackrel{\mathrm{H}_{n}(g)}{\longrightarrow} \mathrm{H}_{n}(C)
+\end{equation*}
+</div>
+<div class="para">is exact for all <span class="process-math">\(n\text{.}\)</span> On the other hand, we claim that the homology functor is neither left exact nor right exact. More precisely, <span class="process-math">\(\mathrm{H}_{n}(f)\)</span> might fail to be injective and <span class="process-math">\(\mathrm{H}_{n}(g)\)</span> might fail to be surjective. Finding a counterexample amounts to finding a short exact sequence of complexes such that the connecting homomorphism in the long exact sequence in homology is not the zero map.</div>
+</div> <div class="para" id="p-517">For example, consider the following complexes and maps of complexes:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-078.jpg" class="contained"></div> <div class="para logical" id="p-518">
+<div class="para">Applying <span class="process-math">\(\mathrm{H}_{0}\)</span> gives us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\mathrm{H}_{0}(A) \stackrel{\mathrm{H}_{0}(f)}{\longrightarrow} \mathrm{H}_{0}(B) \\
+\mathbb{Z} \stackrel{0}{\longrightarrow} 0
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">which is not injective, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \mathrm{H}_{0}(A) \stackrel{\mathrm{H}_{0}(f)}{\longrightarrow} \mathrm{H}_{0}(B) \stackrel{\mathrm{H}_{0}(g)}{\longrightarrow} \mathrm{H}_{0}(C)
+\end{equation*}
+</div>
+<div class="para">is not exact. Similarly, applying <span class="process-math">\(\mathrm{H}_{1}\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\mathrm{H}_{1}(B) \stackrel{\mathrm{H}_{1}(g)}{\longrightarrow} \mathrm{H}_{1}(C) \\
+0 \stackrel{0}{\longrightarrow} \mathbb{Z}
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">which is not surjective, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{1}(A) \stackrel{\mathrm{H}_{1}(f)}{\longrightarrow} \mathrm{H}_{1}(B) \stackrel{\mathrm{H}_{1}(g)}{\longrightarrow} \mathrm{H}_{1}(C) \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is not exact. Thus homology is neither left exact nor right exact, though it is exact in the middle.</div>
+</div></article><div class="para" id="p-519">But in general, an additive functor might fail to preserve exactness even in the middle.</div>
+<article class="example example-like" id="ex-3.13"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.23</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-520">
+<div class="para">Fix a prime <span class="process-math">\(p\)</span> and consider the functor <span class="process-math">\(F: \mathbf{A b} \rightarrow \mathbf{A b}\)</span> which on objects is defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(M)=\operatorname{Hom}_{\mathbb{Z}}\left(\mathbb{Z} / p, M / p^{2} M\right)
+\end{equation*}
+</div>
+<div class="para">given a homomorphism of abelian groups <span class="process-math">\(f: M \rightarrow N\text{,}\)</span> we get an induced homomorphism of abelian groups</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+M / p^{2} M \stackrel{\bar{f}}{\longrightarrow} N / p^{2} N \\
+m+p^{2} M \longmapsto f(m)+p^{2} N
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(F(f)=\bar{f} \circ-\)</span> is postcomposition with <span class="process-math">\(\bar{f}\text{.}\)</span> Consider the short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \mathbb{Z} / p^{2} \stackrel{f}{\longrightarrow} \mathbb{Z} / p^{3} \stackrel{g}{\longrightarrow} \mathbb{Z} / p \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(f\)</span> is the multiplication by <span class="process-math">\(p\)</span> map, which sends <span class="process-math">\(1 \mapsto p\text{,}\)</span> and <span class="process-math">\(g\)</span> is the canonical quotient map by the subgroup generated by <span class="process-math">\(p\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-521">
+<div class="para">Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F\left(\mathbb{Z} / p^{2}\right)=\operatorname{Hom}_{\mathbb{Z}}\left(\mathbb{Z} / p, \mathbb{Z} / p^{2}\right)
+\end{equation*}
+</div>
+<div class="para">is the submodule of <span class="process-math">\(\mathbb{Z} / p^{2}\)</span> of elements killed by <span class="process-math">\(p\text{,}\)</span> which is generated by the class of <span class="process-math">\(p\text{,}\)</span> so <span class="process-math">\(F\left(\mathbb{Z} / p^{2}\right)=\mathbb{Z} / p\text{.}\)</span> Moreover,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\mathbb{Z} / p^{3}}{p^{2} \mathbb{Z} / p^{3}} \cong \mathbb{Z} / p^{2}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(F\left(\mathbb{Z} / p^{3}\right)\)</span> is the the submodule of <span class="process-math">\(\mathbb{Z} / p^{2}\)</span> of elements killed by <span class="process-math">\(p\text{,}\)</span> which is generated by <span class="process-math">\(p\)</span> and isomorphic to <span class="process-math">\(\mathbb{Z} / p\text{,}\)</span> so <span class="process-math">\(F\left(\mathbb{Z} / p^{3}\right)=\mathbb{Z} / p\text{.}\)</span> Now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(f): \mathbb{Z} / p \rightarrow \mathbb{Z} / p
+\end{equation*}
+</div>
+<div class="para">is the map induced by multiplication by <span class="process-math">\(p\text{,}\)</span> so it is the zero map. The map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bar{g}: \mathbb{Z} / p^{2} \rightarrow \mathbb{Z} / p
+\end{equation*}
+</div>
+<div class="para">is the canonical quotient by the subgroup generated by <span class="process-math">\(p\text{;}\)</span> any element in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F\left(Z / p^{3}\right)=\operatorname{Hom}_{\mathbb{Z}}\left(\mathbb{Z} / p, \mathbb{Z} / p^{2}\right)
+\end{equation*}
+</div>
+<div class="para">corresponds to choosing an element of order <span class="process-math">\(p\text{,}\)</span> and thus in the subgroup generated by <span class="process-math">\(p\text{,}\)</span> so applying <span class="process-math">\(\bar{g}\)</span> always results in <span class="process-math">\(0\text{.}\)</span> We conclude that <span class="process-math">\(F(g)=0\text{.}\)</span> Finally, this shows that applying <span class="process-math">\(F\)</span> to the original short exact sequence gives us the complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \mathbb{Z} / p \stackrel{0}{\longrightarrow} \mathbb{Z} / p \stackrel{0}{\longrightarrow} \mathbb{Z} / p \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">which is not exact anywhere.</div>
+</div></article><div class="para" id="p-522">One amazing fact, however, is that even if a functor is not exact, it must always preserve split short exact sequences.</div>
+<article class="exercise exercise-like" id="exe-46"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-46"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.24</span><span class="period">.</span><span class="space"> </span><span class="title">Additive Functors Preserve Split Exact Sequences.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-46"><article class="exercise exercise-like"><div class="para" id="p-523">Show that additive functors preserve split short exact sequences.</div></article></div></section><section class="subsection" id="subsec-hom-left"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span>
+</h3>
+<div class="para" id="p-524">We are now ready for our first important example of a left exact functor: <span class="process-math">\(\Hom\)</span> is left exact.</div>
+<article class="theorem theorem-like" id="thm-3.14"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.25</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact.</span>
+</h4>
+<div class="para logical" id="p-525">
+<div class="para">Let <span class="process-math">\(M\)</span> be an R-module.</div>
+<ol class="decimal">
+<li id="li-72"><div class="para logical" id="p-526">
+<div class="para">The covariant functor <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> is left exact: for every exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules, the sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(M, A) \stackrel{\operatorname{Hom}_{R}(M, f)}{\longrightarrow} \operatorname{Hom}_{R}(M, B) \stackrel{\operatorname{Hom}_{R}(M, g)}{\longrightarrow} \operatorname{Hom}_{R}(M, C)
+\end{equation*}
+</div>
+<div class="para">is exact.</div>
+</div></li>
+<li id="li-73"><div class="para logical" id="p-527">
+<div class="para">The contravariant functor <span class="process-math">\(\operatorname{Hom}_{R}(-, M)\)</span> is left exact: for every exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules, the sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(C, M) \stackrel{\operatorname{Hom}_{R}(g, M)}{\longrightarrow} \operatorname{Hom}_{R}(B, M) \stackrel{\operatorname{Hom}_{R}(f, M)}{\longrightarrow} \operatorname{Hom}_{R}(A, M)
+\end{equation*}
+</div>
+<div class="para">is exact.</div>
+</div></li>
+</ol>
+</div></article><article class="hiddenproof" id="proof-12"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-12"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><div class="para logical" id="p-528">
+<div class="para">To make the notation less heavy, we will write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_{*}:=\operatorname{Hom}_{R}(M, f) \quad \text { and } \quad g_{*}:=\operatorname{Hom}_{R}(M, g)
+\end{equation*}
+</div>
+<div class="para">and similarly</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^{*}:=\operatorname{Hom}_{R}(f, M) \quad \text { and } \quad g^{*}:=\operatorname{Hom}_{R}(g, M) \text {. }
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-529">
+<div class="para">Since additive functors send complexes to complexes, as outlined in <a href="" class="xref" data-knowl="./knowl/rem-3.6.html" title="Remark 3.14">Remark 3.14</a>, we at least know that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rem-3.6.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(M, A) \stackrel{\operatorname{Hom}_{R}(M, f)}{\longrightarrow} \operatorname{Hom}_{R}(M, B) \stackrel{\operatorname{Hom}_{R}(M, g)}{\longrightarrow} \operatorname{Hom}_{R}(M, C)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rem-3.6.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(C, M) \stackrel{\operatorname{Hom}_{R}(g, M)}{\longrightarrow} \operatorname{Hom}_{R}(B, M) \stackrel{\operatorname{Hom}_{R}(f, M)}{\longrightarrow} \operatorname{Hom}_{R}(A, M)
+\end{equation*}
+</div>
+<div class="para">are functors, so in particular</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rem-3.6.html">
+\begin{equation*}
+g_{*} f_{*}=0 \Longrightarrow \operatorname{im} f_{*} \subseteq \operatorname{ker} g_{*}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rem-3.6.html">
+\begin{equation*}
+f^{*} g^{*}=0 \Longrightarrow \operatorname{im} g^{*} \subseteq \operatorname{ker} f^{*}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-530"><ol class="decimal">
+<li id="li-74"><div class="para logical" id="p-531">
+<div class="para">We have two things to show:</div>
+<ol class="lower-alpha">
+<li id="li-75">
+<span class="heading"><span class="title"><span class="process-math">\(\underline{f_{*} \text { is injective: }}\)</span>.</span></span><div class="para logical" id="p-532">
+<div class="para">Suppose that <span class="process-math">\(h \in \operatorname{Hom}_{R}(M, A)\)</span> is such that <span class="process-math">\(f_{*}(h)=0\text{.}\)</span> By definition, this means that <span class="process-math">\(f h=0\text{.}\)</span> But <span class="process-math">\(f\)</span> is injective, so for any <span class="process-math">\(m \in M\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f h(m)=0 \Longrightarrow h(m)=0 \text {. }
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(h=0\text{,}\)</span> and <span class="process-math">\(f_{*}\)</span> is injective.</div>
+</div>
+</li>
+<li id="li-76">
+<span class="heading"><span class="title"><span class="process-math">\(\underline{\operatorname{ker} g_{*} \subseteq \operatorname{im} f_{*}:}\)</span>.</span></span><div class="para" id="p-533">Let <span class="process-math">\(h \in \operatorname{Hom}_{R}(M, B)\)</span> be in the kernel of <span class="process-math">\(g_{*}\text{.}\)</span> Then <span class="process-math">\(g h=g_{*}(h)=0\text{,}\)</span> so for each <span class="process-math">\(m \in M\text{,}\)</span> <span class="process-math">\(g h(m)=0\text{.}\)</span> Then <span class="process-math">\(h(m) \in \operatorname{ker} g=\operatorname{im} f\text{,}\)</span> so there exists <span class="process-math">\(a \in A\)</span> such that <span class="process-math">\(f(a)=h(m)\text{.}\)</span> Since <span class="process-math">\(f\)</span> is injective, this element <span class="process-math">\(a\)</span> is unique for each <span class="process-math">\(m \in M\text{.}\)</span> So setting <span class="process-math">\(k(m):=a\)</span> gives us a well-defined function <span class="process-math">\(k: M \longrightarrow A\text{.}\)</span>
+</div>
+<div class="para logical" id="p-534">
+<div class="para">We claim that <span class="process-math">\(k\)</span> is in fact an <span class="process-math">\(R\)</span>-module homomorphism. To see that, notice that if <span class="process-math">\(k\left(m_{1}\right)=a_{1}\)</span> and <span class="process-math">\(k\left(m_{2}\right)=a_{2}\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\left(a_{1}+a_{2}\right)=f\left(a_{1}\right)+f\left(a_{2}\right)=h\left(m_{1}\right)+h\left(m_{2}\right)=h\left(m_{1}+m_{2}\right)
+\end{equation*}
+</div>
+<div class="para">so that <span class="process-math">\(k\left(m_{1}+m_{2}\right)=a_{1}+a_{2}=k\left(m_{1}\right)+k\left(m_{2}\right)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-535">
+<div class="para">Similarly, given any <span class="process-math">\(r \in R\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\left(r a_{1}\right)=r f\left(a_{1}\right)=r h\left(m_{1}\right)=h\left(r m_{1}\right)
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(k\left(r m_{1}\right)=r a_{1}=r k\left(m_{1}\right)\text{.}\)</span> Finally, this element <span class="process-math">\(k \in \operatorname{Hom}_{R}(M, A)\)</span> satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_{*}(k)(m)=f(k(m))=h(m)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(m \in M\text{,}\)</span> so <span class="process-math">\(f_{*}(k)=h\)</span> and <span class="process-math">\(h \in \operatorname{im} f_{*}\text{.}\)</span>
+</div>
+</div>
+</li>
+</ol>
+</div></li>
+<li id="li-77"><div class="para logical" id="p-536">
+<div class="para">Again, we have two things to show:</div>
+<ol class="lower-alpha">
+<li id="li-78">
+<span class="heading"><span class="title"><span class="process-math">\(g^{*}\)</span> is injective:.</span></span><div class="para" id="p-537">If <span class="process-math">\(g^{*}(h)=0\)</span> for some <span class="process-math">\(h \in \operatorname{Hom}_{R}(C, M)\text{,}\)</span> then <span class="process-math">\(h g=g^{*}(h)=0\text{.}\)</span> Consider any <span class="process-math">\(c \in C\text{.}\)</span> Since <span class="process-math">\(g\)</span> is surjective, there exists <span class="process-math">\(b \in B\)</span> such that <span class="process-math">\(g(b)=c\text{.}\)</span> Then <span class="process-math">\(h(c)=h g(b)=0\text{,}\)</span> so <span class="process-math">\(h=0\text{.}\)</span>
+</div>
+</li>
+<li id="li-79">
+<span class="heading"><span class="title"><span class="process-math">\(\underline{\operatorname{ker} f^{*} \subseteq \operatorname{im} g^{*}:}\)</span>.</span></span><div class="para logical" id="p-538">
+<div class="para">Let <span class="process-math">\(h \in \operatorname{Hom}_{R}(B, M)\)</span> be in <span class="process-math">\(\ker f^{*}\text{,}\)</span> so that <span class="process-math">\(h f=0\text{.}\)</span> Given any <span class="process-math">\(c \in C\text{,}\)</span> there exists <span class="process-math">\(b \in B\)</span> such that <span class="process-math">\(g(b)=c\text{,}\)</span> since <span class="process-math">\(g\)</span> is surjective. Let <span class="process-math">\(k: C \longrightarrow M\)</span> be the function defined by <span class="process-math">\(k(c):=h(b)\)</span> for some <span class="process-math">\(b\)</span> with <span class="process-math">\(g(b)=c\text{.}\)</span> This function is well-defined, since whenever <span class="process-math">\(g\left(b^{\prime}\right)=g(b)=c, b-b^{\prime} \in \operatorname{ker} g=\operatorname{im} f\text{,}\)</span> say <span class="process-math">\(b-b^{\prime}=f(a)\text{,}\)</span> and thus <span class="process-math">\(h\left(b-b^{\prime}\right)=h(f(a))=0\text{.}\)</span> Moreover, we claim that <span class="process-math">\(k\)</span> is indeed a homomorphism of <span class="process-math">\(R\)</span>-modules. If <span class="process-math">\(c_{1}, c_{2} \in C\text{,}\)</span> and <span class="process-math">\(g\left(b_{1}\right)=c_{1}, g\left(b_{2}\right)=c_{2}\text{,}\)</span> then <span class="process-math">\(g\left(b_{1}+b_{2}\right)=c_{1}+c_{2}\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k\left(c_{1}+c_{2}\right)=h\left(b_{1}+b_{2}\right)=h\left(b_{1}\right)+h\left(b_{2}\right)=k\left(b_{1}\right)+k\left(b_{2}\right)
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-539">
+<div class="para">Finally, this element <span class="process-math">\(k \in \operatorname{Hom}_{R}(C, M)\)</span> is such that <span class="process-math">\(g^{*}(k)\)</span> satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(g_{*}(k)\right)(b)=k(g(b))=h(b)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(b \in B\text{,}\)</span> so <span class="process-math">\(g^{*}(k)=h\text{,}\)</span> and <span class="process-math">\(h \in \operatorname{im} g^{*}\text{.}\)</span>
+</div>
+</div>
+</li>
+</ol>
+</div></li>
+</ol></div> <div class="para" id="p-540">So <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> preserves kernels, and <span class="process-math">\(\operatorname{Hom}_{R}(-, N)\)</span> sends cokernels to kernels.</div></article></div>
+<div class="para" id="p-541">However, <span class="process-math">\(\Hom\)</span> is not right exact in general.</div>
+<article class="example example-like" id="ex-3.15"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.26</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-542">
+<div class="para">Consider the short exact sequence of abelian groups</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html">
+\begin{equation*}
+0 \longrightarrow \mathbb{Z} \longrightarrow \mathbb{Q} \longrightarrow \mathbb{Q} / \mathbb{Z} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">where the first map is the inclusion of <span class="process-math">\(\mathbb{Z}\)</span> into <span class="process-math">\(\mathbb{Q}\text{,}\)</span> and the second map is the canonical projection. The elements in the abelian group <span class="process-math">\(\mathbb{Q} / \mathbb{Z}\)</span> are cosets of the form <span class="process-math">\(\frac{p}{q}+\mathbb{Z}\text{,}\)</span> where <span class="process-math">\(\frac{p}{q} \in \mathbb{Q}\text{,}\)</span> and whenever <span class="process-math">\(\frac{p}{q} \in \mathbb{Z}, \frac{p}{q}+\mathbb{Z}=0\text{.}\)</span> While <a href="" class="xref" data-knowl="./knowl/thm-3.14.html" title="Theorem 3.25: \Hom is Left Exact">Theorem 3.25</a> says that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2, \mathbb{Z}) \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2, \mathbb{Q}) \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2, \mathbb{Q} / \mathbb{Z})
+\end{equation*}
+</div>
+<div class="para">is exact, we claim that this cannot be extended to a short exact sequence, since the map <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2, \mathbb{Q}) \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2, \mathbb{Q} / \mathbb{Z})\)</span> is not surjective. On the one hand, there are no nontrivial homomorphisms from <span class="process-math">\(\mathbb{Z} / 2\)</span> to either <span class="process-math">\(\mathbb{Z}\)</span> nor <span class="process-math">\(\mathbb{Q}\text{,}\)</span> since there are no elements in <span class="process-math">\(\mathbb{Z}\)</span> nor <span class="process-math">\(\mathbb{Q}\)</span> of order <span class="process-math">\(2\text{.}\)</span> This shows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html">
+\begin{equation*}
+\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2, \mathbb{Q}) \cong 0.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-543">
+<div class="para">On the other hand, <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2, \mathbb{Q} / \mathbb{Z})\)</span> is nonzero: to give a homomorphism of abelian groups <span class="process-math">\(\mathbb{Z} / 2 \rightarrow \mathbb{Q} / Z Z\)</span> is to choose an element in <span class="process-math">\(\mathbb{Q} / \mathbb{Z}\)</span> of order <span class="process-math">\(2\text{.}\)</span> Since <span class="process-math">\(\frac{1}{2}+\mathbb{Z}\)</span> is an element of order 2 in <span class="process-math">\(\mathbb{Q} / \mathbb{Z}\text{,}\)</span> the map sending <span class="process-math">\(1\)</span> in <span class="process-math">\(\mathbb{Z} / 2\)</span> to <span class="process-math">\(\frac{1}{2}+\mathbb{Z}\)</span> in <span class="process-math">\(\mathbb{Z} / \mathbb{Q}\)</span> is nonzero. So after applying <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2,-)\text{,}\)</span> we get the exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow 0 \longrightarrow 0 \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2, \mathbb{Q} / \mathbb{Z})
+\end{equation*}
+</div>
+<div class="para">So this shows that <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2,-)\)</span> is not an exact functor, only left exact.</div>
+</div></article><div class="para" id="p-544">Similarly, we can show that <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(-, \mathbb{Z})\)</span> is not exact:</div>
+<article class="example example-like" id="ex-3.16"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.27</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-545">
+<div class="para">Let's apply <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(-, \mathbb{Z})\)</span> to the short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html ./knowl/exe-38.html">
+\begin{equation*}
+0 \longrightarrow \mathbb{Z} \longrightarrow \mathbb{Q} \longrightarrow \mathbb{Q} / \mathbb{Z} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">This time, <a href="" class="xref" data-knowl="./knowl/thm-3.14.html" title="Theorem 3.25: \Hom is Left Exact">Theorem 3.25</a> says that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html ./knowl/exe-38.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q} / \mathbb{Z}, \mathbb{Z}) \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z}) \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Z})
+\end{equation*}
+</div>
+<div class="para">is exact. We claim that the last map is not surjective. First, we claim that <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z})=0\text{.}\)</span> Indeed, if <span class="process-math">\(f: \mathbb{Q} \longrightarrow \mathbb{Z}\)</span> is a homomorphism of abelian groups, then for all <span class="process-math">\(n \geqslant 1\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html ./knowl/exe-38.html">
+\begin{equation*}
+f(1)=n f\left(\frac{1}{n}\right)
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(f(1)\)</span> is an integer that is divisible by every integer, which is impossible unless <span class="process-math">\(f(1)=0\text{.}\)</span> We conclude that <span class="process-math">\(f=0\text{,}\)</span> and thus <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z}) \cong 0\text{.}\)</span> So our exact sequence above is actually</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html ./knowl/exe-38.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q} / \mathbb{Z}, \mathbb{Z}) \longrightarrow 0 \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Z})
+\end{equation*}
+</div>
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/exe-38.html" title="Exercise 3.4">Exercise 3.4</a>, <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Z}) \cong \mathbb{Z} \neq 0\text{,}\)</span> so the last map in our sequence can't possibly be surjective, so our sequence is not a short exact sequence.</div>
+</div> <div class="para logical" id="p-546">
+<div class="para">The other fun consequence is that <span class="process-math">\(\operatorname{since} \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z})=0\)</span> and we have an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q} / \mathbb{Z}, \mathbb{Z}) \longrightarrow \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q}, \mathbb{Z})=0
+\end{equation*}
+</div>
+<div class="para">we can now conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Q} / \mathbb{Z}, \mathbb{Z})=0
+\end{equation*}
+</div>
+</div></article><div class="para" id="p-547">The last observation is a common trick: once we know we have an exact sequence involving certain modules we do not know, we can sometimes calculate them exactly by studying the other modules and maps in the exact sequence.</div>
+<div class="para" id="p-548">We can use the left exactness of Hom to compute some modules of interest:</div>
+<article class="example example-like" id="exe-3.17"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.28</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-549">
+<div class="para">Let <span class="process-math">\(R\)</span> be a commutative ring and <span class="process-math">\(M\)</span> be a finitely presented <span class="process-math">\(R\)</span>-module. This means that <span class="process-math">\(M\)</span> has a presentation with finitely many generators and relations, which translates into an exact sequence of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R^{m} \stackrel{f}{\longrightarrow} R^{n} \longrightarrow M \longrightarrow 0
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-550">
+<div class="para">Since <span class="process-math">\(R^{m}\)</span> and <span class="process-math">\(R^{n}\)</span> are free modules, we can think of the map <span class="process-math">\(f\)</span> as multiplication by a matrix <span class="process-math">\(A\)</span> with <span class="process-math">\(n\)</span> rows and <span class="process-math">\(m\)</span> columns, after we fix a basis for <span class="process-math">\(R^{n}\)</span> and <span class="process-math">\(R^{m}\text{.}\)</span> Applying <span class="process-math">\(\operatorname{Hom}_{R}(-, R)\)</span> to the exact sequence above, we get an exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exe-38.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(M, R) \longrightarrow \operatorname{Hom}_{R}\left(R^{n}, R\right) \stackrel{f^{*}}{\longrightarrow} \operatorname{Hom}\left(R^{m}, R\right)
+\end{equation*}
+</div>
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/exe-38.html" title="Exercise 3.4">Exercise 3.4</a>, <span class="process-math">\(\operatorname{Hom}_{R}\left(R^{n}, R\right) \cong R^{n}\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}\left(R^{m}, R\right) \cong R^{m}\text{.}\)</span> Moreover, we claim that <span class="process-math">\(f^{*}\)</span> is multiplication by the transpose of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-551">
+<div class="para">First, note that given a basis <span class="process-math">\(\left\{e_{1}, \ldots, e_{n}\right\}\)</span> for <span class="process-math">\(R^{n}\text{,}\)</span> we get a dual basis <span class="process-math">\(\left\{e_{1}^{*}, \ldots, e_{n}^{*}\right\}\)</span> for <span class="process-math">\(\operatorname{Hom}_{R}\left(R^{n}, R\right)\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e_{i}^{*}\left(e_{j}\right)= \begin{cases}1 &amp; \text { if } i=j \\ 0 &amp; \text { otherwise }\end{cases}
+\end{equation*}
+</div>
+</div> <div class="para" id="p-552">Similarly, we have a dual basis <span class="process-math">\(\left\{e_{1}^{*}, \ldots, e_{m}^{*}\right\}\)</span> for <span class="process-math">\(\operatorname{Hom}_{R}\left(R^{m}, R\right) \cong R^{m}\text{;}\)</span> we might as well assume that we picked the canonical basis in both cases, so that we can use similar notation on both.</div> <div class="para logical" id="p-553">
+<div class="para">Now the map <span class="process-math">\(f^{*}\)</span> is also given by multiplication by a matrix, now having <span class="process-math">\(m\)</span> rows and <span class="process-math">\(n\)</span> columns. To calculate its <span class="process-math">\(j\th\)</span> column, we need to calculate <span class="process-math">\(f^{*}\left(e_{j}^{*}\right)\text{,}\)</span> which is given by precomposition with <span class="process-math">\(f\text{,}\)</span> so <span class="process-math">\(f^{*}\left(e_{j}^{*}\right)=e_{j}^{*} A\text{;}\)</span> this reads off the <span class="process-math">\(j\)</span> th row of <span class="process-math">\(A\text{.}\)</span> Thus <span class="process-math">\(f^{*}\)</span> is indeed multiplication by <span class="process-math">\(A^{T}\text{,}\)</span> and we have an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(M, R) \longrightarrow R^{n} \stackrel{A^{T}}{\longrightarrow} R^{m}
+\end{equation*}
+</div>
+</div> <div class="para" id="p-554">In particular, we have shown that <span class="process-math">\(\operatorname{Hom}_{R}(M, R)\)</span> is the kernel of multiplication by <span class="process-math">\(A^{T}\text{.}\)</span>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-rmod.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-tensor.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

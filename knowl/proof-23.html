@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para">Proof. Given an <span class="process-math">\(R\)</span>-algebra <span class="process-math">\(S\)</span> such that every element of <span class="process-math">\(W\)</span> is a unit, where the algebra structure is induced by the ring homomorphism <span class="process-math">\(f: R \rightarrow S\text{,}\)</span> consider the map</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; W^{-1} R \longrightarrow S \\
+&amp; \quad \frac{r}{w} \longmapsto f(w)^{-1} f(r) .
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para">First, note that our assumption that every element of <span class="process-math">\(W\)</span> is invertible in <span class="process-math">\(S\)</span> means that <span class="process-math">\(f(w)\)</span> is invertible in <span class="process-math">\(S\text{,}\)</span> and thus <span class="process-math">\(f(w)^{-1} f(r)\)</span> makes sense. Moreover, we claim that <span class="process-math">\(\alpha\)</span> is a ring homomorphism:</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\alpha(1)=f(1)^{-1} f(1)=1
+\end{equation*}
+</div></div> <div class="para">and moreover</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\alpha\left(\frac{a}{u} \frac{b}{v}\right) \alpha &amp; \left(\frac{a b}{u v}\right) \\
+&amp; =f(u v)^{-1} f(a b) \\
+&amp; =\left(f(u)^{-1} f(a)\right)\left(f(v)^{-1} f(b)\right) \\
+&amp; =\alpha\left(\frac{a}{u}\right)\left(\frac{b}{v}\right)
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para">and</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\alpha\left(\frac{a}{u}+\frac{b}{v}\right) &amp; \alpha\left(\frac{a v+b u}{u v}\right) \\
+&amp; =f(u v)^{-1} f(a v+b u) \\
+&amp; =\left(f(u)^{-1} f(v)^{-1}\right)(f(a) f(v)+f(b) f(u)) \\
+&amp; =\left(f(u)^{-1} f(a)+\left(f(v)^{-1} f(b)\right.\right. \\
+&amp; =\alpha\left(\frac{a}{u}\right)+\left(\frac{b}{v}\right)
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para">Our definition of <span class="process-math">\(\alpha\)</span> gives us</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\alpha\left(\frac{r}{1}\right)=f(1)^{-1} f(r)=f(r)
+\end{equation*}
+</div></div> <div class="para">as desired. Moreover, if <span class="process-math">\(\beta: W^{-1} R \rightarrow S\)</span> is any ring homomorphism such that</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\beta\left(\frac{r}{1}\right)=f(1)^{-1} f(r)=f(r)
+\end{equation*}
+</div></div> <div class="para">then</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\beta\left(\frac{r}{s}\right)=\beta\left(\frac{s}{1}\right)^{-1} \beta\left(\frac{r}{1}\right)=f(s)^{-1} f(r)=\alpha\left(\frac{s}{1}\right)^{-1} \alpha\left(\frac{r}{1}\right)=\alpha\left(\frac{r}{s}\right)
+\end{equation*}
+</div></div> <div class="para">This proves our uniqueness claim.</div></article><span class="incontext"><a href="sec-localization.html#proof-23" class="internal">in-context</a></span>
+</body>
+</html>

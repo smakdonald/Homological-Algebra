@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para">Proof. Since additive functors send complexes to complexes, <span class="process-math">\((1 \otimes p)(1 \otimes i)=0\text{.}\)</span> We have two more things to show:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-098.jpg" class="contained"></div> <div class="para">we can find <span class="process-math">\(b_{1}, \ldots, b_{n} \in B\)</span> such that <span class="process-math">\(p\left(b_{i}\right)=c_{i}\text{.}\)</span> Therefore,</div> <div class="para"><span class="process-math">\((1 \otimes p)\left(m_{1} \otimes b_{1}+\cdots+m_{n} \otimes b_{n}\right)=m_{1} \otimes p\left(b_{1}\right)+\cdots+m_{n} \otimes p\left(b_{n}\right)=m_{1} \otimes c_{1}+\cdots+m_{n} \otimes c_{n}\text{.}\)</span></div> <div class="para">
+<span class="process-math">\(\operatorname{ker}(1 \otimes p)=\operatorname{im}(1 \otimes i)\)</span> : Let <span class="process-math">\(I=\operatorname{im}(1 \otimes i)\text{.}\)</span> We have already shown that <span class="process-math">\(I \subseteq \operatorname{ker}(1 \otimes p)\text{,}\)</span> so <span class="process-math">\(\overline{1 \otimes p \text { induces a map } q}:\left(M \otimes_{R} B\right) / I \longrightarrow M \otimes_{R} C\text{.}\)</span> Let <span class="process-math">\(\pi: M \otimes_{R} B \longrightarrow\left(M \otimes_{R} B\right) / I\)</span> be the canonical projection. By definition, <span class="process-math">\(q \pi=1 \otimes p\text{.}\)</span>
+</div> <div class="para">Consider the map</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+M \times C \stackrel{f}{\longrightarrow}\left(M \otimes_{R} B\right) / I \\
+(m, c) \longmapsto m \otimes b
+\end{gathered}
+\end{equation*}
+</div></div> <div class="para">where <span class="process-math">\(b\)</span> is such that <span class="process-math">\(p(b)=c\text{.}\)</span> First, we should check this map <span class="process-math">\(f\)</span> is well-defined. To see that, suppose that <span class="process-math">\(b^{\prime} \in B\)</span> is another element with <span class="process-math">\(p\left(b^{\prime}\right)=c\text{,}\)</span> so that <span class="process-math">\(p\left(b-b^{\prime}\right)=0\text{.}\)</span> Then <span class="process-math">\(b-b^{\prime} \in \operatorname{ker} p=\operatorname{im} i\text{,}\)</span> so <span class="process-math">\(m \otimes\left(b-b^{\prime}\right) \in \operatorname{im}(1 \otimes i) \subseteq I\text{.}\)</span> Therefore, <span class="process-math">\(m \otimes b=m \otimes b^{\prime}\)</span> modulo <span class="process-math">\(I\text{,}\)</span> and <span class="process-math">\(f\)</span> is well-defined.</div> <div class="para">Moreover, one can check (exercise!) that <span class="process-math">\(f\)</span> is <span class="process-math">\(R\)</span>-biadditive, so it induces a homomorphism of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(M \otimes_{R} C \longrightarrow\left(M \otimes_{R} B\right) / I\text{,}\)</span> which we will denote by <span class="process-math">\(\hat{f}\text{.}\)</span> We will show that <span class="process-math">\(\hat{f}\)</span> is a left inverse of <span class="process-math">\(q\text{,}\)</span> so <span class="process-math">\(q\)</span> is injective. And indeed, given <span class="process-math">\(m_{i} \in M\)</span> and <span class="process-math">\(b_{i} \in B\text{,}\)</span> we have</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\hat{f} q\left(\sum_{i=1}^{n} m_{i} \otimes b_{i}\right)=f\left(\sum_{i=1}^{n} m_{i} \otimes p\left(b_{i}\right)\right)=\sum_{i=1}^{n} f\left(m_{i} \otimes p\left(b_{i}\right)\right)=\sum_{i=1}^{n} m_{i} \otimes b_{i}
+\end{equation*}
+</div></div> <div class="para">We conclude that <span class="process-math">\(q\)</span> is injective, and thus</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\operatorname{ker}(1 \otimes p)=\operatorname{ker}(q \pi)=\operatorname{ker} \pi=I=\operatorname{im}(1 \otimes i)
+\end{equation*}
+</div></div></article><span class="incontext"><a href="sec-tensor.html#proof-22" class="internal">in-context</a></span>
+</body>
+</html>

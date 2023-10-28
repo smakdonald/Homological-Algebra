@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.28</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(R\)</span> be a commutative ring and <span class="process-math">\(M\)</span> be a finitely presented <span class="process-math">\(R\)</span>-module. This means that <span class="process-math">\(M\)</span> has a presentation with finitely many generators and relations, which translates into an exact sequence of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R^{m} \stackrel{f}{\longrightarrow} R^{n} \longrightarrow M \longrightarrow 0
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Since <span class="process-math">\(R^{m}\)</span> and <span class="process-math">\(R^{n}\)</span> are free modules, we can think of the map <span class="process-math">\(f\)</span> as multiplication by a matrix <span class="process-math">\(A\)</span> with <span class="process-math">\(n\)</span> rows and <span class="process-math">\(m\)</span> columns, after we fix a basis for <span class="process-math">\(R^{n}\)</span> and <span class="process-math">\(R^{m}\text{.}\)</span> Applying <span class="process-math">\(\operatorname{Hom}_{R}(-, R)\)</span> to the exact sequence above, we get an exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exe-38.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(M, R) \longrightarrow \operatorname{Hom}_{R}\left(R^{n}, R\right) \stackrel{f^{*}}{\longrightarrow} \operatorname{Hom}\left(R^{m}, R\right)
+\end{equation*}
+</div>
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/exe-38.html" title="Exercise 3.4">Exercise 3.4</a>, <span class="process-math">\(\operatorname{Hom}_{R}\left(R^{n}, R\right) \cong R^{n}\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}\left(R^{m}, R\right) \cong R^{m}\text{.}\)</span> Moreover, we claim that <span class="process-math">\(f^{*}\)</span> is multiplication by the transpose of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">First, note that given a basis <span class="process-math">\(\left\{e_{1}, \ldots, e_{n}\right\}\)</span> for <span class="process-math">\(R^{n}\text{,}\)</span> we get a dual basis <span class="process-math">\(\left\{e_{1}^{*}, \ldots, e_{n}^{*}\right\}\)</span> for <span class="process-math">\(\operatorname{Hom}_{R}\left(R^{n}, R\right)\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e_{i}^{*}\left(e_{j}\right)= \begin{cases}1 &amp; \text { if } i=j \\ 0 &amp; \text { otherwise }\end{cases}
+\end{equation*}
+</div>
+</div> <div class="para">Similarly, we have a dual basis <span class="process-math">\(\left\{e_{1}^{*}, \ldots, e_{m}^{*}\right\}\)</span> for <span class="process-math">\(\operatorname{Hom}_{R}\left(R^{m}, R\right) \cong R^{m}\text{;}\)</span> we might as well assume that we picked the canonical basis in both cases, so that we can use similar notation on both.</div> <div class="para logical">
+<div class="para">Now the map <span class="process-math">\(f^{*}\)</span> is also given by multiplication by a matrix, now having <span class="process-math">\(m\)</span> rows and <span class="process-math">\(n\)</span> columns. To calculate its <span class="process-math">\(j\th\)</span> column, we need to calculate <span class="process-math">\(f^{*}\left(e_{j}^{*}\right)\text{,}\)</span> which is given by precomposition with <span class="process-math">\(f\text{,}\)</span> so <span class="process-math">\(f^{*}\left(e_{j}^{*}\right)=e_{j}^{*} A\text{;}\)</span> this reads off the <span class="process-math">\(j\)</span> th row of <span class="process-math">\(A\text{.}\)</span> Thus <span class="process-math">\(f^{*}\)</span> is indeed multiplication by <span class="process-math">\(A^{T}\text{,}\)</span> and we have an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(M, R) \longrightarrow R^{n} \stackrel{A^{T}}{\longrightarrow} R^{m}
+\end{equation*}
+</div>
+</div> <div class="para">In particular, we have shown that <span class="process-math">\(\operatorname{Hom}_{R}(M, R)\)</span> is the kernel of multiplication by <span class="process-math">\(A^{T}\text{.}\)</span>
+</div></article><span class="incontext"><a href="sec-hom.html#exe-3.17" class="internal">in-context</a></span>
+</body>
+</html>
