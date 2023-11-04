@@ -177,7 +177,7 @@ window.MathJax = {
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-injective.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-proj-inj.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-injective.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-proj-inj.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="commutative-local-rings.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
 \newcommand{\Ass}{\operatorname{Ass}}
@@ -529,9 +529,29 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div></li>
-<li class="active"><div class="toc-item"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li><div class="toc-item"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer's Criterion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li><div class="toc-item"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -541,9 +561,147 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-flat"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Flat Modules</span>
 </h2>
-<div class="para" id="p-949"></div></section></div>
+<section class="subsection" id="subsec-flat"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Definition</span>
+</h3>
+<div class="para" id="p-1076">Finally, we turn to the modules that make the tensor product exact.</div>
+<article class="definition definition-like" id="def-4.34"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.33</span><span class="period">.</span><span class="space"> </span><span class="title">Flat Module.</span>
+</h4> <div class="para" id="p-1077">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is said to be <em class="emphasis">flat</em> if <span class="process-math">\(M \otimes_{R}-\)</span> is an exact functor.</div></article><article class="remark remark-like" id="remark-41"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.34</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-1078">
+<div class="para">Remark 4.35. By <a href="" class="xref" data-knowl="./knowl/thm-3.47.html" title="Theorem 3.63">Theorem 3.63</a>, <span class="process-math">\(M \otimes_{R}\)</span> - is right exact. Therefore, <span class="process-math">\(M\)</span> is flat if and only if for every injective <span class="process-math">\(R\)</span>-module map <span class="process-math">\(i: A \longrightarrow B\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.47.html">
+\begin{equation*}
+M \otimes_{R} A \stackrel{1 \otimes i}{\longrightarrow} M \otimes_{R} B \quad \text { is injective. }
+\end{equation*}
+</div>
+</div></article><article class="lemma theorem-like" id="lem-4.36"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.35</span><span class="period">.</span><span class="space"> </span><span class="title">Direct Summands of Flat Modules are Flat.</span>
+</h4>
+<div class="para" id="p-1079">Given a family of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(\left\{M_{i}\right\}_{i \in I}\text{,}\)</span> the direct sum <span class="process-math">\(\oplus_{i} M_{i}\)</span> is flat if and only if every <span class="process-math">\(M_{i}\)</span> is flat. In particular, direct summands of flat modules are flat.</div></article><article class="hiddenproof" id="proof-47"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-47"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-47"><article class="hiddenproof"><div class="para logical" id="p-1080">
+<div class="para">Given a family of <span class="process-math">\(R\)</span>-module homomorphisms <span class="process-math">\(f_{i}: M_{i} \longrightarrow N_{i}\text{,}\)</span> there is an <span class="process-math">\(R\)</span>-module homomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r}
+\bigoplus_{i \in I} M_{i} \stackrel{\left(f_{i}\right)_{i \in I}}{\longmapsto} \bigoplus_{i \in I} N_{i} \\
+\quad\left(m_{i}\right) \longmapsto
+\end{array}
+\end{equation*}
+</div>
+<div class="para">which is injective if and only if every <span class="process-math">\(f_{i}\)</span> is injective.</div>
+</div> <div class="para logical" id="p-1081">
+<div class="para">Let <span class="process-math">\(f: A \longrightarrow B\)</span> be an injective <span class="process-math">\(R\)</span>-module homomorphism. There is a commutative diagram</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.41.html">
+\begin{equation*}
+\begin{aligned}
+&amp; \left(\bigoplus_{i \in I} M_{i}\right) \otimes_{R} A \stackrel{\cong}{\longrightarrow} \bigoplus_{i \in I} M_{i} \otimes_{R} A \\
+&amp; \varphi:=1 \otimes f \downarrow \\
+&amp; \left(\bigoplus_{i \in I} M_{i}\right) \otimes_{R} B \stackrel{\downarrow}{\cong} \cong \bigoplus_{i \in I} M_{i} \otimes_{R} B
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">where the horizontal maps are the isomorphisms from <a href="" class="xref" data-knowl="./knowl/thm-3.41.html" title="Theorem 3.55">Theorem 3.55</a>. In particular, <span class="process-math">\(\varphi\)</span> is injective if and only if <span class="process-math">\(\psi\)</span> is injective. Moreover, <span class="process-math">\(\psi\)</span> is injective if and only if each component is injective, meaning <span class="process-math">\(1 \otimes f: M_{i} \otimes A \longrightarrow M_{i} \otimes B\)</span> is injective for all <span class="process-math">\(i\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-1082">On the one hand, <span class="process-math">\(\bigoplus_{i \in I} M_{i}\)</span> is flat if and only if for every injective map <span class="process-math">\(f\text{,}\)</span> the corresponding <span class="process-math">\(\phi\)</span> is injective. On the other hand, all the <span class="process-math">\(M_{i}\)</span> are flat if and only if for every injective map <span class="process-math">\(f, 1 \otimes f: M_{i} \otimes A \longrightarrow M_{i} \otimes B\)</span> is injective for all <span class="process-math">\(i\text{,}\)</span> or equivalently, as explained above, if <span class="process-math">\(\psi\)</span> is injective for any given injective map <span class="process-math">\(f\text{.}\)</span> This translates into the equivalence we want to show.</div></article></div>
+<div class="para" id="p-1083">All projectives are flat.</div>
+<article class="theorem theorem-like" id="thm-4.37"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.36</span><span class="period">.</span><span class="space"> </span><span class="title">Every Projective Module is Flat.</span>
+</h4>
+<div class="para" id="p-1084">Let <span class="process-math">\(R\)</span> be any ring. Every projective <span class="process-math">\(R\)</span>-module is flat.</div></article><article class="hiddenproof" id="proof-48"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-48"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-48"><article class="hiddenproof"><div class="para" id="p-1085">First, recall that <span class="process-math">\(R \otimes_{R}-\)</span> is naturally isomorphic to the identity functor, by Lemma 3.40, and thus exact (see Remark 3.11). This shows that <span class="process-math">\(R\)</span> is flat, and thus any free module, being a direct sum of copies of <span class="process-math">\(R\text{,}\)</span> must also be flat by <a href="" class="xref" data-knowl="./knowl/lem-4.36.html" title="Lemma 4.35: Direct Summands of Flat Modules are Flat">Lemma 4.35</a>. Finally, every projective module is a direct summand of a free module, by <a href="" class="xref" data-knowl="./knowl/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a>. Direct summands of flat modules are flat, by <a href="" class="xref" data-knowl="./knowl/lem-4.36.html" title="Lemma 4.35: Direct Summands of Flat Modules are Flat">Lemma 4.35</a>, so every projective module is flat.</div></article></div>
+<div class="para" id="p-1086">We can test whether a given module if flat by looking at the finitely generated submodules.</div>
+<article class="theorem theorem-like" id="thm-4.38"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.37</span><span class="period">.</span><span class="space"> </span><span class="title">Flatness and Finitely Generated Submodules.</span>
+</h4>
+<div class="para" id="p-1087">If every finitely generated submodule of <span class="process-math">\(M\)</span> is flat, then <span class="process-math">\(M\)</span> is flat.</div></article><article class="hiddenproof" id="proof-49"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-49"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-49"><article class="hiddenproof"><div class="para logical" id="p-1088">
+<div class="para">Let <span class="process-math">\(i: A \longrightarrow B\)</span> be an injective map of <span class="process-math">\(R\)</span>-modules. We want to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M \otimes_{R} A \stackrel{1 \otimes i}{\longrightarrow} M \otimes_{R} B
+\end{equation*}
+</div>
+<div class="para">is injective. Suppose that <span class="process-math">\(u \in \operatorname{ker}\left(1_{M} \otimes i\right)\text{.}\)</span> We are going to construct a finitely generated submodule <span class="process-math">\(N \subseteq M\text{,}\)</span> with <span class="process-math">\(j: N \rightarrow M\)</span> the inclusion, and an element <span class="process-math">\(v \in N \otimes_{R} A\)</span> such that <span class="process-math">\(v \in \operatorname{ker}\left(1_{N} \otimes i\right)\)</span> and <span class="process-math">\(u=\left(j \otimes 1_{A}\right)(v)\text{.}\)</span> Once we do that, our submodule <span class="process-math">\(N\)</span> is finitely generated, and thus flat by assumption, so <span class="process-math">\(1_{N} \otimes i\)</span> is injective; therefore, <span class="process-math">\(v=0\)</span> and thus we must have <span class="process-math">\(u=0\text{.}\)</span> Therefore, <span class="process-math">\(1_{M} \otimes i\)</span> is injective, and we conclude that <span class="process-math">\(M\)</span> is flat.</div>
+</div> <div class="para logical" id="p-1089">
+<div class="para">Let’s say that <span class="process-math">\(u=m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n}\text{.}\)</span> In <a href="" class="xref" data-knowl="./knowl/thm-3.22.html" title="Theorem 3.33">Theorem 3.33</a>, we constructed the tensor product <span class="process-math">\(M \otimes_{R} B\)</span> as a quotient of the free module <span class="process-math">\(F\)</span> on <span class="process-math">\(M \times B\)</span> by the submodule <span class="process-math">\(S\)</span> with all the necessary relations we need to impose. This gives us a short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.22.html">
+\begin{equation*}
+0 \longrightarrow S \longrightarrow F \stackrel{\pi}{\longrightarrow} M \otimes_{R} B \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">The fact that <span class="process-math">\(m_{1} \otimes i\left(a_{1}\right)+\cdots+m_{n} \otimes i\left(a_{n}\right)=0\)</span> means we can rewrite this element as <span class="process-math">\(\pi(s)\)</span> for some <span class="process-math">\(s \in S\text{.}\)</span> This element <span class="process-math">\(s\)</span> is a linear combination of elements of finitely many <span class="process-math">\((m, b) \in M \times B\text{.}\)</span> Let <span class="process-math">\(c_{1}, \ldots, c_{t}\)</span> be all the <span class="process-math">\(M\)</span>-coordinates of those elements.</div>
+</div> <div class="para logical" id="p-1090">
+<div class="para">Now we take <span class="process-math">\(N\)</span> to be the finitely generated submodule of <span class="process-math">\(M\)</span> generated by <span class="process-math">\(m_{1}, \ldots, m_{n}\)</span> and <span class="process-math">\(c_{1}, \ldots, c_{t}\text{,}\)</span> and <span class="process-math">\(v=m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n} \in N \otimes A\text{.}\)</span> Now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(j \otimes 1_{A}\right)(v)=\left(j \otimes 1_{A}\right)\left(m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n}\right)=m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n} \in M \otimes_{R} A,
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(1_{N} \otimes i\right)(v)=\left(1_{N} \otimes i\right)\left(m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n}\right)=m_{1} \otimes i\left(a_{1}\right)+\cdots+m_{n} \otimes i\left(a_{n}\right)=0
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></div>
+<div class="para" id="p-1091">The reason we needed to add in these extra elements <span class="process-math">\(n_{i}\)</span> is that a priori <span class="process-math">\(N \otimes B\)</span> is not necessarily a submodule of <span class="process-math">\(M \otimes B\text{,}\)</span> so we do not necessarily have <span class="process-math">\(m_{1} \otimes i\left(a_{1}\right)+\cdots+m_{n} \otimes i\left(a_{n}\right)=0\)</span> in <span class="process-math">\(\left(R m_{1}+\cdots+R m_{n}\right) \otimes B\)</span> without adding in all relations that make it true.</div></section><section class="subsection" id="subsec-torsion"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Torsion Submodules</span>
+</h3>
+<article class="definition definition-like" id="def-4.39"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.38</span><span class="period">.</span><span class="space"> </span><span class="title">Torsion Submodule.</span>
+</h4> <div class="para logical" id="p-1092">
+<div class="para">Let <span class="process-math">\(R\)</span> be a domain and <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module. The <em class="emphasis">torsion submodule</em> of <span class="process-math">\(M\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(M):=\{m \in M \mid r m=0 \text { for some regular element } r \in R\}
+\end{equation*}
+</div>
+<div class="para">The elements of <span class="process-math">\(T(M)\)</span> are called <em class="emphasis">torsion elements</em>, and we say that <span class="process-math">\(M\)</span> is <em class="emphasis">torsion</em> if <span class="process-math">\(T(M)=M\text{.}\)</span> Finally, <span class="process-math">\(M\)</span> is <em class="emphasis">torsion free</em> if <span class="process-math">\(T(M)=0\text{.}\)</span>
+</div>
+</div></article><article class="lemma theorem-like" id="lem-4.40"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.39</span><span class="period">.</span><span class="space"> </span><span class="title">Flat Implies Torision Free in Domains.</span>
+</h4>
+<div class="para" id="p-1093">If <span class="process-math">\(R\)</span> is a domain and <span class="process-math">\(M\)</span> is a flat <span class="process-math">\(R\)</span>-module, then <span class="process-math">\(M\)</span> is torsion free.</div></article><article class="hiddenproof" id="proof-50"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-50"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-50"><article class="hiddenproof"><div class="para logical" id="p-1094">
+<div class="para">Let <span class="process-math">\(Q=\operatorname{frac}(R)\)</span> be the fraction field of <span class="process-math">\(R\text{,}\)</span> which is a torsion free <span class="process-math">\(R\)</span>-module. Now <span class="process-math">\(M \otimes_{R} Q\)</span> is a <span class="process-math">\(Q\)</span>-vector space, so isomorphic to a direct sum of copies of <span class="process-math">\(Q\text{.}\)</span> In particular, <span class="process-math">\(M \otimes_{R} Q\)</span> is torsion free as an <span class="process-math">\(R\)</span>-module. Since <span class="process-math">\(M\)</span> is flat, the inclusion <span class="process-math">\(R \subseteq Q\)</span> induces an injective <span class="process-math">\(R\)</span>-module map</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.40.html">
+\begin{equation*}
+0 \longrightarrow M \otimes_{R} R \longrightarrow M \otimes_{R} Q
+\end{equation*}
+</div>
+<div class="para">and since <span class="process-math">\(M \cong M \otimes_{R} R\text{,}\)</span> by <a href="" class="xref" data-knowl="./knowl/lem-3.40.html" title="Lemma 3.54">Lemma 3.54</a>, we conclude that <span class="process-math">\(M\)</span> is isomorphic to a submodule of <span class="process-math">\(M \otimes_{R} Q\text{.}\)</span> Submodules of torsion free modules are also torsion free, so <span class="process-math">\(M\)</span> is torsion free.</div>
+</div></article></div>
+<div class="para" id="p-1095">In general, the converse does not hold.</div>
+<article class="example example-like" id="example-47"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.40</span><span class="period">.</span><span class="space"> </span><span class="title">Torsion Free but not Flat Module.</span>
+</h4> <div class="para logical" id="p-1096">
+<div class="para">Example 4.41. Let <span class="process-math">\(k\)</span> be a field and <span class="process-math">\(R=k[x, y]\text{.}\)</span> Consider the ideal <span class="process-math">\(\mathfrak{m}=(x, y)\text{.}\)</span> This is a submodule of the torsion free module <span class="process-math">\(R\text{,}\)</span> and thus torsion free. However, it is not flat. For example, when we apply <span class="process-math">\(R / \mathfrak{m} \otimes_{R}-\)</span> to the inclusion <span class="process-math">\(\mathfrak{m} \subseteq R\)</span> we obtain a map of <span class="process-math">\(R / \mathfrak{m}\)</span>-vector spaces</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathfrak{m} / \mathfrak{m}^{2} \longrightarrow R / \mathfrak{m}
+\end{equation*}
+</div>
+</div> <div class="para" id="p-1097">This map cannot possibly be injective: <span class="process-math">\(\mathfrak{m} / \mathfrak{m}^{2}\)</span> is a <span class="process-math">\(2\)</span>-dimensional <span class="process-math">\(R / \mathfrak{m}\)</span>-vector space, while <span class="process-math">\(R / \mathfrak{m}\)</span> is <span class="process-math">\(1\)</span>-dimensional.</div></article><div class="para" id="p-1098">The converse does hold over a PID.</div>
+<article class="lemma theorem-like" id="lem-4.42"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.41</span><span class="period">.</span><span class="space"> </span><span class="title">Flat iff Torsion Free in PID.</span>
+</h4>
+<div class="para" id="p-1099">If <span class="process-math">\(R\)</span> is a principal ideal domain, an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is flat if and only if it is torsion free.</div></article><article class="hiddenproof" id="proof-51"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-51"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-51"><article class="hiddenproof"><div class="para" id="p-1100">
+<span class="process-math">\((\Rightarrow)\)</span> This is just a special case of <a href="" class="xref" data-knowl="./knowl/lem-4.40.html" title="Lemma 4.39: Flat Implies Torision Free in Domains">Lemma 4.39</a>.</div> <div class="para" id="p-1101">
+<span class="process-math">\((\Leftarrow)\)</span> Suppose <span class="process-math">\(M\)</span> is a torsion free finitely generated <span class="process-math">\(R\)</span>-module. The structure theorem for PIDs says that <span class="process-math">\(M\)</span> must be isomorphic to a direct sum of copies of cyclic modules. The cyclic module <span class="process-math">\(R / I\)</span> has torsion (all the elements are killed by <span class="process-math">\(I\)</span> ) unless <span class="process-math">\(I=0\text{.}\)</span> Therefore, <span class="process-math">\(M\)</span> must be isomorphic to a direct sum of copies of <span class="process-math">\(R\text{,}\)</span> and thus free. By <a href="" class="xref" data-knowl="./knowl/thm-4.3.html" title="Theorem 4.3: Free Modules are Projective">Theorem 4.3</a>, <span class="process-math">\(M\)</span> is projective, and by <a href="" class="xref" data-knowl="./knowl/thm-4.37.html" title="Theorem 4.36: Every Projective Module is Flat">Theorem 4.36</a> projectives are flat, so <span class="process-math">\(M\)</span> is flat.</div> <div class="para" id="p-1102">Now let <span class="process-math">\(M\)</span> be any torsion free <span class="process-math">\(R\)</span>-module. All of the finitely generated submodules of <span class="process-math">\(R\)</span> are also torsion free, and thus flat by what we have shown so far. By <a href="" class="xref" data-knowl="./knowl/thm-4.38.html" title="Theorem 4.37: Flatness and Finitely Generated Submodules">Theorem 4.37</a>, <span class="process-math">\(M\)</span> must be flat.</div></article></div>
+<div class="para" id="p-1103">Not all flat modules are projective.</div>
+<article class="example example-like" id="example-48"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.42</span><span class="period">.</span><span class="space"> </span><span class="title">Flat but not Projective Module.</span>
+</h4> <div class="para" id="p-1104">Example 4.43. The <span class="process-math">\(\mathbb{Z}\)</span>-module <span class="process-math">\(\mathbb{Q}\)</span> is torsion free and thus flat, by <a href="" class="xref" data-knowl="./knowl/lem-4.42.html" title="Lemma 4.41: Flat iff Torsion Free in PID">Lemma 4.41</a>. However, <span class="process-math">\(\mathbb{Q}\)</span> is not a projective <span class="process-math">\(\mathbb{Z}\)</span>-module. Suppose by contradiction, that <span class="process-math">\(\mathbb{Q}\)</span> is a projective <span class="process-math">\(\mathbb{Z}\)</span>-module. By <a href="" class="xref" data-knowl="./knowl/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a>, <span class="process-math">\(\mathbb{Q}\)</span> must be a direct summand of a free module, say <span class="process-math">\(F=\bigoplus_{I} \mathbb{Z}\text{.}\)</span> Consider the inclusion <span class="process-math">\(\iota: \mathbb{Q} \hookrightarrow F\text{,}\)</span> and pick <span class="process-math">\(i \in I\)</span> such that the image of <span class="process-math">\(\mathbb{Q}\)</span> contains some element with a nonzero entry in the <span class="process-math">\(i\)</span> component. Now consider the projection <span class="process-math">\(\pi: F \longrightarrow \mathbb{Z}\)</span> onto the <span class="process-math">\(i\)</span> th factor. By assumption, the composition <span class="process-math">\(\pi i: \mathbb{Q} \longrightarrow \mathbb{Z}\)</span> is nonzero. However, there are no nontrivial abelian group homomorphisms <span class="process-math">\(\mathbb{Q} \longrightarrow \mathbb{Z}\text{,}\)</span> contradicting the fact that <span class="process-math">\(\pi i\)</span> is nonzero. We conclude that <span class="process-math">\(\mathbb{Q}\)</span> is not projective.</div></article><div class="para" id="p-1105">However, for finitely generated modules over a commutative noetherian local ring, every flat module is free, and thus flat, projective, and free all coincide. However, to prove that we need a little bit of commutative algebra, which we introduce in the next section.</div>
+<div class="para" id="p-1106">Finally, here is a very important example: localization is flat.</div>
+<article class="theorem theorem-like" id="thm-4.44"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.43</span><span class="period">.</span><span class="space"> </span><span class="title">Flatness of Localization.</span>
+</h4>
+<div class="para" id="p-1107">Let <span class="process-math">\(R\)</span> be a commutative ring, and <span class="process-math">\(W \ni 1\)</span> a multiplicative subset of <span class="process-math">\(R\text{.}\)</span> Then <span class="process-math">\(W^{-1} R\)</span> is flat over <span class="process-math">\(R\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-52"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-52"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-52"><article class="hiddenproof"><div class="para" id="p-1108">By <a href="" class="xref" data-knowl="./knowl/thm-3.57.html" title="Theorem 3.75">Theorem 3.75</a>, tensoring with <span class="process-math">\(W^{-1} R\)</span> is localizing at <span class="process-math">\(W\text{.}\)</span> But localization is exact, so tensoring with <span class="process-math">\(W^{-1} R\)</span> is exact, and thus <span class="process-math">\(W^{-1} R\)</span> is a flat <span class="process-math">\(R\)</span>-module.</div></article></div>
+<div class="para" id="p-1109">So for example, if <span class="process-math">\(R\)</span> is a domain then its fraction field <span class="process-math">\(Q\)</span> is a flat module.</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-injective.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="sec-injective.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="commutative-local-rings.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer">

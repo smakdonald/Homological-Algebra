@@ -1951,7 +1951,124 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.1",
   "title": "Projective Modules",
-  "body": "Projective Modules   "
+  "body": "Projective Modules  Definition, Free Modules are Projective  While Hom and tensor are not exact functors in general, , and can be exact functors for carefully chosen modules . In this chapter, we introduce these three classes of modules (projective, injective, and flat modules) and study their properties. Throughout, we consider general rings and left modules.  Projective Module   Let be a ring. An -module is projective if given any surjective -module homomorphism and any -module homomorphism , there exists an -module homomorphism such that the diagram   commutes.     Remark 4.2. The commutativity of the diagram   says that , where is the induced by . Whenever this happens, we say that is a lifting of , and that lifts, or that factors through .   There are projective modules over any ring, as the next result shows; in fact, free modules are always projective.  Free Modules are Projective   Free modules are projective.    Let be a free -module. Suppose we are given -module homomorphisms and such that is surjective. Fix a basis for . Since is surjective, for each we can choose such that . Consider the function given by . The universal property of free modules says that there exists an -module homomorphism that coincides with for all basis elements. Now so agrees with for all basis elements. Since generates , we conclude that .    Projective modules are precisely those that make the covariant Hom functor exact.    Let be an -module. The functor is exact if and only if is projective.    By  is left exact. The statement is that is projective if and only for any short exact sequence the induced map is surjective. Say we are given a surjective map   The induced map is surjective if and only if for every there exists a lifting of , meaning . By , the existence of such a for all such surjective maps is precisely the condition that is projective.      For any ring is exact. More generally, if is any free -module, then is exact.    By , free modules, and in particular, are projective. By , must be exact for any free -module .    However, not every projective module is free. But before we see such examples, we need to know a bit more about projective modules.   Direct Summands  First, we show that we can rephrase the condition that a module is projective or injective in terms of split exact sequences.  Projective Modules and Splitting   An -module is projective if and only if every short exact sequence splits.     Consider a short exact sequence   If is projective, the identity map on lifts to a map , meaning that   commutes. This says that our map  is a splitting for our short exact sequence, which must then be split, by Lemma 2.19.   Conversely, suppose that every short exact sequence splits, and consider any diagram   Let be a free module that surjects onto - for example, the free module on a set of generators of - and fix a surjection . By assumption, the short exact sequence splits, so by there exists such that . Now since is free, we can define an -module map that such that   commutes, by sending each basis element to any lift of in via . Now set , and note that so is a lift of by .    We have seen that free modules are projective; what other modules are projective?  Direct Summand   An -module is a direct summand of an -module if there exists an -module such that .     Remark 4.8. Saying that is a direct summand of is equivalent to giving a splitting of the inclusion map , meaning that . As we have argued in , such a splitting gives   Essentially repeating the argument we used in , every element in can be written as where and , and because if then .  Note that when we are dealing with graded modules over a graded ring, the kernels and images of graded maps are graded modules, and the equality is a graded direct sum of graded modules.   Projective iff Direct Summand of Free Module   An -module is projective if and only if is a direct summand of a free -module. In particular, a finitely generated -module is projective if and only if is a direct summand of for some .     Let be a projective module, and fix a free module surjecting onto . If is finitely generated, we can take for some . The short exact sequence must split by , so is a direct summand of .   Now suppose is a direct summand of a free module . In particular, we have an inclusion map that splits, so it comes together with a projection map such that . Given any diagram   we can define an -module homomorphism such that , so that the following diagram commutes:   Setting , we do indeed obtain , since      Remark 4.10. While every module is a quotient of a free module , so that we always have a surjection , not every module embeds into a free module; and even if is a submodule of some free module , the inclusion map is not necessarily split. On the other hand, as we showed in that is projective if and only if we can write it as a quotient of a free module , say , and splits, so that in fact embeds into and that map splits.     Let be any ring.   Every direct summand of a projective module is projective.    Every direct sum of projective modules is projective.          Suppose for some projective module . By , there exists a free -module and an -module such that . Then , and by this implies is projective.    Let be a family of projective modules. By , there exist free modules such that each is a direct summand of . Therefore, is a direct summand of , which is also free. By , this implies that is projective.       We are finally ready to give examples showing that projective modules are not necessarily free.  Projective but not Free Module  Example 4.12. The ring can be written as a direct sum of the ideals   Indeed, and , so . By , and are projective -modules. However, and are not free. This can be explained numerically: every finitely generated free -module is of the form , so it has elements for some , while and have and elements respectively.   Finally, to emphasize its importance we record here an easy result that we have used repeatedly at this point, and which will be very important later on.    For every -module , there exists a free module surjecting onto . If is finitely generated, we can take to be finitely generated.    We will often need only a weaker version of this: that every module is a quotient of a projective module.   "
+},
+{
+  "id": "def-4.1",
+  "level": "2",
+  "url": "sec-projective.html#def-4.1",
+  "type": "Definition",
+  "number": "4.1",
+  "title": "Projective Module.",
+  "body": "Projective Module   Let be a ring. An -module is projective if given any surjective -module homomorphism and any -module homomorphism , there exists an -module homomorphism such that the diagram   commutes.   "
+},
+{
+  "id": "rem-4.2",
+  "level": "2",
+  "url": "sec-projective.html#rem-4.2",
+  "type": "Remark",
+  "number": "4.2",
+  "title": "",
+  "body": " Remark 4.2. The commutativity of the diagram   says that , where is the induced by . Whenever this happens, we say that is a lifting of , and that lifts, or that factors through .  "
+},
+{
+  "id": "thm-4.3",
+  "level": "2",
+  "url": "sec-projective.html#thm-4.3",
+  "type": "Theorem",
+  "number": "4.3",
+  "title": "Free Modules are Projective.",
+  "body": "Free Modules are Projective   Free modules are projective.    Let be a free -module. Suppose we are given -module homomorphisms and such that is surjective. Fix a basis for . Since is surjective, for each we can choose such that . Consider the function given by . The universal property of free modules says that there exists an -module homomorphism that coincides with for all basis elements. Now so agrees with for all basis elements. Since generates , we conclude that .   "
+},
+{
+  "id": "thm-4.4",
+  "level": "2",
+  "url": "sec-projective.html#thm-4.4",
+  "type": "Theorem",
+  "number": "4.4",
+  "title": "",
+  "body": "  Let be an -module. The functor is exact if and only if is projective.    By  is left exact. The statement is that is projective if and only for any short exact sequence the induced map is surjective. Say we are given a surjective map   The induced map is surjective if and only if for every there exists a lifting of , meaning . By , the existence of such a for all such surjective maps is precisely the condition that is projective.   "
+},
+{
+  "id": "cor-4.5",
+  "level": "2",
+  "url": "sec-projective.html#cor-4.5",
+  "type": "Corollary",
+  "number": "4.5",
+  "title": "",
+  "body": "  For any ring is exact. More generally, if is any free -module, then is exact.    By , free modules, and in particular, are projective. By , must be exact for any free -module .   "
+},
+{
+  "id": "thm-4.6",
+  "level": "2",
+  "url": "sec-projective.html#thm-4.6",
+  "type": "Theorem",
+  "number": "4.6",
+  "title": "Projective Modules and Splitting.",
+  "body": "Projective Modules and Splitting   An -module is projective if and only if every short exact sequence splits.     Consider a short exact sequence   If is projective, the identity map on lifts to a map , meaning that   commutes. This says that our map  is a splitting for our short exact sequence, which must then be split, by Lemma 2.19.   Conversely, suppose that every short exact sequence splits, and consider any diagram   Let be a free module that surjects onto - for example, the free module on a set of generators of - and fix a surjection . By assumption, the short exact sequence splits, so by there exists such that . Now since is free, we can define an -module map that such that   commutes, by sending each basis element to any lift of in via . Now set , and note that so is a lift of by .   "
+},
+{
+  "id": "def-4.7",
+  "level": "2",
+  "url": "sec-projective.html#def-4.7",
+  "type": "Definition",
+  "number": "4.7",
+  "title": "Direct Summand.",
+  "body": "Direct Summand   An -module is a direct summand of an -module if there exists an -module such that .   "
+},
+{
+  "id": "remark-38",
+  "level": "2",
+  "url": "sec-projective.html#remark-38",
+  "type": "Remark",
+  "number": "4.8",
+  "title": "",
+  "body": " Remark 4.8. Saying that is a direct summand of is equivalent to giving a splitting of the inclusion map , meaning that . As we have argued in , such a splitting gives   Essentially repeating the argument we used in , every element in can be written as where and , and because if then .  Note that when we are dealing with graded modules over a graded ring, the kernels and images of graded maps are graded modules, and the equality is a graded direct sum of graded modules.  "
+},
+{
+  "id": "thm-4.9",
+  "level": "2",
+  "url": "sec-projective.html#thm-4.9",
+  "type": "Theorem",
+  "number": "4.9",
+  "title": "Projective iff Direct Summand of Free Module.",
+  "body": "Projective iff Direct Summand of Free Module   An -module is projective if and only if is a direct summand of a free -module. In particular, a finitely generated -module is projective if and only if is a direct summand of for some .     Let be a projective module, and fix a free module surjecting onto . If is finitely generated, we can take for some . The short exact sequence must split by , so is a direct summand of .   Now suppose is a direct summand of a free module . In particular, we have an inclusion map that splits, so it comes together with a projection map such that . Given any diagram   we can define an -module homomorphism such that , so that the following diagram commutes:   Setting , we do indeed obtain , since    "
+},
+{
+  "id": "remark-39",
+  "level": "2",
+  "url": "sec-projective.html#remark-39",
+  "type": "Remark",
+  "number": "4.10",
+  "title": "",
+  "body": " Remark 4.10. While every module is a quotient of a free module , so that we always have a surjection , not every module embeds into a free module; and even if is a submodule of some free module , the inclusion map is not necessarily split. On the other hand, as we showed in that is projective if and only if we can write it as a quotient of a free module , say , and splits, so that in fact embeds into and that map splits.  "
+},
+{
+  "id": "cor-4.11",
+  "level": "2",
+  "url": "sec-projective.html#cor-4.11",
+  "type": "Corollary",
+  "number": "4.11",
+  "title": "",
+  "body": "  Let be any ring.   Every direct summand of a projective module is projective.    Every direct sum of projective modules is projective.          Suppose for some projective module . By , there exists a free -module and an -module such that . Then , and by this implies is projective.    Let be a family of projective modules. By , there exist free modules such that each is a direct summand of . Therefore, is a direct summand of , which is also free. By , this implies that is projective.      "
+},
+{
+  "id": "example-44",
+  "level": "2",
+  "url": "sec-projective.html#example-44",
+  "type": "Example",
+  "number": "4.12",
+  "title": "Projective but not Free Module.",
+  "body": "Projective but not Free Module  Example 4.12. The ring can be written as a direct sum of the ideals   Indeed, and , so . By , and are projective -modules. However, and are not free. This can be explained numerically: every finitely generated free -module is of the form , so it has elements for some , while and have and elements respectively.  "
+},
+{
+  "id": "lem-4.13",
+  "level": "2",
+  "url": "sec-projective.html#lem-4.13",
+  "type": "Lemma",
+  "number": "4.13",
+  "title": "",
+  "body": "  For every -module , there exists a free module surjecting onto . If is finitely generated, we can take to be finitely generated.   "
 },
 {
   "id": "sec-injective",
@@ -1960,7 +2077,178 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "Injective Modules",
-  "body": "Injective Modules   "
+  "body": "Injective Modules  Definition and Baer's Criterion  Injective modules are dual to projectives.  Injective Module   An -module is injective if given an injective -module homomorphism and an -module homomorphism , there exist an -module homomorphism such that   commutes.    These are precisely the modules such that is exact.    An -module is injective if and only if is exact, meaning that for every short exact sequence we get an exact sequence     By , is left exact, so for any short exact sequence we get an exact sequence   So the content of the theorem is that is injective if and only if for every injective -module homomorphism , the induced map is surjective. Now notice that is surjective if and only if every lifts to some , meaning   commutes. That is precisely what we want for to be injective.    Giving examples of injective modules is much harder than giving examples of projective modules, but we will see some examples later. First, we prove some properties of injective modules.  The class of injectives modules is closed for products and finite direct sums.    Given any family of injective modules, is injective.    Let be the projection onto the th factor. Given any diagram   the fact that is injective gives us -module homomorphisms such that   commutes for each . Now the -module homomorphism makes the diagram   commute, so is injective.      If is an injective -module, then so are and .    Any diagram   can be extended to a map by composing with the inclusion of the first factor. Since is injective, there exists such that   commutes. Let be the projection onto , so that . Now if we set ,        Baer Criterion   An -module is injective if and only if every -module homomorphism from an ideal in can be extended to the whole ring, meaning that there exists making the diagram   commute.    On the one hand, if is injective then our condition is simply a special case of the definition of injective module. On the other hand, suppose that this condition holds, and consider any diagram   To simplify notation, let’s assume our map is indeed the inclusion of the submodule , so we can write for the image of in . Consider the set   First, notice is nonempty, since . Moreover, we can partially order by setting if and . So we have a nonempty partially ordered set; let’s show we can apply Zorn’s Lemma to it.  Given a chain in , meaning a sequence of nested submodules and maps that extend all with , let , and define   Since all the are homomorphisms of -modules, this map is indeed a map of -modules. Moreover, is well-defined, since the whenever . By construction, this map extends all the , so we conclude that is an upper bound for our chain. Moreover, follows immediately from our construction, and since each extends , so does . We conclude that , and more generally that any chain in has an upper bound in . So Zorn’s Lemma applies.  By Zorn’s Lemma, has a maximal element, say . We claim that . Suppose not, and let be an element not in . One can check that is an ideal in , and that is an -module homomorphism.  By assumption, we can extend to an -module homomorphism , which we will write as as well. Now the -module homomorphism is well-defined by construction, since any satisfies , and if then . Finally, this map agrees with on , and thus it agrees with on , so and . By the maximality of , we conclude that , and thus , which is a contradiction. We conclude that . Therefore, makes the diagram   commute.     Divisible Modules  It is very easy to see that every -module is a quotient of a free module. The dual statement is true as well, but it is a little more delicate.  Divisible Module   An -module is divisible if for every nonzero and every there exists such that .     Remark 4.22. Given , and an -module , the multiplication by map is an -module homomorphism. The module is divisible if and only if multiplication by is surjective for all nonzero .   Divisible Modules Closed Under Quotients   Any quotient of a divisible module is also divisible.    Let be a divisible -module and be a submodule of . Let and  . By assumption, there exists such that . The image of in is still a solution to , so indeed is divisible.    Injective Modules Divisible in Domains   Over a domain, every injective module is divisible.    Suppose that is an injective -module, where is a domain. Fix and . Since is a domain, we have for any . In particular, each element in can be written uniquely as for some . In particular, the map of -modules   is well-defined. Since is injective, we can extend this to a homomorphism . Finally, is an element such that , and is divisible.    This not true in general if we do not assume is a domain.  Injective but not Divisible Module  Example 4.25. Let be a field and . On the one hand, is not a divisible -module, since there is no such that . On the other hand, is actually an injective module over itself, although we do not have the tools to justify that this is indeed an injective -module.    The converse of does not hold in general, and quotients of injective modules are not necessarily injective.  Injective Modules not Closed Under Quotients Exercise 57. Let , where is a field, let be the fraction field of . The -module is divisible but not injective.  But the converse of does hold for some special classes of rings.  Injective iff Divisible in PID   Let be a principal ideal domain. An -module is injective if and only it is divisible.    Given , we only need to show that divisible modules are injective. By Baer’s Criterion, we only need to show that any map from an ideal to can be extended to the whole ring. So let be a divisible -module, and consider any map from an ideal to . If , we could extend our map by taking the map from to , so we might as well assume that . By assumption, for some , and since is divisible, there exists such that . Now consider the multiplication by map, For every , so extends . Therefore, by Theorem 4.18, is injective.    Injectives Closed Under Quotients in PIDs   Over a principal ideal domain, quotients of injective modules are injective.    If is injective, it is also divisible, by . Given any submodule , any , and a nonzero , there exists such that , and so this also holds in . Then is divisible, and thus injective by . Using fancy words you might learn in Commutative Algebra II, this ring is an example of a complete intersection, which is a subclass of Gorenstein rings. Moreover, - this is something you’d learn about in Commutative Algebra II. Now it turns out (and this is a nontrivial fact) that Gorenstein rings of dimension 0 are injective modules over themselves.     Given an injective abelian group, we can always use it to construct an injective -module over our favorite ring .    Given an injective abelian group and a ring is an injective -module.    Let . This abelian group is an -module, via   We claim that is actually an injective -module. By , it is sufficient to prove that is an exact functor. By , is naturally isomorphic to . This last functor is the composition of   On the one hand, is naturally isomorphic to the identity on -Mod, by , so it is exact. On the other hand, is an injective -module, so is exact by . The composition of exact functors is exact, and thus is exact.     Example 4.29. Since is a divisible abelian group, by for any ring the -module is injective.    Every Module Embeds into an Injective Module  When we talked about projective modules, we showed that every module is a quotient of a projective - in fact, every module is a quotient of a free module. The dual statement is true as well: that every module embeds into an injective module. We will soon see that these two statements are extremely important.  While the statement about projectives is relatively simple - it’s essentially a consequence of the universal property of free modules - the fact about injectives is a lot more delicate; the work we just did on divisible modules was precisely so we could show this deep and important fact.  First, we show that every abelian group can be embedded into an injective abelian group.    Every abelian group is a submodule of some injective abelian group.    On the one hand, is a quotient of some free abelian group, say . Now embeds in , and thus embeds into a quotient of . By Example 4.20, is an injective abelian group, and by Corollary is an injective abelian group, since is a noetherian ring. By , any quotient of is also injective, so we have shown that embeds into an injective abelian group, say .  In fact, the proof above can be repeated over any PID: if is a PID, we can show that any -module embeds into an injective module, and in fact embeds into some number of copies of the fraction field .    We can finally show that over any ring, every module can be embedded into an injective module.    Every -module is a submodule of some injective -module.    First, by we can view as a subgroup of some injective abelian group . Let be the inclusion map and .  By , is an injective -module. Since Hom is left exact, by , preserves the inclusion , so we have an inclusion . Now consider the map   This is an -module homomorphism:   Given , so .    Given , and , so .     Moreover, if then . So is injective, and thus composing with our previous inclusion gives us an inclusion of into the injective -module . However, the inclusion is a priori only a map of abelian groups, so we should check that is indeed -linear. In order to do this, we need to be careful (at least in the case when is not commutative) with how we defined the left -module structure on in Exercise 56: this is a situation where we view as a -bimodule and as a left -module, so is a left -module via   The map we need to show is -linear is Regarding as a simple inclusion, simply views the element as an element of ; to simplify notation, we drop the : so for each is the map given by For every , and ,   so . This shows that is an inclusion of -modules.    And finally, just like we did for projectives, we can characterize injectives in terms of split short exact sequences.    An -module is injective if and only if every short exact sequence splits.    Let be an injective -module, and consider any short exact sequence Since is injective, there exists a map making   commute, and such a gives a splitting for our short exact sequence.  Conversely, suppose that every short exact sequence splits, and consider a diagram   By , embeds into some injective -module , say by the inclusion . By assumption, the short exact sequence splits, so there exists a map such that . Since is injective, we can lift through , obtaining an -module homomorphism such that   commutes. Now satisfies    commutes.    Before we move on from injective modules, let us say a word about how the story continues. The next chapter is quite beautiful, and it is a shame we have no time to discuss it in detail this semester.  We proved above that every module is a submodule of some injective module. One can even do better and talk about the smallest injective module that embeds in; this is called the injective hull of . One could describe by saying that it is the intersection of all the injective modules that contain , but this is not a very practical description. Injective hulls can also be described through the theory of essential extensions, a topic which we do not have time to discuss this semester. We leave the definition here just for fun, but we do not have the time to talk about it at length.    Let . We say is an essential extension of if every nonzero submodule intersects nontrivially, meaning . More generally, an injective map is an essential extension if is an essential extension in the sense above.    One then shows that an -module is injective if and only if it has no proper essential extensions . This proves that a maximal essential extension of is injective, and that there are no other injective modules with of . Moreover, one can show that any two maximal essential extension of are isomorphic - and thus we can talk about the maximal essential extension of , up to isomorphism, which is  But the theory of injectives, and injective hulls in particular, is much more complicated than the theory of projectives. When is a finitely generated module, we can always find a finitely generated projective (even free!) module surjecting onto ; in contrast, the injective hull might not be finitely generated - in fact, is typically not finitely generated even when is cyclic.  The story of the structure of injective modules then continues in a beautiful way. Over a noetherian ring, it turns out that every injective module can be decomposed into a direct sum of injective modules of the form , where is a prime ideal in . Moreover, the injective modules are the indecomposable injective modules, so the basic building blocks of injective modules. One can in fact compute the injective hull of any finitely generated -module very explicitly. A lot of this was proved in Eben Matlis’ beautiful PhD thesis [Mat58], but sadly we do not have time for the details this semester. The details, however, are very important, for example to develop the theory of local cohomology - a topic which we will briefly mention later on.   "
+},
+{
+  "id": "def-4.14",
+  "level": "2",
+  "url": "sec-injective.html#def-4.14",
+  "type": "Definition",
+  "number": "4.14",
+  "title": "Injective Module.",
+  "body": "Injective Module   An -module is injective if given an injective -module homomorphism and an -module homomorphism , there exist an -module homomorphism such that   commutes.   "
+},
+{
+  "id": "thm-4.15",
+  "level": "2",
+  "url": "sec-injective.html#thm-4.15",
+  "type": "Theorem",
+  "number": "4.15",
+  "title": "",
+  "body": "  An -module is injective if and only if is exact, meaning that for every short exact sequence we get an exact sequence     By , is left exact, so for any short exact sequence we get an exact sequence   So the content of the theorem is that is injective if and only if for every injective -module homomorphism , the induced map is surjective. Now notice that is surjective if and only if every lifts to some , meaning   commutes. That is precisely what we want for to be injective.   "
+},
+{
+  "id": "lem-4.16",
+  "level": "2",
+  "url": "sec-injective.html#lem-4.16",
+  "type": "Lemma",
+  "number": "4.16",
+  "title": "",
+  "body": "  Given any family of injective modules, is injective.    Let be the projection onto the th factor. Given any diagram   the fact that is injective gives us -module homomorphisms such that   commutes for each . Now the -module homomorphism makes the diagram   commute, so is injective.   "
+},
+{
+  "id": "lem-4.17",
+  "level": "2",
+  "url": "sec-injective.html#lem-4.17",
+  "type": "Lemma",
+  "number": "4.17",
+  "title": "",
+  "body": "  If is an injective -module, then so are and .    Any diagram   can be extended to a map by composing with the inclusion of the first factor. Since is injective, there exists such that   commutes. Let be the projection onto , so that . Now if we set ,       "
+},
+{
+  "id": "thm-4.18",
+  "level": "2",
+  "url": "sec-injective.html#thm-4.18",
+  "type": "Theorem",
+  "number": "4.18",
+  "title": "Baer Criterion.",
+  "body": "Baer Criterion   An -module is injective if and only if every -module homomorphism from an ideal in can be extended to the whole ring, meaning that there exists making the diagram   commute.    On the one hand, if is injective then our condition is simply a special case of the definition of injective module. On the other hand, suppose that this condition holds, and consider any diagram   To simplify notation, let’s assume our map is indeed the inclusion of the submodule , so we can write for the image of in . Consider the set   First, notice is nonempty, since . Moreover, we can partially order by setting if and . So we have a nonempty partially ordered set; let’s show we can apply Zorn’s Lemma to it.  Given a chain in , meaning a sequence of nested submodules and maps that extend all with , let , and define   Since all the are homomorphisms of -modules, this map is indeed a map of -modules. Moreover, is well-defined, since the whenever . By construction, this map extends all the , so we conclude that is an upper bound for our chain. Moreover, follows immediately from our construction, and since each extends , so does . We conclude that , and more generally that any chain in has an upper bound in . So Zorn’s Lemma applies.  By Zorn’s Lemma, has a maximal element, say . We claim that . Suppose not, and let be an element not in . One can check that is an ideal in , and that is an -module homomorphism.  By assumption, we can extend to an -module homomorphism , which we will write as as well. Now the -module homomorphism is well-defined by construction, since any satisfies , and if then . Finally, this map agrees with on , and thus it agrees with on , so and . By the maximality of , we conclude that , and thus , which is a contradiction. We conclude that . Therefore, makes the diagram   commute.   "
+},
+{
+  "id": "def-4.21",
+  "level": "2",
+  "url": "sec-injective.html#def-4.21",
+  "type": "Definition",
+  "number": "4.19",
+  "title": "Divisible Module.",
+  "body": "Divisible Module   An -module is divisible if for every nonzero and every there exists such that .   "
+},
+{
+  "id": "remark-40",
+  "level": "2",
+  "url": "sec-injective.html#remark-40",
+  "type": "Remark",
+  "number": "4.20",
+  "title": "",
+  "body": " Remark 4.22. Given , and an -module , the multiplication by map is an -module homomorphism. The module is divisible if and only if multiplication by is surjective for all nonzero .  "
+},
+{
+  "id": "lem-4.23",
+  "level": "2",
+  "url": "sec-injective.html#lem-4.23",
+  "type": "Lemma",
+  "number": "4.21",
+  "title": "Divisible Modules Closed Under Quotients.",
+  "body": "Divisible Modules Closed Under Quotients   Any quotient of a divisible module is also divisible.    Let be a divisible -module and be a submodule of . Let and  . By assumption, there exists such that . The image of in is still a solution to , so indeed is divisible.   "
+},
+{
+  "id": "lem-4.24",
+  "level": "2",
+  "url": "sec-injective.html#lem-4.24",
+  "type": "Lemma",
+  "number": "4.22",
+  "title": "Injective Modules Divisible in Domains.",
+  "body": "Injective Modules Divisible in Domains   Over a domain, every injective module is divisible.    Suppose that is an injective -module, where is a domain. Fix and . Since is a domain, we have for any . In particular, each element in can be written uniquely as for some . In particular, the map of -modules   is well-defined. Since is injective, we can extend this to a homomorphism . Finally, is an element such that , and is divisible.   "
+},
+{
+  "id": "example-45",
+  "level": "2",
+  "url": "sec-injective.html#example-45",
+  "type": "Example",
+  "number": "4.23",
+  "title": "Injective but not Divisible Module.",
+  "body": "Injective but not Divisible Module  Example 4.25. Let be a field and . On the one hand, is not a divisible -module, since there is no such that . On the other hand, is actually an injective module over itself, although we do not have the tools to justify that this is indeed an injective -module.   "
+},
+{
+  "id": "exercise-33",
+  "level": "2",
+  "url": "sec-injective.html#exercise-33",
+  "type": "Exercise",
+  "number": "4.24",
+  "title": "Injective Modules not Closed Under Quotients.",
+  "body": "Injective Modules not Closed Under Quotients Exercise 57. Let , where is a field, let be the fraction field of . The -module is divisible but not injective. "
+},
+{
+  "id": "lem-4.26",
+  "level": "2",
+  "url": "sec-injective.html#lem-4.26",
+  "type": "Lemma",
+  "number": "4.25",
+  "title": "Injective iff Divisible in PID.",
+  "body": "Injective iff Divisible in PID   Let be a principal ideal domain. An -module is injective if and only it is divisible.    Given , we only need to show that divisible modules are injective. By Baer’s Criterion, we only need to show that any map from an ideal to can be extended to the whole ring. So let be a divisible -module, and consider any map from an ideal to . If , we could extend our map by taking the map from to , so we might as well assume that . By assumption, for some , and since is divisible, there exists such that . Now consider the multiplication by map, For every , so extends . Therefore, by Theorem 4.18, is injective.   "
+},
+{
+  "id": "lem-4.27",
+  "level": "2",
+  "url": "sec-injective.html#lem-4.27",
+  "type": "Lemma",
+  "number": "4.26",
+  "title": "Injectives Closed Under Quotients in PIDs.",
+  "body": "Injectives Closed Under Quotients in PIDs   Over a principal ideal domain, quotients of injective modules are injective.    If is injective, it is also divisible, by . Given any submodule , any , and a nonzero , there exists such that , and so this also holds in . Then is divisible, and thus injective by . Using fancy words you might learn in Commutative Algebra II, this ring is an example of a complete intersection, which is a subclass of Gorenstein rings. Moreover, - this is something you’d learn about in Commutative Algebra II. Now it turns out (and this is a nontrivial fact) that Gorenstein rings of dimension 0 are injective modules over themselves.    "
+},
+{
+  "id": "lem-4.28",
+  "level": "2",
+  "url": "sec-injective.html#lem-4.28",
+  "type": "Lemma",
+  "number": "4.27",
+  "title": "",
+  "body": "  Given an injective abelian group and a ring is an injective -module.    Let . This abelian group is an -module, via   We claim that is actually an injective -module. By , it is sufficient to prove that is an exact functor. By , is naturally isomorphic to . This last functor is the composition of   On the one hand, is naturally isomorphic to the identity on -Mod, by , so it is exact. On the other hand, is an injective -module, so is exact by . The composition of exact functors is exact, and thus is exact.   "
+},
+{
+  "id": "example-46",
+  "level": "2",
+  "url": "sec-injective.html#example-46",
+  "type": "Example",
+  "number": "4.28",
+  "title": "",
+  "body": " Example 4.29. Since is a divisible abelian group, by for any ring the -module is injective.  "
+},
+{
+  "id": "lem-4.30",
+  "level": "2",
+  "url": "sec-injective.html#lem-4.30",
+  "type": "Lemma",
+  "number": "4.29",
+  "title": "",
+  "body": "  Every abelian group is a submodule of some injective abelian group.    On the one hand, is a quotient of some free abelian group, say . Now embeds in , and thus embeds into a quotient of . By Example 4.20, is an injective abelian group, and by Corollary is an injective abelian group, since is a noetherian ring. By , any quotient of is also injective, so we have shown that embeds into an injective abelian group, say .  In fact, the proof above can be repeated over any PID: if is a PID, we can show that any -module embeds into an injective module, and in fact embeds into some number of copies of the fraction field .   "
+},
+{
+  "id": "thm-4.31",
+  "level": "2",
+  "url": "sec-injective.html#thm-4.31",
+  "type": "Theorem",
+  "number": "4.30",
+  "title": "",
+  "body": "  Every -module is a submodule of some injective -module.    First, by we can view as a subgroup of some injective abelian group . Let be the inclusion map and .  By , is an injective -module. Since Hom is left exact, by , preserves the inclusion , so we have an inclusion . Now consider the map   This is an -module homomorphism:   Given , so .    Given , and , so .     Moreover, if then . So is injective, and thus composing with our previous inclusion gives us an inclusion of into the injective -module . However, the inclusion is a priori only a map of abelian groups, so we should check that is indeed -linear. In order to do this, we need to be careful (at least in the case when is not commutative) with how we defined the left -module structure on in Exercise 56: this is a situation where we view as a -bimodule and as a left -module, so is a left -module via   The map we need to show is -linear is Regarding as a simple inclusion, simply views the element as an element of ; to simplify notation, we drop the : so for each is the map given by For every , and ,   so . This shows that is an inclusion of -modules.   "
+},
+{
+  "id": "thm-4.32",
+  "level": "2",
+  "url": "sec-injective.html#thm-4.32",
+  "type": "Theorem",
+  "number": "4.31",
+  "title": "",
+  "body": "  An -module is injective if and only if every short exact sequence splits.    Let be an injective -module, and consider any short exact sequence Since is injective, there exists a map making   commute, and such a gives a splitting for our short exact sequence.  Conversely, suppose that every short exact sequence splits, and consider a diagram   By , embeds into some injective -module , say by the inclusion . By assumption, the short exact sequence splits, so there exists a map such that . Since is injective, we can lift through , obtaining an -module homomorphism such that   commutes. Now satisfies    commutes.   "
+},
+{
+  "id": "def-4.33",
+  "level": "2",
+  "url": "sec-injective.html#def-4.33",
+  "type": "Definition",
+  "number": "4.32",
+  "title": "",
+  "body": "  Let . We say is an essential extension of if every nonzero submodule intersects nontrivially, meaning . More generally, an injective map is an essential extension if is an essential extension in the sense above.   "
 },
 {
   "id": "sec-flat",
@@ -1969,7 +2257,115 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.3",
   "title": "Flat Modules",
-  "body": "Flat Modules   "
+  "body": "Flat Modules  Definition  Finally, we turn to the modules that make the tensor product exact.  Flat Module   An -module is said to be flat if is an exact functor.     Remark 4.35. By , - is right exact. Therefore, is flat if and only if for every injective -module map ,    Direct Summands of Flat Modules are Flat   Given a family of -modules , the direct sum is flat if and only if every is flat. In particular, direct summands of flat modules are flat.    Given a family of -module homomorphisms , there is an -module homomorphism which is injective if and only if every is injective.  Let be an injective -module homomorphism. There is a commutative diagram where the horizontal maps are the isomorphisms from . In particular, is injective if and only if is injective. Moreover, is injective if and only if each component is injective, meaning is injective for all .  On the one hand, is flat if and only if for every injective map , the corresponding is injective. On the other hand, all the are flat if and only if for every injective map is injective for all , or equivalently, as explained above, if is injective for any given injective map . This translates into the equivalence we want to show.    All projectives are flat.  Every Projective Module is Flat   Let be any ring. Every projective -module is flat.    First, recall that is naturally isomorphic to the identity functor, by Lemma 3.40, and thus exact (see Remark 3.11). This shows that is flat, and thus any free module, being a direct sum of copies of , must also be flat by . Finally, every projective module is a direct summand of a free module, by . Direct summands of flat modules are flat, by , so every projective module is flat.    We can test whether a given module if flat by looking at the finitely generated submodules.  Flatness and Finitely Generated Submodules   If every finitely generated submodule of is flat, then is flat.    Let be an injective map of -modules. We want to show that is injective. Suppose that . We are going to construct a finitely generated submodule , with the inclusion, and an element such that and . Once we do that, our submodule is finitely generated, and thus flat by assumption, so is injective; therefore, and thus we must have . Therefore, is injective, and we conclude that is flat.  Let’s say that . In , we constructed the tensor product as a quotient of the free module on by the submodule with all the necessary relations we need to impose. This gives us a short exact sequence The fact that means we can rewrite this element as for some . This element is a linear combination of elements of finitely many . Let be all the -coordinates of those elements.  Now we take to be the finitely generated submodule of generated by and , and . Now and as desired.    The reason we needed to add in these extra elements is that a priori is not necessarily a submodule of , so we do not necessarily have in without adding in all relations that make it true.   Torsion Submodules  Torsion Submodule   Let be a domain and be an -module. The torsion submodule of is The elements of are called torsion elements , and we say that is torsion if . Finally, is torsion free if .    Flat Implies Torision Free in Domains   If is a domain and is a flat -module, then is torsion free.    Let be the fraction field of , which is a torsion free -module. Now is a -vector space, so isomorphic to a direct sum of copies of . In particular, is torsion free as an -module. Since is flat, the inclusion induces an injective -module map and since , by , we conclude that is isomorphic to a submodule of . Submodules of torsion free modules are also torsion free, so is torsion free.    In general, the converse does not hold.  Torsion Free but not Flat Module  Example 4.41. Let be a field and . Consider the ideal . This is a submodule of the torsion free module , and thus torsion free. However, it is not flat. For example, when we apply to the inclusion we obtain a map of -vector spaces   This map cannot possibly be injective: is a -dimensional -vector space, while is -dimensional.   The converse does hold over a PID.  Flat iff Torsion Free in PID   If is a principal ideal domain, an -module is flat if and only if it is torsion free.     This is just a special case of .   Suppose is a torsion free finitely generated -module. The structure theorem for PIDs says that must be isomorphic to a direct sum of copies of cyclic modules. The cyclic module has torsion (all the elements are killed by ) unless . Therefore, must be isomorphic to a direct sum of copies of , and thus free. By , is projective, and by projectives are flat, so is flat.  Now let be any torsion free -module. All of the finitely generated submodules of are also torsion free, and thus flat by what we have shown so far. By , must be flat.    Not all flat modules are projective.  Flat but not Projective Module  Example 4.43. The -module is torsion free and thus flat, by . However, is not a projective -module. Suppose by contradiction, that is a projective -module. By , must be a direct summand of a free module, say . Consider the inclusion , and pick such that the image of contains some element with a nonzero entry in the component. Now consider the projection onto the th factor. By assumption, the composition is nonzero. However, there are no nontrivial abelian group homomorphisms , contradicting the fact that is nonzero. We conclude that is not projective.   However, for finitely generated modules over a commutative noetherian local ring, every flat module is free, and thus flat, projective, and free all coincide. However, to prove that we need a little bit of commutative algebra, which we introduce in the next section.  Finally, here is a very important example: localization is flat.  Flatness of Localization   Let be a commutative ring, and a multiplicative subset of . Then is flat over .    By , tensoring with is localizing at . But localization is exact, so tensoring with is exact, and thus is a flat -module.    So for example, if is a domain then its fraction field is a flat module.   "
+},
+{
+  "id": "def-4.34",
+  "level": "2",
+  "url": "sec-flat.html#def-4.34",
+  "type": "Definition",
+  "number": "4.33",
+  "title": "Flat Module.",
+  "body": "Flat Module   An -module is said to be flat if is an exact functor.   "
+},
+{
+  "id": "remark-41",
+  "level": "2",
+  "url": "sec-flat.html#remark-41",
+  "type": "Remark",
+  "number": "4.34",
+  "title": "",
+  "body": " Remark 4.35. By , - is right exact. Therefore, is flat if and only if for every injective -module map ,   "
+},
+{
+  "id": "lem-4.36",
+  "level": "2",
+  "url": "sec-flat.html#lem-4.36",
+  "type": "Lemma",
+  "number": "4.35",
+  "title": "Direct Summands of Flat Modules are Flat.",
+  "body": "Direct Summands of Flat Modules are Flat   Given a family of -modules , the direct sum is flat if and only if every is flat. In particular, direct summands of flat modules are flat.    Given a family of -module homomorphisms , there is an -module homomorphism which is injective if and only if every is injective.  Let be an injective -module homomorphism. There is a commutative diagram where the horizontal maps are the isomorphisms from . In particular, is injective if and only if is injective. Moreover, is injective if and only if each component is injective, meaning is injective for all .  On the one hand, is flat if and only if for every injective map , the corresponding is injective. On the other hand, all the are flat if and only if for every injective map is injective for all , or equivalently, as explained above, if is injective for any given injective map . This translates into the equivalence we want to show.   "
+},
+{
+  "id": "thm-4.37",
+  "level": "2",
+  "url": "sec-flat.html#thm-4.37",
+  "type": "Theorem",
+  "number": "4.36",
+  "title": "Every Projective Module is Flat.",
+  "body": "Every Projective Module is Flat   Let be any ring. Every projective -module is flat.    First, recall that is naturally isomorphic to the identity functor, by Lemma 3.40, and thus exact (see Remark 3.11). This shows that is flat, and thus any free module, being a direct sum of copies of , must also be flat by . Finally, every projective module is a direct summand of a free module, by . Direct summands of flat modules are flat, by , so every projective module is flat.   "
+},
+{
+  "id": "thm-4.38",
+  "level": "2",
+  "url": "sec-flat.html#thm-4.38",
+  "type": "Theorem",
+  "number": "4.37",
+  "title": "Flatness and Finitely Generated Submodules.",
+  "body": "Flatness and Finitely Generated Submodules   If every finitely generated submodule of is flat, then is flat.    Let be an injective map of -modules. We want to show that is injective. Suppose that . We are going to construct a finitely generated submodule , with the inclusion, and an element such that and . Once we do that, our submodule is finitely generated, and thus flat by assumption, so is injective; therefore, and thus we must have . Therefore, is injective, and we conclude that is flat.  Let’s say that . In , we constructed the tensor product as a quotient of the free module on by the submodule with all the necessary relations we need to impose. This gives us a short exact sequence The fact that means we can rewrite this element as for some . This element is a linear combination of elements of finitely many . Let be all the -coordinates of those elements.  Now we take to be the finitely generated submodule of generated by and , and . Now and as desired.   "
+},
+{
+  "id": "def-4.39",
+  "level": "2",
+  "url": "sec-flat.html#def-4.39",
+  "type": "Definition",
+  "number": "4.38",
+  "title": "Torsion Submodule.",
+  "body": "Torsion Submodule   Let be a domain and be an -module. The torsion submodule of is The elements of are called torsion elements , and we say that is torsion if . Finally, is torsion free if .   "
+},
+{
+  "id": "lem-4.40",
+  "level": "2",
+  "url": "sec-flat.html#lem-4.40",
+  "type": "Lemma",
+  "number": "4.39",
+  "title": "Flat Implies Torision Free in Domains.",
+  "body": "Flat Implies Torision Free in Domains   If is a domain and is a flat -module, then is torsion free.    Let be the fraction field of , which is a torsion free -module. Now is a -vector space, so isomorphic to a direct sum of copies of . In particular, is torsion free as an -module. Since is flat, the inclusion induces an injective -module map and since , by , we conclude that is isomorphic to a submodule of . Submodules of torsion free modules are also torsion free, so is torsion free.   "
+},
+{
+  "id": "example-47",
+  "level": "2",
+  "url": "sec-flat.html#example-47",
+  "type": "Example",
+  "number": "4.40",
+  "title": "Torsion Free but not Flat Module.",
+  "body": "Torsion Free but not Flat Module  Example 4.41. Let be a field and . Consider the ideal . This is a submodule of the torsion free module , and thus torsion free. However, it is not flat. For example, when we apply to the inclusion we obtain a map of -vector spaces   This map cannot possibly be injective: is a -dimensional -vector space, while is -dimensional.  "
+},
+{
+  "id": "lem-4.42",
+  "level": "2",
+  "url": "sec-flat.html#lem-4.42",
+  "type": "Lemma",
+  "number": "4.41",
+  "title": "Flat iff Torsion Free in PID.",
+  "body": "Flat iff Torsion Free in PID   If is a principal ideal domain, an -module is flat if and only if it is torsion free.     This is just a special case of .   Suppose is a torsion free finitely generated -module. The structure theorem for PIDs says that must be isomorphic to a direct sum of copies of cyclic modules. The cyclic module has torsion (all the elements are killed by ) unless . Therefore, must be isomorphic to a direct sum of copies of , and thus free. By , is projective, and by projectives are flat, so is flat.  Now let be any torsion free -module. All of the finitely generated submodules of are also torsion free, and thus flat by what we have shown so far. By , must be flat.   "
+},
+{
+  "id": "example-48",
+  "level": "2",
+  "url": "sec-flat.html#example-48",
+  "type": "Example",
+  "number": "4.42",
+  "title": "Flat but not Projective Module.",
+  "body": "Flat but not Projective Module  Example 4.43. The -module is torsion free and thus flat, by . However, is not a projective -module. Suppose by contradiction, that is a projective -module. By , must be a direct summand of a free module, say . Consider the inclusion , and pick such that the image of contains some element with a nonzero entry in the component. Now consider the projection onto the th factor. By assumption, the composition is nonzero. However, there are no nontrivial abelian group homomorphisms , contradicting the fact that is nonzero. We conclude that is not projective.  "
+},
+{
+  "id": "thm-4.44",
+  "level": "2",
+  "url": "sec-flat.html#thm-4.44",
+  "type": "Theorem",
+  "number": "4.43",
+  "title": "Flatness of Localization.",
+  "body": "Flatness of Localization   Let be a commutative ring, and a multiplicative subset of . Then is flat over .    By , tensoring with is localizing at . But localization is exact, so tensoring with is exact, and thus is a flat -module.   "
+},
+{
+  "id": "commutative-local-rings",
+  "level": "1",
+  "url": "commutative-local-rings.html",
+  "type": "Section",
+  "number": "4.4",
+  "title": "Commutative Local Rings",
+  "body": "Commutative Local Rings  We have shown that     Over a local ring, these three notions actually coincide. To show this, we need a little bit of commutative algebra. First, some notation: when is a local ring, meaning has a unique maximal ideal , we write to denote the ring and its maximal ideal. Now note that for any -module , the module is annihilated by , so it is also a module over a ring , which is a field.  The following is a classical result in commutative algebra, known by some as Nakayama’s Lemma. As noted in [Mat89, page 8], Nakayama himself claimed that this should be attributed to Krull and Azumaya, but it’s not clear which of the three actually had the commutative ring statement first. So some authors (eg, Matsumura) prefer to refer to it as NAK. There are actually a range of statements, rather than just one, that go under the banner of Nakayama’s Lemma a.k.a. NAK.  Theorem . Let be a local ring, and be a finitely generated module. If , then .  The theorem above is the theorem most commonly referred to as NAK. The proof involves only elementary tools, and a fun linear algebra-inspired trick called the Determinantal Trick. While we will not include the details here, they can be found in any standard Commutative Algebra book. We will however use this result to prove another statement that is also commonly referred to as NAK, which allows us to talk about minimal generating sets for finitely generated modules over local rings.  Remark 4.46. Let be any commutative ring, and consider an -module and an ideal . If , meaning that for all and all , then can be given the structure of an -module, as follows: for any and any ,     The fact that kills is what makes this action well-defined. The fact that is actually an -module under this action is a consequence of the fact that is an -module; checking these details is routine, and we leave them as an exercise.  Notice that the structure of as an -module is essentially the same as its structure as an -module. There are many properties of as an -module that pass onto its module structure, and typically such results are easy to check.  Here is a special case of this: if is a commutative local ring, and is an -module, then the module is killed by , and thus it is also a module over . Now notice that is a field, so is actually a vector space over the field .  Theorem 4.47. Let be a commutative local ring, and be a finitely generated module. For ,     Thus, any generating set for consists of at least elements.  Proof. The implication is clear. For , given such that generate , consider     Since is generated by the image of , we have . By taking the quotient by , we see that     By Theorem 4.45, and thus .  As we mentioned above, this allows us to talk about minimal generating sets.  Definition 4.48. Let be a local ring, and a finitely generated module. A set of elements is a minimal generating set of if the images of form a basis for the vector space .  Note that every finitely generated module over a local ring has a minimal generating set, that every minimal generating set has the same number of elements, and that any set of generators for contains a minimal generating set, all thanks to plain old linear algebra. In particular, we can now define the following:  Definition 4.49. Let be a finitely generated module over a commutative local ring . The minimal number of generators of , denoted ,, is the number of elements in any minimal generating set for .  We now have all the key commutative algebra ingredients needed to show that for finitely generated modules over a noetherian local ring, projective free. However, the proof follows more easily with one more homological tool we haven’t developed yet, so we will hold off on proving this for now - in fact, you will soon be able to prove it easily, so this will be in the next problem set.  Exercise 58. Let be a commutative local ring, and let be a finitely presented module. Then     Kaplansky [Kap58] showed that this holds even for modules that are not necessarily finitely presented, but generated by countably many elements.  Definition 4.50. An -module is locally free if is free for every prime ideal .  Exercise 59. Let be a commutative ring, and be -modules, and be a prime ideal. Show that     Exercise 60. Let be a commutative ring, be a prime ideal, and be an -module. Let be as an -module via restriction of scalars. Then as -modules, we have an isomorphism     Exercise 61. Let be a commutative ring. Show that a homomorphism of -modules is surjective if and only if is surjective for all primes .  Exercise 62. Let be a noetherian ring, be a multiplicative set, be a finitely generated -module, and an arbitrary -module. Show that     In particular, if is prime,     Theorem 4.51. Let be a commutative noetherian ring and let be a finitely presented -module. Then     Proof. We already know that projectives are flat, by Theorem 4.37.  Suppose is flat. We claim that is flat for every prime ideal . First, note that , by Theorem 3.57; moreover, is a flat -module by Exercise 53 . Note moreover that any -module can also be viewed as an -module by extension of scalars along the canonical localization map. Now given any short exact sequence of -modules, say     tensoring with over can be done in two steps: first we view this as a short exact sequence of -modules, and tensor with , but is a flat -module, so     is exact. Then we tensor with , but this is also flat -module, so we get a short exact sequence again:     By Theorem 3.57 and Exercise 59, for each -module we have     But , by ??, so we conclude that     Thus     is exact, and is a flat -module.  So whenever is flat, is a flat -module for all primes . By Exercise must be free over for all primes , that is, is locally free.  Finally, suppose that is locally free. We want to show that is projective. So by Theorem 4.4, we need to show that for all surjective -module maps , the map is surjective. By Exercise 61 , it is enough to show that is surjective for all primes . By Exercise 62,     and     But i free, and thus projective by Theorem 4.3, so is surjective. Since this holds for all , by Exercise 61 we conclude that is surjective, and thus is projective.  Note that the noetherianity assumption is just so that finitely generated implies finitely presented; the statement is also true for a general commutative ring if instead of finitely generated modules we take finitely presented.  "
 },
 {
   "id": "colophon-2",

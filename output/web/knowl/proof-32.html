@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\((\Rightarrow)\)</span> Consider a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} P \longrightarrow 0 .
+\end{equation*}
+</div>
+</div> <div class="para">If <span class="process-math">\(P\)</span> is projective, the identity map on <span class="process-math">\(P\)</span> lifts to a map <span class="process-math">\(P \longrightarrow B\text{,}\)</span> meaning that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-111(2).jpg" class="contained"></div> <div class="para logical">
+<div class="para">commutes. This says that our map <span class="process-math">\(h\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \underset{\nwarrow}{\stackrel{g}{\longrightarrow}} P \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is a splitting for our short exact sequence, which must then be split, by Lemma 2.19.</div>
+</div> <div class="para logical">
+<div class="para">
+<span class="process-math">\((\Leftarrow)\)</span> Conversely, suppose that every short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow B \longrightarrow P \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">splits, and consider any diagram</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-111.jpg" class="contained"></div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be a free module that surjects onto <span class="process-math">\(P\)</span> - for example, the free module on a set of generators of <span class="process-math">\(P\)</span> - and fix a surjection <span class="process-math">\(\pi: F \rightarrow P\text{.}\)</span> By assumption, the short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-2.19.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} \pi \longrightarrow \underset{\kappa_{h}^{-}}{\stackrel{\pi}{\longrightarrow}} P \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">splits, so by <a href="" class="xref" data-knowl="./knowl/lem-2.19.html" title="Lemma 2.26: Splitting Lemma">Lemma 2.26</a> there exists <span class="process-math">\(h\)</span> such that <span class="process-math">\(\pi h=\operatorname{id}_{P}\text{.}\)</span> Now since <span class="process-math">\(F\)</span> is free, we can define an <span class="process-math">\(R\)</span>-module map <span class="process-math">\(\hat{g}: F \longrightarrow B\)</span> that such that</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-111(1).jpg" class="contained"></div> <div class="para logical">
+<div class="para">commutes, by sending each basis element <span class="process-math">\(b \in F\)</span> to any lift of <span class="process-math">\(f \pi(b)\)</span> in <span class="process-math">\(B\)</span> via <span class="process-math">\(s\text{.}\)</span> Now set <span class="process-math">\(g:=\hat{g} h\text{,}\)</span> and note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rrr}
+s g &amp; =s \hat{g} h &amp; \text { by definition } \\
+&amp; =f \pi h &amp; \text { by commutativity } \\
+&amp; =f &amp; \text { since } \pi h=\mathrm{id}_{P},
+\end{array}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(g\)</span> is a lift of <span class="process-math">\(s\)</span> by <span class="process-math">\(f\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="sec-projective.html#proof-32" class="internal">in-context</a></span>
+</body>
+</html>

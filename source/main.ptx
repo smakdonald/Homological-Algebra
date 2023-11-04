@@ -6416,15 +6416,1507 @@
       <chapter xml:id="ch-proj-inj"><title>Projectives and Injectives</title>
 
         <section xml:id="sec-projective"><title>Projective Modules</title>
-          <p></p>
+
+          <subsection xml:id="subsec-free-projective"><title>Definition, Free Modules are Projective</title>
+
+            <p>
+              While Hom and tensor are not exact functors in general, <m>\operatorname{Hom}_{R}(M,-), \operatorname{Hom}_{R}(-, M)</m>, and <m>M \otimes_{R}-</m> can be exact functors for carefully chosen modules <m>M</m>. 
+              In this chapter, we introduce these three classes of modules (projective, injective, and flat modules) and study their properties. 
+              Throughout, we consider general rings and left modules.
+            </p>
+  
+            <definition xml:id="def-4.1"><title>Projective Module</title>
+              <statement>
+                <p>
+                  Let <m>R</m> be a ring. 
+                  An <m>R</m>-module <m>P</m> is <em>projective</em> if given any surjective <m>R</m>-module homomorphism <m>s: A \rightarrow B</m> and any <m>R</m>-module homomorphism <m>f: P \rightarrow B</m>, there exists an <m>R</m>-module homomorphism <m>g</m> such that the diagram
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-109(1).jpg"/>
+                <p>
+                  commutes.
+                </p>
+              </statement>
+            </definition>
+  
+            <remark xml:id="rem-4.2">
+              <p>
+                Remark 4.2. 
+                The commutativity of the diagram
+              </p>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-109.jpg"/>
+              <p>
+                says that <m>s_{*}(g)=f</m>, where <m>s_{*}</m> is the <m>\operatorname{map} \operatorname{Hom}_{R}(P, A) \longrightarrow \operatorname{Hom}_{R}(P, B)</m> induced by <m>s</m>. 
+                Whenever this happens, we say that <m>g</m> is a lifting of <m>f</m>, and that <m>f</m> lifts, or that <m>f</m> factors through <m>A</m>.
+              </p>
+            </remark>
+  
+            <p>
+              There are projective modules over any ring, as the next result shows; in fact, free modules are always projective.
+            </p>
+  
+            <theorem xml:id="thm-4.3"><title>Free Modules are Projective</title>
+              <statement>
+                <p>
+                  Free modules are projective.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  Let <m>F</m> be a free <m>R</m>-module. 
+                  Suppose we are given <m>R</m>-module homomorphisms <m>s: A \rightarrow C</m> and <m>f: F \rightarrow C</m> such that <m>s</m> is surjective. 
+                  Fix a basis <m>B=\left\{b_{i}\right\}_{i}</m> for <m>F</m>. 
+                  Since <m>s</m> is surjective, for each <m>i</m> we can choose <m>a_{i} \in A</m> such that <m>s\left(a_{i}\right)=f\left(b_{i}\right)</m>. 
+                  Consider the function <m>u: B \longrightarrow A</m> given by <m>u\left(b_{i}\right)=a_{i}</m>. 
+                  The universal property of free modules says that there exists an <m>R</m>-module homomorphism <m>g: F \longrightarrow A</m> that coincides with <m>u</m> for all basis elements. 
+                  Now
+                  <me>
+                    s g\left(b_{i}\right)=s u\left(b_{i}\right)=s\left(a_{i}\right)=f\left(b_{i}\right)
+                  </me>
+                  so <m>s g</m> agrees with <m>f</m> for all basis elements. 
+                  Since <m>B</m> generates <m>F</m>, we conclude that <m>s g=f</m>.
+                </p>
+              </proof>
+            </theorem>
+  
+            <p>
+              Projective modules are precisely those that make the covariant Hom functor exact.
+            </p>
+  
+            <theorem xml:id="thm-4.4">
+              <statement>
+                <p>
+                  Let <m>P</m> be an <m>R</m>-module. 
+                  The functor <m>\operatorname{Hom}_{R}(P,-)</m> is exact if and only if <m>P</m> is projective.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  By <xref ref="thm-3.14"/> <m>\operatorname{Hom}_{R}(P,-)</m> is left exact. 
+                  The statement is that <m>P</m> is projective if and only for any short exact sequence
+                  <me>0 \longrightarrow A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0</me>
+                  the induced map <m>s_{*}: \operatorname{Hom}_{R}(P, B) \longrightarrow \operatorname{Hom}_{R}(P, C)</m> is surjective. Say we are given a surjective map
+                  <me>B \stackrel{p}{\longrightarrow} C \longrightarrow 0</me>
+                </p>
+          
+                <p>
+                  The induced map <m>s_{*}</m> is surjective if and only if for every <m>f \in \operatorname{Hom}_{R}(P, C)</m> there exists a lifting <m>g \in \operatorname{Hom}_{R}(P, B)</m> of <m>f</m>, meaning <m>s_{*}(g)=f</m>. 
+                  By <xref ref="rem-4.2"/>, the existence of such a <m>g</m> for all such surjective maps <m>s</m> is precisely the condition that <m>P</m> is projective.
+                </p>
+              </proof>
+            </theorem>
+  
+            <corollary xml:id="cor-4.5">
+              <statement>
+                <p>
+                  For any ring <m>R, \operatorname{Hom}_{R}(R,-)</m> is exact. 
+                  More generally, if <m>F</m> is any free <m>R</m>-module, then <m>\operatorname{Hom}_{R}(F,-)</m> is exact.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  By <xref ref="thm-4.3"/>, free modules, and <m>R</m> in particular, are projective. 
+                  By <xref ref="thm-4.4"/>, <m>\operatorname{Hom}_{R}(F,-)</m> must be exact for any free <m>R</m>-module <m>F</m>.
+                </p>
+              </proof>
+            </corollary>
+  
+            <p>
+              However, not every projective module is free. 
+              But before we see such examples, we need to know a bit more about projective modules.
+            </p>
+            
+          </subsection>
+
+          <subsection xml:id="subsec-direct-summands"><title>Direct Summands</title>
+    
+            <p>
+              First, we show that we can rephrase the condition that a module is projective or injective in terms of split exact sequences.
+            </p>
+
+            <theorem xml:id="thm-4.6"><title>Projective Modules and Splitting </title>
+              <statement>
+                <p>
+                  An <m>R</m>-module <m>P</m> is projective if and only if every short exact sequence
+                  <me>0 \longrightarrow A \longrightarrow B \longrightarrow P \longrightarrow 0</me>
+                  splits.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <m>(\Rightarrow)</m> 
+                  Consider a short exact sequence
+                  <me>0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} P \longrightarrow 0 .</me>
+                </p>
+          
+                <p>
+                  If <m>P</m> is projective, the identity map on <m>P</m> lifts to a map <m>P \longrightarrow B</m>, meaning that
+                </p>
+
+                <image source="2023_10_23_e2d6a27704be928b3deeg-111(2).jpg"/>
+                  
+                <p>
+                  commutes. 
+                  This says that our map <m>h</m>
+                  <me>0 \longrightarrow A \stackrel{f}{\longrightarrow} B \underset{\nwarrow}{\stackrel{g}{\longrightarrow}} P \longrightarrow 0</me>
+                  is a splitting for our short exact sequence, which must then be split, by Lemma 2.19.
+                </p>
+          
+                <p>
+                  <m>(\Leftarrow)</m> Conversely, suppose that every short exact sequence
+                  <me>0 \longrightarrow A \longrightarrow B \longrightarrow P \longrightarrow 0</me>
+                  splits, and consider any diagram
+                </p>
+          
+                <image source="2023_10_23_e2d6a27704be928b3deeg-111.jpg"/>
+          
+                <p>
+                  Let <m>F</m> be a free module that surjects onto <m>P</m> - for example, the free module on a set of generators of <m>P</m> - and fix a surjection <m>\pi: F \rightarrow P</m>. 
+                  By assumption, the short exact sequence
+                  <me>0 \longrightarrow \operatorname{ker} \pi \longrightarrow \underset{\kappa_{h}^{-}}{\stackrel{\pi}{\longrightarrow}} P \longrightarrow 0</me>
+                  splits, so by <xref ref="lem-2.19"/> there exists <m>h</m> such that <m>\pi h=\operatorname{id}_{P}</m>. 
+                  Now since <m>F</m> is free, we can define an <m>R</m>-module map <m>\hat{g}: F \longrightarrow B</m> that such that
+                </p>
+          
+                <image source="2023_10_23_e2d6a27704be928b3deeg-111(1).jpg"/>
+                  
+                <p>
+                  commutes, by sending each basis element <m>b \in F</m> to any lift of <m>f \pi(b)</m> in <m>B</m> via <m>s</m>.
+                  Now set <m>g:=\hat{g} h</m>, and note that
+                  <me>
+                    \begin{array}{rrr}
+                    s g &amp; =s \hat{g} h &amp; \text { by definition } \\
+                    &amp; =f \pi h &amp; \text { by commutativity } \\
+                    &amp; =f &amp; \text { since } \pi h=\mathrm{id}_{P},
+                    \end{array}
+                  </me>
+                  so <m>g</m> is a lift of <m>s</m> by <m>f</m>.
+                </p>
+              </proof>
+            </theorem>
+      
+            <p>
+              We have seen that free modules are projective; what other modules are projective?
+            </p>
+
+            <definition xml:id="def-4.7"><title>Direct Summand</title>
+              <statement>
+                <p>
+                  An <m>R</m>-module <m>M</m> is a <em>direct summand</em> of an <m>R</m>-module <m>N</m> if there exists an <m>R</m>-module <m>A</m> such that <m>A \oplus M \cong N</m>.
+                </p>
+              </statement>
+            </definition>
+
+            <remark>
+              <p>
+                Remark 4.8. 
+                Saying that <m>M</m> is a direct summand of <m>N</m> is equivalent to giving a splitting <m>\pi</m> of the inclusion map <m>i: M \hookrightarrow N</m>, meaning that <m>\pi i=\mathrm{id}_{N}</m>. 
+                As we have argued in <xref ref="lem-2.19"/>, such a splitting <m>\pi</m> gives
+                <me>N=\operatorname{im} i \oplus \operatorname{ker} \pi</me>
+              </p>
+        
+              <p>
+                Essentially repeating the argument we used in <xref ref="lem-2.19"/>, every element in <m>N</m> can be written as
+                <me>n=(n-i \pi(n))+i \pi(n)</me>
+                where <m>i \pi(n) \in \operatorname{im} i</m> and <m>n-i \pi(n) \in \operatorname{ker} \pi</m>, and <m>\operatorname{ker} \pi \cap \operatorname{im} i=0</m> because if <m>i(a) \in \operatorname{ker} \pi</m> then <m>a=\pi i(a)=0</m>.
+              </p>
+        
+              <p>
+                Note that when we are dealing with graded modules over a graded ring, the kernels and images of graded maps are graded modules, and the equality <m>N=\operatorname{im} i \oplus \operatorname{ker} \pi</m> is a graded direct sum of graded modules.
+              </p>
+            </remark>
+
+            <theorem xml:id="thm-4.9"><title>Projective iff Direct Summand of Free Module</title>
+              <statement>
+                <p>
+                  An <m>R</m>-module is projective <m>P</m> if and only if <m>P</m> is a direct summand of a free <m>R</m>-module. 
+                  In particular, a finitely generated <m>R</m>-module <m>P</m> is projective if and only if <m>P</m> is a direct summand of <m>R^{n}</m> for some <m>n</m>.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <m>(\Rightarrow)</m> 
+                  Let <m>P</m> be a projective module, and fix a free module <m>F</m> surjecting onto <m>P</m>. 
+                  If <m>P</m> is finitely generated, we can take <m>F=R^{n}</m> for some <m>n</m>. 
+                  The short exact sequence
+                  <me>0 \longrightarrow \operatorname{ker} \pi \longrightarrow F \stackrel{\pi}{\longrightarrow} P \longrightarrow 0</me>
+                  must split by <xref ref="thm-4.6"/>, so <m>P</m> is a direct summand of <m>F</m>.
+                </p>
+          
+                <p>
+                  <m>(\Leftarrow)</m> 
+                  Now suppose <m>P</m> is a direct summand of a free module <m>F</m>. 
+                  In particular, we have an inclusion map <m>i: P \longrightarrow F</m> that splits, so it comes together with a projection map <m>\pi: F \longrightarrow P</m> such that <m>\pi i=\operatorname{id}_{P}</m>. 
+                  Given any diagram
+                </p>
+          
+                <image source="2023_10_23_e2d6a27704be928b3deeg-112(1).jpg"/>
+                  
+                <p>
+                  we can define an <m>R</m>-module homomorphism <m>h</m> such that <m>s h=f \pi</m>, so that the following diagram commutes:
+                </p>
+          
+                <image source="2023_10_23_e2d6a27704be928b3deeg-112.jpg"/>
+          
+                <p>
+                  Setting <m>g:=h i</m>, we do indeed obtain <m>s g=f</m>, since
+                  <me>
+                    \begin{array}{rlrl}
+                    s g &amp; =s h i &amp; \text { by definition } \\
+                    &amp; =f \pi i &amp; &amp; \text { because } s h=f \pi \\
+                    &amp; =f &amp; &amp; \text { since } \pi i=\mathrm{id}_{P} \cdot \square
+                    \end{array}
+                  </me>
+                </p>
+              </proof>
+            </theorem>
+
+            <remark>
+              <p>
+                Remark 4.10. 
+                While every module <m>M</m> is a quotient of a free module <m>F</m>, so that we always have a surjection <m>\pi: F \rightarrow M</m>, not every module embeds into a free module; 
+                and even if <m>M</m> is a submodule of some free module <m>F</m>, the inclusion map <m>M \subseteq F</m> is not necessarily split. 
+                On the other hand, as we showed in <xref ref="thm-4.9"/> that <m>M</m> is projective if and only if we can write it as a quotient of a free module <m>F</m>, say <m>\pi: F \rightarrow M</m>, and <m>\pi</m> splits, so that in fact <m>M</m> embeds into <m>F</m> and that map splits.
+              </p>
+            </remark>
+
+            <corollary xml:id="cor-4.11">
+              <statement>
+                <p>
+                  Let <m>R</m> be any ring.
+                  <ol>
+                    <li>
+                      <p>
+                        Every direct summand of a projective module is projective.
+                      </p>
+                    </li>
+          
+                    <li>
+                      <p>
+                        Every direct sum of projective modules is projective.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Suppose <m>M \oplus A \cong P</m> for some projective module <m>P</m>. 
+                        By <xref ref="thm-4.9"/>, there exists a free <m>R</m>-module <m>F</m> and an <m>R</m>-module <m>B</m> such that <m>P \oplus B \cong F</m>. 
+                        Then <m>M \oplus A \oplus B \cong P \oplus B \cong F</m>, and by <xref ref="thm-4.9"/> this implies <m>M</m> is projective.
+                      </p>
+                    </li>
+          
+                    <li>
+                      <p>
+                        Let <m>\left\{P_{i}\right\}_{i \in I}</m> be a family of projective modules. 
+                        By <xref ref="thm-4.9"/>, there exist free modules <m>F_{i}</m> such that each <m>P_{i}</m> is a direct summand of <m>F_{i}</m>. 
+                        Therefore, <m>\oplus P_{i}</m> is a direct summand of <m>\oplus_{i} F_{i}</m>, which is also free. 
+                        By <xref ref="thm-4.9"/>, this implies that <m>\oplus P_{i}</m> is projective.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </corollary>
+
+            <p>
+              We are finally ready to give examples showing that projective modules are not necessarily free.
+            </p>
+
+            <example><title>Projective but not Free Module</title>
+              <p>
+                Example 4.12. 
+                The ring <m>R=\mathbb{Z} /(6)</m> can be written as a direct sum of the ideals
+                <me>I=(2) \text { and } J=(3)</me>
+              </p>
+        
+              <p>
+                Indeed, <m>R=I+J</m> and <m>I \cap J=0</m>, so <m>R=I \oplus J</m>. 
+                By <xref ref="cor-4.11"/>, <m>I</m> and <m>J</m> are projective <m>R</m>-modules. 
+                However, <m>I</m> and <m>J</m> are not free. 
+                This can be explained numerically: every finitely generated free <m>R</m>-module is of the form <m>R^{n}</m>, so it has <m>6^{n}</m> elements for some <m>n</m>, while <m>I</m> and <m>J</m> have <m>3</m> and <m>2</m> elements respectively.
+              </p>
+            </example>
+      
+            <p>
+              Finally, to emphasize its importance we record here an easy result that we have used repeatedly at this point, and which will be very important later on.
+            </p>
+
+            <lemma xml:id="lem-4.13">
+              <statement>
+                <p>
+                  For every <m>R</m>-module <m>M</m>, there exists a free module <m>F</m> surjecting onto <m>M</m>. 
+                  If <m>M</m> is finitely generated, we can take <m>F</m> to be finitely generated.
+                </p>
+              </statement>
+            </lemma>
+      
+            <p>
+              We will often need only a weaker version of this: that every module is a quotient of a projective module.
+            </p>
+
+          </subsection>
+
         </section>
 
         <section xml:id="sec-injective"><title>Injective Modules</title>
-          <p></p>
+
+          <subsection xml:id="subsec-injective"><title>Definition and Baer's Criterion</title>
+            
+            <p>
+              Injective modules are dual to projectives.
+            </p>
+
+            <definition xml:id="def-4.14"><title>Injective Module</title>
+              <statement>
+                <p>
+                  An <m>R</m>-module <m>I</m> is <em>injective</em> if given an injective <m>R</m>-module homomorphism <m>i: A \longrightarrow B</m> and an <m>R</m>-module homomorphism <m>f: A \longrightarrow I</m>, there exist an <m>R</m>-module homomorphism <m>g</m> such that
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-114.jpg"/>
+                <p>
+                  commutes.
+                </p>
+              </statement>
+            </definition>
+      
+            <p>
+              These are precisely the modules <m>I</m> such that <m>\operatorname{Hom}_{R}(-, I)</m> is exact.
+            </p>
+
+            <theorem xml:id="thm-4.15">
+              <statement>
+                <p>
+                  An <m>R</m>-module <m>I</m> is injective if and only if <m>\operatorname{Hom}_{R}(-, I)</m> is exact, meaning that for every short exact sequence
+                  <me>0 \longrightarrow A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0</me>
+                  we get an exact sequence
+                  <me>0 \longrightarrow \operatorname{Hom}_{R}(C, I) \stackrel{p^{*}}{\longrightarrow} \operatorname{Hom}_{R}(B, I) \stackrel{i^{*}}{\longrightarrow} \operatorname{Hom}_{R}(A, I) \longrightarrow 0</me>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  By <xref ref="thm-3.14"/>, <m>\operatorname{Hom}_{R}(-, I)</m> is left exact, so for any short exact sequence
+                  <me>0 \longrightarrow A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0</me>
+                  we get an exact sequence
+                  <me>0 \longrightarrow \operatorname{Hom}_{R}(C, I) \stackrel{p^{*}}{\longrightarrow} \operatorname{Hom}_{R}(B, I) \stackrel{i^{*}}{\longrightarrow} \operatorname{Hom}_{R}(A, I)</me>
+                </p>
+          
+                <p>
+                  So the content of the theorem is that <m>I</m> is injective if and only if for every injective <m>R</m>-module homomorphism <m>i: A \longrightarrow B</m>, the induced map <m>i^{*}</m> is surjective. 
+                  Now notice that <m>i^{*}</m> is surjective if and only if every <m>f \in \operatorname{Hom}_{R}(A, I)</m> lifts to some <m>g \in \operatorname{Hom}_{R}(B, I)</m>, meaning
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-114(1).jpg"/>    
+                <p>
+                  commutes. 
+                  That is precisely what we want for <m>I</m> to be injective.
+                </p>
+              </proof>
+            </theorem>
+      
+            <p>
+              Giving examples of injective modules is much harder than giving examples of projective modules, but we will see some examples later. 
+              First, we prove some properties of injective modules.
+            </p>
+      
+            <p>
+              The class of injectives modules is closed for products and finite direct sums.
+            </p>
+
+            <lemma xml:id="lem-4.16">
+              <statement>
+                <p>
+                  Given any family <m>\left\{M_{i}\right\}_{i \in I}</m> of injective modules, <m>\prod_{i \in I} M_{i}</m> is injective.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>\pi_{j}: \prod_{i \in I} M_{i} \longrightarrow M_{j}</m> be the projection onto the <m>j</m> th factor. 
+                  Given any diagram
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(5).jpg"/>
+                <p>
+                  the fact that <m>M_{i}</m> is injective gives us <m>R</m>-module homomorphisms <m>g_{i}</m> such that
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(2).jpg"/>
+                <p>
+                  commutes for each <m>i</m>. Now the <m>R</m>-module homomorphism
+                  <me>
+                    \begin{gathered}
+                    B \stackrel{g}{\longrightarrow} \prod_{i \in I} M_{i} \\
+                    b \longmapsto\left(g_{i}(b)\right)
+                    \end{gathered}
+                  </me>
+                  makes the diagram
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(3).jpg"/>
+                <p>
+                  commute, so <m>\prod_{i \in I} M_{i}</m> is injective.
+                </p>
+              </proof>
+            </lemma>
+
+            <lemma xml:id="lem-4.17">
+              <statement>
+                <p>
+                  If <m>M \oplus N=E</m> is an injective <m>R</m>-module, then so are <m>M</m> and <m>N</m>.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Any diagram
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(4).jpg"/>
+                <p>
+                  can be extended to a map <m>A \longrightarrow E</m> by composing <m>f</m> with the inclusion of the first factor. 
+                  Since <m>E</m> is injective, there exists <m>h</m> such that
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115.jpg"/>
+                <p>
+                  commutes. 
+                  Let <m>\pi: E \longrightarrow M</m> be the projection onto <m>M</m>, so that <m>\pi j=\mathrm{id}_{M}</m>. 
+                  Now if we set <m>g:=\pi h</m>,
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(1).jpg"/>
+                <p>
+                  <me>
+                    \begin{aligned}
+                    g i &amp; =\pi h i &amp; \text { by definition } \\
+                    &amp; =\pi j f &amp; \text { by commutativity } \\
+                    &amp; =f &amp; \text { because } \pi j=\mathrm{id}_{M}
+                    \end{aligned}</me>
+                </p>
+              </proof>
+            </lemma>
+
+            <theorem xml:id="thm-4.18"><title>Baer Criterion</title>
+              <statement>
+                <p>
+                  An <m>R</m>-module <m>E</m> is injective if and only if every <m>R</m>-module homomorphism <m>I \longrightarrow E</m> from an ideal <m>I</m> in <m>R</m> can be extended to the whole ring, meaning that there exists <m>g</m> making the diagram
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-116(1).jpg"/>
+                <p>
+                  commute.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  On the one hand, if <m>E</m> is injective then our condition is simply a special case of the definition of injective module. 
+                  On the other hand, suppose that this condition holds, and consider any diagram
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-116.jpg"/>
+                <p>
+                  To simplify notation, let’s assume our map <m>M \longrightarrow N</m> is indeed the inclusion of the submodule <m>M</m>, so we can write <m>m \in N</m> for the image of <m>m</m> in <m>N</m>. 
+                  Consider the set
+                  <me>X:=\{(A, g) \mid A \text { is a submodule of } N, M \subseteq A \subseteq N \text {, and } g \text { extends } f\}</me>
+                </p>
+          
+                <p>
+                  First, notice <m>X</m> is nonempty, since <m>(M, f) \in X</m>. 
+                  Moreover, we can partially order <m>X</m> by setting <m>(A, g) \leqslant(B, h)</m> if <m>A \subseteq B</m> and <m>\left.h\right|_{A}=g</m>. 
+                  So we have a nonempty partially ordered set; let’s show we can apply Zorn’s Lemma to it.
+                </p>
+          
+                <p>
+                  Given a chain in <m>X</m>, meaning a sequence
+                  <me>\left(A_{1}, g_{1}\right) \leqslant\left(A_{2}, g_{2}\right) \leqslant \cdots</me>
+                  of nested submodules <m>A_{1} \subseteq A_{2} \subseteq \cdots</m> and maps <m>g_{i}</m> that extend all <m>g_{j}</m> with <m>j \leqslant i</m>, let <m>A:=\bigcup_{i} A_{i}</m>, and define
+                  <me>
+                    \begin{aligned}
+                    &amp; A \longrightarrow g \\
+                    &amp; a \longrightarrow g_{i}(a) \text { if } a \in A_{i} .
+                    \end{aligned}
+                  </me>
+                </p>
+          
+                <p>
+                  Since all the <m>g_{i}</m> are homomorphisms of <m>R</m>-modules, this map <m>g</m> is indeed a map of <m>R</m>-modules. 
+                  Moreover, <m>g</m> is well-defined, since the <m>g_{i}(a)=g_{j}(a)</m> whenever <m>a \in A_{i} \cap A_{j}</m>. 
+                  By construction, this map extends all the <m>g_{i}</m>, so we conclude that <m>(A, g)</m> is an upper bound for our chain. 
+                  Moreover, <m>M \subseteq A \subseteq N</m> follows immediately from our construction, and since each <m>g_{i}</m> extends <m>f</m>, so does <m>g</m>. 
+                  We conclude that <m>(A, g) \in X</m>, and more generally that any chain in <m>X</m> has an upper bound in <m>X</m>. 
+                  So Zorn’s Lemma applies.
+                </p>
+          
+                <p>
+                  By Zorn’s Lemma, <m>X</m> has a maximal element, say <m>(A, g)</m>. 
+                  We claim that <m>A=N</m>. 
+                  Suppose not, and let <m>n \in N</m> be an element not in <m>A</m>. One can check that
+                  <me>I:=\{r \in R \mid r n \in A\}</me>
+                  is an ideal in <m>R</m>, and that
+                  <me>
+                    \begin{aligned}
+                    &amp; I \stackrel{h}{\longrightarrow} E \\
+                    &amp; r \longrightarrow g(r n)
+                    \end{aligned}
+                  </me>
+                  is an <m>R</m>-module homomorphism.
+                </p>
+          
+                <p>
+                  By assumption, we can extend <m>h</m> to an <m>R</m>-module homomorphism <m>R \longrightarrow E</m>, which we will write as <m>h</m> as well. 
+                  Now the <m>R</m>-module homomorphism
+                  <me>
+                    \begin{aligned}
+                    &amp; A+R n \longrightarrow E \\
+                    &amp; a+r n \longrightarrow g(a)+h(r)
+                    \end{aligned}
+                  </me>
+                  is well-defined by construction, since any <m>r n \in A</m> satisfies <m>g(r n)=h(r)</m>, and if <m>r n=r^{\prime} n</m> then <m>h(r)=r n=r^{\prime} n=h\left(r^{\prime}\right)</m>. 
+                  Finally, this map agrees with <m>g</m> on <m>A</m>, and thus it agrees with <m>f</m> on <m>M</m>, so <m>(A+R n, \varphi) \in X</m> and <m>(A, g) \leqslant(A+R n, \varphi)</m>. 
+                  By the maximality of <m>(A, g)</m>, we conclude that <m>A+R n=A</m>, and thus <m>n \in A</m>, which is a contradiction. 
+                  We conclude that <m>A=N</m>. 
+                  Therefore, <m>g</m> makes the diagram
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-117(1).jpg"/>
+                <p>
+                  commute.
+                </p>
+              </proof>
+            </theorem>
+
+          </subsection>
+
+          <subsection xml:id="subsec-divisible"><title>Divisible Modules</title>
+            
+            <p>
+              It is very easy to see that every <m>R</m>-module is a quotient of a free module. 
+              The dual statement is true as well, but it is a little more delicate.
+            </p>
+
+            <definition xml:id="def-4.21"><title>Divisible Module</title>
+              <statement>
+                <p>
+                  An <m>R</m>-module <m>D</m> is <em>divisible</em> if for every nonzero <m>r \in R</m> and every <m>d \in D</m> there exists <m>b \in D</m> such that <m>r b=d</m>.
+                </p>
+              </statement>
+            </definition>
+
+            <remark>
+              <p>
+                Remark 4.22. 
+                Given <m>r \in R</m>, and an <m>R</m>-module <m>M</m>, the multiplication by <m>r</m> map <m>M \stackrel{\cdot r}{\longrightarrow} M</m> is an <m>R</m>-module homomorphism. 
+                The module <m>M</m> is divisible if and only if multiplication by <m>r</m> is surjective for all nonzero <m>r \in R</m>.
+              </p>
+            </remark>
+
+            <lemma xml:id="lem-4.23"><title>Divisible Modules Closed Under Quotients</title>
+              <statement>
+                <p>
+                  Any quotient of a divisible module is also divisible.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>D</m> be a divisible <m>R</m>-module and <m>E</m> be a submodule of <m>D</m>. 
+                  Let <m>r \in R</m> and <m>d+E \in</m> <m>D / E</m>. 
+                  By assumption, there exists <m>a \in D</m> such that <m>r a=d</m>. 
+                  The image <m>a+E</m> of <m>a</m> in <m>D / E</m> is still a solution to <m>r(a+E)=d+D</m>, so indeed <m>E</m> is divisible.
+                </p>
+              </proof>
+            </lemma>
+
+            <lemma xml:id="lem-4.24"><title>Injective Modules Divisible in Domains</title>
+              <statement>
+                <p>
+                  Over a domain, every injective module is divisible.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Suppose that <m>E</m> is an injective <m>R</m>-module, where <m>R</m> is a domain. 
+                  Fix <m>r \in R</m> and <m>a \in E</m>. Since <m>R</m> is a domain, we have <m>s r=s^{\prime} r \Rightarrow s=s^{\prime}</m> for any <m>s, s^{\prime}, r \in R</m>. 
+                  In particular, each element in <m>(r)</m> can be written uniquely as <m>s r</m> for some <m>s \in R</m>. 
+                  In particular, the map of <m>R</m>-modules
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-119.jpg"/>
+                <p>
+                  is well-defined. 
+                  Since <m>E</m> is injective, we can extend this to a homomorphism <m>f: R \longrightarrow E</m>. 
+                  Finally, <m>f(1) \in E</m> is an element such that <m>e=f(r)=r f(1)</m>, and <m>E</m> is divisible.
+                </p>
+              </proof>
+            </lemma>
+
+            <p>
+              This not true in general if we do not assume <m>R</m> is a domain.
+            </p>
+
+            <example><title>Injective but not Divisible Module</title>
+              <p>
+                Example 4.25. 
+                Let <m>k</m> be a field and <m>R=k[x] /\left(x^{2}\right)</m>. 
+                On the one hand, <m>R</m> is not a divisible <m>R</m>-module, since there is no <m>y \in R</m> such that <m>x y=1</m>. 
+                On the other hand, <m>R</m> is actually an injective module over itself, although we do not have the tools to justify that this is indeed an injective <m>R</m>-module. <m>{ }^{1}</m>
+              </p>
+            </example>
+      
+            <p>
+              The converse of <xref ref="lem-4.24"/> does not hold in general, and quotients of injective modules are not necessarily injective.
+            </p>
+
+            <exercise><title>Injective Modules not Closed Under Quotients</title>
+              <p>
+                Exercise 57. 
+                Let <m>R=k[x, y]</m>, where <m>k</m> is a field, let <m>Q=\operatorname{frac}(R)</m> be the fraction field of <m>R</m>. 
+                The <m>R</m>-module <m>M=Q / R</m> is divisible but not injective.
+              </p>
+            </exercise>
+      
+            <p>
+              But the converse of <xref ref="lem-4.24"/> does hold for some special classes of rings.
+            </p>
+
+            <lemma xml:id="lem-4.26"><title>Injective iff Divisible in PID</title>
+              <statement>
+                <p>
+                  Let <m>R</m> be a principal ideal domain. 
+                  An <m>R</m>-module <m>E</m> is injective if and only <m>E</m> it is divisible.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Given <xref ref="lem-4.24"/>, we only need to show that divisible modules are injective. 
+                  By Baer’s Criterion, we only need to show that any map from an ideal to <m>E</m> can be extended to the whole ring. 
+                  So let <m>E</m> be a divisible <m>R</m>-module, and consider any map <m>I \longrightarrow E</m> from an ideal <m>I</m> to <m>E</m>. 
+                  If <m>I=0</m>, we could extend our map by taking the <m>0</m> map from <m>R</m> to <m>E</m>, so we might as well assume that <m>I \neq 0</m>. 
+                  By assumption, <m>I=(a)</m> for some <m>a \in R</m>, and since <m>E</m> is divisible, there exists <m>e \in E</m> such that <m>f(a)=a e</m>. 
+                  Now consider the multiplication by <m>r</m> map,
+                  <me>
+                    \begin{aligned}
+                    &amp; R \longrightarrow g \\
+                    &amp; r \longrightarrow r e .
+                    \end{aligned}
+                  </me>
+                  For every <m>r \in R, g(r a)=r a e=r f(a)=f(r a)</m>, so <m>g</m> extends <m>f</m>. 
+                  Therefore, by Theorem 4.18, <m>E</m> is injective.
+                </p>
+              </proof>
+            </lemma>
+
+            <lemma xml:id="lem-4.27"><title>Injectives Closed Under Quotients in PIDs</title>
+              <statement>
+                <p>
+                  Over a principal ideal domain, quotients of injective modules are injective.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  If <m>E</m> is injective, it is also divisible, by <xref ref="lem-4.24"/>. Given any submodule <m>D \subseteq E</m>, any <m>e \in E</m>, and a nonzero <m>r \in R</m>, there exists <m>y \in E</m> such that <m>r y=e</m>, and so this also holds in <m>E / D</m>. 
+                  Then <m>E / D</m> is divisible, and thus injective by <xref ref="lem-4.26"/>.  
+                  <fn>Using fancy words you might learn in Commutative Algebra II, this ring <m>R</m> is an example of a complete intersection, which is a subclass of Gorenstein rings. Moreover, <m>\operatorname{dim} R=0</m> - this is something you’d learn about in Commutative Algebra II. Now it turns out (and this is a nontrivial fact) that Gorenstein rings of dimension 0 are injective modules over themselves.</fn>
+                </p>
+              </proof>
+            </lemma>
+
+            <p>
+              Given an injective abelian group, we can always use it to construct an injective <m>R</m>-module over our favorite ring <m>R</m>.
+            </p>
+
+            <lemma xml:id="lem-4.28">
+              <statement>
+                <p>
+                  Given an injective abelian group <m>D</m> and a ring <m>R, \operatorname{Hom}_{\mathbb{Z}}(R, D)</m> is an injective <m>R</m>-module.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>E:=\operatorname{Hom}_{\mathbb{Z}}(R, D)</m>. 
+                  This abelian group <m>E</m> is an <m>R</m>-module, via
+                  <me>r \cdot f:=(a \mapsto f(r a))</me>
+                </p>
+          
+                <p>
+                  We claim that <m>E</m> is actually an injective <m>R</m>-module. 
+                  By <xref ref="thm-4.15"/>, it is sufficient to prove that <m>\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)</m> is an exact functor. 
+                  By <xref ref="cor-3.61"/>, <m>\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)</m> is naturally isomorphic to <m>\operatorname{Hom}_{\mathbb{Z}}\left(-\otimes_{\mathbb{Z}} R, D\right)</m>.
+                  This last functor is the composition of
+                  <me>\operatorname{Hom}_{\mathbb{Z}}\left(-\otimes_{\mathbb{Z}} R, D\right)=\operatorname{Hom}_{\mathbb{Z}}(-, D) \circ\left(-\otimes_{\mathbb{Z}} R\right)</me>
+                </p>
+          
+                <p>
+                  On the one hand, <m>-\otimes_{\mathbb{Z}} R</m> is naturally isomorphic to the identity on <m>R</m>-Mod, by <xref ref="lem-3.40"/>, so it is exact. 
+                  On the other hand, <m>D</m> is an injective <m>\mathbb{Z}</m>-module, so <m>\operatorname{Hom}_{\mathbb{Z}}(-, D)</m> is exact by <xref ref="thm-4.15"/>. 
+                  The composition of exact functors is exact, and thus <m>\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)</m> is exact.
+                </p>
+              </proof>
+            </lemma>
+
+            <example>
+              <p>
+                Example 4.29. 
+                Since <m>\mathbb{Q}</m> is a divisible abelian group, by <xref ref="lem-4.28"/> for any ring <m>R</m> the <m>R</m>-module <m>\operatorname{Hom}_{\mathbb{Z}}(R, \mathbb{Q})</m> is injective.
+              </p>
+            </example>
+
+          </subsection>
+
+          <subsection xml:id="subsec-inject-embed"><title>Every Module Embeds into an Injective Module</title>
+
+            <p>
+              When we talked about projective modules, we showed that every module is a quotient of a projective - in fact, every module is a quotient of a free module. 
+              The dual statement is true as well: that every module embeds into an injective module. 
+              We will soon see that these two statements are extremely important.
+            </p>
+      
+            <p>
+              While the statement about projectives is relatively simple - it’s essentially a consequence of the universal property of free modules - the fact about injectives is a lot more delicate; 
+              the work we just did on divisible modules was precisely so we could show this deep and important fact.
+            </p>
+      
+            <p>
+              First, we show that every abelian group can be embedded into an injective abelian group.
+            </p>
+
+            <lemma xml:id="lem-4.30">
+              <statement>
+                <p>
+                  Every abelian group <m>M</m> is a submodule of some injective abelian group.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  On the one hand, <m>M</m> is a quotient of some free abelian group, say <m>M \cong\left(\oplus_{i} \mathbb{Z}\right) / K</m>.
+                  Now <m>\mathbb{Z}</m> embeds in <m>\mathbb{Q}</m>, and thus <m>M</m> embeds into a quotient of <m>\oplus_{i} \mathbb{Q}</m>. 
+                  By Example 4.20, <m>\mathbb{Q}</m> is an injective abelian group, and by Corollary <m>4.19, \oplus_{i} \mathbb{Q}</m> is an injective abelian group, since <m>\mathbb{Z}</m> is a noetherian ring. 
+                  By <xref ref="lem-4.27"/>, any quotient of <m>\oplus_{i} \mathbb{Q}</m> is also injective, so we have shown that <m>M</m> embeds into an injective abelian group, say <m>D</m>.
+                </p>
+          
+                <p>
+                  In fact, the proof above can be repeated over any PID: if <m>R</m> is a PID, we can show that any <m>R</m>-module <m>M</m> embeds into an injective module, and in fact <m>M</m> embeds into some number of copies of the fraction field <m>Q</m>.
+                </p>
+              </proof>
+            </lemma>
+      
+            <p>
+              We can finally show that over any ring, every module can be embedded into an injective module.
+            </p>
+
+            <theorem xml:id="thm-4.31">
+              <statement>
+                <p>
+                  Every <m>R</m>-module <m>M</m> is a submodule of some injective <m>R</m>-module.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  First, by <xref ref="lem-4.30"/> we can view <m>M</m> as a subgroup of some injective abelian group <m>D</m>. 
+                  Let <m>i: M \longrightarrow D</m> be the inclusion map and <m>E:=\operatorname{Hom}_{\mathbb{Z}}(R, D)</m>.
+                </p>
+          
+                <p>
+                  By <xref ref="lem-4.28"/>, <m>E</m> is an injective <m>R</m>-module. 
+                  Since Hom is left exact, by <xref ref="thm-3.14"/>, <m>\operatorname{Hom}_{\mathbb{Z}}(R,-)</m> preserves the inclusion <m>I</m>, so we have an inclusion <m>\operatorname{Hom}_{\mathbb{Z}}(R, M) \subseteq \operatorname{Hom}_{\mathbb{Z}}(R, D)</m>. 
+                  Now consider the map
+                  <me>
+                    \begin{aligned}
+                    &amp; M \stackrel{\psi}{\longrightarrow} \operatorname{Hom}_{\mathbb{Z}}(R, M) \\
+                    &amp; m \longrightarrow(r \mapsto r m) .
+                    \end{aligned}
+                  </me>
+                </p>
+          
+                <p>
+                  This is an <m>R</m>-module homomorphism:
+                  <ul>
+                    <li>
+                      <p>
+                        Given <m>a, b \in M</m>,
+                        <me>\psi(a+b)(r)=r(a+b)=r a+r b=\psi(a)(r)+\psi(b)(r)</me>
+                        so <m>\psi(a+b)=\psi(a)+\psi(b)</m>.
+                      </p>
+                    </li>
+          
+                    <li>
+                      <p>
+                        Given <m>r \in R, m \in M</m>, and <m>s \in R</m>,
+                        <me>\psi(r m)(s)=s(r m)=r(s m)=r \psi(m)(s),</me>
+                        so <m>\psi(r m)=r \psi(m)</m>.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+          
+                <p>
+                  Moreover, if <m>\psi(m)=0</m> then <m>m=\psi(m)(1)=0</m>. 
+                  So <m>\psi</m> is injective, and thus composing <m>\psi</m> with our previous inclusion <m>\operatorname{Hom}_{\mathbb{Z}}(R, M) \subseteq \operatorname{Hom}_{\mathbb{Z}}(R, D)</m> gives us an inclusion <m>\varphi</m> of <m>M</m> into the injective <m>R</m>-module <m>\operatorname{Hom}_{\mathbb{Z}}(R, D)</m>. 
+                  However, the inclusion <m>\operatorname{Hom}_{\mathbb{Z}}(R, M) \subseteq \operatorname{Hom}_{\mathbb{Z}}(R, D)</m> is a priori only a map of abelian groups, so we should check that <m>\varphi</m> is indeed <m>R</m>-linear. 
+                  In order to do this, we need to be careful (at least in the case when <m>R</m> is not commutative) with how we defined the left <m>R</m>-module structure on <m>\operatorname{Hom}_{\mathbb{Z}}(R, D)</m> in Exercise 56: 
+                  this is a situation where we view <m>R</m> as a <m>(\mathbb{Z}, R)</m>-bimodule and <m>D</m> as a left <m>\mathbb{Z}</m>-module, so <m>\operatorname{Hom}_{\mathbb{Z}}(R, D)</m> is a left <m>R</m>-module via
+                  <me>r \cdot f \text { is the } R \text {-map given by }(r \cdot f)(a)=f(a r) \text {. }</me>
+                </p>
+          
+                <p>
+                  The map we need to show is <m>R</m>-linear is
+                  <me>
+                    \begin{aligned}
+                    &amp; M \stackrel{\varphi}{\longrightarrow} \operatorname{Hom}_{\mathbb{Z}}(R, D) \\
+                    &amp; m \longmapsto \varphi_{m}=(r \mapsto i(r m)) .
+                    \end{aligned}
+                  </me>
+                  Regarding <m>i</m> as a simple inclusion, <m>i(m)</m> simply views the element <m>m</m> as an element of <m>D</m>; 
+                  to simplify notation, we drop the <m>i</m> : so for each <m>m \in M, \varphi(m)</m> is the map <m>\varphi_{m}: R \longrightarrow D</m> given by
+                  <me>\varphi_{m}(r)=r m</me>
+                  For every <m>r \in R, m \in M</m>, and <m>s \in R</m>,
+                </p>
+          
+                <p>
+                  <me>
+                    \begin{array}{rrr}
+                    \varphi_{r m}(s) &amp; =s(r m) &amp; \text { by definition } \\
+                    &amp; =(s r) m &amp; \\
+                    &amp; =\varphi_{m}(s r) &amp; \text { using the module axioms } \\
+                    &amp; =r \varphi_{m}(s) &amp; \text { by definition } \\
+                    &amp; &amp; \text { by defition of the left } R \text {-module structure on } \operatorname{Hom}_{\mathbb{Z}}(R, D)
+                    \end{array}
+                  </me>
+                  so <m>\varphi(r m)=r \varphi(m)</m>. 
+                  This shows that <m>\varphi</m> is an inclusion of <m>R</m>-modules.
+                </p>
+              </proof>
+            </theorem>
+
+            <p>
+              And finally, just like we did for projectives, we can characterize injectives in terms of split short exact sequences.
+            </p>
+
+            <theorem xml:id="thm-4.32">
+              <statement>
+                <p>
+                  An <m>R</m>-module <m>I</m> is injective if and only if every short exact sequence
+                  <me>0 \longrightarrow I \longrightarrow B \longrightarrow C \longrightarrow 0</me>
+                  splits.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>I</m> be an injective <m>R</m>-module, and consider any short exact sequence
+                  <me>0 \longrightarrow I \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0</me>
+                  Since <m>I</m> is injective, there exists a map <m>g</m> making
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-122(1).jpg"/>
+                <p>
+                  commute, and such a <m>g</m> gives a splitting for our short exact sequence.
+                </p>
+          
+                <p>
+                  Conversely, suppose that every short exact sequence <m>0 \longrightarrow I \longrightarrow B \longrightarrow C \longrightarrow 0</m> splits, and consider a diagram
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-122.jpg"/>
+                <p>
+                  By <xref ref="thm-4.31"/>, <m>I</m> embeds into some injective <m>R</m>-module <m>E</m>, say by the inclusion <m>j</m>. 
+                  By assumption, the short exact sequence
+                  <me>0 \longrightarrow I \stackrel{j}{\longrightarrow} E \longrightarrow \text { coker } j \longrightarrow 0</me>
+                  splits, so there exists a map <m>q: E \longrightarrow I</m> such that <m>q i=\mathrm{id}_{I}</m>. 
+                  Since <m>E</m> is injective, we can lift <m>i</m> through <m>j f</m>, obtaining an <m>R</m>-module homomorphism <m>\ell</m> such that
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-122(2).jpg"/>
+                <p>
+                  commutes. Now <m>g:=q \ell</m> satisfies
+                  <me>
+                    \begin{array}{rlr}
+                    g i &amp; =q \ell i &amp; \text { by definition } \\
+                    &amp; =q j f &amp; \text { by commutativity } \\
+                    &amp; =f &amp; \text { since } q j=\mathrm{id}_{I},
+                    \end{array}
+                  </me>
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-123.jpg"/>
+                <p>
+                  commutes.
+                </p>
+              </proof>
+            </theorem>
+
+            <p>
+              Before we move on from injective modules, let us say a word about how the story continues. 
+              The next chapter is quite beautiful, and it is a shame we have no time to discuss it in detail this semester.
+            </p>
+      
+            <p>
+              We proved above that every module <m>M</m> is a submodule of some injective module. 
+              One can even do better and talk about the smallest injective module that <m>M</m> embeds in; 
+              this is called the injective hull <m>E(M)</m> of <m>M</m>. 
+              One could describe <m>E(M)</m> by saying that it is the intersection of all the injective modules that contain <m>M</m>, but this is not a very practical description. 
+              Injective hulls can also be described through the theory of essential extensions, a topic which we do not have time to discuss this semester. 
+              We leave the definition here just for fun, but we do not have the time to talk about it at length.
+            </p>
+
+            <definition xml:id="def-4.33">
+              <statement>
+                <p>
+                  Let <m>M \subseteq E</m>. We say <m>E</m> is an <em>essential extension</em> of <m>M</m> if every nonzero submodule <m>N \subseteq E</m> intersects <m>M</m> nontrivially, meaning <m>E \cap M \neq 0</m>. 
+                  More generally, an injective map <m>\alpha: M \longrightarrow E</m> is an essential extension if <m>\alpha(M) \subseteq E</m> is an essential extension in the sense above.
+                </p>
+              </statement>
+            </definition>
+      
+            <p>
+              One then shows that an <m>R</m>-module <m>M</m> is injective if and only if it has no proper essential extensions <m>E \supseteq M</m>. 
+              This proves that a maximal essential extension <m>E</m> of <m>M</m> is injective, and that there are no other injective modules <m>I</m> with of <m>M \subseteq I \subseteq E</m>. 
+              Moreover, one can show that any two maximal essential extension of <m>M</m> are isomorphic - and thus we can talk about the maximal essential extension of <m>M</m>, up to isomorphism, which is
+            </p>
+      
+            <p>
+              But the theory of injectives, and injective hulls in particular, is much more complicated than the theory of projectives. 
+              When <m>M</m> is a finitely generated module, we can always find a finitely generated projective (even free!) module surjecting onto <m>M</m>; 
+              in contrast, the injective hull <m>E(M)</m> might not be finitely generated - in fact, <m>E(M)</m> is typically not finitely generated even when <m>M</m> is cyclic.
+            </p>
+      
+            <p>
+              The story of the structure of injective modules then continues in a beautiful way. 
+              Over a noetherian ring, it turns out that every injective module can be decomposed into a direct sum of injective modules of the form <m>E(R / P)</m>, where <m>P</m> is a prime ideal in <m>R</m>. 
+              Moreover, the injective modules <m>E(R / P)</m> are the indecomposable injective modules, so the basic building blocks of injective modules. 
+              One can in fact compute the injective hull of any finitely generated <m>R</m>-module very explicitly. 
+              A lot of this was proved in Eben Matlis’ beautiful PhD thesis [Mat58], but sadly we do not have time for the details this semester. 
+              The details, however, are very important, for example to develop the theory of local cohomology - a topic which we will briefly mention later on.
+            </p>
+
+          </subsection>
+          
         </section>
 
         <section xml:id="sec-flat"><title>Flat Modules</title>
-          <p></p>
+
+          <subsection xml:id="subsec-flat"><title>Definition</title>
+          
+            <p>
+              Finally, we turn to the modules that make the tensor product exact.
+            </p>
+
+            <definition xml:id="def-4.34"><title>Flat Module</title>
+              <statement>
+                <p>
+                  An <m>R</m>-module <m>M</m> is said to be <em>flat</em> if <m>M \otimes_{R}-</m> is an exact functor.
+                </p>
+              </statement>
+            </definition>
+
+            <remark>
+              <p>
+                Remark 4.35. 
+                By <xref ref="thm-3.47"/>, <m>M \otimes_{R}</m> - is right exact. 
+                Therefore, <m>M</m> is flat if and only if for every injective <m>R</m>-module map <m>i: A \longrightarrow B</m>,
+                <me>M \otimes_{R} A \stackrel{1 \otimes i}{\longrightarrow} M \otimes_{R} B \quad \text { is injective. }</me>
+              </p>
+            </remark>
+
+            <lemma xml:id="lem-4.36"><title>Direct Summands of Flat Modules are Flat</title>
+              <statement>
+                <p>
+                  Given a family of <m>R</m>-modules <m>\left\{M_{i}\right\}_{i \in I}</m>, the direct sum <m>\oplus_{i} M_{i}</m> is flat if and only if every <m>M_{i}</m> is flat. 
+                  In particular, direct summands of flat modules are flat.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Given a family of <m>R</m>-module homomorphisms <m>f_{i}: M_{i} \longrightarrow N_{i}</m>, there is an <m>R</m>-module homomorphism
+                  <me>
+                    \begin{array}{r}
+                    \bigoplus_{i \in I} M_{i} \stackrel{\left(f_{i}\right)_{i \in I}}{\longmapsto} \bigoplus_{i \in I} N_{i} \\
+                    \quad\left(m_{i}\right) \longmapsto
+                    \end{array}
+                  </me>
+                  which is injective if and only if every <m>f_{i}</m> is injective.
+                </p>
+          
+                <p>
+                  Let <m>f: A \longrightarrow B</m> be an injective <m>R</m>-module homomorphism. 
+                  There is a commutative diagram
+                  <me>
+                    \begin{aligned}
+                    &amp; \left(\bigoplus_{i \in I} M_{i}\right) \otimes_{R} A \stackrel{\cong}{\longrightarrow} \bigoplus_{i \in I} M_{i} \otimes_{R} A \\
+                    &amp; \varphi:=1 \otimes f \downarrow \\
+                    &amp; \left(\bigoplus_{i \in I} M_{i}\right) \otimes_{R} B \stackrel{\downarrow}{\cong} \cong \bigoplus_{i \in I} M_{i} \otimes_{R} B
+                    \end{aligned}
+                  </me>
+                  where the horizontal maps are the isomorphisms from <xref ref="thm-3.41"/>. 
+                  In particular, <m>\varphi</m> is injective if and only if <m>\psi</m> is injective. 
+                  Moreover, <m>\psi</m> is injective if and only if each component is injective, meaning <m>1 \otimes f: M_{i} \otimes A \longrightarrow M_{i} \otimes B</m> is injective for all <m>i</m>.
+                </p>
+          
+                <p>
+                  On the one hand, <m>\bigoplus_{i \in I} M_{i}</m> is flat if and only if for every injective map <m>f</m>, the corresponding <m>\phi</m> is injective. 
+                  On the other hand, all the <m>M_{i}</m> are flat if and only if for every injective map <m>f, 1 \otimes f: M_{i} \otimes A \longrightarrow M_{i} \otimes B</m> is injective for all <m>i</m>, or equivalently, as explained above, if <m>\psi</m> is injective for any given injective map <m>f</m>. 
+                  This translates into the equivalence we want to show.
+                </p>
+              </proof>
+            </lemma>
+      
+            <p>
+              All projectives are flat.
+            </p>
+      
+            <theorem xml:id="thm-4.37"><title>Every Projective Module is Flat</title>
+              <statement>
+                <p>
+                  Let <m>R</m> be any ring. Every projective <m>R</m>-module is flat.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  First, recall that <m>R \otimes_{R}-</m> is naturally isomorphic to the identity functor, by Lemma 3.40, and thus exact (see Remark 3.11). 
+                  This shows that <m>R</m> is flat, and thus any free module, being a direct sum of copies of <m>R</m>, must also be flat by <xref ref="lem-4.36"/>. 
+                  Finally, every projective module is a direct summand of a free module, by <xref ref="thm-4.9"/>. 
+                  Direct summands of flat modules are flat, by <xref ref="lem-4.36"/>, so every projective module is flat.
+                </p>
+              </proof>
+            </theorem>
+      
+            <p>
+              We can test whether a given module if flat by looking at the finitely generated submodules.
+            </p>
+
+            <theorem xml:id="thm-4.38"><title>Flatness and Finitely Generated Submodules</title>
+              <statement>
+                <p>
+                  If every finitely generated submodule of <m>M</m> is flat, then <m>M</m> is flat.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>i: A \longrightarrow B</m> be an injective map of <m>R</m>-modules. 
+                  We want to show that
+                  <me>M \otimes_{R} A \stackrel{1 \otimes i}{\longrightarrow} M \otimes_{R} B</me>
+                  is injective. 
+                  Suppose that <m>u \in \operatorname{ker}\left(1_{M} \otimes i\right)</m>. 
+                  We are going to construct a finitely generated submodule <m>N \subseteq M</m>, with <m>j: N \rightarrow M</m> the inclusion, and an element <m>v \in N \otimes_{R} A</m> such that <m>v \in \operatorname{ker}\left(1_{N} \otimes i\right)</m> and <m>u=\left(j \otimes 1_{A}\right)(v)</m>. 
+                  Once we do that, our submodule <m>N</m> is finitely generated, and thus flat by assumption, so <m>1_{N} \otimes i</m> is injective; therefore, <m>v=0</m> and thus we must have <m>u=0</m>. 
+                  Therefore, <m>1_{M} \otimes i</m> is injective, and we conclude that <m>M</m> is flat.
+                </p>
+          
+                <p>
+                  Let’s say that <m>u=m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n}</m>.
+                  In <xref ref="thm-3.22"/>, we constructed the tensor product <m>M \otimes_{R} B</m> as a quotient of the free module <m>F</m> on <m>M \times B</m> by the submodule <m>S</m> with all the necessary relations we need to impose. 
+                  This gives us a short exact sequence
+                  <me>0 \longrightarrow S \longrightarrow F \stackrel{\pi}{\longrightarrow} M \otimes_{R} B \longrightarrow 0</me>
+                  The fact that <m>m_{1} \otimes i\left(a_{1}\right)+\cdots+m_{n} \otimes i\left(a_{n}\right)=0</m> means we can rewrite this element as <m>\pi(s)</m> for some <m>s \in S</m>. 
+                  This element <m>s</m> is a linear combination of elements of finitely many <m>(m, b) \in M \times B</m>. 
+                  Let <m>c_{1}, \ldots, c_{t}</m> be all the <m>M</m>-coordinates of those elements.
+                </p>
+          
+                <p>
+                  Now we take <m>N</m> to be the finitely generated submodule of <m>M</m> generated by <m>m_{1}, \ldots, m_{n}</m> and <m>c_{1}, \ldots, c_{t}</m>, and <m>v=m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n} \in N \otimes A</m>. 
+                  Now
+                  <me>\left(j \otimes 1_{A}\right)(v)=\left(j \otimes 1_{A}\right)\left(m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n}\right)=m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n} \in M \otimes_{R} A,</me>
+                  and
+                  <me>\left(1_{N} \otimes i\right)(v)=\left(1_{N} \otimes i\right)\left(m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n}\right)=m_{1} \otimes i\left(a_{1}\right)+\cdots+m_{n} \otimes i\left(a_{n}\right)=0</me>
+                  as desired.
+                </p>
+              </proof>
+            </theorem>
+
+            <p>
+              The reason we needed to add in these extra elements <m>n_{i}</m> is that a priori <m>N \otimes B</m> is not necessarily a submodule of <m>M \otimes B</m>, so we do not necessarily have <m>m_{1} \otimes i\left(a_{1}\right)+\cdots+m_{n} \otimes i\left(a_{n}\right)=0</m> in <m>\left(R m_{1}+\cdots+R m_{n}\right) \otimes B</m> without adding in all relations that make it true.
+            </p>
+
+          </subsection>
+
+          <subsection xml:id="subsec-torsion"><title>Torsion Submodules</title>
+
+            <definition xml:id="def-4.39"><title>Torsion Submodule</title>
+              <statement>
+                <p>
+                  Let <m>R</m> be a domain and <m>M</m> be an <m>R</m>-module. 
+                  The <em>torsion submodule</em> of <m>M</m> is
+                  <me>T(M):=\{m \in M \mid r m=0 \text { for some regular element } r \in R\}</me>
+                  The elements of <m>T(M)</m> are called <em>torsion elements</em>, and we say that <m>M</m> is <em>torsion</em> if <m>T(M)=M</m>. 
+                  Finally, <m>M</m> is <em>torsion free</em> if <m>T(M)=0</m>.
+                </p>
+              </statement>
+            </definition>
+
+            <lemma xml:id="lem-4.40"><title>Flat Implies Torision Free in Domains</title>
+              <statement>
+                <p>
+                  If <m>R</m> is a domain and <m>M</m> is a flat <m>R</m>-module, then <m>M</m> is torsion free.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>Q=\operatorname{frac}(R)</m> be the fraction field of <m>R</m>, which is a torsion free <m>R</m>-module.
+                  Now <m>M \otimes_{R} Q</m> is a <m>Q</m>-vector space, so isomorphic to a direct sum of copies of <m>Q</m>. 
+                  In particular, <m>M \otimes_{R} Q</m> is torsion free as an <m>R</m>-module. 
+                  Since <m>M</m> is flat, the inclusion <m>R \subseteq Q</m> induces an injective <m>R</m>-module map
+                  <me>0 \longrightarrow M \otimes_{R} R \longrightarrow M \otimes_{R} Q</me>
+                  and since <m>M \cong M \otimes_{R} R</m>, by <xref ref="lem-3.40"/>, we conclude that <m>M</m> is isomorphic to a submodule of <m>M \otimes_{R} Q</m>. 
+                  Submodules of torsion free modules are also torsion free, so <m>M</m> is torsion free.
+                </p>
+              </proof>
+            </lemma>
+
+            <p>
+              In general, the converse does not hold.
+            </p>
+
+            <example><title>Torsion Free but not Flat Module</title>
+              <p>
+                Example 4.41. 
+                Let <m>k</m> be a field and <m>R=k[x, y]</m>. 
+                Consider the ideal <m>\mathfrak{m}=(x, y)</m>. 
+                This is a submodule of the torsion free module <m>R</m>, and thus torsion free. 
+                However, it is not flat. 
+                For example, when we apply <m>R / \mathfrak{m} \otimes_{R}-</m> to the inclusion <m>\mathfrak{m} \subseteq R</m> we obtain a map of <m>R / \mathfrak{m}</m>-vector spaces
+                <me>\mathfrak{m} / \mathfrak{m}^{2} \longrightarrow R / \mathfrak{m}</me>
+              </p>
+        
+              <p>
+                This map cannot possibly be injective: <m>\mathfrak{m} / \mathfrak{m}^{2}</m> is a <m>2</m>-dimensional <m>R / \mathfrak{m}</m>-vector space, while <m>R / \mathfrak{m}</m> is <m>1</m>-dimensional.
+              </p>
+            </example>
+      
+            <p>
+              The converse does hold over a PID.
+            </p>
+
+            <lemma xml:id="lem-4.42"><title>Flat iff Torsion Free in PID</title>
+              <statement>
+                <p>
+                  If <m>R</m> is a principal ideal domain, an <m>R</m>-module <m>M</m> is flat if and only if it is torsion free.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <m>(\Rightarrow)</m> This is just a special case of <xref ref="lem-4.40"/>.
+                </p>
+          
+                <p>
+                  <m>(\Leftarrow)</m> Suppose <m>M</m> is a torsion free finitely generated <m>R</m>-module. 
+                  The structure theorem for PIDs says that <m>M</m> must be isomorphic to a direct sum of copies of cyclic modules. 
+                  The cyclic module <m>R / I</m> has torsion (all the elements are killed by <m>I</m> ) unless <m>I=0</m>. 
+                  Therefore, <m>M</m> must be isomorphic to a direct sum of copies of <m>R</m>, and thus free. 
+                  By <xref ref="thm-4.3"/>, <m>M</m> is projective, and by <xref ref="thm-4.37"/> projectives are flat, so <m>M</m> is flat.
+                </p>
+          
+                <p>
+                  Now let <m>M</m> be any torsion free <m>R</m>-module. 
+                  All of the finitely generated submodules of <m>R</m> are also torsion free, and thus flat by what we have shown so far. 
+                  By <xref ref="thm-4.38"/>, <m>M</m> must be flat.
+                </p>
+              </proof>
+            </lemma>
+
+            <p>
+              Not all flat modules are projective.
+            </p>
+
+            <example><title>Flat but not Projective Module</title>
+              <p>
+                Example 4.43. 
+                The <m>\mathbb{Z}</m>-module <m>\mathbb{Q}</m> is torsion free and thus flat, by <xref ref="lem-4.42"/>. 
+                However, <m>\mathbb{Q}</m> is not a projective <m>\mathbb{Z}</m>-module. 
+                Suppose by contradiction, that <m>\mathbb{Q}</m> is a projective <m>\mathbb{Z}</m>-module. 
+                By <xref ref="thm-4.9"/>, <m>\mathbb{Q}</m> must be a direct summand of a free module, say <m>F=\bigoplus_{I} \mathbb{Z}</m>. 
+                Consider the inclusion <m>\iota: \mathbb{Q} \hookrightarrow F</m>, and pick <m>i \in I</m> such that the image of <m>\mathbb{Q}</m> contains some element with a nonzero entry in the <m>i</m> component. 
+                Now consider the projection <m>\pi: F \longrightarrow \mathbb{Z}</m> onto the <m>i</m> th factor. 
+                By assumption, the composition <m>\pi i: \mathbb{Q} \longrightarrow \mathbb{Z}</m> is nonzero. 
+                However, there are no nontrivial abelian group homomorphisms <m>\mathbb{Q} \longrightarrow \mathbb{Z}</m>, contradicting the fact that <m>\pi i</m> is nonzero. 
+                We conclude that <m>\mathbb{Q}</m> is not projective.
+              </p>
+            </example>
+
+            <p>
+              However, for finitely generated modules over a commutative noetherian local ring, every flat module is free, and thus flat, projective, and free all coincide. 
+              However, to prove that we need a little bit of commutative algebra, which we introduce in the next section.
+            </p>
+    
+            <p>
+              Finally, here is a very important example: localization is flat.
+            </p>
+
+            <theorem xml:id="thm-4.44"><title>Flatness of Localization</title>
+              <statement>
+                <p>
+                  Let <m>R</m> be a commutative ring, and <m>W \ni 1</m> a multiplicative subset of <m>R</m>. 
+                  Then <m>W^{-1} R</m> is flat over <m>R</m>.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  By <xref ref="thm-3.57"/>, tensoring with <m>W^{-1} R</m> is localizing at <m>W</m>. 
+                  But localization is exact, so tensoring with <m>W^{-1} R</m> is exact, and thus <m>W^{-1} R</m> is a flat <m>R</m>-module.
+                </p>
+              </proof>
+            </theorem>
+
+            <p>
+              So for example, if <m>R</m> is a domain then its fraction field <m>Q</m> is a flat module.
+            </p>
+
+          </subsection>
+    
+        </section>
+    
+        <section xml:id="commutative-local-rings"><title>Commutative Local Rings</title>
+    
+          <p>
+            We have shown that
+            <me>\text { Free } \Longrightarrow \text { projective } \Longrightarrow \text { flat. }</me>
+          </p>
+    
+          <p>
+            Over a local ring, these three notions actually coincide. 
+            To show this, we need a little bit of commutative algebra. 
+            First, some notation: when <m>R</m> is a local ring, meaning <m>R</m> has a unique maximal ideal <m>\mathfrak{m}</m>, we write <m>(R, \mathfrak{m})</m> to denote the ring <m>R</m> and its maximal ideal. 
+            Now note that for any <m>R</m>-module <m>M</m>, the module <m>M / \mathfrak{m} M</m> is annihilated by <m>\mathfrak{m}</m>, so it is also a module over a ring <m>R / \mathfrak{m}</m>, which is a field.
+          </p>
+    
+          <p>
+            The following is a classical result in commutative algebra, known by some as Nakayama’s Lemma. 
+            As noted in [Mat89, page 8], Nakayama himself claimed that this should be attributed to Krull and Azumaya, but it’s not clear which of the three actually had the commutative ring statement first. 
+            So some authors (eg, Matsumura) prefer to refer to it as NAK. 
+            There are actually a range of statements, rather than just one, that go under the banner of Nakayama’s Lemma a.k.a. NAK.
+          </p>
+    
+          <p>
+            Theorem <m>4.45(\mathrm{NAK})</m>. Let <m>(R, \mathfrak{m}, k)</m> be a local ring, and <m>M</m> be a finitely generated module. If <m>M=\mathfrak{m} M</m>, then <m>M=0</m>.
+          </p>
+    
+          <p>
+            The theorem above is the theorem most commonly referred to as NAK. 
+            The proof involves only elementary tools, and a fun linear algebra-inspired trick called the Determinantal Trick. 
+            While we will not include the details here, they can be found in any standard Commutative Algebra book. 
+            We will however use this result to prove another statement that is also commonly referred to as NAK, which allows us to talk about minimal generating sets for finitely generated modules over local rings.
+          </p>
+    
+          <p>
+            Remark 4.46. 
+            Let <m>R</m> be any commutative ring, and consider an <m>R</m>-module <m>M</m> and an ideal <m>I</m>. 
+            If <m>I M=0</m>, meaning that <m>a m=0</m> for all <m>a \in I</m> and all <m>m \in M</m>, then <m>M</m> can be given the structure of an <m>R / I</m>-module, as follows: 
+            for any <m>m \in M</m> and any <m>r \in R</m>,
+            <me>(r+I) m=r m</me>
+            The fact that <m>I</m> kills <m>M</m> is what makes this action well-defined. 
+            The fact that <m>M</m> is actually an <m>R</m>-module under this action is a consequence of the fact that <m>M</m> is an <m>R</m>-module; 
+            checking these details is routine, and we leave them as an exercise.
+          </p>
+    
+          <p>
+            Notice that the structure of <m>M</m> as an <m>R / I</m>-module is essentially the same as its structure as an <m>R</m>-module. 
+            There are many properties of <m>M</m> as an <m>R</m>-module that pass onto its <m>R / I-</m> module structure, and typically such results are easy to check.
+          </p>
+    
+          <p>
+            Here is a special case of this: if <m>(R, \mathfrak{m})</m> is a commutative local ring, and <m>M</m> is an <m>R</m>-module, then the module <m>M / \mathfrak{m} M</m> is killed by <m>\mathfrak{m}</m>, and thus it is also a module over <m>R / \mathfrak{m}</m>. 
+            Now notice that <m>R / \mathfrak{m}</m> is a field, so <m>M / \mathfrak{m} M</m> is actually a vector space over the field <m>R / \mathfrak{m}</m>.
+          </p>
+    
+          <p>
+            Theorem 4.47. 
+            Let <m>(R, \mathfrak{m})</m> be a commutative local ring, and <m>M</m> be a finitely generated module. 
+            For <m>m_{1}, \ldots, m_{s} \in M</m>,
+            <me>m_{1}, \ldots, m_{s} \text { generate } M \Longleftrightarrow \overline{m_{1}}, \ldots, \overline{m_{s}} \text { generate } M / \mathfrak{m} M</me>
+            Thus, any generating set for <m>M</m> consists of at least <m>\operatorname{dim}_{k}(M / \mathfrak{m} M)</m> elements.
+          </p>
+    
+          <p>
+            Proof. The implication <m>(\Rightarrow)</m> is clear. For <m>(\Leftarrow)</m>, given <m>m_{1}, \ldots, m_{s} \in M</m> such that <m>\overline{m_{1}}, \ldots, \overline{m_{s}}</m> generate <m>M / \mathfrak{m} M</m>, consider
+          </p>
+    
+          <p>
+            <me>N:=R m_{1}+\cdots+R m_{s} \subseteq M</me>
+          </p>
+    
+          <p>
+            Since <m>M / \mathfrak{m} M</m> is generated by the image of <m>N</m>, we have <m>M=N+\mathfrak{m} M</m>. By taking the quotient by <m>N</m>, we see that
+          </p>
+    
+          <p>
+            <me>M / N=(N+\mathfrak{m} M) / N=\mathfrak{m}(M / N)</me>
+          </p>
+    
+          <p>
+            By Theorem 4.45, <m>M / N=0</m> and thus <m>M=N</m>.
+          </p>
+    
+          <p>
+            As we mentioned above, this allows us to talk about minimal generating sets.
+          </p>
+    
+          <p>
+            Definition 4.48. Let <m>(R, \mathfrak{m})</m> be a local ring, and <m>M</m> a finitely generated module. A set of elements <m>\left\{m_{1}, \ldots, m_{t}\right\}</m> is a minimal generating set of <m>M</m> if the images of <m>m_{1}, \ldots, m_{t}</m> form a basis for the <m>R / \mathfrak{m}</m> vector space <m>M / \mathfrak{m} M</m>.
+          </p>
+    
+          <p>
+            Note that every finitely generated module over a local ring has a minimal generating set, that every minimal generating set has the same number of elements, and that any set of generators for <m>M</m> contains a minimal generating set, all thanks to plain old linear algebra. In particular, we can now define the following:
+          </p>
+    
+          <p>
+            Definition 4.49. Let <m>M</m> be a finitely generated module over a commutative local ring <m>(R, \mathfrak{m})</m>. The minimal number of generators of <m>M</m>, denoted <m>\mu(M)</m>,, is the number of elements in any minimal generating set for <m>M</m>.
+          </p>
+    
+          <p>
+            We now have all the key commutative algebra ingredients needed to show that for finitely generated modules over a noetherian local ring, projective <m>=</m> free. However, the proof follows more easily with one more homological tool we haven’t developed yet, so we will hold off on proving this for now - in fact, you will soon be able to prove it easily, so this will be in the next problem set.
+          </p>
+    
+          <p>
+            Exercise 58. Let <m>(R, \mathfrak{m})</m> be a commutative local ring, and let <m>M</m> be a finitely presented module. Then
+          </p>
+    
+          <p>
+            <me>M \text { is flat } \Longleftrightarrow M \text { is projective } \Longleftrightarrow M \text { is free. }</me>
+          </p>
+    
+          <p>
+            Kaplansky [Kap58] showed that this holds even for modules that are not necessarily finitely presented, but generated by countably many elements.
+          </p>
+    
+          <p>
+            Definition 4.50. An <m>R</m>-module <m>M</m> is locally free if <m>M_{P}</m> is free for every prime ideal <m>P</m>.
+          </p>
+    
+          <p>
+            Exercise 59. Let <m>R</m> be a commutative ring, <m>M</m> and <m>N</m> be <m>R</m>-modules, and <m>P</m> be a prime ideal. Show that
+          </p>
+    
+          <p>
+            <me>\left(M \otimes_{R} N\right)_{P} \cong M_{P} \otimes_{R_{P}} N_{P}</me>
+          </p>
+    
+          <p>
+            Exercise 60. Let <m>R</m> be a commutative ring, <m>P</m> be a prime ideal, and <m>M</m> be an <m>R_{P}</m>-module. Let <m>N</m> be <m>M</m> as an <m>R</m>-module via restriction of scalars. Then as <m>R_{P}</m>-modules, we have an isomorphism
+          </p>
+    
+          <p>
+            <me>N_{P} \cong M</me>
+          </p>
+    
+          <p>
+            Exercise 61. Let <m>R</m> be a commutative ring. Show that a homomorphism of <m>R</m>-modules <m>f: M \rightarrow N</m> is surjective if and only if <m>f_{P}</m> is surjective for all primes <m>P</m>.
+          </p>
+    
+          <p>
+            Exercise 62. Let <m>R</m> be a noetherian ring, <m>W</m> be a multiplicative set, <m>M</m> be a finitely generated <m>R</m>-module, and <m>N</m> an arbitrary <m>R</m>-module. Show that
+          </p>
+    
+          <p>
+            <me>\operatorname{Hom}_{W^{-1} R}\left(W^{-1} M, W^{-1} N\right) \cong W^{-1} \operatorname{Hom}_{R}(M, N) \text {. }</me>
+          </p>
+    
+          <p>
+            In particular, if <m>P</m> is prime,
+          </p>
+    
+          <p>
+            <me>\operatorname{Hom}_{R_{P}}\left(M_{P}, N_{P}\right) \cong \operatorname{Hom}_{R}(M, N)_{P}</me>
+          </p>
+    
+          <p>
+            Theorem 4.51. Let <m>R</m> be a commutative noetherian ring and let <m>M</m> be a finitely presented <m>R</m>-module. Then
+          </p>
+    
+          <p>
+            <me>M \text { is projective } \Longleftrightarrow M \text { is flat } \Longleftrightarrow M \text { is locally free. }</me>
+          </p>
+    
+          <p>
+            Proof. We already know that projectives are flat, by Theorem 4.37.
+          </p>
+    
+          <p>
+            Suppose <m>M</m> is flat. We claim that <m>M_{P}</m> is flat for every prime ideal <m>P</m>. First, note that <m>M_{P} \cong R_{P} \otimes_{R} M</m>, by Theorem 3.57; moreover, <m>R_{P}</m> is a flat <m>R</m>-module by Exercise 53 . Note moreover that any <m>R_{P}</m>-module can also be viewed as an <m>R</m>-module by extension of scalars along the canonical localization map. Now given any short exact sequence of <m>R_{P}</m>-modules, say
+          </p>
+    
+          <p>
+            <me>0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0</me>
+          </p>
+    
+          <p>
+            tensoring with <m>M_{P}</m> over <m>R_{P}</m> can be done in two steps: first we view this as a short exact sequence of <m>R</m>-modules, and tensor with <m>M</m>, but <m>M</m> is a flat <m>R</m>-module, so
+          </p>
+    
+          <p>
+            <me>0 \longrightarrow A \otimes_{R} M \longrightarrow B \otimes_{R} M \longrightarrow C \otimes_{R} M \longrightarrow 0</me>
+          </p>
+    
+          <p>
+            is exact. Then we tensor with <m>R_{P}</m>, but this is also flat <m>R</m>-module, so we get a short exact sequence again:
+          </p>
+    
+          <p>
+            <me>0 \longrightarrow\left(A \otimes_{R} M\right) \otimes_{R} R_{P} \longrightarrow\left(B \otimes_{R} M\right) \otimes_{R} R_{P} \longrightarrow\left(C \otimes_{R} M\right) \otimes_{R} R_{P} \longrightarrow 0</me>
+          </p>
+    
+          <p>
+            By Theorem 3.57 and Exercise 59, for each <m>R_{P}</m>-module <m>X</m> we have
+          </p>
+    
+          <p>
+            <me>\left(X \otimes_{R} M\right) \otimes_{R} R_{P} \cong\left(X \otimes_{R} M\right)_{P} \cong X_{P} \otimes_{R_{P}} M_{P}</me>
+          </p>
+    
+          <p>
+            But <m>X_{P} \cong X</m>, by ??, so we conclude that
+          </p>
+    
+          <p>
+            <me>\left(X \otimes_{R} M\right) \otimes_{R} R_{P} \cong X \otimes_{R_{P}} M_{P}</me>
+          </p>
+    
+          <p>
+            Thus
+          </p>
+    
+          <p>
+            <me>0 \longrightarrow A \otimes_{R_{P}} M_{P} \longrightarrow B \otimes_{R_{P}} M_{P} \longrightarrow C \otimes_{R_{P}} M_{P} \longrightarrow 0</me>
+          </p>
+    
+          <p>
+            is exact, and <m>M_{P}</m> is a flat <m>R_{P}</m>-module.
+          </p>
+    
+          <p>
+            So whenever <m>M</m> is flat, <m>M_{P}</m> is a flat <m>R_{P}</m>-module for all primes <m>P</m>. By Exercise <m>58, M_{P}</m> must be free over <m>R_{P}</m> for all primes <m>P</m>, that is, <m>M</m> is locally free.
+          </p>
+    
+          <p>
+            Finally, suppose that <m>M</m> is locally free. We want to show that <m>M</m> is projective. So by Theorem 4.4, we need to show that for all surjective <m>R</m>-module maps <m>f: A \rightarrow B</m>, the map <m>f_{*}: \operatorname{Hom}_{R}(M, A) \rightarrow \operatorname{Hom}_{R}(M, B)</m> is surjective. By Exercise 61 , it is enough to show that <m>f_{P}</m> is surjective for all primes <m>P</m>. By Exercise 62,
+          </p>
+    
+          <p>
+            <me>\operatorname{Hom}_{R_{P}}\left(M_{P}, A_{P}\right) \cong \operatorname{Hom}_{R}(M, A)_{P} \quad \text { and } \quad \operatorname{Hom}_{R_{P}}\left(M_{P}, B_{P}\right) \cong \operatorname{Hom}_{R}(M, B)_{P}</me>
+          </p>
+    
+          <p>
+            and
+          </p>
+    
+          <p>
+            <me>\left(f_{*}\right)_{P}=\left(f_{P}\right)_{*}: \operatorname{Hom}_{R_{P}}\left(M_{P}, A_{P}\right) \rightarrow \operatorname{Hom}_{R_{P}}\left(M_{P}, B_{P}\right) .</me>
+          </p>
+    
+          <p>
+            But <m>M_{P}</m> i free, and thus projective by Theorem 4.3, so <m>\left(f_{P}\right)_{*}</m> is surjective. Since this holds for all <m>P</m>, by Exercise 61 we conclude that <m>f_{*}</m> is surjective, and thus <m>M</m> is projective.
+          </p>
+    
+          <p>
+            Note that the noetherianity assumption is just so that finitely generated implies finitely presented; the statement is also true for a general commutative ring if instead of finitely generated modules we take finitely presented.
+          </p>
+
         </section>
         
       </chapter>

@@ -529,9 +529,29 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
 <ul class="structural">
-<li class="active"><div class="toc-item"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li><div class="toc-item"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer's Criterion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li><div class="toc-item"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -541,7 +561,197 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-projective"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Projective Modules</span>
 </h2>
-<div class="para" id="p-947"></div></section></div>
+<section class="subsection" id="subsec-free-projective"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Definition, Free Modules are Projective</span>
+</h3>
+<div class="para" id="p-947">While Hom and tensor are not exact functors in general, <span class="process-math">\(\operatorname{Hom}_{R}(M,-), \operatorname{Hom}_{R}(-, M)\text{,}\)</span> and <span class="process-math">\(M \otimes_{R}-\)</span> can be exact functors for carefully chosen modules <span class="process-math">\(M\text{.}\)</span> In this chapter, we introduce these three classes of modules (projective, injective, and flat modules) and study their properties. Throughout, we consider general rings and left modules.</div>
+<article class="definition definition-like" id="def-4.1"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Projective Module.</span>
+</h4> <div class="para" id="p-948">Let <span class="process-math">\(R\)</span> be a ring. An <span class="process-math">\(R\)</span>-module <span class="process-math">\(P\)</span> is <em class="emphasis">projective</em> if given any surjective <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(s: A \rightarrow B\)</span> and any <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f: P \rightarrow B\text{,}\)</span> there exists an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(g\)</span> such that the diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-109(1).jpg" class="contained"></div> <div class="para" id="p-949">commutes.</div></article><article class="remark remark-like" id="rem-4.2"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-950">Remark 4.2. The commutativity of the diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-109.jpg" class="contained"></div> <div class="para" id="p-951">says that <span class="process-math">\(s_{*}(g)=f\text{,}\)</span> where <span class="process-math">\(s_{*}\)</span> is the <span class="process-math">\(\operatorname{map} \operatorname{Hom}_{R}(P, A) \longrightarrow \operatorname{Hom}_{R}(P, B)\)</span> induced by <span class="process-math">\(s\text{.}\)</span> Whenever this happens, we say that <span class="process-math">\(g\)</span> is a lifting of <span class="process-math">\(f\text{,}\)</span> and that <span class="process-math">\(f\)</span> lifts, or that <span class="process-math">\(f\)</span> factors through <span class="process-math">\(A\text{.}\)</span>
+</div></article><div class="para" id="p-952">There are projective modules over any ring, as the next result shows; in fact, free modules are always projective.</div>
+<article class="theorem theorem-like" id="thm-4.3"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Free Modules are Projective.</span>
+</h4>
+<div class="para" id="p-953">Free modules are projective.</div></article><article class="hiddenproof" id="proof-29"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-29"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-29"><article class="hiddenproof"><div class="para logical" id="p-954">
+<div class="para">Let <span class="process-math">\(F\)</span> be a free <span class="process-math">\(R\)</span>-module. Suppose we are given <span class="process-math">\(R\)</span>-module homomorphisms <span class="process-math">\(s: A \rightarrow C\)</span> and <span class="process-math">\(f: F \rightarrow C\)</span> such that <span class="process-math">\(s\)</span> is surjective. Fix a basis <span class="process-math">\(B=\left\{b_{i}\right\}_{i}\)</span> for <span class="process-math">\(F\text{.}\)</span> Since <span class="process-math">\(s\)</span> is surjective, for each <span class="process-math">\(i\)</span> we can choose <span class="process-math">\(a_{i} \in A\)</span> such that <span class="process-math">\(s\left(a_{i}\right)=f\left(b_{i}\right)\text{.}\)</span> Consider the function <span class="process-math">\(u: B \longrightarrow A\)</span> given by <span class="process-math">\(u\left(b_{i}\right)=a_{i}\text{.}\)</span> The universal property of free modules says that there exists an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(g: F \longrightarrow A\)</span> that coincides with <span class="process-math">\(u\)</span> for all basis elements. Now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s g\left(b_{i}\right)=s u\left(b_{i}\right)=s\left(a_{i}\right)=f\left(b_{i}\right)
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(s g\)</span> agrees with <span class="process-math">\(f\)</span> for all basis elements. Since <span class="process-math">\(B\)</span> generates <span class="process-math">\(F\text{,}\)</span> we conclude that <span class="process-math">\(s g=f\text{.}\)</span>
+</div>
+</div></article></div>
+<div class="para" id="p-955">Projective modules are precisely those that make the covariant Hom functor exact.</div>
+<article class="theorem theorem-like" id="thm-4.4"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-956">Let <span class="process-math">\(P\)</span> be an <span class="process-math">\(R\)</span>-module. The functor <span class="process-math">\(\operatorname{Hom}_{R}(P,-)\)</span> is exact if and only if <span class="process-math">\(P\)</span> is projective.</div></article><article class="hiddenproof" id="proof-30"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-30"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-30"><article class="hiddenproof"><div class="para logical" id="p-957">
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/thm-3.14.html" title="Theorem 3.25: \Hom is Left Exact">Theorem 3.25</a> <span class="process-math">\(\operatorname{Hom}_{R}(P,-)\)</span> is left exact. The statement is that <span class="process-math">\(P\)</span> is projective if and only for any short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html">
+\begin{equation*}
+0 \longrightarrow A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">the induced map <span class="process-math">\(s_{*}: \operatorname{Hom}_{R}(P, B) \longrightarrow \operatorname{Hom}_{R}(P, C)\)</span> is surjective. Say we are given a surjective map</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html">
+\begin{equation*}
+B \stackrel{p}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+</div> <div class="para" id="p-958">The induced map <span class="process-math">\(s_{*}\)</span> is surjective if and only if for every <span class="process-math">\(f \in \operatorname{Hom}_{R}(P, C)\)</span> there exists a lifting <span class="process-math">\(g \in \operatorname{Hom}_{R}(P, B)\)</span> of <span class="process-math">\(f\text{,}\)</span> meaning <span class="process-math">\(s_{*}(g)=f\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/rem-4.2.html" title="Remark 4.2">Remark 4.2</a>, the existence of such a <span class="process-math">\(g\)</span> for all such surjective maps <span class="process-math">\(s\)</span> is precisely the condition that <span class="process-math">\(P\)</span> is projective.</div></article></div>
+<article class="corollary theorem-like" id="cor-4.5"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-959">For any ring <span class="process-math">\(R, \operatorname{Hom}_{R}(R,-)\)</span> is exact. More generally, if <span class="process-math">\(F\)</span> is any free <span class="process-math">\(R\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(F,-)\)</span> is exact.</div></article><article class="hiddenproof" id="proof-31"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-31"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-31"><article class="hiddenproof"><div class="para" id="p-960">By <a href="" class="xref" data-knowl="./knowl/thm-4.3.html" title="Theorem 4.3: Free Modules are Projective">Theorem 4.3</a>, free modules, and <span class="process-math">\(R\)</span> in particular, are projective. By <a href="" class="xref" data-knowl="./knowl/thm-4.4.html" title="Theorem 4.4">Theorem 4.4</a>, <span class="process-math">\(\operatorname{Hom}_{R}(F,-)\)</span> must be exact for any free <span class="process-math">\(R\)</span>-module <span class="process-math">\(F\text{.}\)</span>
+</div></article></div>
+<div class="para" id="p-961">However, not every projective module is free. But before we see such examples, we need to know a bit more about projective modules.</div></section><section class="subsection" id="subsec-direct-summands"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Direct Summands</span>
+</h3>
+<div class="para" id="p-962">First, we show that we can rephrase the condition that a module is projective or injective in terms of split exact sequences.</div>
+<article class="theorem theorem-like" id="thm-4.6"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Projective Modules and Splitting.</span>
+</h4>
+<div class="para logical" id="p-963">
+<div class="para">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(P\)</span> is projective if and only if every short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow B \longrightarrow P \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">splits.</div>
+</div></article><article class="hiddenproof" id="proof-32"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-32"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><div class="para logical" id="p-964">
+<div class="para">
+<span class="process-math">\((\Rightarrow)\)</span> Consider a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} P \longrightarrow 0 .
+\end{equation*}
+</div>
+</div> <div class="para" id="p-965">If <span class="process-math">\(P\)</span> is projective, the identity map on <span class="process-math">\(P\)</span> lifts to a map <span class="process-math">\(P \longrightarrow B\text{,}\)</span> meaning that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-111(2).jpg" class="contained"></div> <div class="para logical" id="p-966">
+<div class="para">commutes. This says that our map <span class="process-math">\(h\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \underset{\nwarrow}{\stackrel{g}{\longrightarrow}} P \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is a splitting for our short exact sequence, which must then be split, by Lemma 2.19.</div>
+</div> <div class="para logical" id="p-967">
+<div class="para">
+<span class="process-math">\((\Leftarrow)\)</span> Conversely, suppose that every short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow B \longrightarrow P \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">splits, and consider any diagram</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-111.jpg" class="contained"></div> <div class="para logical" id="p-968">
+<div class="para">Let <span class="process-math">\(F\)</span> be a free module that surjects onto <span class="process-math">\(P\)</span> - for example, the free module on a set of generators of <span class="process-math">\(P\)</span> - and fix a surjection <span class="process-math">\(\pi: F \rightarrow P\text{.}\)</span> By assumption, the short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-2.19.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} \pi \longrightarrow \underset{\kappa_{h}^{-}}{\stackrel{\pi}{\longrightarrow}} P \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">splits, so by <a href="" class="xref" data-knowl="./knowl/lem-2.19.html" title="Lemma 2.26: Splitting Lemma">Lemma 2.26</a> there exists <span class="process-math">\(h\)</span> such that <span class="process-math">\(\pi h=\operatorname{id}_{P}\text{.}\)</span> Now since <span class="process-math">\(F\)</span> is free, we can define an <span class="process-math">\(R\)</span>-module map <span class="process-math">\(\hat{g}: F \longrightarrow B\)</span> that such that</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-111(1).jpg" class="contained"></div> <div class="para logical" id="p-969">
+<div class="para">commutes, by sending each basis element <span class="process-math">\(b \in F\)</span> to any lift of <span class="process-math">\(f \pi(b)\)</span> in <span class="process-math">\(B\)</span> via <span class="process-math">\(s\text{.}\)</span> Now set <span class="process-math">\(g:=\hat{g} h\text{,}\)</span> and note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rrr}
+s g &amp; =s \hat{g} h &amp; \text { by definition } \\
+&amp; =f \pi h &amp; \text { by commutativity } \\
+&amp; =f &amp; \text { since } \pi h=\mathrm{id}_{P},
+\end{array}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(g\)</span> is a lift of <span class="process-math">\(s\)</span> by <span class="process-math">\(f\text{.}\)</span>
+</div>
+</div></article></div>
+<div class="para" id="p-970">We have seen that free modules are projective; what other modules are projective?</div>
+<article class="definition definition-like" id="def-4.7"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Direct Summand.</span>
+</h4> <div class="para" id="p-971">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is a <em class="emphasis">direct summand</em> of an <span class="process-math">\(R\)</span>-module <span class="process-math">\(N\)</span> if there exists an <span class="process-math">\(R\)</span>-module <span class="process-math">\(A\)</span> such that <span class="process-math">\(A \oplus M \cong N\text{.}\)</span>
+</div></article><article class="remark remark-like" id="remark-38"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-972">
+<div class="para">Remark 4.8. Saying that <span class="process-math">\(M\)</span> is a direct summand of <span class="process-math">\(N\)</span> is equivalent to giving a splitting <span class="process-math">\(\pi\)</span> of the inclusion map <span class="process-math">\(i: M \hookrightarrow N\text{,}\)</span> meaning that <span class="process-math">\(\pi i=\mathrm{id}_{N}\text{.}\)</span> As we have argued in <a href="" class="xref" data-knowl="./knowl/lem-2.19.html" title="Lemma 2.26: Splitting Lemma">Lemma 2.26</a>, such a splitting <span class="process-math">\(\pi\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-2.19.html">
+\begin{equation*}
+N=\operatorname{im} i \oplus \operatorname{ker} \pi
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-973">
+<div class="para">Essentially repeating the argument we used in <a href="" class="xref" data-knowl="./knowl/lem-2.19.html" title="Lemma 2.26: Splitting Lemma">Lemma 2.26</a>, every element in <span class="process-math">\(N\)</span> can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-2.19.html">
+\begin{equation*}
+n=(n-i \pi(n))+i \pi(n)
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(i \pi(n) \in \operatorname{im} i\)</span> and <span class="process-math">\(n-i \pi(n) \in \operatorname{ker} \pi\text{,}\)</span> and <span class="process-math">\(\operatorname{ker} \pi \cap \operatorname{im} i=0\)</span> because if <span class="process-math">\(i(a) \in \operatorname{ker} \pi\)</span> then <span class="process-math">\(a=\pi i(a)=0\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-974">Note that when we are dealing with graded modules over a graded ring, the kernels and images of graded maps are graded modules, and the equality <span class="process-math">\(N=\operatorname{im} i \oplus \operatorname{ker} \pi\)</span> is a graded direct sum of graded modules.</div></article><article class="theorem theorem-like" id="thm-4.9"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Projective iff Direct Summand of Free Module.</span>
+</h4>
+<div class="para" id="p-975">An <span class="process-math">\(R\)</span>-module is projective <span class="process-math">\(P\)</span> if and only if <span class="process-math">\(P\)</span> is a direct summand of a free <span class="process-math">\(R\)</span>-module. In particular, a finitely generated <span class="process-math">\(R\)</span>-module <span class="process-math">\(P\)</span> is projective if and only if <span class="process-math">\(P\)</span> is a direct summand of <span class="process-math">\(R^{n}\)</span> for some <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="hiddenproof" id="proof-33"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-33"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><div class="para logical" id="p-976">
+<div class="para">
+<span class="process-math">\((\Rightarrow)\)</span> Let <span class="process-math">\(P\)</span> be a projective module, and fix a free module <span class="process-math">\(F\)</span> surjecting onto <span class="process-math">\(P\text{.}\)</span> If <span class="process-math">\(P\)</span> is finitely generated, we can take <span class="process-math">\(F=R^{n}\)</span> for some <span class="process-math">\(n\text{.}\)</span> The short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-4.6.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} \pi \longrightarrow F \stackrel{\pi}{\longrightarrow} P \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">must split by <a href="" class="xref" data-knowl="./knowl/thm-4.6.html" title="Theorem 4.6: Projective Modules and Splitting">Theorem 4.6</a>, so <span class="process-math">\(P\)</span> is a direct summand of <span class="process-math">\(F\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-977">
+<span class="process-math">\((\Leftarrow)\)</span> Now suppose <span class="process-math">\(P\)</span> is a direct summand of a free module <span class="process-math">\(F\text{.}\)</span> In particular, we have an inclusion map <span class="process-math">\(i: P \longrightarrow F\)</span> that splits, so it comes together with a projection map <span class="process-math">\(\pi: F \longrightarrow P\)</span> such that <span class="process-math">\(\pi i=\operatorname{id}_{P}\text{.}\)</span> Given any diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-112(1).jpg" class="contained"></div> <div class="para" id="p-978">we can define an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(h\)</span> such that <span class="process-math">\(s h=f \pi\text{,}\)</span> so that the following diagram commutes:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-112.jpg" class="contained"></div> <div class="para logical" id="p-979">
+<div class="para">Setting <span class="process-math">\(g:=h i\text{,}\)</span> we do indeed obtain <span class="process-math">\(s g=f\text{,}\)</span> since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rlrl}
+s g &amp; =s h i &amp; \text { by definition } \\
+&amp; =f \pi i &amp; &amp; \text { because } s h=f \pi \\
+&amp; =f &amp; &amp; \text { since } \pi i=\mathrm{id}_{P} \cdot \square
+\end{array}
+\end{equation*}
+</div>
+</div></article></div>
+<article class="remark remark-like" id="remark-39"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-980">Remark 4.10. While every module <span class="process-math">\(M\)</span> is a quotient of a free module <span class="process-math">\(F\text{,}\)</span> so that we always have a surjection <span class="process-math">\(\pi: F \rightarrow M\text{,}\)</span> not every module embeds into a free module; and even if <span class="process-math">\(M\)</span> is a submodule of some free module <span class="process-math">\(F\text{,}\)</span> the inclusion map <span class="process-math">\(M \subseteq F\)</span> is not necessarily split. On the other hand, as we showed in <a href="" class="xref" data-knowl="./knowl/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a> that <span class="process-math">\(M\)</span> is projective if and only if we can write it as a quotient of a free module <span class="process-math">\(F\text{,}\)</span> say <span class="process-math">\(\pi: F \rightarrow M\text{,}\)</span> and <span class="process-math">\(\pi\)</span> splits, so that in fact <span class="process-math">\(M\)</span> embeds into <span class="process-math">\(F\)</span> and that map splits.</div></article><article class="corollary theorem-like" id="cor-4.11"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-981">
+<div class="para">Let <span class="process-math">\(R\)</span> be any ring.</div>
+<ol class="decimal">
+<li id="li-110"><div class="para" id="p-982">Every direct summand of a projective module is projective.</div></li>
+<li id="li-111"><div class="para" id="p-983">Every direct sum of projective modules is projective.</div></li>
+</ol>
+</div></article><article class="hiddenproof" id="proof-34"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-34"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><div class="para logical" id="p-984"><ol class="decimal">
+<li id="li-112"><div class="para" id="p-985">Suppose <span class="process-math">\(M \oplus A \cong P\)</span> for some projective module <span class="process-math">\(P\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a>, there exists a free <span class="process-math">\(R\)</span>-module <span class="process-math">\(F\)</span> and an <span class="process-math">\(R\)</span>-module <span class="process-math">\(B\)</span> such that <span class="process-math">\(P \oplus B \cong F\text{.}\)</span> Then <span class="process-math">\(M \oplus A \oplus B \cong P \oplus B \cong F\text{,}\)</span> and by <a href="" class="xref" data-knowl="./knowl/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a> this implies <span class="process-math">\(M\)</span> is projective.</div></li>
+<li id="li-113"><div class="para" id="p-986">Let <span class="process-math">\(\left\{P_{i}\right\}_{i \in I}\)</span> be a family of projective modules. By <a href="" class="xref" data-knowl="./knowl/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a>, there exist free modules <span class="process-math">\(F_{i}\)</span> such that each <span class="process-math">\(P_{i}\)</span> is a direct summand of <span class="process-math">\(F_{i}\text{.}\)</span> Therefore, <span class="process-math">\(\oplus P_{i}\)</span> is a direct summand of <span class="process-math">\(\oplus_{i} F_{i}\text{,}\)</span> which is also free. By <a href="" class="xref" data-knowl="./knowl/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a>, this implies that <span class="process-math">\(\oplus P_{i}\)</span> is projective.</div></li>
+</ol></div></article></div>
+<div class="para" id="p-987">We are finally ready to give examples showing that projective modules are not necessarily free.</div>
+<article class="example example-like" id="example-44"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Projective but not Free Module.</span>
+</h4> <div class="para logical" id="p-988">
+<div class="para">Example 4.12. The ring <span class="process-math">\(R=\mathbb{Z} /(6)\)</span> can be written as a direct sum of the ideals</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I=(2) \text { and } J=(3)
+\end{equation*}
+</div>
+</div> <div class="para" id="p-989">Indeed, <span class="process-math">\(R=I+J\)</span> and <span class="process-math">\(I \cap J=0\text{,}\)</span> so <span class="process-math">\(R=I \oplus J\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/cor-4.11.html" title="Corollary 4.11">Corollary 4.11</a>, <span class="process-math">\(I\)</span> and <span class="process-math">\(J\)</span> are projective <span class="process-math">\(R\)</span>-modules. However, <span class="process-math">\(I\)</span> and <span class="process-math">\(J\)</span> are not free. This can be explained numerically: every finitely generated free <span class="process-math">\(R\)</span>-module is of the form <span class="process-math">\(R^{n}\text{,}\)</span> so it has <span class="process-math">\(6^{n}\)</span> elements for some <span class="process-math">\(n\text{,}\)</span> while <span class="process-math">\(I\)</span> and <span class="process-math">\(J\)</span> have <span class="process-math">\(3\)</span> and <span class="process-math">\(2\)</span> elements respectively.</div></article><div class="para" id="p-990">Finally, to emphasize its importance we record here an easy result that we have used repeatedly at this point, and which will be very important later on.</div>
+<article class="lemma theorem-like" id="lem-4.13"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-991">For every <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> there exists a free module <span class="process-math">\(F\)</span> surjecting onto <span class="process-math">\(M\text{.}\)</span> If <span class="process-math">\(M\)</span> is finitely generated, we can take <span class="process-math">\(F\)</span> to be finitely generated.</div></article><div class="para" id="p-992">We will often need only a weaker version of this: that every module is a quotient of a projective module.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-proj-inj.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-injective.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
