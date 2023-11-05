@@ -13,13 +13,14 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">We claim that <span class="process-math">\(E\)</span> is actually an injective <span class="process-math">\(R\)</span>-module. By <a href="" class="xref" data-knowl="./knowl/thm-4.15.html" title="Theorem 4.15">Theorem 4.15</a>, it is sufficient to prove that <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)\)</span> is an exact functor. By <a href="" class="xref" data-knowl="./knowl/cor-3.61.html" title="Corollary 3.82">Corollary 3.82</a>, <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)\)</span> is naturally isomorphic to <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}\left(-\otimes_{\mathbb{Z}} R, D\right)\text{.}\)</span> This last functor is the composition of</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-4.15.html ./knowl/cor-3.61.html">
+<div class="para">Let <span class="process-math">\(Q=\operatorname{frac}(R)\)</span> be the fraction field of <span class="process-math">\(R\text{,}\)</span> which is a torsion free <span class="process-math">\(R\)</span>-module. Now <span class="process-math">\(M \otimes_{R} Q\)</span> is a <span class="process-math">\(Q\)</span>-vector space, so isomorphic to a direct sum of copies of <span class="process-math">\(Q\text{.}\)</span> In particular, <span class="process-math">\(M \otimes_{R} Q\)</span> is torsion free as an <span class="process-math">\(R\)</span>-module. Since <span class="process-math">\(M\)</span> is flat, the inclusion <span class="process-math">\(R \subseteq Q\)</span> induces an injective <span class="process-math">\(R\)</span>-module map</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.40.html">
 \begin{equation*}
-\operatorname{Hom}_{\mathbb{Z}}\left(-\otimes_{\mathbb{Z}} R, D\right)=\operatorname{Hom}_{\mathbb{Z}}(-, D) \circ\left(-\otimes_{\mathbb{Z}} R\right)
+0 \longrightarrow M \otimes_{R} R \longrightarrow M \otimes_{R} Q
 \end{equation*}
 </div>
+<div class="para">and since <span class="process-math">\(M \cong M \otimes_{R} R\text{,}\)</span> by <a href="" class="xref" data-knowl="./knowl/lem-3.40.html" title="Lemma 3.54">Lemma 3.54</a>, we conclude that <span class="process-math">\(M\)</span> is isomorphic to a submodule of <span class="process-math">\(M \otimes_{R} Q\text{.}\)</span> Submodules of torsion free modules are also torsion free, so <span class="process-math">\(M\)</span> is torsion free.</div>
 </div>
-<span class="incontext"><a href="sec-injective.html#p-1043" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec-flat.html#p-1043" class="internal">in-context</a></span>
 </body>
 </html>

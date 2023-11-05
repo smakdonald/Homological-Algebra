@@ -556,7 +556,19 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="appendix-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Rigns and Modules</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
+<li><div class="toc-item"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="sec-categories"><h2 class="heading hide-type">
@@ -664,7 +676,7 @@ window.MathJax = {
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Diagram.</span>
 </h4> <div class="para" id="p-82">A <em class="emphasis">diagram</em> in a category <span class="process-math">\(\mathscr{C}\)</span> is a directed multigraph whose vertices are objects in <span class="process-math">\(\mathrm{C}\)</span> and whose arrows/edges are morphisms in <span class="process-math">\(\mathscr{C}\text{.}\)</span> A commutative diagram in <span class="process-math">\(\mathscr{C}\)</span> is a diagram in which for each pair of vertices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> any two paths from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\)</span> compose to the same morphism.</div></article><article class="example example-like" id="ex-commutative-diagram"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Commutative Diagram.</span>
-</h4> <div class="para" id="p-83">The diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-11.jpg" class="contained"></div> <div class="para" id="p-84">
+</h4> <div class="para" id="p-83">The diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_08_28_614593e69373955f3addg-11.jpg" class="contained"></div> <div class="para" id="p-84">
 <em class="emphasis">commutes</em> if and only if <span class="process-math">\(g f=v u\text{.}\)</span>
 </div></article><div class="para" id="p-85">There are some special types of arrows we will want to consider.</div>
 <article class="definition definition-like" id="def-inverses"><h4 class="heading">
@@ -674,12 +686,12 @@ window.MathJax = {
 <ul class="disc">
 <li id="li-21">
 <div class="para" id="p-87">An arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> is <em class="emphasis">left invertible</em> if there exists <span class="process-math">\(g \in \operatorname{Hom}_{\mathscr{C}}(B, A)\)</span> such that <span class="process-math">\(g f=1_{A}\text{.}\)</span> In this case, we say that <span class="process-math">\(g\)</span> is the left inverse of <span class="process-math">\(f\text{.}\)</span> So <span class="process-math">\(g\)</span> is a left inverse of <span class="process-math">\(f\)</span> if the diagram</div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-11(1).jpg" class="contained"></div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_08_28_614593e69373955f3addg-11(1).jpg" class="contained"></div>
 <div class="para" id="p-88">commutes.</div>
 </li>
 <li id="li-22">
 <div class="para" id="p-89">An arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> is <em class="emphasis">right invertible</em> if there exists <span class="process-math">\(g \in \operatorname{Hom}_{\mathscr{C}}(B, A)\)</span> such that <span class="process-math">\(f g=1_{B}\text{.}\)</span> In this case, we say that <span class="process-math">\(g\)</span> is the right inverse of <span class="process-math">\(f\text{.}\)</span> So <span class="process-math">\(g\)</span> is a right inverse of <span class="process-math">\(f\)</span> if the diagram</div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-12.jpg" class="contained"></div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_08_28_614593e69373955f3addg-12.jpg" class="contained"></div>
 <div class="para" id="p-90">commutes.</div>
 </li>
 <li id="li-23"><div class="para" id="p-91">An arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> is an <em class="emphasis">isomorphism</em> if there exists <span class="process-math">\(g \in \operatorname{Hom}_{\mathscr{C}}(B, A)\)</span> such that <span class="process-math">\(g f=1_{A}\)</span> and <span class="process-math">\(f g=1_{B}\text{.}\)</span> Unsurprisingly, such an arrow <span class="process-math">\(g\)</span> is called the inverse of <span class="process-math">\(f\text{.}\)</span>
@@ -790,9 +802,9 @@ A \stackrel{f}{\longrightarrow} B \underset{g_{2}}{\stackrel{g_{1}}{\longrightar
 </div></article><div class="para" id="p-132">Many objects and concepts one might want to describe are obtained from existing ones by flipping the arrows. Opposite categories give us the formal framework to talk about such things. We will often want to refer to dual notions, which will essentially mean considering the same notion in a category <span class="process-math">\(\mathscr{C}\)</span> and in the opposite category <span class="process-math">\(\mathscr{C}^{\mathrm{op}}\text{;}\)</span> in practice, this means we should flip all the arrows involved. We will see examples of this later on.</div>
 <div class="para" id="p-133">The dual category construction gives us a formal framework to talk about dual notions. We will often make a statement in a category <span class="process-math">\(\mathscr{C}\)</span> and make comments about the dual statement; in practice, this corresponds to simply switching the way all arrows go. Here are some examples of dual notions and statements:</div>
 <figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.24<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr class="header-horizontal">
-<th scope="col" class="c m b0 r0 l0 t0 lines">source</th>
-<th scope="col" class="c m b0 r0 l0 t0 lines">target</th>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><dfn class="terminology">source</dfn></td>
+<td class="c m b1 r0 l0 t0 lines"><dfn class="terminology">target</dfn></td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">epi</td>

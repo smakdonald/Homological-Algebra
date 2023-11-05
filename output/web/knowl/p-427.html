@@ -11,9 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">The first map <span class="process-math">\(i\)</span> is simply the inclusion of the submodule ker <span class="process-math">\(f_{n}\)</span> into <span class="process-math">\(C_{n}\text{,}\)</span> while the second map <span class="process-math">\(\pi\)</span> is the canonical projection onto the quotient. While it is clear that <span class="process-math">\(i\)</span> is injective and <span class="process-math">\(\pi\)</span> is surjective, exactness at the middle is less obvious. This follows from the exactness of the original complex, which gives <span class="process-math">\(\operatorname{im} i=\operatorname{ker} f_{n}=\operatorname{im} f_{n+1}=\operatorname{ker} \pi\text{.}\)</span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">Note that the category of chain complexes also has a similar structure to <span class="process-math">\(R\)</span>-Mod: given two maps of complexes <span class="process-math">\(f, g: C \rightarrow D\text{,}\)</span> we define a map of complexes <span class="process-math">\(f+g\)</span> : <span class="process-math">\(C \rightarrow D\)</span> given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.3.html">
+\begin{equation*}
+(f+g)_{n}:=f_{n}+g_{n}
+\end{equation*}
 </div>
-<span class="incontext"><a href="sec-les.html#p-427" class="internal">in-context</a></span>
+<div class="para">It is routine to check that this again gives a map of complexes, and that this operation gives the <span class="process-math">\(\Hom\)</span>-sets in <span class="process-math">\(\operatorname{Ch}(R)\)</span> the structure of an abelian group. In fact, this abelian group structure can be upgraded to an <span class="process-math">\(R\)</span>-module structure when <span class="process-math">\(R\)</span> is commutative, by setting</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.3.html">
+\begin{equation*}
+(r f)_{n}:=r f_{n}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(r \in R\text{.}\)</span> This allows us to talk about additive functors to and from the category <span class="process-math">\(\operatorname{Ch}(R)\text{,}\)</span> and there is a version of <a href="" class="xref" data-knowl="./knowl/lem-3.3.html" title="Lemma 3.7: Properties of Additive Functors">Lemma 3.7</a> in <span class="process-math">\(\mathrm{Ch}(R)\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="sec-hom.html#p-427" class="internal">in-context</a></span>
 </body>
 </html>

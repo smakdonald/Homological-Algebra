@@ -12,7 +12,20 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">is well-defined. Since <span class="process-math">\(E\)</span> is injective, we can extend this to a homomorphism <span class="process-math">\(f: R \longrightarrow E\text{.}\)</span> Finally, <span class="process-math">\(f(1) \in E\)</span> is an element such that <span class="process-math">\(e=f(r)=r f(1)\text{,}\)</span> and <span class="process-math">\(E\)</span> is divisible.</div>
-<span class="incontext"><a href="sec-injective.html#p-1030" class="internal">in-context</a></span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f: A \longrightarrow B\)</span> be an injective <span class="process-math">\(R\)</span>-module homomorphism. There is a commutative diagram</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.41.html">
+\begin{equation*}
+\begin{aligned}
+&amp; \left(\bigoplus_{i \in I} M_{i}\right) \otimes_{R} A \stackrel{\cong}{\longrightarrow} \bigoplus_{i \in I} M_{i} \otimes_{R} A \\
+&amp; \varphi:=1 \otimes f \downarrow \\
+&amp; \left(\bigoplus_{i \in I} M_{i}\right) \otimes_{R} B \stackrel{\downarrow}{\cong} \cong \bigoplus_{i \in I} M_{i} \otimes_{R} B
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">where the horizontal maps are the isomorphisms from <a href="" class="xref" data-knowl="./knowl/thm-3.41.html" title="Theorem 3.55">Theorem 3.55</a>. In particular, <span class="process-math">\(\varphi\)</span> is injective if and only if <span class="process-math">\(\psi\)</span> is injective. Moreover, <span class="process-math">\(\psi\)</span> is injective if and only if each component is injective, meaning <span class="process-math">\(1 \otimes f: M_{i} \otimes A \longrightarrow M_{i} \otimes B\)</span> is injective for all <span class="process-math">\(i\text{.}\)</span>
+</div>
+</div>
+<span class="incontext"><a href="sec-flat.html#p-1030" class="internal">in-context</a></span>
 </body>
 </html>

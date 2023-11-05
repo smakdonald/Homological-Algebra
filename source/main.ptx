@@ -985,7 +985,7 @@
               <p>
                 The diagram
               </p>
-              <image source="2023_08_28_614593e69373955f3addg-11.jpg"/>
+              <image source="2023_08_28_614593e69373955f3addg-11.jpg" width="30%"/>
               <p>
                 <em>commutes</em> if and only if <m>g f=v u</m>.
               </p>
@@ -1006,7 +1006,7 @@
                         In this case, we say that <m>g</m> is the left inverse of <m>f</m>. 
                         So <m>g</m> is a left inverse of <m>f</m> if the diagram
                       </p>
-                      <image source="2023_08_28_614593e69373955f3addg-11(1).jpg"/>
+                      <image source="2023_08_28_614593e69373955f3addg-11(1).jpg" width="30%"/>
                       <p>
                         commutes.
                       </p>
@@ -1017,7 +1017,7 @@
                         An arrow <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m> is <em>right invertible</em> if there exists <m>g \in \operatorname{Hom}_{\mathscr{C}}(B, A)</m> such that <m>f g=1_{B}</m>. 
                         In this case, we say that <m>g</m> is the right inverse of <m>f</m>. So <m>g</m> is a right inverse of <m>f</m> if the diagram
                       </p>
-                      <image source="2023_08_28_614593e69373955f3addg-12.jpg"/>
+                      <image source="2023_08_28_614593e69373955f3addg-12.jpg" width="30%"/>
                       <p>
                         commutes.
                       </p>
@@ -1307,27 +1307,27 @@
         
             <table><title></title>
               <tabular>
-              <row header="yes">
-                <cell halign="center">source</cell>
-                <cell halign="center">target</cell>
+              <row bottom="minor">
+                <cell halign="center"><term>source</term></cell>
+                <cell halign="center"><term>target</term></cell>
               </row>
-              <row class="odd">
+              <row>
                 <cell halign="center">epi</cell>
                 <cell halign="center">mono</cell>
               </row>
-              <row class="even">
+              <row>
                 <cell halign="center"><m>g</m> is a right inverse for <m>f</m></cell>
                 <cell halign="center"><m>g</m> is a left inverse for <m>f</m></cell>
               </row>
-              <row class="odd">
+              <row>
                 <cell halign="center"><m>f</m> is invertible</cell>
                 <cell halign="center"><m>f</m> is invertible</cell>
               </row>
-              <row class="even">
+              <row>
                 <cell halign="center">initial objects</cell>
                 <cell halign="center">terminal objects</cell>
               </row>
-              <row class="odd">
+              <row>
                 <cell halign="center">homology</cell>
                 <cell halign="center">cohomology</cell>
               </row>
@@ -1646,7 +1646,7 @@
               To close this section, here are the two of the most important functors we will discuss this semester:
             </p>
 
-            <definition xml:id="def-represent-functor"><title><m>\Hom</m> Functors</title>
+            <definition xml:id="def-hom-functor"><title><m>\Hom</m> Functors</title>
               <statement>
                 <p>
                   Let <m>\mathscr{C}</m> be a locally small category. 
@@ -1665,7 +1665,7 @@
                           f_{*}=\operatorname{Hom}_{\mathscr{C}}(A, f):
                         </me>
                       </p>
-                      <image source="2023_08_28_614593e69373955f3addg-18(3).jpg"/>
+                      <image source="2023_08_28_614593e69373955f3addg-18(3).jpg" width="30%"/>
                     </li>
                   
                     <li>
@@ -1681,7 +1681,7 @@
                           f^{*}=\operatorname{Hom}_{\mathscr{C}}(f, B):
                         </me>
                       </p>
-                      <image source="2023_08_28_614593e69373955f3addg-18.jpg"/>
+                      <image source="2023_08_28_614593e69373955f3addg-18.jpg" width="30%"/>
                     </li>
                   </ul>
                 </p>
@@ -1712,13 +1712,13 @@
                   Let <m>F</m> and <m>G</m> be covariant functors <m>\mathscr{C} \longrightarrow \mathscr{D}</m>. 
                   A natural transformation between <m>F</m> and <m>G</m> is a mapping that to each object <m>A</m> in <m>\mathscr{C}</m> assigns an arrow <m>\eta_{A} \in \operatorname{Hom}_{\mathscr{D}}(F(A), G(A))</m> such that for all <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m>, the diagram
                 </p>
-                <image source="2023_08_28_614593e69373955f3addg-19(1).jpg"/>
+                <image source="2023_08_28_614593e69373955f3addg-19(1).jpg" width="30%"/>
                 <p>
                   commutes. 
                   A natural isomorphism is a natural transformation <m>\eta</m> where each <m>\eta_{A}</m> is an isomorphism. 
                   We sometimes write
                 </p>
-                <image source="2023_08_28_614593e69373955f3addg-19(2).jpg"/>
+                <image source="2023_08_28_614593e69373955f3addg-19(2).jpg" width="30%"/>
                 <p>
                   or simply <m>\eta: F \Longrightarrow G</m>.
                 </p>
@@ -1727,7 +1727,7 @@
                   Let <m>F</m> and <m>G</m> be contravariant functors <m>\mathscr{C} \longrightarrow \mathscr{D}</m>. 
                   A natural transformation between <m>F</m> and <m>G</m> is a mapping that to each object <m>A</m> in <m>\mathscr{C}</m> assigns an arrow <m>\eta_{A} \in \operatorname{Hom}_{\mathscr{D}}(F(A), G(A))</m> such that for all <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m>, the diagram
                 </p>
-                <image source="2023_08_28_614593e69373955f3addg-19.jpg"/>
+                <image source="2023_08_28_614593e69373955f3addg-19.jpg" width="30%"/>
                 <p>
                   commutes.
                 </p>
@@ -1747,7 +1747,7 @@
                 On objects, the abelianizations functor is defined as <m>G \mapsto G^{\text {ab }}</m>. 
                 Given an arrow, meaning a group homomorphism <m>G \stackrel{f}{\rightarrow} H</m>, one can check that <m>[G, G]</m> is contained in the kernel of <m>\pi_{H} f</m>, so <m>\pi_{H} f</m> factors through <m>G^{\text {ab }}</m>, and there exists a group homomorphism <m>f^{\mathrm{ab}}</m> making the following diagram commute:
               </p>
-              <image source="2023_08_28_614593e69373955f3addg-19(3).jpg"/>
+              <image source="2023_08_28_614593e69373955f3addg-19(3).jpg" width="30%"/>
               <p>
                 So the abelianization functor takes the arrow <m>f</m> to <m>f^{\text {ab }}</m>. 
                 The commutativity of the diagram above says that <m>\pi_{-}</m>is a natural transformation between the identity functor on <m>\Grp</m> and the abelianization functor, which we can write more compactly as
@@ -1785,21 +1785,21 @@
               <p>
                 Consider natural transformations
               </p>
-              <image source="2023_08_28_614593e69373955f3addg-20(3).jpg"/>
+              <image source="2023_08_28_614593e69373955f3addg-20(3).jpg" width="30%"/>
               <p>
                 and
               </p>
-              <image source="2023_08_28_614593e69373955f3addg-20(1).jpg"/>
+              <image source="2023_08_28_614593e69373955f3addg-20(1).jpg" width="30%"/>
               <p>
                 We can compose them for form a new natural transformation
               </p>
-              <image source="2023_08_28_614593e69373955f3addg-20.jpg"/>
+              <image source="2023_08_28_614593e69373955f3addg-20.jpg" width="30%"/>
               <p>
                 We should think of this composition as happening vertically. 
                 For each object <m>C</m> in <m>\mathscr{C}, \eta \varphi</m> sends <m>C</m> to the arrow <m>F(A) \stackrel{\varphi_{A}}{\longrightarrow} G(A) \stackrel{\eta_{A}}{\longrightarrow} H(A)</m>. 
                 This makes the diagram
               </p>
-              <image source="2023_08_28_614593e69373955f3addg-20(2).jpg"/>
+              <image source="2023_08_28_614593e69373955f3addg-20(2).jpg" width="30%"/>
               <p>
                 commute.
               </p>
@@ -1896,7 +1896,7 @@
                   We now have two naturality statements to prove. 
                   Naturality in the functor means that given a natural isomorphism <m>\eta: F \longrightarrow G</m>, the diagram
                 </p>
-                <image source="2023_08_28_614593e69373955f3addg-22.jpg"/>
+                <image source="2023_08_28_614593e69373955f3addg-22.jpg" width="50%"/>
                 <p>
                   commutes. 
                   Given a natural transformation <m>\varphi</m> between <m>\operatorname{Hom}_{\mathscr{C}}(A,-)</m> and <m>F</m>,
@@ -1911,7 +1911,7 @@
                   so commutativity does hold. 
                   Naturality on the object means that given an arrow <m>f: A \longrightarrow B</m>, the diagram
                 </p>
-                <image source="2023_08_28_614593e69373955f3addg-22(1).jpg"/>
+                <image source="2023_08_28_614593e69373955f3addg-22(1).jpg" width="50%"/>
                 <p>
                   commutes. 
                   Given a natural transformation <m>\varphi</m> between <m>\operatorname{Hom}_{\mathscr{C}}(A,-)</m> and <m>F</m>,
@@ -1980,12 +1980,12 @@
                 <p>
                   Let <m>\mathscr{C}</m> be a locally small category. The covariant functor
                 </p>
-                <image source="2023_08_28_614593e69373955f3addg-23(1).jpg"/>
+                <image source="2023_08_28_614593e69373955f3addg-23(1).jpg" width="50%"/>
                 <p>
                   from <m>\mathscr{C}</m> to the category of contravariant functors <m>\mathscr{C} \longrightarrow</m> Set is an embedding. 
                   Moreover, the contravariant functor 
                 </p>
-                <image source='2023_08_28_614593e69373955f3addg-23.jpg'/>
+                <image source="2023_08_28_614593e69373955f3addg-23.jpg" width="50%"/>
                 <p>
                   from the category <m>\mathscr{C}</m> to the category of covariant functors <m>\mathscr{C} \longrightarrow</m> Set is also an embedding.
                 </p>
@@ -2042,7 +2042,7 @@
                 Given any set <m>X</m>, there is a bijection between elements <m>x \in X</m> and functions <m>\mathbf{1} \longrightarrow X</m> sending the one element in <m>\mathbf{1}</m> to each <m>x</m>. 
                 Moreover, given any other set <m>Y</m>, and a function <m>f: X \longrightarrow Y</m>, our bijections make the following diagram commute:
               </p>
-              <image source="2023_08_28_614593e69373955f3addg-24.jpg"/>
+              <image source="2023_08_28_614593e69373955f3addg-24.jpg" width="30%"/>
               <p>
                 This data gives a natural isomorphism between the identity functor and <m>\operatorname{Hom}_{\text {Set }}(\mathbf{1},-)</m>.
               </p>
@@ -2079,7 +2079,7 @@
                 Let <m>\left(F_{\bullet}, \partial_{\bullet}^{F}\right)</m> and <m>\left(G_{\bullet}, \partial_{\bullet}^{G}\right)</m> be complexes. 
                 A map of complexes or a chain map, which we write as <m>h:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)</m> or simply <m>h: F \longrightarrow G</m>, is a sequence of homomorphisms of <m>R</m>-modules <m>h_{n}: F_{n} \longrightarrow G_{n}</m> such that the following diagram commutes:
               </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-051.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-051.jpg" width="75%"/>
               <p>
                 This means that <m>h_{n} \partial_{n+1}^{F}=\partial_{n+1}^{G} h_{n+1}</m> for all <m>n</m>.
               </p>
@@ -2120,7 +2120,7 @@
               Exercise 25. Show that the isomorphisms in the category <m>\mathrm{Ch}(R)</m> are precisely the maps of complexes
             </p>
             
-            <image source="2023_10_23_e2d6a27704be928b3deeg-052.jpg"/>
+            <image source="2023_10_23_e2d6a27704be928b3deeg-052.jpg" width="75%"/>
                   
             <p>
               such that <m>h_{n}</m> is an isomorphism for all <m>n</m>.
@@ -2211,7 +2211,7 @@
               Let <m>\pi</m> denote the projection map from <m>\mathbb{Z}</m> to <m>\mathbb{Z} / 2 \mathbb{Z}</m>. 
               The chain map
             </p>
-            <image source="2023_10_23_e2d6a27704be928b3deeg-053.jpg"/>
+            <image source="2023_10_23_e2d6a27704be928b3deeg-053.jpg" width="75%"/>
             <p>
               is a quasi-isomorphism.
             </p>
@@ -2278,7 +2278,7 @@
             <p>
               Exercise 28. Consider the following map of complexes:
             </p>
-            <image source="2023_10_23_e2d6a27704be928b3deeg-054(1).jpg"/>
+            <image source="2023_10_23_e2d6a27704be928b3deeg-054(1).jpg" width="75%"/>
             
             <p>
               Show that this map is not nullhomotopic, but that the induced map in homology is zero.
@@ -2320,7 +2320,7 @@
             <p>
               Exercise 29. Let <m>\pi</m> denote the projection map from <m>\mathbb{Z}</m> to <m>\mathbb{Z} / 2 \mathbb{Z}</m>. The chain map
             </p>
-            <image source="2023_10_23_e2d6a27704be928b3deeg-054.jpg"/>
+            <image source="2023_10_23_e2d6a27704be928b3deeg-054.jpg" width="75%"/>
             <p>
               is a quasi-isomorphism but not a homotopy equivalence.
             </p>
@@ -2397,7 +2397,7 @@
                 </me>
                 such that <m>d_{n} d_{n+1}=0</m> for all <m>n</m>. A complex of complexes is a diagram of the form
               </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-055.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-055.jpg" width="75%"/>
               <p>
                 where <m>C_{i, j}</m> is the module in homological degree <m>j</m> in the complex <m>C_{i}</m>. 
                 The <m>n</m>th column corresponds to the complex <m>C_{n}</m>, and every row is also a complex. 
@@ -2421,7 +2421,7 @@
                 </me>
                 Equivalently, a short exact sequence of complexes is a commutative diagram
               </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-056.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-056.jpg" width="75%"/>
               <p>
                 where the rows are exact and the columns are complexes.
               </p>
@@ -2472,7 +2472,7 @@
           <lemma xml:id="lem-2.19"><title>Splitting Lemma</title>
             <statement>
               <p>
-                Lemma 2.19. Consider the short exact sequence
+                Consider the short exact sequence
                 <me>
                   0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
                 </me>
@@ -2504,7 +2504,7 @@
               <p>
                 First, we will show that c implies a and b. If the sequence splits, then consider an isomorphism of complexes
               </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-057.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-057.jpg" width="50%"/>
               <p>
                 meaning that the diagram commutes and <m>a, b</m>, and <m>c</m> are isomorphisms of <m>R</m>-modules, <m>i</m> is the inclusion in the first component, and <m>p</m> is the projection onto the second component. 
                 Let <m>\pi: A \oplus C \longrightarrow A</m> be the projection onto the first component, and <m>j: C \longrightarrow A \oplus C</m> be the inclusion onto the first component. 
@@ -2564,7 +2564,7 @@
                 If <m>p: A \oplus C \longrightarrow C</m> denotes the projection onto the second factor, <m>p \varphi=g</m>. 
                 Together, these two facts say that the following is a map of complexes:
               </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-058.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-058.jpg" width="50%"/>
               <p>
                 Since <m>\varphi</m> is an isomorphism, so is our map of complexes, and thus our original sequence is a split exact sequence. 
                 This shows that a implies <m>c</m>.
@@ -2604,7 +2604,7 @@
                 so <m>g \psi=p</m>. 
                 Together, these say that the diagram
               </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-059.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-059.jpg" width="50%"/>
               <p>
                 commutes, and must then be an isomorphism of short exact sequences.
               </p>
@@ -2725,11 +2725,12 @@
             We will see some examples of diagram chasing in the next section.
           </p>
 
-          <exercise>
+          <exercise><title>The Five Lemma</title>
             <p>
-              Exercise 34 (The Five Lemma). Consider the following commutative diagram of <m>R</m>-modules with exact rows:
+              Exercise 34
+              Consider the following commutative diagram of <m>R</m>-modules with exact rows:
             </p>
-            <image source="2023_10_23_e2d6a27704be928b3deeg-060.jpg"/>
+            <image source="2023_10_23_e2d6a27704be928b3deeg-060.jpg" width="50%"/>
             <p>
               Show that if <m>a, b, d</m>, and <m>e</m> are isomorphisms, then <m>c</m> is an isomorphism.
             </p>
@@ -2740,7 +2741,7 @@
               Remark 2.24. Given a short exact sequence, suppose we have <m>R</m>-module homomorphisms <m>q</m> and <m>r</m>
             </p>
 
-            <image source="2023_10_23_e2d6a27704be928b3deeg-061.jpg"/>
+            <image source="2023_10_23_e2d6a27704be928b3deeg-061.jpg" width="30%"/>
           
             <p>
               such that <m>q f=\operatorname{id}_{A}</m> and <m>r g=\operatorname{id}_{C}</m>. 
@@ -2753,7 +2754,7 @@
               </me>
               such that the diagram
             </p>
-            <image source="2023_10_23_e2d6a27704be928b3deeg-061(1).jpg"/>
+            <image source="2023_10_23_e2d6a27704be928b3deeg-061(1).jpg" width="30%"/>
             <p>
               commutes. 
               The Five Lemma guarantees that <m>\varphi</m> must be an isomorphism, so our diagram is an isomorphism of short exact sequences.
@@ -2832,7 +2833,7 @@
               <p>
                 Consider the commutative diagram of <m>R</m>-modules
               </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-062.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-062.jpg" width="75%"/>
               <p>
                 If the rows of the diagram are exact, then there exists an exact sequence
                 <me>
@@ -2845,109 +2846,52 @@
                 </me>
                 The picture to keep in mind (and which explains the name of the lemma) is the following:
               </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-062(1).jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-062(1).jpg" width="75%"/>
             </statement>
 
             <proof>
               <p>
                 If <m>a^{\prime} \in \operatorname{ker} f</m>, then
-              </p>
-        
-              <p>
                 <me>
                   g\left(i^{\prime}\left(a^{\prime}\right)\right)=i f\left(a^{\prime}\right)=0
                 </me>
-              </p>
-        
-              <p>
                 by commutativity, so <m>i^{\prime}\left(a^{\prime}\right) \in \operatorname{ker} g</m>. 
                 Similarly, if <m>b^{\prime} \in \operatorname{ker} g</m> then <m>p^{\prime}\left(b^{\prime}\right) \in \operatorname{ker}(g)</m>. 
                 So
-              </p>
-        
-              <p>
                 <me>A^{\prime} \stackrel{i^{\prime}}{\longrightarrow} B^{\prime} \stackrel{p^{\prime}}{\longrightarrow} C^{\prime} \quad \text { restrict to maps } \quad \operatorname{ker} f \stackrel{i^{\prime}}{\longrightarrow} \operatorname{ker} g \stackrel{p^{\prime}}{\longrightarrow} \operatorname{ker} h \text {. }</me>
               </p>
         
               <p>
                 We claim that the sequence obtained by restriction
-              </p>
-        
-              <p>
                 <me>\operatorname{ker} f \stackrel{i^{\prime}}{\longrightarrow} \operatorname{ker} g \stackrel{p^{\prime}}{\longrightarrow} \operatorname{ker} h</me>
-              </p>
-        
-              <p>
                 is exact. 
                 On the one hand, we already know that the original maps satisfy <m>p^{\prime} i^{\prime}=0</m>, so their restrictions must satisfy this as well, guaranteeing that
-              </p>
-        
-              <p>
                 <me>i^{\prime}(\operatorname{ker} f) \subseteq \operatorname{ker}\left(\operatorname{ker} g \stackrel{p^{\prime}}{\rightarrow} \operatorname{ker} h\right)</me>
-              </p>
-        
-              <p>
                 On the other and, if <m>b^{\prime} \in \operatorname{ker} g</m> is such that <m>p^{\prime}\left(b^{\prime}\right)=0</m>, then by exactness of the original sequence there exists <m>a^{\prime} \in A^{\prime}</m> such that <m>i^{\prime}\left(a^{\prime}\right)=b^{\prime}</m>; 
                 we only need to check that we can choose such <m>a^{\prime}</m> satisfying <m>a^{\prime} \in \operatorname{ker} f</m>. 
                 An indeed, by commutativity, any <m>a^{\prime}</m> with <m>i^{\prime}\left(a^{\prime}\right)=b^{\prime}</m> satisfies
-              </p>
-        
-              <p>
                 <me>i f\left(a^{\prime}\right)=g i^{\prime}\left(a^{\prime}\right)=g\left(b^{\prime}\right)=0 \text {, }</me>
-              </p>
-        
-              <p>
                 and since <m>i</m> is injective, we must have <m>f\left(a^{\prime}\right)=0</m>. 
                 So we have shown that the following is an exact sequence:
-              </p>
-        
-              <p>
                 <me>\operatorname{ker} f \stackrel{i^{\prime}}{\longrightarrow} \operatorname{ker} g \stackrel{p^{\prime}}{\longrightarrow} \operatorname{ker} h</me>
               </p>
         
               <p>
                 Similarly, if <m>a \in \operatorname{im} f</m>, the commutativity of the diagram guarantees that <m>i(a) \in \operatorname{im} g</m>, and if <m>b \in \operatorname{im} g</m>, then <m>p(b) \in \operatorname{im} h</m>. 
                 So the maps <m>A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C</m> restrict to maps
-              </p>
-        
-              <p>
                 <me>\operatorname{im} f \stackrel{i}{\longrightarrow} \operatorname{im} g \stackrel{p}{\longrightarrow} \operatorname{im} h</me>
-              </p>
-        
-              <p>
                 which then induce maps
-              </p>
-        
-              <p>
                 <me>\text { coker } f \longrightarrow \text { coker } g \longrightarrow \text { coker } h \text {. }</me>
-              </p>
-        
-              <p>
                 To make the notation less heavy, we denote the induced maps on the quotients by <m>i</m> and <m>p</m>. 
                 Again, the fact that <m>p i=0</m> automatically gives us that the restrictions satisfy
-              </p>
-        
-              <p>
                 <me>\operatorname{im}(\operatorname{coker} f \rightarrow \operatorname{coker} g) \subseteq \operatorname{ker}(\operatorname{coker} g \rightarrow \operatorname{coker} h)</me>
-              </p>
-        
-              <p>
                 so we only need to check equality. 
                 Consider <m>b+\operatorname{im} g</m> such that <m>p(b+\operatorname{im} g)=0</m>, meaning that <m>p(b)=0</m>, meaning that <m>p(b) \in \operatorname{im} h</m>. 
                 Let <m>c^{\prime} \in C</m> be such that <m>h\left(c^{\prime}\right)=p(b)</m>. Since <m>p^{\prime}</m> is surjective, there exists <m>b^{\prime} \in B^{\prime}</m> such that <m>p^{\prime}\left(b^{\prime}\right)=c^{\prime}</m>, and by commutativity,
-              </p>
-        
-              <p>
                 <me>p g\left(b^{\prime}\right)=h p^{\prime}\left(b^{\prime}\right)=h\left(c^{\prime}\right)=p(b) \text {. }</me>
-              </p>
-        
-              <p>
                 Then <m>b-g\left(b^{\prime}\right) \in \operatorname{ker} p=\operatorname{im} i</m>. 
                 Let <m>a \in A</m> be such that <m>i(a)=b-g\left(b^{\prime}\right)</m>. 
                 Now in coker <m>g</m> we have
-              </p>
-        
-              <p>
                 <me>
                   \begin{aligned}
                   b+\operatorname{im} g &amp; =b-g\left(b^{\prime}\right)+\operatorname{im} g \\
@@ -2955,9 +2899,6 @@
                   &amp; =i(a+\operatorname{im} f)
                   \end{aligned}
                 </me>
-              </p>
-        
-              <p>
                 This concludes the proof of exactness of <m>\operatorname{ker} f \longrightarrow \operatorname{ker} g \longrightarrow \operatorname{ker} h \quad</m> and <m>\quad</m> coker <m>f \longrightarrow \operatorname{coker} g \longrightarrow\coker h</m>.
               </p>
         
@@ -2965,84 +2906,34 @@
                 We still need to show the parts of the statement related to the connecting homomorphism <m>\partial</m>. 
                 Our definition of <m>\partial</m> can be visualized as follows:
               </p>
-        
-      
               <image source="2023_10_23_e2d6a27704be928b3deeg-064(1).jpg"/>
-        
-        
               <p>
                 Let's recap the process in words. 
                 First, we fix <m>c^{\prime} \in \operatorname{ker} h \subseteq C^{\prime}</m>. 
                 Since <m>p^{\prime}</m> is surjective, we can always pick <m>b^{\prime} \in B^{\prime}</m> such that <m>p^{\prime}\left(b^{\prime}\right)=c^{\prime}</m>. 
                 Since <m>c^{\prime} \in</m> ker <m>h</m>, by commutativity we have
-              </p>
-        
-              <p>
                 <me>p g\left(b^{\prime}\right)=h p^{\prime}\left(b^{\prime}\right)=h\left(c^{\prime}\right)=0,</me>
-              </p>
-        
-              <p>
                 so <m>g\left(b^{\prime}\right) \in \operatorname{ker} p=\operatorname{im} i</m>. 
                 Therefore, there exists <m>a \in A</m> such that <m>i(a)=g\left(b^{\prime}\right)</m>. 
                 In fact, since <m>i</m> is injective, there exists a unique <m>a \in A</m> such that <m>i(a)=g\left(b^{\prime}\right)</m>. 
                 Our definition of <m>\partial\left(c^{\prime}\right)</m> sets
-              </p>
-        
-              <p>
                 <me>\partial\left(c^{\prime}\right)=a+\operatorname{im} f \in \operatorname{coker} f .</me>
-              </p>
-        
-              <p>
                 The fact that <m>\partial</m> is a homomorphism of <m>R</m>-modules follows from the fact that all the maps involved are homomorphisms of <m>R</m>-modules: 
                 given <m>c_{1}^{\prime}, c_{2}^{\prime} \in \operatorname{ker} h</m>, and <m>b_{1}^{\prime}, b_{2}^{\prime} \in B^{\prime}, a_{1}, a_{2} \in A</m> such that
-              </p>
-        
-              <p>
                 <me>p^{\prime}\left(b_{1}^{\prime}\right)=c_{1}^{\prime}, \quad p^{\prime}\left(b_{2}^{\prime}\right)=c_{2}^{\prime}, \quad i\left(a_{1}\right)=g\left(b_{1}^{\prime}\right), \quad i\left(a_{2}\right)=g\left(b_{2}^{\prime}\right),</me>
-              </p>
-        
-              <p>
                 we have
-              </p>
-        
-              <p>
                 <me>i\left(a_{1}+a_{2}\right)=i\left(a_{1}\right)+i\left(a_{2}\right)=g\left(b_{1}^{\prime}\right)+g\left(b_{2}^{\prime}\right)=g\left(b_{1}^{\prime}+b_{2}^{\prime}\right) \text {, }</me>
-              </p>
-        
-              <p>
                 So
-              </p>
-        
-              <p>
                 <me>\partial\left(c_{1}^{\prime}\right)=a_{1}+\operatorname{im} f, \quad \partial\left(c_{2}^{\prime}\right)=a_{2}+\operatorname{im} f, \quad \text { and } \quad \partial\left(c_{1}^{\prime}+c_{2}^{\prime}\right)=\left(a_{1}+a_{2}\right)+\operatorname{im} f</me>
-              </p>
-        
-              <p>
                 Therefore, <m>\partial\left(c_{1}^{\prime}\right)+\partial\left(c_{2}^{\prime}\right)=\partial\left(c_{1}^{\prime}+c_{2}^{\prime}\right)</m>. 
                 Similarly, given any <m>r \in R</m>,
-              </p>
-        
-              <p>
                 <m>r\left(a_{1}+\operatorname{im} f\right)=r a_{1}+\operatorname{im} f, \quad i\left(r a_{1}\right)=r i\left(a_{1}\right)=r g\left(b_{1}^{\prime}\right)=g\left(r b_{1}^{\prime}\right), \quad</m> and <m>\quad p^{\prime}\left(r b_{1}\right)=r p^{\prime}\left(b_{1}\right)=r c_{1}</m>,
-              </p>
-        
-              <p>
                 so <m>\partial\left(r c_{1}\right)=r\left(a_{1}+\operatorname{im} f\right)=r \partial\left(c_{1}\right)</m>. We now need to show the following:
               </p>
-        
-      
               <image source="2023_10_23_e2d6a27704be928b3deeg-064.jpg"/>
-              
-        
               <p>
                 Points 2) and 3) together say that the sequence
-              </p>
-        
-              <p>
                 <m>\operatorname{ker} g \longrightarrow \operatorname{ker} h \stackrel{\partial}{\longrightarrow} \operatorname{coker} f \longrightarrow \operatorname{coker} g</m>
-              </p>
-        
-              <p>
                 is exact, and this will complete the proof.
               </p>
         
@@ -3053,68 +2944,23 @@
                 Given <m>b^{\prime} \in B^{\prime}</m> such that <m>p^{\prime}\left(b^{\prime}\right)=0</m>, by exactness we have <m>b^{\prime} \in \operatorname{ker} p^{\prime}=\operatorname{im} i^{\prime}</m>. 
                 Therefore, there exists <m>a^{\prime} \in A^{\prime}</m> such that <m>i^{\prime}\left(a^{\prime}\right)=b^{\prime}</m>. 
                 Notice that <m>a:=f\left(a^{\prime}\right) \in A</m> is such that
-              </p>
-        
-              <p>
                 <me>i(a)=i f\left(a^{\prime}\right)=g i^{\prime}\left(a^{\prime}\right)=g\left(b^{\prime}\right) .</me>
-              </p>
-        
-              <p>
                 Thus our definition says that <m>\partial(0)=a+\operatorname{im} f \in \operatorname{coker} f</m>. 
                 Since <m>a=f\left(a^{\prime}\right) \in \operatorname{im} f</m>, we conclude that <m>a+\operatorname{im} f=0</m>, so <m>\partial(0)=0</m> for any choice of <m>b^{\prime}</m>.
-              </p>
-        
-              <p>
                 Now consider any <m>c^{\prime} \in \operatorname{ker} h</m>. 
                 Again, to show <m>\partial</m> is well-defined, we need only to show it does not depend on the choice of <m>b^{\prime}</m> such that <m>p^{\prime}\left(b^{\prime}\right)=c^{\prime}</m>. 
                 Consider <m>b_{1}^{\prime}, b_{2}^{\prime} \in B^{\prime}</m> such that
-              </p>
-        
-              <p>
                 <me>p^{\prime}\left(b_{1}^{\prime}\right)=p^{\prime}\left(b_{2}^{\prime}\right)=c^{\prime},</me>
-              </p>
-        
-              <p>
                 and <m>a_{1}, a_{2} \in A</m> such that
-              </p>
-        
-              <p>
                 <me>i\left(a_{1}\right)=g\left(b_{1}^{\prime}\right) \quad \text { and } \quad i\left(a_{2}\right)=g\left(b_{2}^{\prime}\right) \text {. }</me>
-              </p>
-        
-              <p>
                 Note that
-              </p>
-        
-              <p>
                 <me>i\left(a_{1}-a_{2}\right)=g\left(b_{1}^{\prime}-b_{2}^{\prime}\right)</me>
-              </p>
-        
-              <p>
                 and since
-              </p>
-        
-              <p>
                 <me>p^{\prime}\left(b_{1}^{\prime}-b_{2}^{\prime}\right)=c^{\prime}-c^{\prime}=0</me>
-              </p>
-        
-              <p>
                 we must have
-              </p>
-        
-              <p>
                 <me>a_{1}-a_{2}+\operatorname{im} f=\partial(0)=0</me>
-              </p>
-        
-              <p>
                 Thus
-              </p>
-        
-              <p>
                 <me>a_{1}+\operatorname{im} f=a_{2}+\operatorname{im} f,</me>
-              </p>
-        
-              <p>
                 and this concludes our proof that <m>\partial</m> is well-defined.
               </p>
         
@@ -3175,22 +3021,22 @@
           <definition xml:id="def-2.27">
             <statement>
               <p>
-                The map <m>\partial</m> in the Snake Lemma is the connecting homomorphism.
+                The map <m>\partial</m> in the <xref text="title" ref="thm-2.26"/> is the connecting homomorphism.
               </p>
             </statement>
           </definition>
 
           <p>
-            The proof of the Snake Lemma is what we call a diagram chase, for reasons that may be obvious by now: 
+            The proof of the <xref text="title" ref="thm-2.26"/> is what we call a diagram chase, for reasons that may be obvious by now: 
             we followed the diagram in the natural way, and everything worked out in the end. 
             The Five Lemma is another classical example of a diagram chase.
           </p>
     
           <p>
-            Now that we have the Snake Lemma, we can construct the long exact sequence in homology:
+            Now that we have the <xref text="title" ref="thm-2.26"/>, we can construct the long exact sequence in homology:
           </p>
 
-          <theorem xml:id="thm-2.28"><title>Long exact sequence in homology</title>
+          <theorem xml:id="thm-2.28"><title>Long Exact Sequence in Homology</title>
             <statement>
               <p>
                 Given a short exact sequence in <m>\mathrm{Ch}(R)</m>
@@ -3261,7 +3107,7 @@
               </p>
         
               <p>
-                The Snake Lemma now gives us exact sequences
+                The <xref text="title" ref="thm-2.26"/> now gives us exact sequences
               </p>
         
               <p>
@@ -3276,7 +3122,11 @@
 
           <remark>
             <p>
-              Remark 2.29. It's helpful to carefully consider how to compute the connecting homomorphisms in the long exact sequence in homology, which we can easily put together from the proof of the Snake Lemma. Suppose that <m>c \in Z_{n+1}(C)=\operatorname{ker} d_{n+1}^{C}</m>. When we view <m>c</m> as an element in <m>C_{n+1}</m>, we can find <m>b \in B_{n+1}</m> such that <m>g_{n+1}(b)=c</m>, since <m>g_{n+1}</m> is surjective by assumption. Since <m>g</m> is a map of complexes, we have
+              Remark 2.29. 
+              It's helpful to carefully consider how to compute the connecting homomorphisms in the long exact sequence in homology, which we can easily put together from the proof of the <xref text="title" ref="thm-2.26"/>. 
+              Suppose that <m>c \in Z_{n+1}(C)=\operatorname{ker} d_{n+1}^{C}</m>. 
+              When we view <m>c</m> as an element in <m>C_{n+1}</m>, we can find <m>b \in B_{n+1}</m> such that <m>g_{n+1}(b)=c</m>, since <m>g_{n+1}</m> is surjective by assumption. 
+              Since <m>g</m> is a map of complexes, we have
             </p>
       
             <p>
@@ -3284,7 +3134,8 @@
             </p>
       
             <p>
-              so <m>d_{n+1}^{B}(b) \in \operatorname{ker} g_{n}</m>. In fact, note that <m>d_{n+1}^{B}(b) \in \mathbb{Z}_{n}(B)</m>, so
+              so <m>d_{n+1}^{B}(b) \in \operatorname{ker} g_{n}</m>. 
+              In fact, note that <m>d_{n+1}^{B}(b) \in \mathbb{Z}_{n}(B)</m>, so
             </p>
       
             <p>
@@ -3292,7 +3143,8 @@
             </p>
       
             <p>
-              Thus there exists <m>a \in Z_{n}(A)</m> such that <m>f_{n}(a)=d_{n+1}^{B}(b)</m>. Finally,
+              Thus there exists <m>a \in Z_{n}(A)</m> such that <m>f_{n}(a)=d_{n+1}^{B}(b)</m>. 
+              Finally,
             </p>
       
             <p>
@@ -3315,7 +3167,8 @@
 
           <remark>
             <p>
-              Remark 2.30. Suppose that
+              Remark 2.30. 
+              Suppose that
             </p>
       
             <p>
@@ -3323,7 +3176,8 @@
             </p>
       
             <p>
-              is a long exact sequence. This long exact sequence breaks into the short exact sequences
+              is a long exact sequence. 
+              This long exact sequence breaks into the short exact sequences
             </p>
       
             <p>
@@ -3331,7 +3185,9 @@
             </p>
       
             <p>
-              The first map <m>i</m> is simply the inclusion of the submodule ker <m>f_{n}</m> into <m>C_{n}</m>, while the second map <m>\pi</m> is the canonical projection onto the quotient. While it is clear that <m>i</m> is injective and <m>\pi</m> is surjective, exactness at the middle is less obvious. This follows from the exactness of the original complex, which gives <m>\operatorname{im} i=\operatorname{ker} f_{n}=\operatorname{im} f_{n+1}=\operatorname{ker} \pi</m>.
+              The first map <m>i</m> is simply the inclusion of the submodule ker <m>f_{n}</m> into <m>C_{n}</m>, while the second map <m>\pi</m> is the canonical projection onto the quotient. 
+              While it is clear that <m>i</m> is injective and <m>\pi</m> is surjective, exactness at the middle is less obvious. 
+              This follows from the exactness of the original complex, which gives <m>\operatorname{im} i=\operatorname{ker} f_{n}=\operatorname{im} f_{n+1}=\operatorname{ker} \pi</m>.
             </p>
           </remark>
     
@@ -3345,25 +3201,24 @@
                 Any commutative diagram in <m>\mathrm{Ch}(R)</m>
               </p>
         
-      
-              <image source="2023_10_23_e2d6a27704be928b3deeg-067(1).jpg"/>
-              
+              <image source="2023_10_23_e2d6a27704be928b3deeg-067(1).jpg" width="50%"/>
         
               <p>
                 with exact rows induces a commutative diagram with exact rows
               </p>
-        
         
               <image source="2023_10_23_e2d6a27704be928b3deeg-067.jpg"/>
             </statement>
 
             <proof>
               <p>
-                Proof. The rows of the resulting diagram are the long exact sequences in homology induced by each row of the original diagram, as in Theorem 2.28. So the content of the theorem is that the maps induced in homology by <m>f, g</m>, and <m>h</m> make the diagram commute. The commutativity of
+                The rows of the resulting diagram are the long exact sequences in homology induced by each row of the original diagram, as in <xref text="title" ref="thm-2.28"/>. 
+                So the content of the theorem is that the maps induced in homology by <m>f, g</m>, and <m>h</m> make the diagram commute. 
+                The commutativity of
               </p>
         
       
-              <image source="2023_10_23_e2d6a27704be928b3deeg-068(2).jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-068(2).jpg" width="50%"/>
               
         
               <p>
@@ -3371,11 +3226,12 @@
               </p>
         
         
-            <image source="2023_10_23_e2d6a27704be928b3deeg-068(1).jpg"/>
+            <image source="2023_10_23_e2d6a27704be928b3deeg-068(1).jpg" width="30%"/>
               
         
               <p>
-                that involves the connecting homomorphisms <m>\partial</m> and <m>\partial^{\prime}</m>. Consider the following commutative diagram:
+                that involves the connecting homomorphisms <m>\partial</m> and <m>\partial^{\prime}</m>. 
+                Consider the following commutative diagram:
               </p>
         
         
@@ -3383,11 +3239,15 @@
               
         
               <p>
-                Given <m>c \in \operatorname{ker}\left(d_{n}: C_{n} \longrightarrow C_{n-1}\right)</m>, we need to check that <m>f_{n-1}(\partial(c))=\partial^{\prime} h_{n}(c)</m> in <m>\mathrm{H}_{n-1}\left(A^{\prime}\right)</m>. To compute <m>\partial(c)</m>, we find a lift <m>b \in B_{n}</m> such that <m>p_{n}(b)=c</m>, and <m>a \in A_{n-1}</m> with <m>i_{n-1}(a)=d_{n}(b)</m>, and set <m>\partial(c)=a+\operatorname{im} d_{n} \in \mathrm{H}_{n-1}(A)</m>. So <m>f_{n-1} \partial(c)=f_{n-1}(a)+\operatorname{im} d_{n}</m>. On the other hand, to compute <m>\partial^{\prime} h_{n}(c)</m>, we start by finding <m>b^{\prime} \in B_{n}^{\prime}</m> such that <m>p_{n}^{\prime}\left(b^{\prime}\right)=h_{n}(c)</m>. By commutativity of the right back square
+                Given <m>c \in \operatorname{ker}\left(d_{n}: C_{n} \longrightarrow C_{n-1}\right)</m>, we need to check that <m>f_{n-1}(\partial(c))=\partial^{\prime} h_{n}(c)</m> in <m>\mathrm{H}_{n-1}\left(A^{\prime}\right)</m>. 
+                To compute <m>\partial(c)</m>, we find a lift <m>b \in B_{n}</m> such that <m>p_{n}(b)=c</m>, and <m>a \in A_{n-1}</m> with <m>i_{n-1}(a)=d_{n}(b)</m>, and set <m>\partial(c)=a+\operatorname{im} d_{n} \in \mathrm{H}_{n-1}(A)</m>. 
+                So <m>f_{n-1} \partial(c)=f_{n-1}(a)+\operatorname{im} d_{n}</m>. 
+                On the other hand, to compute <m>\partial^{\prime} h_{n}(c)</m>, we start by finding <m>b^{\prime} \in B_{n}^{\prime}</m> such that <m>p_{n}^{\prime}\left(b^{\prime}\right)=h_{n}(c)</m>. 
+                By commutativity of the right back square
               </p>
         
         
-              <image source="2023_10_23_e2d6a27704be928b3deeg-068.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-068.jpg" width="30%"/>
               
         
               <p>
@@ -3407,7 +3267,7 @@
               </p>
         
         
-              <image source="2023_10_23_e2d6a27704be928b3deeg-069.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-069.jpg" width="30%"/>
               
               <p>
                 we have
@@ -3430,7 +3290,7 @@
               </p>
         
       
-              <image source="2023_10_23_e2d6a27704be928b3deeg-069(1).jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-069(1).jpg" width="30%"/>
         
               <p>
                 we have
@@ -3441,14 +3301,16 @@
               </p>
         
               <p>
-                So we can take <m>a^{\prime}=f_{n-1}(a)</m>. Finally, this means <m>\partial^{\prime}\left(h_{n}(c)\right)=f_{n-1}(a)+\operatorname{im} d_{n-1}</m>, as we wanted to prove.
+                So we can take <m>a^{\prime}=f_{n-1}(a)</m>. 
+                Finally, this means <m>\partial^{\prime}\left(h_{n}(c)\right)=f_{n-1}(a)+\operatorname{im} d_{n-1}</m>, as we wanted to prove.
               </p>
             </proof>
           </theorem>
 
           <remark>
             <p>
-              Remark 2.32. Let
+              Remark 2.32. 
+              Let
             </p>
       
             <p>
@@ -3456,15 +3318,13 @@
             </p>
       
             <p>
-              be a short exact sequence in <m>\operatorname{Ch}(R)</m>. We can think of Theorem 2.31 as saying that the induced maps on homology <m>i_{*}: \mathrm{H}_{n}(A) \longrightarrow \mathrm{H}_{n}(B)</m> and <m>p_{*}: \mathrm{H}_{n}(B) \longrightarrow \mathrm{H}_{n}(C)</m> and the connecting homomorphism <m>\partial: \mathrm{H}_{n}(C) \longrightarrow \mathrm{H}_{n-1}(A)</m> are all natural transformations. More precisely, consider the category SES of short exact sequences of <m>R</m>-modules, which is a full subcategory of <m>\mathrm{Ch}(R)</m>. Homology gives us functors SES <m>\longrightarrow R</m>-Mod that given a short exact sequence
-            </p>
-      
-            <p>
+              be a short exact sequence in <m>\operatorname{Ch}(R)</m>. We can think of <xref ref="thm-2.31"/> as saying that the induced maps on homology <m>i_{*}: \mathrm{H}_{n}(A) \longrightarrow \mathrm{H}_{n}(B)</m> and <m>p_{*}: \mathrm{H}_{n}(B) \longrightarrow \mathrm{H}_{n}(C)</m> and the connecting homomorphism <m>\partial: \mathrm{H}_{n}(C) \longrightarrow \mathrm{H}_{n-1}(A)</m> are all natural transformations. 
+              More precisely, consider the category SES of short exact sequences of <m>R</m>-modules, which is a full subcategory of <m>\mathrm{Ch}(R)</m>. 
+              Homology gives us functors SES <m>\longrightarrow R</m>-Mod that given a short exact sequence
               <me>0 \longrightarrow A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0</me>
-            </p>
-      
-            <p>
-              return the <m>R</m>-modules <m>\mathrm{H}_{n}(A), \mathrm{H}_{n}(B)</m>, or <m>\mathrm{H}_{n}(C)</m> ). A map between two short exact sequences then induces <m>R</m>-module homomorphisms between the corresponding homologies. With this framework, Theorem 2.31 says that <m>i_{*}: \mathrm{H}_{n}(A) \longrightarrow \mathrm{H}_{n}(B)</m>, and <m>p_{*}: \mathrm{H}_{n}(B) \longrightarrow \mathrm{H}_{n}(C)</m> and the connecting homomorphism <m>\partial: \mathrm{H}_{n}(C) \longrightarrow \mathrm{H}_{n-1}(A)</m> are all natural transformations between the corresponding homology functors.
+              return the <m>R</m>-modules <m>\mathrm{H}_{n}(A), \mathrm{H}_{n}(B)</m>, or <m>\mathrm{H}_{n}(C)</m> ). 
+              A map between two short exact sequences then induces <m>R</m>-module homomorphisms between the corresponding homologies. 
+              With this framework, <xref ref="thm-2.31"/> says that <m>i_{*}: \mathrm{H}_{n}(A) \longrightarrow \mathrm{H}_{n}(B)</m>, and <m>p_{*}: \mathrm{H}_{n}(B) \longrightarrow \mathrm{H}_{n}(C)</m> and the connecting homomorphism <m>\partial: \mathrm{H}_{n}(C) \longrightarrow \mathrm{H}_{n-1}(A)</m> are all natural transformations between the corresponding homology functors.
             </p>
           </remark>
 
@@ -3575,8 +3435,8 @@
           <subsection xml:id="subsec-additive-functors"><title>Additive Functors</title>
             
             <p>
-              Since <m>R</m>-Mod is a locally small category, we saw in Definition 1.34 that there are two Hom-functors from <m>R</m>-Mod to Set, the covariant functor <m>\operatorname{Hom}_{R}(M,-): R</m>-Mod <m>\longrightarrow</m> Set and the contravariant functor <m>\operatorname{Hom}_{R}(-, N): R</m>-Mod <m>\longrightarrow</m> Set. 
-              In light of <xref ref="exe-37"/>, we can upgrade these functors to land in <m>\mathbf{A b}</m>, or in <m>R</m>-Mod when <m>R</m> is commutative, not just in Set. 
+              Since <m>R</m>-Mod is a locally small category, we saw in Definition 1.34 that there are two Hom-functors from <m>R</m>-Mod to <m>\Set</m>, the covariant functor <m>\operatorname{Hom}_{R}(M,-): R</m>-Mod <m>\longrightarrow</m> Set and the contravariant functor <m>\operatorname{Hom}_{R}(-, N): R</m>-Mod <m>\longrightarrow</m> Set. 
+              In light of <xref ref="exe-37"/>, we can upgrade these functors to land in <m>\mathbf{A b}</m>, or in <m>R</m>-Mod when <m>R</m> is commutative, not just in <m>\Set</m>. 
               Note that while there are two Hom-functors, we will sometimes refer to the Hom functor when talking about properties that are common to both of them.
             </p>
       
@@ -7923,8 +7783,421 @@
 
     </part>
 
-    <backmatter xml:id="backmatter">
-      <title>Backmatter</title>
+    <backmatter xml:id="backmatter"><title>Backmatter</title>
+
+      <appendix><title>Rigns and Modules</title>
+
+        <section xml:id="sec-rings"><title>Rings</title>
+
+          <p>
+            In this class, all rings have a multiplicative identity, written as 1 or <m>1_{R}</m> is we want to emphasize that we are referring to the ring <m>R</m>. 
+            This is what some authors call unital rings; since for us all rings are unital, we will omit the adjective. 
+            Moreover, we will think of 1 as part of the structure of the ring, and thus require it be preserved by all natural constructions. 
+            As such, a subring <m>S</m> of <m>R</m> must share the same multiplicative identity with <m>R</m>, meaning <m>1_{R}=1_{S}</m>. 
+            Moreover, any ring homomorphism must preserve the multiplicative identity. 
+            To clear any possible confusion, we include below the relevant definitions.
+          </p>
+
+          <definition xml:id="def-A1"><title>Ring</title>
+            <statement>
+              <p>
+                A <em>ring</em> is a set <m>R</m> equipped with two binary operations, + and <m>\cdot</m>, satisfying:
+                <ol>
+                  <li>
+                    <p>
+                      <m>(R,+)</m> is an abelian group with identity element denoted 0 or <m>0_{R}</m>.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      The operation <m>\cdot</m> is associative, so that <m>(R, \cdot)</m> is a semigroup.
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      For all <m>a, b, c \in R</m>, we have
+                      <me>a \cdot(b+c)=a \cdot b+a \cdot c \quad \text { and } \quad(a+b) \cdot c=a \cdot c+b \cdot c</me>
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      there is a multiplicative identity, written as 1 or <m>1_{R}</m>, such that <m>1 \neq 0</m> and <m>1 \cdot a=a=a \cdot 1</m> for all <m>a \in R</m>.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+          </definition>
+
+          <p>
+            To simplify notation, we will often drop the <m>\cdot</m> when writing the multiplication of two elements, so that <m>a b</m> will mean <m>a \cdot b</m>.
+          </p>
+      
+          <p>
+            Note that the requirement that <m>1 \neq 0</m> makes it so that the zero ring is not a ring.
+          </p>
+
+          <definition xml:id="def-A2">
+            <statement>
+              <p>
+                Definition A.2. A ring <m>R</m> is a commutative ring if for all <m>a, b \in R</m> we have <m>a \cdot b=b \cdot a</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <definition xml:id="def-A3">
+            <statement>
+              <p>
+                Definition A.3. A ring <m>R</m> is a division ring if <m>1 \neq 0</m> and <m>R \backslash\{0\}</m> is a group under <m>\cdot</m>, so every nonzero <m>r \in R</m> has a multiplicative inverse. A field is a commutative division ring.
+              </p>
+            </statement>
+          </definition>
+
+          <definition xml:id="def-A4">
+            <statement>
+              <p>
+                Definition A.4. A commutative ring <m>R</m> is a domain, sometimes called an integral domain, if it has no zerodivisors: <m>a b=0 \Rightarrow a=0</m> or <m>b=0</m>. Note that in particular we reserve the word domain for commutative rings.
+              </p>
+            </statement>
+          </definition>
+      
+          <p>
+            For some familiar examples, <m>\mathrm{M}_{n}(R)</m> (the set of <m>n \times n</m> matrices) is a ring with the usual addition and multiplication of matrices, <m>\mathbb{Z}</m> and <m>\mathbb{Z} / n</m> are commutative rings, <m>\mathbb{C}</m> and <m>\mathbb{Q}</m> are fields, and the real Hamiltonian quaternion ring <m>\mathbb{H}</m> is a division ring.
+          </p>
+
+          <definition xml:id="def-A5">
+            <statement>
+              <p>
+                Definition A.5. A ring homomorphism is a function <m>f: R \rightarrow S</m> satisfying the following:
+              </p>
+              <p><ul>
+                <li>
+                    <p>
+                <m>f(a+b)=f(a)+f(b)</m> for all <m>a, b \in R</m>.
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                <m>f(a b)=f(a) f(b)</m> for all <m>a, b \in R</m>.
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                <m>f\left(1_{R}\right)=1_{S}</m>.
+              </p>
+                </li>
+          
+              </ul></p>
+            </statement>
+          </definition>
+      
+          <p>
+            Under this definition, the map <m>f: \mathbb{R} \rightarrow \mathrm{M}_{2}(\mathbb{R})</m> sending <m>a \mapsto\left[\begin{array}{ll}a &amp; 0 \\ 0 &amp; 0\end{array}\right]</m> preserves addition and multiplication but not the multiplicative identities, and thus it is not a ring homomorphism.
+          </p>
+
+          <exercise>
+            <p>
+              Exercise 65. For any ring <m>R</m>, there exists a unique homomorphism <m>\mathbb{Z} \rightarrow R</m>.
+            </p>
+          </exercise>
+
+          <definition xml:id="def-A6">
+            <statement>
+              <p>
+                Definition A.6. A subset <m>S</m> of a ring <m>R</m> is a subring of <m>R</m> if it is a ring under the same addition and multiplication operations and <m>1_{R}=1_{S}</m>.
+              </p>
+            </statement>
+          </definition>
+      
+          <p>
+            So under this definition, <m>2 \mathbb{Z}</m>, the set of even integers, is not a subring of <m>\mathbb{Z}</m>; in fact, it is not even a ring, since it does not have a multiplicative identity!
+          </p>
+
+          <definition xml:id="def-A7">
+            <statement>
+              <p>
+                Definition A.7. 
+                Let <m>R</m> be a ring. A subset <m>I</m> of <m>R</m> is an ideal if:
+              </p>
+          
+              <p><ul>
+                <li>
+                    <p>
+                <m>I</m> is nonempty.
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                <m>(I,+)</m> is a subgroup of <m>(R,+)</m>.
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                For every <m>a \in I</m> and every <m>r \in R</m>, we have <m>r a \in I</m> and <m>a r \in I</m>.
+              </p>
+                </li>
+          
+              </ul></p>
+            </statement>
+          </definition>
+
+          <p>
+            The final property is often called absorption. 
+            A left ideal satisfies only absorption on the left, meaning that we require only that <m>r a \in I</m> for all <m>r \in R</m> and <m>a \in I</m>. 
+            Similarly, a right ideal satisfies only absorption on the right, meaning that <m>a r \in I</m> for all <m>r \in R</m> and <m>a \in I</m>.
+          </p>
+      
+          <p>
+            When <m>R</m> is a commutative ring, the left ideals, right ideals, and ideals over <m>R</m> are all the same. 
+            However, if <m>R</m> is not commutative, then these can be very different classes.
+          </p>
+      
+          <p>
+            One key distinction between unital rings and nonunital rings is that if one requires every ring to have a 1 , as we do, then the ideals and subrings of a ring <m>R</m> are very different creatures. 
+            In fact, the only subring of <m>R</m> that is also an ideal is <m>R</m> itself. 
+            The change lies in what constitutes a subring; notice that nothing has changed in the definition of ideal.
+          </p>
+
+          <remark>
+            <p>
+              Remark A.8. 
+              Every ring <m>R</m> has two trivial ideals: <m>R</m> itself and the zero ideal <m>(0)=\{0\}</m>.
+            </p>
+          </remark>
+      
+          <p>
+            A nontrivial ideal <m>I</m> of <m>R</m> is an ideal that <m>I \neq R</m> and <m>I \neq(0)</m>. 
+            An ideal <m>I</m> of <m>R</m> is a proper ideal if <m>I \neq R</m>.
+          </p>
+          
+        </section>
+
+        <section xml:id="sec-modules"><title>Modules</title>
+          <p>
+            You can learn more about the basic theory of (commutative) rings and <m>R</m>-modules in any introductory algebra book, such as [DF04].
+          </p>
+
+          <definition xml:id="def-A9">
+            <statement>
+              <p>
+                Definition A.9. Let <m>R</m> be a ring with <m>1 \neq 0</m>. A left <m>R</m>-module is an abelian group <m>(M,+)</m> together with an action <m>R \times M \rightarrow M</m> of <m>R</m> on <m>M</m>, written as <m>(r, m) \mapsto r m</m>, such that for all <m>r, s \in R</m> and <m>m, n \in M</m> we have the following:
+              </p>
+          
+              <p><ul>
+                <li>
+                    <p>
+                <m>(r+s) m=r m+s m</m>,
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                <m>(r s) m=r(s m)</m>,
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                <m>r(m+n)=r m+r n</m>, and
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                <m>1 m=m</m>.
+              </p>
+                </li>
+          
+              </ul></p>
+          
+              <p>
+                A right <m>R</m>-module is an abelian group <m>(M,+)</m> together with an action of <m>R</m> on <m>M</m>, written as <m>M \times R \rightarrow M,(m, r) \mapsto m r</m>, such that for all <m>r, s \in R</m> and <m>m, n \in M</m> we have
+              </p>
+          
+              <p><ul>
+                <li>
+                    <p>
+                <m>m(r+s)=m r+m s</m>,
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                <m>m(r s)=(m r) s</m>,
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                <m>(m+n) r=m r+n r</m>, and
+              </p>
+                </li>
+          
+                <li>
+                    <p>
+                <m>m 1=m</m>.
+              </p>
+                </li>
+          
+              </ul></p>
+            </statement>
+          </definition>
+      
+          <p>
+            By default, we will be studying left <m>R</m>-modules. 
+            To make the writing less heavy, we will sometimes say <m>R</m>-module rather than left <m>R</m>-module whenever there is no ambiguity.
+          </p>
+
+          <remark>
+            <p>
+              Remark A.10. 
+              If <m>R</m> is a commutative ring, then any left <m>R</m>-module <m>M</m> may be regarded as a right <m>R</m>-module by setting <m>m r:=r m</m>. 
+              Likewise, any right <m>R</m>-module may be regarded as a left <m>R</m>-module. 
+              Thus for commutative rings, we just refer to modules, and not left or right modules.
+            </p>
+          </remark>
+      
+          <p>
+            The definitions of submodule, quotient of modules, and homomorphism of modules are very natural and easy to guess, but here they are.
+          </p>
+
+          <definition xml:id="def-A11">
+            <statement>
+              <p>
+                If <m>N \subseteq M</m> are <m>R</m>-modules with compatible structures, we say that <m>N</m> is a submodule of <m>M</m>.
+              </p>
+          
+              <p>
+                A map <m>M \stackrel{f}{\longrightarrow} N</m> between <m>R</m>-modules is a homomorphism of <m>R</m>-modules if it is a homomorphism of abelian groups that preserves the <m>R</m>-action, meaning <m>f(r a)=r f(a)</m> for all <m>r \in R</m> and all <m>a \in M</m>. 
+                We sometimes refer to <m>R</m>-module homomorphisms as <m>R</m>-module maps, or maps of <m>R</m>-modules. 
+                An isomorphism of <m>R</m>-modules is a bijective homomorphism, which we really should think about as a relabeling of the elements in our module. 
+                If two modules <m>M</m> and <m>N</m> are isomorphic, we write <m>M \cong N</m>.
+              </p>
+          
+              <p>
+                Given an <m>R</m>-module <m>M</m> and a submodule <m>N \subseteq M</m>, the quotient <m>M / N</m> is an <m>R</m>-module whose elements are the equivalence classes determined by the relation on <m>M</m> given by <m>a \sim</m> <m>b \Leftrightarrow a-b \in N</m>. 
+                One can check that this set naturally inherits an <m>R</m>-module structure from the <m>R</m>-module structure on <m>M</m>, and it comes equipped with a natural canonical map <m>M \longrightarrow M / N</m> induced by sending <m>1</m> to its equivalence class.
+              </p>
+            </statement>
+          </definition>
+
+          <example>
+            <p>
+              Example A.12. 
+              The modules over a field <m>k</m> are precisely all the <m>k</m>-vector spaces. 
+              Linear transformations are precisely all the <m>k</m>-module maps.
+            </p>
+          </example>
+      
+          <p>
+            While vector spaces make for a great first example, be warned that many of the basic facts we are used to from linear algebra are often a little more subtle in commutative algebra. 
+            These differences are features, not bugs.
+          </p>
+
+          <example>
+            <p>
+              Example A.13. 
+              The <m>\mathbb{Z}</m>-modules are precisely all the abelian groups.
+            </p>
+          </example>
+
+          <example>
+            <p>
+              Example A.14. 
+              When we think of the ring <m>R</m> as a module over itself, the submodules of <m>R</m> are precisely the ideals of <m>R</m>.
+            </p>
+          </example>
+
+          <theorem xml:id="thm-A15"><title>First Isomorphism Theorem</title>
+            <statement>
+              <p>
+                Any <m>R</m>-module homomorphism <m>M \stackrel{f}{\longrightarrow} N</m> satisfies <m>M / \operatorname{ker} f \cong \operatorname{im} f</m>.
+              </p>
+            </statement>
+          </theorem>
+      
+          <p>
+            The first big noticeable difference between vector spaces and more general <m>R</m>-modules is that while every vector space has a basis, most <m>R</m>-modules do not.
+          </p>
+
+          <definition xml:id="def-A16">
+            <statement>
+              <p>
+                A subset <m>\Gamma \subseteq M</m> of an <m>R</m>-module <m>M</m> is a generating set, or a set of generators, if every element in <m>M</m> can be written as a finite linear combination of elements in <m>M</m> with coefficients in <m>R</m>. 
+                A basis for an <m>R</m>-module <m>M</m> is a generating set <m>\Gamma</m> for <m>M</m> such that <m>\sum_{i} a_{i} \gamma_{i}=0</m> implies <m>a_{i}=0</m> for all <m>i</m>. 
+                An <m>R</m>-module is free if it has a basis.
+              </p>
+            </statement>
+          </definition>
+
+          <remark>
+            <p>
+              Remark A.17. 
+              Every vector space is a free module.
+            </p>
+          </remark>
+
+          <remark>
+            <p>
+              Remark A.18. 
+              Every free <m>R</m>-module is isomorphic to a direct sum of copies of <m>R</m>. 
+              Indeed, let’s construct such an isomorphism for a given free <m>R</m>-module <m>M</m>. 
+              Given a basis <m>\Gamma=\left\{\gamma_{i}\right\}_{i \in I}</m> for <m>M</m>, let
+              <me>
+                \begin{aligned}
+                &amp; \bigoplus_{i \in I} R \stackrel{\pi}{\longrightarrow} M \\
+                &amp; \left(r_{i}\right)_{i \in I} \longrightarrow \sum_{i} r_{i} \gamma_{i}
+                \end{aligned}
+              </me>
+            </p>
+        
+            <p>
+              The condition that <m>\Gamma</m> is a basis for <m>M</m> can be restated into the statement that <m>\pi</m> is an isomorphism of <m>R</m>-modules.
+            </p>
+          </remark>
+      
+          <p>
+            One of the key things that makes commutative algebra so rich and beautiful is that most modules are in fact not free. 
+            In general, every <m>R</m>-module has a generating set - for example, <m>M</m> itself. 
+            Given some generating set <m>\Gamma</m> for <m>M</m>, we can always repeat the idea above and write a presentation <m>\oplus_{i \in I} R \stackrel{\pi}{\longrightarrow} M</m> for <m>M</m>, but in general the resulting map <m>\pi</m> will have a nontrivial kernel. 
+            A nonzero kernel element <m>\left(r_{i}\right)_{i \in I} \in \operatorname{ker} \pi</m> corresponds to a relation between the generators of <m>M</m>.
+          </p>
+
+          <remark>
+            <p>
+              Remark A.19. 
+              Given a set of generators for an <m>R</m>-module <m>M</m>, any homomorphism of <m>R</m> modules <m>M \longrightarrow N</m> is determined by the images of the generators.
+            </p>
+          </remark>
+      
+          <p>
+            We say that a module is finitely generated if we can find a finite generating set for <m>M</m>. 
+            The simplest finitely generated modules are the cyclic modules.
+          </p>
+
+          <example>
+            <p>
+              Example A.20. 
+              An <m>R</m>-module is cyclic if it can be generated by one element. 
+              Equivalently, we can write <m>M</m> as a quotient of <m>R</m> by some ideal <m>I</m>. 
+              Indeed, given a generator <m>m</m> for <m>M</m>, the kernel of the map <m>R \stackrel{\pi}{\longrightarrow} M</m> induced by <m>1 \mapsto m</m> is some ideal <m>I</m>. 
+              Since we assumed that <m>m</m> generates <m>M, \pi</m> is automatically surjective, and thus induces an isomorphism <m>R / I \cong M</m>.
+            </p>
+          </example>
+
+          <p>
+            Similarly, if an <m>R</m>-module has <m>n</m> generators, we can naturally think about it as a quotient of <m>R^{n}</m> by the submodule of relations among those <m>n</m> generators.
+          </p>
+        </section>
+
+      </appendix>
 
       <colophon>
         <p> This book was authored in <pretext />. </p>
