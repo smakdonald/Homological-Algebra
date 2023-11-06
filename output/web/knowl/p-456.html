@@ -13,19 +13,29 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Left exact covariant functors take kernels to kernels, while right exact covariant functors take cokernels to cokernels: the kernel of <span class="process-math">\(f\)</span> fits in an exact sequence</div>
+<div class="para">A covariant additive functor <span class="process-math">\(T: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod is left exact if it takes every exact sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
-0 \longrightarrow \operatorname{ker} f \longrightarrow A \stackrel{f}{\longrightarrow} B
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
 \end{equation*}
 </div>
-<div class="para">and applying a left exact functor <span class="process-math">\(F\)</span> gives us an exact sequence</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules to the exact sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
-0 \longrightarrow F(\operatorname{ker} f) \longrightarrow F(A) \stackrel{F(f)}{\longrightarrow} F(B)
+0 \longrightarrow T(A) \stackrel{T(f)}{\longrightarrow} T(B) \stackrel{T(g)}{\longrightarrow} T(C)
 \end{equation*}
 </div>
-<div class="para">Exactness tells us that <span class="process-math">\(F(\operatorname{ker} f)\)</span> is the kernel of <span class="process-math">\(F(f)\text{.}\)</span>
+<div class="para">of <span class="process-math">\(S\)</span>-modules, and right exact if it takes every exact sequence of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">to the exact sequence of <span class="process-math">\(S\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(A) \stackrel{T(f)}{\longrightarrow} T(B) \stackrel{T(g)}{\longrightarrow} T(C) \longrightarrow 0 .
+\end{equation*}
 </div>
 </div>
 <span class="incontext"><a href="sec-hom.html#p-456" class="internal">in-context</a></span>

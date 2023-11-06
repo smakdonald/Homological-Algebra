@@ -12,7 +12,15 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">If <span class="process-math">\(R\)</span> is a domain and <span class="process-math">\(M\)</span> is a flat <span class="process-math">\(R\)</span>-module, then <span class="process-math">\(M\)</span> is torsion free.</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(i: A \longrightarrow B\)</span> be an injective map of <span class="process-math">\(R\)</span>-modules. We want to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M \otimes_{R} A \stackrel{1 \otimes i}{\longrightarrow} M \otimes_{R} B
+\end{equation*}
+</div>
+<div class="para">is injective. Suppose that <span class="process-math">\(u \in \operatorname{ker}\left(1_{M} \otimes i\right)\text{.}\)</span> We are going to construct a finitely generated submodule <span class="process-math">\(N \subseteq M\text{,}\)</span> with <span class="process-math">\(j: N \rightarrow M\)</span> the inclusion, and an element <span class="process-math">\(v \in N \otimes_{R} A\)</span> such that <span class="process-math">\(v \in \operatorname{ker}\left(1_{N} \otimes i\right)\)</span> and <span class="process-math">\(u=\left(j \otimes 1_{A}\right)(v)\text{.}\)</span> Once we do that, our submodule <span class="process-math">\(N\)</span> is finitely generated, and thus flat by assumption, so <span class="process-math">\(1_{N} \otimes i\)</span> is injective; therefore, <span class="process-math">\(v=0\)</span> and thus we must have <span class="process-math">\(u=0\text{.}\)</span> Therefore, <span class="process-math">\(1_{M} \otimes i\)</span> is injective, and we conclude that <span class="process-math">\(M\)</span> is flat.</div>
+</div>
 <span class="incontext"><a href="sec-flat.html#p-1058" class="internal">in-context</a></span>
 </body>
 </html>

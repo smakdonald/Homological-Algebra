@@ -3340,7 +3340,16 @@
 
         <section xml:id="sec-hom"><title><m>\Hom</m></title>
 
-          <subsection xml:id="subsec-hom"><title>Introducing <m>\Hom</m></title>
+          <subsection xml:id="subsec-hom"><title>There's No Place Like <m>\Hom</m></title>
+
+            <blockquote>
+              <p>
+                <q>
+                  We shape our <m>\Hom</m>s and then our <m>\Hom</m>s shape us.
+                </q>
+              </p>
+              <attribution>Winston Churchill</attribution>
+            </blockquote>
 
             <p>
               From now on, let's fix a ring <m>R</m>. 
@@ -3437,6 +3446,15 @@
           </subsection>
 
           <subsection xml:id="subsec-additive-functors"><title>Additive Functors</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  To split yourself in two is just about the most radical thing you can do.
+                </q>
+              </p>
+              <attribution>Ani DiFranco</attribution>
+            </blockquote>
             
             <p>
               Since <m>R</m>-Mod is a locally small category, we saw in Definition 1.34 that there are two Hom-functors from <m>R</m>-Mod to <m>\Set</m>, the covariant functor <m>\operatorname{Hom}_{R}(M,-): R</m>-Mod <m>\longrightarrow</m> Set and the contravariant functor <m>\operatorname{Hom}_{R}(-, N): R</m>-Mod <m>\longrightarrow</m> Set. 
@@ -3700,6 +3718,15 @@
 
           <subsection xml:id="subsec-exact-functors"><title>Exact Functors</title>
 
+            <blockquote>
+              <p>
+                <q>
+                  My biggest problem is retaining the exact information.
+                </q>
+              </p>
+              <attribution>David Cross</attribution>
+            </blockquote>
+
             <p>
               Another important property of <m>\Hom</m> is how it interacts with exact sequences. 
               First, an important note about general additive functors:
@@ -3959,6 +3986,15 @@
           </subsection>
 
           <subsection xml:id="subsec-hom-left"><title><m>\Hom</m> is Left Exact</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  One should always aim at being interesting, rather than exact.
+                </q>
+              </p>
+              <attribution>Voltaire</attribution>
+            </blockquote>
             
             <p>
               We are now ready for our first important example of a left exact functor: 
@@ -4208,6 +4244,15 @@
         <section xml:id="sec-tensor"><title>Tensor Products</title>
 
           <subsection xml:id="subsec-biadditive"><title>Biadditive Maps and First Properties</title>
+
+            <blockquote>
+              <p>
+                <q>
+                 Tenser, said the Tensor. Tension, apprehension, and dissension have begun.
+                </q>
+              </p>
+              <attribution>Alfred Bester</attribution>
+            </blockquote>
             
             <definition xml:id="def-3.18">
               <statement>
@@ -4513,6 +4558,15 @@
           </subsection>
 
           <subsection xml:id="subsec-tensor-elements"><title>Elements in Tensor Products</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  In the beginning God said, the four-dimensional divergence of an antisymmetric, second rank tensor equals zero, and there was light, and it was good. And on the seventh day he rested.
+                </q>
+              </p>
+              <attribution>Michio Kaku</attribution>
+            </blockquote>
           
             <p>
               Let's see some examples of how tensor products can be zero.
@@ -4607,6 +4661,15 @@
           </subsection>
 
           <subsection xml:id="subsec-tensor-module"><title>Bimodules and When Tensor Products are Modules</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  Envy, like a false mirror, distorts the symmetry of the sweetest form.
+                </q>
+              </p>
+              <attribution>Norm Macdonald</attribution>
+            </blockquote>
     
             <p>
               We can sometimes give <m>M \otimes_{R} N</m> the structure of an <m>R</m>-module.
@@ -4633,7 +4696,10 @@
             <definition xml:id="def-3.30">
               <statement>
                 <p>
-                  Definition 3.30. Let <m>R</m> be a commutative ring and <m>M</m> and <m>N</m> be <m>R</m>-modules. The tensor product of <m>M</m> and <m>N</m> is an <m>R</m>-module <m>M \otimes_{R} N</m> together with an <m>R</m>-bilinear map <m>\tau: M \times N \longrightarrow</m> <m>M \otimes_{R} N</m> with the following universal property: for every <m>R</m>-module <m>A</m> and every <m>R</m>-bilinear map <m>f: M \times N \longrightarrow A</m> there exists a unique <m>R</m>-module homomorphism <m>\tilde{f}: M \otimes_{R} N \longrightarrow A</m> such that the following diagram commutes:
+                  Definition 3.30. 
+                  Let <m>R</m> be a commutative ring and <m>M</m> and <m>N</m> be <m>R</m>-modules. 
+                  The tensor product of <m>M</m> and <m>N</m> is an <m>R</m>-module <m>M \otimes_{R} N</m> together with an <m>R</m>-bilinear map <m>\tau: M \times N \longrightarrow</m> <m>M \otimes_{R} N</m> with the following universal property: 
+                  for every <m>R</m>-module <m>A</m> and every <m>R</m>-bilinear map <m>f: M \times N \longrightarrow A</m> there exists a unique <m>R</m>-module homomorphism <m>\tilde{f}: M \otimes_{R} N \longrightarrow A</m> such that the following diagram commutes:
                 </p>
           
         
@@ -5926,44 +5992,44 @@
         <section xml:id="sec-hom-tensor"><title>Hom-Tensor Adjunction</title>
 
           <p>
-            The Hom and tensor functors are closely related. First, we note that <m>\operatorname{Hom}_{R}(A, B)</m> can be a module over a ring <m>S</m> when <m>A</m> or <m>B</m> have a bimodule structure.
+            The Hom and tensor functors are closely related. 
+            First, we note that <m>\operatorname{Hom}_{R}(A, B)</m> can be a module over a ring <m>S</m> when <m>A</m> or <m>B</m> have a bimodule structure.
           </p>
 
           <exercise>
             <p>
-              Exercise 56. Let <m>R</m> and <m>S</m> be rings.
-            </p>
-      
-            <p><ul>
+              Exercise 56. 
+              Let <m>R</m> and <m>S</m> be rings.<ul>
               <li>
-                    <p>
-              If <m>A</m> is an <m>(R, S)</m>-bimodule and <m>B</m> is a left <m>R</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a left <m>S</m>-module structure via <m>(s \cdot f)(a)=f(a s)</m>.
-            </p>
+                <p>
+                  If <m>A</m> is an <m>(R, S)</m>-bimodule and <m>B</m> is a left <m>R</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a left <m>S</m>-module structure via <m>(s \cdot f)(a)=f(a s)</m>.
+                </p>
               </li>
       
               <li>
-                    <p>
-              If <m>A</m> is an <m>(R, S)</m>-bimodule and <m>B</m> is a right <m>S</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a right <m>R</m>-module structure via <m>(f \cdot r)(a)=f(r a)</m>.
-            </p>
+                <p>
+                  If <m>A</m> is an <m>(R, S)</m>-bimodule and <m>B</m> is a right <m>S</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a right <m>R</m>-module structure via <m>(f \cdot r)(a)=f(r a)</m>.
+                </p>
               </li>
       
               <li>
-                    <p>
-              If <m>B</m> is an <m>(S, R)</m>-bimodule and <m>A</m> is a right <m>R</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a left <m>S</m>-module structure via <m>(s \cdot f)(a)=s f(a)</m>.
-            </p>
+                <p>
+                  If <m>B</m> is an <m>(S, R)</m>-bimodule and <m>A</m> is a right <m>R</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a left <m>S</m>-module structure via <m>(s \cdot f)(a)=s f(a)</m>.
+                </p>
               </li>
       
               <li>
-                    <p>
-              If <m>B</m> is an <m>(S, R)</m>-bimodule and <m>A</m> is a left <m>S</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a right <m>R</m>-module structure via <m>(f \cdot r)(a)=f(a) r</m>.
-            </p>
+                <p>
+                  If <m>B</m> is an <m>(S, R)</m>-bimodule and <m>A</m> is a left <m>S</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a right <m>R</m>-module structure via <m>(f \cdot r)(a)=f(a) r</m>.
+                </p>
               </li>
-      
-            </ul></p>
+            </ul>
+          </p>
           </exercise>
     
           <p>
-            These structures can be a bit confusing at first - especially since we have left module structures written on the right and vice-versa. While the exercise is not difficult, it can be extremely enlightening - we strongly recommend the reader tries their hand at the details.
+            These structures can be a bit confusing at first - especially since we have left module structures written on the right and vice-versa. 
+            While the exercise is not difficult, it can be extremely enlightening - we strongly recommend the reader tries their hand at the details.
           </p>
     
           <p>
@@ -5973,7 +6039,8 @@
           <theorem xml:id="thm-3.58">
             <statement>
               <p>
-                Theorem 3.58. Let <m>R</m> and <m>S</m> be rings. Assume that
+                Let <m>R</m> and <m>S</m> be rings. 
+                Assume that
               </p>
         
               <p><ul>
@@ -7957,6 +8024,21 @@
           </outcomes>
 
         </section>
+        
+      </chapter>
+
+      <chapter xml:id="ch-resolutions"><title>Resolutions</title>
+
+        <sage type="practice"/>
+
+        <sage>
+          <input>
+            R = macaulay2('QQ[x, y, z]', 'R')
+            M = macaulay2('R^1/(x*y, x*z, y*z)', 'M')
+            F = macaulay2('res M', 'F')
+            F
+          </input>
+        </sage>
         
       </chapter>
 

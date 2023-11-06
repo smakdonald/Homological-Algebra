@@ -12,7 +12,16 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">For any ring <span class="process-math">\(R, \operatorname{Hom}_{R}(R,-)\)</span> is exact. More generally, if <span class="process-math">\(F\)</span> is any free <span class="process-math">\(R\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(F,-)\)</span> is exact.</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be a free <span class="process-math">\(R\)</span>-module. Suppose we are given <span class="process-math">\(R\)</span>-module homomorphisms <span class="process-math">\(s: A \rightarrow C\)</span> and <span class="process-math">\(f: F \rightarrow C\)</span> such that <span class="process-math">\(s\)</span> is surjective. Fix a basis <span class="process-math">\(B=\left\{b_{i}\right\}_{i}\)</span> for <span class="process-math">\(F\text{.}\)</span> Since <span class="process-math">\(s\)</span> is surjective, for each <span class="process-math">\(i\)</span> we can choose <span class="process-math">\(a_{i} \in A\)</span> such that <span class="process-math">\(s\left(a_{i}\right)=f\left(b_{i}\right)\text{.}\)</span> Consider the function <span class="process-math">\(u: B \longrightarrow A\)</span> given by <span class="process-math">\(u\left(b_{i}\right)=a_{i}\text{.}\)</span> The universal property of free modules says that there exists an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(g: F \longrightarrow A\)</span> that coincides with <span class="process-math">\(u\)</span> for all basis elements. Now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s g\left(b_{i}\right)=s u\left(b_{i}\right)=s\left(a_{i}\right)=f\left(b_{i}\right)
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(s g\)</span> agrees with <span class="process-math">\(f\)</span> for all basis elements. Since <span class="process-math">\(B\)</span> generates <span class="process-math">\(F\text{,}\)</span> we conclude that <span class="process-math">\(s g=f\text{.}\)</span>
+</div>
+</div>
 <span class="incontext"><a href="sec-projective.html#p-909" class="internal">in-context</a></span>
 </body>
 </html>

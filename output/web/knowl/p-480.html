@@ -13,52 +13,19 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">We have two things to show:</div>
-<ol class="lower-alpha">
-<li>
-<span class="heading"><span class="title"><span class="process-math">\(\underline{f_{*} \text { is injective: }}\)</span>.</span></span><div class="para logical">
-<div class="para">Suppose that <span class="process-math">\(h \in \operatorname{Hom}_{R}(M, A)\)</span> is such that <span class="process-math">\(f_{*}(h)=0\text{.}\)</span> By definition, this means that <span class="process-math">\(f h=0\text{.}\)</span> But <span class="process-math">\(f\)</span> is injective, so for any <span class="process-math">\(m \in M\)</span>
-</div>
+<div class="para">The contravariant functor <span class="process-math">\(\operatorname{Hom}_{R}(-, M)\)</span> is left exact: for every exact sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f h(m)=0 \Longrightarrow h(m)=0 \text {. }
+A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
 \end{equation*}
 </div>
-<div class="para">We conclude that <span class="process-math">\(h=0\text{,}\)</span> and <span class="process-math">\(f_{*}\)</span> is injective.</div>
-</div>
-</li>
-<li>
-<span class="heading"><span class="title"><span class="process-math">\(\underline{\operatorname{ker} g_{*} \subseteq \operatorname{im} f_{*}:}\)</span>.</span></span><div class="para">Let <span class="process-math">\(h \in \operatorname{Hom}_{R}(M, B)\)</span> be in the kernel of <span class="process-math">\(g_{*}\text{.}\)</span> Then <span class="process-math">\(g h=g_{*}(h)=0\text{,}\)</span> so for each <span class="process-math">\(m \in M\text{,}\)</span> <span class="process-math">\(g h(m)=0\text{.}\)</span> Then <span class="process-math">\(h(m) \in \operatorname{ker} g=\operatorname{im} f\text{,}\)</span> so there exists <span class="process-math">\(a \in A\)</span> such that <span class="process-math">\(f(a)=h(m)\text{.}\)</span> Since <span class="process-math">\(f\)</span> is injective, this element <span class="process-math">\(a\)</span> is unique for each <span class="process-math">\(m \in M\text{.}\)</span> So setting <span class="process-math">\(k(m):=a\)</span> gives us a well-defined function <span class="process-math">\(k: M \longrightarrow A\text{.}\)</span>
-</div>
-<div class="para logical">
-<div class="para">We claim that <span class="process-math">\(k\)</span> is in fact an <span class="process-math">\(R\)</span>-module homomorphism. To see that, notice that if <span class="process-math">\(k\left(m_{1}\right)=a_{1}\)</span> and <span class="process-math">\(k\left(m_{2}\right)=a_{2}\text{,}\)</span> then</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules, the sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f\left(a_{1}+a_{2}\right)=f\left(a_{1}\right)+f\left(a_{2}\right)=h\left(m_{1}\right)+h\left(m_{2}\right)=h\left(m_{1}+m_{2}\right)
+0 \longrightarrow \operatorname{Hom}_{R}(C, M) \stackrel{\operatorname{Hom}_{R}(g, M)}{\longrightarrow} \operatorname{Hom}_{R}(B, M) \stackrel{\operatorname{Hom}_{R}(f, M)}{\longrightarrow} \operatorname{Hom}_{R}(A, M)
 \end{equation*}
 </div>
-<div class="para">so that <span class="process-math">\(k\left(m_{1}+m_{2}\right)=a_{1}+a_{2}=k\left(m_{1}\right)+k\left(m_{2}\right)\text{.}\)</span>
-</div>
-</div>
-<div class="para logical">
-<div class="para">Similarly, given any <span class="process-math">\(r \in R\text{,}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-f\left(r a_{1}\right)=r f\left(a_{1}\right)=r h\left(m_{1}\right)=h\left(r m_{1}\right)
-\end{equation*}
-</div>
-<div class="para">so <span class="process-math">\(k\left(r m_{1}\right)=r a_{1}=r k\left(m_{1}\right)\text{.}\)</span> Finally, this element <span class="process-math">\(k \in \operatorname{Hom}_{R}(M, A)\)</span> satisfies</div>
-<div class="displaymath process-math">
-\begin{equation*}
-f_{*}(k)(m)=f(k(m))=h(m)
-\end{equation*}
-</div>
-<div class="para">for all <span class="process-math">\(m \in M\text{,}\)</span> so <span class="process-math">\(f_{*}(k)=h\)</span> and <span class="process-math">\(h \in \operatorname{im} f_{*}\text{.}\)</span>
-</div>
-</div>
-</li>
-</ol>
+<div class="para">is exact.</div>
 </div>
 <span class="incontext"><a href="sec-hom.html#p-480" class="internal">in-context</a></span>
 </body>
