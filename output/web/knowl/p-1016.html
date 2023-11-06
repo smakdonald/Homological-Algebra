@@ -13,13 +13,31 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">By <a href="" class="xref" data-knowl="./knowl/thm-4.31.html" title="Theorem 4.30">Theorem 4.30</a>, <span class="process-math">\(I\)</span> embeds into some injective <span class="process-math">\(R\)</span>-module <span class="process-math">\(E\text{,}\)</span> say by the inclusion <span class="process-math">\(j\text{.}\)</span> By assumption, the short exact sequence</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-4.31.html">
+<div class="para">This is an <span class="process-math">\(R\)</span>-module homomorphism:</div>
+<ul class="disc">
+<li><div class="para logical">
+<div class="para">Given <span class="process-math">\(a, b \in M\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
-0 \longrightarrow I \stackrel{j}{\longrightarrow} E \longrightarrow \text { coker } j \longrightarrow 0
+\psi(a+b)(r)=r(a+b)=r a+r b=\psi(a)(r)+\psi(b)(r)
 \end{equation*}
 </div>
-<div class="para">splits, so there exists a map <span class="process-math">\(q: E \longrightarrow I\)</span> such that <span class="process-math">\(q i=\mathrm{id}_{I}\text{.}\)</span> Since <span class="process-math">\(E\)</span> is injective, we can lift <span class="process-math">\(i\)</span> through <span class="process-math">\(j f\text{,}\)</span> obtaining an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\ell\)</span> such that</div>
+<div class="para">so <span class="process-math">\(\psi(a+b)=\psi(a)+\psi(b)\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Given <span class="process-math">\(r \in R, m \in M\text{,}\)</span> and <span class="process-math">\(s \in R\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\psi(r m)(s)=s(r m)=r(s m)=r \psi(m)(s),
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\psi(r m)=r \psi(m)\text{.}\)</span>
+</div>
+</div></li>
+</ul>
 </div>
 <span class="incontext"><a href="sec-injective.html#p-1016" class="internal">in-context</a></span>
 </body>

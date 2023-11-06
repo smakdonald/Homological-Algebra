@@ -387,6 +387,8 @@
               The maps <m>\partial_{n}</m> are the differentials of our complex. 
               We may sometimes omit the differentials <m>\partial_{n}</m> and simply refer to the complex <m>C_{\bullet}</m> or even <m>C</m>; 
               we may also sometimes refer to <m>\partial_{\bullet}</m> as the differential of <m>C_{\bullet}</m>.
+              <idx><h>chain complex</h></idx>
+              <idx><h>differential</h></idx>
             </p>
           </statement>
         </definition>
@@ -429,6 +431,8 @@
                 0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0
               </me>
               is a short exact sequence, sometimes written ses.
+              <idx><h>exact sequence</h></idx>
+              <idx><h>short exact sequence</h></idx>
             </p>
           </statement>
         </definition>
@@ -3497,13 +3501,15 @@
                   <ol>
                     <li>
                       <p>
-                        Let 0 denote the 0-map between any two <m>R</m>-modules <m>M</m> and <m>N</m>. Then <m>T(0)=0</m> is the <m>0-\operatorname{map} T(M) \rightarrow T(N)</m>.
+                        Let <m>0</m> denote the <m>0</m>-map between any two <m>R</m>-modules <m>M</m> and <m>N</m>. 
+                        Then <m>T(0)=0</m> is the <m>0-\operatorname{map} T(M) \rightarrow T(N)</m>.
                       </p>
                     </li>
 
                     <li>
                       <p>
-                        Let 0 denote the zero <m>R</m>-module. Then <m>T(0)=0</m> is the zero <m>S</m>-module.
+                        Let <m>0</m> denote the zero <m>R</m>-module. 
+                        Then <m>T(0)=0</m> is the zero <m>S</m>-module.
                       </p>
                     </li>
                   </ol>
@@ -3607,7 +3613,7 @@
                   </me>
                   This makes the diagram
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-073.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-073.jpg" width="50%"/>
                 <p>
                   commute, so that <m>\alpha(\psi)=\left(\pi_{i} \psi\right)_{i}=\left(f_{i}\right)</m>. 
                   This shows that <m>\alpha</m> us surjective.
@@ -3635,7 +3641,7 @@
                   Given <m>\left(f_{i}\right)_{i} \in \prod_{i} \operatorname{Hom}_{R}\left(M_{i}, N\right)</m>, let
                 </p>
         
-                <image source="2023_10_23_e2d6a27704be928b3deeg-074.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-074.jpg" width="50%"/>
                   
                 <p>
                   Then <m>\beta(\psi)=\left(\psi \iota_{i}\right)_{i}</m>, so for each <m>i</m> and each <m>m_{i} \in M_{i}, \psi \iota_{i}\left(m_{i}\right)=f_{i}\left(m_{i}\right)</m>, and <m>\beta(\psi)=\left(f_{i}\right)_{i}</m>. 
@@ -6291,22 +6297,23 @@
                   Let <m>R</m> be a ring. 
                   An <m>R</m>-module <m>P</m> is <em>projective</em> if given any surjective <m>R</m>-module homomorphism <m>s: A \rightarrow B</m> and any <m>R</m>-module homomorphism <m>f: P \rightarrow B</m>, there exists an <m>R</m>-module homomorphism <m>g</m> such that the diagram
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-109(1).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-109(1).jpg" width="30%"/>
                 <p>
                   commutes.
+                  <idx><h>projective module</h></idx>
                 </p>
               </statement>
             </definition>
   
             <remark xml:id="rem-4.2">
               <p>
-                Remark 4.2. 
                 The commutativity of the diagram
               </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-109.jpg"/>
+              <image source="2023_10_23_e2d6a27704be928b3deeg-109.jpg" width="30%"/>
               <p>
                 says that <m>s_{*}(g)=f</m>, where <m>s_{*}</m> is the <m>\operatorname{map} \operatorname{Hom}_{R}(P, A) \longrightarrow \operatorname{Hom}_{R}(P, B)</m> induced by <m>s</m>. 
                 Whenever this happens, we say that <m>g</m> is a lifting of <m>f</m>, and that <m>f</m> lifts, or that <m>f</m> factors through <m>A</m>.
+                <idx><h>lift</h></idx>
               </p>
             </remark>
   
@@ -6340,7 +6347,7 @@
             </theorem>
   
             <p>
-              Projective modules are precisely those that make the covariant Hom functor exact.
+              Projective modules are precisely those that make the covariant <m>\Hom</m> functor exact.
             </p>
   
             <theorem xml:id="thm-4.4">
@@ -6366,6 +6373,12 @@
                 </p>
               </proof>
             </theorem>
+
+            <aside>
+              <p>
+                This is really the definition of what a projective module is, but for those that have not seen category theory, the definition given is used.
+              </p>
+            </aside>
   
             <corollary xml:id="cor-4.5">
               <statement>
@@ -6416,7 +6429,7 @@
                   If <m>P</m> is projective, the identity map on <m>P</m> lifts to a map <m>P \longrightarrow B</m>, meaning that
                 </p>
 
-                <image source="2023_10_23_e2d6a27704be928b3deeg-111(2).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-111(2).jpg" width="30%"/>
                   
                 <p>
                   commutes. 
@@ -6431,7 +6444,7 @@
                   splits, and consider any diagram
                 </p>
           
-                <image source="2023_10_23_e2d6a27704be928b3deeg-111.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-111.jpg" width="30%"/>
           
                 <p>
                   Let <m>F</m> be a free module that surjects onto <m>P</m> - for example, the free module on a set of generators of <m>P</m> - and fix a surjection <m>\pi: F \rightarrow P</m>. 
@@ -6441,7 +6454,7 @@
                   Now since <m>F</m> is free, we can define an <m>R</m>-module map <m>\hat{g}: F \longrightarrow B</m> that such that
                 </p>
           
-                <image source="2023_10_23_e2d6a27704be928b3deeg-111(1).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-111(1).jpg" width="30%"/>
                   
                 <p>
                   commutes, by sending each basis element <m>b \in F</m> to any lift of <m>f \pi(b)</m> in <m>B</m> via <m>s</m>.
@@ -6466,6 +6479,7 @@
               <statement>
                 <p>
                   An <m>R</m>-module <m>M</m> is a <em>direct summand</em> of an <m>R</m>-module <m>N</m> if there exists an <m>R</m>-module <m>A</m> such that <m>A \oplus M \cong N</m>.
+                  <idx><h>direct summand</h></idx>
                 </p>
               </statement>
             </definition>
@@ -6514,13 +6528,13 @@
                   Given any diagram
                 </p>
           
-                <image source="2023_10_23_e2d6a27704be928b3deeg-112(1).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-112(1).jpg" width="30%"/>
                   
                 <p>
                   we can define an <m>R</m>-module homomorphism <m>h</m> such that <m>s h=f \pi</m>, so that the following diagram commutes:
                 </p>
           
-                <image source="2023_10_23_e2d6a27704be928b3deeg-112.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-112.jpg" width="30%"/>
           
                 <p>
                   Setting <m>g:=h i</m>, we do indeed obtain <m>s g=f</m>, since
@@ -6626,6 +6640,60 @@
 
           </subsection>
 
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+                  Projective modules are exactly the modules that make <m>\operatorname{Hom}_{R}(P,-)</m> exact.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Here are other equivalent characterizations of a projective module <m>P</m>:
+                  <ol>
+                    <li>
+                      <p>
+                        Given any surjective <m>R</m>-module homomorphism <m>s: A \rightarrow B</m> and any <m>R</m>-module homomorphism <m>f: P \rightarrow B</m>, there exists an <m>R</m>-module homomorphism <m>g</m> such that the diagram
+                      </p>
+                      <image source="2023_10_23_e2d6a27704be928b3deeg-109(1).jpg" width="30%"/>
+                      <p>
+                        commutes.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <m>P</m> is the direct summand of a free module
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Every short exact sequence
+                        <me>0 \longrightarrow A \longrightarrow B \longrightarrow P \longrightarrow 0</me>
+                        splits.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Free modules are projective. 
+                  Projective modules are free in commutative rings that are either local or graded.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  For every module <m>M</m>, there exists a free module <m>F</m> surjecting into <m>M</m>.
+                </p>
+              </li>
+            </ul>
+          </outcomes>
+
         </section>
 
         <section xml:id="sec-injective"><title>Injective Modules</title>
@@ -6641,7 +6709,7 @@
                 <p>
                   An <m>R</m>-module <m>I</m> is <em>injective</em> if given an injective <m>R</m>-module homomorphism <m>i: A \longrightarrow B</m> and an <m>R</m>-module homomorphism <m>f: A \longrightarrow I</m>, there exist an <m>R</m>-module homomorphism <m>g</m> such that
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-114.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-114.jpg" width="30%"/>
                 <p>
                   commutes.
                 </p>
@@ -6674,7 +6742,7 @@
                   So the content of the theorem is that <m>I</m> is injective if and only if for every injective <m>R</m>-module homomorphism <m>i: A \longrightarrow B</m>, the induced map <m>i^{*}</m> is surjective. 
                   Now notice that <m>i^{*}</m> is surjective if and only if every <m>f \in \operatorname{Hom}_{R}(A, I)</m> lifts to some <m>g \in \operatorname{Hom}_{R}(B, I)</m>, meaning
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-114(1).jpg"/>    
+                <image source="2023_10_23_e2d6a27704be928b3deeg-114(1).jpg" width="30%"/>    
                 <p>
                   commutes. 
                   That is precisely what we want for <m>I</m> to be injective.
@@ -6703,11 +6771,11 @@
                   Let <m>\pi_{j}: \prod_{i \in I} M_{i} \longrightarrow M_{j}</m> be the projection onto the <m>j</m> th factor. 
                   Given any diagram
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-115(5).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(5).jpg" width="30%"/>
                 <p>
                   the fact that <m>M_{i}</m> is injective gives us <m>R</m>-module homomorphisms <m>g_{i}</m> such that
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-115(2).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(2).jpg" width="30%"/>
                 <p>
                   commutes for each <m>i</m>. Now the <m>R</m>-module homomorphism
                   <me>
@@ -6718,7 +6786,7 @@
                   </me>
                   makes the diagram
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-115(3).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(3).jpg" width="30%"/>
                 <p>
                   commute, so <m>\prod_{i \in I} M_{i}</m> is injective.
                 </p>
@@ -6736,18 +6804,18 @@
                 <p>
                   Any diagram
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-115(4).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(4).jpg" width="30%"/>
                 <p>
                   can be extended to a map <m>A \longrightarrow E</m> by composing <m>f</m> with the inclusion of the first factor. 
                   Since <m>E</m> is injective, there exists <m>h</m> such that
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-115.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115.jpg" width="30%"/>
                 <p>
                   commutes. 
                   Let <m>\pi: E \longrightarrow M</m> be the projection onto <m>M</m>, so that <m>\pi j=\mathrm{id}_{M}</m>. 
                   Now if we set <m>g:=\pi h</m>,
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-115(1).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-115(1).jpg" width="30%"/>
                 <p>
                   <me>
                     \begin{aligned}
@@ -6764,7 +6832,7 @@
                 <p>
                   An <m>R</m>-module <m>E</m> is injective if and only if every <m>R</m>-module homomorphism <m>I \longrightarrow E</m> from an ideal <m>I</m> in <m>R</m> can be extended to the whole ring, meaning that there exists <m>g</m> making the diagram
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-116(1).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-116(1).jpg" width="30%"/>
                 <p>
                   commute.
                 </p>
@@ -6775,7 +6843,7 @@
                   On the one hand, if <m>E</m> is injective then our condition is simply a special case of the definition of injective module. 
                   On the other hand, suppose that this condition holds, and consider any diagram
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-116.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-116.jpg" width="30%"/>
                 <p>
                   To simplify notation, let’s assume our map <m>M \longrightarrow N</m> is indeed the inclusion of the submodule <m>M</m>, so we can write <m>m \in N</m> for the image of <m>m</m> in <m>N</m>. 
                   Consider the set
@@ -6839,7 +6907,7 @@
                   We conclude that <m>A=N</m>. 
                   Therefore, <m>g</m> makes the diagram
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-117(1).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-117(1).jpg" width="30%"/>
                 <p>
                   commute.
                 </p>
@@ -6871,6 +6939,15 @@
               </p>
             </remark>
 
+            <example><title>Divisible Modules</title>
+              <statement>
+                <p>
+                  The set of rational numbers <m>\Q</m>, considered as a module over the ring of integers <m>\Z</m>, is a divisible module. 
+                  This is because for any nonzero integer <m>n</m>, you can find a rational number <m>q = \frac 1n</m> such that <m>nq</m> is still a rational number.
+                </p>
+              </statement>
+            </example>
+
             <lemma xml:id="lem-4.23"><title>Divisible Modules Closed Under Quotients</title>
               <statement>
                 <p>
@@ -6888,6 +6965,14 @@
               </proof>
             </lemma>
 
+            <theorem xml:id="thm-divisible-cps"><title>Closure Properties of Divisible Modules</title>
+              <statement>
+                <p>
+                  Divisible modules are closed under taking submodules, quotients, direct sums, and localizations.
+                </p>
+              </statement>
+            </theorem>
+
             <lemma xml:id="lem-4.24"><title>Injective Modules Divisible in Domains</title>
               <statement>
                 <p>
@@ -6902,7 +6987,7 @@
                   In particular, each element in <m>(r)</m> can be written uniquely as <m>s r</m> for some <m>s \in R</m>. 
                   In particular, the map of <m>R</m>-modules
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-119.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-119.jpg" width="30%"/>
                 <p>
                   is well-defined. 
                   Since <m>E</m> is injective, we can extend this to a homomorphism <m>f: R \longrightarrow E</m>. 
@@ -6940,7 +7025,7 @@
               But the converse of <xref ref="lem-4.24"/> does hold for some special classes of rings.
             </p>
 
-            <lemma xml:id="lem-4.26"><title>Injective iff Divisible in PID</title>
+            <theorem xml:id="lem-4.26"><title>Injective iff Divisible in PID</title>
               <statement>
                 <p>
                   Let <m>R</m> be a principal ideal domain. 
@@ -6966,9 +7051,9 @@
                   Therefore, by Theorem 4.18, <m>E</m> is injective.
                 </p>
               </proof>
-            </lemma>
+            </theorem>
 
-            <lemma xml:id="lem-4.27"><title>Injectives Closed Under Quotients in PIDs</title>
+            <corollary xml:id="lem-4.27"><title>Injectives Closed Under Quotients in PIDs</title>
               <statement>
                 <p>
                   Over a principal ideal domain, quotients of injective modules are injective.
@@ -6982,7 +7067,7 @@
                   <fn>Using fancy words you might learn in Commutative Algebra II, this ring <m>R</m> is an example of a complete intersection, which is a subclass of Gorenstein rings. Moreover, <m>\operatorname{dim} R=0</m> - this is something you’d learn about in Commutative Algebra II. Now it turns out (and this is a nontrivial fact) that Gorenstein rings of dimension 0 are injective modules over themselves.</fn>
                 </p>
               </proof>
-            </lemma>
+            </corollary>
 
             <p>
               Given an injective abelian group, we can always use it to construct an injective <m>R</m>-module over our favorite ring <m>R</m>.
@@ -7173,7 +7258,7 @@
                   <me>0 \longrightarrow I \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0</me>
                   Since <m>I</m> is injective, there exists a map <m>g</m> making
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-122(1).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-122(1).jpg" width="30%"/>
                 <p>
                   commute, and such a <m>g</m> gives a splitting for our short exact sequence.
                 </p>
@@ -7181,7 +7266,7 @@
                 <p>
                   Conversely, suppose that every short exact sequence <m>0 \longrightarrow I \longrightarrow B \longrightarrow C \longrightarrow 0</m> splits, and consider a diagram
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-122.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-122.jpg" width="30%"/>
                 <p>
                   By <xref ref="thm-4.31"/>, <m>I</m> embeds into some injective <m>R</m>-module <m>E</m>, say by the inclusion <m>j</m>. 
                   By assumption, the short exact sequence
@@ -7189,7 +7274,7 @@
                   splits, so there exists a map <m>q: E \longrightarrow I</m> such that <m>q i=\mathrm{id}_{I}</m>. 
                   Since <m>E</m> is injective, we can lift <m>i</m> through <m>j f</m>, obtaining an <m>R</m>-module homomorphism <m>\ell</m> such that
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-122(2).jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-122(2).jpg" width="30%"/>
                 <p>
                   commutes. Now <m>g:=q \ell</m> satisfies
                   <me>
@@ -7200,7 +7285,7 @@
                     \end{array}
                   </me>
                 </p>
-                <image source="2023_10_23_e2d6a27704be928b3deeg-123.jpg"/>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-123.jpg" width="30%"/>
                 <p>
                   commutes.
                 </p>
@@ -7252,6 +7337,34 @@
             </p>
 
           </subsection>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+                  Injective modules make <m>\operatorname{Hom}_{R}(-, I)</m> exact. 
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  The Baer Criterion tells us that a module <m>E</m> is injective if and only if a map from an ideal to <m>E</m> can be extended to all of <m>R</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  In a domain injective modules are divisible and in a PID divisible modules are injective.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Every <m>R</m>-module is a submodule of an injective module.
+                </p>
+              </li>
+            </ul>
+          </outcomes>
           
         </section>
 
@@ -7408,6 +7521,14 @@
               </statement>
             </definition>
 
+            <theorem xml:id="thm-torsion-free-cps"><title>Closure Properties of Torsion Free Modules</title>
+              <statement>
+                <p>
+                  Torsion free modules are closed under taking submodules, quotients, direct sums, and localizations.
+                </p>
+              </statement>
+            </theorem>
+            
             <lemma xml:id="lem-4.40"><title>Flat Implies Torision Free in Domains</title>
               <statement>
                 <p>
@@ -7423,7 +7544,7 @@
                   Since <m>M</m> is flat, the inclusion <m>R \subseteq Q</m> induces an injective <m>R</m>-module map
                   <me>0 \longrightarrow M \otimes_{R} R \longrightarrow M \otimes_{R} Q</me>
                   and since <m>M \cong M \otimes_{R} R</m>, by <xref ref="lem-3.40"/>, we conclude that <m>M</m> is isomorphic to a submodule of <m>M \otimes_{R} Q</m>. 
-                  Submodules of torsion free modules are also torsion free, so <m>M</m> is torsion free.
+                  By <xref ref="thm-torsion-free-cps"/>, submodules of torsion free modules are also torsion free, so <m>M</m> is torsion free.
                 </p>
               </proof>
             </lemma>
@@ -7437,7 +7558,7 @@
                 Example 4.41. 
                 Let <m>k</m> be a field and <m>R=k[x, y]</m>. 
                 Consider the ideal <m>\mathfrak{m}=(x, y)</m>. 
-                This is a submodule of the torsion free module <m>R</m>, and thus torsion free. 
+                This is a submodule of the torsion free module <m>R</m>, and thus torsion free by <xref ref="thm-torsion-free-cps"/>. 
                 However, it is not flat. 
                 For example, when we apply <m>R / \mathfrak{m} \otimes_{R}-</m> to the inclusion <m>\mathfrak{m} \subseteq R</m> we obtain a map of <m>R / \mathfrak{m}</m>-vector spaces
                 <me>\mathfrak{m} / \mathfrak{m}^{2} \longrightarrow R / \mathfrak{m}</me>
@@ -7452,7 +7573,7 @@
               The converse does hold over a PID.
             </p>
 
-            <lemma xml:id="lem-4.42"><title>Flat iff Torsion Free in PID</title>
+            <theorem xml:id="lem-4.42"><title>Flat iff Torsion Free in PID</title>
               <statement>
                 <p>
                   If <m>R</m> is a principal ideal domain, an <m>R</m>-module <m>M</m> is flat if and only if it is torsion free.
@@ -7474,11 +7595,11 @@
           
                 <p>
                   Now let <m>M</m> be any torsion free <m>R</m>-module. 
-                  All of the finitely generated submodules of <m>R</m> are also torsion free, and thus flat by what we have shown so far. 
+                  All of the finitely generated submodules of <m>R</m> are also torsion free by <xref ref="thm-torsion-free-cps"/>, and thus flat by what we have shown so far. 
                   By <xref ref="thm-4.38"/>, <m>M</m> must be flat.
                 </p>
               </proof>
-            </lemma>
+            </theorem>
 
             <p>
               Not all flat modules are projective.
@@ -7524,11 +7645,41 @@
               </proof>
             </theorem>
 
-            <p>
-              So for example, if <m>R</m> is a domain then its fraction field <m>Q</m> is a flat module.
-            </p>
+            <example>
+              <p>
+                If <m>R</m> is a domain then its fraction field <m>Q</m> is a flat module.
+              </p>
+            </example>
 
           </subsection>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+
+                </p>
+              </li>
+
+              <li>
+                <p>
+                 
+                </p>
+              </li>
+
+              <li>
+                <p>
+
+                </p>
+              </li>
+
+              <li>
+                <p>
+
+                </p>
+              </li>
+            </ul>
+          </outcomes>
     
         </section>
     
@@ -7776,6 +7927,34 @@
           <p>
             Note that the noetherianity assumption is just so that finitely generated implies finitely presented; the statement is also true for a general commutative ring if instead of finitely generated modules we take finitely presented.
           </p>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+
+                </p>
+              </li>
+
+              <li>
+                <p>
+                 
+                </p>
+              </li>
+
+              <li>
+                <p>
+
+                </p>
+              </li>
+
+              <li>
+                <p>
+
+                </p>
+              </li>
+            </ul>
+          </outcomes>
 
         </section>
         
