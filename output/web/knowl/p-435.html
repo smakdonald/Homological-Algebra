@@ -13,18 +13,25 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">In particular,</div>
+<div class="para">For each <span class="process-math">\(i\text{,}\)</span> let <span class="process-math">\(\pi_{i}: \prod_{j} N_{j} \longrightarrow N_{i}\)</span> be the canonical projection map. Consider the map</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\operatorname{Hom}_{R}(A \oplus B, C) \cong \operatorname{Hom}_{R}(A, C) \oplus \operatorname{Hom}_{R}(B, C)
+\begin{gathered}
+\operatorname{Hom}_{R}\left(M, \prod_{i} N_{i}\right) \stackrel{\alpha}{\longrightarrow} \prod_{i} \operatorname{Hom}_{R}\left(M, N_{i}\right) \\
+f \longmapsto\left(\pi_{i} f\right)
+\end{gathered}
 \end{equation*}
 </div>
-<div class="para">and</div>
+<div class="para">We claim this map is the desired isomorphism. We leave it as an exercise to show that <span class="process-math">\(\alpha\)</span> is a homomorphism of abelian groups, and a homomorphism of <span class="process-math">\(R\)</span>-modules when <span class="process-math">\(R\)</span> is commutative; we focus on proving that <span class="process-math">\(\alpha\)</span> is a bijection. First, take <span class="process-math">\(\left(f_{i}\right)_{i} \in \prod_{i} \operatorname{Hom}_{R}\left(M, N_{i}\right)\text{.}\)</span> Define a map</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\operatorname{Hom}_{R}(A, B \oplus C) \cong \operatorname{Hom}_{R}(A, B) \oplus \operatorname{Hom}_{R}(A, C) .
+\begin{aligned}
+&amp; M \stackrel{\psi}{\longrightarrow} \prod_{i} N_{i} \\
+&amp; m \longmapsto\left(f_{i}(m)\right)
+\end{aligned}
 \end{equation*}
 </div>
+<div class="para">This makes the diagram</div>
 </div>
 <span class="incontext"><a href="sec-hom.html#p-435" class="internal">in-context</a></span>
 </body>

@@ -590,48 +590,48 @@ window.MathJax = {
 <section class="subsection" id="subsec-functors"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Functor? Damn Near Killed 'er!</span>
 </h3>
-<div class="para" id="p-136">Many mathematical constructions are functorial, in the sense that they behave well with respect to morphisms. In the formalism of category theory, this means that we can think of a functorial construction as a functor.</div>
+<div class="para" id="p-135">Many mathematical constructions are functorial, in the sense that they behave well with respect to morphisms. In the formalism of category theory, this means that we can think of a functorial construction as a functor.</div>
 <article class="definition definition-like" id="def-functor"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Functor.</span>
-</h4> <div class="para logical" id="p-137">
+</h4> <div class="para logical" id="p-136">
 <div class="para">Let <span class="process-math">\(\mathscr{C}\)</span> and <span class="process-math">\(\mathscr{D}\)</span> be categories. A covariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> is a mapping that assigns to each object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\)</span> an object <span class="process-math">\(F(A)\)</span> in <span class="process-math">\(\mathscr{D}\text{,}\)</span> and to each arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> an arrow <span class="process-math">\(F(f) \in \operatorname{Hom}_{\mathscr{D}}(F(A), F(B))\text{,}\)</span> such that</div>
 <ul class="disc">
-<li id="li-39"><div class="para" id="p-138">
+<li id="li-39"><div class="para" id="p-137">
 <span class="process-math">\(F\)</span> preserves the composition of maps, meaning <span class="process-math">\(F(f g)=F(f) F(g)\)</span> for all arrows <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> and</div></li>
-<li id="li-40"><div class="para" id="p-139">
+<li id="li-40"><div class="para" id="p-138">
 <span class="process-math">\(F\)</span> preserves the identity arrows, meaning <span class="process-math">\(F\left(1_{A}\right)=1_{F(A)}\)</span> for all objects <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\text{.}\)</span>
 </div></li>
 </ul>
-</div> <div class="para logical" id="p-140">
+</div> <div class="para logical" id="p-139">
 <div class="para">A <em class="emphasis">contravariant functor</em> <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> is a mapping that assigns to each object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\)</span> an object <span class="process-math">\(F(A)\)</span> in <span class="process-math">\(\mathscr{D}\text{,}\)</span> and to each arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> an arrow <span class="process-math">\(F(f) \in \operatorname{Hom}_{\mathscr{D}}(F(B), F(A))\text{,}\)</span> such that</div>
 <ul class="disc">
-<li id="li-41"><div class="para" id="p-141">
+<li id="li-41"><div class="para" id="p-140">
 <span class="process-math">\(F\)</span> preserves the composition of maps, meaning <span class="process-math">\(F(f g)=F(g) F(f)\)</span> for all composable arrows <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> and</div></li>
-<li id="li-42"><div class="para" id="p-142">
+<li id="li-42"><div class="para" id="p-141">
 <span class="process-math">\(F\)</span> preserves the identity arrows, meaning <span class="process-math">\(F\left(1_{A}\right)=1_{F(A)}\)</span> for all objects <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\text{.}\)</span>
 </div></li>
 </ul>
-</div></article><div class="para" id="p-143">So a contravariant functor is a functor that flips all the arrows. We can also describe a contravariant functor as a covariant functor from <span class="process-math">\(\mathscr{C}\)</span> to the opposite category of <span class="process-math">\(\mathscr{D}\text{,}\)</span> <span class="process-math">\(\mathscr{D}{ }^{\text {op }}\text{.}\)</span>
+</div></article><div class="para" id="p-142">So a contravariant functor is a functor that flips all the arrows. We can also describe a contravariant functor as a covariant functor from <span class="process-math">\(\mathscr{C}\)</span> to the opposite category of <span class="process-math">\(\mathscr{D}\text{,}\)</span> <span class="process-math">\(\mathscr{D}{ }^{\text {op }}\text{.}\)</span>
 </div>
-<article class="remark remark-like" id="remark-8"><h4 class="heading">
+<article class="remark remark-like" id="remark-5"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.26</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-144">A contravariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> can be thought of as a covariant functor <span class="process-math">\(\mathscr{C}^{\text {op }} \longrightarrow \mathscr{D}\text{,}\)</span> or also as a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}\text{.}\)</span> If using one of these conventions, one needs to be careful, however, when composing functors, so that the respective sources and targets match up correctly. While we haven't specially discussed how one composes functors, it should be clear that applying a functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> is the same as applying a functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}\text{,}\)</span> which we can write as <span class="process-math">\(G F\text{.}\)</span>
-</div> <div class="para" id="p-145">For example, if <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> are both contravariant functors, the composition <span class="process-math">\(G F: \mathscr{C} \longrightarrow \mathscr{E}\)</span> is a covariant functor, since</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-15.jpg" class="contained"></div> <div class="para" id="p-146">So we could think of <span class="process-math">\(F\)</span> as a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}\)</span> and <span class="process-math">\(G\)</span> as a covariant functor <span class="process-math">\(\mathscr{D}^{\text {op }} \longrightarrow \mathscr{E}\text{.}\)</span> Similarly, if <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> is a covariant functor and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> is a contravariant functor, <span class="process-math">\(G F: \mathscr{C} \longrightarrow \mathscr{E}\)</span> is a contravariant functor. In this case, we can think of <span class="process-math">\(G\)</span> as a covariant functor <span class="process-math">\(\mathscr{D} \longrightarrow \mathscr{E}^{\mathrm{op}}\text{,}\)</span> so that <span class="process-math">\(G F\)</span> is now a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{E}^{\mathrm{op}}\text{.}\)</span>
+<div class="para" id="p-143">A contravariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> can be thought of as a covariant functor <span class="process-math">\(\mathscr{C}^{\text {op }} \longrightarrow \mathscr{D}\text{,}\)</span> or also as a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}\text{.}\)</span> If using one of these conventions, one needs to be careful, however, when composing functors, so that the respective sources and targets match up correctly. While we haven't specially discussed how one composes functors, it should be clear that applying a functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> is the same as applying a functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}\text{,}\)</span> which we can write as <span class="process-math">\(G F\text{.}\)</span>
+</div> <div class="para" id="p-144">For example, if <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> are both contravariant functors, the composition <span class="process-math">\(G F: \mathscr{C} \longrightarrow \mathscr{E}\)</span> is a covariant functor, since</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-15.jpg" class="contained"></div> <div class="para" id="p-145">So we could think of <span class="process-math">\(F\)</span> as a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}\)</span> and <span class="process-math">\(G\)</span> as a covariant functor <span class="process-math">\(\mathscr{D}^{\text {op }} \longrightarrow \mathscr{E}\text{.}\)</span> Similarly, if <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> is a covariant functor and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> is a contravariant functor, <span class="process-math">\(G F: \mathscr{C} \longrightarrow \mathscr{E}\)</span> is a contravariant functor. In this case, we can think of <span class="process-math">\(G\)</span> as a covariant functor <span class="process-math">\(\mathscr{D} \longrightarrow \mathscr{E}^{\mathrm{op}}\text{,}\)</span> so that <span class="process-math">\(G F\)</span> is now a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{E}^{\mathrm{op}}\text{.}\)</span>
 </div></article><article class="exploration project-like" id="exploration-8"><a href="" data-knowl="" class="id-ref exploration-knowl original" data-refid="hk-exploration-8"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.8</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exploration-8"><article class="exploration project-like"><div class="para" id="p-147">Show that functors preserve isomorphisms.</div></article></div>
-<article class="remark remark-like" id="remark-9"><h4 class="heading">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exploration-8"><article class="exploration project-like"><div class="para" id="p-146">Show that functors preserve isomorphisms.</div></article></div>
+<article class="remark remark-like" id="remark-6"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.27</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-148">Any functor sends isos to isos, since it preserves compositions and identities.</div></article><div class="para" id="p-149">Here are some examples of functors you may have encountered before.</div>
+<div class="para" id="p-147">Any functor sends isos to isos, since it preserves compositions and identities.</div></article><div class="para" id="p-148">Here are some examples of functors you may have encountered before.</div>
 <article class="example example-like" id="example-19"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.28</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-150"><ol class="decimal">
-<li id="li-43"><div class="para" id="p-151">Many categories one may think about are concrete categories, where the objects are sets with some extra structure, and the arrows are functions between those sets that preserved that extra structure. The <em class="emphasis">forgetful functor</em> from such a category to <span class="process-math">\(\Set\)</span> is the functor that, just as the name says, forgets that extra structure, and sees only the underlying sets and functions of sets. For example, the forgetful functor <span class="process-math">\(\mathbf{G r} \longrightarrow\)</span> <span class="process-math">\(\Set\)</span> sends each group to its underlying set, and each group homomorphism to the corresponding function of sets.</div></li>
-<li id="li-44"><div class="para" id="p-152">The <em class="emphasis">identity functor</em> <span class="process-math">\(1_{\mathscr{C}}\)</span> on any category <span class="process-math">\(\mathscr{C}\)</span> does what the name suggests: it sends each object to itself and each arrow to itself.</div></li>
-<li id="li-45"><div class="para logical" id="p-153">
+<div class="para logical" id="p-149"><ol class="decimal">
+<li id="li-43"><div class="para" id="p-150">Many categories one may think about are concrete categories, where the objects are sets with some extra structure, and the arrows are functions between those sets that preserved that extra structure. The <em class="emphasis">forgetful functor</em> from such a category to <span class="process-math">\(\Set\)</span> is the functor that, just as the name says, forgets that extra structure, and sees only the underlying sets and functions of sets. For example, the forgetful functor <span class="process-math">\(\mathbf{G r} \longrightarrow\)</span> <span class="process-math">\(\Set\)</span> sends each group to its underlying set, and each group homomorphism to the corresponding function of sets.</div></li>
+<li id="li-44"><div class="para" id="p-151">The <em class="emphasis">identity functor</em> <span class="process-math">\(1_{\mathscr{C}}\)</span> on any category <span class="process-math">\(\mathscr{C}\)</span> does what the name suggests: it sends each object to itself and each arrow to itself.</div></li>
+<li id="li-45"><div class="para logical" id="p-152">
 <div class="para">Given a group <span class="process-math">\(G\text{,}\)</span> the subgroup <span class="process-math">\([G, G]\)</span> of <span class="process-math">\(G\)</span> generated by the set of commutators</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -641,7 +641,7 @@ window.MathJax = {
 <div class="para">is a normal subgroup, and the quotient <span class="process-math">\(G^{\text {ab }}:=G /[G, G]\)</span> is called the abelianization of <span class="process-math">\(G\text{.}\)</span> The group <span class="process-math">\(G^{\text {ab }}\)</span> is abelian. Given a group homomorphism <span class="process-math">\(f: G \rightarrow H, f\)</span> automatically takes commutators to commutators, so it induces a homomorphism <span class="process-math">\(\tilde{f}: G^{\mathrm{ab}} \rightarrow H^{\mathrm{ab}}\text{.}\)</span> More precisely, abelianization gives a covariant functor from <span class="process-math">\(\Grp\)</span> to <span class="process-math">\(\Ab\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-46"><div class="para logical" id="p-154">
+<li id="li-46"><div class="para logical" id="p-153">
 <div class="para">The <em class="emphasis">unit group functor</em> <span class="process-math">\(-^{*}\)</span> : <span class="process-math">\(\Ring\)</span> <span class="process-math">\(\rightarrow\)</span> <span class="process-math">\(\Grp\)</span> sends a ring <span class="process-math">\(R\)</span> to its group of units <span class="process-math">\(R^{*}\text{.}\)</span> To see this is indeed a functor, we should check it behaves well on morphisms; and indeed if <span class="process-math">\(f: R \rightarrow S\)</span> is a ring homomorphism, and <span class="process-math">\(u \in R^{*}\)</span> is a unit in <span class="process-math">\(R\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -650,27 +650,27 @@ f(u) f\left(u^{-1}\right)=f\left(u u^{-1}\right)=f\left(1_{R}\right)=1_{S},
 </div>
 <div class="para">so <span class="process-math">\(f(u)\)</span> is a unit in <span class="process-math">\(S\text{.}\)</span> Thus <span class="process-math">\(f\)</span> induces a function <span class="process-math">\(R^{*} \rightarrow S^{*}\)</span> given by restriction of <span class="process-math">\(f\)</span> to <span class="process-math">\(R^{*}\text{,}\)</span> which must therefore be a group homomorphism since <span class="process-math">\(f\)</span> preserves products.</div>
 </div></li>
-<li id="li-47"><div class="para" id="p-155">Fix a field <span class="process-math">\(k\text{.}\)</span> Given a vector space <span class="process-math">\(V\text{,}\)</span> the collection <span class="process-math">\(V^{*}\)</span> of linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(k\)</span> is again a <span class="process-math">\(k\)</span>-vector space, the <em class="emphasis">dual vector space</em> of <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(\varphi: W \rightarrow V\)</span> is a linear transformation and <span class="process-math">\(\ell: V \rightarrow K\)</span> is an element of <span class="process-math">\(V^{*}\text{,}\)</span> then <span class="process-math">\(\ell \circ \varphi: W \rightarrow k\)</span> is in <span class="process-math">\(W^{*}\text{.}\)</span> Doing this for all elements <span class="process-math">\(\ell \in V^{*}\)</span> gives a function <span class="process-math">\(\varphi^{*}: V^{*} \rightarrow W^{*}\text{,}\)</span> and one can show that <span class="process-math">\(\varphi^{*}\)</span> is a linear transformation. The assignment that sends each vector space <span class="process-math">\(V\)</span> to its dual vector space <span class="process-math">\(V^{*}\)</span> and each linear transformation <span class="process-math">\(\varphi\)</span> to <span class="process-math">\(\varphi^{*}\)</span> is a contravariant functor on Vect- <span class="process-math">\(k\text{.}\)</span>
+<li id="li-47"><div class="para" id="p-154">Fix a field <span class="process-math">\(k\text{.}\)</span> Given a vector space <span class="process-math">\(V\text{,}\)</span> the collection <span class="process-math">\(V^{*}\)</span> of linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(k\)</span> is again a <span class="process-math">\(k\)</span>-vector space, the <em class="emphasis">dual vector space</em> of <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(\varphi: W \rightarrow V\)</span> is a linear transformation and <span class="process-math">\(\ell: V \rightarrow K\)</span> is an element of <span class="process-math">\(V^{*}\text{,}\)</span> then <span class="process-math">\(\ell \circ \varphi: W \rightarrow k\)</span> is in <span class="process-math">\(W^{*}\text{.}\)</span> Doing this for all elements <span class="process-math">\(\ell \in V^{*}\)</span> gives a function <span class="process-math">\(\varphi^{*}: V^{*} \rightarrow W^{*}\text{,}\)</span> and one can show that <span class="process-math">\(\varphi^{*}\)</span> is a linear transformation. The assignment that sends each vector space <span class="process-math">\(V\)</span> to its dual vector space <span class="process-math">\(V^{*}\)</span> and each linear transformation <span class="process-math">\(\varphi\)</span> to <span class="process-math">\(\varphi^{*}\)</span> is a contravariant functor on Vect- <span class="process-math">\(k\text{.}\)</span>
 </div></li>
-<li id="li-48"><div class="para" id="p-156">Localization is a functor. Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(W\)</span> be a multiplicatively closed set in <span class="process-math">\(R\text{.}\)</span> There is localization at <span class="process-math">\(W\)</span> induces a a functor <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> <span class="process-math">\(\longrightarrow W^{-1} R\)</span><span class="process-math">\(\mod\)</span> that sends each <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> to <span class="process-math">\(W^{-1} M\text{,}\)</span> and each <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\alpha: M \longrightarrow N\)</span> to the <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(W^{-1} \alpha: W^{-1} M \longrightarrow W^{-1} N\text{.}\)</span>
+<li id="li-48"><div class="para" id="p-155">Localization is a functor. Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(W\)</span> be a multiplicatively closed set in <span class="process-math">\(R\text{.}\)</span> There is localization at <span class="process-math">\(W\)</span> induces a a functor <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> <span class="process-math">\(\longrightarrow W^{-1} R\)</span><span class="process-math">\(\mod\)</span> that sends each <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> to <span class="process-math">\(W^{-1} M\text{,}\)</span> and each <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\alpha: M \longrightarrow N\)</span> to the <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(W^{-1} \alpha: W^{-1} M \longrightarrow W^{-1} N\text{.}\)</span>
 </div></li>
-</ol></div></article><article class="remark remark-like" id="remark-10"><h4 class="heading">
+</ol></div></article><article class="remark remark-like" id="remark-7"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.29</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-157">If we apply a covariant functor to a diagram, then we get a diagram of the same shape:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-16.jpg" class="contained"></div> <div class="para" id="p-158">However, if we apply a contravariant functor to the same diagram, we get a similar diagram but with the arrows reversed:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-17.jpg" class="contained"></div></article><article class="definition definition-like" id="def-cat-cat"><h4 class="heading">
+<div class="para" id="p-156">If we apply a covariant functor to a diagram, then we get a diagram of the same shape:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-16.jpg" class="contained"></div> <div class="para" id="p-157">However, if we apply a contravariant functor to the same diagram, we get a similar diagram but with the arrows reversed:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-17.jpg" class="contained"></div></article><article class="definition definition-like" id="def-cat-cat"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.30</span><span class="period">.</span><span class="space"> </span><span class="title">Category of Small Categories.</span>
-</h4> <div class="para" id="p-159">The category Cat has objects all small categories and arrows all functors between them.</div></article></section><section class="subsection" id="subsec-funcor-props"><h3 class="heading hide-type">
+</h4> <div class="para" id="p-158">The category Cat has objects all small categories and arrows all functors between them.</div></article></section><section class="subsection" id="subsec-funcor-props"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Properties of Functors</span>
 </h3>
-<div class="para" id="p-160">If we think about functors as functions between categories, it's natural to consider what would be the appropriate versions of the notions of injective or surjective.</div>
+<div class="para" id="p-159">If we think about functors as functions between categories, it's natural to consider what would be the appropriate versions of the notions of injective or surjective.</div>
 <article class="definition definition-like" id="def-functor-properties"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.31</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-161">A covariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> between locally small categories is</div> <div class="para logical" id="p-162"><ul class="disc">
+<div class="para" id="p-160">A covariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> between locally small categories is</div> <div class="para logical" id="p-161"><ul class="disc">
 <li id="li-49">
-<div class="para" id="p-163">
+<div class="para" id="p-162">
 <em class="emphasis">faithful</em> if all the functions of sets</div>
-<div class="para logical" id="p-164"><div class="displaymath process-math">
+<div class="para logical" id="p-163"><div class="displaymath process-math">
 \begin{equation*}
 \begin{gathered}
 \operatorname{Hom}_{\mathscr{C}}(A, B) \longrightarrow \operatorname{Hom}_{\mathscr{D}}(F(A), F(B)) \\
@@ -678,12 +678,12 @@ f \longmapsto F(f)
 \end{gathered}
 \end{equation*}
 </div></div>
-<div class="para" id="p-165">are injective.</div>
+<div class="para" id="p-164">are injective.</div>
 </li>
 <li id="li-50">
-<div class="para" id="p-166">
+<div class="para" id="p-165">
 <em class="emphasis">full</em> if all the functions of sets</div>
-<div class="para logical" id="p-167"><div class="displaymath process-math">
+<div class="para logical" id="p-166"><div class="displaymath process-math">
 \begin{equation*}
 \begin{gathered}
 \operatorname{Hom}_{\mathscr{C}}(A, B) \longrightarrow \operatorname{Hom}_{\mathscr{D}}(F(A), F(B)) \\
@@ -691,40 +691,40 @@ f \longmapsto F(f)
 \end{gathered}
 \end{equation*}
 </div></div>
-<div class="para" id="p-168">are surjective.</div>
+<div class="para" id="p-167">are surjective.</div>
 </li>
-<li id="li-51"><div class="para" id="p-169">
+<li id="li-51"><div class="para" id="p-168">
 <em class="emphasis">fully faithful</em> if it is full and faithful.</div></li>
-<li id="li-52"><div class="para" id="p-170">
+<li id="li-52"><div class="para" id="p-169">
 <em class="emphasis">essentially surjective</em> if every object <span class="process-math">\(d\)</span> in <span class="process-math">\(\mathscr{D}\)</span> is isomorphic to <span class="process-math">\(F c\)</span> for <span class="process-math">\(c\)</span> in <span class="process-math">\(\mathscr{C}\text{.}\)</span>
 </div></li>
-<li id="li-53"><div class="para" id="p-171">an <em class="emphasis">embedding</em> if it is fully faithful and injective on objects.</div></li>
+<li id="li-53"><div class="para" id="p-170">an <em class="emphasis">embedding</em> if it is fully faithful and injective on objects.</div></li>
 </ul></div></article><article class="example example-like" id="example-20"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.32</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-172">The forgetful functor <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> <span class="process-math">\(\longrightarrow\)</span> <span class="process-math">\(\Set\)</span> is faithful since any two maps of <span class="process-math">\(R\)</span>-modules with the same source and target coincide if and only if they are the same function of sets. This functor is not full, since there not every functions between the underlying sets of two <span class="process-math">\(R\)</span>-modules is an <span class="process-math">\(R\)</span>-module homomorphism.</div></article><article class="remark remark-like" id="remark-11"><h4 class="heading">
+<div class="para" id="p-171">The forgetful functor <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> <span class="process-math">\(\longrightarrow\)</span> <span class="process-math">\(\Set\)</span> is faithful since any two maps of <span class="process-math">\(R\)</span>-modules with the same source and target coincide if and only if they are the same function of sets. This functor is not full, since there not every functions between the underlying sets of two <span class="process-math">\(R\)</span>-modules is an <span class="process-math">\(R\)</span>-module homomorphism.</div></article><article class="remark remark-like" id="remark-8"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.33</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-173">A fully faithful functor is not necessarily injective on objects, but it is injective on objects up to isomorphism.</div></article><article class="remark remark-like" id="remark-12"><h4 class="heading">
+<div class="para" id="p-172">A fully faithful functor is not necessarily injective on objects, but it is injective on objects up to isomorphism.</div></article><article class="remark remark-like" id="remark-9"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.34</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-174">A subcategory <span class="process-math">\(\mathscr{C}\)</span> of <span class="process-math">\(\mathscr{D}\)</span> is full if the inclusion functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}\)</span> is full.</div></article><article class="example example-like" id="example-21"><h4 class="heading">
+<div class="para" id="p-173">A subcategory <span class="process-math">\(\mathscr{C}\)</span> of <span class="process-math">\(\mathscr{D}\)</span> is full if the inclusion functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}\)</span> is full.</div></article><article class="example example-like" id="example-21"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.35</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-175"><ol class="decimal">
-<li id="li-54"><div class="para" id="p-176">The category <span class="process-math">\(\mathbf{A b}\)</span> of abelian groups is a full subcategory of <span class="process-math">\(\Grp\text{.}\)</span>
+<div class="para logical" id="p-174"><ol class="decimal">
+<li id="li-54"><div class="para" id="p-175">The category <span class="process-math">\(\mathbf{A b}\)</span> of abelian groups is a full subcategory of <span class="process-math">\(\Grp\text{.}\)</span>
 </div></li>
-<li id="li-55"><div class="para" id="p-177">The category whose objects are all sets and with arrows all bijections is a subcategory of <span class="process-math">\(\Set\)</span> that is not full.</div></li>
-</ol></div></article><div class="para" id="p-178">To close this section, here are the two of the most important functors we will discuss this semester:</div>
+<li id="li-55"><div class="para" id="p-176">The category whose objects are all sets and with arrows all bijections is a subcategory of <span class="process-math">\(\Set\)</span> that is not full.</div></li>
+</ol></div></article><div class="para" id="p-177">To close this section, here are the two of the most important functors we will discuss this semester:</div>
 <article class="definition definition-like" id="def-hom-functor"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.36</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Hom\)</span> Functors.</span>
-</h4> <div class="para logical" id="p-179">
+</h4> <div class="para logical" id="p-178">
 <div class="para">Let <span class="process-math">\(\mathscr{C}\)</span> be a locally small category. An object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\)</span> induces two <span class="process-math">\(\Hom\)</span> functors:</div>
 <ul class="disc">
 <li id="li-56">
-<div class="para" id="p-180">The covariant functor <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A,-): \mathscr{C} \longrightarrow\)</span> Set is defined as follows:</div>
+<div class="para" id="p-179">The covariant functor <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A,-): \mathscr{C} \longrightarrow\)</span> Set is defined as follows:</div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-18(1).jpg" class="contained"></div>
-<div class="para logical" id="p-181">
+<div class="para logical" id="p-180">
 <div class="para">We may refer to this functor as the covariant functor represented by <span class="process-math">\(A\text{.}\)</span> Given an arrow <span class="process-math">\(f\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> we write <span class="process-math">\(f_{*}:=\operatorname{Hom}_{\mathscr{C}}(A, f)\text{.}\)</span> It is easier to see what <span class="process-math">\(f_{*}\)</span> does through the following commutative diagram:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -735,9 +735,9 @@ f_{*}=\operatorname{Hom}_{\mathscr{C}}(A, f):
 <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_08_28_614593e69373955f3addg-18(3).jpg" class="contained"></div>
 </li>
 <li id="li-57">
-<div class="para" id="p-182">The contravariant functor <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(-, B): \mathscr{C} \longrightarrow\Set\)</span> is defined as follows:</div>
+<div class="para" id="p-181">The contravariant functor <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(-, B): \mathscr{C} \longrightarrow\Set\)</span> is defined as follows:</div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-18(2).jpg" class="contained"></div>
-<div class="para logical" id="p-183">
+<div class="para logical" id="p-182">
 <div class="para">We may refer to this functor as the contravariant functor represented by <span class="process-math">\(B\text{.}\)</span> Given an arrow <span class="process-math">\(f\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> we write <span class="process-math">\(f^{*}:=\operatorname{Hom}_{\mathscr{C}}(A,-)\text{.}\)</span> It is easier to see what <span class="process-math">\(f^{*}\)</span> does through the following commutative diagram:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -750,8 +750,8 @@ f^{*}=\operatorname{Hom}_{\mathscr{C}}(f, B):
 </ul>
 </div></article><article class="exploration project-like" id="exploration-9"><a href="" data-knowl="" class="id-ref exploration-knowl original" data-refid="hk-exploration-9"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exploration-9"><article class="exploration project-like"><div class="para" id="p-184">Check that <span class="process-math">\(\operatorname{Hom}(A,-)\)</span> and <span class="process-math">\(\operatorname{Hom}(-, B)\)</span> are indeed functors.</div></article></div>
-<div class="para" id="p-185">We will be particularly interested in the Hom-functors in the category <span class="process-math">\(R\)</span><span class="process-math">\(\mod\text{,}\)</span> which we will study in detail in a later chapter.</div></section></section></div>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exploration-9"><article class="exploration project-like"><div class="para" id="p-183">Check that <span class="process-math">\(\operatorname{Hom}(A,-)\)</span> and <span class="process-math">\(\operatorname{Hom}(-, B)\)</span> are indeed functors.</div></article></div>
+<div class="para" id="p-184">We will be particularly interested in the Hom-functors in the category <span class="process-math">\(R\)</span><span class="process-math">\(\mod\text{,}\)</span> which we will study in detail in a later chapter.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-categories.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-natural-transformations.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

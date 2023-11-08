@@ -12,16 +12,24 @@
 </head>
 <body class="ignore-math">
 <article class="remark remark-like"><h3 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.28</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.40</span><span class="period">.</span>
 </h3>
-<div class="para logical">
-<div class="para">Remark 2.21. In the split short exact sequence</div>
-<div class="displaymath process-math">
+<div class="para">Remark 2.29. It's helpful to carefully consider how to compute the connecting homomorphisms in the long exact sequence in homology, which we can easily put together from the proof of the <a href="" class="xref" data-knowl="./knowl/thm-2.26.html" title="Theorem 2.37: Snake Lemma">Snake Lemma</a>. Suppose that <span class="process-math">\(c \in Z_{n+1}(C)=\operatorname{ker} d_{n+1}^{C}\text{.}\)</span> When we view <span class="process-math">\(c\)</span> as an element in <span class="process-math">\(C_{n+1}\text{,}\)</span> we can find <span class="process-math">\(b \in B_{n+1}\)</span> such that <span class="process-math">\(g_{n+1}(b)=c\text{,}\)</span> since <span class="process-math">\(g_{n+1}\)</span> is surjective by assumption. Since <span class="process-math">\(g\)</span> is a map of complexes, we have</div> <div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-0 \longrightarrow A \stackrel{i}{\longrightarrow} A \oplus C \stackrel{p}{\longrightarrow} C \longrightarrow 0
+g_{n} d_{n+1}^{B}(b)=d_{n+1}^{C} g_{n+1}(b)=d_{n+1}^{C}(c)=0
 \end{equation*}
-</div>
-<div class="para">the canonical projection <span class="process-math">\(q: A \oplus C \rightarrow A\)</span> and the usual inclusion <span class="process-math">\(r: C \rightarrow A \oplus C\)</span> are splittings.</div>
-</div></article><span class="incontext"><a href="sec-ses.html#remark-18" class="internal">in-context</a></span>
+</div></div> <div class="para">so <span class="process-math">\(d_{n+1}^{B}(b) \in \operatorname{ker} g_{n}\text{.}\)</span> In fact, note that <span class="process-math">\(d_{n+1}^{B}(b) \in \mathbb{Z}_{n}(B)\text{,}\)</span> so</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+b \in \operatorname{ker}\left(Z_{n}(B) \stackrel{g_{n}}{\rightarrow} Z_{n}(C)\right)=\operatorname{im}\left(Z_{n}(A) \rightarrow Z_{n}(B)\right)
+\end{equation*}
+</div></div> <div class="para">Thus there exists <span class="process-math">\(a \in Z_{n}(A)\)</span> such that <span class="process-math">\(f_{n}(a)=d_{n+1}^{B}(b)\text{.}\)</span> Finally,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\partial\left(c+\operatorname{im} d_{n+2}\right)=a+\operatorname{im} d_{n+1}^{A} .
+\end{equation*}
+</div></div> <div class="para">So in summary, the recipe goes as follows: given <span class="process-math">\(c+\operatorname{im} d_{n+2} \in H_{n+1}(C)\text{,}\)</span> we find <span class="process-math">\(b \in B_{n+1}\)</span> such that <span class="process-math">\(g_{n+1}(b)=c\)</span> and <span class="process-math">\(a \in Z_{n}(A)\)</span> such that <span class="process-math">\(f_{n}(a)=d_{n+1}^{B}(b)\text{,}\)</span> and</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\partial(c)=a+\operatorname{im} d_{n+1}^{A} .
+\end{equation*}
+</div></div></article><span class="incontext"><a href="sec-les.html#remark-18" class="internal">in-context</a></span>
 </body>
 </html>

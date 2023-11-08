@@ -13,15 +13,31 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">By <a href="" class="xref" data-knowl="./knowl/lem-4.28.html" title="Lemma 4.29">Lemma 4.29</a>, <span class="process-math">\(E\)</span> is an injective <span class="process-math">\(R\)</span>-module. Since Hom is left exact, by <a href="" class="xref" data-knowl="./knowl/thm-3.14.html" title="Theorem 3.25: \Hom is Left Exact">Theorem 3.25</a>, <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R,-)\)</span> preserves the inclusion <span class="process-math">\(I\text{,}\)</span> so we have an inclusion <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, M) \subseteq \operatorname{Hom}_{\mathbb{Z}}(R, D)\text{.}\)</span> Now consider the map</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-4.28.html ./knowl/thm-3.14.html">
+<div class="para">This is an <span class="process-math">\(R\)</span>-module homomorphism:</div>
+<ul class="disc">
+<li><div class="para logical">
+<div class="para">Given <span class="process-math">\(a, b \in M\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\begin{aligned}
-&amp; M \stackrel{\psi}{\longrightarrow} \operatorname{Hom}_{\mathbb{Z}}(R, M) \\
-&amp; m \longrightarrow(r \mapsto r m) .
-\end{aligned}
+\psi(a+b)(r)=r(a+b)=r a+r b=\psi(a)(r)+\psi(b)(r)
 \end{equation*}
 </div>
+<div class="para">so <span class="process-math">\(\psi(a+b)=\psi(a)+\psi(b)\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Given <span class="process-math">\(r \in R, m \in M\text{,}\)</span> and <span class="process-math">\(s \in R\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\psi(r m)(s)=s(r m)=r(s m)=r \psi(m)(s),
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\psi(r m)=r \psi(m)\text{.}\)</span>
+</div>
+</div></li>
+</ul>
 </div>
 <span class="incontext"><a href="sec-injective.html#p-1021" class="internal">in-context</a></span>
 </body>

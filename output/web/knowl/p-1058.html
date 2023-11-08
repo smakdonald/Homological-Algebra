@@ -13,13 +13,13 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(i: A \longrightarrow B\)</span> be an injective map of <span class="process-math">\(R\)</span>-modules. We want to show that</div>
-<div class="displaymath process-math">
+<div class="para">Let’s say that <span class="process-math">\(u=m_{1} \otimes a_{1}+\cdots+m_{n} \otimes a_{n}\text{.}\)</span> In <a href="" class="xref" data-knowl="./knowl/thm-3.22.html" title="Theorem 3.33">Theorem 3.33</a>, we constructed the tensor product <span class="process-math">\(M \otimes_{R} B\)</span> as a quotient of the free module <span class="process-math">\(F\)</span> on <span class="process-math">\(M \times B\)</span> by the submodule <span class="process-math">\(S\)</span> with all the necessary relations we need to impose. This gives us a short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.22.html">
 \begin{equation*}
-M \otimes_{R} A \stackrel{1 \otimes i}{\longrightarrow} M \otimes_{R} B
+0 \longrightarrow S \longrightarrow F \stackrel{\pi}{\longrightarrow} M \otimes_{R} B \longrightarrow 0
 \end{equation*}
 </div>
-<div class="para">is injective. Suppose that <span class="process-math">\(u \in \operatorname{ker}\left(1_{M} \otimes i\right)\text{.}\)</span> We are going to construct a finitely generated submodule <span class="process-math">\(N \subseteq M\text{,}\)</span> with <span class="process-math">\(j: N \rightarrow M\)</span> the inclusion, and an element <span class="process-math">\(v \in N \otimes_{R} A\)</span> such that <span class="process-math">\(v \in \operatorname{ker}\left(1_{N} \otimes i\right)\)</span> and <span class="process-math">\(u=\left(j \otimes 1_{A}\right)(v)\text{.}\)</span> Once we do that, our submodule <span class="process-math">\(N\)</span> is finitely generated, and thus flat by assumption, so <span class="process-math">\(1_{N} \otimes i\)</span> is injective; therefore, <span class="process-math">\(v=0\)</span> and thus we must have <span class="process-math">\(u=0\text{.}\)</span> Therefore, <span class="process-math">\(1_{M} \otimes i\)</span> is injective, and we conclude that <span class="process-math">\(M\)</span> is flat.</div>
+<div class="para">The fact that <span class="process-math">\(m_{1} \otimes i\left(a_{1}\right)+\cdots+m_{n} \otimes i\left(a_{n}\right)=0\)</span> means we can rewrite this element as <span class="process-math">\(\pi(s)\)</span> for some <span class="process-math">\(s \in S\text{.}\)</span> This element <span class="process-math">\(s\)</span> is a linear combination of elements of finitely many <span class="process-math">\((m, b) \in M \times B\text{.}\)</span> Let <span class="process-math">\(c_{1}, \ldots, c_{t}\)</span> be all the <span class="process-math">\(M\)</span>-coordinates of those elements.</div>
 </div>
 <span class="incontext"><a href="sec-flat.html#p-1058" class="internal">in-context</a></span>
 </body>

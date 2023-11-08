@@ -12,7 +12,23 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">First, notice <span class="process-math">\(X\)</span> is nonempty, since <span class="process-math">\((M, f) \in X\text{.}\)</span> Moreover, we can partially order <span class="process-math">\(X\)</span> by setting <span class="process-math">\((A, g) \leqslant(B, h)\)</span> if <span class="process-math">\(A \subseteq B\)</span> and <span class="process-math">\(\left.h\right|_{A}=g\text{.}\)</span> So we have a nonempty partially ordered set; let’s show we can apply Zorn’s Lemma to it.</div>
+<div class="para logical">
+<div class="para">Given a chain in <span class="process-math">\(X\text{,}\)</span> meaning a sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(A_{1}, g_{1}\right) \leqslant\left(A_{2}, g_{2}\right) \leqslant \cdots
+\end{equation*}
+</div>
+<div class="para">of nested submodules <span class="process-math">\(A_{1} \subseteq A_{2} \subseteq \cdots\)</span> and maps <span class="process-math">\(g_{i}\)</span> that extend all <span class="process-math">\(g_{j}\)</span> with <span class="process-math">\(j \leqslant i\text{,}\)</span> let <span class="process-math">\(A:=\bigcup_{i} A_{i}\text{,}\)</span> and define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; A \longrightarrow g \\
+&amp; a \longrightarrow g_{i}(a) \text { if } a \in A_{i} .
+\end{aligned}
+\end{equation*}
+</div>
+</div>
 <span class="incontext"><a href="sec-injective.html#p-981" class="internal">in-context</a></span>
 </body>
 </html>

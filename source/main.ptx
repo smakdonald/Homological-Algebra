@@ -362,301 +362,301 @@
 
       <chapter xml:id="ch-intro"><title>Where are we going?</title>
 
-        <p>
-          Homological algebra first appeared in the study of topological spaces. 
-          Roughly speaking, homology is a way of associating a sequence of abelian groups (or modules, or other more sophisticated algebraic objects) to another object, for example a topological space. 
-          The homology of a topological space encodes topological information about the space in algebraic language - this is what algebraic topology is all about.
-        </p>
-    
-        <p>
-          More formally, we will study complexes and their homology from a more abstract perspective. 
-          While algebraic topologists are often concerned with complexes of abelian groups, we will work a bit more generally with complexes of <m>R</m>-modules. 
-          The basic assumptions and notation about rings and modules we will use in this class can be found in Appendix A. 
-          As an appetizer, we begin with some basic homological algebra definitions.
-        </p>
+        <paragraphs><title>Chain Complexes and Short Exact Sequences</title>
+          
+          <p>
+            Homological algebra first appeared in the study of topological spaces. 
+            Roughly speaking, homology is a way of associating a sequence of abelian groups (or modules, or other more sophisticated algebraic objects) to another object, for example a topological space. 
+            The homology of a topological space encodes topological information about the space in algebraic language - this is what algebraic topology is all about.
+          </p>
+      
+          <p>
+            More formally, we will study complexes and their homology from a more abstract perspective. 
+            While algebraic topologists are often concerned with complexes of abelian groups, we will work a bit more generally with complexes of <m>R</m>-modules. 
+            The basic assumptions and notation about rings and modules we will use in this class can be found in Appendix A. 
+            As an appetizer, we begin with some basic homological algebra definitions.
+          </p>
 
-        <definition xml:id="def-chain-complex"><title>Chain Complex</title>
-          <statement>
+          <definition xml:id="def-chain-complex"><title>Chain Complex</title>
+            <statement>
+              <p>
+                A <em>chain complex</em> of <m>R</m>-modules <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m>, also referred to simply as a <em>complex</em>, is a sequence of <m>R</m>-modules <m>C_{i}</m> and <m>R</m>-module homomorphisms
+                <me>
+                  \cdots \longrightarrow C_{n+1} \stackrel{\partial_{n+1}}{\longrightarrow} C_{n} \stackrel{\partial_{n}}{\longrightarrow} C_{n-1} \longrightarrow \cdots
+                </me>
+                such that <m>\partial_{n} \partial_{n+1}=0</m> for all <m>n</m>. 
+                The maps <m>\partial_{n}</m> are the <em>differentials</em> of our complex.
+                <idx><h>chain complex</h></idx>
+                <idx><h>differential</h></idx>
+              </p>
+            </statement>
+          </definition>
+
+          <convention>
             <p>
-              A chain complex of <m>R</m>-modules <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m>, also referred to simply as a complex, is a sequence of <m>R</m>-modules <m>C_{i}</m> and <m>R</m>-module homomorphisms
-              <me>
-                \cdots \longrightarrow C_{n+1} \stackrel{\partial_{n+1}}{\longrightarrow} C_{n} \stackrel{\partial_{n}}{\longrightarrow} C_{n-1} \longrightarrow \cdots
-              </me>
-              such that <m>\partial_{n} \partial_{n+1}=0</m> for all <m>n</m>. 
-              We refer to <m>C_{n}</m> as the module in homological degree <m>n</m>. 
-              The maps <m>\partial_{n}</m> are the differentials of our complex. 
               We may sometimes omit the differentials <m>\partial_{n}</m> and simply refer to the complex <m>C_{\bullet}</m> or even <m>C</m>; 
               we may also sometimes refer to <m>\partial_{\bullet}</m> as the differential of <m>C_{\bullet}</m>.
-              <idx><h>chain complex</h></idx>
-              <idx><h>differential</h></idx>
             </p>
-          </statement>
-        </definition>
+          </convention>
 
-        <p>
-          In some contexts, it is important to make a distinction between chain complexes and co-chain complexes, where the arrows go the opposite way: a co-chain complex would look like
-          <me>
-            \cdots \longrightarrow C_{n-1} \stackrel{\partial_{n}}{\longrightarrow} C_{n} \stackrel{\partial_{n+1}}{\longrightarrow} C_{n+1} \longrightarrow \cdots.
-          </me>
-        </p>
-    
-        <p>
-          We will not need to make such a distinction, so we will call both of these complexes and most often follow the convention in the definition above. 
-          We will say a complex <m>C</m> is bounded above if <m>C_{n}=0</m> for all <m>n \gg 0</m>, and bounded below if <m>C_{n}=0</m> for all <m>n \ll 0</m>. 
-          A bounded complex is one that is both bounded above and below. 
-          If a complex is bounded, we may sometimes simply write it as a finite complex, say
-          <me>
-            C_{n} \stackrel{\partial_{n}}{\longrightarrow} C_{n-1} \longrightarrow \cdots \longrightarrow C_{m}.
-          </me>
-        </p>
+          <definition xml:id="def-ses"><title>Exact Sequences</title>
+            <statement>
+              <p>
+                The complex <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if im <m>\partial_{n+1}=\operatorname{ker} \partial_{n}</m>. 
+                An exact sequence is a complex that is exact everywhere. 
+                More precisely, an exact sequence of <m>R</m>-modules is a sequence
+                <me>
+                  \cdots \stackrel{f_{n-1}}{\longrightarrow} C_{n} \stackrel{f_{n}}{\longrightarrow} C_{n+1} \stackrel{f_{n+1}}{\longrightarrow} \cdots
+                </me>
+                of <m>R</m>-modules and <m>R</m>-module homomorphisms such that <m>\operatorname{im} f_{n}=\operatorname{ker} f_{n+1}</m> for all <m>n</m>. 
+                An exact sequence of the form
+                <me>
+                  0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0
+                </me>
+                is a short exact sequence, sometimes written ses.
+                <idx><h>exact sequence</h></idx>
+                <idx><h>short exact sequence</h></idx>
+              </p>
+            </statement>
+          </definition>
 
-        <remark>
-          <p>
-            The condition that <m>\partial_{n} \partial_{n+1}=0</m> for all <m>n</m> implies that im <m>\partial_{n+1} \subseteq \operatorname{ker} \partial_{n}</m>.
-          </p>
-        </remark>
-
-        <definition xml:id="def-ses"><title>Exact Sequences</title>
-          <statement>
-            <p>
-              The complex <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if im <m>\partial_{n+1}=\operatorname{ker} \partial_{n}</m>. 
-              An exact sequence is a complex that is exact everywhere. 
-              More precisely, an exact sequence of <m>R</m>-modules is a sequence
-              <me>
-                \cdots \stackrel{f_{n-1}}{\longrightarrow} M_{n} \stackrel{f_{n}}{\longrightarrow} M_{n+1} \stackrel{f_{n+1}}{\longrightarrow} \cdots
-              </me>
-              of <m>R</m>-modules and <m>R</m>-module homomorphisms such that <m>\operatorname{im} f_{n}=\operatorname{ker} f_{n+1}</m> for all <m>n</m>. 
-              An exact sequence of the form
-              <me>
-                0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0
-              </me>
-              is a short exact sequence, sometimes written ses.
-              <idx><h>exact sequence</h></idx>
-              <idx><h>short exact sequence</h></idx>
-            </p>
-          </statement>
-        </definition>
-    
-        <remark>
-          <p>
-            The sequence
-            <me>
-              0 \longrightarrow M \stackrel{f}{\longrightarrow} N
-            </me>
-            is exact if and only if <m>f</m> is injective. 
-            Similarly,
-            <me>
-              M \stackrel{f}{\longrightarrow} N \longrightarrow 0
-            </me>
-            is exact if and only if <m>f</m> is surjective. 
-            So
-            <me>
-              0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
-            </me>
-            is a short exact sequence if and only if
-            <ul>
-              <li>
-                <p>
-                  <m>f</m> is injective
-                </p>
-              </li>
+          <exercise xml:id="rem-0.2">
+            <statement>
+              <p>
+                The condition that <m>\partial_{n} \partial_{n+1}=0</m> for all <m>n</m> implies that <m>\im \partial_{n+1} \subseteq \operatorname{ker} \partial_{n}</m>.
+              </p>
+            </statement>
+          </exercise>
       
-              <li>
-                <p>
-                  <m>g</m> is surjective
-                </p>
-              </li>
+          <theorem xml:id="thm-0.4">
+            <p>
+              The sequence
+              <me>
+                0 \longrightarrow M \stackrel{f}{\longrightarrow} N
+              </me>
+              is exact if and only if <m>f</m> is injective. 
+              Similarly,
+              <me>
+                M \stackrel{f}{\longrightarrow} N \longrightarrow 0
+              </me>
+              is exact if and only if <m>f</m> is surjective. 
+              So
+              <me>
+                0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+              </me>
+              is a short exact sequence if and only if
+              <ul>
+                <li>
+                  <p>
+                    <m>f</m> is injective
+                  </p>
+                </li>
         
-              <li>
-                <p>
-                  <m>\operatorname{im} f=\operatorname{ker} g</m>.
-                </p>
-              </li>
-            </ul>
-          </p>
-        </remark>
-    
-        <p>
-          When this is indeed a short exact sequence, we can identify <m>A</m> with its image <m>f(A)</m>, and <m>A=\operatorname{ker} g</m>. 
-          Moreover, since <m>g</m> is surjective, by the First Isomorphism Theorem we conclude that <m>C \cong B / f(A)</m>, so we might abuse notation and identify <m>C</m> with <m>B / A</m>.
-        </p>
-
-        <convention>
+                <li>
+                  <p>
+                    <m>g</m> is surjective
+                  </p>
+                </li>
+          
+                <li>
+                  <p>
+                    <m>\operatorname{im} f=\operatorname{ker} g</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </theorem>
+      
           <p>
-            We write <m>A \rightarrow B</m> to denote a surjective map, and <m>A \hookrightarrow B</m> to denote an injective map.
+            When this is indeed a short exact sequence, we can identify <m>A</m> with its image <m>f(A)</m>, and <m>A=\operatorname{ker} g</m>. 
+            Moreover, since <m>g</m> is surjective, by the First Isomorphism Theorem we conclude that <m>C \cong B / f(A)</m>, so we might abuse notation and identify <m>C</m> with <m>B / A</m>.
           </p>
-        </convention>
 
-        <definition xml:id="def-cokernel"><title>Cokernel</title>
-          <statement>
+          <convention>
             <p>
-              The cokernel of a map of <m>R</m>-modules <m>A \stackrel{f}{\rightarrow} B</m> is the module
+              We write <m>A \rightarrow B</m> to denote a surjective map, and <m>A \hookrightarrow B</m> to denote an injective map.
+            </p>
+          </convention>
+
+          <definition xml:id="def-cokernel"><title>Cokernel</title>
+            <statement>
+              <p>
+                The cokernel of a map of <m>R</m>-modules <m>A \stackrel{f}{\rightarrow} B</m> is the module
+                <me>
+                  \text { coker } f:=B / \operatorname{im}(f).
+                </me>
+              </p>
+            </statement>
+          </definition>
+
+          <exercise xml:id="rem-0.7">
+            <p>
+              We can rephrase <xref ref="thm-0.4"/> in a fancier language: if
               <me>
-                \text { coker } f:=B / \operatorname{im}(f).
+                0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+              </me>
+              is a short exact sequence, then <m>A=\operatorname{ker} g</m> and <m>C=\operatorname{coker} f</m>.
+            </p>
+          </exercise>
+
+          <example>
+            <p>
+              Let <m>\pi</m> be the canonical projection <m>\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z}</m>. 
+              The following is a short exact sequence:
+              <me>
+                0 \longrightarrow \mathbb{Z} \stackrel{2}{\longrightarrow} \mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0
               </me>
             </p>
-          </statement>
-        </definition>
+          </example>
 
-        <remark>
-          <p>
-            We can rephrase Remark 0.4 in a fancier language: if
-            <me>
-              0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
-            </me>
-            is a short exact sequence, then <m>A=\operatorname{ker} g</m> and <m>C=\operatorname{coker} f</m>.
-          </p>
-        </remark>
-
-        <example>
-          <p>
-            Let <m>\pi</m> be the canonical projection <m>\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z}</m>. 
-            The following is a short exact sequence:
-            <me>
-              0 \longrightarrow \mathbb{Z} \stackrel{2}{\longrightarrow} \mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0
-            </me>
-          </p>
-        </example>
-    
-        <p>
-          We will most often be interested in complexes of <m>R</m>-modules, where the abelian groups that show up are all modules over the same ring <m>R</m>.
-        </p>
-
-        <example>
-          <p>
-            Let <m>R=k[x]</m> be a polynomial ring over the field <m>k</m>. 
-            The following is a short exact sequence:
-            <me>
-              0 \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R /(x) \longrightarrow 0 \text {. }
-            </me>
-          </p>
-      
-          <p>
-            The first map is multiplication by <m>x</m>, and the second map is the canonical projection.
-          </p>
-        </example>
-
-        <example>
-          <p>
-            Given an ideal <m>I</m> in a ring <m>R</m>, the inclusion map <m>\iota: I \rightarrow R</m> and the canonical projection <m>\pi: R \rightarrow R / I</m> give us the following short exact sequence:
-            <me>
-              0 \longrightarrow I \stackrel{\iota}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R / I \longrightarrow 0
-            </me>
-          </p>
-        </example>
-
-        <example>
-          <p>
-            Let <m>R=k[x] /\left(x^{2}\right)</m>. 
-            The following complex is exact:
-          </p>
-      
-          <p>
-            <me>
-              \cdots \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\cdot x}{\longrightarrow} R \longrightarrow \cdots
-            </me>
-          </p>
-      
-          <p>
-            Indeed, the image and the kernel of multiplication by <m>x</m> are both <m>(x)</m>.
-          </p>
-        </example>
-    
-        <p>
-          Sometimes we can show that certain modules vanish or compute them explicitly when they do not vanish by seeing that they fit in some naturally constructed exact sequence involving other modules we understand better. 
-          We will discuss this in more detail when we talk about long exact sequences.
-        </p>
-
-        <remark>
-          <p>
-            The complex <m>0 \longrightarrow M \stackrel{f}{\longrightarrow} N \longrightarrow 0</m> is exact if and only if <m>f</m> is an isomorphism.
-          </p>
-        </remark>
-
-        <remark>
-          <p>
-            The complex <m>0 \longrightarrow M \longrightarrow 0</m> is exact if and only if <m>M=0</m>.
-          </p>
-        </remark>
-    
-        <p>
-          Historically, chain complexes first appeared in topology. 
-          To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.
-        </p>
-
-        <definition xml:id="def-homology"><title>Homology</title>
-          <statement>
+          <example>
             <p>
-              The homology of the complex <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is the sequence of <m>R</m>-modules
+              Let <m>R=k[x]</m> be a polynomial ring over the field <m>k</m>. 
+              The following is a short exact sequence:
               <me>
-                \mathrm{H}_{n}\left(C_{\bullet}\right)=\mathrm{H}_{n}(C):=\frac{\operatorname{ker} \partial_{n}}{\operatorname{im} \partial_{n+1}} .
+                0 \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R /\igen x \longrightarrow 0 \text {. }
               </me>
             </p>
         
             <p>
-              The <m>n</m>th homology of <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is <m>\mathrm{H}_{n}(C)</m>. 
-              The submodules <m>Z_{n}\left(C_{\bullet}\right)=Z_{n}(C):=\operatorname{ker} \partial_{n} \subseteq C_{n}</m> are called cycles, while the submodules <m>B_{n}\left(C_{\bullet}\right)=B_{n}(C):=\operatorname{im} \partial_{n+1} \subseteq C_{n}</m> are called boundaries. 
+              The first map is multiplication by <m>x</m>, and the second map is the canonical projection.
+            </p>
+          </example>
+
+          <example>
+            <p>
+              Given an ideal <m>I</m> in a ring <m>R</m>, the inclusion map <m>\iota: I \rightarrow R</m> and the canonical projection <m>\pi: R \rightarrow R / I</m> give us the following short exact sequence:
+              <me>
+                0 \longrightarrow I \stackrel{\iota}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R / I \longrightarrow 0
+              </me>
+            </p>
+          </example>
+
+          <example>
+            <p>
+              Let <m>R=k[x] /\igen x</m>. 
+              The following complex is exact:
+            </p>
+        
+            <p>
+              <me>
+                \cdots \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\cdot x}{\longrightarrow} R \longrightarrow \cdots
+              </me>
+            </p>
+        
+            <p>
+              Indeed, the image and the kernel of multiplication by <m>x</m> are both <m>\igen x</m>.
+            </p>
+          </example>
+      
+          <p>
+            Sometimes we can show that certain modules vanish or compute them explicitly when they do not vanish by seeing that they fit in some naturally constructed exact sequence involving other modules we understand better. 
+            We will discuss this in more detail when we talk about long exact sequences.
+          </p>
+
+          <remark>
+            <p>
+              The complex <m>0 \longrightarrow M \stackrel{f}{\longrightarrow} N \longrightarrow 0</m> is exact if and only if <m>f</m> is an isomorphism.
+            </p>
+          </remark>
+
+          <remark>
+            <p>
+              The complex <m>0 \longrightarrow M \longrightarrow 0</m> is exact if and only if <m>M=0</m>.
+            </p>
+          </remark>
+
+        </paragraphs>
+
+        <paragraphs><title>Homology</title>
+    
+          <p>
+            Historically, chain complexes first appeared in topology. 
+            To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.
+          </p>
+
+          <definition xml:id="def-homology"><title>Homology</title>
+            <statement>
+              <p>
+                The homology of the complex <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is the sequence of <m>R</m>-modules
+                <me>
+                  \mathrm{H}_{n}\left(C_{\bullet}\right)=\mathrm{H}_{n}(C):=\frac{\operatorname{ker} \partial_{n}}{\operatorname{im} \partial_{n+1}} .
+                </me>
+              </p>
+          
+              <p>
+                The <m>n</m>th homology of <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is <m>\mathrm{H}_{n}(C)</m>. 
+              </p>
+            </statement>
+          </definition>
+
+          <convention>
+            <p>
+              The submodules <m>Z_{n}\left(C_{\bullet}\right)=Z_{n}(C):=\operatorname{ker} \partial_{n} \subseteq C_{n}</m> are sometimes called <em>cycles</em>, while the submodules <m>B_{n}\left(C_{\bullet}\right)=B_{n}(C):=\operatorname{im} \partial_{n+1} \subseteq C_{n}</m> are sometimes called <em>boundaries</em>. 
               One sometimes uses the word boundary to refer an element of <m>B_{n}(C)</m> (an <m>n</m>-boundary), and the word cycle to refer to an element of <m>Z_{n}(C)</m> (an <m>n</m>-cycle).
             </p>
-          </statement>
-        </definition>
-    
-        <p>
-          The homology of a complex measures how far our complex is from being exact at each point. 
-          Again, we can talk about the cohomology of a cochain complex instead, which we write as <m>\mathrm{H}^{n}(C)</m>; we will for now not worry about the distinction.
-        </p>
+          </convention>
 
-        <remark>
-          <p>
-            Note that <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if and only if <m>\mathrm{H}_{n}\left(C_{\bullet}\right)=0</m>. 
-          </p>
-        </remark>
+          <remark>
+            <p>
+              The homology of a complex measures how far our complex is from being exact at each point. 
+              Again, we can talk about the cohomology of a cochain complex instead, which we write as <m>\mathrm{H}^{n}(C)</m>; we will for now not worry about the distinction.
+            </p>
+          </remark>
 
-        <example>
-          <p>
-            Let <m>R=k[x] /\left(x^{3}\right)</m>. 
-            Consider the following complex:
-            <me>
-              F_{\bullet}=\cdots \longrightarrow R \stackrel{\cdot x^{2}}{\longrightarrow} R \stackrel{\cdot x^{2}}{\longrightarrow} R \longrightarrow \cdots .
-            </me>
-            The image of multiplication by <m>x^{2}</m> is <m>\left(x^{2}\right)</m>, while the the kernel of multiplication by <m>x^{2}</m> is <m>(x) \supseteq\left(x^{2}\right)</m>. 
-            For all <m>n</m>,
-            <me>
-              \mathrm{H}_{n}\left(F_{\bullet}\right)=(x) /\left(x^{2}\right) \cong R /(x)
-            </me>
-          </p>
-        </example>
+          <exercise xml:id="rem-0.15">
+            <p>
+              Note that <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if and only if <m>\mathrm{H}_{n}\left(C_{\bullet}\right)=0</m>. 
+            </p>
+          </exercise>
 
-        <example>
-          <p>
-            Let <m>\mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z}</m> be the canonical projection map. 
-            Then
-          </p>
-          <image source="2023_08_28_614593e69373955f3addg-07.jpg"/>
-          <p>
-            is a complex of abelian groups, since the image of multiplication by 4 is <m>4 \mathbb{Z}</m>, and that is certainly contained in <m>\operatorname{ker} \pi=2 \mathbb{Z}</m>. 
-            The homology of <m>C</m> is
-            <me>
-              \begin{array}{ll}
-              \mathrm{H}_{n}(C)=0 &amp; \text { for } n \geqslant 3 \\
-              \mathrm{H}_{2}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}{\operatorname{im}(0 \longrightarrow \mathbb{Z})}=\frac{0}{0}=0 &amp; \\
-              \mathrm{H}_{1}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{\pi}{\rightarrow} \mathbb{Z} / 2 \mathbb{Z})}{\operatorname{im}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}=\frac{2 \mathbb{Z}}{4 \mathbb{Z}} \cong \mathbb{Z} / 2 \mathbb{Z} &amp; \\
-              \mathrm{H}_{0}(C)=\frac{\operatorname{ker}(\mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0)}{\operatorname{im}(\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z})}=\frac{\mathbb{Z} / 2 \mathbb{Z}}{\mathbb{Z} / 2 \mathbb{Z}}=0 &amp; \text { for } n&lt;0 \\
-              \mathrm{H}_{n}(C)=0 &amp;
-              \end{array}
-            </me>
-          </p>
+          <example>
+            <p>
+              Let <m>R=k[x] /\igen{x^3}</m>. 
+              Consider the following complex:
+              <me>
+                F_{\bullet}=\cdots \longrightarrow R \stackrel{\cdot x^{2}}{\longrightarrow} R \stackrel{\cdot x^{2}}{\longrightarrow} R \longrightarrow \cdots .
+              </me>
+              The image of multiplication by <m>x^{2}</m> is <m>\igen{x^2}</m>, while the the kernel of multiplication by <m>x^{2}</m> is <m>\igen{x} \supseteq\igen{x^2}</m>. 
+              For all <m>n</m>,
+              <me>
+                \mathrm{H}_{n}\left(F_{\bullet}\right)=\igen{x} /\igen{x^2} \cong R /\igen{x}
+              </me>
+            </p>
+          </example>
+
+          <example>
+            <p>
+              Let <m>\mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z}</m> be the canonical projection map. 
+              Then
+            </p>
+            <image source="2023_08_28_614593e69373955f3addg-07.jpg"/>
+            <p>
+              is a complex of abelian groups, since the image of multiplication by <m>4</m> is <m>4 \mathbb{Z}</m>, and that is certainly contained in <m>\operatorname{ker} \pi=2 \mathbb{Z}</m>. 
+              The homology of <m>C</m> is
+              <me>
+                \begin{array}{ll}
+                \mathrm{H}_{n}(C)=0 &amp; \text { for } n \geqslant 3 \\
+                \mathrm{H}_{2}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}{\operatorname{im}(0 \longrightarrow \mathbb{Z})}=\frac{0}{0}=0 &amp; \\
+                \mathrm{H}_{1}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{\pi}{\rightarrow} \mathbb{Z} / 2 \mathbb{Z})}{\operatorname{im}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}=\frac{2 \mathbb{Z}}{4 \mathbb{Z}} \cong \mathbb{Z} / 2 \mathbb{Z} &amp; \\
+                \mathrm{H}_{0}(C)=\frac{\operatorname{ker}(\mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0)}{\operatorname{im}(\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z})}=\frac{\mathbb{Z} / 2 \mathbb{Z}}{\mathbb{Z} / 2 \mathbb{Z}}=0 &amp; \text { for } n&lt;0 \\
+                \mathrm{H}_{n}(C)=0 &amp;
+                \end{array}
+              </me>
+            </p>
+        
+            <p>
+              Notice that our complex is exact at <m>2</m> and <m>0</m>. 
+              The exactness at <m>2</m> says that the map <m>\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z}</m> is injective, while exactness at <m>0</m> says that <m>\pi</m> is surjective.
+            </p>
+          </example>
       
           <p>
-            Notice that our complex is exact at <m>2</m> and <m>0</m>. 
-            The exactness at <m>2</m> says that the map <m>\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z}</m> is injective, while exactness at <m>0</m> says that <m>\pi</m> is surjective.
+            Before we can continue any further into the world of homological algebra, we will need some categorical language. 
+            We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.
           </p>
-        </example>
-    
-        <p>
-          Before we can continue any further into the world of homological algebra, we will need some categorical language. 
-          We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.
-        </p>
+
+        </paragraphs>
 
       </chapter>
 

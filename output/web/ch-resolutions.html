@@ -601,9 +601,10 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-practice',
 </h2>
 <pre class="ptx-sagecell sagecell-practice" id="sage-1"><script type="text/x-sage"># Practice area (not linked for Sage Cell use)
 </script></pre>
-<pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">R = macaulay2(QQ[x, y, z])
-M = macaulay2(R^1/(x*y, x*z, y*z))
-macaulay2.eval(betti res M)
+<pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">R = macaulay2('QQ[x, y, z]', 'R')
+M = macaulay2('R^1/(x*y, x*z, y*z)', 'M')
+F = macaulay2('res M', 'F')
+F
 </script></pre></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="commutative-local-rings.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

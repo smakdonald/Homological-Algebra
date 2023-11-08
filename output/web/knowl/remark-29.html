@@ -12,9 +12,15 @@
 </head>
 <body class="ignore-math">
 <article class="remark remark-like"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.34</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.44</span><span class="period">.</span>
 </h4>
-<div class="para">Remark 3.23. Two group homomorphisms <span class="process-math">\(M \otimes_{R} N \longrightarrow L\)</span> coincide if and only if they agree on simple tensors, since these are generators for <span class="process-math">\(M \otimes_{R} N\text{.}\)</span>
-</div></article><span class="incontext"><a href="sec-tensor.html#remark-29" class="internal">in-context</a></span>
+<div class="para">Remark 3.31. We can express the universal property of the tensor product in the framework of Definition 1.87. For simplicity, assume that <span class="process-math">\(R\)</span> is a commutative ring. Consider the functor <span class="process-math">\(\operatorname{Bilin}(M \times N,-): R\)</span>-Mod <span class="process-math">\(\longrightarrow\)</span> Set that sends an <span class="process-math">\(R\)</span>-module <span class="process-math">\(A\)</span> to the set of <span class="process-math">\(R\)</span>-bilinear maps <span class="process-math">\(M \times N \longrightarrow A\text{,}\)</span> and a map of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(f A \longrightarrow B\)</span> to the function of sets induced by post-composition of functions. The universal property of the tensor product is encoded in the representable functor <span class="process-math">\(\operatorname{Bilin}(M \times N,-): R\)</span>-Mod <span class="process-math">\(\longrightarrow\)</span> Set together with the bilinear map <span class="process-math">\(\tau \in \operatorname{Bilin}\left(M \times N, M \otimes_{R} N\right)\text{.}\)</span> Indeed, this says that <span class="process-math">\(\tau\)</span> induces a natural isomorphism between <span class="process-math">\(\operatorname{Hom}_{R}\left(M \otimes_{R} N,-\right)\)</span> and <span class="process-math">\(\operatorname{Bilin}(M \times N,-)\)</span> by sending each <span class="process-math">\(R\)</span>-module <span class="process-math">\(A\)</span> to the bijection</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\operatorname{Hom}_{R}\left(M \otimes_{R} N, A\right) &amp; \longrightarrow \operatorname{Bilin}(M \times N, A) \\
+f &amp; \longmapsto \operatorname{Bilin}(M \times N, f) \tau=f_{*}(\tau)=f \tau
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para">The fact that this is a bijection says that for every <span class="process-math">\(R\)</span>-bilinear map <span class="process-math">\(g\)</span> there exists a unique <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-089.jpg" class="contained"></div> <div class="para">commutes. So this is indeed the universal property we described before.</div></article><span class="incontext"><a href="sec-tensor.html#remark-29" class="internal">in-context</a></span>
 </body>
 </html>

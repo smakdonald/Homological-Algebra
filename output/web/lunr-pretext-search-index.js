@@ -16,7 +16,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "0",
   "title": "Where are we going?",
-  "body": "Where are we going?  Homological algebra first appeared in the study of topological spaces. Roughly speaking, homology is a way of associating a sequence of abelian groups (or modules, or other more sophisticated algebraic objects) to another object, for example a topological space. The homology of a topological space encodes topological information about the space in algebraic language - this is what algebraic topology is all about.  More formally, we will study complexes and their homology from a more abstract perspective. While algebraic topologists are often concerned with complexes of abelian groups, we will work a bit more generally with complexes of -modules. The basic assumptions and notation about rings and modules we will use in this class can be found in Appendix A. As an appetizer, we begin with some basic homological algebra definitions.  Chain Complex   A chain complex of -modules , also referred to simply as a complex, is a sequence of -modules and -module homomorphisms such that for all . We refer to as the module in homological degree . The maps are the differentials of our complex. We may sometimes omit the differentials and simply refer to the complex or even ; we may also sometimes refer to as the differential of . chain complex  differential     In some contexts, it is important to make a distinction between chain complexes and co-chain complexes, where the arrows go the opposite way: a co-chain complex would look like   We will not need to make such a distinction, so we will call both of these complexes and most often follow the convention in the definition above. We will say a complex is bounded above if for all , and bounded below if for all . A bounded complex is one that is both bounded above and below. If a complex is bounded, we may sometimes simply write it as a finite complex, say    The condition that for all implies that im .   Exact Sequences   The complex is exact at if im . An exact sequence is a complex that is exact everywhere. More precisely, an exact sequence of -modules is a sequence of -modules and -module homomorphisms such that for all . An exact sequence of the form is a short exact sequence, sometimes written ses. exact sequence  short exact sequence      The sequence is exact if and only if is injective. Similarly, is exact if and only if is surjective. So is a short exact sequence if and only if    is injective     is surjective     .      When this is indeed a short exact sequence, we can identify with its image , and . Moreover, since is surjective, by the First Isomorphism Theorem we conclude that , so we might abuse notation and identify with .   We write to denote a surjective map, and to denote an injective map.   Cokernel   The cokernel of a map of -modules is the module      We can rephrase Remark 0.4 in a fancier language: if is a short exact sequence, then and .    Let be the canonical projection . The following is a short exact sequence:    We will most often be interested in complexes of -modules, where the abelian groups that show up are all modules over the same ring .   Let be a polynomial ring over the field . The following is a short exact sequence:   The first map is multiplication by , and the second map is the canonical projection.    Given an ideal in a ring , the inclusion map and the canonical projection give us the following short exact sequence:     Let . The following complex is exact:     Indeed, the image and the kernel of multiplication by are both .   Sometimes we can show that certain modules vanish or compute them explicitly when they do not vanish by seeing that they fit in some naturally constructed exact sequence involving other modules we understand better. We will discuss this in more detail when we talk about long exact sequences.   The complex is exact if and only if is an isomorphism.    The complex is exact if and only if .   Historically, chain complexes first appeared in topology. To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.  Homology   The homology of the complex is the sequence of -modules   The th homology of is . The submodules are called cycles, while the submodules are called boundaries. One sometimes uses the word boundary to refer an element of (an -boundary), and the word cycle to refer to an element of (an -cycle).    The homology of a complex measures how far our complex is from being exact at each point. Again, we can talk about the cohomology of a cochain complex instead, which we write as ; we will for now not worry about the distinction.   Note that is exact at if and only if .    Let . Consider the following complex: The image of multiplication by is , while the the kernel of multiplication by is . For all ,     Let be the canonical projection map. Then   is a complex of abelian groups, since the image of multiplication by 4 is , and that is certainly contained in . The homology of is   Notice that our complex is exact at and . The exactness at says that the map is injective, while exactness at says that is surjective.   Before we can continue any further into the world of homological algebra, we will need some categorical language. We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.  "
+  "body": "Where are we going?  Chain Complexes and Short Exact Sequences  Homological algebra first appeared in the study of topological spaces. Roughly speaking, homology is a way of associating a sequence of abelian groups (or modules, or other more sophisticated algebraic objects) to another object, for example a topological space. The homology of a topological space encodes topological information about the space in algebraic language - this is what algebraic topology is all about.  More formally, we will study complexes and their homology from a more abstract perspective. While algebraic topologists are often concerned with complexes of abelian groups, we will work a bit more generally with complexes of -modules. The basic assumptions and notation about rings and modules we will use in this class can be found in Appendix A. As an appetizer, we begin with some basic homological algebra definitions.  Chain Complex   A chain complex of -modules , also referred to simply as a complex , is a sequence of -modules and -module homomorphisms such that for all . The maps are the differentials of our complex. chain complex  differential      We may sometimes omit the differentials and simply refer to the complex or even ; we may also sometimes refer to as the differential of .   Exact Sequences   The complex is exact at if im . An exact sequence is a complex that is exact everywhere. More precisely, an exact sequence of -modules is a sequence of -modules and -module homomorphisms such that for all . An exact sequence of the form is a short exact sequence, sometimes written ses. exact sequence  short exact sequence      The condition that for all implies that .    The sequence is exact if and only if is injective. Similarly, is exact if and only if is surjective. So is a short exact sequence if and only if    is injective     is surjective     .      When this is indeed a short exact sequence, we can identify with its image , and . Moreover, since is surjective, by the First Isomorphism Theorem we conclude that , so we might abuse notation and identify with .   We write to denote a surjective map, and to denote an injective map.   Cokernel   The cokernel of a map of -modules is the module     We can rephrase in a fancier language: if is a short exact sequence, then and .   Let be the canonical projection . The following is a short exact sequence:     Let be a polynomial ring over the field . The following is a short exact sequence:   The first map is multiplication by , and the second map is the canonical projection.    Given an ideal in a ring , the inclusion map and the canonical projection give us the following short exact sequence:     Let . The following complex is exact:     Indeed, the image and the kernel of multiplication by are both .   Sometimes we can show that certain modules vanish or compute them explicitly when they do not vanish by seeing that they fit in some naturally constructed exact sequence involving other modules we understand better. We will discuss this in more detail when we talk about long exact sequences.   The complex is exact if and only if is an isomorphism.    The complex is exact if and only if .    Homology  Historically, chain complexes first appeared in topology. To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.  Homology   The homology of the complex is the sequence of -modules   The th homology of is .     The submodules are sometimes called cycles , while the submodules are sometimes called boundaries . One sometimes uses the word boundary to refer an element of (an -boundary), and the word cycle to refer to an element of (an -cycle).    The homology of a complex measures how far our complex is from being exact at each point. Again, we can talk about the cohomology of a cochain complex instead, which we write as ; we will for now not worry about the distinction.   Note that is exact at if and only if .   Let . Consider the following complex: The image of multiplication by is , while the the kernel of multiplication by is . For all ,     Let be the canonical projection map. Then   is a complex of abelian groups, since the image of multiplication by is , and that is certainly contained in . The homology of is   Notice that our complex is exact at and . The exactness at says that the map is injective, while exactness at says that is surjective.   Before we can continue any further into the world of homological algebra, we will need some categorical language. We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.   "
 },
 {
   "id": "def-chain-complex",
@@ -25,16 +25,16 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "0.1",
   "title": "Chain Complex.",
-  "body": "Chain Complex   A chain complex of -modules , also referred to simply as a complex, is a sequence of -modules and -module homomorphisms such that for all . We refer to as the module in homological degree . The maps are the differentials of our complex. We may sometimes omit the differentials and simply refer to the complex or even ; we may also sometimes refer to as the differential of . chain complex  differential    "
+  "body": "Chain Complex   A chain complex of -modules , also referred to simply as a complex , is a sequence of -modules and -module homomorphisms such that for all . The maps are the differentials of our complex. chain complex  differential    "
 },
 {
-  "id": "remark-1",
+  "id": "convention-1",
   "level": "2",
-  "url": "ch-intro.html#remark-1",
-  "type": "Remark",
+  "url": "ch-intro.html#convention-1",
+  "type": "Convention",
   "number": "0.2",
   "title": "",
-  "body": " The condition that for all implies that im .  "
+  "body": " We may sometimes omit the differentials and simply refer to the complex or even ; we may also sometimes refer to as the differential of .  "
 },
 {
   "id": "def-ses",
@@ -46,20 +46,29 @@ var ptx_lunr_docs = [
   "body": "Exact Sequences   The complex is exact at if im . An exact sequence is a complex that is exact everywhere. More precisely, an exact sequence of -modules is a sequence of -modules and -module homomorphisms such that for all . An exact sequence of the form is a short exact sequence, sometimes written ses. exact sequence  short exact sequence    "
 },
 {
-  "id": "remark-2",
+  "id": "rem-0.2",
   "level": "2",
-  "url": "ch-intro.html#remark-2",
-  "type": "Remark",
+  "url": "ch-intro.html#rem-0.2",
+  "type": "Exercise",
   "number": "0.4",
+  "title": "",
+  "body": " The condition that for all implies that .  "
+},
+{
+  "id": "thm-0.4",
+  "level": "2",
+  "url": "ch-intro.html#thm-0.4",
+  "type": "Theorem",
+  "number": "0.5",
   "title": "",
   "body": " The sequence is exact if and only if is injective. Similarly, is exact if and only if is surjective. So is a short exact sequence if and only if    is injective     is surjective     .     "
 },
 {
-  "id": "convention-1",
+  "id": "convention-2",
   "level": "2",
-  "url": "ch-intro.html#convention-1",
+  "url": "ch-intro.html#convention-2",
   "type": "Convention",
-  "number": "0.5",
+  "number": "0.6",
   "title": "",
   "body": " We write to denote a surjective map, and to denote an injective map.  "
 },
@@ -68,25 +77,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-intro.html#def-cokernel",
   "type": "Definition",
-  "number": "0.6",
+  "number": "0.7",
   "title": "Cokernel.",
   "body": "Cokernel   The cokernel of a map of -modules is the module    "
 },
 {
-  "id": "remark-3",
+  "id": "rem-0.7",
   "level": "2",
-  "url": "ch-intro.html#remark-3",
-  "type": "Remark",
-  "number": "0.7",
+  "url": "ch-intro.html#rem-0.7",
+  "type": "Exercise",
+  "number": "0.8",
   "title": "",
-  "body": " We can rephrase Remark 0.4 in a fancier language: if is a short exact sequence, then and .  "
+  "body": "We can rephrase in a fancier language: if is a short exact sequence, then and . "
 },
 {
   "id": "example-1",
   "level": "2",
   "url": "ch-intro.html#example-1",
   "type": "Example",
-  "number": "0.8",
+  "number": "0.9",
   "title": "",
   "body": " Let be the canonical projection . The following is a short exact sequence:   "
 },
@@ -95,7 +104,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-intro.html#example-2",
   "type": "Example",
-  "number": "0.9",
+  "number": "0.10",
   "title": "",
   "body": " Let be a polynomial ring over the field . The following is a short exact sequence:   The first map is multiplication by , and the second map is the canonical projection.  "
 },
@@ -104,7 +113,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-intro.html#example-3",
   "type": "Example",
-  "number": "0.10",
+  "number": "0.11",
   "title": "",
   "body": " Given an ideal in a ring , the inclusion map and the canonical projection give us the following short exact sequence:   "
 },
@@ -113,25 +122,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-intro.html#example-4",
   "type": "Example",
-  "number": "0.11",
+  "number": "0.12",
   "title": "",
   "body": " Let . The following complex is exact:     Indeed, the image and the kernel of multiplication by are both .  "
 },
 {
-  "id": "remark-4",
+  "id": "remark-1",
   "level": "2",
-  "url": "ch-intro.html#remark-4",
+  "url": "ch-intro.html#remark-1",
   "type": "Remark",
-  "number": "0.12",
+  "number": "0.13",
   "title": "",
   "body": " The complex is exact if and only if is an isomorphism.  "
 },
 {
-  "id": "remark-5",
+  "id": "remark-2",
   "level": "2",
-  "url": "ch-intro.html#remark-5",
+  "url": "ch-intro.html#remark-2",
   "type": "Remark",
-  "number": "0.13",
+  "number": "0.14",
   "title": "",
   "body": " The complex is exact if and only if .  "
 },
@@ -140,25 +149,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-intro.html#def-homology",
   "type": "Definition",
-  "number": "0.14",
+  "number": "0.15",
   "title": "Homology.",
-  "body": "Homology   The homology of the complex is the sequence of -modules   The th homology of is . The submodules are called cycles, while the submodules are called boundaries. One sometimes uses the word boundary to refer an element of (an -boundary), and the word cycle to refer to an element of (an -cycle).   "
+  "body": "Homology   The homology of the complex is the sequence of -modules   The th homology of is .   "
 },
 {
-  "id": "remark-6",
+  "id": "convention-3",
   "level": "2",
-  "url": "ch-intro.html#remark-6",
-  "type": "Remark",
-  "number": "0.15",
+  "url": "ch-intro.html#convention-3",
+  "type": "Convention",
+  "number": "0.16",
   "title": "",
-  "body": " Note that is exact at if and only if .  "
+  "body": " The submodules are sometimes called cycles , while the submodules are sometimes called boundaries . One sometimes uses the word boundary to refer an element of (an -boundary), and the word cycle to refer to an element of (an -cycle).  "
+},
+{
+  "id": "remark-3",
+  "level": "2",
+  "url": "ch-intro.html#remark-3",
+  "type": "Remark",
+  "number": "0.17",
+  "title": "",
+  "body": " The homology of a complex measures how far our complex is from being exact at each point. Again, we can talk about the cohomology of a cochain complex instead, which we write as ; we will for now not worry about the distinction.  "
+},
+{
+  "id": "rem-0.15",
+  "level": "2",
+  "url": "ch-intro.html#rem-0.15",
+  "type": "Exercise",
+  "number": "0.18",
+  "title": "",
+  "body": "Note that is exact at if and only if . "
 },
 {
   "id": "example-5",
   "level": "2",
   "url": "ch-intro.html#example-5",
   "type": "Example",
-  "number": "0.16",
+  "number": "0.19",
   "title": "",
   "body": " Let . Consider the following complex: The image of multiplication by is , while the the kernel of multiplication by is . For all ,   "
 },
@@ -167,9 +194,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ch-intro.html#example-6",
   "type": "Example",
-  "number": "0.17",
+  "number": "0.20",
   "title": "",
-  "body": " Let be the canonical projection map. Then   is a complex of abelian groups, since the image of multiplication by 4 is , and that is certainly contained in . The homology of is   Notice that our complex is exact at and . The exactness at says that the map is injective, while exactness at says that is surjective.  "
+  "body": " Let be the canonical projection map. Then   is a complex of abelian groups, since the image of multiplication by is , and that is certainly contained in . The homology of is   Notice that our complex is exact at and . The exactness at says that the map is injective, while exactness at says that is surjective.  "
 },
 {
   "id": "sec-categories",
@@ -190,9 +217,9 @@ var ptx_lunr_docs = [
   "body": "Category   A category  consists of three different pieces of data:   a collection of objects ,     for each two objects, say and , a collection of arrows or morphisms from to , and    for each three objects , and , a composition         We will often drop the and write simply for .  These ingredients satisfy the following axioms:   The are all disjoint. In particular, if is an arrow in , we can talk about its source  and its target  as the objects such that .    For each object , there is an identity arrow  such that and for all and all .    Composition is associative : for all appropriately chosen arrows.      "
 },
 {
-  "id": "convention-2",
+  "id": "convention-4",
   "level": "2",
-  "url": "sec-categories.html#convention-2",
+  "url": "sec-categories.html#convention-4",
   "type": "Convention",
   "number": "1.2",
   "title": "",
@@ -280,9 +307,9 @@ var ptx_lunr_docs = [
   "body": "Directed Graph Category  Let be a directed graph. We can construct a category from as follows: the objects are the vertices of , and the arrows are directed paths in the graph . In this category, composition of arrows corresponds to concatenation of paths. For each object , the identity arrow corresponds to the empty path from to .  "
 },
 {
-  "id": "remark-7",
+  "id": "remark-4",
   "level": "2",
-  "url": "sec-categories.html#remark-7",
+  "url": "sec-categories.html#remark-4",
   "type": "Remark",
   "number": "1.11",
   "title": "",
@@ -478,9 +505,9 @@ var ptx_lunr_docs = [
   "body": "Functor   Let and be categories. A covariant functor is a mapping that assigns to each object in an object in , and to each arrow an arrow , such that    preserves the composition of maps, meaning for all arrows and in , and     preserves the identity arrows, meaning for all objects in .     A contravariant functor  is a mapping that assigns to each object in an object in , and to each arrow an arrow , such that    preserves the composition of maps, meaning for all composable arrows and in , and     preserves the identity arrows, meaning for all objects in .      "
 },
 {
-  "id": "remark-8",
+  "id": "remark-5",
   "level": "2",
-  "url": "sec-functors.html#remark-8",
+  "url": "sec-functors.html#remark-5",
   "type": "Remark",
   "number": "1.26",
   "title": "",
@@ -496,9 +523,9 @@ var ptx_lunr_docs = [
   "body": " Show that functors preserve isomorphisms.  "
 },
 {
-  "id": "remark-9",
+  "id": "remark-6",
   "level": "2",
-  "url": "sec-functors.html#remark-9",
+  "url": "sec-functors.html#remark-6",
   "type": "Remark",
   "number": "1.27",
   "title": "",
@@ -514,9 +541,9 @@ var ptx_lunr_docs = [
   "body": "    Many categories one may think about are concrete categories, where the objects are sets with some extra structure, and the arrows are functions between those sets that preserved that extra structure. The forgetful functor from such a category to is the functor that, just as the name says, forgets that extra structure, and sees only the underlying sets and functions of sets. For example, the forgetful functor  sends each group to its underlying set, and each group homomorphism to the corresponding function of sets.    The identity functor  on any category does what the name suggests: it sends each object to itself and each arrow to itself.    Given a group , the subgroup of generated by the set of commutators is a normal subgroup, and the quotient is called the abelianization of . The group is abelian. Given a group homomorphism automatically takes commutators to commutators, so it induces a homomorphism . More precisely, abelianization gives a covariant functor from to .    The unit group functor  :   sends a ring to its group of units . To see this is indeed a functor, we should check it behaves well on morphisms; and indeed if is a ring homomorphism, and is a unit in , then so is a unit in . Thus induces a function given by restriction of to , which must therefore be a group homomorphism since preserves products.    Fix a field . Given a vector space , the collection of linear transformations from to is again a -vector space, the dual vector space of . If is a linear transformation and is an element of , then is in . Doing this for all elements gives a function , and one can show that is a linear transformation. The assignment that sends each vector space to its dual vector space and each linear transformation to is a contravariant functor on Vect- .    Localization is a functor. Let be a ring and be a multiplicatively closed set in . There is localization at induces a a functor  that sends each -module to , and each -module homomorphism to the -module homomorphism .     "
 },
 {
-  "id": "remark-10",
+  "id": "remark-7",
   "level": "2",
-  "url": "sec-functors.html#remark-10",
+  "url": "sec-functors.html#remark-7",
   "type": "Remark",
   "number": "1.29",
   "title": "",
@@ -550,18 +577,18 @@ var ptx_lunr_docs = [
   "body": " The forgetful functor   is faithful since any two maps of -modules with the same source and target coincide if and only if they are the same function of sets. This functor is not full, since there not every functions between the underlying sets of two -modules is an -module homomorphism.  "
 },
 {
-  "id": "remark-11",
+  "id": "remark-8",
   "level": "2",
-  "url": "sec-functors.html#remark-11",
+  "url": "sec-functors.html#remark-8",
   "type": "Remark",
   "number": "1.33",
   "title": "",
   "body": " A fully faithful functor is not necessarily injective on objects, but it is injective on objects up to isomorphism.  "
 },
 {
-  "id": "remark-12",
+  "id": "remark-9",
   "level": "2",
-  "url": "sec-functors.html#remark-12",
+  "url": "sec-functors.html#remark-9",
   "type": "Remark",
   "number": "1.34",
   "title": "",
@@ -631,9 +658,9 @@ var ptx_lunr_docs = [
   "body": "Functor Category   Let be two functors between the categories and . We write   Given two categories and , one can build a functor category Yes, the madness is neverending. with objects all covariant functors , and arrows the corresponding natural transformations. This category is denoted . Sometimes one writes for , but we will avoid that, as it might make things even more confusing.   "
 },
 {
-  "id": "remark-13",
+  "id": "remark-10",
   "level": "2",
-  "url": "sec-natural-transformations.html#remark-13",
+  "url": "sec-natural-transformations.html#remark-10",
   "type": "Remark",
   "number": "1.40",
   "title": "",
@@ -685,18 +712,18 @@ var ptx_lunr_docs = [
   "body": "Contravariant version of the Yoneda Lemma  Let be a locally small category, and fix an object in . Let Set be a contravariant functor. Then there is a bijection   "
 },
 {
-  "id": "remark-14",
+  "id": "remark-11",
   "level": "2",
-  "url": "sec-natural-transformations.html#remark-14",
+  "url": "sec-natural-transformations.html#remark-11",
   "type": "Remark",
   "number": "1.43",
   "title": "",
   "body": " Notice that the says in particular that the collection of all natural transformations from to is a set. This wasn't clear a priori, since the collection of objects in is not necessarily a set.  "
 },
 {
-  "id": "remark-15",
+  "id": "remark-12",
   "level": "2",
-  "url": "sec-natural-transformations.html#remark-15",
+  "url": "sec-natural-transformations.html#remark-12",
   "type": "Remark",
   "number": "1.44",
   "title": "",
@@ -766,9 +793,9 @@ var ptx_lunr_docs = [
   "body": "  Let be a ring. The category of chain complexes of -modules, denoted -mod or simply , is the category with objects all chain complexes of -modules and arrows all maps of complexes of -modules. When , we write for , the category of chain complexes of abelian groups.   "
 },
 {
-  "id": "exercise-1",
+  "id": "exercise-4",
   "level": "2",
-  "url": "sec-compelx-maps.html#exercise-1",
+  "url": "sec-compelx-maps.html#exercise-4",
   "type": "Exercise",
   "number": "2.4",
   "title": "",
@@ -802,18 +829,18 @@ var ptx_lunr_docs = [
   "body": "  A map of chain complexes is a quasi-isomorphism if it induces an isomorphism in homology, meaning is an isomorphism of -modules for all . If there exists a quasi-isomorphism between two complexes and , we say that and are quasi-isomorphic, and write .   "
 },
 {
-  "id": "remark-16",
+  "id": "remark-13",
   "level": "2",
-  "url": "sec-compelx-maps.html#remark-16",
+  "url": "sec-compelx-maps.html#remark-13",
   "type": "Remark",
   "number": "2.8",
   "title": "",
   "body": " Remark 2.7. Note that saying that if is a quasi-isomorphism between and is a stronger statement that the fact that for all : it also says that there are isomorphisms that are all induced by .  "
 },
 {
-  "id": "exercise-2",
+  "id": "exercise-5",
   "level": "2",
-  "url": "sec-compelx-maps.html#exercise-2",
+  "url": "sec-compelx-maps.html#exercise-5",
   "type": "Exercise",
   "number": "2.9",
   "title": "",
@@ -829,9 +856,9 @@ var ptx_lunr_docs = [
   "body": "  Let be maps complexes. A homotopy, sometimes referred to as a chain homotopy, between and is a sequence of maps    such that for all . If there exists a homotopy between and , we say that and are homotopic or that they have the same homotopy type. We write to say that and are homotopic. If is homotopic to the zero map, we say is nullhomotopic, and write . This should not be confused with the notation on complexes.   "
 },
 {
-  "id": "exercise-3",
+  "id": "exercise-6",
   "level": "2",
-  "url": "sec-compelx-maps.html#exercise-3",
+  "url": "sec-compelx-maps.html#exercise-6",
   "type": "Exercise",
   "number": "2.11",
   "title": "",
@@ -847,9 +874,9 @@ var ptx_lunr_docs = [
   "body": "  Let be maps of complexes. If is homotopic to , then for all . In particular, every nullhomotopic map induces the zero map in homology.    Let be homotopic maps of complexes, and let be a homotopy between and . We claim that the map of complexes (defined in the obvious way) sends cycles to boundaries. If , then The map on homology induced by must then be the 0 map, so and induce the same map on homology. Here we are implicitly using the fact that , which we leave as an exercise to be further explored in Remark 3.4.   "
 },
 {
-  "id": "exercise-4",
+  "id": "exercise-7",
   "level": "2",
-  "url": "sec-compelx-maps.html#exercise-4",
+  "url": "sec-compelx-maps.html#exercise-7",
   "type": "Exercise",
   "number": "2.13",
   "title": "",
@@ -874,18 +901,18 @@ var ptx_lunr_docs = [
   "body": "  Homotopy equivalences are quasi-isomorphisms.    If and are such that is homotopic to and is homotopic to , then by Lemma 2.9 the map induces the identity map on homology. So for all we have Therefore, and must both be isomorphisms.   "
 },
 {
-  "id": "exercise-5",
+  "id": "exercise-8",
   "level": "2",
-  "url": "sec-compelx-maps.html#exercise-5",
+  "url": "sec-compelx-maps.html#exercise-8",
   "type": "Exercise",
   "number": "2.16",
   "title": "",
   "body": "Exercise 29. Let denote the projection map from to . The chain map is a quasi-isomorphism but not a homotopy equivalence. "
 },
 {
-  "id": "remark-17",
+  "id": "remark-14",
   "level": "2",
-  "url": "sec-compelx-maps.html#remark-17",
+  "url": "sec-compelx-maps.html#remark-14",
   "type": "Remark",
   "number": "2.17",
   "title": "",
@@ -901,9 +928,9 @@ var ptx_lunr_docs = [
   "body": "  Given complexes and is a subcomplex of if is a submodule of for all , and the inclusion maps define a map of complexes . Given a subcomplex of , the quotient of by is the complex that has in homological degree , with differential induced by the differential on .   "
 },
 {
-  "id": "exercise-6",
+  "id": "exercise-9",
   "level": "2",
-  "url": "sec-compelx-maps.html#exercise-6",
+  "url": "sec-compelx-maps.html#exercise-9",
   "type": "Exercise",
   "number": "2.19",
   "title": "",
@@ -919,9 +946,9 @@ var ptx_lunr_docs = [
   "body": "  Given any map of complexes , the kernel of is the subcomplex of that we can assemble from the the kernels . More precisely, is the complex where the differentials are simply the corresponding restrictions of the differentials on . Similarly, the image of is the subcomplex of . where the differentials are given by restriction of the corresponding differentials in . The cokernel of is the quotient complex .   "
 },
 {
-  "id": "exercise-7",
+  "id": "exercise-10",
   "level": "2",
-  "url": "sec-compelx-maps.html#exercise-7",
+  "url": "sec-compelx-maps.html#exercise-10",
   "type": "Exercise",
   "number": "2.21",
   "title": "",
@@ -991,27 +1018,27 @@ var ptx_lunr_docs = [
   "body": "  Given a split short exact sequence maps and satisfying the conditions of the Splitting Lemma are called splittings.   "
 },
 {
-  "id": "remark-18",
+  "id": "remark-15",
   "level": "2",
-  "url": "sec-ses.html#remark-18",
+  "url": "sec-ses.html#remark-15",
   "type": "Remark",
   "number": "2.28",
   "title": "",
   "body": " Remark 2.21. In the split short exact sequence the canonical projection and the usual inclusion are splittings.  "
 },
 {
-  "id": "exercise-8",
+  "id": "exercise-11",
   "level": "2",
-  "url": "sec-ses.html#exercise-8",
+  "url": "sec-ses.html#exercise-11",
   "type": "Exercise",
   "number": "2.29",
   "title": "",
   "body": "Exercise 32. Let be a field. Show that every short exact sequence of -vector spaces splits. "
 },
 {
-  "id": "exercise-9",
+  "id": "exercise-12",
   "level": "2",
-  "url": "sec-ses.html#exercise-9",
+  "url": "sec-ses.html#exercise-12",
   "type": "Exercise",
   "number": "2.30",
   "title": "",
@@ -1036,36 +1063,36 @@ var ptx_lunr_docs = [
   "body": " Example 2.23. Consider the short exact sequence where is the inclusion of the subgroup generated by 2, so , and is the quotient onto that subgroup, meaning . This is not a split short exact sequence, because . Now let be the direct sum of infinitely many copies of . Then and the sequence with and is still exact. The middle term is indeed isomorphic to the direct sum of the other two: And yet this is not a split exact sequence: if we had a splitting of , then its restriction to the first factor would give us a splitting of , which we know cannot exist, since does not split.  "
 },
 {
-  "id": "exercise-10",
+  "id": "exercise-13",
   "level": "2",
-  "url": "sec-ses.html#exercise-10",
+  "url": "sec-ses.html#exercise-13",
   "type": "Exercise",
   "number": "2.33",
   "title": "The Five Lemma.",
   "body": "The Five Lemma Exercise 34 Consider the following commutative diagram of -modules with exact rows: Show that if , and are isomorphisms, then is an isomorphism. "
 },
 {
-  "id": "remark-19",
+  "id": "remark-16",
   "level": "2",
-  "url": "sec-ses.html#remark-19",
+  "url": "sec-ses.html#remark-16",
   "type": "Remark",
   "number": "2.34",
   "title": "",
   "body": " Remark 2.24. Given a short exact sequence, suppose we have -module homomorphisms and    such that and . Then we get an induced map such that the diagram   commutes. The Five Lemma guarantees that must be an isomorphism, so our diagram is an isomorphism of short exact sequences.  "
 },
 {
-  "id": "remark-20",
+  "id": "remark-17",
   "level": "2",
-  "url": "sec-ses.html#remark-20",
+  "url": "sec-ses.html#remark-17",
   "type": "Remark",
   "number": "2.35",
   "title": "",
   "body": " Remark 2.25. The Splitting Lemma does not hold if we replace -modules with the category Grp of groups. For example, consider the symmetric group on 3 elements and the inclusion of the alternating group in . Notice that is precisely the kernel of the sign map which sends even permutations to 0 and odd permutations to 1 . Therefore, is a short exact sequence. When writing exact sequences of nonabelian groups such as this one, one sometimes uses for instead of 0, to indicate that trivial group. So our short exact sequence is   Moreover, this exact sequence is not split, since is not abelian but is, and thus . However, any group homomorphism defined by sending the generator to any two cycle is a splitting for our short exact sequence, meaning signo .  Funny enough, there is no splitting for the inclusion , since there are no nontrivial homomorphisms has no elements of order 2, so a group homomorphism must send every 2-cycle in must be sent to the identity, but 2-cycles generate .  "
 },
 {
-  "id": "exercise-11",
+  "id": "exercise-14",
   "level": "2",
-  "url": "sec-ses.html#exercise-11",
+  "url": "sec-ses.html#exercise-14",
   "type": "Exercise",
   "number": "2.36",
   "title": "",
@@ -1108,18 +1135,18 @@ var ptx_lunr_docs = [
   "body": "Long Exact Sequence in Homology   Given a short exact sequence in      there are connecting homomorphisms such that     is an exact sequence.    For each , we have short exact sequences     The condition that and are maps of complexes implies, by Lemma 2.4, that and take cycles to cycles, so we get exact sequences     Again by Lemma 2.4, the condition that and are maps of complexes also implies that and both take boundaries to boundaries, so that we get exact sequences     Let be any complex. The boundary maps on induce maps that send to 0 , so we get induced maps . Applying this general fact to , and , and putting all this together, we have a commutative diagram with exact rows   For any complex ,     and     The now gives us exact sequences     Finally, we glue all these together to obtain the long exact sequence in homology.   "
 },
 {
-  "id": "remark-21",
+  "id": "remark-18",
   "level": "2",
-  "url": "sec-les.html#remark-21",
+  "url": "sec-les.html#remark-18",
   "type": "Remark",
   "number": "2.40",
   "title": "",
   "body": " Remark 2.29. It's helpful to carefully consider how to compute the connecting homomorphisms in the long exact sequence in homology, which we can easily put together from the proof of the . Suppose that . When we view as an element in , we can find such that , since is surjective by assumption. Since is a map of complexes, we have     so . In fact, note that , so     Thus there exists such that . Finally,     So in summary, the recipe goes as follows: given , we find such that and such that , and     "
 },
 {
-  "id": "remark-22",
+  "id": "remark-19",
   "level": "2",
-  "url": "sec-les.html#remark-22",
+  "url": "sec-les.html#remark-19",
   "type": "Remark",
   "number": "2.41",
   "title": "",
@@ -1135,9 +1162,9 @@ var ptx_lunr_docs = [
   "body": "Naturality of the long exact sequence in homology   Any commutative diagram in    with exact rows induces a commutative diagram with exact rows     The rows of the resulting diagram are the long exact sequences in homology induced by each row of the original diagram, as in . So the content of the theorem is that the maps induced in homology by , and make the diagram commute. The commutativity of   follows from the fact that is a functor, so we only need to check commutativity of the square   that involves the connecting homomorphisms and . Consider the following commutative diagram:   Given , we need to check that in . To compute , we find a lift such that , and with , and set . So . On the other hand, to compute , we start by finding such that . By commutativity of the right back square   we can choose , since     Next we take such that , and set .  By commutativity of the middle square   we have     By our choice of , we have     and by commutativity of the front left square   we have     So we can take . Finally, this means , as we wanted to prove.   "
 },
 {
-  "id": "remark-23",
+  "id": "remark-20",
   "level": "2",
-  "url": "sec-les.html#remark-23",
+  "url": "sec-les.html#remark-20",
   "type": "Remark",
   "number": "2.43",
   "title": "",
@@ -1459,18 +1486,18 @@ var ptx_lunr_docs = [
   "body": "  Theorem 3.22. Given any right -modules and any left -module , their tensor product exists, and it is given by the abelian group defined as follows:    Generators: For each pair of elements and , we have a generator .    Relations: the generators of satisfy the following relations, where , , and :         Proof. Let be the free abelian group on the set . In what follows, we identify a pair with the corresponding basis element for . Let be the subgroup of generated by     Let , and let denote the class of in the quotient. We claim that this abelian group is a tensor product for and , together with the map     Notice is the restriction of the quotient map to the basis elements of . Moreover, by construction of , the following identities hold:     Together, these make an -biadditive map. The map that sends each pair to the corresponding basis element is -bilinear by construction. Moreover, there is a natural quotient map , and these maps make the diagram   commute.  Now suppose that is any other abelian group, and let by any -biadditive map. Since is the free -module on induces a homomorphism of abelian groups such that , meaning for all and all .  Finally, the fact that is bilinear implies that . Therefore, induces a group homomorphism on . All this fits in the following commutative diagram:   Finally, this map we constructed satisfies , and since is generated by such elements, is completely determined by the images of , and thus unique.   "
 },
 {
-  "id": "remark-29",
+  "id": "remark-26",
   "level": "2",
-  "url": "sec-tensor.html#remark-29",
+  "url": "sec-tensor.html#remark-26",
   "type": "Remark",
   "number": "3.34",
   "title": "",
   "body": " Remark 3.23. Two group homomorphisms coincide if and only if they agree on simple tensors, since these are generators for .  "
 },
 {
-  "id": "remark-30",
+  "id": "remark-27",
   "level": "2",
-  "url": "sec-tensor.html#remark-30",
+  "url": "sec-tensor.html#remark-27",
   "type": "Remark",
   "number": "3.35",
   "title": "",
@@ -1504,9 +1531,9 @@ var ptx_lunr_docs = [
   "body": " Example 3.27. Let and be distinct prime integers. Then has inverse modulo , say , and has an inverse modulo , say . Given any simple tensor in      Since all simple tensors are 0 and is generated by simple tensors, we conclude that .  "
 },
 {
-  "id": "exercise-23",
+  "id": "exercise-26",
   "level": "2",
-  "url": "sec-tensor.html#exercise-23",
+  "url": "sec-tensor.html#exercise-26",
   "type": "Exercise",
   "number": "3.39",
   "title": "",
@@ -1522,18 +1549,18 @@ var ptx_lunr_docs = [
   "body": " Example 3.28. Consider the abelian group . The map     is -bilinear, and thus it induces a homomorphism . Via this map, , so is nonzero in , and .  "
 },
 {
-  "id": "exercise-24",
+  "id": "exercise-27",
   "level": "2",
-  "url": "sec-tensor.html#exercise-24",
+  "url": "sec-tensor.html#exercise-27",
   "type": "Exercise",
   "number": "3.41",
   "title": "",
   "body": "Exercise 48. Let and consider the ideal . Show that in , the element is not a simple tensor. "
 },
 {
-  "id": "remark-31",
+  "id": "remark-28",
   "level": "2",
-  "url": "sec-tensor.html#remark-31",
+  "url": "sec-tensor.html#remark-28",
   "type": "Remark",
   "number": "3.42",
   "title": "",
@@ -1549,9 +1576,9 @@ var ptx_lunr_docs = [
   "body": "  Definition 3.30. Let be a commutative ring and and be -modules. The tensor product of and is an -module together with an -bilinear map  with the following universal property: for every -module and every -bilinear map there exists a unique -module homomorphism such that the following diagram commutes:    "
 },
 {
-  "id": "remark-32",
+  "id": "remark-29",
   "level": "2",
-  "url": "sec-tensor.html#remark-32",
+  "url": "sec-tensor.html#remark-29",
   "type": "Remark",
   "number": "3.44",
   "title": "",
@@ -1576,9 +1603,9 @@ var ptx_lunr_docs = [
   "body": " Example 3.33.  a) Let denote the ring of matrices with entries in a ring . We can also view as an -bimodule via left and right multiplication of matrices.  b) Any two-sided ideal of a ring is an -bimodule.  c) Let be a commutative ring and let be any left -module. Then is also a right -module under the same module structure, by setting     Moreover, is also an -bimodule using both of these structures at once.  d) Let be a ring homomorphism. We can view as an -bimodule via     for and , where the right hand side is just multiplication in . Similarly, can be viewed as an -bimodule and as an -bimodule.  e) Let be a commutative ring of prime characteristic , meaning that contains a copy of , or equivalently, that     Then is an -bimodule with the left module structure given by the Frobenius map     and right module structure given by the usual multiplication on . More precisely, given ,     where the right hand side is just multiplication in .  "
 },
 {
-  "id": "exercise-25",
+  "id": "exercise-28",
   "level": "2",
-  "url": "sec-tensor.html#exercise-25",
+  "url": "sec-tensor.html#exercise-28",
   "type": "Exercise",
   "number": "3.47",
   "title": "",
@@ -1666,18 +1693,18 @@ var ptx_lunr_docs = [
   "body": "  Theorem 3.41. Let be a right -module, and let be an arbitrary family of left -modules. Then the map     is an isomorphism of abelian groups in general, of -modules in the commutative case, of modules if each is an -bimodule, and of right -modules if is an -bimodule. Moreover, this isomorphism is natural: given two families of left -modules and , and left -module homomorphisms , the -module homomorphisms     give a commutative diagram       Proof. First, note that the function     is -bilinear, so it induces a homomorphism     For each , let denote the inclusion map . The universal property of the coproduct (which in the case of -modules, means the direct sum) gives an -module homomorphism     which we obtain by assembling the -module homomorphisms . It is routine to check that is the inverse of , which must then be an isomorphism. Finally, we can check naturality by checking commutativity of the square above, element by element:    "
 },
 {
-  "id": "remark-33",
+  "id": "remark-30",
   "level": "2",
-  "url": "sec-tensor.html#remark-33",
+  "url": "sec-tensor.html#remark-30",
   "type": "Remark",
   "number": "3.56",
   "title": "",
   "body": " Remark 3.42. By commutativity of the tensor product, we also get natural isomorphisms     "
 },
 {
-  "id": "exercise-26",
+  "id": "exercise-29",
   "level": "2",
-  "url": "sec-tensor.html#exercise-26",
+  "url": "sec-tensor.html#exercise-29",
   "type": "Exercise",
   "number": "3.57",
   "title": "",
@@ -1693,9 +1720,9 @@ var ptx_lunr_docs = [
   "body": " Example 3.43. Let be any ring and consider . Let and . We claim that the element is not a simple tensor. Suppose, by contradiction, that there exist such that     Since is a basis for the free module , we can write     Substituting above, we see that     But by Exercise 50, is a basis for the free -module , so we can now compare coefficients: since     we must have     But since is a unit and , we must have ; similarly, since is a unit and , we must have . But we have both and that are units, which is a contradiction. We conclude that is not a simple tensor.  "
 },
 {
-  "id": "remark-34",
+  "id": "remark-31",
   "level": "2",
-  "url": "sec-tensor.html#remark-34",
+  "url": "sec-tensor.html#remark-31",
   "type": "Remark",
   "number": "3.59",
   "title": "",
@@ -1720,9 +1747,9 @@ var ptx_lunr_docs = [
   "body": "  Definition 3.46. Let be a ring homomorphism. The restriction of scalars functor from to is the functor -mod -Mod that takes each -module to the -module with underlying abelian group and -module structure     induced by . Moreover, for each -module homomorphism we get the module homomorphism defined by .   "
 },
 {
-  "id": "exercise-27",
+  "id": "exercise-30",
   "level": "2",
-  "url": "sec-tensor.html#exercise-27",
+  "url": "sec-tensor.html#exercise-30",
   "type": "Exercise",
   "number": "3.62",
   "title": "",
@@ -1747,9 +1774,9 @@ var ptx_lunr_docs = [
   "body": " Example 3.48. Consider the short exact sequence     Applying the functor , we get an exact sequence     However, we claim that is not injective. On the one hand, by Lemma 3.40 we have an isomorphism . On the other hand, we have seen in Example 3.25 that , so the map cannot possibly be injective.  "
 },
 {
-  "id": "remark-35",
+  "id": "remark-32",
   "level": "2",
-  "url": "sec-tensor.html#remark-35",
+  "url": "sec-tensor.html#remark-32",
   "type": "Remark",
   "number": "3.65",
   "title": "",
@@ -1792,9 +1819,9 @@ var ptx_lunr_docs = [
   "body": " Example 3.52 (Most important localizations). Let be a commutative ring.    For and , we usually write for .    When is the set of nonzerodivisors on , we call the total ring of fractions of . When is a domain, this is just the fraction field of , and in this case this coincides with the localization at the prime , as described below.    For a prime ideal in , we generally write for , and call it the localization of at . Given an ideal in , we sometimes write to refer to , the image of via the canonical map . Notice that when we localize at a prime , the resulting ring is a local ring . We can think of the process of localization at as zooming in at the prime . Many properties of an ideal can be checked locally, by checking them for for each prime .    "
 },
 {
-  "id": "remark-36",
+  "id": "remark-33",
   "level": "2",
-  "url": "sec-localization.html#remark-36",
+  "url": "sec-localization.html#remark-33",
   "type": "Remark",
   "number": "3.69",
   "title": "",
@@ -1828,18 +1855,18 @@ var ptx_lunr_docs = [
   "body": "  Definition 3.56. Let be a commutative ring and let be a multiplicative subset of . The localization at is the functor -Mod -mod that sends each -module to the -module , and that sends each -module homomorphism to the homomorphism of -modules given by     We might denote this functor by or . When is the complement of a prime ideal , we write the localization at as .   "
 },
 {
-  "id": "exercise-28",
+  "id": "exercise-31",
   "level": "2",
-  "url": "sec-localization.html#exercise-28",
+  "url": "sec-localization.html#exercise-31",
   "type": "Exercise",
   "number": "3.73",
   "title": "",
   "body": "Exercise 52. Show that for all -module homomorphisms , is a homomorphism of modules over . "
 },
 {
-  "id": "exercise-29",
+  "id": "exercise-32",
   "level": "2",
-  "url": "sec-localization.html#exercise-29",
+  "url": "sec-localization.html#exercise-32",
   "type": "Exercise",
   "number": "3.74",
   "title": "",
@@ -1855,18 +1882,18 @@ var ptx_lunr_docs = [
   "body": "  Theorem 3.57. Let be a commutative ring, and a multiplicative subset of . Then the localization at and are naturally isomorphic functors. In particular, for every -module , there is an isomorphism of -modules     and given an -module map , the map of -modules corresponds to under these isomorphisms.    Proof. The bilinear map      induces a homomorphism that is surjective.  For an inverse map, set . To see this is well-defined, suppose , so there exists some such that . Then,     We can multiply through by to get     To see this is a homomorphism, we note that     and     The composition sends     Since this is the identity on simple tensors, and simple tensors generated the tensor product, it must be the identity.  For the claim about maps, we need check that for every -module homomorphism . And indeed,     Finally, we note that our isomorphisms give a natural isomorphism between the localization functor and the tensor functor . Indeed, given a map of -modules , the diagram   commutes, since it commutes for simple tensors:   Now since localization is exact, we conclude that is an exact functor for all commutative rings and all multiplicatively closed subsets .   "
 },
 {
-  "id": "exercise-30",
+  "id": "exercise-33",
   "level": "2",
-  "url": "sec-localization.html#exercise-30",
+  "url": "sec-localization.html#exercise-33",
   "type": "Exercise",
   "number": "3.76",
   "title": "",
   "body": "Exercise 54. Let be a commutative noetherian ring, be a multiplicative set, be a finitely generated -module, and an arbitrary -module. Show that   In particular, if is prime,   "
 },
 {
-  "id": "exercise-31",
+  "id": "exercise-34",
   "level": "2",
-  "url": "sec-localization.html#exercise-31",
+  "url": "sec-localization.html#exercise-34",
   "type": "Exercise",
   "number": "3.77",
   "title": "",
@@ -1882,9 +1909,9 @@ var ptx_lunr_docs = [
   "body": "Hom-Tensor Adjunction  The Hom and tensor functors are closely related. First, we note that can be a module over a ring when or have a bimodule structure.  Exercise 56. Let and be rings.   If is an -bimodule and is a left -module, then has a left -module structure via .    If is an -bimodule and is a right -module, then has a right -module structure via .    If is an -bimodule and is a right -module, then has a left -module structure via .    If is an -bimodule and is a left -module, then has a right -module structure via .     These structures can be a bit confusing at first - especially since we have left module structures written on the right and vice-versa. While the exercise is not difficult, it can be extremely enlightening - we strongly recommend the reader tries their hand at the details.  The following statements are known as Hom-tensor adjunction - and as we will see, they do encode an adjunction of functors.    Let and be rings. Assume that     is a right -module,     is an -bimodule, and     is a right -module.    There is a natural isomorphism of abelian groups     If also has a -bimodule structure, or has a -bimodule structure, then this is an isomorphism of (left or right, respectively) -modules.      Theorem 3.59. Let and be rings. Assume that     is a left -module,     is an -bimodule, and     is a left -module.    There is a natural isomorphism of abelian groups       We leave the details to the reader, and prove the case when the underlying rings are commutative. First, let's do the case when .    Theorem 3.60 (Hom-tensor adjunction I). Let be a commutative ring and let , and be -modules. There is an isomorphism of -modules     that is natural on , and .    Proof. The universal property of the tensor product says that to give an -module homomorphism is the same as giving an -bilinear map . Given such a bilinear map , the map is -linear for each , so it defines an -module homomorphism . Now the assignment     is -linear, is an -module homomorphism, and is -linear on .  Conversely, given an -module homomorphism , one can check (exercise!) that is an -bilinear map, so it induces an -module homomorphism . Moreover, the two constructions are inverse to each other.  So we have constructed a bijection of Hom-sets     It's routine to check that both of these bijections are indeed homomorphisms of -modules, so we leave it as an exercise.  Finally, naturality means we have the following commutative diagrams:   and   We leave checking these do indeed commute as an exercise.      Corollary 3.61 (Tensor and Hom are adjoint functors). Let be a commutative ring, and an -module. The functor -Mod -Mod is left adjoint to the functor -Mod -Mod.    Proof. The adjointness translates into the fact that for all -modules and there is a bijection     which is natural on and , which is a corollary of Theorem 3.60.    Later, when we talk about more general abelian categories, we will see that this adjunction implies that Hom is left exact and that tensor is right exact; in fact, this is a more general fact about adjoint pairs. For now, we want to discuss a more general version of this Hom-tensor adjunction.    Theorem 3.62 (Hom-tensor adjunction II). Let be a ring homomorphism of commutative rings. Let be an -module, and and be -modules. There is an isomorphism of abelian groups     Moreover, this isomorphism is natural on , and , so it induces natural isomorphisms    between and .    between and .    between and .      Proof. Consider the map     Fix . For each , let be the map defined by . Note that is indeed a homomorphism of -modules, since it is the composition of two -module maps, and , where is the constant map equal to .  We should check that our proposed map is indeed a map of abelian groups. It is immediate from the definition that sends the 0-map to the 0-map. Moreover, given module homomorphisms , and any , we have     so for all , and thus .  Suppose that . Then for every and every ,     so vanishes at every simple tensor, and we must have . On the other hand, if we are given , consider the map defined by . Since is a homomorphism of -modules, it is -linear on . Moreover, for each fixed is a homomorphism of -modules, so in particular is -linear. Together, these say that is an -bilinear map. Let be the homomorphism of -modules induced by . By definition, , so . We conclude that is a bijection.  We leave the statements about naturality as exercises.      Corollary 3.63 (Adjointness of restriction and extension of scalars). Let be ring homomorphism. The restriction of scalars functor -Mod -Mod is the right adjoint of the extension of scalars functor -Mod -Mod.    Proof. We need to show that for every -module and every -module there are bijections     which are natural on both and . By Theorem 3.62, we have natural bijections     The module is precisely . By Exercise as an -module. An isomorphism of -modules is in particular an -linear map, and thus also an isomorphism of -modules. So as -modules. Therefore, the Hom-tensor adjuntion gives us the natural bijections we were looking for.    The idea is that restriction of scalars and extension of scalars are the most efficient ways of making an -module out of an -module, and vice-versa.  "
 },
 {
-  "id": "exercise-32",
+  "id": "exercise-35",
   "level": "2",
-  "url": "sec-hom-tensor.html#exercise-32",
+  "url": "sec-hom-tensor.html#exercise-35",
   "type": "Exercise",
   "number": "3.78",
   "title": "",
@@ -2017,9 +2044,9 @@ var ptx_lunr_docs = [
   "body": "Direct Summand   An -module is a direct summand of an -module if there exists an -module such that . direct summand    "
 },
 {
-  "id": "remark-38",
+  "id": "remark-35",
   "level": "2",
-  "url": "sec-projective.html#remark-38",
+  "url": "sec-projective.html#remark-35",
   "type": "Remark",
   "number": "4.8",
   "title": "",
@@ -2035,9 +2062,9 @@ var ptx_lunr_docs = [
   "body": "Projective iff Direct Summand of Free Module   An -module is projective if and only if is a direct summand of a free -module. In particular, a finitely generated -module is projective if and only if is a direct summand of for some .     Let be a projective module, and fix a free module surjecting onto . If is finitely generated, we can take for some . The short exact sequence must split by , so is a direct summand of .   Now suppose is a direct summand of a free module . In particular, we have an inclusion map that splits, so it comes together with a projection map such that . Given any diagram   we can define an -module homomorphism such that , so that the following diagram commutes:   Setting , we do indeed obtain , since    "
 },
 {
-  "id": "remark-39",
+  "id": "remark-36",
   "level": "2",
-  "url": "sec-projective.html#remark-39",
+  "url": "sec-projective.html#remark-36",
   "type": "Remark",
   "number": "4.10",
   "title": "",
@@ -2143,9 +2170,9 @@ var ptx_lunr_docs = [
   "body": "Divisible Module   An -module is divisible if for every nonzero and every there exists such that .   "
 },
 {
-  "id": "remark-40",
+  "id": "remark-37",
   "level": "2",
-  "url": "sec-injective.html#remark-40",
+  "url": "sec-injective.html#remark-37",
   "type": "Remark",
   "number": "4.20",
   "title": "",
@@ -2197,9 +2224,9 @@ var ptx_lunr_docs = [
   "body": "Injective but not Divisible Module  Example 4.25. Let be a field and . On the one hand, is not a divisible -module, since there is no such that . On the other hand, is actually an injective module over itself, although we do not have the tools to justify that this is indeed an injective -module.   "
 },
 {
-  "id": "exercise-33",
+  "id": "exercise-36",
   "level": "2",
-  "url": "sec-injective.html#exercise-33",
+  "url": "sec-injective.html#exercise-36",
   "type": "Exercise",
   "number": "4.26",
   "title": "Injective Modules not Closed Under Quotients.",
@@ -2305,9 +2332,9 @@ var ptx_lunr_docs = [
   "body": "Flat Module   An -module is said to be flat if is an exact functor.   "
 },
 {
-  "id": "remark-41",
+  "id": "remark-38",
   "level": "2",
-  "url": "sec-flat.html#remark-41",
+  "url": "sec-flat.html#remark-38",
   "type": "Remark",
   "number": "4.36",
   "title": "",
@@ -2503,9 +2530,9 @@ var ptx_lunr_docs = [
   "body": "  Definition A.5. A ring homomorphism is a function satisfying the following:     for all .     for all .     .     "
 },
 {
-  "id": "exercise-34",
+  "id": "exercise-37",
   "level": "2",
-  "url": "sec-rings.html#exercise-34",
+  "url": "sec-rings.html#exercise-37",
   "type": "Exercise",
   "number": "A.6",
   "title": "",
@@ -2530,9 +2557,9 @@ var ptx_lunr_docs = [
   "body": "  Definition A.7. Let be a ring. A subset of is an ideal if:     is nonempty.     is a subgroup of .    For every and every , we have and .     "
 },
 {
-  "id": "remark-42",
+  "id": "remark-39",
   "level": "2",
-  "url": "sec-rings.html#remark-42",
+  "url": "sec-rings.html#remark-39",
   "type": "Remark",
   "number": "A.9",
   "title": "",
@@ -2557,9 +2584,9 @@ var ptx_lunr_docs = [
   "body": "  Definition A.9. Let be a ring with . A left -module is an abelian group together with an action of on , written as , such that for all and we have the following:     ,     ,     , and     .    A right -module is an abelian group together with an action of on , written as , such that for all and we have     ,     ,     , and     .     "
 },
 {
-  "id": "remark-43",
+  "id": "remark-40",
   "level": "2",
-  "url": "sec-modules.html#remark-43",
+  "url": "sec-modules.html#remark-40",
   "type": "Remark",
   "number": "A.11",
   "title": "",
@@ -2620,27 +2647,27 @@ var ptx_lunr_docs = [
   "body": "  A subset of an -module is a generating set, or a set of generators, if every element in can be written as a finite linear combination of elements in with coefficients in . A basis for an -module is a generating set for such that implies for all . An -module is free if it has a basis.   "
 },
 {
-  "id": "remark-44",
+  "id": "remark-41",
   "level": "2",
-  "url": "sec-modules.html#remark-44",
+  "url": "sec-modules.html#remark-41",
   "type": "Remark",
   "number": "A.18",
   "title": "",
   "body": " Remark A.17. Every vector space is a free module.  "
 },
 {
-  "id": "remark-45",
+  "id": "remark-42",
   "level": "2",
-  "url": "sec-modules.html#remark-45",
+  "url": "sec-modules.html#remark-42",
   "type": "Remark",
   "number": "A.19",
   "title": "",
   "body": " Remark A.18. Every free -module is isomorphic to a direct sum of copies of . Indeed, let’s construct such an isomorphism for a given free -module . Given a basis for , let   The condition that is a basis for can be restated into the statement that is an isomorphism of -modules.  "
 },
 {
-  "id": "remark-46",
+  "id": "remark-43",
   "level": "2",
-  "url": "sec-modules.html#remark-46",
+  "url": "sec-modules.html#remark-43",
   "type": "Remark",
   "number": "A.20",
   "title": "",

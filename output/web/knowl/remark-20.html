@@ -12,29 +12,20 @@
 </head>
 <body class="ignore-math">
 <article class="remark remark-like"><h3 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.35</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.43</span><span class="period">.</span>
 </h3>
-<div class="para logical">
-<div class="para">Remark 2.25. The Splitting Lemma does not hold if we replace <span class="process-math">\(R\)</span>-modules with the category Grp of groups. For example, consider the symmetric group on 3 elements <span class="process-math">\(S_{3}\)</span> and the inclusion <span class="process-math">\(A_{3} \hookrightarrow S_{3}\)</span> of the alternating group in <span class="process-math">\(S_{3}\text{.}\)</span> Notice that <span class="process-math">\(A_{3}\)</span> is precisely the kernel of the sign map</div>
-<div class="displaymath process-math">
+<div class="para">Remark 2.32. Let</div> <div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
-\operatorname{sign}: S_{3} \longrightarrow \mathbb{Z} / 2
+0 \longrightarrow A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div></div> <div class="para logical">
+<div class="para">be a short exact sequence in <span class="process-math">\(\operatorname{Ch}(R)\text{.}\)</span> We can think of <a href="" class="xref" data-knowl="./knowl/thm-2.31.html" title="Theorem 2.42: Naturality of the long exact sequence in homology">Theorem 2.42</a> as saying that the induced maps on homology <span class="process-math">\(i_{*}: \mathrm{H}_{n}(A) \longrightarrow \mathrm{H}_{n}(B)\)</span> and <span class="process-math">\(p_{*}: \mathrm{H}_{n}(B) \longrightarrow \mathrm{H}_{n}(C)\)</span> and the connecting homomorphism <span class="process-math">\(\partial: \mathrm{H}_{n}(C) \longrightarrow \mathrm{H}_{n-1}(A)\)</span> are all natural transformations. More precisely, consider the category SES of short exact sequences of <span class="process-math">\(R\)</span>-modules, which is a full subcategory of <span class="process-math">\(\mathrm{Ch}(R)\text{.}\)</span> Homology gives us functors SES <span class="process-math">\(\longrightarrow R\)</span>-Mod that given a short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-2.31.html ./knowl/thm-2.31.html">
+\begin{equation*}
+0 \longrightarrow A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0
 \end{equation*}
 </div>
-<div class="para">which sends even permutations to 0 and odd permutations to 1 . Therefore,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-0 \longrightarrow A_{3} \longrightarrow S_{3} \longrightarrow \mathbb{Z} / 2 \longrightarrow 0
-\end{equation*}
-</div>
-<div class="para">is a short exact sequence. When writing exact sequences of nonabelian groups such as this one, one sometimes uses <span class="process-math">\(\{e\}\)</span> for instead of 0, to indicate that trivial group. So our short exact sequence is</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\{e\} \longrightarrow A_{3} \longrightarrow S_{3} \longrightarrow \mathbb{Z} / 2 \longrightarrow\{e\}
-\end{equation*}
-</div>
-</div> <div class="para">Moreover, this exact sequence is not split, since <span class="process-math">\(S_{3}\)</span> is not abelian but <span class="process-math">\(A_{3} \oplus \mathbb{Z} / 2\)</span> is, and thus <span class="process-math">\(S_{3} \neq A_{3} \oplus \mathbb{Z} / 2\text{.}\)</span> However, any group homomorphism <span class="process-math">\(u: \mathbb{Z} / 2 \rightarrow S_{3}\)</span> defined by sending the generator to any two cycle is a splitting for our short exact sequence, meaning signo <span class="process-math">\(u=\mathrm{id}_{\mathbb{Z} / 2}\text{.}\)</span>
-</div> <div class="para">Funny enough, there is no splitting for the inclusion <span class="process-math">\(A_{3} \subseteq S_{3}\text{,}\)</span> since there are no nontrivial homomorphisms <span class="process-math">\(S_{3} \rightarrow A_{3}: A_{3}\)</span> has no elements of order 2, so a group homomorphism <span class="process-math">\(S_{3} \rightarrow A_{3}\)</span> must send every 2-cycle in <span class="process-math">\(S_{3}\)</span> must be sent to the identity, but 2-cycles generate <span class="process-math">\(S_{3}\text{.}\)</span>
-</div></article><span class="incontext"><a href="sec-ses.html#remark-20" class="internal">in-context</a></span>
+<div class="para">return the <span class="process-math">\(R\)</span>-modules <span class="process-math">\(\mathrm{H}_{n}(A), \mathrm{H}_{n}(B)\text{,}\)</span> or <span class="process-math">\(\mathrm{H}_{n}(C)\)</span> ). A map between two short exact sequences then induces <span class="process-math">\(R\)</span>-module homomorphisms between the corresponding homologies. With this framework, <a href="" class="xref" data-knowl="./knowl/thm-2.31.html" title="Theorem 2.42: Naturality of the long exact sequence in homology">Theorem 2.42</a> says that <span class="process-math">\(i_{*}: \mathrm{H}_{n}(A) \longrightarrow \mathrm{H}_{n}(B)\text{,}\)</span> and <span class="process-math">\(p_{*}: \mathrm{H}_{n}(B) \longrightarrow \mathrm{H}_{n}(C)\)</span> and the connecting homomorphism <span class="process-math">\(\partial: \mathrm{H}_{n}(C) \longrightarrow \mathrm{H}_{n-1}(A)\)</span> are all natural transformations between the corresponding homology functors.</div>
+</div></article><span class="incontext"><a href="sec-les.html#remark-20" class="internal">in-context</a></span>
 </body>
 </html>

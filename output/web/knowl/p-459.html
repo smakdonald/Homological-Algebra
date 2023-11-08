@@ -13,19 +13,19 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Left exact covariant functors take kernels to kernels, while right exact covariant functors take cokernels to cokernels: the kernel of <span class="process-math">\(f\)</span> fits in an exact sequence</div>
+<div class="para">Similarly, the cokernel of <span class="process-math">\(f\)</span> fits into an exact sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
-0 \longrightarrow \operatorname{ker} f \longrightarrow A \stackrel{f}{\longrightarrow} B
+A \stackrel{f}{\longrightarrow} B \longrightarrow \operatorname{coker} f \longrightarrow 0
 \end{equation*}
 </div>
-<div class="para">and applying a left exact functor <span class="process-math">\(F\)</span> gives us an exact sequence</div>
+<div class="para">which any right exact functor <span class="process-math">\(G\)</span> will take to an exact sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
-0 \longrightarrow F(\operatorname{ker} f) \longrightarrow F(A) \stackrel{F(f)}{\longrightarrow} F(B)
+G(A) \stackrel{G(f)}{\longrightarrow} G(B) \longrightarrow G(\operatorname{coker} f) \longrightarrow 0
 \end{equation*}
 </div>
-<div class="para">Exactness tells us that <span class="process-math">\(F(\operatorname{ker} f)\)</span> is the kernel of <span class="process-math">\(F(f)\text{.}\)</span>
+<div class="para">Exactness says that <span class="process-math">\(G(\operatorname{coker} f)\)</span> is the cokernel of <span class="process-math">\(G(f)\text{.}\)</span>
 </div>
 </div>
 <span class="incontext"><a href="sec-hom.html#p-459" class="internal">in-context</a></span>
