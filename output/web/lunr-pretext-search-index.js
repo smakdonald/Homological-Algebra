@@ -2473,7 +2473,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "5",
   "title": "Resolutions",
-  "body": "Resolutions    "
+  "body": "Resolutions  R = QQ[x,y,z] M = R^1\/(x*y, x*z, y*z) F = res M   Make sure the langauge is set to Macaulay2!!!  "
 },
 {
   "id": "sec-rings",

@@ -630,7 +630,7 @@
               Let <m>\mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z}</m> be the canonical projection map. 
               Then
             </p>
-            <image source="2023_08_28_614593e69373955f3addg-07.jpg"/>
+            <image source="2023_08_28_614593e69373955f3addg-07.jpg" width="50%"/>
             <p>
               is a complex of abelian groups, since the image of multiplication by <m>4</m> is <m>4 \mathbb{Z}</m>, and that is certainly contained in <m>\operatorname{ker} \pi=2 \mathbb{Z}</m>. 
               The homology of <m>C</m> is
@@ -774,11 +774,13 @@
               </p>
             </convention>
 
-            <exploration xml:id="exp-unique-id-morphism"><title>Unique Identity Morphism</title>
-              <p>
-                Prove that every element in a category has a unique identity morphism.
-              </p>
-            </exploration>
+            <exercise xml:id="exp-unique-id-morphism"><title>Unique Identity Morphism</title>
+              <statement>
+                <p>
+                  Every object in a category has a unique identity morphism.
+                </p>
+              </statement>
+            </exercise>
 
             <p>
               Here are some categories you have likely encountered before:
@@ -816,7 +818,7 @@
             
                   <li>
                     <p>
-                      The category <m>R</m><m>\mod</m> of modules over a fixed <m>\operatorname{ring} R</m> and with <m>R</m>-module homomorphisms. 
+                      The category <m>R</m><m>\mod</m> of modules over a fixed ring <m>R</m> and with <m>R</m>-module homomorphisms. 
                       Sometimes one writes <m>R</m><m>\Mod</m> for this category, and reserve <m>R</m><m>\mod</m> for the category of finitely generated <m>R</m>-modules with <m>R</m><m>\Mod</m>ule homomorphisms. 
                       When <m>R=k</m> is a field, the objects in the category <m>k</m>-Mod are <m>k</m>-vector spaces, and the arrows are linear transformations; 
                       we may instead refer to this category as Vect-<m>k</m>.
@@ -831,53 +833,6 @@
                     </p>
                   </li>
                 </ol>
-              </p>
-            </example>
-
-            <example xml:id="ex-more-categories"><title>More Categories!</title>
-              <p>
-                Let <m>k</m> be a field.
-                <ol>
-                  <li>
-                    <p>
-                      The collection of finite dimensional <m>k</m>-vector spaces with all linear transformations is a category.
-                    </p>
-                  </li>
-            
-                  <li>
-                    <p>
-                      The collection of all <m>n</m>-dimensional <m>k</m>-vector spaces with all linear transformations is a category.
-                    </p>
-                  </li>
-            
-                  <li>
-                    <p>
-                      The collection of all <m>k</m>-vector spaces (or <m>n</m>-dimensional vector spaces) with linear isomorphisms is a category.
-                    </p>
-                  </li>
-            
-                  <li>
-                    <p>
-                      The collection of all <m>k</m>-vector spaces (or <m>n</m>-dimensional vector spaces) with nonzero linear transformations is not a category, since it is not closed under composition.
-                    </p>
-                  </li>
-            
-                  <li>
-                    <p>
-                      The collection of all <m>n</m>-dimensional vector spaces with linear transformations of determinant 0 is not a category, since it does not have identity maps.
-                    </p>
-                  </li>
-                </ol>
-              </p>
-            </example>
-
-            <p>
-              Here is an important variation of Set:
-            </p>
-
-            <example xml:id="ex-pointed-set"><title>Pointed Set Category</title>
-              <p>
-                There is a category Set* of pointed sets, where the objects are pairs <m>(X, x)</m> of sets <m>X</m> and points <m>x \in X</m>, and where for two pointed sets <m>(X, x)</m> and <m>(Y, y)</m>, the morphisms from <m>(X, x)</m> to <m>(Y, y)</m> are functions <m>f: X \rightarrow Y</m> such that <m>f(x)=y</m>, with the usual composition of functions.
               </p>
             </example>
 
@@ -898,52 +853,69 @@
               In fact, one can define a small category as one where the collection of all arrows is a set. 
               It follows immediately that the collection of all objects is also a set, since it must be a subset of the set of arrows - for each object, there is an identity arrow.
             </p>
-        
+
             <p>
               Many important categories are at least locally small. 
-              For example, Set is locally small but not small. 
-              In a locally small category, we can now refer to its Hom-sets.
             </p>
-        
+
+            <example>
+              <p>
+                <m>\Set</m> is locally small but not small. 
+              </p>
+            </example>
+
+            <definition xml:id="def-concrete">
+              <statement>
+                <p>
+                  Categories where the objects are sets with some extra structure and the arrows are some kind of functions between the objects are called concrete.
+                </p>
+              </statement>
+            </definition>
+
             <p>
-              Categories where the objects are sets with some extra structure and the arrows are some kind of functions between the objects are called concrete. 
-              Not all categories are concrete.
+              All of the categories we have seen thus far have been conctrete, but this is not the case in general.
             </p>
 
-            <example xml:id="ex-poset-category"><title>Poset Category</title>
+            <example xml:id="non-concrete-categories"><title>Non-Concrete Categories</title>
               <p>
-                Given a partially ordered set <m>(X, \leqslant)</m>, we can regard <m>X</m> itself as a category: 
-                the objects are the elements of <m>X</m>, and for each <m>x</m> and <m>y</m> in <m>X, \operatorname{Hom}_{X}(x, y)</m> is either a singleton if <m>x \leqslant y</m> or empty if <m>x \neq y</m>. 
-                There is only one possible way to define composition, and the transitive property of <m>\leqslant</m> guarantees that the composition of arrows is indeed well-defined: 
-                if there is an arrow <m>i \rightarrow j</m> and an arrow <m>j \rightarrow k</m>, then <m>i \leqslant j</m> and <m>j \leqslant k</m>, so <m>i \leqslant k</m> and thus there is a unique arrow <m>i \rightarrow k</m>. 
-                This category is locally small, since all nonempty Hom-sets are in fact singletons. 
-                It is in fact small, since the objects are by construction the set <m>X</m>.
-              </p>
-            </example>
+                <ol>
+                  <li xml:id="ex-poset-category">
+                    <p>
+                      Given a partially ordered set <m>(X, \leqslant)</m>, we can regard <m>X</m> itself as a category: 
+                      the objects are the elements of <m>X</m>, and for each <m>x</m> and <m>y</m> in <m>X, \operatorname{Hom}_{X}(x, y)</m> is either a singleton if <m>x \leqslant y</m> or empty if <m>x \neq y</m>. 
+                      There is only one possible way to define composition, and the transitive property of <m>\leqslant</m> guarantees that the composition of arrows is indeed well-defined: 
+                      if there is an arrow <m>i \rightarrow j</m> and an arrow <m>j \rightarrow k</m>, then <m>i \leqslant j</m> and <m>j \leqslant k</m>, so <m>i \leqslant k</m> and thus there is a unique arrow <m>i \rightarrow k</m>. 
+                      This category is locally small, since all nonempty Hom-sets are in fact singletons. 
+                      It is in fact small, since the objects are by construction the set <m>X</m>.
+                    </p>
+                  </li>
 
-            <example xml:id="poset-categories-2"><title><m>\mathbf{n}</m> Category</title>
-              <p>
-                For each positive integer <m>n</m>, the category <m>\mathbf{n}</m> has <m>n</m> objects <m>0,1, \ldots, n-1</m> and <m>\operatorname{Hom}(i, j)</m> is either empty if <m>i&gt;j</m> or a singleton if <m>i \leqslant j</m>. 
-                As <xref ref="ex-poset-category"/>, composition is defined in the only way possible, and things work out. 
-                This is the poset category for the poset <m>(\{0,1, \ldots, n-1\}, \leqslant)</m> with the usual <m>\leqslant</m>.
-              </p>
-            </example>
+                  <li xml:id="poset-categories-2"><title><m>\mathbf{n}</m> Category</title>
+                    <p>
+                      For each positive integer <m>n</m>, the category <m>\mathbf{n}</m> has <m>n</m> objects <m>0,1, \ldots, n-1</m> and <m>\operatorname{Hom}(i, j)</m> is either empty if <m>i&gt;j</m> or a singleton if <m>i \leqslant j</m>. 
+                      As <xref ref="ex-poset-category"/>, composition is defined in the only way possible, and things work out. 
+                      This is the poset category for the poset <m>(\{0,1, \ldots, n-1\}, \leqslant)</m> with the usual <m>\leqslant</m>.
+                    </p>
+                  </li>
 
-            <example xml:id="ex-mat-category"><title>Matrix Category</title>
-              <p>
-                Fix a field <m>k</m>. 
-                We define a category Mat-<m>k</m> with objects all positive integers, and given two positive integers <m>a</m> and <m>b</m>, the <m>\operatorname{Hom}</m>-set <m>\operatorname{Hom}(a, b)</m> consists of all <m>b \times a</m> matrices with entries in <m>k</m>. 
-                The composition rule is given by product of matrices: given <m>A \in \operatorname{Hom}(a, b)</m> and <m>B \in \operatorname{Hom}(b, c)</m>, the composition <m>B \circ A</m> is the matrix <m>B A \in \operatorname{Hom}(a, c)</m>. 
-                For each object <m>a</m>, its identity arrow is given by the <m>a \times a</m> identity matrix.
-              </p>
-            </example>
+                  <li xml:id="ex-mat-category"><title>Matrix Category</title>
+                    <p>
+                      Fix a field <m>k</m>. 
+                      We define a category Mat-<m>k</m> with objects all positive integers, and given two positive integers <m>a</m> and <m>b</m>, the <m>\operatorname{Hom}</m>-set <m>\operatorname{Hom}(a, b)</m> consists of all <m>b \times a</m> matrices with entries in <m>k</m>. 
+                      The composition rule is given by product of matrices: given <m>A \in \operatorname{Hom}(a, b)</m> and <m>B \in \operatorname{Hom}(b, c)</m>, the composition <m>B \circ A</m> is the matrix <m>B A \in \operatorname{Hom}(a, c)</m>. 
+                      For each object <m>a</m>, its identity arrow is given by the <m>a \times a</m> identity matrix.
+                    </p>
+                  </li>
 
-            <example xml:id="ex-directed-graph-category"><title>Directed Graph Category</title>
-              <p>
-              Let <m>G</m> be a directed graph. 
-              We can construct a category from <m>G</m> as follows: the objects are the vertices of <m>G</m>, and the arrows are directed paths in the graph <m>G</m>. 
-              In this category, composition of arrows corresponds to concatenation of paths. 
-              For each object <m>A</m>, the identity arrow corresponds to the empty path from <m>A</m> to <m>A</m>.
+                  <li xml:id="ex-directed-graph-category">
+                    <p>
+                      Let <m>G</m> be a directed graph. 
+                      We can construct a category from <m>G</m> as follows: the objects are the vertices of <m>G</m>, and the arrows are directed paths in the graph <m>G</m>. 
+                      In this category, composition of arrows corresponds to concatenation of paths. 
+                      For each object <m>A</m>, the identity arrow corresponds to the empty path from <m>A</m> to <m>A</m>.
+                    </p>
+                  </li>
+                </ol>
               </p>
             </example>
 
@@ -954,8 +926,6 @@
                 <fn>Some authors prefer the term monoid.</fn>
               </p>
             </remark>
-        
-            
 
           </subsection>
 
@@ -980,7 +950,7 @@
               <statement>
                 <p>
                   A <em>diagram</em> in a category <m>\mathscr{C}</m> is a directed multigraph whose vertices are objects in <m>\mathrm{C}</m> and whose arrows/edges are morphisms in <m>\mathscr{C}</m>. 
-                  A commutative diagram in <m>\mathscr{C}</m> is a diagram in which for each pair of vertices <m>A</m> and <m>B</m>, any two paths from <m>A</m> to <m>B</m> compose to the same morphism.
+                  A <em>commutative diagram</em> in <m>\mathscr{C}</m> is a diagram in which for each pair of vertices <m>A</m> and <m>B</m>, any two paths from <m>A</m> to <m>B</m> compose to the same morphism.
                 </p>
               </statement>
             </definition>
@@ -991,7 +961,7 @@
               </p>
               <image source="2023_08_28_614593e69373955f3addg-11.jpg" width="30%"/>
               <p>
-                <em>commutes</em> if and only if <m>g f=v u</m>.
+                commutes if and only if <m>g f=v u</m>.
               </p>
             </example>
         
@@ -1038,6 +1008,25 @@
               </statement>
             </definition>
 
+            <example xml:id="ex-isomorphisms"><title>Isomorphisms</title>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      In <m>\Grp</m>, <m>\Ring</m>, and R<m>\Mod</m> the isomorphisms are the morphisms that are bijective functions.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      In contrast, in <m>\Top</m> the isomorphisms are the homeomorphisms, which are the bijective continuous functions with continuous inverses. 
+                      These are not the same thing as just the bijective continuous functions.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+
             <definition xml:id="def-mono-epi"><title>Monic and Epic</title>
               <statement>
                 <p>
@@ -1079,25 +1068,6 @@
                 Show that in <m>\Set</m>, the monos coincide with the injective functions and the epis coincide with the surjective functions.
               </p>
             </exploration>
-
-            <example xml:id="ex-isomorphisms"><title>Isomorphisms</title>
-              <p>
-                <ol>
-                  <li>
-                    <p>
-                      In <m>\Grp</m>, <m>\Ring</m>, and R<m>\Mod</m> the isomorphisms are the morphisms that are bijective functions.
-                    </p>
-                  </li>
-
-                  <li>
-                    <p>
-                      In contrast, in <m>\Top</m> the isomorphisms are the homeomorphisms, which are the bijective continuous functions with continuous inverses. 
-                      These are not the same thing as just the bijective continuous functions.
-                    </p>
-                  </li>
-                </ol>
-              </p>
-            </example>
 
             <exploration xml:id="exp-iso-mono-epi"><title>Isomorphisms Mono and Epi</title>
               <p>
@@ -1244,6 +1214,43 @@
             <example xml:id="ex-subcategories"><title>Subcategories</title>
               <p>
                 The category of finitely generated <m>R</m>-modules with <m>R</m>-module homomorphisms is a subcategory of <m>R</m><m>\Mod</m>.
+              </p>
+            </example>
+
+            <example xml:id="ex-more-categories"><title>Subcategories of Vector Spaces</title>
+              <p>
+                Let <m>k</m> be a field.
+                <ol>
+                  <li>
+                    <p>
+                      The collection of finite dimensional <m>k</m>-vector spaces with all linear transformations is a category.
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      The collection of all <m>n</m>-dimensional <m>k</m>-vector spaces with all linear transformations is a category.
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      The collection of all <m>k</m>-vector spaces (or <m>n</m>-dimensional vector spaces) with linear isomorphisms is a category.
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      The collection of all <m>k</m>-vector spaces (or <m>n</m>-dimensional vector spaces) with nonzero linear transformations is not a category, since it is not closed under composition.
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      The collection of all <m>n</m>-dimensional vector spaces with linear transformations of determinant 0 is not a category, since it does not have identity maps.
+                    </p>
+                  </li>
+                </ol>
               </p>
             </example>
             
@@ -1436,12 +1443,6 @@
                 Show that functors preserve isomorphisms.
               </p>
             </exploration>
-      
-            <remark>
-              <p>
-                Any functor sends isos to isos, since it preserves compositions and identities.
-              </p>
-            </remark>
 
             <p>
               Here are some examples of functors you may have encountered before.
@@ -1512,24 +1513,18 @@
               </p>
             </example>
       
-            <remark>
-              <p>
-                If we apply a covariant functor to a diagram, then we get a diagram of the same shape: 
-              </p>
-                <image source='2023_08_28_614593e69373955f3addg-16.jpg'/>
-                <p>
-                However, if we apply a contravariant functor to the same diagram, we get a similar diagram but with the arrows reversed:
-              </p> 
-              <image source='2023_08_28_614593e69373955f3addg-17.jpg'/>
-            </remark>
-
-            <definition xml:id="def-cat-cat"><title>Category of Small Categories</title>
+            <exercise>
               <statement>
                 <p>
-                  The category Cat has objects all small categories and arrows all functors between them.
+                  If we apply a covariant functor to a diagram, then we get a diagram of the same shape: 
                 </p>
+                  <image source='2023_08_28_614593e69373955f3addg-16.jpg'/>
+                  <p>
+                  However, if we apply a contravariant functor to the same diagram, we get a similar diagram but with the arrows reversed:
+                </p> 
+                <image source='2023_08_28_614593e69373955f3addg-17.jpg'/>
               </statement>
-            </definition>
+            </exercise>
 
           </subsection>
 
@@ -8029,16 +8024,15 @@
 
       <chapter xml:id="ch-resolutions"><title>Resolutions</title>
 
+        <pre>
+          R = QQ[x,y,z]
+          M = R^1/(x*y, x*z, y*z)
+          F = res M
+        </pre>
+
         <sage type="practice"/>
 
-        <sage>
-          <input>
-            R = macaulay2('QQ[x, y, z]', 'R')
-            M = macaulay2('R^1/(x*y, x*z, y*z)', 'M')
-            F = macaulay2('res M', 'F')
-            F
-          </input>
-        </sage>
+        <p>Make sure the langauge is set to Macaulay2!!!</p>
         
       </chapter>
 
