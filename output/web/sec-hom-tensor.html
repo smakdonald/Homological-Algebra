@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Hom-Tensor Adjunction</title>
@@ -14,185 +14,99 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Homological Algebra">
 <meta property="book:author" content="Sam Macdonald">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
-                var display = !!node.type.match(/; *mode=display/);
-                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                var text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = {node: text, delim: '', n: 0};
-                math.end = {node: text, delim: '', n: 0};
-                doc.math.push(math);
-            });
-        }, '']
-    },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
 <p class="byline">Sam Macdonald</p>
 </div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
-</h2>
-<div id="searchempty"><span>No results.</span></div>
-<ol id="searchresults"></ol>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
 </div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-localization.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-rmod.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="ch-proj-inj.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-localization.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-rmod.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-proj-inj.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
 \newcommand{\Ass}{\operatorname{Ass}}
 \def\Aut{\operatorname{Aut}}
 \def\can{{\mathrm {can}}}
@@ -472,186 +386,254 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth3 parts"><ul class="structural">
-<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li>
-<div class="toc-item"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
-<li>
-<div class="toc-item"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
-<li><div class="toc-item"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
-<li><div class="toc-item"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite and Subcategories</span></a></div></li>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed 'er!</span></a></div></li>
-<li><div class="toc-item"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
-<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div></li>
-<li><div class="toc-item"><a href="sec-ses.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Short Exact Sequences</span></a></div></li>
-<li><div class="toc-item"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There's No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
-<li class="active"><div class="toc-item"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
-<li><div class="toc-item"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer's Criterion</span></a></div></li>
-<li><div class="toc-item"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
-<li><div class="toc-item"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="appendix-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Rigns and Modules</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
-<li><div class="toc-item"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Rings and Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-hom-tensor"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.4</span><span class="space"> </span><span class="title">Hom-Tensor Adjunction</span>
 </h2>
-<div class="para" id="p-835">The Hom and tensor functors are closely related. First, we note that <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> can be a module over a ring <span class="process-math">\(S\)</span> when <span class="process-math">\(A\)</span> or <span class="process-math">\(B\)</span> have a bimodule structure.</div>
-<article class="exercise exercise-like" id="exercise-35"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-35"><h3 class="heading">
+<div class="para" id="sec-hom-tensor-2">The Hom and tensor functors are closely related. First, we note that <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> can be a module over a ring <span class="process-math">\(S\)</span> when <span class="process-math">\(A\)</span> or <span class="process-math">\(B\)</span> have a bimodule structure.</div>
+<article class="exercise exercise-like" id="sec-hom-tensor-3"><h3 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.78</span><span class="period">.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-35"><article class="exercise exercise-like"><div class="para logical" id="p-836">
+</h3>
+<div class="para logical" id="sec-hom-tensor-3-1">
 <div class="para">Exercise 56. Let <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> be rings.</div>
 <ul class="disc">
-<li id="li-97"><div class="para" id="p-837">If <span class="process-math">\(A\)</span> is an <span class="process-math">\((R, S)\)</span>-bimodule and <span class="process-math">\(B\)</span> is a left <span class="process-math">\(R\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> has a left <span class="process-math">\(S\)</span>-module structure via <span class="process-math">\((s \cdot f)(a)=f(a s)\text{.}\)</span>
+<li id="sec-hom-tensor-3-1-3-1"><div class="para" id="sec-hom-tensor-3-1-3-1-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\((R, S)\)</span>-bimodule and <span class="process-math">\(B\)</span> is a left <span class="process-math">\(R\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> has a left <span class="process-math">\(S\)</span>-module structure via <span class="process-math">\((s \cdot f)(a)=f(a s)\text{.}\)</span>
 </div></li>
-<li id="li-98"><div class="para" id="p-838">If <span class="process-math">\(A\)</span> is an <span class="process-math">\((R, S)\)</span>-bimodule and <span class="process-math">\(B\)</span> is a right <span class="process-math">\(S\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> has a right <span class="process-math">\(R\)</span>-module structure via <span class="process-math">\((f \cdot r)(a)=f(r a)\text{.}\)</span>
+<li id="sec-hom-tensor-3-1-3-2"><div class="para" id="sec-hom-tensor-3-1-3-2-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\((R, S)\)</span>-bimodule and <span class="process-math">\(B\)</span> is a right <span class="process-math">\(S\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> has a right <span class="process-math">\(R\)</span>-module structure via <span class="process-math">\((f \cdot r)(a)=f(r a)\text{.}\)</span>
 </div></li>
-<li id="li-99"><div class="para" id="p-839">If <span class="process-math">\(B\)</span> is an <span class="process-math">\((S, R)\)</span>-bimodule and <span class="process-math">\(A\)</span> is a right <span class="process-math">\(R\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> has a left <span class="process-math">\(S\)</span>-module structure via <span class="process-math">\((s \cdot f)(a)=s f(a)\text{.}\)</span>
+<li id="sec-hom-tensor-3-1-3-3"><div class="para" id="sec-hom-tensor-3-1-3-3-1">If <span class="process-math">\(B\)</span> is an <span class="process-math">\((S, R)\)</span>-bimodule and <span class="process-math">\(A\)</span> is a right <span class="process-math">\(R\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> has a left <span class="process-math">\(S\)</span>-module structure via <span class="process-math">\((s \cdot f)(a)=s f(a)\text{.}\)</span>
 </div></li>
-<li id="li-100"><div class="para" id="p-840">If <span class="process-math">\(B\)</span> is an <span class="process-math">\((S, R)\)</span>-bimodule and <span class="process-math">\(A\)</span> is a left <span class="process-math">\(S\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> has a right <span class="process-math">\(R\)</span>-module structure via <span class="process-math">\((f \cdot r)(a)=f(a) r\text{.}\)</span>
+<li id="sec-hom-tensor-3-1-3-4"><div class="para" id="sec-hom-tensor-3-1-3-4-1">If <span class="process-math">\(B\)</span> is an <span class="process-math">\((S, R)\)</span>-bimodule and <span class="process-math">\(A\)</span> is a left <span class="process-math">\(S\)</span>-module, then <span class="process-math">\(\operatorname{Hom}_{R}(A, B)\)</span> has a right <span class="process-math">\(R\)</span>-module structure via <span class="process-math">\((f \cdot r)(a)=f(a) r\text{.}\)</span>
 </div></li>
 </ul>
-</div></article></div>
-<div class="para" id="p-841">These structures can be a bit confusing at first - especially since we have left module structures written on the right and vice-versa. While the exercise is not difficult, it can be extremely enlightening - we strongly recommend the reader tries their hand at the details.</div>
-<div class="para" id="p-842">The following statements are known as Hom-tensor adjunction - and as we will see, they do encode an adjunction of functors.</div>
+</div></article><div class="para" id="sec-hom-tensor-4">These structures can be a bit confusing at first - especially since we have left module structures written on the right and vice-versa. While the exercise is not difficult, it can be extremely enlightening - we strongly recommend the reader tries their hand at the details.</div>
+<div class="para" id="sec-hom-tensor-5">The following statements are known as Hom-tensor adjunction - and as we will see, they do encode an adjunction of functors.</div>
 <article class="theorem theorem-like" id="thm-3.58"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.79</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-843">Let <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> be rings. Assume that</div> <div class="para logical" id="p-844"><ul class="disc">
-<li id="li-101"><div class="para" id="p-845">
+<div class="para" id="thm-3.58-1-1">Let <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> be rings. Assume that</div> <div class="para logical" id="thm-3.58-1-2"><ul class="disc">
+<li id="thm-3.58-1-2-1-1"><div class="para" id="thm-3.58-1-2-1-1-1">
 <span class="process-math">\(A\)</span> is a right <span class="process-math">\(R\)</span>-module,</div></li>
-<li id="li-102"><div class="para" id="p-846">
+<li id="thm-3.58-1-2-1-2"><div class="para" id="thm-3.58-1-2-1-2-1">
 <span class="process-math">\(B\)</span> is an <span class="process-math">\((R, S)\)</span>-bimodule, and</div></li>
-<li id="li-103"><div class="para" id="p-847">
+<li id="thm-3.58-1-2-1-3"><div class="para" id="thm-3.58-1-2-1-3-1">
 <span class="process-math">\(C\)</span> is a right <span class="process-math">\(S\)</span>-module.</div></li>
-</ul></div> <div class="para" id="p-848">There is a natural isomorphism of abelian groups</div> <div class="para logical" id="p-849"><div class="displaymath process-math">
+</ul></div> <div class="para" id="thm-3.58-1-3">There is a natural isomorphism of abelian groups</div> <div class="para logical" id="thm-3.58-1-4"><div class="displaymath process-math">
 \begin{equation*}
 \operatorname{Hom}_{S}\left(A \otimes_{R} B, C\right) \cong \operatorname{Hom}_{R}\left(A, \operatorname{Hom}_{S}(B, C)\right)
 \end{equation*}
-</div></div> <div class="para" id="p-850">If <span class="process-math">\(A\)</span> also has a <span class="process-math">\((T, R)\)</span>-bimodule structure, or <span class="process-math">\(C\)</span> has a <span class="process-math">\((T, S)\)</span>-bimodule structure, then this is an isomorphism of (left or right, respectively) <span class="process-math">\(T\)</span>-modules.</div></article><article class="theorem theorem-like" id="thm-3.59"><h3 class="heading">
+</div></div> <div class="para" id="thm-3.58-1-5">If <span class="process-math">\(A\)</span> also has a <span class="process-math">\((T, R)\)</span>-bimodule structure, or <span class="process-math">\(C\)</span> has a <span class="process-math">\((T, S)\)</span>-bimodule structure, then this is an isomorphism of (left or right, respectively) <span class="process-math">\(T\)</span>-modules.</div></article><article class="theorem theorem-like" id="thm-3.59"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.80</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-851">Theorem 3.59. Let <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> be rings. Assume that</div> <div class="para logical" id="p-852"><ul class="disc">
-<li id="li-104"><div class="para" id="p-853">
+<div class="para" id="thm-3.59-1-1">Theorem 3.59. Let <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> be rings. Assume that</div> <div class="para logical" id="thm-3.59-1-2"><ul class="disc">
+<li id="thm-3.59-1-2-1-1"><div class="para" id="thm-3.59-1-2-1-1-1">
 <span class="process-math">\(A\)</span> is a left <span class="process-math">\(R\)</span>-module,</div></li>
-<li id="li-105"><div class="para" id="p-854">
+<li id="thm-3.59-1-2-1-2"><div class="para" id="thm-3.59-1-2-1-2-1">
 <span class="process-math">\(B\)</span> is an <span class="process-math">\((S, R)\)</span>-bimodule, and</div></li>
-<li id="li-106"><div class="para" id="p-855">
+<li id="thm-3.59-1-2-1-3"><div class="para" id="thm-3.59-1-2-1-3-1">
 <span class="process-math">\(C\)</span> is a left <span class="process-math">\(S\)</span>-module.</div></li>
-</ul></div> <div class="para" id="p-856">There is a natural isomorphism of abelian groups</div> <div class="para logical" id="p-857"><div class="displaymath process-math">
+</ul></div> <div class="para" id="thm-3.59-1-3">There is a natural isomorphism of abelian groups</div> <div class="para logical" id="thm-3.59-1-4"><div class="displaymath process-math">
 \begin{equation*}
 \operatorname{Hom}_{S}\left(B \otimes_{R} A, C\right) \cong \operatorname{Hom}_{R}\left(A, \operatorname{Hom}_{S}(B, C)\right)
 \end{equation*}
-</div></div></article><div class="para" id="p-858">We leave the details to the reader, and prove the case when the underlying rings are commutative. First, let's do the case when <span class="process-math">\(R=S\text{.}\)</span>
+</div></div></article><div class="para" id="sec-hom-tensor-8">We leave the details to the reader, and prove the case when the underlying rings are commutative. First, let’s do the case when <span class="process-math">\(R=S\text{.}\)</span>
 </div>
 <article class="theorem theorem-like" id="thm-3.60"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.81</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-859">Theorem 3.60 (Hom-tensor adjunction I). Let <span class="process-math">\(R\)</span> be a commutative ring and let <span class="process-math">\(M, N\text{,}\)</span> and <span class="process-math">\(P\)</span> be <span class="process-math">\(R\)</span>-modules. There is an isomorphism of <span class="process-math">\(R\)</span>-modules</div> <div class="para logical" id="p-860"><div class="displaymath process-math">
+<div class="para" id="thm-3.60-1-1">Theorem 3.60 (Hom-tensor adjunction I). Let <span class="process-math">\(R\)</span> be a commutative ring and let <span class="process-math">\(M, N\text{,}\)</span> and <span class="process-math">\(P\)</span> be <span class="process-math">\(R\)</span>-modules. There is an isomorphism of <span class="process-math">\(R\)</span>-modules</div> <div class="para logical" id="thm-3.60-1-2"><div class="displaymath process-math">
 \begin{equation*}
 \operatorname{Hom}_{R}\left(M \otimes_{R} N, P\right) \cong \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{R}(N, P)\right)
 \end{equation*}
-</div></div> <div class="para" id="p-861">that is natural on <span class="process-math">\(M, N\text{,}\)</span> and <span class="process-math">\(P\text{.}\)</span>
-</div></article><article class="hiddenproof" id="proof-25"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-25"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-25"><article class="hiddenproof"><div class="para" id="p-862">Proof. The universal property of the tensor product says that to give an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(M \otimes_{R} N \longrightarrow P\)</span> is the same as giving an <span class="process-math">\(R\)</span>-bilinear map <span class="process-math">\(M \times N \longrightarrow P\text{.}\)</span> Given such a bilinear map <span class="process-math">\(f\text{,}\)</span> the map <span class="process-math">\(n \mapsto f(m \otimes n)\)</span> is <span class="process-math">\(R\)</span>-linear for each <span class="process-math">\(m \in M\text{,}\)</span> so it defines an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(N \longrightarrow P\text{.}\)</span> Now the assignment</div> <div class="para logical" id="p-863"><div class="displaymath process-math">
+</div></div> <div class="para" id="thm-3.60-1-3">that is natural on <span class="process-math">\(M, N\text{,}\)</span> and <span class="process-math">\(P\text{.}\)</span>
+</div></article><details id="thm-3.60-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-3.60-2-1">Proof. The universal property of the tensor product says that to give an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(M \otimes_{R} N \longrightarrow P\)</span> is the same as giving an <span class="process-math">\(R\)</span>-bilinear map <span class="process-math">\(M \times N \longrightarrow P\text{.}\)</span> Given such a bilinear map <span class="process-math">\(f\text{,}\)</span> the map <span class="process-math">\(n \mapsto f(m \otimes n)\)</span> is <span class="process-math">\(R\)</span>-linear for each <span class="process-math">\(m \in M\text{,}\)</span> so it defines an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(N \longrightarrow P\text{.}\)</span> Now the assignment</div> <div class="para logical" id="thm-3.60-2-2"><div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp; M \longrightarrow \operatorname{Hom}_{S}(N, P) \\
 &amp; m \longrightarrow(n \mapsto f(m \otimes n))
 \end{aligned}
 \end{equation*}
-</div></div> <div class="para" id="p-864">is <span class="process-math">\(R\)</span>-linear, <span class="process-math">\(f\)</span> is an <span class="process-math">\(R\)</span>-module homomorphism, and <span class="process-math">\(m \mapsto m \otimes n\)</span> is <span class="process-math">\(R\)</span>-linear on <span class="process-math">\(m\text{.}\)</span>
-</div> <div class="para" id="p-865">Conversely, given an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f \in \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{R}(N, P)\right)\text{,}\)</span> one can check (exercise!) that <span class="process-math">\((m, n) \mapsto f(m)(n)\)</span> is an <span class="process-math">\(R\)</span>-bilinear map, so it induces an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(M \otimes_{R} N \longrightarrow P\text{.}\)</span> Moreover, the two constructions are inverse to each other.</div> <div class="para" id="p-866">So we have constructed a bijection of Hom-sets</div> <div class="para logical" id="p-867"><div class="displaymath process-math">
+</div></div> <div class="para" id="thm-3.60-2-3">is <span class="process-math">\(R\)</span>-linear, <span class="process-math">\(f\)</span> is an <span class="process-math">\(R\)</span>-module homomorphism, and <span class="process-math">\(m \mapsto m \otimes n\)</span> is <span class="process-math">\(R\)</span>-linear on <span class="process-math">\(m\text{.}\)</span>
+</div> <div class="para" id="thm-3.60-2-4">Conversely, given an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f \in \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{R}(N, P)\right)\text{,}\)</span> one can check (exercise!) that <span class="process-math">\((m, n) \mapsto f(m)(n)\)</span> is an <span class="process-math">\(R\)</span>-bilinear map, so it induces an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(M \otimes_{R} N \longrightarrow P\text{.}\)</span> Moreover, the two constructions are inverse to each other.</div> <div class="para" id="thm-3.60-2-5">So we have constructed a bijection of Hom-sets</div> <div class="para logical" id="thm-3.60-2-6"><div class="displaymath process-math">
 \begin{equation*}
 \begin{gathered}
 \operatorname{Hom}_{R}\left(M \otimes_{R} N, P\right) \stackrel{\tau}{\longrightarrow} \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{R}(N, P)\right) . \\
@@ -659,39 +641,37 @@ f \longmapsto(m \mapsto(n \mapsto f(m \otimes n))) \\
 (m \otimes n \mapsto g(m)(n)) \longleftrightarrow g
 \end{gathered}
 \end{equation*}
-</div></div> <div class="para" id="p-868">It's routine to check that both of these bijections are indeed homomorphisms of <span class="process-math">\(R\)</span>-modules, so we leave it as an exercise.</div> <div class="para" id="p-869">Finally, naturality means we have the following commutative diagrams:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-106(1).jpg" class="contained"></div> <div class="para" id="p-870">and</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-106.jpg" class="contained"></div> <div class="para" id="p-871">We leave checking these do indeed commute as an exercise.</div></article></div>
-<article class="corollary theorem-like" id="cor-3.61"><h3 class="heading">
+</div></div> <div class="para" id="thm-3.60-2-7">It’s routine to check that both of these bijections are indeed homomorphisms of <span class="process-math">\(R\)</span>-modules, so we leave it as an exercise.</div> <div class="para" id="thm-3.60-2-8">Finally, naturality means we have the following commutative diagrams:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-106(1).jpg" class="contained"></div> <div class="para" id="thm-3.60-2-10">and</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-106.jpg" class="contained"></div> <div class="para" id="thm-3.60-2-12">We leave checking these do indeed commute as an exercise.</div></article></details><article class="corollary theorem-like" id="cor-3.61"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.82</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-872">Corollary 3.61 (Tensor and Hom are adjoint functors). Let <span class="process-math">\(R\)</span> be a commutative ring, and <span class="process-math">\(M\)</span> an <span class="process-math">\(R\)</span>-module. The functor <span class="process-math">\(-\otimes_{R} M: R\)</span>-Mod <span class="process-math">\(\longrightarrow R\)</span>-Mod is left adjoint to the functor <span class="process-math">\(\operatorname{Hom}_{R}(M,-): R\)</span>-Mod <span class="process-math">\(\longrightarrow R\)</span>-Mod.</div></article><article class="hiddenproof" id="proof-26"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-26"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-26"><article class="hiddenproof"><div class="para" id="p-873">Proof. The adjointness translates into the fact that for all <span class="process-math">\(R\)</span>-modules <span class="process-math">\(N\)</span> and <span class="process-math">\(P\)</span> there is a bijection</div> <div class="para logical" id="p-874"><div class="displaymath process-math">
+<div class="para" id="cor-3.61-1-1">Corollary 3.61 (Tensor and Hom are adjoint functors). Let <span class="process-math">\(R\)</span> be a commutative ring, and <span class="process-math">\(M\)</span> an <span class="process-math">\(R\)</span>-module. The functor <span class="process-math">\(-\otimes_{R} M: R\)</span>-Mod <span class="process-math">\(\longrightarrow R\)</span>-Mod is left adjoint to the functor <span class="process-math">\(\operatorname{Hom}_{R}(M,-): R\)</span>-Mod <span class="process-math">\(\longrightarrow R\)</span>-Mod.</div></article><details id="cor-3.61-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-3.61-2-1">Proof. The adjointness translates into the fact that for all <span class="process-math">\(R\)</span>-modules <span class="process-math">\(N\)</span> and <span class="process-math">\(P\)</span> there is a bijection</div> <div class="para logical" id="cor-3.61-2-2"><div class="displaymath process-math">
 \begin{equation*}
 \operatorname{Hom}_{R}\left(N \otimes_{R} M, P\right) \cong \operatorname{Hom}_{R}\left(N, \operatorname{Hom}_{R}(M, P)\right)
 \end{equation*}
-</div></div> <div class="para" id="p-875">which is natural on <span class="process-math">\(N\)</span> and <span class="process-math">\(P\text{,}\)</span> which is a corollary of Theorem 3.60.</div></article></div>
-<div class="para" id="p-876">Later, when we talk about more general abelian categories, we will see that this adjunction implies that Hom is left exact and that tensor is right exact; in fact, this is a more general fact about adjoint pairs. For now, we want to discuss a more general version of this Hom-tensor adjunction.</div>
+</div></div> <div class="para" id="cor-3.61-2-3">which is natural on <span class="process-math">\(N\)</span> and <span class="process-math">\(P\text{,}\)</span> which is a corollary of Theorem 3.60.</div></article></details><div class="para" id="sec-hom-tensor-11">Later, when we talk about more general abelian categories, we will see that this adjunction implies that Hom is left exact and that tensor is right exact; in fact, this is a more general fact about adjoint pairs. For now, we want to discuss a more general version of this Hom-tensor adjunction.</div>
 <article class="theorem theorem-like" id="thm-3.62"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.83</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-877">Theorem 3.62 (Hom-tensor adjunction II). Let <span class="process-math">\(f: R \rightarrow S\)</span> be a ring homomorphism of commutative rings. Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module, and <span class="process-math">\(P\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(S\)</span>-modules. There is an isomorphism of abelian groups</div> <div class="para logical" id="p-878"><div class="displaymath process-math">
+<div class="para" id="thm-3.62-1-1">Theorem 3.62 (Hom-tensor adjunction II). Let <span class="process-math">\(f: R \rightarrow S\)</span> be a ring homomorphism of commutative rings. Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module, and <span class="process-math">\(P\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(S\)</span>-modules. There is an isomorphism of abelian groups</div> <div class="para logical" id="thm-3.62-1-2"><div class="displaymath process-math">
 \begin{equation*}
 \operatorname{Hom}_{S}\left(M \otimes_{R} N, P\right) \cong \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(N, P)\right) .
 \end{equation*}
-</div></div> <div class="para" id="p-879">Moreover, this isomorphism is natural on <span class="process-math">\(M, N\text{,}\)</span> and <span class="process-math">\(P\text{,}\)</span> so it induces natural isomorphisms</div> <div class="para logical" id="p-880"><ul class="disc">
-<li id="li-107"><div class="para" id="p-881">between <span class="process-math">\(\operatorname{Hom}_{S}\left(-\otimes_{R} N, P\right)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{S}(N, P)\right)\text{.}\)</span>
+</div></div> <div class="para" id="thm-3.62-1-3">Moreover, this isomorphism is natural on <span class="process-math">\(M, N\text{,}\)</span> and <span class="process-math">\(P\text{,}\)</span> so it induces natural isomorphisms</div> <div class="para logical" id="thm-3.62-1-4"><ul class="disc">
+<li id="thm-3.62-1-4-1-1"><div class="para" id="thm-3.62-1-4-1-1-1">between <span class="process-math">\(\operatorname{Hom}_{S}\left(-\otimes_{R} N, P\right)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{S}(N, P)\right)\text{.}\)</span>
 </div></li>
-<li id="li-108"><div class="para" id="p-882">between <span class="process-math">\(\operatorname{Hom}_{S}\left(M \otimes_{R}-, P\right)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(-, P)\right)\text{.}\)</span>
+<li id="thm-3.62-1-4-1-2"><div class="para" id="thm-3.62-1-4-1-2-1">between <span class="process-math">\(\operatorname{Hom}_{S}\left(M \otimes_{R}-, P\right)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(-, P)\right)\text{.}\)</span>
 </div></li>
-<li id="li-109"><div class="para" id="p-883">between <span class="process-math">\(\operatorname{Hom}_{S}\left(M \otimes_{R} N,-\right)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(N,-)\right)\text{.}\)</span>
+<li id="thm-3.62-1-4-1-3"><div class="para" id="thm-3.62-1-4-1-3-1">between <span class="process-math">\(\operatorname{Hom}_{S}\left(M \otimes_{R} N,-\right)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(N,-)\right)\text{.}\)</span>
 </div></li>
-</ul></div></article><article class="hiddenproof" id="proof-27"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-27"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-27"><article class="hiddenproof"><div class="para" id="p-884">Proof. Consider the map</div> <div class="para logical" id="p-885"><div class="displaymath process-math">
+</ul></div></article><details id="thm-3.62-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-3.62-2-1">Proof. Consider the map</div> <div class="para logical" id="thm-3.62-2-2"><div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{r}
 \operatorname{Hom}_{S}\left(M \otimes_{R} N, P\right) \stackrel{\tau}{\longrightarrow} \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(N, P)\right) \\
 f \longmapsto m \mapsto(n \mapsto f(m \otimes n))
 \end{array}
 \end{equation*}
-</div></div> <div class="para" id="p-886">Fix <span class="process-math">\(f\text{.}\)</span> For each <span class="process-math">\(m \in M\text{,}\)</span> let <span class="process-math">\(\tau_{m}\)</span> be the map <span class="process-math">\(N \longrightarrow P\)</span> defined by <span class="process-math">\(\tau_{m}(n):=f(m \otimes n)\text{.}\)</span> Note that <span class="process-math">\(\tau_{m}\)</span> is indeed a homomorphism of <span class="process-math">\(S\)</span>-modules, since it is the composition of two <span class="process-math">\(S\)</span>-module maps, <span class="process-math">\(f\)</span> and <span class="process-math">\(m \otimes_{R} \operatorname{id}_{N}\text{,}\)</span> where <span class="process-math">\(m\)</span> is the constant map <span class="process-math">\(M \longrightarrow M\)</span> equal to <span class="process-math">\(m\text{.}\)</span>
-</div> <div class="para" id="p-887">We should check that our proposed map <span class="process-math">\(\tau\)</span> is indeed a map of abelian groups. It is immediate from the definition that <span class="process-math">\(\tau\)</span> sends the 0-map to the 0-map. Moreover, given <span class="process-math">\(S\)</span> module homomorphisms <span class="process-math">\(f, g: M \otimes N \longrightarrow P\text{,}\)</span> and any <span class="process-math">\(n \in N\text{,}\)</span> we have</div> <div class="para logical" id="p-888"><div class="displaymath process-math">
+</div></div> <div class="para" id="thm-3.62-2-3">Fix <span class="process-math">\(f\text{.}\)</span> For each <span class="process-math">\(m \in M\text{,}\)</span> let <span class="process-math">\(\tau_{m}\)</span> be the map <span class="process-math">\(N \longrightarrow P\)</span> defined by <span class="process-math">\(\tau_{m}(n):=f(m \otimes n)\text{.}\)</span> Note that <span class="process-math">\(\tau_{m}\)</span> is indeed a homomorphism of <span class="process-math">\(S\)</span>-modules, since it is the composition of two <span class="process-math">\(S\)</span>-module maps, <span class="process-math">\(f\)</span> and <span class="process-math">\(m \otimes_{R} \operatorname{id}_{N}\text{,}\)</span> where <span class="process-math">\(m\)</span> is the constant map <span class="process-math">\(M \longrightarrow M\)</span> equal to <span class="process-math">\(m\text{.}\)</span>
+</div> <div class="para" id="thm-3.62-2-4">We should check that our proposed map <span class="process-math">\(\tau\)</span> is indeed a map of abelian groups. It is immediate from the definition that <span class="process-math">\(\tau\)</span> sends the 0-map to the 0-map. Moreover, given <span class="process-math">\(S\)</span> module homomorphisms <span class="process-math">\(f, g: M \otimes N \longrightarrow P\text{,}\)</span> and any <span class="process-math">\(n \in N\text{,}\)</span> we have</div> <div class="para logical" id="thm-3.62-2-5"><div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{rlr}
 \tau_{m}(f+g)(n) &amp; =(f+g)(m \otimes n) &amp; \text { by definition } \\
@@ -699,31 +679,29 @@ f \longmapsto m \mapsto(n \mapsto f(m \otimes n))
 &amp; =\tau_{m}(f)(n)+\tau_{m}(g)(n) &amp; \text { by definition }
 \end{array}
 \end{equation*}
-</div></div> <div class="para" id="p-889">so <span class="process-math">\(\tau_{m}(f+g)=\tau_{m}(f)+\tau_{m}(g)\)</span> for all <span class="process-math">\(m \in M\text{,}\)</span> and thus <span class="process-math">\(\tau(f+g)=\tau(f)+\tau(g)\text{.}\)</span>
-</div> <div class="para" id="p-890">Suppose that <span class="process-math">\(\tau(f)=0\text{.}\)</span> Then for every <span class="process-math">\(m \in M\)</span> and every <span class="process-math">\(n \in N\text{,}\)</span>
-</div> <div class="para logical" id="p-891"><div class="displaymath process-math">
+</div></div> <div class="para" id="thm-3.62-2-6">so <span class="process-math">\(\tau_{m}(f+g)=\tau_{m}(f)+\tau_{m}(g)\)</span> for all <span class="process-math">\(m \in M\text{,}\)</span> and thus <span class="process-math">\(\tau(f+g)=\tau(f)+\tau(g)\text{.}\)</span>
+</div> <div class="para" id="thm-3.62-2-7">Suppose that <span class="process-math">\(\tau(f)=0\text{.}\)</span> Then for every <span class="process-math">\(m \in M\)</span> and every <span class="process-math">\(n \in N\text{,}\)</span>
+</div> <div class="para logical" id="thm-3.62-2-8"><div class="displaymath process-math">
 \begin{equation*}
 0=\tau(f)(m)(n)=\tau_{m}(f)(n)=f(m \otimes n)
 \end{equation*}
-</div></div> <div class="para" id="p-892">so <span class="process-math">\(f\)</span> vanishes at every simple tensor, and we must have <span class="process-math">\(f=0\text{.}\)</span> On the other hand, if we are given <span class="process-math">\(g \in \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(N, P)\right)\text{,}\)</span> consider the map <span class="process-math">\(M \times N \longrightarrow P\)</span> defined by <span class="process-math">\(\tilde{f}(m, n)=g(m)(n)\text{.}\)</span> Since <span class="process-math">\(g\)</span> is a homomorphism of <span class="process-math">\(R\)</span>-modules, it is <span class="process-math">\(R\)</span>-linear on <span class="process-math">\(m\text{.}\)</span> Moreover, for each fixed <span class="process-math">\(m, g(m)\)</span> is a homomorphism of <span class="process-math">\(S\)</span>-modules, so in particular <span class="process-math">\(g(m)\)</span> is <span class="process-math">\(R\)</span>-linear. Together, these say that <span class="process-math">\(\tilde{f}\)</span> is an <span class="process-math">\(R\)</span>-bilinear map. Let <span class="process-math">\(f\)</span> be the homomorphism of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(M \otimes_{R} N \longrightarrow P\)</span> induced by <span class="process-math">\(\tilde{f}\text{.}\)</span> By definition, <span class="process-math">\(f(m \otimes n)=\tilde{f}(m, n)=g(m)(n)\text{,}\)</span> so <span class="process-math">\(\tau(f)=g\text{.}\)</span> We conclude that <span class="process-math">\(\tau\)</span> is a bijection.</div> <div class="para" id="p-893">We leave the statements about naturality as exercises.</div></article></div>
-<article class="corollary theorem-like" id="cor-3.63"><h3 class="heading">
+</div></div> <div class="para" id="thm-3.62-2-9">so <span class="process-math">\(f\)</span> vanishes at every simple tensor, and we must have <span class="process-math">\(f=0\text{.}\)</span> On the other hand, if we are given <span class="process-math">\(g \in \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(N, P)\right)\text{,}\)</span> consider the map <span class="process-math">\(M \times N \longrightarrow P\)</span> defined by <span class="process-math">\(\tilde{f}(m, n)=g(m)(n)\text{.}\)</span> Since <span class="process-math">\(g\)</span> is a homomorphism of <span class="process-math">\(R\)</span>-modules, it is <span class="process-math">\(R\)</span>-linear on <span class="process-math">\(m\text{.}\)</span> Moreover, for each fixed <span class="process-math">\(m, g(m)\)</span> is a homomorphism of <span class="process-math">\(S\)</span>-modules, so in particular <span class="process-math">\(g(m)\)</span> is <span class="process-math">\(R\)</span>-linear. Together, these say that <span class="process-math">\(\tilde{f}\)</span> is an <span class="process-math">\(R\)</span>-bilinear map. Let <span class="process-math">\(f\)</span> be the homomorphism of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(M \otimes_{R} N \longrightarrow P\)</span> induced by <span class="process-math">\(\tilde{f}\text{.}\)</span> By definition, <span class="process-math">\(f(m \otimes n)=\tilde{f}(m, n)=g(m)(n)\text{,}\)</span> so <span class="process-math">\(\tau(f)=g\text{.}\)</span> We conclude that <span class="process-math">\(\tau\)</span> is a bijection.</div> <div class="para" id="thm-3.62-2-10">We leave the statements about naturality as exercises.</div></article></details><article class="corollary theorem-like" id="cor-3.63"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.84</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-894">Corollary 3.63 (Adjointness of restriction and extension of scalars). Let <span class="process-math">\(f R \longrightarrow S\)</span> be <span class="process-math">\(a\)</span> ring homomorphism. The restriction of scalars functor <span class="process-math">\(f^{*}: S\)</span>-Mod <span class="process-math">\(\longrightarrow R\)</span>-Mod is the right adjoint of the extension of scalars functor <span class="process-math">\(f_{*}: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod.</div></article><article class="hiddenproof" id="proof-28"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-28"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-28"><article class="hiddenproof"><div class="para" id="p-895">Proof. We need to show that for every <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> and every <span class="process-math">\(S\)</span>-module <span class="process-math">\(N\)</span> there are bijections</div> <div class="para logical" id="p-896"><div class="displaymath process-math">
+<div class="para" id="cor-3.63-1-1">Corollary 3.63 (Adjointness of restriction and extension of scalars). Let <span class="process-math">\(f R \longrightarrow S\)</span> be <span class="process-math">\(a\)</span> ring homomorphism. The restriction of scalars functor <span class="process-math">\(f^{*}: S\)</span>-Mod <span class="process-math">\(\longrightarrow R\)</span>-Mod is the right adjoint of the extension of scalars functor <span class="process-math">\(f_{*}: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod.</div></article><details id="cor-3.63-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-3.63-2-1">Proof. We need to show that for every <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> and every <span class="process-math">\(S\)</span>-module <span class="process-math">\(N\)</span> there are bijections</div> <div class="para logical" id="cor-3.63-2-2"><div class="displaymath process-math">
 \begin{equation*}
 \operatorname{Hom}_{S}\left(f_{*}(M), N\right) \cong \operatorname{Hom}_{R}\left(M, f^{*}(N)\right)
 \end{equation*}
-</div></div> <div class="para" id="p-897">which are natural on both <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{.}\)</span> By Theorem 3.62, we have natural bijections</div> <div class="para logical" id="p-898"><div class="displaymath process-math">
+</div></div> <div class="para" id="cor-3.63-2-3">which are natural on both <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{.}\)</span> By Theorem 3.62, we have natural bijections</div> <div class="para logical" id="cor-3.63-2-4"><div class="displaymath process-math">
 \begin{equation*}
 \operatorname{Hom}_{S}\left(M \otimes_{R} S, N\right) \cong \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(S, N)\right)
 \end{equation*}
-</div></div> <div class="para" id="p-899">The module <span class="process-math">\(M \otimes_{R} S\)</span> is precisely <span class="process-math">\(f_{*}(M)\text{.}\)</span> By Exercise <span class="process-math">\(38, \operatorname{Hom}_{S}(S, N) \cong N\)</span> as an <span class="process-math">\(S\)</span>-module. An isomorphism of <span class="process-math">\(S\)</span>-modules <span class="process-math">\(\operatorname{Hom}_{S}(S, N) \longrightarrow N\)</span> is in particular an <span class="process-math">\(R\)</span>-linear map, and thus also an isomorphism of <span class="process-math">\(R\)</span>-modules. So <span class="process-math">\(\operatorname{Hom}_{S}(S, N) \cong f^{*}(N)\)</span> as <span class="process-math">\(R\)</span>-modules. Therefore, the Hom-tensor adjuntion gives us the natural bijections we were looking for.</div></article></div>
-<div class="para" id="p-900">The idea is that restriction of scalars and extension of scalars are the most efficient ways of making an <span class="process-math">\(R\)</span>-module out of an <span class="process-math">\(S\)</span>-module, and vice-versa.</div></section></div>
+</div></div> <div class="para" id="cor-3.63-2-5">The module <span class="process-math">\(M \otimes_{R} S\)</span> is precisely <span class="process-math">\(f_{*}(M)\text{.}\)</span> By Exercise <span class="process-math">\(38, \operatorname{Hom}_{S}(S, N) \cong N\)</span> as an <span class="process-math">\(S\)</span>-module. An isomorphism of <span class="process-math">\(S\)</span>-modules <span class="process-math">\(\operatorname{Hom}_{S}(S, N) \longrightarrow N\)</span> is in particular an <span class="process-math">\(R\)</span>-linear map, and thus also an isomorphism of <span class="process-math">\(R\)</span>-modules. So <span class="process-math">\(\operatorname{Hom}_{S}(S, N) \cong f^{*}(N)\)</span> as <span class="process-math">\(R\)</span>-modules. Therefore, the Hom-tensor adjuntion gives us the natural bijections we were looking for.</div></article></details><div class="para" id="sec-hom-tensor-14">The idea is that restriction of scalars and extension of scalars are the most efficient ways of making an <span class="process-math">\(R\)</span>-module out of an <span class="process-math">\(S\)</span>-module, and vice-versa.</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-localization.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch-proj-inj.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="sec-localization.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-proj-inj.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
-<div id="ptx-page-footer">
+<div id="ptx-page-footer" class="ptx-page-footer">
 <a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>

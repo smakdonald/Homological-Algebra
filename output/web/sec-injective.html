@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Injective Modules</title>
@@ -14,185 +14,99 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Homological Algebra">
 <meta property="book:author" content="Sam Macdonald">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
-                var display = !!node.type.match(/; *mode=display/);
-                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                var text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = {node: text, delim: '', n: 0};
-                math.end = {node: text, delim: '', n: 0};
-                doc.math.push(math);
-            });
-        }, '']
-    },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
 <p class="byline">Sam Macdonald</p>
 </div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
-</h2>
-<div id="searchempty"><span>No results.</span></div>
-<ol id="searchresults"></ol>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
 </div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-projective.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-proj-inj.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-flat.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-projective.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-proj-inj.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-flat.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
 \newcommand{\Ass}{\operatorname{Ass}}
 \def\Aut{\operatorname{Aut}}
 \def\can{{\mathrm {can}}}
@@ -472,133 +386,204 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth3 parts"><ul class="structural">
-<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li>
-<div class="toc-item"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
-<li>
-<div class="toc-item"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
-<li><div class="toc-item"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
-<li><div class="toc-item"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite and Subcategories</span></a></div></li>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed 'er!</span></a></div></li>
-<li><div class="toc-item"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
-<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div></li>
-<li><div class="toc-item"><a href="sec-ses.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Short Exact Sequences</span></a></div></li>
-<li><div class="toc-item"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There's No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
-<li><div class="toc-item"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
 </ul>
 </li>
-<li class="active">
-<div class="toc-item"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer's Criterion</span></a></div></li>
-<li><div class="toc-item"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
-<li><div class="toc-item"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="appendix-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Rigns and Modules</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
-<li><div class="toc-item"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Rings and Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="sec-injective"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Injective Modules</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-injective"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">Injective Modules</span>
 </h2>
-<section class="subsection" id="subsec-injective"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Definition and Baer's Criterion</span>
+<article class="objectives goal-like" id="sec-injective-2"><h3 class="heading"><span class="type">Reminders and Recollections</span></h3>
+<ul class="disc"><li id="sec-injective-2-1-1"><div class="para" id="p-derived-sec-injective-2-1-1"></div></li></ul></article><section class="subsection" id="subsec-injective"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Definition and Baer’s Criterion</span>
 </h3>
-<div class="para" id="p-956">Injective modules are dual to projectives.</div>
+<blockquote class="blockquote" id="subsec-injective-2">
+<div class="para" id="subsec-injective-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-injective-3">Injective modules are dual to projectives.</div>
 <article class="definition definition-like" id="def-4.14"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Injective Module.</span>
-</h4> <div class="para" id="p-957">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(I\)</span> is <em class="emphasis">injective</em> if given an injective <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(i: A \longrightarrow B\)</span> and an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f: A \longrightarrow I\text{,}\)</span> there exist an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(g\)</span> such that</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-114.jpg" class="contained"></div> <div class="para" id="p-958">commutes.</div></article><div class="para" id="p-959">These are precisely the modules <span class="process-math">\(I\)</span> such that <span class="process-math">\(\operatorname{Hom}_{R}(-, I)\)</span> is exact.</div>
+</h4> <div class="para" id="def-4.14-2-1">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(I\)</span> is <em class="emphasis">injective</em> if given an injective <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(i: A \longrightarrow B\)</span> and an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f: A \longrightarrow I\text{,}\)</span> there exist an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(g\)</span> such that</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-114.jpg" class="contained"></div> <div class="para" id="def-4.14-2-3">commutes.</div></article><div class="para" id="subsec-injective-5">These are precisely the modules <span class="process-math">\(I\)</span> such that <span class="process-math">\(\operatorname{Hom}_{R}(-, I)\)</span> is exact.</div>
 <article class="theorem theorem-like" id="thm-4.15"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.15</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-960">
+<div class="para logical" id="thm-4.15-1-1">
 <div class="para">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(I\)</span> is injective if and only if <span class="process-math">\(\operatorname{Hom}_{R}(-, I)\)</span> is exact, meaning that for every short exact sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -611,26 +596,25 @@ window.MathJax = {
 0 \longrightarrow \operatorname{Hom}_{R}(C, I) \stackrel{p^{*}}{\longrightarrow} \operatorname{Hom}_{R}(B, I) \stackrel{i^{*}}{\longrightarrow} \operatorname{Hom}_{R}(A, I) \longrightarrow 0
 \end{equation*}
 </div>
-</div></article><article class="hiddenproof" id="proof-35"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-35"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-35"><article class="hiddenproof"><div class="para logical" id="p-961">
-<div class="para">By <a href="" class="xref" data-knowl="./knowl/thm-3.14.html" title="Theorem 3.25: \Hom is Left Exact">Theorem 3.25</a>, <span class="process-math">\(\operatorname{Hom}_{R}(-, I)\)</span> is left exact, so for any short exact sequence</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html">
+</div></article><details id="thm-4.15-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-4.15-2-1">
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/xref/thm-3.14.html" title="Theorem 3.25: \Hom is Left Exact">Theorem 3.25</a>, <span class="process-math">\(\operatorname{Hom}_{R}(-, I)\)</span> is left exact, so for any short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-3.14.html">
 \begin{equation*}
 0 \longrightarrow A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C \longrightarrow 0
 \end{equation*}
 </div>
 <div class="para">we get an exact sequence</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-3.14.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-3.14.html">
 \begin{equation*}
 0 \longrightarrow \operatorname{Hom}_{R}(C, I) \stackrel{p^{*}}{\longrightarrow} \operatorname{Hom}_{R}(B, I) \stackrel{i^{*}}{\longrightarrow} \operatorname{Hom}_{R}(A, I)
 \end{equation*}
 </div>
-</div> <div class="para" id="p-962">So the content of the theorem is that <span class="process-math">\(I\)</span> is injective if and only if for every injective <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(i: A \longrightarrow B\text{,}\)</span> the induced map <span class="process-math">\(i^{*}\)</span> is surjective. Now notice that <span class="process-math">\(i^{*}\)</span> is surjective if and only if every <span class="process-math">\(f \in \operatorname{Hom}_{R}(A, I)\)</span> lifts to some <span class="process-math">\(g \in \operatorname{Hom}_{R}(B, I)\text{,}\)</span> meaning</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-114(1).jpg" class="contained"></div> <div class="para" id="p-963">commutes. That is precisely what we want for <span class="process-math">\(I\)</span> to be injective.</div></article></div>
-<div class="para" id="p-964">Giving examples of injective modules is much harder than giving examples of projective modules, but we will see some examples later. First, we prove some properties of injective modules.</div>
-<div class="para" id="p-965">The class of injectives modules is closed for products and finite direct sums.</div>
+</div> <div class="para" id="thm-4.15-2-2">So the content of the theorem is that <span class="process-math">\(I\)</span> is injective if and only if for every injective <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(i: A \longrightarrow B\text{,}\)</span> the induced map <span class="process-math">\(i^{*}\)</span> is surjective. Now notice that <span class="process-math">\(i^{*}\)</span> is surjective if and only if every <span class="process-math">\(f \in \operatorname{Hom}_{R}(A, I)\)</span> lifts to some <span class="process-math">\(g \in \operatorname{Hom}_{R}(B, I)\text{,}\)</span> meaning</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-114(1).jpg" class="contained"></div> <div class="para" id="thm-4.15-2-4">commutes. That is precisely what we want for <span class="process-math">\(I\)</span> to be injective.</div></article></details><div class="para" id="subsec-injective-7">Giving examples of injective modules is much harder than giving examples of projective modules, but we will see some examples later. First, we prove some properties of injective modules.</div>
+<div class="para" id="subsec-injective-8">The class of injectives modules is closed for products and finite direct sums.</div>
 <article class="lemma theorem-like" id="lem-4.16"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.16</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-966">Given any family <span class="process-math">\(\left\{M_{i}\right\}_{i \in I}\)</span> of injective modules, <span class="process-math">\(\prod_{i \in I} M_{i}\)</span> is injective.</div></article><article class="hiddenproof" id="proof-36"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-36"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof"><div class="para" id="p-967">Let <span class="process-math">\(\pi_{j}: \prod_{i \in I} M_{i} \longrightarrow M_{j}\)</span> be the projection onto the <span class="process-math">\(j\)</span> th factor. Given any diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(5).jpg" class="contained"></div> <div class="para" id="p-968">the fact that <span class="process-math">\(M_{i}\)</span> is injective gives us <span class="process-math">\(R\)</span>-module homomorphisms <span class="process-math">\(g_{i}\)</span> such that</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(2).jpg" class="contained"></div> <div class="para logical" id="p-969">
+<div class="para" id="lem-4.16-1-1">Given any family <span class="process-math">\(\left\{M_{i}\right\}_{i \in I}\)</span> of injective modules, <span class="process-math">\(\prod_{i \in I} M_{i}\)</span> is injective.</div></article><details id="lem-4.16-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-4.16-2-1">Let <span class="process-math">\(\pi_{j}: \prod_{i \in I} M_{i} \longrightarrow M_{j}\)</span> be the projection onto the <span class="process-math">\(j\)</span> th factor. Given any diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(5).jpg" class="contained"></div> <div class="para" id="lem-4.16-2-3">the fact that <span class="process-math">\(M_{i}\)</span> is injective gives us <span class="process-math">\(R\)</span>-module homomorphisms <span class="process-math">\(g_{i}\)</span> such that</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(2).jpg" class="contained"></div> <div class="para logical" id="lem-4.16-2-5">
 <div class="para">commutes for each <span class="process-math">\(i\text{.}\)</span> Now the <span class="process-math">\(R\)</span>-module homomorphism</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -641,13 +625,12 @@ b \longmapsto\left(g_{i}(b)\right)
 \end{equation*}
 </div>
 <div class="para">makes the diagram</div>
-</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(3).jpg" class="contained"></div> <div class="para" id="p-970">commute, so <span class="process-math">\(\prod_{i \in I} M_{i}\)</span> is injective.</div></article></div>
-<article class="lemma theorem-like" id="lem-4.17"><h4 class="heading">
+</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(3).jpg" class="contained"></div> <div class="para" id="lem-4.16-2-7">commute, so <span class="process-math">\(\prod_{i \in I} M_{i}\)</span> is injective.</div></article></details><article class="lemma theorem-like" id="lem-4.17"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.17</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-971">If <span class="process-math">\(M \oplus N=E\)</span> is an injective <span class="process-math">\(R\)</span>-module, then so are <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{.}\)</span>
-</div></article><article class="hiddenproof" id="proof-37"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-37"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof"><div class="para" id="p-972">Any diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(4).jpg" class="contained"></div> <div class="para" id="p-973">can be extended to a map <span class="process-math">\(A \longrightarrow E\)</span> by composing <span class="process-math">\(f\)</span> with the inclusion of the first factor. Since <span class="process-math">\(E\)</span> is injective, there exists <span class="process-math">\(h\)</span> such that</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115.jpg" class="contained"></div> <div class="para" id="p-974">commutes. Let <span class="process-math">\(\pi: E \longrightarrow M\)</span> be the projection onto <span class="process-math">\(M\text{,}\)</span> so that <span class="process-math">\(\pi j=\mathrm{id}_{M}\text{.}\)</span> Now if we set <span class="process-math">\(g:=\pi h\text{,}\)</span>
-</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(1).jpg" class="contained"></div> <div class="para logical" id="p-975"><div class="displaymath process-math">
+<div class="para" id="lem-4.17-1-1">If <span class="process-math">\(M \oplus N=E\)</span> is an injective <span class="process-math">\(R\)</span>-module, then so are <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{.}\)</span>
+</div></article><details id="lem-4.17-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-4.17-2-1">Any diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(4).jpg" class="contained"></div> <div class="para" id="lem-4.17-2-3">can be extended to a map <span class="process-math">\(A \longrightarrow E\)</span> by composing <span class="process-math">\(f\)</span> with the inclusion of the first factor. Since <span class="process-math">\(E\)</span> is injective, there exists <span class="process-math">\(h\)</span> such that</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115.jpg" class="contained"></div> <div class="para" id="lem-4.17-2-5">commutes. Let <span class="process-math">\(\pi: E \longrightarrow M\)</span> be the projection onto <span class="process-math">\(M\text{,}\)</span> so that <span class="process-math">\(\pi j=\mathrm{id}_{M}\text{.}\)</span> Now if we set <span class="process-math">\(g:=\pi h\text{,}\)</span>
+</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-115(1).jpg" class="contained"></div> <div class="para logical" id="lem-4.17-2-7"><div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 g i &amp; =\pi h i &amp; \text { by definition } \\
@@ -655,18 +638,17 @@ g i &amp; =\pi h i &amp; \text { by definition } \\
 &amp; =f &amp; \text { because } \pi j=\mathrm{id}_{M}
 \end{aligned}
 \end{equation*}
-</div></div></article></div>
-<article class="theorem theorem-like" id="thm-4.18"><h4 class="heading">
+</div></div></article></details><article class="theorem theorem-like" id="thm-4.18"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.18</span><span class="period">.</span><span class="space"> </span><span class="title">Baer Criterion.</span>
 </h4>
-<div class="para" id="p-976">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(E\)</span> is injective if and only if every <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(I \longrightarrow E\)</span> from an ideal <span class="process-math">\(I\)</span> in <span class="process-math">\(R\)</span> can be extended to the whole ring, meaning that there exists <span class="process-math">\(g\)</span> making the diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-116(1).jpg" class="contained"></div> <div class="para" id="p-977">commute.</div></article><article class="hiddenproof" id="proof-38"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-38"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><div class="para" id="p-978">On the one hand, if <span class="process-math">\(E\)</span> is injective then our condition is simply a special case of the definition of injective module. On the other hand, suppose that this condition holds, and consider any diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-116.jpg" class="contained"></div> <div class="para logical" id="p-979">
+<div class="para" id="thm-4.18-2-1">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(E\)</span> is injective if and only if every <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(I \longrightarrow E\)</span> from an ideal <span class="process-math">\(I\)</span> in <span class="process-math">\(R\)</span> can be extended to the whole ring, meaning that there exists <span class="process-math">\(g\)</span> making the diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-116(1).jpg" class="contained"></div> <div class="para" id="thm-4.18-2-3">commute.</div></article><details id="thm-4.18-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-4.18-3-1">On the one hand, if <span class="process-math">\(E\)</span> is injective then our condition is simply a special case of the definition of injective module. On the other hand, suppose that this condition holds, and consider any diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-116.jpg" class="contained"></div> <div class="para logical" id="thm-4.18-3-3">
 <div class="para">To simplify notation, let’s assume our map <span class="process-math">\(M \longrightarrow N\)</span> is indeed the inclusion of the submodule <span class="process-math">\(M\text{,}\)</span> so we can write <span class="process-math">\(m \in N\)</span> for the image of <span class="process-math">\(m\)</span> in <span class="process-math">\(N\text{.}\)</span> Consider the set</div>
 <div class="displaymath process-math">
 \begin{equation*}
 X:=\{(A, g) \mid A \text { is a submodule of } N, M \subseteq A \subseteq N \text {, and } g \text { extends } f\}
 \end{equation*}
 </div>
-</div> <div class="para" id="p-980">First, notice <span class="process-math">\(X\)</span> is nonempty, since <span class="process-math">\((M, f) \in X\text{.}\)</span> Moreover, we can partially order <span class="process-math">\(X\)</span> by setting <span class="process-math">\((A, g) \leqslant(B, h)\)</span> if <span class="process-math">\(A \subseteq B\)</span> and <span class="process-math">\(\left.h\right|_{A}=g\text{.}\)</span> So we have a nonempty partially ordered set; let’s show we can apply Zorn’s Lemma to it.</div> <div class="para logical" id="p-981">
+</div> <div class="para" id="thm-4.18-3-4">First, notice <span class="process-math">\(X\)</span> is nonempty, since <span class="process-math">\((M, f) \in X\text{.}\)</span> Moreover, we can partially order <span class="process-math">\(X\)</span> by setting <span class="process-math">\((A, g) \leqslant(B, h)\)</span> if <span class="process-math">\(A \subseteq B\)</span> and <span class="process-math">\(\left.h\right|_{A}=g\text{.}\)</span> So we have a nonempty partially ordered set; let’s show we can apply Zorn’s Lemma to it.</div> <div class="para logical" id="thm-4.18-3-5">
 <div class="para">Given a chain in <span class="process-math">\(X\text{,}\)</span> meaning a sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -682,7 +664,7 @@ X:=\{(A, g) \mid A \text { is a submodule of } N, M \subseteq A \subseteq N \tex
 \end{aligned}
 \end{equation*}
 </div>
-</div> <div class="para" id="p-982">Since all the <span class="process-math">\(g_{i}\)</span> are homomorphisms of <span class="process-math">\(R\)</span>-modules, this map <span class="process-math">\(g\)</span> is indeed a map of <span class="process-math">\(R\)</span>-modules. Moreover, <span class="process-math">\(g\)</span> is well-defined, since the <span class="process-math">\(g_{i}(a)=g_{j}(a)\)</span> whenever <span class="process-math">\(a \in A_{i} \cap A_{j}\text{.}\)</span> By construction, this map extends all the <span class="process-math">\(g_{i}\text{,}\)</span> so we conclude that <span class="process-math">\((A, g)\)</span> is an upper bound for our chain. Moreover, <span class="process-math">\(M \subseteq A \subseteq N\)</span> follows immediately from our construction, and since each <span class="process-math">\(g_{i}\)</span> extends <span class="process-math">\(f\text{,}\)</span> so does <span class="process-math">\(g\text{.}\)</span> We conclude that <span class="process-math">\((A, g) \in X\text{,}\)</span> and more generally that any chain in <span class="process-math">\(X\)</span> has an upper bound in <span class="process-math">\(X\text{.}\)</span> So Zorn’s Lemma applies.</div> <div class="para logical" id="p-983">
+</div> <div class="para" id="thm-4.18-3-6">Since all the <span class="process-math">\(g_{i}\)</span> are homomorphisms of <span class="process-math">\(R\)</span>-modules, this map <span class="process-math">\(g\)</span> is indeed a map of <span class="process-math">\(R\)</span>-modules. Moreover, <span class="process-math">\(g\)</span> is well-defined, since the <span class="process-math">\(g_{i}(a)=g_{j}(a)\)</span> whenever <span class="process-math">\(a \in A_{i} \cap A_{j}\text{.}\)</span> By construction, this map extends all the <span class="process-math">\(g_{i}\text{,}\)</span> so we conclude that <span class="process-math">\((A, g)\)</span> is an upper bound for our chain. Moreover, <span class="process-math">\(M \subseteq A \subseteq N\)</span> follows immediately from our construction, and since each <span class="process-math">\(g_{i}\)</span> extends <span class="process-math">\(f\text{,}\)</span> so does <span class="process-math">\(g\text{.}\)</span> We conclude that <span class="process-math">\((A, g) \in X\text{,}\)</span> and more generally that any chain in <span class="process-math">\(X\)</span> has an upper bound in <span class="process-math">\(X\text{.}\)</span> So Zorn’s Lemma applies.</div> <div class="para logical" id="thm-4.18-3-7">
 <div class="para">By Zorn’s Lemma, <span class="process-math">\(X\)</span> has a maximal element, say <span class="process-math">\((A, g)\text{.}\)</span> We claim that <span class="process-math">\(A=N\text{.}\)</span> Suppose not, and let <span class="process-math">\(n \in N\)</span> be an element not in <span class="process-math">\(A\text{.}\)</span> One can check that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -699,7 +681,7 @@ I:=\{r \in R \mid r n \in A\}
 \end{equation*}
 </div>
 <div class="para">is an <span class="process-math">\(R\)</span>-module homomorphism.</div>
-</div> <div class="para logical" id="p-984">
+</div> <div class="para logical" id="thm-4.18-3-8">
 <div class="para">By assumption, we can extend <span class="process-math">\(h\)</span> to an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(R \longrightarrow E\text{,}\)</span> which we will write as <span class="process-math">\(h\)</span> as well. Now the <span class="process-math">\(R\)</span>-module homomorphism</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -710,46 +692,47 @@ I:=\{r \in R \mid r n \in A\}
 \end{equation*}
 </div>
 <div class="para">is well-defined by construction, since any <span class="process-math">\(r n \in A\)</span> satisfies <span class="process-math">\(g(r n)=h(r)\text{,}\)</span> and if <span class="process-math">\(r n=r^{\prime} n\)</span> then <span class="process-math">\(h(r)=r n=r^{\prime} n=h\left(r^{\prime}\right)\text{.}\)</span> Finally, this map agrees with <span class="process-math">\(g\)</span> on <span class="process-math">\(A\text{,}\)</span> and thus it agrees with <span class="process-math">\(f\)</span> on <span class="process-math">\(M\text{,}\)</span> so <span class="process-math">\((A+R n, \varphi) \in X\)</span> and <span class="process-math">\((A, g) \leqslant(A+R n, \varphi)\text{.}\)</span> By the maximality of <span class="process-math">\((A, g)\text{,}\)</span> we conclude that <span class="process-math">\(A+R n=A\text{,}\)</span> and thus <span class="process-math">\(n \in A\text{,}\)</span> which is a contradiction. We conclude that <span class="process-math">\(A=N\text{.}\)</span> Therefore, <span class="process-math">\(g\)</span> makes the diagram</div>
-</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-117(1).jpg" class="contained"></div> <div class="para" id="p-985">commute.</div></article></div></section><section class="subsection" id="subsec-divisible"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Divisible Modules</span>
+</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-117(1).jpg" class="contained"></div> <div class="para" id="thm-4.18-3-10">commute.</div></article></details></section><section class="subsection" id="subsec-divisible"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Divisible Modules</span>
 </h3>
-<div class="para" id="p-986">It is very easy to see that every <span class="process-math">\(R\)</span>-module is a quotient of a free module. The dual statement is true as well, but it is a little more delicate.</div>
+<blockquote class="blockquote" id="subsec-divisible-2">
+<div class="para" id="subsec-divisible-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-divisible-3">It is very easy to see that every <span class="process-math">\(R\)</span>-module is a quotient of a free module. The dual statement is true as well, but it is a little more delicate.</div>
 <article class="definition definition-like" id="def-4.21"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.19</span><span class="period">.</span><span class="space"> </span><span class="title">Divisible Module.</span>
-</h4> <div class="para" id="p-987">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(D\)</span> is <em class="emphasis">divisible</em> if for every nonzero <span class="process-math">\(r \in R\)</span> and every <span class="process-math">\(d \in D\)</span> there exists <span class="process-math">\(b \in D\)</span> such that <span class="process-math">\(r b=d\text{.}\)</span>
-</div></article><article class="remark remark-like" id="remark-37"><h4 class="heading">
+</h4> <div class="para" id="def-4.21-2-1">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(D\)</span> is <em class="emphasis">divisible</em> if for every nonzero <span class="process-math">\(r \in R\)</span> and every <span class="process-math">\(d \in D\)</span> there exists <span class="process-math">\(b \in D\)</span> such that <span class="process-math">\(r b=d\text{.}\)</span>
+</div></article><article class="remark remark-like" id="subsec-divisible-5"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.20</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-988">Remark 4.22. Given <span class="process-math">\(r \in R\text{,}\)</span> and an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> the multiplication by <span class="process-math">\(r\)</span> map <span class="process-math">\(M \stackrel{\cdot r}{\longrightarrow} M\)</span> is an <span class="process-math">\(R\)</span>-module homomorphism. The module <span class="process-math">\(M\)</span> is divisible if and only if multiplication by <span class="process-math">\(r\)</span> is surjective for all nonzero <span class="process-math">\(r \in R\text{.}\)</span>
-</div></article><article class="example example-like" id="example-45"><h4 class="heading">
+<div class="para" id="subsec-divisible-5-1">Remark 4.22. Given <span class="process-math">\(r \in R\text{,}\)</span> and an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> the multiplication by <span class="process-math">\(r\)</span> map <span class="process-math">\(M \stackrel{\cdot r}{\longrightarrow} M\)</span> is an <span class="process-math">\(R\)</span>-module homomorphism. The module <span class="process-math">\(M\)</span> is divisible if and only if multiplication by <span class="process-math">\(r\)</span> is surjective for all nonzero <span class="process-math">\(r \in R\text{.}\)</span>
+</div></article><article class="example example-like" id="subsec-divisible-6"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.21</span><span class="period">.</span><span class="space"> </span><span class="title">Divisible Modules.</span>
 </h4>
-<div class="para" id="p-989">The set of rational numbers <span class="process-math">\(\Q\text{,}\)</span> considered as a module over the ring of integers <span class="process-math">\(\Z\text{,}\)</span> is a divisible module. This is because for any nonzero integer <span class="process-math">\(n\text{,}\)</span> you can find a rational number <span class="process-math">\(q = \frac 1n\)</span> such that <span class="process-math">\(nq\)</span> is still a rational number.</div></article><article class="lemma theorem-like" id="lem-4.23"><h4 class="heading">
+<div class="para" id="subsec-divisible-6-2-1">The set of rational numbers <span class="process-math">\(\Q\text{,}\)</span> considered as a module over the ring of integers <span class="process-math">\(\Z\text{,}\)</span> is a divisible module. This is because for any nonzero integer <span class="process-math">\(n\text{,}\)</span> you can find a rational number <span class="process-math">\(q = \frac 1n\)</span> such that <span class="process-math">\(nq\)</span> is still a rational number.</div></article><article class="lemma theorem-like" id="lem-4.23"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.22</span><span class="period">.</span><span class="space"> </span><span class="title">Divisible Modules Closed Under Quotients.</span>
 </h4>
-<div class="para" id="p-990">Any quotient of a divisible module is also divisible.</div></article><article class="hiddenproof" id="proof-39"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-39"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-39"><article class="hiddenproof"><div class="para" id="p-991">Let <span class="process-math">\(D\)</span> be a divisible <span class="process-math">\(R\)</span>-module and <span class="process-math">\(E\)</span> be a submodule of <span class="process-math">\(D\text{.}\)</span> Let <span class="process-math">\(r \in R\)</span> and <span class="process-math">\(d+E \in\)</span> <span class="process-math">\(D / E\text{.}\)</span> By assumption, there exists <span class="process-math">\(a \in D\)</span> such that <span class="process-math">\(r a=d\text{.}\)</span> The image <span class="process-math">\(a+E\)</span> of <span class="process-math">\(a\)</span> in <span class="process-math">\(D / E\)</span> is still a solution to <span class="process-math">\(r(a+E)=d+D\text{,}\)</span> so indeed <span class="process-math">\(E\)</span> is divisible.</div></article></div>
-<article class="theorem theorem-like" id="thm-divisible-cps"><h4 class="heading">
+<div class="para" id="lem-4.23-2-1">Any quotient of a divisible module is also divisible.</div></article><details id="lem-4.23-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-4.23-3-1">Let <span class="process-math">\(D\)</span> be a divisible <span class="process-math">\(R\)</span>-module and <span class="process-math">\(E\)</span> be a submodule of <span class="process-math">\(D\text{.}\)</span> Let <span class="process-math">\(r \in R\)</span> and <span class="process-math">\(d+E \in\)</span> <span class="process-math">\(D / E\text{.}\)</span> By assumption, there exists <span class="process-math">\(a \in D\)</span> such that <span class="process-math">\(r a=d\text{.}\)</span> The image <span class="process-math">\(a+E\)</span> of <span class="process-math">\(a\)</span> in <span class="process-math">\(D / E\)</span> is still a solution to <span class="process-math">\(r(a+E)=d+D\text{,}\)</span> so indeed <span class="process-math">\(E\)</span> is divisible.</div></article></details><article class="theorem theorem-like" id="thm-divisible-cps"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.23</span><span class="period">.</span><span class="space"> </span><span class="title">Closure Properties of Divisible Modules.</span>
 </h4>
-<div class="para" id="p-992">Divisible modules are closed under taking submodules, quotients, direct sums, and localizations.</div></article><article class="lemma theorem-like" id="lem-4.24"><h4 class="heading">
+<div class="para" id="thm-divisible-cps-2-1">Divisible modules are closed under taking submodules, quotients, direct sums, and localizations.</div></article><article class="lemma theorem-like" id="lem-4.24"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.24</span><span class="period">.</span><span class="space"> </span><span class="title">Injective Modules Divisible in Domains.</span>
 </h4>
-<div class="para" id="p-993">Over a domain, every injective module is divisible.</div></article><article class="hiddenproof" id="proof-40"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-40"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><div class="para" id="p-994">Suppose that <span class="process-math">\(E\)</span> is an injective <span class="process-math">\(R\)</span>-module, where <span class="process-math">\(R\)</span> is a domain. Fix <span class="process-math">\(r \in R\)</span> and <span class="process-math">\(a \in E\text{.}\)</span> Since <span class="process-math">\(R\)</span> is a domain, we have <span class="process-math">\(s r=s^{\prime} r \Rightarrow s=s^{\prime}\)</span> for any <span class="process-math">\(s, s^{\prime}, r \in R\text{.}\)</span> In particular, each element in <span class="process-math">\((r)\)</span> can be written uniquely as <span class="process-math">\(s r\)</span> for some <span class="process-math">\(s \in R\text{.}\)</span> In particular, the map of <span class="process-math">\(R\)</span>-modules</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-119.jpg" class="contained"></div> <div class="para" id="p-995">is well-defined. Since <span class="process-math">\(E\)</span> is injective, we can extend this to a homomorphism <span class="process-math">\(f: R \longrightarrow E\text{.}\)</span> Finally, <span class="process-math">\(f(1) \in E\)</span> is an element such that <span class="process-math">\(e=f(r)=r f(1)\text{,}\)</span> and <span class="process-math">\(E\)</span> is divisible.</div></article></div>
-<div class="para" id="p-996">This not true in general if we do not assume <span class="process-math">\(R\)</span> is a domain.</div>
-<article class="example example-like" id="example-46"><h4 class="heading">
+<div class="para" id="lem-4.24-2-1">Over a domain, every injective module is divisible.</div></article><details id="lem-4.24-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-4.24-3-1">Suppose that <span class="process-math">\(E\)</span> is an injective <span class="process-math">\(R\)</span>-module, where <span class="process-math">\(R\)</span> is a domain. Fix <span class="process-math">\(r \in R\)</span> and <span class="process-math">\(a \in E\text{.}\)</span> Since <span class="process-math">\(R\)</span> is a domain, we have <span class="process-math">\(s r=s^{\prime} r \Rightarrow s=s^{\prime}\)</span> for any <span class="process-math">\(s, s^{\prime}, r \in R\text{.}\)</span> In particular, each element in <span class="process-math">\((r)\)</span> can be written uniquely as <span class="process-math">\(s r\)</span> for some <span class="process-math">\(s \in R\text{.}\)</span> In particular, the map of <span class="process-math">\(R\)</span>-modules</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-119.jpg" class="contained"></div> <div class="para" id="lem-4.24-3-3">is well-defined. Since <span class="process-math">\(E\)</span> is injective, we can extend this to a homomorphism <span class="process-math">\(f: R \longrightarrow E\text{.}\)</span> Finally, <span class="process-math">\(f(1) \in E\)</span> is an element such that <span class="process-math">\(e=f(r)=r f(1)\text{,}\)</span> and <span class="process-math">\(E\)</span> is divisible.</div></article></details><div class="para" id="subsec-divisible-10">This not true in general if we do not assume <span class="process-math">\(R\)</span> is a domain.</div>
+<article class="example example-like" id="subsec-divisible-11"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.25</span><span class="period">.</span><span class="space"> </span><span class="title">Injective but not Divisible Module.</span>
-</h4> <div class="para" id="p-997">Example 4.25. Let <span class="process-math">\(k\)</span> be a field and <span class="process-math">\(R=k[x] /\left(x^{2}\right)\text{.}\)</span> On the one hand, <span class="process-math">\(R\)</span> is not a divisible <span class="process-math">\(R\)</span>-module, since there is no <span class="process-math">\(y \in R\)</span> such that <span class="process-math">\(x y=1\text{.}\)</span> On the other hand, <span class="process-math">\(R\)</span> is actually an injective module over itself, although we do not have the tools to justify that this is indeed an injective <span class="process-math">\(R\)</span>-module. <span class="process-math">\({ }^{1}\)</span>
-</div></article><div class="para" id="p-998">The converse of <a href="" class="xref" data-knowl="./knowl/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a> does not hold in general, and quotients of injective modules are not necessarily injective.</div>
-<article class="exercise exercise-like" id="exercise-36"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-36"><h4 class="heading">
+</h4> <div class="para" id="subsec-divisible-11-2">Example 4.25. Let <span class="process-math">\(k\)</span> be a field and <span class="process-math">\(R=k[x] /\left(x^{2}\right)\text{.}\)</span> On the one hand, <span class="process-math">\(R\)</span> is not a divisible <span class="process-math">\(R\)</span>-module, since there is no <span class="process-math">\(y \in R\)</span> such that <span class="process-math">\(x y=1\text{.}\)</span> On the other hand, <span class="process-math">\(R\)</span> is actually an injective module over itself, although we do not have the tools to justify that this is indeed an injective <span class="process-math">\(R\)</span>-module. <span class="process-math">\({ }^{1}\)</span>
+</div></article><div class="para" id="subsec-divisible-12">The converse of <a href="" class="xref" data-knowl="./knowl/xref/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a> does not hold in general, and quotients of injective modules are not necessarily injective.</div>
+<article class="exercise exercise-like" id="subsec-divisible-13"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4.26</span><span class="period">.</span><span class="space"> </span><span class="title">Injective Modules not Closed Under Quotients.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-36"><article class="exercise exercise-like"><div class="para" id="p-999">Exercise 57. Let <span class="process-math">\(R=k[x, y]\text{,}\)</span> where <span class="process-math">\(k\)</span> is a field, let <span class="process-math">\(Q=\operatorname{frac}(R)\)</span> be the fraction field of <span class="process-math">\(R\text{.}\)</span> The <span class="process-math">\(R\)</span>-module <span class="process-math">\(M=Q / R\)</span> is divisible but not injective.</div></article></div>
-<div class="para" id="p-1000">But the converse of <a href="" class="xref" data-knowl="./knowl/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a> does hold for some special classes of rings.</div>
+</h4>
+<div class="para" id="subsec-divisible-13-2">Exercise 57. Let <span class="process-math">\(R=k[x, y]\text{,}\)</span> where <span class="process-math">\(k\)</span> is a field, let <span class="process-math">\(Q=\operatorname{frac}(R)\)</span> be the fraction field of <span class="process-math">\(R\text{.}\)</span> The <span class="process-math">\(R\)</span>-module <span class="process-math">\(M=Q / R\)</span> is divisible but not injective.</div></article><div class="para" id="subsec-divisible-14">But the converse of <a href="" class="xref" data-knowl="./knowl/xref/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a> does hold for some special classes of rings.</div>
 <article class="theorem theorem-like" id="lem-4.26"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.27</span><span class="period">.</span><span class="space"> </span><span class="title">Injective iff Divisible in PID.</span>
 </h4>
-<div class="para" id="p-1001">Let <span class="process-math">\(R\)</span> be a principal ideal domain. An <span class="process-math">\(R\)</span>-module <span class="process-math">\(E\)</span> is injective if and only <span class="process-math">\(E\)</span> it is divisible.</div></article><article class="hiddenproof" id="proof-41"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-41"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-41"><article class="hiddenproof"><div class="para logical" id="p-1002">
-<div class="para">Given <a href="" class="xref" data-knowl="./knowl/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a>, we only need to show that divisible modules are injective. By Baer’s Criterion, we only need to show that any map from an ideal to <span class="process-math">\(E\)</span> can be extended to the whole ring. So let <span class="process-math">\(E\)</span> be a divisible <span class="process-math">\(R\)</span>-module, and consider any map <span class="process-math">\(I \longrightarrow E\)</span> from an ideal <span class="process-math">\(I\)</span> to <span class="process-math">\(E\text{.}\)</span> If <span class="process-math">\(I=0\text{,}\)</span> we could extend our map by taking the <span class="process-math">\(0\)</span> map from <span class="process-math">\(R\)</span> to <span class="process-math">\(E\text{,}\)</span> so we might as well assume that <span class="process-math">\(I \neq 0\text{.}\)</span> By assumption, <span class="process-math">\(I=(a)\)</span> for some <span class="process-math">\(a \in R\text{,}\)</span> and since <span class="process-math">\(E\)</span> is divisible, there exists <span class="process-math">\(e \in E\)</span> such that <span class="process-math">\(f(a)=a e\text{.}\)</span> Now consider the multiplication by <span class="process-math">\(r\)</span> map,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-4.24.html">
+<div class="para" id="lem-4.26-2-1">Let <span class="process-math">\(R\)</span> be a principal ideal domain. An <span class="process-math">\(R\)</span>-module <span class="process-math">\(E\)</span> is injective if and only <span class="process-math">\(E\)</span> it is divisible.</div></article><details id="lem-4.26-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="lem-4.26-3-1">
+<div class="para">Given <a href="" class="xref" data-knowl="./knowl/xref/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a>, we only need to show that divisible modules are injective. By Baer’s Criterion, we only need to show that any map from an ideal to <span class="process-math">\(E\)</span> can be extended to the whole ring. So let <span class="process-math">\(E\)</span> be a divisible <span class="process-math">\(R\)</span>-module, and consider any map <span class="process-math">\(I \longrightarrow E\)</span> from an ideal <span class="process-math">\(I\)</span> to <span class="process-math">\(E\text{.}\)</span> If <span class="process-math">\(I=0\text{,}\)</span> we could extend our map by taking the <span class="process-math">\(0\)</span> map from <span class="process-math">\(R\)</span> to <span class="process-math">\(E\text{,}\)</span> so we might as well assume that <span class="process-math">\(I \neq 0\text{.}\)</span> By assumption, <span class="process-math">\(I=(a)\)</span> for some <span class="process-math">\(a \in R\text{,}\)</span> and since <span class="process-math">\(E\)</span> is divisible, there exists <span class="process-math">\(e \in E\)</span> such that <span class="process-math">\(f(a)=a e\text{.}\)</span> Now consider the multiplication by <span class="process-math">\(r\)</span> map,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-4.24.html">
 \begin{equation*}
 \begin{aligned}
 &amp; R \longrightarrow g \\
@@ -758,55 +741,54 @@ I:=\{r \in R \mid r n \in A\}
 \end{equation*}
 </div>
 <div class="para">For every <span class="process-math">\(r \in R, g(r a)=r a e=r f(a)=f(r a)\text{,}\)</span> so <span class="process-math">\(g\)</span> extends <span class="process-math">\(f\text{.}\)</span> Therefore, by Theorem 4.18, <span class="process-math">\(E\)</span> is injective.</div>
-</div></article></div>
-<article class="corollary theorem-like" id="lem-4.27"><h4 class="heading">
+</div></article></details><article class="corollary theorem-like" id="lem-4.27"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.28</span><span class="period">.</span><span class="space"> </span><span class="title">Injectives Closed Under Quotients in PIDs.</span>
 </h4>
-<div class="para" id="p-1003">Over a principal ideal domain, quotients of injective modules are injective.</div></article><article class="hiddenproof" id="proof-42"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-42"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-42"><article class="hiddenproof"><div class="para" id="p-1004">If <span class="process-math">\(E\)</span> is injective, it is also divisible, by <a href="" class="xref" data-knowl="./knowl/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a>. Given any submodule <span class="process-math">\(D \subseteq E\text{,}\)</span> any <span class="process-math">\(e \in E\text{,}\)</span> and a nonzero <span class="process-math">\(r \in R\text{,}\)</span> there exists <span class="process-math">\(y \in E\)</span> such that <span class="process-math">\(r y=e\text{,}\)</span> and so this also holds in <span class="process-math">\(E / D\text{.}\)</span> Then <span class="process-math">\(E / D\)</span> is divisible, and thus injective by <a href="" class="xref" data-knowl="./knowl/lem-4.26.html" title="Theorem 4.27: Injective iff Divisible in PID">Theorem 4.27</a>. <a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-6" id="fn-6"><sup> 1 </sup></a>
-</div></article></div>
-<div class="para" id="p-1005">Given an injective abelian group, we can always use it to construct an injective <span class="process-math">\(R\)</span>-module over our favorite ring <span class="process-math">\(R\text{.}\)</span>
+<div class="para" id="lem-4.27-2-1">Over a principal ideal domain, quotients of injective modules are injective.</div></article><details id="lem-4.27-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-4.27-3-1">If <span class="process-math">\(E\)</span> is injective, it is also divisible, by <a href="" class="xref" data-knowl="./knowl/xref/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a>. Given any submodule <span class="process-math">\(D \subseteq E\text{,}\)</span> any <span class="process-math">\(e \in E\text{,}\)</span> and a nonzero <span class="process-math">\(r \in R\text{,}\)</span> there exists <span class="process-math">\(y \in E\)</span> such that <span class="process-math">\(r y=e\text{,}\)</span> and so this also holds in <span class="process-math">\(E / D\text{.}\)</span> Then <span class="process-math">\(E / D\)</span> is divisible, and thus injective by <a href="" class="xref" data-knowl="./knowl/xref/lem-4.26.html" title="Theorem 4.27: Injective iff Divisible in PID">Theorem 4.27</a>. <a class="xref" id="lem-4.27-3-1-11" href="" data-knowl="./knowl/fn/lem-4.27-3-1-11.html" title="Footnote 4.2.1"><sup> 1 </sup></a>
+</div></article></details><div class="para" id="subsec-divisible-17">Given an injective abelian group, we can always use it to construct an injective <span class="process-math">\(R\)</span>-module over our favorite ring <span class="process-math">\(R\text{.}\)</span>
 </div>
 <article class="lemma theorem-like" id="lem-4.28"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.29</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1006">Given an injective abelian group <span class="process-math">\(D\)</span> and a ring <span class="process-math">\(R, \operatorname{Hom}_{\mathbb{Z}}(R, D)\)</span> is an injective <span class="process-math">\(R\)</span>-module.</div></article><article class="hiddenproof" id="proof-43"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-43"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-43"><article class="hiddenproof"><div class="para logical" id="p-1007">
+<div class="para" id="lem-4.28-1-1">Given an injective abelian group <span class="process-math">\(D\)</span> and a ring <span class="process-math">\(R, \operatorname{Hom}_{\mathbb{Z}}(R, D)\)</span> is an injective <span class="process-math">\(R\)</span>-module.</div></article><details id="lem-4.28-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="lem-4.28-2-1">
 <div class="para">Let <span class="process-math">\(E:=\operatorname{Hom}_{\mathbb{Z}}(R, D)\text{.}\)</span> This abelian group <span class="process-math">\(E\)</span> is an <span class="process-math">\(R\)</span>-module, via</div>
 <div class="displaymath process-math">
 \begin{equation*}
 r \cdot f:=(a \mapsto f(r a))
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1008">
-<div class="para">We claim that <span class="process-math">\(E\)</span> is actually an injective <span class="process-math">\(R\)</span>-module. By <a href="" class="xref" data-knowl="./knowl/thm-4.15.html" title="Theorem 4.15">Theorem 4.15</a>, it is sufficient to prove that <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)\)</span> is an exact functor. By <a href="" class="xref" data-knowl="./knowl/cor-3.61.html" title="Corollary 3.82">Corollary 3.82</a>, <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)\)</span> is naturally isomorphic to <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}\left(-\otimes_{\mathbb{Z}} R, D\right)\text{.}\)</span> This last functor is the composition of</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-4.15.html ./knowl/cor-3.61.html">
+</div> <div class="para logical" id="lem-4.28-2-2">
+<div class="para">We claim that <span class="process-math">\(E\)</span> is actually an injective <span class="process-math">\(R\)</span>-module. By <a href="" class="xref" data-knowl="./knowl/xref/thm-4.15.html" title="Theorem 4.15">Theorem 4.15</a>, it is sufficient to prove that <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)\)</span> is an exact functor. By <a href="" class="xref" data-knowl="./knowl/xref/cor-3.61.html" title="Corollary 3.82">Corollary 3.82</a>, <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)\)</span> is naturally isomorphic to <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}\left(-\otimes_{\mathbb{Z}} R, D\right)\text{.}\)</span> This last functor is the composition of</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-4.15.html ./knowl/xref/cor-3.61.html">
 \begin{equation*}
 \operatorname{Hom}_{\mathbb{Z}}\left(-\otimes_{\mathbb{Z}} R, D\right)=\operatorname{Hom}_{\mathbb{Z}}(-, D) \circ\left(-\otimes_{\mathbb{Z}} R\right)
 \end{equation*}
 </div>
-</div> <div class="para" id="p-1009">On the one hand, <span class="process-math">\(-\otimes_{\mathbb{Z}} R\)</span> is naturally isomorphic to the identity on <span class="process-math">\(R\)</span>-Mod, by <a href="" class="xref" data-knowl="./knowl/lem-3.40.html" title="Lemma 3.54">Lemma 3.54</a>, so it is exact. On the other hand, <span class="process-math">\(D\)</span> is an injective <span class="process-math">\(\mathbb{Z}\)</span>-module, so <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(-, D)\)</span> is exact by <a href="" class="xref" data-knowl="./knowl/thm-4.15.html" title="Theorem 4.15">Theorem 4.15</a>. The composition of exact functors is exact, and thus <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)\)</span> is exact.</div></article></div>
-<article class="example example-like" id="example-47"><h4 class="heading">
+</div> <div class="para" id="lem-4.28-2-3">On the one hand, <span class="process-math">\(-\otimes_{\mathbb{Z}} R\)</span> is naturally isomorphic to the identity on <span class="process-math">\(R\)</span>-Mod, by <a href="" class="xref" data-knowl="./knowl/xref/lem-3.40.html" title="Lemma 3.54">Lemma 3.54</a>, so it is exact. On the other hand, <span class="process-math">\(D\)</span> is an injective <span class="process-math">\(\mathbb{Z}\)</span>-module, so <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(-, D)\)</span> is exact by <a href="" class="xref" data-knowl="./knowl/xref/thm-4.15.html" title="Theorem 4.15">Theorem 4.15</a>. The composition of exact functors is exact, and thus <span class="process-math">\(\operatorname{Hom}_{R}\left(-, \operatorname{Hom}_{\mathbb{Z}}(R, D)\right)\)</span> is exact.</div></article></details><article class="example example-like" id="subsec-divisible-19"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.30</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1010">Example 4.29. Since <span class="process-math">\(\mathbb{Q}\)</span> is a divisible abelian group, by <a href="" class="xref" data-knowl="./knowl/lem-4.28.html" title="Lemma 4.29">Lemma 4.29</a> for any ring <span class="process-math">\(R\)</span> the <span class="process-math">\(R\)</span>-module <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, \mathbb{Q})\)</span> is injective.</div></article></section><section class="subsection" id="subsec-inject-embed"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Every Module Embeds into an Injective Module</span>
+<div class="para" id="subsec-divisible-19-1">Example 4.29. Since <span class="process-math">\(\mathbb{Q}\)</span> is a divisible abelian group, by <a href="" class="xref" data-knowl="./knowl/xref/lem-4.28.html" title="Lemma 4.29">Lemma 4.29</a> for any ring <span class="process-math">\(R\)</span> the <span class="process-math">\(R\)</span>-module <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, \mathbb{Q})\)</span> is injective.</div></article></section><section class="subsection" id="subsec-inject-embed"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Every Module Embeds into an Injective Module</span>
 </h3>
-<div class="para" id="p-1011">When we talked about projective modules, we showed that every module is a quotient of a projective - in fact, every module is a quotient of a free module. The dual statement is true as well: that every module embeds into an injective module. We will soon see that these two statements are extremely important.</div>
-<div class="para" id="p-1012">While the statement about projectives is relatively simple - it’s essentially a consequence of the universal property of free modules - the fact about injectives is a lot more delicate; the work we just did on divisible modules was precisely so we could show this deep and important fact.</div>
-<div class="para" id="p-1013">First, we show that every abelian group can be embedded into an injective abelian group.</div>
+<blockquote class="blockquote" id="subsec-inject-embed-2">
+<div class="para" id="subsec-inject-embed-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-inject-embed-3">When we talked about projective modules, we showed that every module is a quotient of a projective - in fact, every module is a quotient of a free module. The dual statement is true as well: that every module embeds into an injective module. We will soon see that these two statements are extremely important.</div>
+<div class="para" id="subsec-inject-embed-4">While the statement about projectives is relatively simple - it’s essentially a consequence of the universal property of free modules - the fact about injectives is a lot more delicate; the work we just did on divisible modules was precisely so we could show this deep and important fact.</div>
+<div class="para" id="subsec-inject-embed-5">First, we show that every abelian group can be embedded into an injective abelian group.</div>
 <article class="lemma theorem-like" id="lem-4.30"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.31</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1014">Every abelian group <span class="process-math">\(M\)</span> is a submodule of some injective abelian group.</div></article><article class="hiddenproof" id="proof-44"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-44"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-44"><article class="hiddenproof"><div class="para" id="p-1015">On the one hand, <span class="process-math">\(M\)</span> is a quotient of some free abelian group, say <span class="process-math">\(M \cong\left(\oplus_{i} \mathbb{Z}\right) / K\text{.}\)</span> Now <span class="process-math">\(\mathbb{Z}\)</span> embeds in <span class="process-math">\(\mathbb{Q}\text{,}\)</span> and thus <span class="process-math">\(M\)</span> embeds into a quotient of <span class="process-math">\(\oplus_{i} \mathbb{Q}\text{.}\)</span> By Example 4.20, <span class="process-math">\(\mathbb{Q}\)</span> is an injective abelian group, and by Corollary <span class="process-math">\(4.19, \oplus_{i} \mathbb{Q}\)</span> is an injective abelian group, since <span class="process-math">\(\mathbb{Z}\)</span> is a noetherian ring. By <a href="" class="xref" data-knowl="./knowl/lem-4.27.html" title="Corollary 4.28: Injectives Closed Under Quotients in PIDs">Corollary 4.28</a>, any quotient of <span class="process-math">\(\oplus_{i} \mathbb{Q}\)</span> is also injective, so we have shown that <span class="process-math">\(M\)</span> embeds into an injective abelian group, say <span class="process-math">\(D\text{.}\)</span>
-</div> <div class="para" id="p-1016">In fact, the proof above can be repeated over any PID: if <span class="process-math">\(R\)</span> is a PID, we can show that any <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> embeds into an injective module, and in fact <span class="process-math">\(M\)</span> embeds into some number of copies of the fraction field <span class="process-math">\(Q\text{.}\)</span>
-</div></article></div>
-<div class="para" id="p-1017">We can finally show that over any ring, every module can be embedded into an injective module.</div>
+<div class="para" id="lem-4.30-1-1">Every abelian group <span class="process-math">\(M\)</span> is a submodule of some injective abelian group.</div></article><details id="lem-4.30-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-4.30-2-1">On the one hand, <span class="process-math">\(M\)</span> is a quotient of some free abelian group, say <span class="process-math">\(M \cong\left(\oplus_{i} \mathbb{Z}\right) / K\text{.}\)</span> Now <span class="process-math">\(\mathbb{Z}\)</span> embeds in <span class="process-math">\(\mathbb{Q}\text{,}\)</span> and thus <span class="process-math">\(M\)</span> embeds into a quotient of <span class="process-math">\(\oplus_{i} \mathbb{Q}\text{.}\)</span> By Example 4.20, <span class="process-math">\(\mathbb{Q}\)</span> is an injective abelian group, and by Corollary <span class="process-math">\(4.19, \oplus_{i} \mathbb{Q}\)</span> is an injective abelian group, since <span class="process-math">\(\mathbb{Z}\)</span> is a noetherian ring. By <a href="" class="xref" data-knowl="./knowl/xref/lem-4.27.html" title="Corollary 4.28: Injectives Closed Under Quotients in PIDs">Corollary 4.28</a>, any quotient of <span class="process-math">\(\oplus_{i} \mathbb{Q}\)</span> is also injective, so we have shown that <span class="process-math">\(M\)</span> embeds into an injective abelian group, say <span class="process-math">\(D\text{.}\)</span>
+</div> <div class="para" id="lem-4.30-2-2">In fact, the proof above can be repeated over any PID: if <span class="process-math">\(R\)</span> is a PID, we can show that any <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> embeds into an injective module, and in fact <span class="process-math">\(M\)</span> embeds into some number of copies of the fraction field <span class="process-math">\(Q\text{.}\)</span>
+</div></article></details><div class="para" id="subsec-inject-embed-7">We can finally show that over any ring, every module can be embedded into an injective module.</div>
 <article class="theorem theorem-like" id="thm-4.31"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.32</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1018">Every <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is a submodule of some injective <span class="process-math">\(R\)</span>-module.</div></article><article class="hiddenproof" id="proof-45"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-45"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-45"><article class="hiddenproof"><div class="para" id="p-1019">First, by <a href="" class="xref" data-knowl="./knowl/lem-4.30.html" title="Lemma 4.31">Lemma 4.31</a> we can view <span class="process-math">\(M\)</span> as a subgroup of some injective abelian group <span class="process-math">\(D\text{.}\)</span> Let <span class="process-math">\(i: M \longrightarrow D\)</span> be the inclusion map and <span class="process-math">\(E:=\operatorname{Hom}_{\mathbb{Z}}(R, D)\text{.}\)</span>
-</div> <div class="para logical" id="p-1020">
-<div class="para">By <a href="" class="xref" data-knowl="./knowl/lem-4.28.html" title="Lemma 4.29">Lemma 4.29</a>, <span class="process-math">\(E\)</span> is an injective <span class="process-math">\(R\)</span>-module. Since Hom is left exact, by <a href="" class="xref" data-knowl="./knowl/thm-3.14.html" title="Theorem 3.25: \Hom is Left Exact">Theorem 3.25</a>, <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R,-)\)</span> preserves the inclusion <span class="process-math">\(I\text{,}\)</span> so we have an inclusion <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, M) \subseteq \operatorname{Hom}_{\mathbb{Z}}(R, D)\text{.}\)</span> Now consider the map</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-4.28.html ./knowl/thm-3.14.html">
+<div class="para" id="thm-4.31-1-1">Every <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is a submodule of some injective <span class="process-math">\(R\)</span>-module.</div></article><details id="thm-4.31-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-4.31-2-1">First, by <a href="" class="xref" data-knowl="./knowl/xref/lem-4.30.html" title="Lemma 4.31">Lemma 4.31</a> we can view <span class="process-math">\(M\)</span> as a subgroup of some injective abelian group <span class="process-math">\(D\text{.}\)</span> Let <span class="process-math">\(i: M \longrightarrow D\)</span> be the inclusion map and <span class="process-math">\(E:=\operatorname{Hom}_{\mathbb{Z}}(R, D)\text{.}\)</span>
+</div> <div class="para logical" id="thm-4.31-2-2">
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/xref/lem-4.28.html" title="Lemma 4.29">Lemma 4.29</a>, <span class="process-math">\(E\)</span> is an injective <span class="process-math">\(R\)</span>-module. Since Hom is left exact, by <a href="" class="xref" data-knowl="./knowl/xref/thm-3.14.html" title="Theorem 3.25: \Hom is Left Exact">Theorem 3.25</a>, <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R,-)\)</span> preserves the inclusion <span class="process-math">\(I\text{,}\)</span> so we have an inclusion <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, M) \subseteq \operatorname{Hom}_{\mathbb{Z}}(R, D)\text{.}\)</span> Now consider the map</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-4.28.html ./knowl/xref/thm-3.14.html">
 \begin{equation*}
 \begin{aligned}
 &amp; M \stackrel{\psi}{\longrightarrow} \operatorname{Hom}_{\mathbb{Z}}(R, M) \\
@@ -814,10 +796,10 @@ r \cdot f:=(a \mapsto f(r a))
 \end{aligned}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1021">
+</div> <div class="para logical" id="thm-4.31-2-3">
 <div class="para">This is an <span class="process-math">\(R\)</span>-module homomorphism:</div>
 <ul class="disc">
-<li id="li-121"><div class="para logical" id="p-1022">
+<li id="thm-4.31-2-3-2-1"><div class="para logical" id="thm-4.31-2-3-2-1-1">
 <div class="para">Given <span class="process-math">\(a, b \in M\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -828,7 +810,7 @@ r \cdot f:=(a \mapsto f(r a))
 <div class="para">so <span class="process-math">\(\psi(a+b)=\psi(a)+\psi(b)\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-122"><div class="para logical" id="p-1023">
+<li id="thm-4.31-2-3-2-2"><div class="para logical" id="thm-4.31-2-3-2-2-1">
 <div class="para">Given <span class="process-math">\(r \in R, m \in M\text{,}\)</span> and <span class="process-math">\(s \in R\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -840,14 +822,14 @@ r \cdot f:=(a \mapsto f(r a))
 </div>
 </div></li>
 </ul>
-</div> <div class="para logical" id="p-1024">
+</div> <div class="para logical" id="thm-4.31-2-4">
 <div class="para">Moreover, if <span class="process-math">\(\psi(m)=0\)</span> then <span class="process-math">\(m=\psi(m)(1)=0\text{.}\)</span> So <span class="process-math">\(\psi\)</span> is injective, and thus composing <span class="process-math">\(\psi\)</span> with our previous inclusion <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, M) \subseteq \operatorname{Hom}_{\mathbb{Z}}(R, D)\)</span> gives us an inclusion <span class="process-math">\(\varphi\)</span> of <span class="process-math">\(M\)</span> into the injective <span class="process-math">\(R\)</span>-module <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, D)\text{.}\)</span> However, the inclusion <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, M) \subseteq \operatorname{Hom}_{\mathbb{Z}}(R, D)\)</span> is a priori only a map of abelian groups, so we should check that <span class="process-math">\(\varphi\)</span> is indeed <span class="process-math">\(R\)</span>-linear. In order to do this, we need to be careful (at least in the case when <span class="process-math">\(R\)</span> is not commutative) with how we defined the left <span class="process-math">\(R\)</span>-module structure on <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, D)\)</span> in Exercise 56: this is a situation where we view <span class="process-math">\(R\)</span> as a <span class="process-math">\((\mathbb{Z}, R)\)</span>-bimodule and <span class="process-math">\(D\)</span> as a left <span class="process-math">\(\mathbb{Z}\)</span>-module, so <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(R, D)\)</span> is a left <span class="process-math">\(R\)</span>-module via</div>
 <div class="displaymath process-math">
 \begin{equation*}
 r \cdot f \text { is the } R \text {-map given by }(r \cdot f)(a)=f(a r) \text {. }
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-1025">
+</div> <div class="para logical" id="thm-4.31-2-5">
 <div class="para">The map we need to show is <span class="process-math">\(R\)</span>-linear is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -865,7 +847,7 @@ r \cdot f \text { is the } R \text {-map given by }(r \cdot f)(a)=f(a r) \text {
 </div>
 <div class="para">For every <span class="process-math">\(r \in R, m \in M\text{,}\)</span> and <span class="process-math">\(s \in R\text{,}\)</span>
 </div>
-</div> <div class="para logical" id="p-1026">
+</div> <div class="para logical" id="thm-4.31-2-6">
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{rrr}
@@ -878,12 +860,11 @@ r \cdot f \text { is the } R \text {-map given by }(r \cdot f)(a)=f(a r) \text {
 \end{equation*}
 </div>
 <div class="para">so <span class="process-math">\(\varphi(r m)=r \varphi(m)\text{.}\)</span> This shows that <span class="process-math">\(\varphi\)</span> is an inclusion of <span class="process-math">\(R\)</span>-modules.</div>
-</div></article></div>
-<div class="para" id="p-1027">And finally, just like we did for projectives, we can characterize injectives in terms of split short exact sequences.</div>
+</div></article></details><div class="para" id="subsec-inject-embed-9">And finally, just like we did for projectives, we can characterize injectives in terms of split short exact sequences.</div>
 <article class="theorem theorem-like" id="thm-4.32"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.33</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="p-1028">
+<div class="para logical" id="thm-4.32-1-1">
 <div class="para">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(I\)</span> is injective if and only if every short exact sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -891,7 +872,7 @@ r \cdot f \text { is the } R \text {-map given by }(r \cdot f)(a)=f(a r) \text {
 \end{equation*}
 </div>
 <div class="para">splits.</div>
-</div></article><article class="hiddenproof" id="proof-46"><a href="" data-knowl="" class="id-ref proof-knowl original has-image" data-refid="hk-proof-46"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-46"><article class="hiddenproof"><div class="para logical" id="p-1029">
+</div></article><details id="thm-4.32-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-4.32-2-1">
 <div class="para">Let <span class="process-math">\(I\)</span> be an injective <span class="process-math">\(R\)</span>-module, and consider any short exact sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -899,15 +880,15 @@ r \cdot f \text { is the } R \text {-map given by }(r \cdot f)(a)=f(a r) \text {
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\(I\)</span> is injective, there exists a map <span class="process-math">\(g\)</span> making</div>
-</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-122(1).jpg" class="contained"></div> <div class="para" id="p-1030">commute, and such a <span class="process-math">\(g\)</span> gives a splitting for our short exact sequence.</div> <div class="para" id="p-1031">Conversely, suppose that every short exact sequence <span class="process-math">\(0 \longrightarrow I \longrightarrow B \longrightarrow C \longrightarrow 0\)</span> splits, and consider a diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-122.jpg" class="contained"></div> <div class="para logical" id="p-1032">
-<div class="para">By <a href="" class="xref" data-knowl="./knowl/thm-4.31.html" title="Theorem 4.32">Theorem 4.32</a>, <span class="process-math">\(I\)</span> embeds into some injective <span class="process-math">\(R\)</span>-module <span class="process-math">\(E\text{,}\)</span> say by the inclusion <span class="process-math">\(j\text{.}\)</span> By assumption, the short exact sequence</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm-4.31.html">
+</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-122(1).jpg" class="contained"></div> <div class="para" id="thm-4.32-2-3">commute, and such a <span class="process-math">\(g\)</span> gives a splitting for our short exact sequence.</div> <div class="para" id="thm-4.32-2-4">Conversely, suppose that every short exact sequence <span class="process-math">\(0 \longrightarrow I \longrightarrow B \longrightarrow C \longrightarrow 0\)</span> splits, and consider a diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-122.jpg" class="contained"></div> <div class="para logical" id="thm-4.32-2-6">
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/xref/thm-4.31.html" title="Theorem 4.32">Theorem 4.32</a>, <span class="process-math">\(I\)</span> embeds into some injective <span class="process-math">\(R\)</span>-module <span class="process-math">\(E\text{,}\)</span> say by the inclusion <span class="process-math">\(j\text{.}\)</span> By assumption, the short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-4.31.html">
 \begin{equation*}
 0 \longrightarrow I \stackrel{j}{\longrightarrow} E \longrightarrow \text { coker } j \longrightarrow 0
 \end{equation*}
 </div>
 <div class="para">splits, so there exists a map <span class="process-math">\(q: E \longrightarrow I\)</span> such that <span class="process-math">\(q i=\mathrm{id}_{I}\text{.}\)</span> Since <span class="process-math">\(E\)</span> is injective, we can lift <span class="process-math">\(i\)</span> through <span class="process-math">\(j f\text{,}\)</span> obtaining an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\ell\)</span> such that</div>
-</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-122(2).jpg" class="contained"></div> <div class="para logical" id="p-1033">
+</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-122(2).jpg" class="contained"></div> <div class="para logical" id="thm-4.32-2-8">
 <div class="para">commutes. Now <span class="process-math">\(g:=q \ell\)</span> satisfies</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -918,28 +899,26 @@ g i &amp; =q \ell i &amp; \text { by definition } \\
 \end{array}
 \end{equation*}
 </div>
-</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-123.jpg" class="contained"></div> <div class="para" id="p-1034">commutes.</div></article></div>
-<div class="para" id="p-1035">Before we move on from injective modules, let us say a word about how the story continues. The next chapter is quite beautiful, and it is a shame we have no time to discuss it in detail this semester.</div>
-<div class="para" id="p-1036">We proved above that every module <span class="process-math">\(M\)</span> is a submodule of some injective module. One can even do better and talk about the smallest injective module that <span class="process-math">\(M\)</span> embeds in; this is called the injective hull <span class="process-math">\(E(M)\)</span> of <span class="process-math">\(M\text{.}\)</span> One could describe <span class="process-math">\(E(M)\)</span> by saying that it is the intersection of all the injective modules that contain <span class="process-math">\(M\text{,}\)</span> but this is not a very practical description. Injective hulls can also be described through the theory of essential extensions, a topic which we do not have time to discuss this semester. We leave the definition here just for fun, but we do not have the time to talk about it at length.</div>
+</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-123.jpg" class="contained"></div> <div class="para" id="thm-4.32-2-10">commutes.</div></article></details><div class="para" id="subsec-inject-embed-11">Before we move on from injective modules, let us say a word about how the story continues. The next chapter is quite beautiful, and it is a shame we have no time to discuss it in detail this semester.</div>
+<div class="para" id="subsec-inject-embed-12">We proved above that every module <span class="process-math">\(M\)</span> is a submodule of some injective module. One can even do better and talk about the smallest injective module that <span class="process-math">\(M\)</span> embeds in; this is called the injective hull <span class="process-math">\(E(M)\)</span> of <span class="process-math">\(M\text{.}\)</span> One could describe <span class="process-math">\(E(M)\)</span> by saying that it is the intersection of all the injective modules that contain <span class="process-math">\(M\text{,}\)</span> but this is not a very practical description. Injective hulls can also be described through the theory of essential extensions, a topic which we do not have time to discuss this semester. We leave the definition here just for fun, but we do not have the time to talk about it at length.</div>
 <article class="definition definition-like" id="def-4.33"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.34</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-1037">Let <span class="process-math">\(M \subseteq E\text{.}\)</span> We say <span class="process-math">\(E\)</span> is an <em class="emphasis">essential extension</em> of <span class="process-math">\(M\)</span> if every nonzero submodule <span class="process-math">\(N \subseteq E\)</span> intersects <span class="process-math">\(M\)</span> nontrivially, meaning <span class="process-math">\(E \cap M \neq 0\text{.}\)</span> More generally, an injective map <span class="process-math">\(\alpha: M \longrightarrow E\)</span> is an essential extension if <span class="process-math">\(\alpha(M) \subseteq E\)</span> is an essential extension in the sense above.</div></article><div class="para" id="p-1038">One then shows that an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is injective if and only if it has no proper essential extensions <span class="process-math">\(E \supseteq M\text{.}\)</span> This proves that a maximal essential extension <span class="process-math">\(E\)</span> of <span class="process-math">\(M\)</span> is injective, and that there are no other injective modules <span class="process-math">\(I\)</span> with of <span class="process-math">\(M \subseteq I \subseteq E\text{.}\)</span> Moreover, one can show that any two maximal essential extension of <span class="process-math">\(M\)</span> are isomorphic - and thus we can talk about the maximal essential extension of <span class="process-math">\(M\text{,}\)</span> up to isomorphism, which is</div>
-<div class="para" id="p-1039">But the theory of injectives, and injective hulls in particular, is much more complicated than the theory of projectives. When <span class="process-math">\(M\)</span> is a finitely generated module, we can always find a finitely generated projective (even free!) module surjecting onto <span class="process-math">\(M\text{;}\)</span> in contrast, the injective hull <span class="process-math">\(E(M)\)</span> might not be finitely generated - in fact, <span class="process-math">\(E(M)\)</span> is typically not finitely generated even when <span class="process-math">\(M\)</span> is cyclic.</div>
-<div class="para" id="p-1040">The story of the structure of injective modules then continues in a beautiful way. Over a noetherian ring, it turns out that every injective module can be decomposed into a direct sum of injective modules of the form <span class="process-math">\(E(R / P)\text{,}\)</span> where <span class="process-math">\(P\)</span> is a prime ideal in <span class="process-math">\(R\text{.}\)</span> Moreover, the injective modules <span class="process-math">\(E(R / P)\)</span> are the indecomposable injective modules, so the basic building blocks of injective modules. One can in fact compute the injective hull of any finitely generated <span class="process-math">\(R\)</span>-module very explicitly. A lot of this was proved in Eben Matlis’ beautiful PhD thesis [Mat58], but sadly we do not have time for the details this semester. The details, however, are very important, for example to develop the theory of local cohomology - a topic which we will briefly mention later on.</div></section><article class="outcomes goal-like" id="outcomes-2"><h3 class="heading"><span class="type">Summary</span></h3>
+<div class="para" id="def-4.33-1-1">Let <span class="process-math">\(M \subseteq E\text{.}\)</span> We say <span class="process-math">\(E\)</span> is an <em class="emphasis">essential extension</em> of <span class="process-math">\(M\)</span> if every nonzero submodule <span class="process-math">\(N \subseteq E\)</span> intersects <span class="process-math">\(M\)</span> nontrivially, meaning <span class="process-math">\(E \cap M \neq 0\text{.}\)</span> More generally, an injective map <span class="process-math">\(\alpha: M \longrightarrow E\)</span> is an essential extension if <span class="process-math">\(\alpha(M) \subseteq E\)</span> is an essential extension in the sense above.</div></article><div class="para" id="subsec-inject-embed-14">One then shows that an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is injective if and only if it has no proper essential extensions <span class="process-math">\(E \supseteq M\text{.}\)</span> This proves that a maximal essential extension <span class="process-math">\(E\)</span> of <span class="process-math">\(M\)</span> is injective, and that there are no other injective modules <span class="process-math">\(I\)</span> with of <span class="process-math">\(M \subseteq I \subseteq E\text{.}\)</span> Moreover, one can show that any two maximal essential extension of <span class="process-math">\(M\)</span> are isomorphic - and thus we can talk about the maximal essential extension of <span class="process-math">\(M\text{,}\)</span> up to isomorphism, which is</div>
+<div class="para" id="subsec-inject-embed-15">But the theory of injectives, and injective hulls in particular, is much more complicated than the theory of projectives. When <span class="process-math">\(M\)</span> is a finitely generated module, we can always find a finitely generated projective (even free!) module surjecting onto <span class="process-math">\(M\text{;}\)</span> in contrast, the injective hull <span class="process-math">\(E(M)\)</span> might not be finitely generated - in fact, <span class="process-math">\(E(M)\)</span> is typically not finitely generated even when <span class="process-math">\(M\)</span> is cyclic.</div>
+<div class="para" id="subsec-inject-embed-16">The story of the structure of injective modules then continues in a beautiful way. Over a noetherian ring, it turns out that every injective module can be decomposed into a direct sum of injective modules of the form <span class="process-math">\(E(R / P)\text{,}\)</span> where <span class="process-math">\(P\)</span> is a prime ideal in <span class="process-math">\(R\text{.}\)</span> Moreover, the injective modules <span class="process-math">\(E(R / P)\)</span> are the indecomposable injective modules, so the basic building blocks of injective modules. One can in fact compute the injective hull of any finitely generated <span class="process-math">\(R\)</span>-module very explicitly. A lot of this was proved in Eben Matlis’ beautiful PhD thesis [Mat58], but sadly we do not have time for the details this semester. The details, however, are very important, for example to develop the theory of local cohomology - a topic which we will briefly mention later on.</div></section><article class="outcomes goal-like" id="sec-injective-6"><h3 class="heading"><span class="type">Summary</span></h3>
 <ul class="disc">
-<li id="li-123"><div class="para" id="p-1041">Injective modules make <span class="process-math">\(\operatorname{Hom}_{R}(-, I)\)</span> exact.</div></li>
-<li id="li-124"><div class="para" id="p-1042">The Baer Criterion tells us that a module <span class="process-math">\(E\)</span> is injective if and only if a map from an ideal to <span class="process-math">\(E\)</span> can be extended to all of <span class="process-math">\(R\text{.}\)</span>
+<li id="sec-injective-6-1-1"><div class="para" id="sec-injective-6-1-1-1">Injective modules make <span class="process-math">\(\operatorname{Hom}_{R}(-, I)\)</span> exact.</div></li>
+<li id="sec-injective-6-1-2"><div class="para" id="sec-injective-6-1-2-1">The Baer Criterion tells us that a module <span class="process-math">\(E\)</span> is injective if and only if a map from an ideal to <span class="process-math">\(E\)</span> can be extended to all of <span class="process-math">\(R\text{.}\)</span>
 </div></li>
-<li id="li-125"><div class="para" id="p-1043">In a domain injective modules are divisible and in a PID divisible modules are injective.</div></li>
-<li id="li-126"><div class="para" id="p-1044">Every <span class="process-math">\(R\)</span>-module is a submodule of an injective module.</div></li>
-</ul></article></section><div class="hidden-content tex2jax_ignore" id="hk-fn-6"><div class="fn">Using fancy words you might learn in Commutative Algebra II, this ring <span class="process-math">\(R\)</span> is an example of a complete intersection, which is a subclass of Gorenstein rings. Moreover, <span class="process-math">\(\operatorname{dim} R=0\)</span> - this is something you’d learn about in Commutative Algebra II. Now it turns out (and this is a nontrivial fact) that Gorenstein rings of dimension 0 are injective modules over themselves.</div></div>
-</div>
+<li id="sec-injective-6-1-3"><div class="para" id="sec-injective-6-1-3-1">In a domain injective modules are divisible and in a PID divisible modules are injective.</div></li>
+<li id="sec-injective-6-1-4"><div class="para" id="sec-injective-6-1-4-1">Every <span class="process-math">\(R\)</span>-module is a submodule of an injective module.</div></li>
+</ul></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-projective.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-flat.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="sec-projective.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-flat.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
-<div id="ptx-page-footer">
+<div id="ptx-page-footer" class="ptx-page-footer">
 <a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
