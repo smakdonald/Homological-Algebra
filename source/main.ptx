@@ -660,31 +660,8 @@
 
       <chapter xml:id="ch-categories"><title>Categories for the Working Homological Algebraist</title>
 
-        <introduction>
-          <p>
-            Most fields in modern mathematics follow the same basic recipe: there is a main type of object one wants to study - groups, rings, modules, topological spaces, etc - and a natural notion of arrows between these - group homomorphisms, ring homomorphisms, module homomorphisms, continuous maps, etc. 
-            The objects are often sets with some extra structure, and the arrows are often maps between the objects that preserve whatever that extra structure is. 
-            Category theory is born of this realization, by abstracting the basic notions that make math and studying them all at the same time. 
-            How many times have we felt a sense of déjà vu when learning about a new field of math? Category theory unifies all those ideas we have seen over and over in different contexts.
-          </p>
-
-          <p>
-            Category theory is an entire field of mathematics in its own right. 
-            As such, there is a lot to say about category theory, and unfortunately it doesn't all fit in the little time we have to cover it in this course. 
-            You are strongly encouraged to learn more about category theory, for example from [ML98] or [Rie17].
-          </p>
-      
-          <p>
-            Before we go any further, note that there is a long and fun story about why we use the word collection when describing the objects in a category. 
-            Not all collections are allowed to be sets, an issue that was first discovered by Russel with his famous Russel's Paradox. 
-            <fn>The collection of all sets that don't contain themselves cannot be a set. Do you see why? </fn>
-            Russel exposed the fact that one has to be careful with how we formalize set theory. 
-            We follow the ZFC (Zermelo-Fraenkel with choice, short for the Zermelo-Fraenkel axioms plus the Axiom of Choice) axiomatization of set theory, and while we will not discuss the details of this formalization here, you are encouraged to read more on the subject.
-          </p>
-        </introduction>
-
         <section xml:id="sec-categories"><title>Categories</title>
-
+  
           <objectives>
             <ul>
               <li>
@@ -692,6 +669,29 @@
               </li>
             </ul>
           </objectives>
+
+          <introduction>
+            <p>
+              Most fields in modern mathematics follow the same basic recipe: there is a main type of object one wants to study - groups, rings, modules, topological spaces, etc - and a natural notion of arrows between these - group homomorphisms, ring homomorphisms, module homomorphisms, continuous maps, etc. 
+              The objects are often sets with some extra structure, and the arrows are often maps between the objects that preserve whatever that extra structure is. 
+              Category theory is born of this realization, by abstracting the basic notions that make math and studying them all at the same time. 
+              How many times have we felt a sense of déjà vu when learning about a new field of math? Category theory unifies all those ideas we have seen over and over in different contexts.
+            </p>
+  
+            <p>
+              Category theory is an entire field of mathematics in its own right. 
+              As such, there is a lot to say about category theory, and unfortunately it doesn't all fit in the little time we have to cover it in this course. 
+              You are strongly encouraged to learn more about category theory, for example from [ML98] or [Rie17].
+            </p>
+        
+            <p>
+              Before we go any further, note that there is a long and fun story about why we use the word collection when describing the objects in a category. 
+              Not all collections are allowed to be sets, an issue that was first discovered by Russel with his famous Russel's Paradox. 
+              <fn>The collection of all sets that don't contain themselves cannot be a set. Do you see why? </fn>
+              Russel exposed the fact that one has to be careful with how we formalize set theory. 
+              We follow the ZFC (Zermelo-Fraenkel with choice, short for the Zermelo-Fraenkel axioms plus the Axiom of Choice) axiomatization of set theory, and while we will not discuss the details of this formalization here, you are encouraged to read more on the subject.
+            </p>
+          </introduction>
 
           <subsection xml:id="subsec-cat"><title>Definition and First Examples</title>
 
@@ -2030,10 +2030,16 @@
           <objectives>
             <ul>
               <li>
-                
+                Definitions: category, complex
               </li>
             </ul>
           </objectives>
+
+          <introduction>
+            <p>
+              We are finally ready to introduce the category of chain complexes, and to talk more about exact sequences in homology.
+            </p>
+          </introduction>
 
           <subsection xml:id="subsec-"><title>Establishing <m>\mathrm{Ch}(R)</m></title>
 
@@ -2065,9 +2071,11 @@
               </statement>
             </definition>
 
-            <p>
-              Note that throughout, whenever we call a function <m>f: M \rightarrow N</m> between <m>R</m>-modules <m>M</m> and <m>N</m> a map, we really mean to say it is a homomorphism of <m>R</m>-modules.
-            </p>
+            <convention><title>Map vs. Chain Map</title>
+              <p>
+                Note that throughout, whenever we call a function <m>f: M \rightarrow N</m> between <m>R</m>-modules <m>M</m> and <m>N</m> a <em>map</em>, we really mean to say it is a homomorphism of <m>R</m>-modules.
+              </p>
+            </convention>
 
             <example xml:id="ex-2.2"><title>Zero and Identity Chain Maps</title>
               <p>
@@ -2084,41 +2092,74 @@
                 <p>
                   Let <m>R</m> be a ring. 
                   The <em>category of chain complexes</em> of <m>R</m>-modules, denoted <m>\mathrm{Ch}(R-\mod)</m> or simply <m>\mathrm{Ch}(R)</m>, is the category with objects all chain complexes of <m>R</m>-modules and arrows all maps of complexes of <m>R</m>-modules.
-                  When <m>R=\mathbb{Z}</m>, we write <m>\mathrm{Ch}(\mathrm{Ab})</m> for <m>\mathrm{Ch}(\mathbb{Z})</m>, the category of chain complexes of abelian groups.
                 </p>
               </statement>
             </definition>
+
+            <convention><title><m>\mathrm{Ch}(\mathrm{Ab})</m></title>
+              <p>
+                When <m>R=\mathbb{Z}</m>, we write <m>\mathrm{Ch}(\mathrm{Ab})</m> for <m>\mathrm{Ch}(\mathbb{Z})</m>, the category of chain complexes of abelian groups.
+              </p>
+            </convention>
       
             <p>
               Note that the identity maps defined above are precisely the identity arrows in the category of chain complexes.
             </p>
 
-            <exercise xml:id="exe-25"><title>Isomorphisms in <m>\mathrm{Ch}(R)</m></title>
-              <p>
-                Show that the isomorphisms in the category <m>\mathrm{Ch}(R)</m> are precisely the maps of complexes
-              </p>
-              
-              <image source="2023_10_23_e2d6a27704be928b3deeg-052.jpg" width="75%"/>
+            <exercise xml:id="exe-25"><title>Understanding <m>\mathrm{Ch}(R)</m></title>
+              <statement>
+                <ol>
+                  <li>
+                    <p>
+                      Verify that <m>\mathrm{Ch}(R\mod)</m> is indeed a category.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Show that the isomorphisms in the category <m>\mathrm{Ch}(R)</m> are precisely the maps of complexes
+                    </p>
                     
-              <p>
-                such that <m>h_{n}</m> is an isomorphism for all <m>n</m>.
-              </p>
+                    <image source="2023_10_23_e2d6a27704be928b3deeg-052.jpg" width="75%"/>
+                          
+                    <p>
+                      such that <m>h_{n}</m> is an isomorphism for all <m>n</m>.
+                    </p>
+                  </li>
+                </ol>
+              </statement>
             </exercise>
       
             <p>
               This is a good notion of map of complexes: it induces homomorphisms in homology, which in particular allows us to say that homology is a functor.
             </p>
 
-            <lemma xml:id="lem-2.4">
+            <lemma xml:id="lem-2.4"><title>Induced Homomorphisms on Homology</title>
               <statement>
                 <p>
                   Let <m>h:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)</m> be a map of complexes. 
-                  For all <m>n, h_{n}</m> restricts to homomorphisms <m>B_{n}(h): B_{n}\left(F_{\bullet}\right) \longrightarrow B_{n}\left(G_{\bullet}\right)</m> and <m>Z_{n}(h): Z_{n}\left(F_{\bullet}\right) \longrightarrow Z_{n}\left(G_{\bullet}\right)</m>. 
+                  For all <m>n, h_{n}</m> restricts to homomorphisms 
+                  <ul>
+                    <li>
+                      <p>
+                        <m>B_{n}(h): B_{n}\left(F_{\bullet}\right) \longrightarrow B_{n}\left(G_{\bullet}\right)</m> and 
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <m>Z_{n}(h): Z_{n}\left(F_{\bullet}\right) \longrightarrow Z_{n}\left(G_{\bullet}\right)</m>.
+                      </p>
+                    </li>
+                  </ul>
                   As a consequence, <m>h</m> induces homomorphisms on homology <m>\mathrm{H}_{n}(h): \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right)</m>.
                 </p>
               </statement>
 
               <proof>
+
+                <image source="lem2.4.png" width="75%"/>
+                
                 <p>
                   Since <m>h_{n} \partial_{n+1}^{F}=\partial_{n+1}^{G} h_{n+1}</m>, any element <m>a \in B_{n}\left(F_{\bullet}\right)</m>, say <m>a=\partial_{n+1}^{F}(b)</m>, is taken to
                   <me>
@@ -2144,7 +2185,8 @@
                   We call the map
                   <me>
                     \begin{aligned}
-                    \mathrm{H}_{n}(h): &amp; \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right) \\
+                    \mathrm{H}_{n}(h): 
+                    &amp; \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right) \\
                     &amp; a+B_{n}(F) \longmapsto h_{n}(a)+B_{n}(G)
                     \end{aligned}
                   </me>
@@ -2152,19 +2194,23 @@
                 </p>
               </statement>
             </definition>
-      
-            <p>
-              One can show that <m>\mathrm{H}_{n}</m> preserves compositions, and that moreover, the map in homology induced by the identity is the identity. 
-              Thus taking <m>n</m>th homology is a functor
-              <me>
-                \mathrm{H}_{n}: \mathrm{Ch}(R) \longrightarrow R \text {-Mod }
-              </me>
-              which takes each map of complexes <m>h: F_{\bullet}, \longrightarrow G_{\bullet}</m> to the <m>R</m>-module homomorphism
-              <me>
-                \mathrm{H}_{n}(h): \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right)
-              </me>
-            </p>
 
+            <exercise><title>Homology Functor</title>
+              <statement>
+                <p>
+                  One can show that <m>\mathrm{H}_{n}</m> preserves compositions, and that moreover, the map in homology induced by the identity is the identity. 
+                  Thus taking <m>n</m>th homology is a functor
+                  <me>
+                    \mathrm{H}_{n}: \mathrm{Ch}(R) \longrightarrow R \text {-Mod }
+                  </me>
+                  which takes each map of complexes <m>h: F_{\bullet}, \longrightarrow G_{\bullet}</m> to the <m>R</m>-module homomorphism
+                  <me>
+                    \mathrm{H}_{n}(h): \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right)
+                  </me>
+                </p>
+              </statement>
+            </exercise>
+      
             <definition xml:id="def-2.6"><title>Quasi-Isomorphism</title>
               <statement>
                 <p>
@@ -2186,14 +2232,26 @@
             </p>
 
             <exercise xml:id="exe-26">
-              <p>
-                Let <m>\pi</m> denote the projection map from <m>\mathbb{Z}</m> to <m>\mathbb{Z} / 2 \mathbb{Z}</m>. 
-                The chain map
-              </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-053.jpg" width="75%"/>
-              <p>
-                is a quasi-isomorphism.
-              </p>
+              <statement>
+                <p>
+                  Let <m>\pi</m> denote the projection map from <m>\mathbb{Z}</m> to <m>\mathbb{Z} / 2 \mathbb{Z}</m>. 
+                  The chain map
+                </p>
+
+                <image source="2023_10_23_e2d6a27704be928b3deeg-053.jpg" width="75%"/>
+                <p>
+
+                  is a quasi-isomorphism.
+                </p>
+              </statement>
+              
+              <solution>
+                <p>
+                  When we look at the induced map of <m>f</m> on homology, the only index where the induced homomorphism may not be <m>0</m> is at <m>0</m>. 
+                  Observe however, that <m>H_0(\pi):\Z/2\to\Z/2</m> is the identity map, as <m>0</m> is mapped to <m>0</m> and <m>1</m> is mapped to <m>1</m>. 
+                  Thus <m>f</m> is indeed a quasi-isomorphism.
+                </p>
+              </solution>
             </exercise>
 
           </subsection>
@@ -2350,15 +2408,18 @@
               <statement>
                 <p>
                   Given complexes <m>B</m> and <m>C, B</m> is a <em>subcomplex</em> of <m>C</m> if <m>B_{n}</m> is a submodule of <m>C_{n}</m> for all <m>n</m>, and the inclusion maps <m>\iota_{n}: B_{n} \subseteq C_{n}</m> define a map of complexes <m>\iota: B \longrightarrow C</m>. 
+                </p>
+
+                <p>
                   Given a subcomplex <m>B</m> of <m>C</m>, the <em>quotient</em> of <m>C</m> by <m>B</m> is the complex <m>C / B</m> that has <m>C_{n} / B_{n}</m> in homological degree <m>n</m>, with differential induced by the differential on <m>C_{n}</m>.
                 </p>
               </statement>
             </definition>
 
-            <exercise xml:id="exe-30">
+            <exercise xml:id="exe-30"><title>Subcomplex Maps are Well-Defined</title>
               <p>
-                If <m>B</m> is a subcomplex of <m>C</m>, then the differential <m>d</m> on <m>C</m> satisfies <m>d_{n}\left(B_{n}\right) \subseteq B_{n-1}</m>. 
-                Therefore, <m>d_{n}</m> induces a map of <m>R</m>-modules <m>C_{n} / B_{n} \longrightarrow C_{n-1} / B_{n-1}</m> for all <m>n</m>, so that our definition of the differential on <m>C / B</m> actually makes sense.
+                If <m>B</m> is a subcomplex of <m>C</m>, then the differential <m>\partial</m> on <m>C</m> satisfies <m>\partial_{n}\left(B_{n}\right) \subseteq B_{n-1}</m>. 
+                Therefore, <m>\partial_{n}</m> induces a map of <m>R</m>-modules <m>C_{n} / B_{n} \longrightarrow C_{n-1} / B_{n-1}</m> for all <m>n</m>, so that our definition of the differential on <m>C / B</m> actually makes sense.
               </p>
             </exercise>
       
@@ -2374,7 +2435,11 @@
                   <me>
                     \cdots \longrightarrow \operatorname{ker} f_{n+1} \longrightarrow \operatorname{ker} f_{n} \longrightarrow \operatorname{ker} f_{n-1} \longrightarrow \cdots
                   </me>
-                  where the differentials are simply the corresponding restrictions of the differentials on <m>B_{\bullet}</m>. Similarly, the image of <m>f</m> is the subcomplex of <m>C</m>.
+                  where the differentials are simply the corresponding restrictions of the differentials on <m>B_{\bullet}</m>. 
+                </p>
+
+                <p>
+                  Similarly, the image of <m>f</m> is the subcomplex of <m>C</m>.
                   <me>
                     \cdots \longrightarrow \operatorname{im} f_{n+1} \longrightarrow \operatorname{im} f_{n} \longrightarrow \operatorname{im} f_{n-1} \longrightarrow \cdots
                   </me>

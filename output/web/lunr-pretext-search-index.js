@@ -205,7 +205,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Categories",
-  "body": "Categories        Definition and First Examples    We'll only use as much category theory as is necessary. Famous last words...   Roman Abramovich   A category consists of a collection of objects and arrows or morphisms between those objects. While these are often sets and some kind of functions between them, beware that this will not always be the case. We will use the words morphism and arrows interchangeably, though arrow has the advantage of reminding us we are not necessarily talking about functions.  Category   A category  consists of three different pieces of data:   a collection of objects ,     for each two objects, say and , a collection of arrows or morphisms from to , and    for each three objects , and , a composition         We will often drop the and write simply for .  These ingredients satisfy the following axioms:   The are all disjoint. In particular, if is an arrow in , we can talk about its source  and its target  as the objects such that .    For each object , there is an identity arrow  such that and for all and all .    Composition is associative : for all appropriately chosen arrows.        We sometimes write or for an arrow .   Unique Identity Morphism  Every object in a category has a unique identity morphism.   Here are some categories you have likely encountered before:  Categories     The category with objects all sets and arrows all functions between sets.    The category whose objects are the collection of all groups, and whose arrows are all the homomorphisms of groups. The identity arrows are the identity homomorphisms.    The category with objects all abelian groups, and arrows the homomorphisms of abelian groups. The identity arrows are the identity homomorphisms.    The category of rings and ring homomorphisms. Contrary to what you may expect, this is not nearly as important as the next one.    The category of modules over a fixed ring and with -module homomorphisms. Sometimes one writes for this category, and reserve for the category of finitely generated -modules with ule homomorphisms. When is a field, the objects in the category -Mod are -vector spaces, and the arrows are linear transformations; we may instead refer to this category as Vect- .    The category Top of topological spaces and continuous functions. One may consider many variations of the categories above. Here are some variations on vector spaces:      While the collections of objects and arrows might not actually be sets, sometimes they are.  Locally Small   A category is locally small if for all objects and in is a set. A category is small if it is locally small and the collection of all objects in is a set.    In fact, one can define a small category as one where the collection of all arrows is a set. It follows immediately that the collection of all objects is also a set, since it must be a subset of the set of arrows - for each object, there is an identity arrow.  Many important categories are at least locally small.    is locally small but not small.     Categories where the objects are sets with some extra structure and the arrows are some kind of functions between the objects are called concrete.    All of the categories we have seen thus far have been conctrete, but this is not the case in general.  Non-Concrete Categories     Given a partially ordered set , we can regard itself as a category: the objects are the elements of , and for each and in is either a singleton if or empty if . There is only one possible way to define composition, and the transitive property of guarantees that the composition of arrows is indeed well-defined: if there is an arrow and an arrow , then and , so and thus there is a unique arrow . This category is locally small, since all nonempty Hom-sets are in fact singletons. It is in fact small, since the objects are by construction the set .   Category  For each positive integer , the category has objects and is either empty if or a singleton if . As , composition is defined in the only way possible, and things work out. This is the poset category for the poset with the usual .   Matrix Category  Fix a field . We define a category Mat- with objects all positive integers, and given two positive integers and , the -set consists of all matrices with entries in . The composition rule is given by product of matrices: given and , the composition is the matrix . For each object , its identity arrow is given by the identity matrix.    Let be a directed graph. We can construct a category from as follows: the objects are the vertices of , and the arrows are directed paths in the graph . In this category, composition of arrows corresponds to concatenation of paths. For each object , the identity arrow corresponds to the empty path from to .       A locally small category with just one element is completely determined by its unique Hom-set; it thus consists of a set with an associative operation that has an identity element, which in this class is what we call a semigroup. Some authors prefer the term monoid.     Diagrams and Morphisms    Make big plans; aim high in hope and work, remembering that a noble, logical diagram once recorded will not die.   Daniel Burnham   A key insight we get from category theory is that many important concepts can be understood through diagrams. Homological algebra is in many ways the study of commutative diagrams. One way to formalize what a diagram is involves talking about functors, which we will discuss in Section 1.2; here is a more down to earth definition.  Diagram   A diagram in a category is a directed multigraph whose vertices are objects in and whose arrows\/edges are morphisms in . A commutative diagram in is a diagram in which for each pair of vertices and , any two paths from to compose to the same morphism.    Commutative Diagram  The diagram   commutes if and only if .   There are some special types of arrows we will want to consider.  Morphism Inverses   Let be any category.   An arrow is left invertible if there exists such that . In this case, we say that is the left inverse of . So is a left inverse of if the diagram   commutes.    An arrow is right invertible if there exists such that . In this case, we say that is the right inverse of . So is a right inverse of if the diagram   commutes.    An arrow is an isomorphism if there exists such that and . Unsurprisingly, such an arrow is called the inverse of .       Isomorphisms     In , , and R the isomorphisms are the morphisms that are bijective functions.    In contrast, in the isomorphisms are the homeomorphisms, which are the bijective continuous functions with continuous inverses. These are not the same thing as just the bijective continuous functions.       Opposite Categories and Subcategories    The life of this world is nothing but the harmony of opposites.   Rumi   We will now continue to follow a familiar pattern and define the related concepts one can guess should be defined.  Subcategory   A subcategory  of a category consists of a subcollection of the objects of and a subcollection of the morphisms of such that the following hold:   For every object in , the arrow is an arrow in .    For every arrow in , its source and target in are objects in .    For every pair of arrows and in such that is an arrow that makes sense in , is an arrow in .       In particular, is a category in its own right.  Subcategories  The category of finitely generated -modules with -module homomorphisms is a subcategory of .   Subcategories of Vector Spaces  Let be a field.   The collection of finite dimensional -vector spaces with all linear transformations is a category.    The collection of all -dimensional -vector spaces with all linear transformations is a category.    The collection of all -vector spaces (or -dimensional vector spaces) with linear isomorphisms is a category.    The collection of all -vector spaces (or -dimensional vector spaces) with nonzero linear transformations is not a category, since it is not closed under composition.    The collection of all -dimensional vector spaces with linear transformations of determinant 0 is not a category, since it does not have identity maps.      Full Subcategory   A subcategory of is a full subcategory if includes all of the arrows in between any two objects in .    Full Subcategories     The category of abelian groups is a full subcategory of .    Since every group is a set, and every homomorphism is a function, is a subcategory of . However, not every function between two groups is a group homomorphism, so is not a full subcategory of .    The category whose objects are all sets and with arrows all bijections is a subcategory of that is not full.      Here is another way of constructing a new category out of an old one.  Opposite Category   Let be a category. The opposite category of , denoted , is a category whose objects are the objects of , and such that each arrow is the same as some arrow in . The composition of two morphisms and in is defined as the composition in .    Many objects and concepts one might want to describe are obtained from existing ones by flipping the arrows. Opposite categories give us the formal framework to talk about such things. We will often want to refer to dual notions, which will essentially mean considering the same notion in a category and in the opposite category ; in practice, this means we should flip all the arrows involved. We will see examples of this later on.  The dual category construction gives us a formal framework to talk about dual notions. We will often make a statement in a category and make comments about the dual statement; in practice, this corresponds to simply switching the way all arrows go. Here are some examples of dual notions and statements:     source  target    epi  mono    is a right inverse for  is a left inverse for    is invertible  is invertible    initial objects  terminal objects    homology  cohomology     Note that the dual of the dual is the original statement; we can make this more formal by saying that . Sometimes we can easily prove a statement by dualizing; however, this is not always straightforward, and one needs to carefully dualize all portions of the statement in question. Nevertheless, Sanders MacLane, one of the fathers of category theory, wrote that \"If any statement about a category is deducible from the axioms for a category, the dual statement is likely deducible\". One of the upshots of duality is that any theorem in category theory must simultaneously prove two theorems: the original statement and its dual. But for this to hold, we need proofs that use the abstraction of a purely categorical proof.  Opposite categories are more interesting than they might appear at first; there is more than just flipping all the arrows. For example, consider the opposite category of Set. For any nonempty set , there is a unique morphism in Set (a function) , but there are no functions , so is not a function. Thus thinking about Set is a bit difficult. One can show that this is the category of complete atomic Boolean algebras - but we won't concern ourselves with what that means.           "
+  "body": "Categories         Most fields in modern mathematics follow the same basic recipe: there is a main type of object one wants to study - groups, rings, modules, topological spaces, etc - and a natural notion of arrows between these - group homomorphisms, ring homomorphisms, module homomorphisms, continuous maps, etc. The objects are often sets with some extra structure, and the arrows are often maps between the objects that preserve whatever that extra structure is. Category theory is born of this realization, by abstracting the basic notions that make math and studying them all at the same time. How many times have we felt a sense of déjà vu when learning about a new field of math? Category theory unifies all those ideas we have seen over and over in different contexts.  Category theory is an entire field of mathematics in its own right. As such, there is a lot to say about category theory, and unfortunately it doesn't all fit in the little time we have to cover it in this course. You are strongly encouraged to learn more about category theory, for example from [ML98] or [Rie17].  Before we go any further, note that there is a long and fun story about why we use the word collection when describing the objects in a category. Not all collections are allowed to be sets, an issue that was first discovered by Russel with his famous Russel's Paradox. The collection of all sets that don't contain themselves cannot be a set. Do you see why? Russel exposed the fact that one has to be careful with how we formalize set theory. We follow the ZFC (Zermelo-Fraenkel with choice, short for the Zermelo-Fraenkel axioms plus the Axiom of Choice) axiomatization of set theory, and while we will not discuss the details of this formalization here, you are encouraged to read more on the subject.   Definition and First Examples    We'll only use as much category theory as is necessary. Famous last words...   Roman Abramovich   A category consists of a collection of objects and arrows or morphisms between those objects. While these are often sets and some kind of functions between them, beware that this will not always be the case. We will use the words morphism and arrows interchangeably, though arrow has the advantage of reminding us we are not necessarily talking about functions.  Category   A category  consists of three different pieces of data:   a collection of objects ,     for each two objects, say and , a collection of arrows or morphisms from to , and    for each three objects , and , a composition         We will often drop the and write simply for .  These ingredients satisfy the following axioms:   The are all disjoint. In particular, if is an arrow in , we can talk about its source  and its target  as the objects such that .    For each object , there is an identity arrow  such that and for all and all .    Composition is associative : for all appropriately chosen arrows.        We sometimes write or for an arrow .   Unique Identity Morphism  Every object in a category has a unique identity morphism.   Here are some categories you have likely encountered before:  Categories     The category with objects all sets and arrows all functions between sets.    The category whose objects are the collection of all groups, and whose arrows are all the homomorphisms of groups. The identity arrows are the identity homomorphisms.    The category with objects all abelian groups, and arrows the homomorphisms of abelian groups. The identity arrows are the identity homomorphisms.    The category of rings and ring homomorphisms. Contrary to what you may expect, this is not nearly as important as the next one.    The category of modules over a fixed ring and with -module homomorphisms. Sometimes one writes for this category, and reserve for the category of finitely generated -modules with ule homomorphisms. When is a field, the objects in the category -Mod are -vector spaces, and the arrows are linear transformations; we may instead refer to this category as Vect- .    The category Top of topological spaces and continuous functions. One may consider many variations of the categories above. Here are some variations on vector spaces:      While the collections of objects and arrows might not actually be sets, sometimes they are.  Locally Small   A category is locally small if for all objects and in is a set. A category is small if it is locally small and the collection of all objects in is a set.    In fact, one can define a small category as one where the collection of all arrows is a set. It follows immediately that the collection of all objects is also a set, since it must be a subset of the set of arrows - for each object, there is an identity arrow.  Many important categories are at least locally small.    is locally small but not small.     Categories where the objects are sets with some extra structure and the arrows are some kind of functions between the objects are called concrete.    All of the categories we have seen thus far have been conctrete, but this is not the case in general.  Non-Concrete Categories     Given a partially ordered set , we can regard itself as a category: the objects are the elements of , and for each and in is either a singleton if or empty if . There is only one possible way to define composition, and the transitive property of guarantees that the composition of arrows is indeed well-defined: if there is an arrow and an arrow , then and , so and thus there is a unique arrow . This category is locally small, since all nonempty Hom-sets are in fact singletons. It is in fact small, since the objects are by construction the set .   Category  For each positive integer , the category has objects and is either empty if or a singleton if . As , composition is defined in the only way possible, and things work out. This is the poset category for the poset with the usual .   Matrix Category  Fix a field . We define a category Mat- with objects all positive integers, and given two positive integers and , the -set consists of all matrices with entries in . The composition rule is given by product of matrices: given and , the composition is the matrix . For each object , its identity arrow is given by the identity matrix.    Let be a directed graph. We can construct a category from as follows: the objects are the vertices of , and the arrows are directed paths in the graph . In this category, composition of arrows corresponds to concatenation of paths. For each object , the identity arrow corresponds to the empty path from to .       A locally small category with just one element is completely determined by its unique Hom-set; it thus consists of a set with an associative operation that has an identity element, which in this class is what we call a semigroup. Some authors prefer the term monoid.     Diagrams and Morphisms    Make big plans; aim high in hope and work, remembering that a noble, logical diagram once recorded will not die.   Daniel Burnham   A key insight we get from category theory is that many important concepts can be understood through diagrams. Homological algebra is in many ways the study of commutative diagrams. One way to formalize what a diagram is involves talking about functors, which we will discuss in Section 1.2; here is a more down to earth definition.  Diagram   A diagram in a category is a directed multigraph whose vertices are objects in and whose arrows\/edges are morphisms in . A commutative diagram in is a diagram in which for each pair of vertices and , any two paths from to compose to the same morphism.    Commutative Diagram  The diagram   commutes if and only if .   There are some special types of arrows we will want to consider.  Morphism Inverses   Let be any category.   An arrow is left invertible if there exists such that . In this case, we say that is the left inverse of . So is a left inverse of if the diagram   commutes.    An arrow is right invertible if there exists such that . In this case, we say that is the right inverse of . So is a right inverse of if the diagram   commutes.    An arrow is an isomorphism if there exists such that and . Unsurprisingly, such an arrow is called the inverse of .       Isomorphisms     In , , and R the isomorphisms are the morphisms that are bijective functions.    In contrast, in the isomorphisms are the homeomorphisms, which are the bijective continuous functions with continuous inverses. These are not the same thing as just the bijective continuous functions.       Opposite Categories and Subcategories    The life of this world is nothing but the harmony of opposites.   Rumi   We will now continue to follow a familiar pattern and define the related concepts one can guess should be defined.  Subcategory   A subcategory  of a category consists of a subcollection of the objects of and a subcollection of the morphisms of such that the following hold:   For every object in , the arrow is an arrow in .    For every arrow in , its source and target in are objects in .    For every pair of arrows and in such that is an arrow that makes sense in , is an arrow in .       In particular, is a category in its own right.  Subcategories  The category of finitely generated -modules with -module homomorphisms is a subcategory of .   Subcategories of Vector Spaces  Let be a field.   The collection of finite dimensional -vector spaces with all linear transformations is a category.    The collection of all -dimensional -vector spaces with all linear transformations is a category.    The collection of all -vector spaces (or -dimensional vector spaces) with linear isomorphisms is a category.    The collection of all -vector spaces (or -dimensional vector spaces) with nonzero linear transformations is not a category, since it is not closed under composition.    The collection of all -dimensional vector spaces with linear transformations of determinant 0 is not a category, since it does not have identity maps.      Full Subcategory   A subcategory of is a full subcategory if includes all of the arrows in between any two objects in .    Full Subcategories     The category of abelian groups is a full subcategory of .    Since every group is a set, and every homomorphism is a function, is a subcategory of . However, not every function between two groups is a group homomorphism, so is not a full subcategory of .    The category whose objects are all sets and with arrows all bijections is a subcategory of that is not full.      Here is another way of constructing a new category out of an old one.  Opposite Category   Let be a category. The opposite category of , denoted , is a category whose objects are the objects of , and such that each arrow is the same as some arrow in . The composition of two morphisms and in is defined as the composition in .    Many objects and concepts one might want to describe are obtained from existing ones by flipping the arrows. Opposite categories give us the formal framework to talk about such things. We will often want to refer to dual notions, which will essentially mean considering the same notion in a category and in the opposite category ; in practice, this means we should flip all the arrows involved. We will see examples of this later on.  The dual category construction gives us a formal framework to talk about dual notions. We will often make a statement in a category and make comments about the dual statement; in practice, this corresponds to simply switching the way all arrows go. Here are some examples of dual notions and statements:     source  target    epi  mono    is a right inverse for  is a left inverse for    is invertible  is invertible    initial objects  terminal objects    homology  cohomology     Note that the dual of the dual is the original statement; we can make this more formal by saying that . Sometimes we can easily prove a statement by dualizing; however, this is not always straightforward, and one needs to carefully dualize all portions of the statement in question. Nevertheless, Sanders MacLane, one of the fathers of category theory, wrote that \"If any statement about a category is deducible from the axioms for a category, the dual statement is likely deducible\". One of the upshots of duality is that any theorem in category theory must simultaneously prove two theorems: the original statement and its dual. But for this to hold, we need proofs that use the abstraction of a purely categorical proof.  Opposite categories are more interesting than they might appear at first; there is more than just flipping all the arrows. For example, consider the opposite category of Set. For any nonempty set , there is a unique morphism in Set (a function) , but there are no functions , so is not a function. Thus thinking about Set is a bit difficult. One can show that this is the category of complete atomic Boolean algebras - but we won't concern ourselves with what that means.           "
 },
 {
   "id": "sec-categories-2",
@@ -397,9 +397,9 @@ var ptx_lunr_docs = [
   "body": "   source  target    epi  mono    is a right inverse for  is a left inverse for    is invertible  is invertible    initial objects  terminal objects    homology  cohomology    "
 },
 {
-  "id": "sec-categories-6",
+  "id": "sec-categories-7",
   "level": "2",
-  "url": "sec-categories.html#sec-categories-6",
+  "url": "sec-categories.html#sec-categories-7",
   "type": "Summary",
   "number": "1.1",
   "title": "",
@@ -700,7 +700,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Maps of Complexes",
-  "body": "Maps of Complexes        Establishing    A chain is no stronger than its weakest link, and life is after all a chain.   William James   Unsurprisingly, we can form a category of complexes, but to do that we need the right definition of maps between complexes. We also take this section as a chance to set up some definitions we will need later. One thing to keep in mind as we build our basic definitions: we also want homology to be functorial.  Chain Map   Let and be complexes. A map of complexes or a chain map , which we write as or simply , is a sequence of homomorphisms of -modules such that the following diagram commutes:   This means that for all .    Note that throughout, whenever we call a function between -modules and a map, we really mean to say it is a homomorphism of -modules.  Zero and Identity Chain Maps  The zero and the identity maps of complexes are exactly what they sound like: the zero map is 0 in every homological degree, and the identity map is the identity in every homological degree.   This is the notion of morphism we would want to form a category of chain complexes.  Category of Chain Complexes   Let be a ring. The category of chain complexes of -modules, denoted or simply , is the category with objects all chain complexes of -modules and arrows all maps of complexes of -modules. When , we write for , the category of chain complexes of abelian groups.    Note that the identity maps defined above are precisely the identity arrows in the category of chain complexes.  Isomorphisms in Show that the isomorphisms in the category are precisely the maps of complexes such that is an isomorphism for all .  This is a good notion of map of complexes: it induces homomorphisms in homology, which in particular allows us to say that homology is a functor.    Let be a map of complexes. For all restricts to homomorphisms and . As a consequence, induces homomorphisms on homology .    Since , any element , say , is taken to   Similarly, if , then so . Finally, the restriction of to sends into , and thus it induces a well-defined homomorphism on the quotients .    Induced Map in Homology   Let be a map of complexes. We call the map the induced map in homology , and sometimes denote it by .    One can show that preserves compositions, and that moreover, the map in homology induced by the identity is the identity. Thus taking th homology is a functor which takes each map of complexes to the -module homomorphism   Quasi-Isomorphism   A map of chain complexes is a quasi-isomorphism if it induces an isomorphism in homology, meaning is an isomorphism of -modules for all . If there exists a quasi-isomorphism between two complexes and , we say that and are quasi-isomorphic , and write .     Note that saying that if is a quasi-isomorphism between and is a stronger statement that the fact that for all : it also says that there are isomorphisms that are all induced by .   Not all quasi-isomorphisms are isomorphisms, as the following example shows:  Let denote the projection map from to . The chain map is a quasi-isomorphism.   Homotopy    Transformation is not automatic. It must be learned; it must be led.   W. Edwards Deming   Homotopy   Let be maps complexes. A homotopy , sometimes referred to as a chain homotopy , between and is a sequence of maps    such that for all . If there exists a homotopy between and , we say that and are homotopic or that they have the same homotopy type . We write to say that and are homotopic. If is homotopic to the zero map, we say is nullhomotopic , and write . This should not be confused with the notation on complexes.    Homotopy is an Equivalence Relation Homotopy is an equivalence relation.  The equivalence classes under homotopy are called homotopy classes. Homotopy is an interesting equivalence relation because homotopic maps induce the same map on homology.  Nullhomotopic Maps Induce Zero Map in Homology   Let be maps of complexes. If is homotopic to , then for all . In particular, every nullhomotopic map induces the zero map in homology.    Let be homotopic maps of complexes, and let be a homotopy between and . We claim that the map of complexes (defined in the obvious way) sends cycles to boundaries. If , then The map on homology induced by must then be the map, so and induce the same map on homology. Here we are implicitly using the fact that , which we leave as an exercise to be further explored in .    Notice, however, that the converse is false: the induced map in homology can be the zero map (for all homological degrees) even if the original map of complexes is not nullhomotopic.  Consider the following map of complexes: Show that this map is not nullhomotopic, but that the induced map in homology is zero.  Homotopy Equivalent   If and are maps of complexes such that is homotopic to the identity map on and is homotopic to the identity chain map on , we say that and are homotopy equivalences and and are homotopy equivalent .    Homotopy Equvivalences are Quasi-Isomorphisms   Homotopy equivalences are quasi-isomorphisms.    If and are such that is homotopic to and is homotopic to , then by the map induces the identity map on homology. So for all we have Therefore, and must both be isomorphisms.    The converse is false.  Let denote the projection map from to . The chain map is a quasi-isomorphism but not a homotopy equivalence.   The relation , meaning \"there is a quasi-isomorphism from to \", is not symmetric: in , there is no quasi-isomorphism going in the opposite direction of the one given.    Complexes of Complexes    Every complex problem has a simple solution that doesn't work.   H.L. Mencken   Now that we know about maps between complexes, it's time to point out that we can also talk about complexes of complexes and exact sequences of complexes. While we will later formalize this a little better when we discover that is an abelian category , let's for now give quick definitions that we can use.  Subcomplexes and Quotient Complexes   Given complexes and is a subcomplex of if is a submodule of for all , and the inclusion maps define a map of complexes . Given a subcomplex of , the quotient of by is the complex that has in homological degree , with differential induced by the differential on .    If is a subcomplex of , then the differential on satisfies . Therefore, induces a map of -modules for all , so that our definition of the differential on actually makes sense.  We can also talk about kernels and cokernels of maps of complexes.  Kernel, Cokernel   Given any map of complexes , the kernel of is the subcomplex of that we can assemble from the the kernels . More precisely, is the complex where the differentials are simply the corresponding restrictions of the differentials on . Similarly, the image of is the subcomplex of . where the differentials are given by restriction of the corresponding differentials in . The cokernel of is the quotient complex .    Again, there are some details to check.  Show that the kernel, image, and cokernel of a complex map are indeed complexes.  Complexes in   A complex in is a sequence of complexes of -modules and chain maps between them such that for all . A complex of complexes is a diagram of the form   where is the module in homological degree in the complex . The th column corresponds to the complex , and every row is also a complex. The vertical maps are the differentials on each individual complex; the horizontal maps are the differentials on the complex of complexes.    Given a complex in , we can talk about cycles and boundaries, which are a sequence of subcomplexes of the complexes in , and thus its homology. Such a complex is exact if for all .  Short Exact Sequences in   A short exact sequence of complexes is an exact complex in of the form Equivalently, a short exact sequence of complexes is a commutative diagram   where the rows are exact and the columns are complexes.             "
+  "body": "Maps of Complexes    Definitions: category, complex     We are finally ready to introduce the category of chain complexes, and to talk more about exact sequences in homology.   Establishing    A chain is no stronger than its weakest link, and life is after all a chain.   William James   Unsurprisingly, we can form a category of complexes, but to do that we need the right definition of maps between complexes. We also take this section as a chance to set up some definitions we will need later. One thing to keep in mind as we build our basic definitions: we also want homology to be functorial.  Chain Map   Let and be complexes. A map of complexes or a chain map , which we write as or simply , is a sequence of homomorphisms of -modules such that the following diagram commutes:   This means that for all .    Map vs. Chain Map  Note that throughout, whenever we call a function between -modules and a map , we really mean to say it is a homomorphism of -modules.   Zero and Identity Chain Maps  The zero and the identity maps of complexes are exactly what they sound like: the zero map is 0 in every homological degree, and the identity map is the identity in every homological degree.   This is the notion of morphism we would want to form a category of chain complexes.  Category of Chain Complexes   Let be a ring. The category of chain complexes of -modules, denoted or simply , is the category with objects all chain complexes of -modules and arrows all maps of complexes of -modules.     When , we write for , the category of chain complexes of abelian groups.   Note that the identity maps defined above are precisely the identity arrows in the category of chain complexes.  Understanding    Verify that is indeed a category.    Show that the isomorphisms in the category are precisely the maps of complexes   such that is an isomorphism for all .     This is a good notion of map of complexes: it induces homomorphisms in homology, which in particular allows us to say that homology is a functor.  Induced Homomorphisms on Homology   Let be a map of complexes. For all restricts to homomorphisms    and     .   As a consequence, induces homomorphisms on homology .     Since , any element , say , is taken to   Similarly, if , then so . Finally, the restriction of to sends into , and thus it induces a well-defined homomorphism on the quotients .    Induced Map in Homology   Let be a map of complexes. We call the map the induced map in homology , and sometimes denote it by .    Homology Functor  One can show that preserves compositions, and that moreover, the map in homology induced by the identity is the identity. Thus taking th homology is a functor which takes each map of complexes to the -module homomorphism    Quasi-Isomorphism   A map of chain complexes is a quasi-isomorphism if it induces an isomorphism in homology, meaning is an isomorphism of -modules for all . If there exists a quasi-isomorphism between two complexes and , we say that and are quasi-isomorphic , and write .     Note that saying that if is a quasi-isomorphism between and is a stronger statement that the fact that for all : it also says that there are isomorphisms that are all induced by .   Not all quasi-isomorphisms are isomorphisms, as the following example shows:   Let denote the projection map from to . The chain map   is a quasi-isomorphism.   When we look at the induced map of on homology, the only index where the induced homomorphism may not be is at . Observe however, that is the identity map, as is mapped to and is mapped to . Thus is indeed a quasi-isomorphism.    Homotopy    Transformation is not automatic. It must be learned; it must be led.   W. Edwards Deming   Homotopy   Let be maps complexes. A homotopy , sometimes referred to as a chain homotopy , between and is a sequence of maps    such that for all . If there exists a homotopy between and , we say that and are homotopic or that they have the same homotopy type . We write to say that and are homotopic. If is homotopic to the zero map, we say is nullhomotopic , and write . This should not be confused with the notation on complexes.    Homotopy is an Equivalence Relation Homotopy is an equivalence relation.  The equivalence classes under homotopy are called homotopy classes. Homotopy is an interesting equivalence relation because homotopic maps induce the same map on homology.  Nullhomotopic Maps Induce Zero Map in Homology   Let be maps of complexes. If is homotopic to , then for all . In particular, every nullhomotopic map induces the zero map in homology.    Let be homotopic maps of complexes, and let be a homotopy between and . We claim that the map of complexes (defined in the obvious way) sends cycles to boundaries. If , then The map on homology induced by must then be the map, so and induce the same map on homology. Here we are implicitly using the fact that , which we leave as an exercise to be further explored in .    Notice, however, that the converse is false: the induced map in homology can be the zero map (for all homological degrees) even if the original map of complexes is not nullhomotopic.  Consider the following map of complexes: Show that this map is not nullhomotopic, but that the induced map in homology is zero.  Homotopy Equivalent   If and are maps of complexes such that is homotopic to the identity map on and is homotopic to the identity chain map on , we say that and are homotopy equivalences and and are homotopy equivalent .    Homotopy Equvivalences are Quasi-Isomorphisms   Homotopy equivalences are quasi-isomorphisms.    If and are such that is homotopic to and is homotopic to , then by the map induces the identity map on homology. So for all we have Therefore, and must both be isomorphisms.    The converse is false.  Let denote the projection map from to . The chain map is a quasi-isomorphism but not a homotopy equivalence.   The relation , meaning \"there is a quasi-isomorphism from to \", is not symmetric: in , there is no quasi-isomorphism going in the opposite direction of the one given.    Complexes of Complexes    Every complex problem has a simple solution that doesn't work.   H.L. Mencken   Now that we know about maps between complexes, it's time to point out that we can also talk about complexes of complexes and exact sequences of complexes. While we will later formalize this a little better when we discover that is an abelian category , let's for now give quick definitions that we can use.  Subcomplexes and Quotient Complexes   Given complexes and is a subcomplex of if is a submodule of for all , and the inclusion maps define a map of complexes .  Given a subcomplex of , the quotient of by is the complex that has in homological degree , with differential induced by the differential on .    Subcomplex Maps are Well-Defined If is a subcomplex of , then the differential on satisfies . Therefore, induces a map of -modules for all , so that our definition of the differential on actually makes sense.  We can also talk about kernels and cokernels of maps of complexes.  Kernel, Cokernel   Given any map of complexes , the kernel of is the subcomplex of that we can assemble from the the kernels . More precisely, is the complex where the differentials are simply the corresponding restrictions of the differentials on .  Similarly, the image of is the subcomplex of . where the differentials are given by restriction of the corresponding differentials in . The cokernel of is the quotient complex .    Again, there are some details to check.  Show that the kernel, image, and cokernel of a complex map are indeed complexes.  Complexes in   A complex in is a sequence of complexes of -modules and chain maps between them such that for all . A complex of complexes is a diagram of the form   where is the module in homological degree in the complex . The th column corresponds to the complex , and every row is also a complex. The vertical maps are the differentials on each individual complex; the horizontal maps are the differentials on the complex of complexes.    Given a complex in , we can talk about cycles and boundaries, which are a sequence of subcomplexes of the complexes in , and thus its homology. Such a complex is exact if for all .  Short Exact Sequences in   A short exact sequence of complexes is an exact complex in of the form Equivalently, a short exact sequence of complexes is a commutative diagram   where the rows are exact and the columns are complexes.             "
 },
 {
   "id": "sec-compelx-maps-2",
@@ -709,7 +709,7 @@ var ptx_lunr_docs = [
   "type": "Reminders and Recollections",
   "number": "2.1",
   "title": "",
-  "body": "     "
+  "body": "  Definitions: category, complex   "
 },
 {
   "id": "def-2.1",
@@ -721,11 +721,20 @@ var ptx_lunr_docs = [
   "body": "Chain Map   Let and be complexes. A map of complexes or a chain map , which we write as or simply , is a sequence of homomorphisms of -modules such that the following diagram commutes:   This means that for all .   "
 },
 {
+  "id": "subsec--5",
+  "level": "2",
+  "url": "sec-compelx-maps.html#subsec--5",
+  "type": "Convention",
+  "number": "2.2",
+  "title": "Map vs. Chain Map.",
+  "body": "Map vs. Chain Map  Note that throughout, whenever we call a function between -modules and a map , we really mean to say it is a homomorphism of -modules.  "
+},
+{
   "id": "ex-2.2",
   "level": "2",
   "url": "sec-compelx-maps.html#ex-2.2",
   "type": "Example",
-  "number": "2.2",
+  "number": "2.3",
   "title": "Zero and Identity Chain Maps.",
   "body": "Zero and Identity Chain Maps  The zero and the identity maps of complexes are exactly what they sound like: the zero map is 0 in every homological degree, and the identity map is the identity in every homological degree.  "
 },
@@ -734,43 +743,61 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.3",
   "type": "Definition",
-  "number": "2.3",
+  "number": "2.4",
   "title": "Category of Chain Complexes.",
-  "body": "Category of Chain Complexes   Let be a ring. The category of chain complexes of -modules, denoted or simply , is the category with objects all chain complexes of -modules and arrows all maps of complexes of -modules. When , we write for , the category of chain complexes of abelian groups.   "
+  "body": "Category of Chain Complexes   Let be a ring. The category of chain complexes of -modules, denoted or simply , is the category with objects all chain complexes of -modules and arrows all maps of complexes of -modules.   "
+},
+{
+  "id": "subsec--9",
+  "level": "2",
+  "url": "sec-compelx-maps.html#subsec--9",
+  "type": "Convention",
+  "number": "2.5",
+  "title": "<span class=\"process-math\">\\(\\mathrm{Ch}(\\mathrm{Ab})\\)<\/span>.",
+  "body": " When , we write for , the category of chain complexes of abelian groups.  "
 },
 {
   "id": "exe-25",
   "level": "2",
   "url": "sec-compelx-maps.html#exe-25",
   "type": "Exercise",
-  "number": "2.4",
-  "title": "Isomorphisms in <span class=\"process-math\">\\(\\mathrm{Ch}(R)\\)<\/span>.",
-  "body": "Isomorphisms in Show that the isomorphisms in the category are precisely the maps of complexes such that is an isomorphism for all . "
+  "number": "2.6",
+  "title": "Understanding <span class=\"process-math\">\\(\\mathrm{Ch}(R)\\)<\/span>.",
+  "body": "Understanding    Verify that is indeed a category.    Show that the isomorphisms in the category are precisely the maps of complexes   such that is an isomorphism for all .    "
 },
 {
   "id": "lem-2.4",
   "level": "2",
   "url": "sec-compelx-maps.html#lem-2.4",
   "type": "Lemma",
-  "number": "2.5",
-  "title": "",
-  "body": "  Let be a map of complexes. For all restricts to homomorphisms and . As a consequence, induces homomorphisms on homology .    Since , any element , say , is taken to   Similarly, if , then so . Finally, the restriction of to sends into , and thus it induces a well-defined homomorphism on the quotients .   "
+  "number": "2.7",
+  "title": "Induced Homomorphisms on Homology.",
+  "body": "Induced Homomorphisms on Homology   Let be a map of complexes. For all restricts to homomorphisms    and     .   As a consequence, induces homomorphisms on homology .     Since , any element , say , is taken to   Similarly, if , then so . Finally, the restriction of to sends into , and thus it induces a well-defined homomorphism on the quotients .   "
 },
 {
   "id": "def-2.5",
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.5",
   "type": "Definition",
-  "number": "2.6",
+  "number": "2.8",
   "title": "Induced Map in Homology.",
   "body": "Induced Map in Homology   Let be a map of complexes. We call the map the induced map in homology , and sometimes denote it by .   "
+},
+{
+  "id": "subsec--15",
+  "level": "2",
+  "url": "sec-compelx-maps.html#subsec--15",
+  "type": "Exercise",
+  "number": "2.9",
+  "title": "Homology Functor.",
+  "body": "Homology Functor  One can show that preserves compositions, and that moreover, the map in homology induced by the identity is the identity. Thus taking th homology is a functor which takes each map of complexes to the -module homomorphism   "
 },
 {
   "id": "def-2.6",
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.6",
   "type": "Definition",
-  "number": "2.7",
+  "number": "2.10",
   "title": "Quasi-Isomorphism.",
   "body": "Quasi-Isomorphism   A map of chain complexes is a quasi-isomorphism if it induces an isomorphism in homology, meaning is an isomorphism of -modules for all . If there exists a quasi-isomorphism between two complexes and , we say that and are quasi-isomorphic , and write .   "
 },
@@ -779,7 +806,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#rem-2.7",
   "type": "Remark",
-  "number": "2.8",
+  "number": "2.11",
   "title": "",
   "body": " Note that saying that if is a quasi-isomorphism between and is a stronger statement that the fact that for all : it also says that there are isomorphisms that are all induced by .  "
 },
@@ -788,16 +815,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-26",
   "type": "Exercise",
-  "number": "2.9",
+  "number": "2.12",
   "title": "",
-  "body": "Let denote the projection map from to . The chain map is a quasi-isomorphism. "
+  "body": " Let denote the projection map from to . The chain map   is a quasi-isomorphism.   When we look at the induced map of on homology, the only index where the induced homomorphism may not be is at . Observe however, that is the identity map, as is mapped to and is mapped to . Thus is indeed a quasi-isomorphism.  "
 },
 {
   "id": "def-2.8",
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.8",
   "type": "Definition",
-  "number": "2.10",
+  "number": "2.13",
   "title": "Homotopy.",
   "body": "Homotopy   Let be maps complexes. A homotopy , sometimes referred to as a chain homotopy , between and is a sequence of maps    such that for all . If there exists a homotopy between and , we say that and are homotopic or that they have the same homotopy type . We write to say that and are homotopic. If is homotopic to the zero map, we say is nullhomotopic , and write . This should not be confused with the notation on complexes.   "
 },
@@ -806,7 +833,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-27",
   "type": "Exercise",
-  "number": "2.11",
+  "number": "2.14",
   "title": "Homotopy is an Equivalence Relation.",
   "body": "Homotopy is an Equivalence Relation Homotopy is an equivalence relation. "
 },
@@ -815,7 +842,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#lem-2.9",
   "type": "Lemma",
-  "number": "2.12",
+  "number": "2.15",
   "title": "Nullhomotopic Maps Induce Zero Map in Homology.",
   "body": "Nullhomotopic Maps Induce Zero Map in Homology   Let be maps of complexes. If is homotopic to , then for all . In particular, every nullhomotopic map induces the zero map in homology.    Let be homotopic maps of complexes, and let be a homotopy between and . We claim that the map of complexes (defined in the obvious way) sends cycles to boundaries. If , then The map on homology induced by must then be the map, so and induce the same map on homology. Here we are implicitly using the fact that , which we leave as an exercise to be further explored in .   "
 },
@@ -824,7 +851,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-28",
   "type": "Exercise",
-  "number": "2.13",
+  "number": "2.16",
   "title": "",
   "body": "Consider the following map of complexes: Show that this map is not nullhomotopic, but that the induced map in homology is zero. "
 },
@@ -833,7 +860,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.10",
   "type": "Definition",
-  "number": "2.14",
+  "number": "2.17",
   "title": "Homotopy Equivalent.",
   "body": "Homotopy Equivalent   If and are maps of complexes such that is homotopic to the identity map on and is homotopic to the identity chain map on , we say that and are homotopy equivalences and and are homotopy equivalent .   "
 },
@@ -842,7 +869,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#cor-2.11",
   "type": "Corollary",
-  "number": "2.15",
+  "number": "2.18",
   "title": "Homotopy Equvivalences are Quasi-Isomorphisms.",
   "body": "Homotopy Equvivalences are Quasi-Isomorphisms   Homotopy equivalences are quasi-isomorphisms.    If and are such that is homotopic to and is homotopic to , then by the map induces the identity map on homology. So for all we have Therefore, and must both be isomorphisms.   "
 },
@@ -851,7 +878,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-29",
   "type": "Exercise",
-  "number": "2.16",
+  "number": "2.19",
   "title": "",
   "body": "Let denote the projection map from to . The chain map is a quasi-isomorphism but not a homotopy equivalence. "
 },
@@ -860,7 +887,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#rem-2.12",
   "type": "Remark",
-  "number": "2.17",
+  "number": "2.20",
   "title": "",
   "body": " The relation , meaning \"there is a quasi-isomorphism from to \", is not symmetric: in , there is no quasi-isomorphism going in the opposite direction of the one given.  "
 },
@@ -869,34 +896,34 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.13",
   "type": "Definition",
-  "number": "2.18",
+  "number": "2.21",
   "title": "Subcomplexes and Quotient Complexes.",
-  "body": "Subcomplexes and Quotient Complexes   Given complexes and is a subcomplex of if is a submodule of for all , and the inclusion maps define a map of complexes . Given a subcomplex of , the quotient of by is the complex that has in homological degree , with differential induced by the differential on .   "
+  "body": "Subcomplexes and Quotient Complexes   Given complexes and is a subcomplex of if is a submodule of for all , and the inclusion maps define a map of complexes .  Given a subcomplex of , the quotient of by is the complex that has in homological degree , with differential induced by the differential on .   "
 },
 {
   "id": "exe-30",
   "level": "2",
   "url": "sec-compelx-maps.html#exe-30",
   "type": "Exercise",
-  "number": "2.19",
-  "title": "",
-  "body": "If is a subcomplex of , then the differential on satisfies . Therefore, induces a map of -modules for all , so that our definition of the differential on actually makes sense. "
+  "number": "2.22",
+  "title": "Subcomplex Maps are Well-Defined.",
+  "body": "Subcomplex Maps are Well-Defined If is a subcomplex of , then the differential on satisfies . Therefore, induces a map of -modules for all , so that our definition of the differential on actually makes sense. "
 },
 {
   "id": "def-2.14",
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.14",
   "type": "Definition",
-  "number": "2.20",
+  "number": "2.23",
   "title": "Kernel, Cokernel.",
-  "body": "Kernel, Cokernel   Given any map of complexes , the kernel of is the subcomplex of that we can assemble from the the kernels . More precisely, is the complex where the differentials are simply the corresponding restrictions of the differentials on . Similarly, the image of is the subcomplex of . where the differentials are given by restriction of the corresponding differentials in . The cokernel of is the quotient complex .   "
+  "body": "Kernel, Cokernel   Given any map of complexes , the kernel of is the subcomplex of that we can assemble from the the kernels . More precisely, is the complex where the differentials are simply the corresponding restrictions of the differentials on .  Similarly, the image of is the subcomplex of . where the differentials are given by restriction of the corresponding differentials in . The cokernel of is the quotient complex .   "
 },
 {
   "id": "exe-31",
   "level": "2",
   "url": "sec-compelx-maps.html#exe-31",
   "type": "Exercise",
-  "number": "2.21",
+  "number": "2.24",
   "title": "",
   "body": "Show that the kernel, image, and cokernel of a complex map are indeed complexes. "
 },
@@ -905,7 +932,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.15",
   "type": "Definition",
-  "number": "2.22",
+  "number": "2.25",
   "title": "Complexes in <span class=\"process-math\">\\(\\mathrm{Ch}(R)\\)<\/span>.",
   "body": "Complexes in   A complex in is a sequence of complexes of -modules and chain maps between them such that for all . A complex of complexes is a diagram of the form   where is the module in homological degree in the complex . The th column corresponds to the complex , and every row is also a complex. The vertical maps are the differentials on each individual complex; the horizontal maps are the differentials on the complex of complexes.   "
 },
@@ -914,14 +941,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.16",
   "type": "Definition",
-  "number": "2.23",
+  "number": "2.26",
   "title": "Short Exact Sequences in <span class=\"process-math\">\\(\\mathrm{Ch}(R)\\)<\/span>.",
   "body": "Short Exact Sequences in   A short exact sequence of complexes is an exact complex in of the form Equivalently, a short exact sequence of complexes is a commutative diagram   where the rows are exact and the columns are complexes.   "
 },
 {
-  "id": "sec-compelx-maps-6",
+  "id": "sec-compelx-maps-7",
   "level": "2",
-  "url": "sec-compelx-maps.html#sec-compelx-maps-6",
+  "url": "sec-compelx-maps.html#sec-compelx-maps-7",
   "type": "Summary",
   "number": "2.1",
   "title": "",
@@ -950,7 +977,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#ex-2.17",
   "type": "Example",
-  "number": "2.24",
+  "number": "2.27",
   "title": "",
   "body": " Fix a ring , and let and be -modules. Consider the inclusion of into the first component of the direct sum, and the projection map onto the second component of the product. These two maps fit into a short exact sequence These are sometimes called trivial short exact sequences .  "
 },
@@ -959,7 +986,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#def-2.18",
   "type": "Definition",
-  "number": "2.25",
+  "number": "2.28",
   "title": "Split Short Exact Sequences.",
   "body": "Split Short Exact Sequences   We say that a short exact sequence  splits or is a split short exact sequence if it is isomorphic to where is the inclusion of the first component and is the projection onto the second component.   "
 },
@@ -968,7 +995,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#lem-2.19",
   "type": "Lemma",
-  "number": "2.26",
+  "number": "2.29",
   "title": "Splitting Lemma.",
   "body": "Splitting Lemma   Consider the short exact sequence of -modules. The following are equivalent:   There exists a homomorphism of -modules such that .    There exists a homomorphism of -modules such that .    The short exact sequence splits.       First, we will show that c implies a and b. If the sequence splits, then consider an isomorphism of complexes   meaning that the diagram commutes and , and are isomorphisms of -modules, is the inclusion in the first component, and is the projection onto the second component. Let be the projection onto the first component, and be the inclusion onto the first component. Now consider the maps and . Then and Therefore, c implies a and b.  Now suppose that a holds, and let's show that the sequence splits. First, we need to show that . Every can be written as where , and so . This shows that . Moreover, if , then , so , and . Now when we restrict to becomes injective. We claim it is also surjective, and thus an isomorphism. Indeed, for any we can pick such that , since is surjective, and we showed that we can write for some . Then Finally, note that , so we conclude that , via the isomorphism given by Since and , so , where is the inclusion on the first factor. If denotes the projection onto the second factor, . Together, these two facts say that the following is a map of complexes:   Since is an isomorphism, so is our map of complexes, and thus our original sequence is a split exact sequence. This shows that a implies .  Now assume b holds. Every can be written as where and so . This shows that . Moreover, if , then Therefore, . Now is injective, since , and thus . Since , we conclude that , via the isomorphism Finally, let denote the inclusion of the first factor, and denote the projection onto the second factor. By construction, . Moreover, so . Together, these say that the diagram   commutes, and must then be an isomorphism of short exact sequences.   "
 },
@@ -977,7 +1004,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#def-2.20",
   "type": "Definition",
-  "number": "2.27",
+  "number": "2.30",
   "title": "",
   "body": "  Given a split short exact sequence maps and satisfying the conditions of the Splitting Lemma are called splittings.   "
 },
@@ -986,7 +1013,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#rem-2.21",
   "type": "Remark",
-  "number": "2.28",
+  "number": "2.31",
   "title": "",
   "body": " In the split short exact sequence the canonical projection and the usual inclusion are splittings.  "
 },
@@ -995,7 +1022,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#exe-32",
   "type": "Exercise",
-  "number": "2.29",
+  "number": "2.32",
   "title": "",
   "body": "Let be a field. Show that every short exact sequence of -vector spaces splits. "
 },
@@ -1004,7 +1031,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#exe-33",
   "type": "Exercise",
-  "number": "2.30",
+  "number": "2.33",
   "title": "",
   "body": "Prove the Rank-Nulity Theorem using : show that given any linear transformation of -vector spaces,  "
 },
@@ -1013,7 +1040,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#ex-2.22",
   "type": "Example",
-  "number": "2.31",
+  "number": "2.34",
   "title": "",
   "body": " The short exact sequence is not split. Indeed, does not have any 2 -torsion elements, so it is not isomorphic to .  An alternative explanation is that there is no splitting to the inclusion . On the one hand, every -module map is given by multiplication by a fixed integer , so a splitting would be of the form for some fixed . On the other hand, our proposed splitting must send to , but there is no integer solution to .  "
 },
@@ -1022,7 +1049,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#ex-2.23",
   "type": "Example",
-  "number": "2.32",
+  "number": "2.35",
   "title": "",
   "body": " Consider the short exact sequence where is the inclusion of the subgroup generated by 2, so , and is the quotient onto that subgroup, meaning . This is not a split short exact sequence, because . Now let be the direct sum of infinitely many copies of . Then and the sequence with and is still exact. The middle term is indeed isomorphic to the direct sum of the other two: And yet this is not a split exact sequence: if we had a splitting of , then its restriction to the first factor would give us a splitting of , which we know cannot exist, since does not split.  "
 },
@@ -1031,7 +1058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#five-lemma",
   "type": "Exercise",
-  "number": "2.33",
+  "number": "2.36",
   "title": "The Five Lemma.",
   "body": "The Five Lemma Consider the following commutative diagram of -modules with exact rows: Show that if , and are isomorphisms, then is an isomorphism. "
 },
@@ -1040,7 +1067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#rem-2.24",
   "type": "Remark",
-  "number": "2.34",
+  "number": "2.37",
   "title": "",
   "body": " Given a short exact sequence, suppose we have -module homomorphisms and    such that and . Then we get an induced map such that the diagram   commutes. The guarantees that must be an isomorphism, so our diagram is an isomorphism of short exact sequences.  "
 },
@@ -1049,7 +1076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#rem-2.25",
   "type": "Remark",
-  "number": "2.35",
+  "number": "2.38",
   "title": "",
   "body": " The does not hold if we replace -modules with the category of groups. For example, consider the symmetric group on 3 elements and the inclusion of the alternating group in . Notice that is precisely the kernel of the sign map which sends even permutations to and odd permutations to . Therefore, is a short exact sequence. When writing exact sequences of nonabelian groups such as this one, one sometimes uses for instead of , to indicate that trivial group. So our short exact sequence is   Moreover, this exact sequence is not split, since is not abelian but is, and thus . However, any group homomorphism defined by sending the generator to any two cycle is a splitting for our short exact sequence, meaning signo .  Funny enough, there is no splitting for the inclusion , since there are no nontrivial homomorphisms has no elements of order , so a group homomorphism must send every -cycle in must be sent to the identity, but -cycles generate .  "
 },
@@ -1058,7 +1085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#exe-35",
   "type": "Exercise",
-  "number": "2.36",
+  "number": "2.39",
   "title": "",
   "body": "Fix a ring . Show that if is a free -module, then every short exact sequence of -modules splits. "
 },
@@ -1094,7 +1121,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#thm-2.26",
   "type": "Theorem",
-  "number": "2.37",
+  "number": "2.40",
   "title": "Snake Lemma.",
   "body": "Snake Lemma   Consider the commutative diagram of -modules   If the rows of the diagram are exact, then there exists an exact sequence Given , pick such that , and such that . Then The picture to keep in mind (and which explains the name of the lemma) is the following:     If , then by commutativity, so . Similarly, if then . So   We claim that the sequence obtained by restriction is exact. On the one hand, we already know that the original maps satisfy , so their restrictions must satisfy this as well, guaranteeing that On the other and, if is such that , then by exactness of the original sequence there exists such that ; we only need to check that we can choose such satisfying . An indeed, by commutativity, any with satisfies and since is injective, we must have . So we have shown that the following is an exact sequence:   Similarly, if , the commutativity of the diagram guarantees that , and if , then . So the maps restrict to maps which then induce maps To make the notation less heavy, we denote the induced maps on the quotients by and . Again, the fact that automatically gives us that the restrictions satisfy so we only need to check equality. Consider such that , meaning that , meaning that . Let be such that . Since is surjective, there exists such that , and by commutativity, Then . Let be such that . Now in coker we have This concludes the proof of exactness of and coker .  We still need to show the parts of the statement related to the connecting homomorphism . Our definition of can be visualized as follows:   Let's recap the process in words. First, we fix . Since is surjective, we can always pick such that . Since ker , by commutativity we have so . Therefore, there exists such that . In fact, since is injective, there exists a unique such that . Our definition of sets The fact that is a homomorphism of -modules follows from the fact that all the maps involved are homomorphisms of -modules: given , and such that we have So Therefore, . Similarly, given any , and , so . We now need to show the following:   Points 2) and 3) together say that the sequence is exact, and this will complete the proof.  First, let's show that is well-defined. Ultimately, our definition of only involves one choice, when we pick such that ; we need to show that does not depend on the choice of . Given such that , by exactness we have . Therefore, there exists such that . Notice that is such that Thus our definition says that . Since , we conclude that , so for any choice of . Now consider any . Again, to show is well-defined, we need only to show it does not depend on the choice of such that . Consider such that and such that Note that and since we must have Thus and this concludes our proof that is well-defined.  Now we show 2): that .  If , then the only such that is . Therefore, , so . On the other hand, let be such that . That means that for any such that we must have for some . Let be such that . Then     so . Since ,     We conclude that , and this shows 2 .  Now we show 3 ), that is, .  Let be such that . In , this says that , so we can choose such that . Using commutativity and the fact that , we have     This shows that , and thus . Finally, if and , then      "
 },
@@ -1103,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#def-2.27",
   "type": "Definition",
-  "number": "2.38",
+  "number": "2.41",
   "title": "Connecting Homomorphism.",
   "body": "Connecting Homomorphism   The map in the is the connecting homomorphism .   "
 },
@@ -1112,7 +1139,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#thm-2.28",
   "type": "Theorem",
-  "number": "2.39",
+  "number": "2.42",
   "title": "Long Exact Sequence in Homology.",
   "body": "Long Exact Sequence in Homology   Given a short exact sequence in  there are connecting homomorphisms such that is an exact sequence.    For each , we have short exact sequences   The condition that and are maps of complexes implies, by , that and take cycles to cycles, so we get exact sequences Again by , the condition that and are maps of complexes also implies that and both take boundaries to boundaries, so that we get exact sequences   Let be any complex. The boundary maps on induce maps that send to , so we get induced maps . Applying this general fact to , and , and putting all this together, we have a commutative diagram with exact rows   For any complex , and   The now gives us exact sequences   Finally, we glue all these together to obtain the long exact sequence in homology.   "
 },
@@ -1121,7 +1148,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#rem-2.29",
   "type": "Remark",
-  "number": "2.40",
+  "number": "2.43",
   "title": "",
   "body": " It's helpful to carefully consider how to compute the connecting homomorphisms in the long exact sequence in homology, which we can easily put together from the proof of the . Suppose that . When we view as an element in , we can find such that , since is surjective by assumption. Since is a map of complexes, we have so . In fact, note that , so   Thus there exists such that . Finally,   So in summary, the recipe goes as follows: given , we find such that and such that , and   "
 },
@@ -1130,7 +1157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#rem-2.30",
   "type": "Remark",
-  "number": "2.41",
+  "number": "2.44",
   "title": "",
   "body": " Suppose that is a long exact sequence. This long exact sequence breaks into the short exact sequences   The first map is simply the inclusion of the submodule into , while the second map is the canonical projection onto the quotient. While it is clear that is injective and is surjective, exactness at the middle is less obvious. This follows from the exactness of the original complex, which gives .  "
 },
@@ -1139,7 +1166,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#thm-2.31",
   "type": "Theorem",
-  "number": "2.42",
+  "number": "2.45",
   "title": "Naturality of the long exact sequence in homology.",
   "body": "Naturality of the long exact sequence in homology   Any commutative diagram in    with exact rows induces a commutative diagram with exact rows     The rows of the resulting diagram are the long exact sequences in homology induced by each row of the original diagram, as in . So the content of the theorem is that the maps induced in homology by , and make the diagram commute. The commutativity of   follows from the fact that is a functor, so we only need to check commutativity of the square   that involves the connecting homomorphisms and . Consider the following commutative diagram:   Given , we need to check that in . To compute , we find a lift such that , and with , and set . So . On the other hand, to compute , we start by finding such that . By commutativity of the right back square   we can choose , since   Next we take such that , and set . By commutativity of the middle square   we have   By our choice of , we have and by commutativity of the front left square   we have   So we can take . Finally, this means , as we wanted to prove.   "
 },
@@ -1148,7 +1175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#rem-2.32",
   "type": "Remark",
-  "number": "2.43",
+  "number": "2.46",
   "title": "",
   "body": " Let be a short exact sequence in . We can think of as saying that the induced maps on homology and and the connecting homomorphism are all natural transformations. More precisely, consider the category SES of short exact sequences of -modules, which is a full subcategory of . Homology gives us functors SES -Mod that given a short exact sequence return the -modules , or . A map between two short exact sequences then induces -module homomorphisms between the corresponding homologies. With this framework, says that , and and the connecting homomorphism are all natural transformations between the corresponding homology functors.  "
 },
