@@ -3472,7 +3472,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.1",
   "title": "What’s an Abelian Category?",
-  "body": "What's an Abelian Category?  Mono and Epi  Monic and Epic      An arrow is monic , a monomorphism , or a mono if for all arrows     if then .    Similarly, an arrow is an epi or an epimorphism if for all arrows if then .       Here are some examples:  Monos and Epis in Set Show that in , the monos coincide with the injective functions and the epis coincide with the surjective functions.  Isomorphisms Mono and Epi Show that in any category, every isomorphism is both epi and mono.  Epi and Surjective not the Same Show that the usual inclusion is an epi in the category .  This should feel weird: it says being epi and being surjective are not the same thing. Similarly, being monic and being injective are not the same thing.  Mono and Injective not the Same Show that the canonical projection is a mono in the category of divisible abelian groups. An abelian group is divisible if for every and every positive integer there exists such that .   Monic and Epic in Poset Category Show that given any poset , in the poset category of every morphism is both monic and epic, but no nonidentity morphism has a left or right inverse.  There are some special types of objects we will want to consider.  Initial and Terminal Objects   Let be a category. An initial object in is an object such that for every object in is a singleton, meaning there exists a unique arrow . A terminal object in is an object such that for every object in is a singleton, meaning there exists a unique arrow . A zero object in is an object that is both initial and terminal.    Uniqueness of Initial and Terminal Objects Initial objects are unique up to unique isomorphism. Terminal objects are unique up to unique isomorphism.  So we can talk about the initial object, the terminal object, and the zero object, if they exist.  Initial and Terminal Objects     The empty set is initial in Set. Any singleton is terminal. Since the empty set and a singleton are not isomorphic in Set, there is no zero object in Set.    The module is the zero object in .    The trivial group is the zero object in .    In the category of rings, is the initial object, but there is no terminal object unless we allow the ring.    There are neither initial nor terminal objects in the category of fields.       An abelian category is a category that has just enough extra structure to behave like -Mod: we have complexes and exact sequences, homology, the Snake Lemma, the long exact sequence in homology, and many other nice features. On the one hand, every abelian category embeds nicely in some -Mod, so it is in some ways sufficient to study -Mod. In other ways, the general nonsense definitions in an abelian category can sometimes give us a uniform, simple way to prove many results about -Mod (and -Mod), and other related categories) all at once.    A category is a preadditive category if:   For all objects and in is an abelian group.    For all objects , and in , the composition is bilinear, meaning        In the literature, preadditive categories are sometimes called Ab-enriched categories.   Our favorite category -Mod is a preadditive category; so is .   We can talk about additive functors between any two preadditive categories.    Let and be preadditive categories. An additive functor  is a functor such that the map is a homomorphism of abelian groups.    Recall the notions of initial, terminal, and zero objects, which we discussed in Chapter 1.  Zero Arrow   Let be a category with a zero object . Given two objects and in , the zero arrow from to is the unique arrow that factors through , meaning the arrow given by composition of the unique arrows . We will often denote both the zero object and the zero arrow by , whenever it does not lead to confusion.     Remark 7.5. If a category has a zero object, then is always nonempty, since it contains at least the 0 arrow.    Remark 7.6. Composing the zero arrow with any other arrow always yields the zero arrow.    Remark 7.7. In any preadditive category with a zero object 0, the 0 arrow coincides with the 0 of the abelian .    Remark 7.8. We can characterize the zero object 0 by the property that the zero arrow and the identity arrows on 0 coincide. To see this, notice that if , then given any arrow , we must have and similarly any arrow must be 0. Then is terminal and initial, and it must be the zero object.   Preadditive Category   Definition 7.9. An additive category is a preadditive category  such that:      has a zero object.     has all finite products: given any two objects and in , there exists a product of and in .         In an additive category, finite coproducts exist and they agree with products.    Let and be objects in our additive category, and consider their product, which exists by assumption:   The universal property of the product give arrows and such that   and   commute. We claim that together with and form a coproduct for and . Given an object and arrows and , we need to show that there exists a unique arrow such that   commutes.  To see such an exists, consider . Then so indeed our proposed does the job.  To show the uniqueness of such an , we will use the fact that together with and is a product for and . So suppose that is another arrow such that and . Then satisfies and , so it’s sufficient to show that the 0 arrow is the unique arrow such that   commutes. First, we claim that is the identity arrow on . And indeed, this map satisfies and so does the identity arrow , so the universal property of the product guarantees that . Now if and , then      Notation 7.11. In an additive category , given objects and , the notation denotes the product coproduct of and .    Remark 7.12. If is additive category, the object is characterized by the existence of arrows   such that      Lemma 7.13. Let an additive functor between additive categories, and let 0 denote the zero object on both categories.   We have . For any two objects and .    F preserves finite products and coproducts.       We show the statement assuming is covariant, and note that the argument in the contravariant case is essentially the same.   Since is a group homomorphism and that the zero elements in the abelian groups and are the corresponding zero arrows, then   Now the zero arrow and the identity arrows of the zero object coincide, and so do their images by . On the one hand, . On the other hand, by what we have shown at the arrow level we have   Then the identity and the zero arrows on coincide, so by Remark 7.8 we must have .    Fix objects and and the canonical arrows   Any functor preserves identity arrows, so any additive functor must satisfy which satisfy   By Remark 7.12, this implies that is the product coproduct of and .       Exercise 81. Let be an additive category.   Show that an arrow is a mono if and only if implies .    Show that an arrow is an epi if and only if implies .     We can now define kernels and cokernels.    Let be an additive category and an arrow . The kernel of is an arrow satisfying the following properties:    is 0 .    Given any such that is the zero arrow, there exists a unique arrow such that , meaning that      commutes. We denote the kernel of by .     Remark 7.15. We claim that a kernel, if it exists, is always a mono. Indeed, suppose that are such that . Then , so it’s sufficient to show that implies . But then   commutes, and , so 0 factors uniquely through the kernel. But both and are such factorizations, so .   We are used to thinking about the kernel of a map as an object; but in this general context, the kernel is really an arrow, or more precisely, an object (the source of the kernel) and an arrow from that object to the source of . We sometimes refer to the kernel as the pair (object, arrow). Also, we might use the notation for the kernel of . W e might also abuse notation and refer to the object that is the source of as the kernel of , motivated by the familiar case of -Mod. Nevertheless, the kernel of is technically an arrow, not an object. A good reason for identifying the arrow ker with its source object is the following rewriting of the definition:   Remark 7.16. If and are both kernels of , then there exist unique arrows and such that   commutes. By Remark 7.15, kernels are always monic. But then , and since is a mono, we must have . Similarly, , and and are isomorphisms.  This shows that if is the kernel of , the object is, up to isomorphism, the unique object that satisfies the following universal property: for every object and every arrow such that , there exists a unique arrow such that .     Definition 7.17. Let be an additive category and . The cokernel of is an arrow , denoted coker , satisfying the following properties:      is 0.    Given any such that is 0 , there exists a unique arrow such that , meaning that      commutes.    We will sometimes use the notation coker for the cokernel of , although once again the cokernel of is an arrow rather than an object.  Example 7.18.     The kernels and cokernels in -Mod are what we think they are: the inclusion of the usual kernel, and the projection onto the usual cokernel.    It’s not always true that all arrows have kernels or cokernels. For example, the category of finitely generated -modules over some nonnoetherian ring is additive, but it does not have all kernels. If is some infinitely generated ideal in , the kernel of the canonical projection does not exist in our category. In fact, this is an epi but not a cokernel: it should be the cokernel of the inclusion map , but that is not an arrow in our category.      While not all epis are cokernels and not all monos are kernels, the converse is true. Just like we saw for kernels, cokernels, if they exist, are always epi, and they are unique in the sense we described in Remark 7.16.  Exercise 82. Let be an additive category.   Show if is the cokernel of , the object is, up to isomorphism, the unique object that satisfies the following universal property: for every object and every arrow such that , there exists a unique arrow such that .    Show that every cokernel in is epi.      Remark 7.19. Let be an additive category, and let be any arrow such that ker coker and coker ker exist. Since , then by the universal property of the cokernel factors uniquely through coker( ), say by coker . Now   By Exercise 85, coker ker is an epi, and thus we must have coker . Then factors uniquely through ker coker , so we get a unique arrow such that   commutes.    Example 7.20. Let’s see what this factoring looks like in the more familiar example of -Mod. Given an -module homomorphism , we get a commutative diagram   The map is the isomorphism given by the First Isomorphism Theorem.   Abelian Category   Definition 7.21. An abelian category is an additive category such that   The category contains all kernels and cokernels of arrows in .    Every mono is a kernel of its cokernel.    Every epi is the cokernel of its kernel.    For every , the canonical arrow coker is an isomorphism.       Ultimately, an abelian category is one that has just enough structure so that we can extend many of the desired properties of -Mod. In particular, we will see that we can define complexes and their homology in any abelian category, and that the Snake Lemma and the long exact sequence in homology hold.   Remark 7.22. Let be an abelian category, and any arrow. As described in Remark 7.19, we have a commutative diagram   where is now assumed to be an iso. Now kernels are mono and cokernels are epi, by Exercise 85, and composing an epi (respectively, mono) with an iso gives us an epi (respectively, mono). Therefore, we can factor as a composition mono epi.    Example 7.23. In -Mod, this factorization is just the factoring through the image of the homomorphism: any -module homomorphism factors as      Definition 7.24. Let be an abelian category, and consider an arrow . The image of is .    Following Remark 7.22, the source of coker is the unique (up to unique isomorphism) object such that factors as   Exercise 83. Let be an abelian category.   Show that is a mono if and only if .    Show that is an epi if and only if .      Remark 7.25. If is an abelian category, its opposite category is also abelian. This is just a consequence of the fact that all the requirements to be an abelian category come together with the dual requirements, so everything automatically dualizes well.    Example 7.26. Here are some examples and nonexamples of abelian categories.   The category -Mod is an abelian category.    The category of free -modules is additive but not abelian, as kernels and cokernels do not exist in general.    The category of finitely generated -modules is abelian if and only if is noetherian, which is exactly the condition we need to guarantee the existence of kernels and cokernels. For a general (nonoetherian) ring , the category of noetherian -modules is abelian.    The category of Hilbert spaces with continuous linear functions is an additive category. The monos are injective linear maps, and the epis are maps with dense image. The kernels are the usual kernels, while the cokernel of is given by the orthogonal projection .  However, we claim that this is not an abelian category, since a mono might not be the kernel of its cokernel. Indeed, if is a dense inclusion that is not surjective, then this mono is not the kernel of its cokernel: its cokernel is but and thus , so ker coker , while .       Remark 7.27. Suppose that factors through , meaning that there exists such that   commutes. Then , so factors through , meaning we have another commutative diagram    Exercise 84. Show that the kernel of is the identity arrow , its cokernel is the identity arrow , and .  Exercise 85. Let be an abelian category, an epi, and a mono. Then , , and .  "
+  "body": "What's an Abelian Category?  Monomorphisms and Epimorphisms  Monic and Epic      An arrow is monic , a monomorphism , or a mono if for all arrows     if then .    Similarly, an arrow is an epi or an epimorphism if for all arrows if then .       Here are some examples:  Monos and Epis in Set Show that in , the monos coincide with the injective functions and the epis coincide with the surjective functions.  Isomorphisms Mono and Epi Show that in any category, every isomorphism is both epi and mono.  Epi and Surjective not the Same Show that the usual inclusion is an epi in the category .  This should feel weird: it says being epi and being surjective are not the same thing. Similarly, being monic and being injective are not the same thing.  Mono and Injective not the Same Show that the canonical projection is a mono in the category of divisible abelian groups. An abelian group is divisible if for every and every positive integer there exists such that .   Monic and Epic in Poset Category Show that given any poset , in the poset category of every morphism is both monic and epic, but no nonidentity morphism has a left or right inverse.  There are some special types of objects we will want to consider.  Initial and Terminal Objects   Let be a category. An initial object in is an object such that for every object in is a singleton, meaning there exists a unique arrow . A terminal object in is an object such that for every object in is a singleton, meaning there exists a unique arrow . A zero object in is an object that is both initial and terminal.    Uniqueness of Initial and Terminal Objects Initial objects are unique up to unique isomorphism. Terminal objects are unique up to unique isomorphism.  So we can talk about the initial object, the terminal object, and the zero object, if they exist.  Initial and Terminal Objects     The empty set is initial in Set. Any singleton is terminal. Since the empty set and a singleton are not isomorphic in Set, there is no zero object in Set.    The module is the zero object in .    The trivial group is the zero object in .    In the category of rings, is the initial object, but there is no terminal object unless we allow the ring.    There are neither initial nor terminal objects in the category of fields.      Zero Arrow   Let be a category with a zero object . Given two objects and in , the zero arrow from to is the unique arrow that factors through , meaning the arrow given by composition of the unique arrows . We will often denote both the zero object and the zero arrow by , whenever it does not lead to confusion.     If a category has a zero object, then is always nonempty, since it contains at least the 0 arrow.    Composing the zero arrow with any other arrow always yields the zero arrow.    Additive Categories  An abelian category is a category that has just enough extra structure to behave like -Mod: we have complexes and exact sequences, homology, the Snake Lemma, the long exact sequence in homology, and many other nice features. On the one hand, every abelian category embeds nicely in some -Mod, so it is in some ways sufficient to study -Mod. In other ways, the general nonsense definitions in an abelian category can sometimes give us a uniform, simple way to prove many results about -Mod (and -Mod), and other related categories) all at once.  Preadditive Cateogory   A category is a preadditive category if:   For all objects and in is an abelian group.    For all objects , and in , the composition is bilinear, meaning        In the literature, preadditive categories are sometimes called Ab-enriched categories.   Our favorite category -Mod is a preadditive category; so is .   We can talk about additive functors between any two preadditive categories.    Let and be preadditive categories. An additive functor  is a functor such that the map is a homomorphism of abelian groups.     In any preadditive category with a zero object 0, the 0 arrow coincides with the 0 of the abelian .    We can characterize the zero object 0 by the property that the zero arrow and the identity arrows on 0 coincide. To see this, notice that if , then given any arrow , we must have and similarly any arrow must be 0. Then is terminal and initial, and it must be the zero object.   Additive Category   An additive category is a preadditive category such that:    has a zero object.     has all finite products: given any two objects and in , there exists a product of and in .         In an additive category, finite coproducts exist and they agree with products.    Let and be objects in our additive category, and consider their product, which exists by assumption:   The universal property of the product give arrows and such that   and   commute. We claim that together with and form a coproduct for and . Given an object and arrows and , we need to show that there exists a unique arrow such that   commutes.  To see such an exists, consider . Then so indeed our proposed does the job.  To show the uniqueness of such an , we will use the fact that together with and is a product for and . So suppose that is another arrow such that and . Then satisfies and , so it’s sufficient to show that the 0 arrow is the unique arrow such that   commutes. First, we claim that is the identity arrow on . And indeed, this map satisfies and so does the identity arrow , so the universal property of the product guarantees that . Now if and , then      Notation 7.11. In an additive category , given objects and , the notation denotes the product coproduct of and .    Remark 7.12. If is additive category, the object is characterized by the existence of arrows   such that      Lemma 7.13. Let an additive functor between additive categories, and let 0 denote the zero object on both categories.   We have . For any two objects and .    F preserves finite products and coproducts.       We show the statement assuming is covariant, and note that the argument in the contravariant case is essentially the same.   Since is a group homomorphism and that the zero elements in the abelian groups and are the corresponding zero arrows, then   Now the zero arrow and the identity arrows of the zero object coincide, and so do their images by . On the one hand, . On the other hand, by what we have shown at the arrow level we have   Then the identity and the zero arrows on coincide, so by Remark 7.8 we must have .    Fix objects and and the canonical arrows   Any functor preserves identity arrows, so any additive functor must satisfy which satisfy   By Remark 7.12, this implies that is the product coproduct of and .       Exercise 81. Let be an additive category.   Show that an arrow is a mono if and only if implies .    Show that an arrow is an epi if and only if implies .      Kernels and Cokernels  We can now define kernels and cokernels.    Let be an additive category and an arrow . The kernel of is an arrow satisfying the following properties:    is 0 .    Given any such that is the zero arrow, there exists a unique arrow such that , meaning that      commutes. We denote the kernel of by .     Remark 7.15. We claim that a kernel, if it exists, is always a mono. Indeed, suppose that are such that . Then , so it’s sufficient to show that implies . But then   commutes, and , so 0 factors uniquely through the kernel. But both and are such factorizations, so .   We are used to thinking about the kernel of a map as an object; but in this general context, the kernel is really an arrow, or more precisely, an object (the source of the kernel) and an arrow from that object to the source of . We sometimes refer to the kernel as the pair (object, arrow). Also, we might use the notation for the kernel of . W e might also abuse notation and refer to the object that is the source of as the kernel of , motivated by the familiar case of -Mod. Nevertheless, the kernel of is technically an arrow, not an object. A good reason for identifying the arrow ker with its source object is the following rewriting of the definition:   Remark 7.16. If and are both kernels of , then there exist unique arrows and such that   commutes. By Remark 7.15, kernels are always monic. But then , and since is a mono, we must have . Similarly, , and and are isomorphisms.  This shows that if is the kernel of , the object is, up to isomorphism, the unique object that satisfies the following universal property: for every object and every arrow such that , there exists a unique arrow such that .     Definition 7.17. Let be an additive category and . The cokernel of is an arrow , denoted coker , satisfying the following properties:      is 0.    Given any such that is 0 , there exists a unique arrow such that , meaning that      commutes.    We will sometimes use the notation coker for the cokernel of , although once again the cokernel of is an arrow rather than an object.  Example 7.18     The kernels and cokernels in -Mod are what we think they are: the inclusion of the usual kernel, and the projection onto the usual cokernel.    It’s not always true that all arrows have kernels or cokernels. For example, the category of finitely generated -modules over some nonnoetherian ring is additive, but it does not have all kernels. If is some infinitely generated ideal in , the kernel of the canonical projection does not exist in our category. In fact, this is an epi but not a cokernel: it should be the cokernel of the inclusion map , but that is not an arrow in our category.      While not all epis are cokernels and not all monos are kernels, the converse is true. Just like we saw for kernels, cokernels, if they exist, are always epi, and they are unique in the sense we described in Remark 7.16.  Exercise 82. Let be an additive category.   Show if is the cokernel of , the object is, up to isomorphism, the unique object that satisfies the following universal property: for every object and every arrow such that , there exists a unique arrow such that .    Show that every cokernel in is epi.      Remark 7.19. Let be an additive category, and let be any arrow such that ker coker and coker ker exist. Since , then by the universal property of the cokernel factors uniquely through coker( ), say by coker . Now   By Exercise 85, coker ker is an epi, and thus we must have coker . Then factors uniquely through ker coker , so we get a unique arrow such that   commutes.    Example 7.20. Let’s see what this factoring looks like in the more familiar example of -Mod. Given an -module homomorphism , we get a commutative diagram   The map is the isomorphism given by the First Isomorphism Theorem.    Definition of an Abelian Category  Abelian Category   Definition 7.21. An abelian category is an additive category such that   The category contains all kernels and cokernels of arrows in .    Every mono is a kernel of its cokernel.    Every epi is the cokernel of its kernel.    For every , the canonical arrow coker is an isomorphism.       Ultimately, an abelian category is one that has just enough structure so that we can extend many of the desired properties of -Mod. In particular, we will see that we can define complexes and their homology in any abelian category, and that the Snake Lemma and the long exact sequence in homology hold.   Remark 7.22. Let be an abelian category, and any arrow. As described in Remark 7.19, we have a commutative diagram   where is now assumed to be an iso. Now kernels are mono and cokernels are epi, by Exercise 85, and composing an epi (respectively, mono) with an iso gives us an epi (respectively, mono). Therefore, we can factor as a composition mono epi.    Example 7.23. In -Mod, this factorization is just the factoring through the image of the homomorphism: any -module homomorphism factors as      Definition 7.24. Let be an abelian category, and consider an arrow . The image of is .    Following Remark 7.22, the source of coker is the unique (up to unique isomorphism) object such that factors as   Exercise 83. Let be an abelian category.   Show that is a mono if and only if .    Show that is an epi if and only if .      Remark 7.25. If is an abelian category, its opposite category is also abelian. This is just a consequence of the fact that all the requirements to be an abelian category come together with the dual requirements, so everything automatically dualizes well.    Example 7.26. Here are some examples and nonexamples of abelian categories.   The category -Mod is an abelian category.    The category of free -modules is additive but not abelian, as kernels and cokernels do not exist in general.    The category of finitely generated -modules is abelian if and only if is noetherian, which is exactly the condition we need to guarantee the existence of kernels and cokernels. For a general (nonoetherian) ring , the category of noetherian -modules is abelian.    The category of Hilbert spaces with continuous linear functions is an additive category. The monos are injective linear maps, and the epis are maps with dense image. The kernels are the usual kernels, while the cokernel of is given by the orthogonal projection .  However, we claim that this is not an abelian category, since a mono might not be the kernel of its cokernel. Indeed, if is a dense inclusion that is not surjective, then this mono is not the kernel of its cokernel: its cokernel is but and thus , so ker coker , while .       Remark 7.27. Suppose that factors through , meaning that there exists such that   commutes. Then , so factors through , meaning we have another commutative diagram    Exercise 84. Show that the kernel of is the identity arrow , its cokernel is the identity arrow , and .  Exercise 85. Let be an abelian category, an epi, and a mono. Then , , and .   "
 },
 {
   "id": "def-mono-epi",
@@ -3556,20 +3556,47 @@ var ptx_lunr_docs = [
   "body": "Initial and Terminal Objects     The empty set is initial in Set. Any singleton is terminal. Since the empty set and a singleton are not isomorphic in Set, there is no zero object in Set.    The module is the zero object in .    The trivial group is the zero object in .    In the category of rings, is the initial object, but there is no terminal object unless we allow the ring.    There are neither initial nor terminal objects in the category of fields.     "
 },
 {
+  "id": "def-7.4",
+  "level": "2",
+  "url": "sec-abelian-def.html#def-7.4",
+  "type": "Definition",
+  "number": "7.10",
+  "title": "Zero Arrow.",
+  "body": "Zero Arrow   Let be a category with a zero object . Given two objects and in , the zero arrow from to is the unique arrow that factors through , meaning the arrow given by composition of the unique arrows . We will often denote both the zero object and the zero arrow by , whenever it does not lead to confusion.   "
+},
+{
+  "id": "rem-7.5",
+  "level": "2",
+  "url": "sec-abelian-def.html#rem-7.5",
+  "type": "Remark",
+  "number": "7.11",
+  "title": "",
+  "body": " If a category has a zero object, then is always nonempty, since it contains at least the 0 arrow.  "
+},
+{
+  "id": "rem-7.6",
+  "level": "2",
+  "url": "sec-abelian-def.html#rem-7.6",
+  "type": "Remark",
+  "number": "7.12",
+  "title": "",
+  "body": " Composing the zero arrow with any other arrow always yields the zero arrow.  "
+},
+{
   "id": "def-7.1",
   "level": "2",
   "url": "sec-abelian-def.html#def-7.1",
   "type": "Definition",
-  "number": "7.10",
-  "title": "",
-  "body": "  A category is a preadditive category if:   For all objects and in is an abelian group.    For all objects , and in , the composition is bilinear, meaning       "
+  "number": "7.13",
+  "title": "Preadditive Cateogory.",
+  "body": "Preadditive Cateogory   A category is a preadditive category if:   For all objects and in is an abelian group.    For all objects , and in , the composition is bilinear, meaning       "
 },
 {
   "id": "ex-7.2",
   "level": "2",
   "url": "sec-abelian-def.html#ex-7.2",
   "type": "Example",
-  "number": "7.11",
+  "number": "7.14",
   "title": "",
   "body": " Our favorite category -Mod is a preadditive category; so is .  "
 },
@@ -3578,54 +3605,27 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-abelian-def.html#def-7.3",
   "type": "Definition",
-  "number": "7.12",
+  "number": "7.15",
   "title": "",
   "body": "  Let and be preadditive categories. An additive functor  is a functor such that the map is a homomorphism of abelian groups.   "
 },
 {
-  "id": "def-7.4",
+  "id": "rem-7.7",
   "level": "2",
-  "url": "sec-abelian-def.html#def-7.4",
-  "type": "Definition",
-  "number": "7.13",
-  "title": "Zero Arrow.",
-  "body": "Zero Arrow   Let be a category with a zero object . Given two objects and in , the zero arrow from to is the unique arrow that factors through , meaning the arrow given by composition of the unique arrows . We will often denote both the zero object and the zero arrow by , whenever it does not lead to confusion.   "
-},
-{
-  "id": "sec-abelian-def-11",
-  "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-11",
-  "type": "Remark",
-  "number": "7.14",
-  "title": "",
-  "body": " Remark 7.5. If a category has a zero object, then is always nonempty, since it contains at least the 0 arrow.  "
-},
-{
-  "id": "sec-abelian-def-12",
-  "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-12",
-  "type": "Remark",
-  "number": "7.15",
-  "title": "",
-  "body": " Remark 7.6. Composing the zero arrow with any other arrow always yields the zero arrow.  "
-},
-{
-  "id": "sec-abelian-def-13",
-  "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-13",
+  "url": "sec-abelian-def.html#rem-7.7",
   "type": "Remark",
   "number": "7.16",
   "title": "",
-  "body": " Remark 7.7. In any preadditive category with a zero object 0, the 0 arrow coincides with the 0 of the abelian .  "
+  "body": " In any preadditive category with a zero object 0, the 0 arrow coincides with the 0 of the abelian .  "
 },
 {
-  "id": "sec-abelian-def-14",
+  "id": "rem-7.8",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-14",
+  "url": "sec-abelian-def.html#rem-7.8",
   "type": "Remark",
   "number": "7.17",
   "title": "",
-  "body": " Remark 7.8. We can characterize the zero object 0 by the property that the zero arrow and the identity arrows on 0 coincide. To see this, notice that if , then given any arrow , we must have and similarly any arrow must be 0. Then is terminal and initial, and it must be the zero object.  "
+  "body": " We can characterize the zero object 0 by the property that the zero arrow and the identity arrows on 0 coincide. To see this, notice that if , then given any arrow , we must have and similarly any arrow must be 0. Then is terminal and initial, and it must be the zero object.  "
 },
 {
   "id": "def-7.9",
@@ -3633,8 +3633,8 @@ var ptx_lunr_docs = [
   "url": "sec-abelian-def.html#def-7.9",
   "type": "Definition",
   "number": "7.18",
-  "title": "Preadditive Category.",
-  "body": "Preadditive Category   Definition 7.9. An additive category is a preadditive category  such that:      has a zero object.     has all finite products: given any two objects and in , there exists a product of and in .      "
+  "title": "Additive Category.",
+  "body": "Additive Category   An additive category is a preadditive category such that:    has a zero object.     has all finite products: given any two objects and in , there exists a product of and in .      "
 },
 {
   "id": "lem-7.10",
@@ -3646,18 +3646,18 @@ var ptx_lunr_docs = [
   "body": "  In an additive category, finite coproducts exist and they agree with products.    Let and be objects in our additive category, and consider their product, which exists by assumption:   The universal property of the product give arrows and such that   and   commute. We claim that together with and form a coproduct for and . Given an object and arrows and , we need to show that there exists a unique arrow such that   commutes.  To see such an exists, consider . Then so indeed our proposed does the job.  To show the uniqueness of such an , we will use the fact that together with and is a product for and . So suppose that is another arrow such that and . Then satisfies and , so it’s sufficient to show that the 0 arrow is the unique arrow such that   commutes. First, we claim that is the identity arrow on . And indeed, this map satisfies and so does the identity arrow , so the universal property of the product guarantees that . Now if and , then    "
 },
 {
-  "id": "sec-abelian-def-17",
+  "id": "subsec-additive-categories-12",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-17",
+  "url": "sec-abelian-def.html#subsec-additive-categories-12",
   "type": "Convention",
   "number": "7.20",
   "title": "",
   "body": " Notation 7.11. In an additive category , given objects and , the notation denotes the product coproduct of and .  "
 },
 {
-  "id": "sec-abelian-def-18",
+  "id": "rem-7.12",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-18",
+  "url": "sec-abelian-def.html#rem-7.12",
   "type": "Remark",
   "number": "7.21",
   "title": "",
@@ -3673,9 +3673,9 @@ var ptx_lunr_docs = [
   "body": "  Lemma 7.13. Let an additive functor between additive categories, and let 0 denote the zero object on both categories.   We have . For any two objects and .    F preserves finite products and coproducts.       We show the statement assuming is covariant, and note that the argument in the contravariant case is essentially the same.   Since is a group homomorphism and that the zero elements in the abelian groups and are the corresponding zero arrows, then   Now the zero arrow and the identity arrows of the zero object coincide, and so do their images by . On the one hand, . On the other hand, by what we have shown at the arrow level we have   Then the identity and the zero arrows on coincide, so by Remark 7.8 we must have .    Fix objects and and the canonical arrows   Any functor preserves identity arrows, so any additive functor must satisfy which satisfy   By Remark 7.12, this implies that is the product coproduct of and .      "
 },
 {
-  "id": "sec-abelian-def-20",
+  "id": "exe-81",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-20",
+  "url": "sec-abelian-def.html#exe-81",
   "type": "Exercise",
   "number": "7.23",
   "title": "",
@@ -3691,18 +3691,18 @@ var ptx_lunr_docs = [
   "body": "  Let be an additive category and an arrow . The kernel of is an arrow satisfying the following properties:    is 0 .    Given any such that is the zero arrow, there exists a unique arrow such that , meaning that      commutes. We denote the kernel of by .   "
 },
 {
-  "id": "sec-abelian-def-23",
+  "id": "rem-7.15",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-23",
+  "url": "sec-abelian-def.html#rem-7.15",
   "type": "Remark",
   "number": "7.25",
   "title": "",
   "body": " Remark 7.15. We claim that a kernel, if it exists, is always a mono. Indeed, suppose that are such that . Then , so it’s sufficient to show that implies . But then   commutes, and , so 0 factors uniquely through the kernel. But both and are such factorizations, so .  "
 },
 {
-  "id": "sec-abelian-def-25",
+  "id": "rem-7.16",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-25",
+  "url": "sec-abelian-def.html#rem-7.16",
   "type": "Remark",
   "number": "7.26",
   "title": "",
@@ -3718,36 +3718,36 @@ var ptx_lunr_docs = [
   "body": "  Definition 7.17. Let be an additive category and . The cokernel of is an arrow , denoted coker , satisfying the following properties:      is 0.    Given any such that is 0 , there exists a unique arrow such that , meaning that      commutes.   "
 },
 {
-  "id": "sec-abelian-def-28",
+  "id": "ex-7.18",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-28",
+  "url": "sec-abelian-def.html#ex-7.18",
   "type": "Example",
   "number": "7.28",
-  "title": "Example 7.18..",
-  "body": "Example 7.18.     The kernels and cokernels in -Mod are what we think they are: the inclusion of the usual kernel, and the projection onto the usual cokernel.    It’s not always true that all arrows have kernels or cokernels. For example, the category of finitely generated -modules over some nonnoetherian ring is additive, but it does not have all kernels. If is some infinitely generated ideal in , the kernel of the canonical projection does not exist in our category. In fact, this is an epi but not a cokernel: it should be the cokernel of the inclusion map , but that is not an arrow in our category.     "
+  "title": "Example 7.18.",
+  "body": "Example 7.18     The kernels and cokernels in -Mod are what we think they are: the inclusion of the usual kernel, and the projection onto the usual cokernel.    It’s not always true that all arrows have kernels or cokernels. For example, the category of finitely generated -modules over some nonnoetherian ring is additive, but it does not have all kernels. If is some infinitely generated ideal in , the kernel of the canonical projection does not exist in our category. In fact, this is an epi but not a cokernel: it should be the cokernel of the inclusion map , but that is not an arrow in our category.     "
 },
 {
-  "id": "sec-abelian-def-30",
+  "id": "exe-82",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-30",
+  "url": "sec-abelian-def.html#exe-82",
   "type": "Exercise",
   "number": "7.29",
   "title": "",
   "body": "Exercise 82. Let be an additive category.   Show if is the cokernel of , the object is, up to isomorphism, the unique object that satisfies the following universal property: for every object and every arrow such that , there exists a unique arrow such that .    Show that every cokernel in is epi.    "
 },
 {
-  "id": "sec-abelian-def-31",
+  "id": "rem-7.19",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-31",
+  "url": "sec-abelian-def.html#rem-7.19",
   "type": "Remark",
   "number": "7.30",
   "title": "",
   "body": " Remark 7.19. Let be an additive category, and let be any arrow such that ker coker and coker ker exist. Since , then by the universal property of the cokernel factors uniquely through coker( ), say by coker . Now   By Exercise 85, coker ker is an epi, and thus we must have coker . Then factors uniquely through ker coker , so we get a unique arrow such that   commutes.  "
 },
 {
-  "id": "sec-abelian-def-32",
+  "id": "ex-7.20",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-32",
+  "url": "sec-abelian-def.html#ex-7.20",
   "type": "Example",
   "number": "7.31",
   "title": "",
@@ -3763,18 +3763,18 @@ var ptx_lunr_docs = [
   "body": "Abelian Category   Definition 7.21. An abelian category is an additive category such that   The category contains all kernels and cokernels of arrows in .    Every mono is a kernel of its cokernel.    Every epi is the cokernel of its kernel.    For every , the canonical arrow coker is an isomorphism.      "
 },
 {
-  "id": "sec-abelian-def-35",
+  "id": "rem-7.22",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-35",
+  "url": "sec-abelian-def.html#rem-7.22",
   "type": "Remark",
   "number": "7.33",
   "title": "",
   "body": " Remark 7.22. Let be an abelian category, and any arrow. As described in Remark 7.19, we have a commutative diagram   where is now assumed to be an iso. Now kernels are mono and cokernels are epi, by Exercise 85, and composing an epi (respectively, mono) with an iso gives us an epi (respectively, mono). Therefore, we can factor as a composition mono epi.  "
 },
 {
-  "id": "sec-abelian-def-36",
+  "id": "ex-7.23",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-36",
+  "url": "sec-abelian-def.html#ex-7.23",
   "type": "Example",
   "number": "7.34",
   "title": "",
@@ -3790,54 +3790,54 @@ var ptx_lunr_docs = [
   "body": "  Definition 7.24. Let be an abelian category, and consider an arrow . The image of is .   "
 },
 {
-  "id": "sec-abelian-def-39",
+  "id": "exe-83",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-39",
+  "url": "sec-abelian-def.html#exe-83",
   "type": "Exercise",
   "number": "7.36",
   "title": "",
   "body": "Exercise 83. Let be an abelian category.   Show that is a mono if and only if .    Show that is an epi if and only if .    "
 },
 {
-  "id": "sec-abelian-def-40",
+  "id": "rem-7.25",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-40",
+  "url": "sec-abelian-def.html#rem-7.25",
   "type": "Remark",
   "number": "7.37",
   "title": "",
   "body": " Remark 7.25. If is an abelian category, its opposite category is also abelian. This is just a consequence of the fact that all the requirements to be an abelian category come together with the dual requirements, so everything automatically dualizes well.  "
 },
 {
-  "id": "sec-abelian-def-41",
+  "id": "ex-7.26",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-41",
+  "url": "sec-abelian-def.html#ex-7.26",
   "type": "Example",
   "number": "7.38",
   "title": "",
   "body": " Example 7.26. Here are some examples and nonexamples of abelian categories.   The category -Mod is an abelian category.    The category of free -modules is additive but not abelian, as kernels and cokernels do not exist in general.    The category of finitely generated -modules is abelian if and only if is noetherian, which is exactly the condition we need to guarantee the existence of kernels and cokernels. For a general (nonoetherian) ring , the category of noetherian -modules is abelian.    The category of Hilbert spaces with continuous linear functions is an additive category. The monos are injective linear maps, and the epis are maps with dense image. The kernels are the usual kernels, while the cokernel of is given by the orthogonal projection .  However, we claim that this is not an abelian category, since a mono might not be the kernel of its cokernel. Indeed, if is a dense inclusion that is not surjective, then this mono is not the kernel of its cokernel: its cokernel is but and thus , so ker coker , while .     "
 },
 {
-  "id": "sec-abelian-def-42",
+  "id": "rem-7.27",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-42",
+  "url": "sec-abelian-def.html#rem-7.27",
   "type": "Remark",
   "number": "7.39",
   "title": "",
   "body": " Remark 7.27. Suppose that factors through , meaning that there exists such that   commutes. Then , so factors through , meaning we have another commutative diagram   "
 },
 {
-  "id": "sec-abelian-def-43",
+  "id": "exe-84",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-43",
+  "url": "sec-abelian-def.html#exe-84",
   "type": "Exercise",
   "number": "7.40",
   "title": "",
   "body": "Exercise 84. Show that the kernel of is the identity arrow , its cokernel is the identity arrow , and . "
 },
 {
-  "id": "sec-abelian-def-44",
+  "id": "exe-85",
   "level": "2",
-  "url": "sec-abelian-def.html#sec-abelian-def-44",
+  "url": "sec-abelian-def.html#exe-85",
   "type": "Exercise",
   "number": "7.41",
   "title": "",
@@ -3850,7 +3850,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.2",
   "title": "Complexes and Homology in Abelian Categories",
-  "body": "Complexes and Homology in Abelian Categories    Definition 7.28. Let be an abelian category. A chain complex or simply complex , which we sometimes write just a , is a sequence of objects and arrows     such that for all . A map of complexes between two chain complexes is a sequence of arrows such that the diagram   commutes. The category of (chain) complexes over , denoted , is the category that has objects all chain complexes in and arrows all the chain complex maps.      Lemma 7.29. If is an abelian category, then is also an abelian category.    Proof sketch. First, note that is a preadditive category: given two maps of complexes and is obtained degreewise, by taking     The facts that is an abelian group and that composition is bilinear follow from the analogous facts in (exercise). The zero object is the zero complex, which has the zero object in in each degree. Given two complexes and , their product is taken degreewise:     and each of the projection maps in each degree assemble to make a map of complexes. So is an additive category.  Let be a map of complexes. We need to show that both the both the kernel and cokernel of exist. The universal property of gives us a unique arrow such that   commutes. The commutativity of together with and the   fact that is a mono imply that . Finally, we conclude that     is a complex in , and the canonical maps assemble into a map of complexes. One can check that the universal property of the kernels forces this complex we just constructed to be . In particular, has all kernels. Similarly, we construct cokernels in , building on the fact that has all cokernels.  Finally, it remains to show that every mono is the kernel of its cokernel and every epi is the cokernel of its kernel. This boils down to the fact that is a mono if and only if all the are monos, and dually that is an epi if and only if all the are epis. The conclusion will then follow from our construction of kernels and cokernels and the fact that is abelian. Our claim follows from Exercise 83 and the fact that if and only if all .      Definition 7.30. Let be an abelian category. For each in , we define its cycles and boundaries by        Remark 7.31. Let be an abelian category, and be arrows in such that . By Remark 7.22, we can factor as an epi followed by .   Since , we must have , so factors uniquely through ker . Most importantly, there is a canonical arrow .      Definition 7.32. Let be an abelian category. A sequence of arrows in is exact if and .     Remark 7.33. In our definition of exact sequence, we really mean that the canonical arrow we described in Remark 7.31 is an isomorphism. But notice that is equivalent to saying that the arrow is a kernel for , and is an image for , hence the equality we wrote above, which is a more compact way of saying this.   This immediately generalizes to define an exact sequence, and once again a short exact sequence is one of the form     Exercise 86. Show that is exact if and only if is a mono, and is exact if and only if is an epi. Moreover,   is a short exact sequence if and only if    is a mono. is an epi. . .     Remark 7.34. Let be an abelian category and be a complex in . Since for all , we get a canonical arrow for each .   Exercise 87. Given an additive category and are additive functors . In particular, an arrow induces arrows and .    Definition 7.35. Let be an abelian category and a complex in . The th homology of is the object where is the canonical arrow we described in Remark 7.31.    In fact, the th homology is an additive functor . But to see that, we first need to make sense of what homology does to maps of complexes.  Let be an abelian category and a map of complexes in . Fix an integer . We get induced arrows and , since and are additive functors. This gives us a commutative diagram   where and are the canonical arrows. To construct , we claim that there is a unique arrow coker coker making the diagram commute. This is all explained in the commutative diagram   where coker , which gives us a unique factorization through coker .  Exercise 88. Given any abelian category is an additive functor .  Similarly, we can define homotopies.    Definition 7.36. Let be an abelian category and be maps complexes in . A homotopy, sometimes referred to as a chain homotopy, between and is a sequence of arrows    such that     for all . If there exists a homotopy between and , we say that and are homotopic, and write . If is homotopic to the zero map, we say is null-homotopic. If and are maps of complexes such that is homotopic to the identity arrow and is homotopic to the identity arrow , we say that and are homotopy equivalences and and are homotopy equivalent.    Exercise 89. Homotopy is an equivalence relation in .  Exercise 90. Let be an abelian category. Homotopic maps of complexes in induce the same map on homology.   Remark 7.37. Let be an additive functor between abelian categories. Then must send complexes to complexes, and it induces a functor , which we also call . Now if is a homotopy between two maps of complexes, preserves the identities for all , so is a homotopy between and .     Definition 7.38. Let be an abelian category. A map of complexes in is a quasi-isomorphism if is an isomorphism for all .    Finally, we set up some notation we will use later.    Definition 7.39. We will denote the full subcategory of of complexes such that for all by .    "
+  "body": "Complexes and Homology in Abelian Categories  Complexes in Abelian Categories    Let be an abelian category. A chain complex or simply complex , which we sometimes write just a , is a sequence of objects and arrows such that for all . A map of complexes between two chain complexes is a sequence of arrows such that the diagram   commutes. The category of (chain) complexes over , denoted , is the category that has objects all chain complexes in and arrows all the chain complex maps.      If is an abelian category, then is also an abelian category.    Proof sketch. First, note that is a preadditive category: given two maps of complexes and is obtained degreewise, by taking   The facts that is an abelian group and that composition is bilinear follow from the analogous facts in (exercise). The zero object is the zero complex, which has the zero object in in each degree. Given two complexes and , their product is taken degreewise: and each of the projection maps in each degree assemble to make a map of complexes. So is an additive category.  Let be a map of complexes. We need to show that both the both the kernel and cokernel of exist. The universal property of gives us a unique arrow such that   commutes. The commutativity of together with and the   fact that is a mono imply that . Finally, we conclude that is a complex in , and the canonical maps assemble into a map of complexes. One can check that the universal property of the kernels forces this complex we just constructed to be . In particular, has all kernels. Similarly, we construct cokernels in , building on the fact that has all cokernels.  Finally, it remains to show that every mono is the kernel of its cokernel and every epi is the cokernel of its kernel. This boils down to the fact that is a mono if and only if all the are monos, and dually that is an epi if and only if all the are epis. The conclusion will then follow from our construction of kernels and cokernels and the fact that is abelian. Our claim follows from Exercise 83 and the fact that if and only if all .      Let be an abelian category. For each in , we define its cycles and boundaries by      Let be an abelian category, and be arrows in such that . By Remark 7.22, we can factor as an epi followed by .   Since , we must have , so factors uniquely through ker . Most importantly, there is a canonical arrow .      Definition 7.32. Let be an abelian category. A sequence of arrows in is exact if and .     Remark 7.33. In our definition of exact sequence, we really mean that the canonical arrow we described in Remark 7.31 is an isomorphism. But notice that is equivalent to saying that the arrow is a kernel for , and is an image for , hence the equality we wrote above, which is a more compact way of saying this.   This immediately generalizes to define an exact sequence, and once again a short exact sequence is one of the form     Exercise 86. Show that is exact if and only if is a mono, and is exact if and only if is an epi. Moreover,   is a short exact sequence if and only if    is a mono. is an epi. . .     Remark 7.34. Let be an abelian category and be a complex in . Since for all , we get a canonical arrow for each .   Exercise 87. Given an additive category and are additive functors . In particular, an arrow induces arrows and .   Homology in Abelian Categories    Let be an abelian category and a complex in . The th homology of is the object where is the canonical arrow we described in Remark 7.31.    In fact, the th homology is an additive functor . But to see that, we first need to make sense of what homology does to maps of complexes.  Let be an abelian category and a map of complexes in . Fix an integer . We get induced arrows and , since and are additive functors. This gives us a commutative diagram   where and are the canonical arrows. To construct , we claim that there is a unique arrow coker coker making the diagram commute. This is all explained in the commutative diagram   where coker , which gives us a unique factorization through coker .  Given any abelian category is an additive functor .  Similarly, we can define homotopies.    Let be an abelian category and be maps complexes in . A homotopy, sometimes referred to as a chain homotopy, between and is a sequence of arrows    such that     for all . If there exists a homotopy between and , we say that and are homotopic, and write . If is homotopic to the zero map, we say is null-homotopic. If and are maps of complexes such that is homotopic to the identity arrow and is homotopic to the identity arrow , we say that and are homotopy equivalences and and are homotopy equivalent.    Homotopy is an equivalence relation in .  Let be an abelian category. Homotopic maps of complexes in induce the same map on homology.   Let be an additive functor between abelian categories. Then must send complexes to complexes, and it induces a functor , which we also call . Now if is a homotopy between two maps of complexes, preserves the identities for all , so is a homotopy between and .     Let be an abelian category. A map of complexes in is a quasi-isomorphism if is an isomorphism for all .    Finally, we set up some notation we will use later.    We will denote the full subcategory of of complexes such that for all by .     "
 },
 {
   "id": "def-7.28",
@@ -3859,7 +3859,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.42",
   "title": "",
-  "body": "  Definition 7.28. Let be an abelian category. A chain complex or simply complex , which we sometimes write just a , is a sequence of objects and arrows     such that for all . A map of complexes between two chain complexes is a sequence of arrows such that the diagram   commutes. The category of (chain) complexes over , denoted , is the category that has objects all chain complexes in and arrows all the chain complex maps.   "
+  "body": "  Let be an abelian category. A chain complex or simply complex , which we sometimes write just a , is a sequence of objects and arrows such that for all . A map of complexes between two chain complexes is a sequence of arrows such that the diagram   commutes. The category of (chain) complexes over , denoted , is the category that has objects all chain complexes in and arrows all the chain complex maps.   "
 },
 {
   "id": "lem-7.29",
@@ -3868,7 +3868,7 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "7.43",
   "title": "",
-  "body": "  Lemma 7.29. If is an abelian category, then is also an abelian category.    Proof sketch. First, note that is a preadditive category: given two maps of complexes and is obtained degreewise, by taking     The facts that is an abelian group and that composition is bilinear follow from the analogous facts in (exercise). The zero object is the zero complex, which has the zero object in in each degree. Given two complexes and , their product is taken degreewise:     and each of the projection maps in each degree assemble to make a map of complexes. So is an additive category.  Let be a map of complexes. We need to show that both the both the kernel and cokernel of exist. The universal property of gives us a unique arrow such that   commutes. The commutativity of together with and the   fact that is a mono imply that . Finally, we conclude that     is a complex in , and the canonical maps assemble into a map of complexes. One can check that the universal property of the kernels forces this complex we just constructed to be . In particular, has all kernels. Similarly, we construct cokernels in , building on the fact that has all cokernels.  Finally, it remains to show that every mono is the kernel of its cokernel and every epi is the cokernel of its kernel. This boils down to the fact that is a mono if and only if all the are monos, and dually that is an epi if and only if all the are epis. The conclusion will then follow from our construction of kernels and cokernels and the fact that is abelian. Our claim follows from Exercise 83 and the fact that if and only if all .   "
+  "body": "  If is an abelian category, then is also an abelian category.    Proof sketch. First, note that is a preadditive category: given two maps of complexes and is obtained degreewise, by taking   The facts that is an abelian group and that composition is bilinear follow from the analogous facts in (exercise). The zero object is the zero complex, which has the zero object in in each degree. Given two complexes and , their product is taken degreewise: and each of the projection maps in each degree assemble to make a map of complexes. So is an additive category.  Let be a map of complexes. We need to show that both the both the kernel and cokernel of exist. The universal property of gives us a unique arrow such that   commutes. The commutativity of together with and the   fact that is a mono imply that . Finally, we conclude that is a complex in , and the canonical maps assemble into a map of complexes. One can check that the universal property of the kernels forces this complex we just constructed to be . In particular, has all kernels. Similarly, we construct cokernels in , building on the fact that has all cokernels.  Finally, it remains to show that every mono is the kernel of its cokernel and every epi is the cokernel of its kernel. This boils down to the fact that is a mono if and only if all the are monos, and dually that is an epi if and only if all the are epis. The conclusion will then follow from our construction of kernels and cokernels and the fact that is abelian. Our claim follows from Exercise 83 and the fact that if and only if all .   "
 },
 {
   "id": "def-7.30",
@@ -3877,16 +3877,16 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.44",
   "title": "",
-  "body": "  Definition 7.30. Let be an abelian category. For each in , we define its cycles and boundaries by      "
+  "body": "  Let be an abelian category. For each in , we define its cycles and boundaries by    "
 },
 {
-  "id": "sec-com-hom-ab-5",
+  "id": "rem-7.31",
   "level": "2",
-  "url": "sec-com-hom-ab.html#sec-com-hom-ab-5",
+  "url": "sec-com-hom-ab.html#rem-7.31",
   "type": "Remark",
   "number": "7.45",
   "title": "",
-  "body": " Remark 7.31. Let be an abelian category, and be arrows in such that . By Remark 7.22, we can factor as an epi followed by .   Since , we must have , so factors uniquely through ker . Most importantly, there is a canonical arrow .   "
+  "body": " Let be an abelian category, and be arrows in such that . By Remark 7.22, we can factor as an epi followed by .   Since , we must have , so factors uniquely through ker . Most importantly, there is a canonical arrow .   "
 },
 {
   "id": "def-7.32",
@@ -3898,36 +3898,36 @@ var ptx_lunr_docs = [
   "body": "  Definition 7.32. Let be an abelian category. A sequence of arrows in is exact if and .   "
 },
 {
-  "id": "sec-com-hom-ab-7",
+  "id": "rem-7.33",
   "level": "2",
-  "url": "sec-com-hom-ab.html#sec-com-hom-ab-7",
+  "url": "sec-com-hom-ab.html#rem-7.33",
   "type": "Remark",
   "number": "7.47",
   "title": "",
   "body": " Remark 7.33. In our definition of exact sequence, we really mean that the canonical arrow we described in Remark 7.31 is an isomorphism. But notice that is equivalent to saying that the arrow is a kernel for , and is an image for , hence the equality we wrote above, which is a more compact way of saying this.  "
 },
 {
-  "id": "sec-com-hom-ab-10",
+  "id": "exe-86",
   "level": "2",
-  "url": "sec-com-hom-ab.html#sec-com-hom-ab-10",
+  "url": "sec-com-hom-ab.html#exe-86",
   "type": "Exercise",
   "number": "7.48",
   "title": "",
   "body": "Exercise 86. Show that is exact if and only if is a mono, and is exact if and only if is an epi. Moreover,   is a short exact sequence if and only if    is a mono. is an epi. . .   "
 },
 {
-  "id": "sec-com-hom-ab-11",
+  "id": "rem-7.34",
   "level": "2",
-  "url": "sec-com-hom-ab.html#sec-com-hom-ab-11",
+  "url": "sec-com-hom-ab.html#rem-7.34",
   "type": "Remark",
   "number": "7.49",
   "title": "",
   "body": " Remark 7.34. Let be an abelian category and be a complex in . Since for all , we get a canonical arrow for each .  "
 },
 {
-  "id": "sec-com-hom-ab-12",
+  "id": "exe-87",
   "level": "2",
-  "url": "sec-com-hom-ab.html#sec-com-hom-ab-12",
+  "url": "sec-com-hom-ab.html#exe-87",
   "type": "Exercise",
   "number": "7.50",
   "title": "",
@@ -3940,16 +3940,16 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.51",
   "title": "",
-  "body": "  Definition 7.35. Let be an abelian category and a complex in . The th homology of is the object where is the canonical arrow we described in Remark 7.31.   "
+  "body": "  Let be an abelian category and a complex in . The th homology of is the object where is the canonical arrow we described in Remark 7.31.   "
 },
 {
-  "id": "sec-com-hom-ab-20",
+  "id": "exe-88",
   "level": "2",
-  "url": "sec-com-hom-ab.html#sec-com-hom-ab-20",
+  "url": "sec-com-hom-ab.html#exe-88",
   "type": "Exercise",
   "number": "7.52",
   "title": "",
-  "body": "Exercise 88. Given any abelian category is an additive functor . "
+  "body": "Given any abelian category is an additive functor . "
 },
 {
   "id": "def-7.36",
@@ -3958,34 +3958,34 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.53",
   "title": "",
-  "body": "  Definition 7.36. Let be an abelian category and be maps complexes in . A homotopy, sometimes referred to as a chain homotopy, between and is a sequence of arrows    such that     for all . If there exists a homotopy between and , we say that and are homotopic, and write . If is homotopic to the zero map, we say is null-homotopic. If and are maps of complexes such that is homotopic to the identity arrow and is homotopic to the identity arrow , we say that and are homotopy equivalences and and are homotopy equivalent.   "
+  "body": "  Let be an abelian category and be maps complexes in . A homotopy, sometimes referred to as a chain homotopy, between and is a sequence of arrows    such that     for all . If there exists a homotopy between and , we say that and are homotopic, and write . If is homotopic to the zero map, we say is null-homotopic. If and are maps of complexes such that is homotopic to the identity arrow and is homotopic to the identity arrow , we say that and are homotopy equivalences and and are homotopy equivalent.   "
 },
 {
-  "id": "sec-com-hom-ab-23",
+  "id": "exe-89",
   "level": "2",
-  "url": "sec-com-hom-ab.html#sec-com-hom-ab-23",
+  "url": "sec-com-hom-ab.html#exe-89",
   "type": "Exercise",
   "number": "7.54",
   "title": "",
-  "body": "Exercise 89. Homotopy is an equivalence relation in . "
+  "body": "Homotopy is an equivalence relation in . "
 },
 {
-  "id": "sec-com-hom-ab-24",
+  "id": "exe-90",
   "level": "2",
-  "url": "sec-com-hom-ab.html#sec-com-hom-ab-24",
+  "url": "sec-com-hom-ab.html#exe-90",
   "type": "Exercise",
   "number": "7.55",
   "title": "",
-  "body": "Exercise 90. Let be an abelian category. Homotopic maps of complexes in induce the same map on homology. "
+  "body": "Let be an abelian category. Homotopic maps of complexes in induce the same map on homology. "
 },
 {
-  "id": "sec-com-hom-ab-25",
+  "id": "rem-7.37",
   "level": "2",
-  "url": "sec-com-hom-ab.html#sec-com-hom-ab-25",
+  "url": "sec-com-hom-ab.html#rem-7.37",
   "type": "Remark",
   "number": "7.56",
   "title": "",
-  "body": " Remark 7.37. Let be an additive functor between abelian categories. Then must send complexes to complexes, and it induces a functor , which we also call . Now if is a homotopy between two maps of complexes, preserves the identities for all , so is a homotopy between and .  "
+  "body": " Let be an additive functor between abelian categories. Then must send complexes to complexes, and it induces a functor , which we also call . Now if is a homotopy between two maps of complexes, preserves the identities for all , so is a homotopy between and .  "
 },
 {
   "id": "def-7.38",
@@ -3994,7 +3994,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.57",
   "title": "",
-  "body": "  Definition 7.38. Let be an abelian category. A map of complexes in is a quasi-isomorphism if is an isomorphism for all .   "
+  "body": "  Let be an abelian category. A map of complexes in is a quasi-isomorphism if is an isomorphism for all .   "
 },
 {
   "id": "def-7.39",
@@ -4003,7 +4003,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.58",
   "title": "",
-  "body": "  Definition 7.39. We will denote the full subcategory of of complexes such that for all by .   "
+  "body": "  We will denote the full subcategory of of complexes such that for all by .   "
 },
 {
   "id": "sec-functors-ab",
@@ -4012,7 +4012,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.3",
   "title": "Functors in Abelian Categories",
-  "body": "Functors in Abelian Categories    Definition 7.40. Let be an abelian category. A subcategory of is an abelian subcategory of if is abelian and the inclusion is an exact functor.    Exercise 91. Let be a full subcategory of the abelian category . Show that: a) is an additive category if and only if contains 0 and is closed under finite coproducts. b) is an abelian subcategory if and only if is additive and closed under kernels and cokernels.    Definition 7.41. Let be an additive covariant functor between abelian categories. We say is left exact if it takes every exact sequence     to the exact sequence     and right exact if it takes every exact sequence     to the exact sequence     Finally, is an exact functor if it preserves short exact sequences, meaning every short exact sequence     is taken to the short exact sequence     A contravariant additive functor between abelian categories is left exact if it takes every short exact sequence     to the exact sequence     and right exact if it takes every exact sequence     to the exact sequence     Finally, is an exact functor if it preserves short exact sequences, meaning every short exact sequence     is taken to the short exact sequence         Theorem 7.42. Let be an abelian category, and fix an object in . The functors     are left exact.    Proof. We will show that is left exact. Notice that the contravariant functor can be viewed as the covariant functor . Since is also an abelian category, it will then follow that is also left exact, or equivalently, that is left exact.  So let     be an exact sequence in . We want to show that     is exact, and notice this last complex lives in the category of abelian groups.  We have three things to show:    Exactness at is equivalent to being a mono. By assumption, is a mono, so is injective.    Since , so is .    We want to show that , and these are now maps of abelian groups. So we need to show that every such that factors uniquely through , meaning . Our assumption that the original sequence is exact implies that . The universal of property of the kernel gives us that whenever must factor through .      Exercise 92. Let be any small category. Show that if is an abelian category, then so is the category of functors .  We are now ready for the abelian category version of the Yoneda Lemma; this turns out to be a very useful result.  Yoneda Embedding for Abelian Categories   Let be an abelian category. Recall that denotes the category of contravariant functors . The covariant functor     is an embedding into a full subcategory. Moreover, this functor reflects exactness, meaning that if     is exact, then     must also be exact.    Proof. First, our functor is injective on objects because our axioms for a category include the assumption that the Hom-sets are all disjoint. Moreover, by the usual version of the Yoneda Lemma the assignment     is a natural bijection. In particular, our functor is indeed full and faithful.  To show that the functor reflects exactness, suppose that     is exact. Then , so .  It remains to show that . Let be the canonical arrow . The exactness of     together with the fact that imply that factors through . By Remark 7.27, ker must also factor through , say by . The universal property of the kernels ker and will give us that and are inverse isos.  When -Mod, the proof can be simplified: the exactness of     together with the natural isomorphism between and the identity functor give us that     is exact.    Here is a fun and very useful application of Theorem 7.43.    Corollary 7.44. Let be an adjoint pair of additive functors between abelian categories. Then is right exact, and is left exact.    Proof. Consider a short exact sequence     in , and let be an object in . The adjointness of the pair gives us a commutative diagram   where the vertical maps are bijections of sets. For every in is left exact, by Theorem 7.42, so the bottom row of the diagram above is exact. We claim this implies that the top row must also be exact. Our vertical maps are a priori only bijection on sets, but it is easy to see that these natural bijections restrict to a bijection between the images of each pair of corresponding maps. Moreover, for any objects and , the natural bijection must always send 0 to 0 , since   commutes. It is then routine to check that our bijections also restrict to bijections between the kernels of each pair of corresponding maps. The exactness of the bottom row then induces exactness of the top row. By Theorem 7.43, Hom reflects exactness, and we conclude that     must also be exact. Thus is a left exact functor.  Finally, by Remark 7.25, and are both abelian categories. Consider the opposite functors and . Notice that is the right adjoint to , so must be left exact. Therefore, must be right exact.    This is possibly the first time we have encountered a proof that truly used duality in an essential and interesting way. In the case where -Mod, the fact that is left exact can be obtained using only methods from -Mod; but the statement about used the fact that is an abelian category, while the opposite category of -Mod is not another category of modules.  The Yoneda embedding from Theorem 7.43 is the first piece of the proof of a very important result.  Freyd-Mitchell embedding theorem   Theorem 7.45 (). Let be a small abelian category. There exists a ring , possibly not commutative, and an exact, fully faithful embedding -Mod.    The full details of the proof are rather complicated, and can be found in [Fre03]. Here is a very rough map of the proof. By Theorem 7.43, we already have a fully faithful embedding of in , so it is sufficient to show that there is a fully faithful embedding of into some -Mod. The idea is to quotient by an abelian subcategory that contains all the kernels and cokernels of the arrows for all epis , in such a way that the composite of the embedding in Theorem 7.43 with this quotient remains an embedding. Then one shows that this quotient category has all coproducts and also what is called a projective generator. Roughly speaking, this is a projective object such that for every object there exists an arrow . Then one shows that this implies that this category is equivalent to a full abelian subcategory of -Mod for some .  Most of the theorems we have proved about -Mod extend to any abelian category. Some of those theorems can in fact be deduced from the fact that they are true over -Mod.    Theorem 7.46 (Snake Lemma). Consider an abelian category and a commutative diagram   If the rows of the diagram are exact, then there exists an exact sequence         Theorem 7.47 (Long exact sequence in homology). Given a short exact sequence in      there are connecting arrows such that     is an exact sequence.      Theorem 7.48 (The Five Lemma). Given an abelian category , consider the following commutative diagram in with exact rows:   If and are epi and is a mono, then is an epi. If and are mono and a is epi, then is mono.    One can prove these by invoking the Freyd-Mitchell theorem and checking that one can go back and forth with our statements between some small subcategory of containing our diagram and all the necessary kernels, cokernels, etc, and some -Mod where that category embeds. Alternatively, one can use what are called members, as in [ML98, VIII.4.5]. The theory of members is an attempt to fix the main difficulty when dealing with abelian categories: that the objects and arrows are not just sets and functions, so we can’t just talk about members of the objects and their images by each arrow.  "
+  "body": "Functors in Abelian Categories  Exact Functors: Revisited    Let be an abelian category. A subcategory of is an abelian subcategory of if is abelian and the inclusion is an exact functor.    Let be a full subcategory of the abelian category . Show that: a) is an additive category if and only if contains 0 and is closed under finite coproducts. b) is an abelian subcategory if and only if is additive and closed under kernels and cokernels.    Let be an additive covariant functor between abelian categories. We say is left exact if it takes every exact sequence to the exact sequence and right exact if it takes every exact sequence to the exact sequence   Finally, is an exact functor if it preserves short exact sequences, meaning every short exact sequence is taken to the short exact sequence   A contravariant additive functor between abelian categories is left exact if it takes every short exact sequence to the exact sequence and right exact if it takes every exact sequence to the exact sequence   Finally, is an exact functor if it preserves short exact sequences, meaning every short exact sequence is taken to the short exact sequence       Let be an abelian category, and fix an object in . The functors are left exact.    We will show that is left exact. Notice that the contravariant functor can be viewed as the covariant functor . Since is also an abelian category, it will then follow that is also left exact, or equivalently, that is left exact.  So let be an exact sequence in . We want to show that is exact, and notice this last complex lives in the category of abelian groups.  We have three things to show:     Exactness at is equivalent to being a mono. By assumption, is a mono, so is injective.    Since , so is .    We want to show that , and these are now maps of abelian groups. So we need to show that every such that factors uniquely through , meaning . Our assumption that the original sequence is exact implies that . The universal of property of the kernel gives us that whenever must factor through .       Let be any small category. Show that if is an abelian category, then so is the category of functors .   The Yoneda Lemma: Revisited  We are now ready for the abelian category version of the Yoneda Lemma; this turns out to be a very useful result.  Yoneda Embedding for Abelian Categories   Let be an abelian category. Recall that denotes the category of contravariant functors . The covariant functor     is an embedding into a full subcategory. Moreover, this functor reflects exactness, meaning that if is exact, then must also be exact.    First, our functor is injective on objects because our axioms for a category include the assumption that the Hom-sets are all disjoint. Moreover, by the usual version of the Yoneda Lemma the assignment is a natural bijection. In particular, our functor is indeed full and faithful.  To show that the functor reflects exactness, suppose that is exact. Then , so .  It remains to show that . Let be the canonical arrow . The exactness of together with the fact that imply that factors through . By Remark 7.27, ker must also factor through , say by . The universal property of the kernels ker and will give us that and are inverse isos.  When -Mod, the proof can be simplified: the exactness of together with the natural isomorphism between and the identity functor give us that is exact.    Here is a fun and very useful application of Theorem 7.43.    Let be an adjoint pair of additive functors between abelian categories. Then is right exact, and is left exact.    Consider a short exact sequence in , and let be an object in . The adjointness of the pair gives us a commutative diagram   where the vertical maps are bijections of sets. For every in is left exact, by Theorem 7.42, so the bottom row of the diagram above is exact. We claim this implies that the top row must also be exact. Our vertical maps are a priori only bijection on sets, but it is easy to see that these natural bijections restrict to a bijection between the images of each pair of corresponding maps. Moreover, for any objects and , the natural bijection must always send 0 to 0, since   commutes. It is then routine to check that our bijections also restrict to bijections between the kernels of each pair of corresponding maps. The exactness of the bottom row then induces exactness of the top row. By Theorem 7.43, Hom reflects exactness, and we conclude that must also be exact. Thus is a left exact functor.  Finally, by Remark 7.25, and are both abelian categories. Consider the opposite functors and . Notice that is the right adjoint to , so must be left exact. Therefore, must be right exact.    This is possibly the first time we have encountered a proof that truly used duality in an essential and interesting way. In the case where -Mod, the fact that is left exact can be obtained using only methods from -Mod; but the statement about used the fact that is an abelian category, while the opposite category of -Mod is not another category of modules.  The Yoneda embedding from Theorem 7.43 is the first piece of the proof of a very important result.  Freyd-Mitchell embedding theorem   Let be a small abelian category. There exists a ring , possibly not commutative, and an exact, fully faithful embedding -Mod.    The full details of the proof are rather complicated, and can be found in [Fre03]. Here is a very rough map of the proof. By Theorem 7.43, we already have a fully faithful embedding of in , so it is sufficient to show that there is a fully faithful embedding of into some -Mod. The idea is to quotient by an abelian subcategory that contains all the kernels and cokernels of the arrows for all epis , in such a way that the composite of the embedding in Theorem 7.43 with this quotient remains an embedding. Then one shows that this quotient category has all coproducts and also what is called a projective generator. Roughly speaking, this is a projective object such that for every object there exists an arrow . Then one shows that this implies that this category is equivalent to a full abelian subcategory of -Mod for some .   The Diagram Chasers: Revisited  Most of the theorems we have proved about -Mod extend to any abelian category. Some of those theorems can in fact be deduced from the fact that they are true over -Mod.  Snake Lemma   Consider an abelian category and a commutative diagram   If the rows of the diagram are exact, then there exists an exact sequence     Long exact sequence in homology   Given a short exact sequence in  there are connecting arrows such that is an exact sequence.    The Five Lemma   Given an abelian category , consider the following commutative diagram in with exact rows:   If and are epi and is a mono, then is an epi. If and are mono and a is epi, then is mono.    One can prove these by invoking the Freyd-Mitchell theorem and checking that one can go back and forth with our statements between some small subcategory of containing our diagram and all the necessary kernels, cokernels, etc, and some -Mod where that category embeds. Alternatively, one can use what are called members, as in [ML98, VIII.4.5]. The theory of members is an attempt to fix the main difficulty when dealing with abelian categories: that the objects and arrows are not just sets and functions, so we can’t just talk about members of the objects and their images by each arrow.   "
 },
 {
   "id": "def-7.40",
@@ -4021,16 +4021,16 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.59",
   "title": "",
-  "body": "  Definition 7.40. Let be an abelian category. A subcategory of is an abelian subcategory of if is abelian and the inclusion is an exact functor.   "
+  "body": "  Let be an abelian category. A subcategory of is an abelian subcategory of if is abelian and the inclusion is an exact functor.   "
 },
 {
-  "id": "sec-functors-ab-3",
+  "id": "exe-91",
   "level": "2",
-  "url": "sec-functors-ab.html#sec-functors-ab-3",
+  "url": "sec-functors-ab.html#exe-91",
   "type": "Exercise",
   "number": "7.60",
   "title": "",
-  "body": "Exercise 91. Let be a full subcategory of the abelian category . Show that: a) is an additive category if and only if contains 0 and is closed under finite coproducts. b) is an abelian subcategory if and only if is additive and closed under kernels and cokernels. "
+  "body": "Let be a full subcategory of the abelian category . Show that: a) is an additive category if and only if contains 0 and is closed under finite coproducts. b) is an abelian subcategory if and only if is additive and closed under kernels and cokernels. "
 },
 {
   "id": "def-7.41",
@@ -4039,7 +4039,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.61",
   "title": "",
-  "body": "  Definition 7.41. Let be an additive covariant functor between abelian categories. We say is left exact if it takes every exact sequence     to the exact sequence     and right exact if it takes every exact sequence     to the exact sequence     Finally, is an exact functor if it preserves short exact sequences, meaning every short exact sequence     is taken to the short exact sequence     A contravariant additive functor between abelian categories is left exact if it takes every short exact sequence     to the exact sequence     and right exact if it takes every exact sequence     to the exact sequence     Finally, is an exact functor if it preserves short exact sequences, meaning every short exact sequence     is taken to the short exact sequence      "
+  "body": "  Let be an additive covariant functor between abelian categories. We say is left exact if it takes every exact sequence to the exact sequence and right exact if it takes every exact sequence to the exact sequence   Finally, is an exact functor if it preserves short exact sequences, meaning every short exact sequence is taken to the short exact sequence   A contravariant additive functor between abelian categories is left exact if it takes every short exact sequence to the exact sequence and right exact if it takes every exact sequence to the exact sequence   Finally, is an exact functor if it preserves short exact sequences, meaning every short exact sequence is taken to the short exact sequence    "
 },
 {
   "id": "thm-7.42",
@@ -4048,16 +4048,16 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.62",
   "title": "",
-  "body": "  Theorem 7.42. Let be an abelian category, and fix an object in . The functors     are left exact.    Proof. We will show that is left exact. Notice that the contravariant functor can be viewed as the covariant functor . Since is also an abelian category, it will then follow that is also left exact, or equivalently, that is left exact.  So let     be an exact sequence in . We want to show that     is exact, and notice this last complex lives in the category of abelian groups.  We have three things to show:    Exactness at is equivalent to being a mono. By assumption, is a mono, so is injective.    Since , so is .    We want to show that , and these are now maps of abelian groups. So we need to show that every such that factors uniquely through , meaning . Our assumption that the original sequence is exact implies that . The universal of property of the kernel gives us that whenever must factor through .     "
+  "body": "  Let be an abelian category, and fix an object in . The functors are left exact.    We will show that is left exact. Notice that the contravariant functor can be viewed as the covariant functor . Since is also an abelian category, it will then follow that is also left exact, or equivalently, that is left exact.  So let be an exact sequence in . We want to show that is exact, and notice this last complex lives in the category of abelian groups.  We have three things to show:     Exactness at is equivalent to being a mono. By assumption, is a mono, so is injective.    Since , so is .    We want to show that , and these are now maps of abelian groups. So we need to show that every such that factors uniquely through , meaning . Our assumption that the original sequence is exact implies that . The universal of property of the kernel gives us that whenever must factor through .      "
 },
 {
-  "id": "sec-functors-ab-6",
+  "id": "exe-92",
   "level": "2",
-  "url": "sec-functors-ab.html#sec-functors-ab-6",
+  "url": "sec-functors-ab.html#exe-92",
   "type": "Exercise",
   "number": "7.63",
   "title": "",
-  "body": "Exercise 92. Let be any small category. Show that if is an abelian category, then so is the category of functors . "
+  "body": "Let be any small category. Show that if is an abelian category, then so is the category of functors . "
 },
 {
   "id": "thm-7.43",
@@ -4066,7 +4066,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.64",
   "title": "Yoneda Embedding for Abelian Categories.",
-  "body": "Yoneda Embedding for Abelian Categories   Let be an abelian category. Recall that denotes the category of contravariant functors . The covariant functor     is an embedding into a full subcategory. Moreover, this functor reflects exactness, meaning that if     is exact, then     must also be exact.    Proof. First, our functor is injective on objects because our axioms for a category include the assumption that the Hom-sets are all disjoint. Moreover, by the usual version of the Yoneda Lemma the assignment     is a natural bijection. In particular, our functor is indeed full and faithful.  To show that the functor reflects exactness, suppose that     is exact. Then , so .  It remains to show that . Let be the canonical arrow . The exactness of     together with the fact that imply that factors through . By Remark 7.27, ker must also factor through , say by . The universal property of the kernels ker and will give us that and are inverse isos.  When -Mod, the proof can be simplified: the exactness of     together with the natural isomorphism between and the identity functor give us that     is exact.   "
+  "body": "Yoneda Embedding for Abelian Categories   Let be an abelian category. Recall that denotes the category of contravariant functors . The covariant functor     is an embedding into a full subcategory. Moreover, this functor reflects exactness, meaning that if is exact, then must also be exact.    First, our functor is injective on objects because our axioms for a category include the assumption that the Hom-sets are all disjoint. Moreover, by the usual version of the Yoneda Lemma the assignment is a natural bijection. In particular, our functor is indeed full and faithful.  To show that the functor reflects exactness, suppose that is exact. Then , so .  It remains to show that . Let be the canonical arrow . The exactness of together with the fact that imply that factors through . By Remark 7.27, ker must also factor through , say by . The universal property of the kernels ker and will give us that and are inverse isos.  When -Mod, the proof can be simplified: the exactness of together with the natural isomorphism between and the identity functor give us that is exact.   "
 },
 {
   "id": "cor-7.44",
@@ -4075,7 +4075,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "7.65",
   "title": "",
-  "body": "  Corollary 7.44. Let be an adjoint pair of additive functors between abelian categories. Then is right exact, and is left exact.    Proof. Consider a short exact sequence     in , and let be an object in . The adjointness of the pair gives us a commutative diagram   where the vertical maps are bijections of sets. For every in is left exact, by Theorem 7.42, so the bottom row of the diagram above is exact. We claim this implies that the top row must also be exact. Our vertical maps are a priori only bijection on sets, but it is easy to see that these natural bijections restrict to a bijection between the images of each pair of corresponding maps. Moreover, for any objects and , the natural bijection must always send 0 to 0 , since   commutes. It is then routine to check that our bijections also restrict to bijections between the kernels of each pair of corresponding maps. The exactness of the bottom row then induces exactness of the top row. By Theorem 7.43, Hom reflects exactness, and we conclude that     must also be exact. Thus is a left exact functor.  Finally, by Remark 7.25, and are both abelian categories. Consider the opposite functors and . Notice that is the right adjoint to , so must be left exact. Therefore, must be right exact.   "
+  "body": "  Let be an adjoint pair of additive functors between abelian categories. Then is right exact, and is left exact.    Consider a short exact sequence in , and let be an object in . The adjointness of the pair gives us a commutative diagram   where the vertical maps are bijections of sets. For every in is left exact, by Theorem 7.42, so the bottom row of the diagram above is exact. We claim this implies that the top row must also be exact. Our vertical maps are a priori only bijection on sets, but it is easy to see that these natural bijections restrict to a bijection between the images of each pair of corresponding maps. Moreover, for any objects and , the natural bijection must always send 0 to 0, since   commutes. It is then routine to check that our bijections also restrict to bijections between the kernels of each pair of corresponding maps. The exactness of the bottom row then induces exactness of the top row. By Theorem 7.43, Hom reflects exactness, and we conclude that must also be exact. Thus is a left exact functor.  Finally, by Remark 7.25, and are both abelian categories. Consider the opposite functors and . Notice that is the right adjoint to , so must be left exact. Therefore, must be right exact.   "
 },
 {
   "id": "thm-7.45",
@@ -4084,7 +4084,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.66",
   "title": "Freyd-Mitchell embedding theorem.",
-  "body": "Freyd-Mitchell embedding theorem   Theorem 7.45 (). Let be a small abelian category. There exists a ring , possibly not commutative, and an exact, fully faithful embedding -Mod.   "
+  "body": "Freyd-Mitchell embedding theorem   Let be a small abelian category. There exists a ring , possibly not commutative, and an exact, fully faithful embedding -Mod.   "
 },
 {
   "id": "thm-7.46",
@@ -4092,8 +4092,8 @@ var ptx_lunr_docs = [
   "url": "sec-functors-ab.html#thm-7.46",
   "type": "Theorem",
   "number": "7.67",
-  "title": "",
-  "body": "  Theorem 7.46 (Snake Lemma). Consider an abelian category and a commutative diagram   If the rows of the diagram are exact, then there exists an exact sequence      "
+  "title": "Snake Lemma.",
+  "body": "Snake Lemma   Consider an abelian category and a commutative diagram   If the rows of the diagram are exact, then there exists an exact sequence    "
 },
 {
   "id": "thm-7.47",
@@ -4101,8 +4101,8 @@ var ptx_lunr_docs = [
   "url": "sec-functors-ab.html#thm-7.47",
   "type": "Theorem",
   "number": "7.68",
-  "title": "",
-  "body": "  Theorem 7.47 (Long exact sequence in homology). Given a short exact sequence in      there are connecting arrows such that     is an exact sequence.   "
+  "title": "Long exact sequence in homology.",
+  "body": "Long exact sequence in homology   Given a short exact sequence in  there are connecting arrows such that is an exact sequence.   "
 },
 {
   "id": "thm-7.48",
@@ -4110,8 +4110,8 @@ var ptx_lunr_docs = [
   "url": "sec-functors-ab.html#thm-7.48",
   "type": "Theorem",
   "number": "7.69",
-  "title": "",
-  "body": "  Theorem 7.48 (The Five Lemma). Given an abelian category , consider the following commutative diagram in with exact rows:   If and are epi and is a mono, then is an epi. If and are mono and a is epi, then is mono.   "
+  "title": "The Five Lemma.",
+  "body": "The Five Lemma   Given an abelian category , consider the following commutative diagram in with exact rows:   If and are epi and is a mono, then is an epi. If and are mono and a is epi, then is mono.   "
 },
 {
   "id": "sec-proj-inj-ab",
@@ -4120,7 +4120,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.4",
   "title": "Projectives and Injectives in Abelian Categories",
-  "body": "Projectives and Injectives in Abelian Categories  A lot of the notions we have studied this semester can be extended to the setting of a general abelian category.    Definition 7.49. Let be an abelian category. An object in is projective if is an exact functor. An object in is injective if is exact.    This generalizes the notion of projective and injective modules.   Remark 7.50. Let be an abelian category. An object is projective if and only if every arrow factors through every epi :   and an object is injective if and only if every arrow factors through every mono :    Exercise 93. Let be an abelian category. a) Show that . b) Show that if and are projective, then so is .    Definition 7.51. An abelian category has enough projectives if for every object there exists a projective object and an epi . We say that has enough injectives if for every object there exists an injective object and a mono .    Lemma 4.13 and Theorem 4.31 say that -Mod has enough injectives and enough projectives.   Example 7.52. The category of finite abelian groups has no projectives beside 0. In particular, Ab does not have enough projectives.   Projective Resolution   Definition 7.53. Let be an object in the abelian category . A projective resolution of is a complex where all the are projective, , and for all . An injective resolution of is a cochain complex such that every is injective, for all , and .      Theorem 7.54. If has enough projectives, every object in has a projective resolution. Similarly, if has enough injectives, every object in has an injective resolution.    Proof. Given be an object in , let’s construct a projective resolution explicitly. We start by picking an epi from a projective . Since is an epi, it is the cokernel of its kernel, so     is a short exact sequence. Now we find an epi , and set to be the composition   We proceed the same way, at each step taking a projective and an epi , and setting to be the composition . By construction, , where is an epi and ker is mono. By Exercise 85, im .    This generalizes Theorem 5.2 in a natural way, and the proof is essentially the same.  We can also characterize injectives in term of split short exact sequences, as we did for modules. In particular, the Splitting Lemma extends to any abelian category.    Definition 7.55. Let be an abelian category. A short exact sequence     splits if one of the following equivalent conditions hold:    There exists an arrow such that .    There exists an arrow such that .    There exists an isomorphism of complexes between our sequence and       where the arrows are the canonical arrows that come with the (co)product .      Theorem 7.56. Let be an abelian category. Every short exact sequence     where is injective or is projective splits.    The proofs are exactly the same as in the case of -Mod, Theorem 4.6 and Theorem 4.32. Proof. If is projective, there exists such that   commutes, so and is a splitting. If is injective, there exists such that   commutes, so , and is a splitting.  More generally, we can talk about split exact complexes.    Definition 7.57. A complex in is split if there are arrows such that the differential satisfies . A complex is split exact if it is both exact and split.     Remark 7.58. A split short exact sequence is precisely a short exact sequence that is a split complex.   Exercise 94. Additive functors preserve split complexes, meaning that if is a split complex, then so is for any additive functor . In particular, additive functors preserve split short exact sequences.    Lemma 7.59. Let be an abelian category, in with each projective, an arrow in such that and a projective resolution of . Given any in , there exists a map of complexes such that   commutes, which is unique up to homotopy.    Proof. Since is projective and is an epi, there exists such that   commutes.  We proceed inductively, assuming we have with . Since is projective, there exists such that   commutes. Commutativity gives , so factors through the kernel of .   Since is a projective resolution of , the arrow above is an epi, so the arrow we just constructed factors through , giving us such that   commutes.  Now suppose we are given two such maps of complexes and lifting , say and . Note that and 0 are two liftings of the 0 map. We are going to show that any map lifting the 0 map must be nullhomotopic, which will then imply that and are homotopic as well (essentially via the same homotopy!).  So let be a map of complexes lifting the 0 map .   We will construct a nullhomotopy for inductively. Set for all . The commutativity of the rightmost square says that , so . Since factors through . But is an epi and is projective, there exists such that   commutes. So satisfies . Set .  Now suppose we have constructed such that . Then     so . Therefore, factors through , and since is a projective resolution of is an epi. Therefore, the factorization of through also factors through , and we end up with an arrow such that   commutes. This must then satisfy , and ultimately is a homotopy between and 0 .      Theorem 7.60 (Horseshoe Lemma). Let be an abelian category, be a projective resolution of , and be a projective resolution of . If     is an exact sequence, there exists a projective resolution of and maps of complexes and lifting and such that     is an exact sequence in .    First, a word on notation: denotes the coproduct in , and given arrows and , we will write for the unique arrow induced by and . Moreover, we will denote the differential of by , and the differential of by .  Set . Recall that the product and coproduct in coincide, by Lemma 7.10, so let and be the canonical arrows. One can show that in fact we get short exact sequences     for all . Moreover, is projective for all , by Exercise 93. We will construct the missing differentials inductively.  Since is projective and is an epi, there exists such that   commutes. Set . The universal property of the coproduct guarantees that   commutes. By the Five Lemma, is epi. By the Snake Lemma, is exact. We then proceed by induction, and at each step we apply the base case to   where the vertical arrows are epi because and are projective resolutions and thus exact.     Remark 7.61. By duality, if has enough injectives,     is exact, and and are injective resolutions for and , then there exist an injective resolution of and a short exact sequence of complexes     extending the given one.   "
+  "body": "Projectives and Injectives in Abelian Categories  Projectives, Injective, and Resolutions: Revisited  A lot of the notions we have studied this semester can be extended to the setting of a general abelian category.    Definition 7.49. Let be an abelian category. An object in is projective if is an exact functor. An object in is injective if is exact.    This generalizes the notion of projective and injective modules.   Remark 7.50. Let be an abelian category. An object is projective if and only if every arrow factors through every epi :   and an object is injective if and only if every arrow factors through every mono :    Exercise 93. Let be an abelian category. a) Show that . b) Show that if and are projective, then so is .    Definition 7.51. An abelian category has enough projectives if for every object there exists a projective object and an epi . We say that has enough injectives if for every object there exists an injective object and a mono .    Lemma 4.13 and Theorem 4.31 say that -Mod has enough injectives and enough projectives.   Example 7.52. The category of finite abelian groups has no projectives beside 0. In particular, Ab does not have enough projectives.   Projective Resolution   Definition 7.53. Let be an object in the abelian category . A projective resolution of is a complex where all the are projective, , and for all . An injective resolution of is a cochain complex such that every is injective, for all , and .      Theorem 7.54. If has enough projectives, every object in has a projective resolution. Similarly, if has enough injectives, every object in has an injective resolution.    Proof. Given be an object in , let’s construct a projective resolution explicitly. We start by picking an epi from a projective . Since is an epi, it is the cokernel of its kernel, so is a short exact sequence. Now we find an epi , and set to be the composition   We proceed the same way, at each step taking a projective and an epi , and setting to be the composition . By construction, , where is an epi and ker is mono. By Exercise 85, im .    This generalizes Theorem 5.2 in a natural way, and the proof is essentially the same.   Split Exact Sequences: Revisited  We can also characterize injectives in term of split short exact sequences, as we did for modules. In particular, the Splitting Lemma extends to any abelian category.    Definition 7.55. Let be an abelian category. A short exact sequence     splits if one of the following equivalent conditions hold:    There exists an arrow such that .    There exists an arrow such that .    There exists an isomorphism of complexes between our sequence and       where the arrows are the canonical arrows that come with the (co)product .      Theorem 7.56. Let be an abelian category. Every short exact sequence     where is injective or is projective splits.    The proofs are exactly the same as in the case of -Mod, Theorem 4.6 and Theorem 4.32. Proof. If is projective, there exists such that   commutes, so and is a splitting. If is injective, there exists such that   commutes, so , and is a splitting.  More generally, we can talk about split exact complexes.    Definition 7.57. A complex in is split if there are arrows such that the differential satisfies . A complex is split exact if it is both exact and split.     Remark 7.58. A split short exact sequence is precisely a short exact sequence that is a split complex.   Exercise 94. Additive functors preserve split complexes, meaning that if is a split complex, then so is for any additive functor . In particular, additive functors preserve split short exact sequences.   Unique Resolutions and the Horseshoe Lemma: Revisited    Lemma 7.59. Let be an abelian category, in with each projective, an arrow in such that and a projective resolution of . Given any in , there exists a map of complexes such that   commutes, which is unique up to homotopy.    Proof. Since is projective and is an epi, there exists such that   commutes.  We proceed inductively, assuming we have with . Since is projective, there exists such that   commutes. Commutativity gives , so factors through the kernel of .   Since is a projective resolution of , the arrow above is an epi, so the arrow we just constructed factors through , giving us such that   commutes.  Now suppose we are given two such maps of complexes and lifting , say and . Note that and 0 are two liftings of the 0 map. We are going to show that any map lifting the 0 map must be nullhomotopic, which will then imply that and are homotopic as well (essentially via the same homotopy!).  So let be a map of complexes lifting the 0 map .   We will construct a nullhomotopy for inductively. Set for all . The commutativity of the rightmost square says that , so . Since factors through . But is an epi and is projective, there exists such that   commutes. So satisfies . Set .  Now suppose we have constructed such that . Then     so . Therefore, factors through , and since is a projective resolution of is an epi. Therefore, the factorization of through also factors through , and we end up with an arrow such that   commutes. This must then satisfy , and ultimately is a homotopy between and 0 .      Theorem 7.60 (Horseshoe Lemma). Let be an abelian category, be a projective resolution of , and be a projective resolution of . If     is an exact sequence, there exists a projective resolution of and maps of complexes and lifting and such that     is an exact sequence in .    First, a word on notation: denotes the coproduct in , and given arrows and , we will write for the unique arrow induced by and . Moreover, we will denote the differential of by , and the differential of by .  Set . Recall that the product and coproduct in coincide, by Lemma 7.10, so let and be the canonical arrows. One can show that in fact we get short exact sequences     for all . Moreover, is projective for all , by Exercise 93. We will construct the missing differentials inductively.  Since is projective and is an epi, there exists such that   commutes. Set . The universal property of the coproduct guarantees that   commutes. By the Five Lemma, is epi. By the Snake Lemma, is exact. We then proceed by induction, and at each step we apply the base case to   where the vertical arrows are epi because and are projective resolutions and thus exact.     By duality, if has enough injectives,     is exact, and and are injective resolutions for and , then there exist an injective resolution of and a short exact sequence of complexes     extending the given one.    "
 },
 {
   "id": "def-7.49",
@@ -4132,18 +4132,18 @@ var ptx_lunr_docs = [
   "body": "  Definition 7.49. Let be an abelian category. An object in is projective if is an exact functor. An object in is injective if is exact.   "
 },
 {
-  "id": "sec-proj-inj-ab-5",
+  "id": "rem-7.50",
   "level": "2",
-  "url": "sec-proj-inj-ab.html#sec-proj-inj-ab-5",
+  "url": "sec-proj-inj-ab.html#rem-7.50",
   "type": "Remark",
   "number": "7.71",
   "title": "",
   "body": " Remark 7.50. Let be an abelian category. An object is projective if and only if every arrow factors through every epi :   and an object is injective if and only if every arrow factors through every mono :   "
 },
 {
-  "id": "sec-proj-inj-ab-6",
+  "id": "exe-93",
   "level": "2",
-  "url": "sec-proj-inj-ab.html#sec-proj-inj-ab-6",
+  "url": "sec-proj-inj-ab.html#exe-93",
   "type": "Exercise",
   "number": "7.72",
   "title": "",
@@ -4159,9 +4159,9 @@ var ptx_lunr_docs = [
   "body": "  Definition 7.51. An abelian category has enough projectives if for every object there exists a projective object and an epi . We say that has enough injectives if for every object there exists an injective object and a mono .   "
 },
 {
-  "id": "sec-proj-inj-ab-9",
+  "id": "ex-7.52",
   "level": "2",
-  "url": "sec-proj-inj-ab.html#sec-proj-inj-ab-9",
+  "url": "sec-proj-inj-ab.html#ex-7.52",
   "type": "Example",
   "number": "7.74",
   "title": "",
@@ -4183,7 +4183,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.76",
   "title": "",
-  "body": "  Theorem 7.54. If has enough projectives, every object in has a projective resolution. Similarly, if has enough injectives, every object in has an injective resolution.    Proof. Given be an object in , let’s construct a projective resolution explicitly. We start by picking an epi from a projective . Since is an epi, it is the cokernel of its kernel, so     is a short exact sequence. Now we find an epi , and set to be the composition   We proceed the same way, at each step taking a projective and an epi , and setting to be the composition . By construction, , where is an epi and ker is mono. By Exercise 85, im .   "
+  "body": "  Theorem 7.54. If has enough projectives, every object in has a projective resolution. Similarly, if has enough injectives, every object in has an injective resolution.    Proof. Given be an object in , let’s construct a projective resolution explicitly. We start by picking an epi from a projective . Since is an epi, it is the cokernel of its kernel, so is a short exact sequence. Now we find an epi , and set to be the composition   We proceed the same way, at each step taking a projective and an epi , and setting to be the composition . By construction, , where is an epi and ker is mono. By Exercise 85, im .   "
 },
 {
   "id": "def-7.55",
@@ -4213,18 +4213,18 @@ var ptx_lunr_docs = [
   "body": "  Definition 7.57. A complex in is split if there are arrows such that the differential satisfies . A complex is split exact if it is both exact and split.   "
 },
 {
-  "id": "sec-proj-inj-ab-23",
+  "id": "rem-7.58",
   "level": "2",
-  "url": "sec-proj-inj-ab.html#sec-proj-inj-ab-23",
+  "url": "sec-proj-inj-ab.html#rem-7.58",
   "type": "Remark",
   "number": "7.80",
   "title": "",
   "body": " Remark 7.58. A split short exact sequence is precisely a short exact sequence that is a split complex.  "
 },
 {
-  "id": "sec-proj-inj-ab-24",
+  "id": "exe-94",
   "level": "2",
-  "url": "sec-proj-inj-ab.html#sec-proj-inj-ab-24",
+  "url": "sec-proj-inj-ab.html#exe-94",
   "type": "Exercise",
   "number": "7.81",
   "title": "",
@@ -4249,13 +4249,13 @@ var ptx_lunr_docs = [
   "body": "  Theorem 7.60 (Horseshoe Lemma). Let be an abelian category, be a projective resolution of , and be a projective resolution of . If     is an exact sequence, there exists a projective resolution of and maps of complexes and lifting and such that     is an exact sequence in .    First, a word on notation: denotes the coproduct in , and given arrows and , we will write for the unique arrow induced by and . Moreover, we will denote the differential of by , and the differential of by .  Set . Recall that the product and coproduct in coincide, by Lemma 7.10, so let and be the canonical arrows. One can show that in fact we get short exact sequences     for all . Moreover, is projective for all , by Exercise 93. We will construct the missing differentials inductively.  Since is projective and is an epi, there exists such that   commutes. Set . The universal property of the coproduct guarantees that   commutes. By the Five Lemma, is epi. By the Snake Lemma, is exact. We then proceed by induction, and at each step we apply the base case to   where the vertical arrows are epi because and are projective resolutions and thus exact.   "
 },
 {
-  "id": "sec-proj-inj-ab-27",
+  "id": "rem-7.61",
   "level": "2",
-  "url": "sec-proj-inj-ab.html#sec-proj-inj-ab-27",
+  "url": "sec-proj-inj-ab.html#rem-7.61",
   "type": "Remark",
   "number": "7.84",
   "title": "",
-  "body": " Remark 7.61. By duality, if has enough injectives,     is exact, and and are injective resolutions for and , then there exist an injective resolution of and a short exact sequence of complexes     extending the given one.  "
+  "body": " By duality, if has enough injectives,     is exact, and and are injective resolutions for and , then there exist an injective resolution of and a short exact sequence of complexes     extending the given one.  "
 },
 {
   "id": "sec-derived-functors-ab",
@@ -4264,7 +4264,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.5",
   "title": "Derived Functors in Abelian Categories",
-  "body": "Derived Functors in Abelian Categories  We are now ready to define derived functors in full generality. The definitions will match the definitions over -modules; the one notable addition from -Mod to the general case is the new need to worry about whether the abelian category in question has enough injectives or enough projectives.    Definition 7.62 (Derived functors). Let and be abelian categories.  Let be a covariant right exact functor. If has enough projectives, the left derived functors of are a sequence of functors , defined as follows:    For each object in , fix a projective resolution of , and set         Given an arrow , fix projective resolutions and , and a map of complexes lifting . Then       Let be a covariant left exact functor. If has enough injectives, the right derived functors of are a sequence of functors , defined as follows:    For each object in , fix an injective resolution of , and set         Given an arrow , fix injective resolutions and , and a map of complexes extending . Then       Let be a contravariant left exact functor. If has enough projectives, the right derived functors of are a sequence of functors , defined as follows:    For each object in , fix a projective resolution of , and set         Given an arrow , fix projective resolutions and , and a map of complexes extending . Then       Finally, let be a contravariant right exact functor. If has enough injectives, the left derived functors of are a sequence of functors , defined as follows:    For each object in , fix an injective resolution of , and set         Given an arrow , fix injective resolutions and , and a map of complexes extending . Then          Remark 7.63. If is exact, then , so for all .    Remark 7.64. If is projective, then is a projective resolution of , and thus for all . Similarly, if is injective then .     Proposition 7.65. Let be an abelian category with enough projectives, and a covariant right exact functor. a) is well-defined up to isomorphism for every object . b) is well-defined for every arrow . c) is an additive functor for each . d) .    Proof.  a) Let and be projective resolutions of . Theorem 5.17 gives us maps of complexes and such that is homotopic to and is homotopic to . Additive functors preserve homotopies, by Remark 7.37, so and are homotopic to the corresponding identity arrows. Homotopic maps induce the same map in homology, by Exercise 90. Therefore, and induce isomorphisms in homology.  b) Fix projective resolutions and of and . Any two lifts and of to are homotopic, by Lemma 7.59. Additive functors preserve homotopies, by Remark 7.37, so and are homotopic. Homotopic maps induce the same map in homology, by Exercise 90, so for each .  c) Given an arrow , fix a lift of to projective resolutions of the source and target. Since is an additive functor, is a homomorphism for each , and thus is a homomorphism between the corresponding Hom-groups, which as we’ve seen is independent of our choice of .  d) Let be any object and be a projective resolution of . Since is right exact, and     is exact, then so is     We claim that . By Exercise 84, , so the canonical arrow is precisely the image of . By exactness of the last sequence we wrote above, . On the other hand, exactness at says that is an epi, by Exercise 86 . Every epi is the cokernel of its kernel, so is the cokernel of , which we saw was exactly the canonical arrow . Therefore, , the target of the cokernel of .    Exercise 95. Let be an abelian category with enough injectives, and a covariant left exact functor. a) is well-defined up to isomorphism. b) is well-defined for every arrow . c) is an additive functor for every . d) .   Remark 7.66. If is an abelian category with enough injectives, then is an abelian category with enough projectives. This gives us a relationship between left derived and right derived functors: .     Theorem 7.67. Let be a sequence of additive covariant functors between abelian categories, where has enough projectives, and a right exact functor. Suppose the following hold:  (1) For every short exact sequence in , we get a natural long exact sequence     (2) is naturally isomorphic to .  (3) for every projective object in , and all .  Then is naturally isomorphic to for all .  Similarly, suppose is a sequence of additive covariant functors, where has enough injectives, and a left exact functor such that  a) For every short exact sequence in , we get a long exact sequence     b) is naturally isomorphic to . c) for every injective object in , and all .  Then is naturally isomorphic to for all .    "
+  "body": "Derived Functors in Abelian Categories  Derived Functors: Revisited  We are now ready to define derived functors in full generality. The definitions will match the definitions over -modules; the one notable addition from -Mod to the general case is the new need to worry about whether the abelian category in question has enough injectives or enough projectives.  Derived functors   Let and be abelian categories.  Let be a covariant right exact functor. If has enough projectives, the left derived functors of are a sequence of functors , defined as follows:   For each object in , fix a projective resolution of , and set     Given an arrow , fix projective resolutions and , and a map of complexes lifting . Then      Let be a covariant left exact functor. If has enough injectives, the right derived functors of are a sequence of functors , defined as follows:   For each object in , fix an injective resolution of , and set     Given an arrow , fix injective resolutions and , and a map of complexes extending . Then      Let be a contravariant left exact functor. If has enough projectives, the right derived functors of are a sequence of functors , defined as follows:     For each object in , fix a projective resolution of , and set     Given an arrow , fix projective resolutions and , and a map of complexes extending . Then      Finally, let be a contravariant right exact functor. If has enough injectives, the left derived functors of are a sequence of functors , defined as follows:   For each object in , fix an injective resolution of , and set     Given an arrow , fix injective resolutions and , and a map of complexes extending . Then         If is exact, then , so for all .    If is projective, then is a projective resolution of , and thus for all . Similarly, if is injective then .     Let be an abelian category with enough projectives, and a covariant right exact functor.    is well-defined up to isomorphism for every object .     is well-defined for every arrow .     is an additive functor for each .     .          Let and be projective resolutions of . Theorem 5.17 gives us maps of complexes and such that is homotopic to and is homotopic to . Additive functors preserve homotopies, by Remark 7.37, so and are homotopic to the corresponding identity arrows. Homotopic maps induce the same map in homology, by Exercise 90. Therefore, and induce isomorphisms in homology.    Fix projective resolutions and of and . Any two lifts and of to are homotopic, by Lemma 7.59. Additive functors preserve homotopies, by Remark 7.37, so and are homotopic. Homotopic maps induce the same map in homology, by Exercise 90, so for each .    Given an arrow , fix a lift of to projective resolutions of the source and target. Since is an additive functor, is a homomorphism for each , and thus is a homomorphism between the corresponding Hom-groups, which as we’ve seen is independent of our choice of .    Let be any object and be a projective resolution of . Since is right exact, and is exact, then so is     We claim that . By Exercise 84, , so the canonical arrow is precisely the image of . By exactness of the last sequence we wrote above, . On the other hand, exactness at says that is an epi, by Exercise 86 . Every epi is the cokernel of its kernel, so is the cokernel of , which we saw was exactly the canonical arrow . Therefore, , the target of the cokernel of .       Let be an abelian category with enough injectives, and a covariant left exact functor.    is well-defined up to isomorphism.     is well-defined for every arrow .     is an additive functor for every .     .      If is an abelian category with enough injectives, then is an abelian category with enough projectives. This gives us a relationship between left derived and right derived functors: .     Let be a sequence of additive covariant functors between abelian categories, where has enough projectives, and a right exact functor. Suppose the following hold:   For every short exact sequence in , we get a natural long exact sequence      is naturally isomorphic to .     for every projective object in , and all .     Then is naturally isomorphic to for all .  Similarly, suppose is a sequence of additive covariant functors, where has enough injectives, and a left exact functor such that   For every short exact sequence in , we get a long exact sequence      is naturally isomorphic to .     for every injective object in , and all .     Then is naturally isomorphic to for all .     "
 },
 {
   "id": "def-7.62",
@@ -4272,26 +4272,26 @@ var ptx_lunr_docs = [
   "url": "sec-derived-functors-ab.html#def-7.62",
   "type": "Definition",
   "number": "7.85",
-  "title": "",
-  "body": "  Definition 7.62 (Derived functors). Let and be abelian categories.  Let be a covariant right exact functor. If has enough projectives, the left derived functors of are a sequence of functors , defined as follows:    For each object in , fix a projective resolution of , and set         Given an arrow , fix projective resolutions and , and a map of complexes lifting . Then       Let be a covariant left exact functor. If has enough injectives, the right derived functors of are a sequence of functors , defined as follows:    For each object in , fix an injective resolution of , and set         Given an arrow , fix injective resolutions and , and a map of complexes extending . Then       Let be a contravariant left exact functor. If has enough projectives, the right derived functors of are a sequence of functors , defined as follows:    For each object in , fix a projective resolution of , and set         Given an arrow , fix projective resolutions and , and a map of complexes extending . Then       Finally, let be a contravariant right exact functor. If has enough injectives, the left derived functors of are a sequence of functors , defined as follows:    For each object in , fix an injective resolution of , and set         Given an arrow , fix injective resolutions and , and a map of complexes extending . Then        "
+  "title": "Derived functors.",
+  "body": "Derived functors   Let and be abelian categories.  Let be a covariant right exact functor. If has enough projectives, the left derived functors of are a sequence of functors , defined as follows:   For each object in , fix a projective resolution of , and set     Given an arrow , fix projective resolutions and , and a map of complexes lifting . Then      Let be a covariant left exact functor. If has enough injectives, the right derived functors of are a sequence of functors , defined as follows:   For each object in , fix an injective resolution of , and set     Given an arrow , fix injective resolutions and , and a map of complexes extending . Then      Let be a contravariant left exact functor. If has enough projectives, the right derived functors of are a sequence of functors , defined as follows:     For each object in , fix a projective resolution of , and set     Given an arrow , fix projective resolutions and , and a map of complexes extending . Then      Finally, let be a contravariant right exact functor. If has enough injectives, the left derived functors of are a sequence of functors , defined as follows:   For each object in , fix an injective resolution of , and set     Given an arrow , fix injective resolutions and , and a map of complexes extending . Then       "
 },
 {
-  "id": "sec-derived-functors-ab-4",
+  "id": "rem-7.63",
   "level": "2",
-  "url": "sec-derived-functors-ab.html#sec-derived-functors-ab-4",
+  "url": "sec-derived-functors-ab.html#rem-7.63",
   "type": "Remark",
   "number": "7.86",
   "title": "",
-  "body": " Remark 7.63. If is exact, then , so for all .  "
+  "body": " If is exact, then , so for all .  "
 },
 {
-  "id": "sec-derived-functors-ab-5",
+  "id": "rem-7.64",
   "level": "2",
-  "url": "sec-derived-functors-ab.html#sec-derived-functors-ab-5",
+  "url": "sec-derived-functors-ab.html#rem-7.64",
   "type": "Remark",
   "number": "7.87",
   "title": "",
-  "body": " Remark 7.64. If is projective, then is a projective resolution of , and thus for all . Similarly, if is injective then .  "
+  "body": " If is projective, then is a projective resolution of , and thus for all . Similarly, if is injective then .  "
 },
 {
   "id": "prop-7.65",
@@ -4300,25 +4300,25 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "7.88",
   "title": "",
-  "body": "  Proposition 7.65. Let be an abelian category with enough projectives, and a covariant right exact functor. a) is well-defined up to isomorphism for every object . b) is well-defined for every arrow . c) is an additive functor for each . d) .    Proof.  a) Let and be projective resolutions of . Theorem 5.17 gives us maps of complexes and such that is homotopic to and is homotopic to . Additive functors preserve homotopies, by Remark 7.37, so and are homotopic to the corresponding identity arrows. Homotopic maps induce the same map in homology, by Exercise 90. Therefore, and induce isomorphisms in homology.  b) Fix projective resolutions and of and . Any two lifts and of to are homotopic, by Lemma 7.59. Additive functors preserve homotopies, by Remark 7.37, so and are homotopic. Homotopic maps induce the same map in homology, by Exercise 90, so for each .  c) Given an arrow , fix a lift of to projective resolutions of the source and target. Since is an additive functor, is a homomorphism for each , and thus is a homomorphism between the corresponding Hom-groups, which as we’ve seen is independent of our choice of .  d) Let be any object and be a projective resolution of . Since is right exact, and     is exact, then so is     We claim that . By Exercise 84, , so the canonical arrow is precisely the image of . By exactness of the last sequence we wrote above, . On the other hand, exactness at says that is an epi, by Exercise 86 . Every epi is the cokernel of its kernel, so is the cokernel of , which we saw was exactly the canonical arrow . Therefore, , the target of the cokernel of .   "
+  "body": "  Let be an abelian category with enough projectives, and a covariant right exact functor.    is well-defined up to isomorphism for every object .     is well-defined for every arrow .     is an additive functor for each .     .          Let and be projective resolutions of . Theorem 5.17 gives us maps of complexes and such that is homotopic to and is homotopic to . Additive functors preserve homotopies, by Remark 7.37, so and are homotopic to the corresponding identity arrows. Homotopic maps induce the same map in homology, by Exercise 90. Therefore, and induce isomorphisms in homology.    Fix projective resolutions and of and . Any two lifts and of to are homotopic, by Lemma 7.59. Additive functors preserve homotopies, by Remark 7.37, so and are homotopic. Homotopic maps induce the same map in homology, by Exercise 90, so for each .    Given an arrow , fix a lift of to projective resolutions of the source and target. Since is an additive functor, is a homomorphism for each , and thus is a homomorphism between the corresponding Hom-groups, which as we’ve seen is independent of our choice of .    Let be any object and be a projective resolution of . Since is right exact, and is exact, then so is     We claim that . By Exercise 84, , so the canonical arrow is precisely the image of . By exactness of the last sequence we wrote above, . On the other hand, exactness at says that is an epi, by Exercise 86 . Every epi is the cokernel of its kernel, so is the cokernel of , which we saw was exactly the canonical arrow . Therefore, , the target of the cokernel of .      "
 },
 {
-  "id": "sec-derived-functors-ab-7",
+  "id": "exe-95",
   "level": "2",
-  "url": "sec-derived-functors-ab.html#sec-derived-functors-ab-7",
+  "url": "sec-derived-functors-ab.html#exe-95",
   "type": "Exercise",
   "number": "7.89",
   "title": "",
-  "body": "Exercise 95. Let be an abelian category with enough injectives, and a covariant left exact functor. a) is well-defined up to isomorphism. b) is well-defined for every arrow . c) is an additive functor for every . d) . "
+  "body": "Let be an abelian category with enough injectives, and a covariant left exact functor.    is well-defined up to isomorphism.     is well-defined for every arrow .     is an additive functor for every .     .    "
 },
 {
-  "id": "sec-derived-functors-ab-8",
+  "id": "rem-7.66",
   "level": "2",
-  "url": "sec-derived-functors-ab.html#sec-derived-functors-ab-8",
+  "url": "sec-derived-functors-ab.html#rem-7.66",
   "type": "Remark",
   "number": "7.90",
   "title": "",
-  "body": " Remark 7.66. If is an abelian category with enough injectives, then is an abelian category with enough projectives. This gives us a relationship between left derived and right derived functors: .  "
+  "body": " If is an abelian category with enough injectives, then is an abelian category with enough projectives. This gives us a relationship between left derived and right derived functors: .  "
 },
 {
   "id": "thm-7.67",
@@ -4327,7 +4327,79 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.91",
   "title": "",
-  "body": "  Theorem 7.67. Let be a sequence of additive covariant functors between abelian categories, where has enough projectives, and a right exact functor. Suppose the following hold:  (1) For every short exact sequence in , we get a natural long exact sequence     (2) is naturally isomorphic to .  (3) for every projective object in , and all .  Then is naturally isomorphic to for all .  Similarly, suppose is a sequence of additive covariant functors, where has enough injectives, and a left exact functor such that  a) For every short exact sequence in , we get a long exact sequence     b) is naturally isomorphic to . c) for every injective object in , and all .  Then is naturally isomorphic to for all .   "
+  "body": "  Let be a sequence of additive covariant functors between abelian categories, where has enough projectives, and a right exact functor. Suppose the following hold:   For every short exact sequence in , we get a natural long exact sequence      is naturally isomorphic to .     for every projective object in , and all .     Then is naturally isomorphic to for all .  Similarly, suppose is a sequence of additive covariant functors, where has enough injectives, and a left exact functor such that   For every short exact sequence in , we get a long exact sequence      is naturally isomorphic to .     for every injective object in , and all .     Then is naturally isomorphic to for all .   "
+},
+{
+  "id": "sec-what-is-spectral",
+  "level": "1",
+  "url": "sec-what-is-spectral.html",
+  "type": "Section",
+  "number": "8.1",
+  "title": "What is a Spectral Sequence?",
+  "body": "What is a Spectral Sequence?  It has been suggested that the name \"spectral\" was given because, like spectres, spectral sequences are terrifying, evil, and dangerous. I have heard no one disagree with this interpretation, which is perhaps not surprising since I just made it up.  (Ravi Vakil, in Spectral Sequences: friend or foe?)  Spectral sequences are useful bookkeeping tools for computing, among other things, the homology and cohomology of complicated complexes. Unfortunately, spectral sequences have a bad reputation for being difficult and scary; but continuing Vakil’s quote above, \"you can use spectral sequences without hesitation or fear, and [...] you shouldn’t be frightened when they come up in a seminar\". Rotman wisely says that \"Of course, the reader must digest these new ideas in order to apply them, but it is worth the effort\" [Rot09, page 608].  Spectral sequences were introduced independently by Leray and Lyndon in the 1940s. Leray came up with the idea while he was a prisoner of the nazis during WWII. The primary usages of spectral sequences are in homotopy theory and topology more generally, but there are also applications in commutative algebra and other fields. Due to its topological roots, the subject is best learned with a topological backdrop - which provides many motivating examples - but since we are not assuming any particular topological background, we will give only a very brief introduction to the subject, and from a more algebraic perspective.  Here are some recommended sources to learn more about spectral sequences:    Rotman’s book An introduction to Homological Algebra (second edition) [Rot09].    John McCleary’s A user’s guide to spectral sequences [McC01].    Ravi Vakil’s notes Spectral Sequences: friend or foe?    Hatcher’s additional chapter on spectral sequences, an addition to his Algebraic Topology book [Hat02].    Weibel’s book An introduction to homological algebra [Wei94].    Eisenbud’s Appendix A3.13 to his book Commutative algebra with a view towards algebraic geometry [Eis95].    Mel Hochster’s notes.    Michael Hutchings notes.    Roughly speaking, a spectral sequence is a book where each page is a plane with a module (or more general, an object in an abelian category) sitting in each point with integer coordinates. To pass the pages, we take the (co)homology of a differential, and attach to the next page a new differential with a different shape.  Definition 8.1. A cohomological spectral sequence consists of the following data:    A family of -modules ranging over all integers with . For a fixed , the collection of modules is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :       Differentials       so -module homomorphisms such that , or more precisely,       Isomorphisms       meaning     for every .  Remark 8.2. The differential in the th page is a map of degree . Here are some examples:   0th page   1st page   2nd page  We can define spectral sequences more generally over any abelian category. However, most spectral sequences the typical mathematician ever computes are over -modules (or even just vector spaces!), so we will keep things friendly by sticking to -modules.  Definition 8.3. A homological spectral sequence is a sequence consists of the following data:    A family of -modules ranging over all integers with . For a fixed , the collection of objects is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :       Differentials       and for each isomorphisms , meaning     for every .    Isomorphisms       meaning     for every .  Remark 8.4. The differential in the th page is a map of degree .   0th page   1st page   2nd page  "
+},
+{
+  "id": "sec-bigrad",
+  "level": "1",
+  "url": "sec-bigrad.html",
+  "type": "Section",
+  "number": "8.2",
+  "title": "Graded and Bigraded Modules",
+  "body": "Graded and Bigraded Modules  We can be a bit more formal and say that a page in a spectral sequence is a differential bigraded module. The goal of this section is to set up some background on the topic of differential bigraded modules.  Definition 8.5. Let be a ring. A graded module over is a family of -modules indexed by . We sometimes denote by .  More precisely, these are -graded modules. More generally, we have discussed -graded modules over any graded ring; in that case, the action of on must respect the grading. But here we are not assuming any grading on , so we have no such conditions. One may reinterpret our definition of graded module as assuming that is given the trivial grading concentrated in degree 0 , so that and otherwise, and thus the condition on the action of becomes trivial.  Example 8.6. If is a complex of -modules, then is a graded module. Moreover, its homology also forms a graded module.  Definition 8.7. Given graded modules and , a graded map of degree is a family     of homomorphisms of -modules, which we denote by . We write to denote that the degree is .   Example 8.8.    If is a complex of -modules, the differential is a graded map of degree -1 . If is a cochain complex, the differential is a graded map of degree 1 .    Any map of complexes is a graded map of degree 0 .    A homotopy is a map of degree 1 .     Definition 8.9. Let be a ring. The category of graded modules over has objects all graded modules and arrows all graded maps of graded modules over .  Definition 8.10. Let and be graded modules over a . We say is a submodule of , and write , if for all . The quotient of by is the graded module     Definition 8.11. Let be a graded map of degree between graded modules. The kernel of is the graded module     and the image of is the graded module     Definition 8.12. Consider graded maps of graded modules     We say this is an exact sequence if .  Remark 8.13. By our definition of kernel and image, says that for all .  Definition 8.14. Let be a ring. A bigraded module over is a family of -modules indexed by . We sometimes denote by .  Definition 8.15. Let and be bigraded modules over a ring . A bigraded map of degree is a family of homomorphisms of -modules     We denote the degree of by .  The kernel of is the bigraded module     and the image of is the bigraded module     We say a sequence of graded maps     is exact if .  Definition 8.16. A differential (bi)graded module over a ring consists of a (bi)graded module and a graded map , which we call the differential, such that .  We can think of (bi)graded modules as differential (bi)graded modules with zero differential.  Example 8.17. A double complex with differentials and gives rise to two differential bigraded complexes: and .  Definition 8.18. Let be a differential (bi)graded module. The homology of is the (bi)graded module     We sometimes shorten this to .  A spectral sequence can now be recast as a sequence of differential bigraded modules such that .  "
+},
+{
+  "id": "sec-bigrad-9",
+  "level": "2",
+  "url": "sec-bigrad.html#sec-bigrad-9",
+  "type": "Example",
+  "number": "8.1",
+  "title": "Example 8.8..",
+  "body": " Example 8.8.    If is a complex of -modules, the differential is a graded map of degree -1 . If is a cochain complex, the differential is a graded map of degree 1 .    Any map of complexes is a graded map of degree 0 .    A homotopy is a map of degree 1 .    "
+},
+{
+  "id": "sec-filtrations",
+  "level": "1",
+  "url": "sec-filtrations.html",
+  "type": "Section",
+  "number": "8.3",
+  "title": "Filtrations",
+  "body": "Filtrations  Definition 8.19. Let be an -module. A filtration on is a family of submodules of such that either     for all , in which case we say the filtration is increasing, or     for all , in which case we say the filtration is decreasing. When we do not specify if a filtration is ascending or descending, we will assume by default that it is ascending, though we accept both kinds as filtrations in their own right. The factors of are the quotient modules     One can in fact define filtrations on any abelian category; that requires the notion of a subobject, which we have not yet defined, but it is easy to guess: a suboject of an object in an abelian category is a mono with target . In particular, we can define a filtration on a complex, or more generally on a (differential) (bi)graded module:  Definition 8.20. An ascending filtration on a (bi)graded module is a sequence of submodules of such that . If is a differential (bi)graded module, we require additionally that the filtration respects the differential, that is, that .  So in particular when is a complex, we get the following definition:  Definition 8.21. Let be a complex. An ascending filtration of is an ascending chain of subcomplexes of      We call a complex with a filtration a filtered complex, and denote it by .  As above, one can define a descending filtration; if we do not indicate whether a filtration is ascending or descending, we will always by default assume it is ascending.  Remark 8.22. Let be a complex and consider an ascending filtration of . For each fixed homological degree , we get an ascending filtration     of submodules of . A filtration of gives us commutative diagrams   where the rows are given by the differential on and its restrictions to the appropriate modules.  Definition 8.23. Let be a complex with a filtration , and consider the inclusions . We get an induced filtration in homology, as follows: for each ,     giving us a filtration on the graded module .  Definition 8.24. A filtration of a graded module is bounded if for each there exists integers and such that     so that the filtration on can be described by finitely many terms     In particular, for all and for all .  Notice, however, that the bounds and may depend on , and in particular there is not necessarily global integers and such that     for all .  Remark 8.25. Suppose that is a bounded filtration on a complex . Then the induced filtration in homology is also bounded, with the same bounds (or better), so that for all there exist and such that     Definition 8.26. Let be a module or a graded module. Given an increasing filtration of , its associated graded module is the graded module given by     Given a decreasing filtration of an -module , its associated graded module is the graded module given by     Note that the associated graded module depends on the choice of filtration.  Remark 8.27. Let be a filtered complex. The differential induces a differential on the associated graded:     This is well-defined, since our definition of filtered complex requires that the filtration respects the differential: if , then .  Definition 8.28. We can filter the integers as a -module as follows: we set     and     This give us the decreasing filtration     The corresponding associated graded module has     and     Remark 8.29 (the associated graded versus the actual module). Suppose someone has filtered the -module by , but that we only have access to the associated graded module of this filtration. While the pieces of the associated graded give us information about , they may not be sufficient to fully compute . For a simple example, consider an -module and a submodule , and the filtration     The associated graded is given by     So if we are only given the associated graded, meaning, if all we have access to is and , then all we know about is that fits into a short exact sequence     However, if , then this does not uniquely determine . Indeed, it turns out that the isomorphism classes of extensions of by , meaning modules that fit into short exact sequences of the form     are in bijection with the elements of ; this is a topic we previously skipped.  For a concrete example, take the case where and . Then is not uniquely determined: , and can be either or , which are not isomorphic.  "
+},
+{
+  "id": "sec-convergence",
+  "level": "1",
+  "url": "sec-convergence.html",
+  "type": "Section",
+  "number": "8.4",
+  "title": "Convergence of Spectral Sequences",
+  "body": "Convergence of Spectral Sequences  But back to spectral sequences. For now, let us stick to cohomological spectral sequences; any general statement we make about these can easily be translate into a statement about homological spectral sequences.  Definition 8.30. We say that a spectral sequence is bounded if for every there are only finitely many nonzero terms of total degree , meaning that there are only finitely many pairs with such that for all .  Remark 8.31. Notice that if a spectral sequence is bounded, then for every there exists an such that all the differentials in and out of are zero, and thus .  Most spectral sequences one deals with end up being bounded, so we will focus only on the case of bounded spectral sequences. This guarantees that what we are about to do makes sense.  From the data in a spectral sequence we define a limiting page , which can often be identified with some interesting object (for example, the homology of a complex we care about). These pages are sort of the whole point of the spectral sequence business, as they contain (pieces of) the information we want to compute.  Construction 8.32 ( page). Set     so that . At each stage , given such that , we define     and such that and     At each stage,     and     Thus we get chains     We say that consists of the elements that survive until stage , while consists of the elements that are in the image of the differentials by stage . We define     The elements in are the (classes of) those elements in that are in the image of the differential at some stage; we say these are the elements that are eventually bound. The elements in are the (classes of) those elements in that are in the kernel of all the differentials at all stages, so they survive forever or live forever.  Definition 8.33. Given a homological spectral sequence , the page is the bigraded module given by     Similarly, given a cohomological spectral sequence one can define and and , and the page     Lemma 8.34. Let be a spectral sequence. We have     Proof. In general, if is a subquotient of , we have , so if and only if and . If , then     so in , so we must have . But then     so .  Conversely, if and , then     This is easier to compute in the following special cases.  Definition 8.35. We say that a spectral sequence degenerates at the th page if for all .  Remark 8.36. If a spectral sequence degenerates at the th page, then is a limit term for the spectral sequence, in the sense that for all , and .  Example 8.37. Let be a spectral sequence. If the th page is concentrated in one row or one columnn, we say that the spectral sequence collapses at the th page. Notice that in such situations the spectral sequence will automatically degenerate at the th page.  Definition 8.38. Le be a graded -module. We say that a spectral sequence converges to the graded -module , and denote it by     if there exists a bounded filtration for such that     Alternatively, we may write for some other fixed choice of besides .  We have the basic definitions but we haven’t yet seen any examples. This is by design; to give a good example of a spectral sequence we need to do a bit more work than to give a starting example for a run of the mill definition. In the next few sections we will discuss some of the ways in which spectral sequences arise. There are, however, many interesting spectral sequences one would discuss in a first course that we do not have the time to cover. We strongly encourage the reader to seek out better sources, such as those we listed in the beginning of the chapter.  "
+},
+{
+  "id": "sec-spec-filt",
+  "level": "1",
+  "url": "sec-spec-filt.html",
+  "type": "Section",
+  "number": "8.5",
+  "title": "The Spectral Sequence of a Filtered Complex",
+  "body": "The Spectral Sequence of a Filtered Complex  We will now describe how every filtered complex gives rise to a spectral sequence. We will be writing a homological spectral sequence, but by setting slightly different conventions one could also write a cohomological spectral sequence; this part is up to your personal taste. Given a filtered complex , we first, define     and let be the differential induced on the associated graded . Each column of the page contains a complex, one of the levels of the filtration.   Next, let     and note that     Thus and are consistent with being the zeroeth and first pages of a spectral sequence. Before we move on, note that we can also rewrite the page as follows:     One way to interpret this is that if we take an element representing the class such that , then the element is really in , so we really should move it to the column on our left (the one indexed by ).  Thus the differential on is the map defined as follows: since each class corresponds to an element such that , we recast by asking about its class in . If , that means , and so on. Ultimately, we will gather information about how deep into our filtration we can go to still find .  Inspired by this, we define     Now given representing a class , by definition     so we define     We claim that this is well-defined, and leave the details as an exercise. Moreover, since . Finally, each class in the kernel of is represented by some such that , while the image of consists of the image of . Ultimately, this gives us an isomorphism     Theorem 8.39. Let be a filtered complex with filtration , and let     Then induces a well-defined map     such that , and     Thus this gives us a spectral sequence with     Moreover, if for all the filtration of stabilizes, then the spectral sequence converges to     Thus     This provides a comparison between taking the homology of the associated graded module, or taking the associated graded module of the homology.  Example 8.40. Consider any short exact sequence of complexes, which we can always write as the inclusion of a subcomplex into a complex followed by the quotient map:     It turns out that we can recover the long exact sequence in homology given by the Snake Lemma via a spectral sequence.  To do that, we can think of the inclusion as a filtration on : we set     Let us compute the spectral sequence of this filtered complex. First, note that In page, we have     The differential on the page is induced by the differential on and . Note that we denote the differential on both complexes and by the same letter since the differential on is just the restriction of the differential on . So the page looks like   where only the 0th and first columns are nonzero.  The page is obtained by taking homology, so it looks like     and the differentials , which are now horizontal, are induced by . More precisely, we can rewrite the terms on the right column as     and so by definition any class is represented by some such that . Since , then , and so we can ask about the class of in . So the differential on is given by     Now onto the page, where     and     Note now that is a map of degree , and thus , since we always have zero as the source or target (or both) of . Thus for all , and so by Theorem 8.39 this spectral sequence converges, with     Now , while     Here the map is the map induced by the original inclusion of into . Moreover, for all and for all . So for all we get isomorphisms     and     So we now have all the tools we need to construct the long exact sequence in homology from this spectral sequence. First, we construct a complex. Our map from the spectral sequence gives us homomorphisms     By definition, ; composing this with the map consists of viewing and asking for its class in . But , so the composition     is zero.  Similarly, the map takes a class , represented by  , and identifies with its image in . But by definition, so and the composition     is the zero map. Moreover, is an additive functor, and thus it takes to a complex, so putting it all together we get a complex     All that is left is for us to check that exactness follows from our spectral sequence. On the one hand, the fact that this is a complex says that     but our spectral sequence gave us the isomorphism     so by the First Isomorphism Theorem we get     We can now conclude that . This gives us exactness at . Similarly, we claim that the fact that we have a complex gives us a map     Indeed, for any we get , and the map is well-defined since if then by definition , so that we get a well-defined map from . But our spectral sequence gave us an isomorphism     so that the map we defined above is an isomorphism, and thus we must have     proving exactness at . Finally, this also says that we can rewrite our previous isomorphism as     but by the First Isomorphism Theorem we get     We already knew that from the fact that we had a complex, so we conclude that we must have exactness at .  Thus we have recovered the connecting homomorphism from the Snake Lemma and the long exact sequence in homology, all via this spectral sequence.  "
+},
+{
+  "id": "sec-spec-double",
+  "level": "1",
+  "url": "sec-spec-double.html",
+  "type": "Section",
+  "number": "8.6",
+  "title": "The Spectral Sequence of a Double Complex",
+  "body": "The Spectral Sequence of a Double Complex  One important example of a spectral sequence induced by a filtered complex is the case of the spectral sequence of a double complex.  Definition 8.41. Let be a double complex. There are two canonical filtrations on the total complex of :  (I) The First Filtration of is the filtration given by     For each is the subcomplex of obtained by first truncating at :   The First Filtration  II The Second Filtration of is the filtration given by     For each is the subcomplex of obtained by truncating at :   The Second Filtration  Each of these filtered complexes gives rise to a spectral sequence.  Discussion 8.42 (First Spectral Sequence). Let us examine the spectral sequence induced by the First Filtration, which we write as . To make the notation less heavy, we will write     Our spectral sequence starts with     so that     Moreover,     is the map induced by the differential on this filtration. Since     we conclude that is precisely the vertical differential of the original double complex . Thus the page looks like    Then , and     is the map induced by . This is the horizontal differential . We conclude that     We automatically get a convergence theorem from Theorem 8.39.  Theorem 8.43. If is a bounded double complex, then     Discussion 8.44 (Second Spectral Sequence). Let us examine the spectral sequence induced by the Second Filtration, which we write as . To make the notation less heavy, we will write  Our spectral sequence starts with        so that     Moreover,     is the map induced by the differential on this filtration. Since     we conclude that is precisely the horizontal differential of the original double complex . Thus the page looks like   Then , and     is the map induced by . Thus is the vertical differential . We conclude that     We now get a convergence theorem automatically from Theorem 8.39.  Theorem 8.45. If is a bounded double complex, then     Remark 8.46. We know exactly how each spectral sequence converges to : via the filtration on induced by the given filtration on . More precisely,     Remark 8.47. If is a first quadrant double complex, so that whenever or , then for all we have     Thus     Moreover, for each fixed if we take or then     so     Thus each fixed diagonal of and contains the factors of a finite filtration on :     In the special case when or collapses, meaning that is concentrated in one row or column, then the filtration on has a unique term in each degree, so that we can read exactly from the page.  Remark 8.48. The fact that can lead to a lot of confusion. To make things easier, one often breaks the rules a little and instead takes the page to be with horizontal differentials, the page to have vertical differentials induced by the vertical differentials on , and then the page to have a differential of degree . This gives us a gadget that isn’t quite a spectral sequence under our formal definition, but should be a spectral sequence. In fact, this new convention makes everything much easier to read.  Under this reasonable convention, the differentials look as follows:   0th page   1st page   2nd page  Also, note that now     and that while     we now should carefully read the filtration backwards:     Example 8.49. Let us give a new proof of the Snake Lemma using spectral sequences. More precisely, we will show that given any commutative diagram with exact rows   then there exists an exact sequence     To do that, we start by viewing our commutative diagram as a double complex , as follows: we set , and so on, resulting in   Now notice that is a first quadrant double complex with exact rows, so by the Acyclic Assembly Lemma, is exact. We can also prove that is exact by computing the spectral sequence arising from the Second Filtration on , which under our new and improved notation from Remark 8.48 has     and since the rows are all exact, we see that in the next step we will end up with , and thus . Therefore, .  Now consider the spectral sequence induced by the First Filtration on , which has   Now whatever is, since is a degree map, the only possible nonzero differential on is . Moreover, all the differentials on all the higher pages vanish, simply because there are not enough nonzero modules already, so . But we know that is exact, so in fact since our filtrations are finite we must necessarily have . In particular, the only potentially nonzero objects in are and , so this proves the exactness of   Moreover, the fact that and are the only possible nonzero objects in together with the fact that and imply that must be an isomorphism. More precisely, we get an isomorphism     Thus we get an exact sequence   where the map obtained by composition is the connecting homomorphism we dreamed of.  "
+},
+{
+  "id": "exercises",
+  "level": "1",
+  "url": "exercises.html",
+  "type": "Section",
+  "number": "8.7",
+  "title": "Exercises",
+  "body": "Exercises  Exercise 96. Show that if is a first quadrant double complex with exact rows or exact columns, then is exact.  Exercise 97. Let and be -modules and fix projective resolutions for and for . Consider the double complex .  a) Compute the spectral sequence associated to the First Filtration (I) on up to the page.  b) Compute the spectral sequence associated to the Second Filtration II on up to the page.  c) Give a new proof that Tor is balanced:     Exercise 98. Consider the following first quadrant double complex :   a) Compute the spectral sequence associated to the First Filtration (I) until it stabilizes.  b) Compute the spectral sequence associated to the Second Filtration II until it stabilizes.  c) How are the two resulting pages even possible considering they both converge to the same thing?  d) Compute explicitly using only the two spectral sequences you calculated.  e) Check your work by computing explicitly from the definition of .  "
 },
 {
   "id": "sec-rings",
