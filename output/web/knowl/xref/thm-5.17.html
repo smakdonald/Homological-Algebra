@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.21</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P=\cdots \longrightarrow P_{n} \longrightarrow \cdots P_{1} \stackrel{\partial_{1}}{\longrightarrow} P_{0} \stackrel{\partial_{0}}{\longrightarrow} M \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">be a complex of projective <span class="process-math">\(R\)</span>-modules, and let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C=\cdots \longrightarrow C_{n} \longrightarrow \cdots C_{1} \stackrel{\delta_{1}}{\longrightarrow} C_{0} \stackrel{\delta_{0}}{\longrightarrow} N \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">be an exact complex. Every <span class="process-math">\(R\)</span>-module map <span class="process-math">\(f: M \rightarrow N\)</span> lifts to a map of complexes <span class="process-math">\(\varphi: P \rightarrow C\text{,}\)</span> and any two such lifts are homotopic.</div>
+</div> <div class="para">Moreover, if <span class="process-math">\(R\)</span> is a commutative graded <span class="process-math">\(k\)</span>-algebra, <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are finitely generated graded <span class="process-math">\(R\)</span>-modules, <span class="process-math">\(P_{n}\)</span> and <span class="process-math">\(C_{n}\)</span> are finitely generated graded <span class="process-math">\(R\)</span>-modules, and <span class="process-math">\(f\)</span> is a degree-preserving homomorphism, then the induced map of complexes is made out of degree-preserving <span class="process-math">\(R\)</span> module maps.</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">Since <span class="process-math">\(P_{0}\)</span> is projective and <span class="process-math">\(\delta_{0}\)</span> is surjective, there exists an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\varphi_{0}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-08.jpg" class="contained"></div> <div class="para logical">
+<div class="para">commutes. Notice in fact that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\delta_{0} \varphi_{0}\left(\operatorname{im} \partial_{1}\right) &amp; \subseteq \delta_{0} \varphi_{0}\left(\operatorname{ker} \partial_{0}\right) &amp; &amp; \text { because } P \text { is a complex } \\
+&amp; =f \partial_{0}\left(\operatorname{ker} \partial_{0}\right) &amp; &amp; \text { by commutativity of the square above } \\
+&amp; =0, &amp; &amp;
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\varphi_{0}\left(\operatorname{im} \partial_{1}\right) \subseteq \operatorname{ker} \delta_{0}=\operatorname{im} \delta_{1}\text{.}\)</span> In the graded case, note that we can define <span class="process-math">\(\varphi_{0}\)</span> by sending the elements <span class="process-math">\(b_{i}\)</span> in a homogeneous basis of <span class="process-math">\(P_{0}\)</span> to homogeneous <span class="process-math">\(c_{i} \in C_{0}\)</span> such that <span class="process-math">\(\delta_{0}\left(c_{i}\right)=f \partial_{0}\left(b_{i}\right)\text{.}\)</span>
+</div>
+</div> <div class="para">We now proceed by induction. Suppose we have constructed <span class="process-math">\(P_{n}{ }_{1} \stackrel{\varphi_{n}}{\rightarrow} \rightarrow C_{n}{ }_{1}\)</span> such that <span class="process-math">\(\varphi_{n} \quad\left(\operatorname{im} \partial_{n}\right) \subseteq \operatorname{im} \delta_{n}\text{.}\)</span> Since <span class="process-math">\(P_{n}\)</span> is projective, there exists a map <span class="process-math">\(\varphi_{n}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-08(1).jpg" class="contained"></div> <div class="para">commutes. And again,</div> <div class="para logical">
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rlr}
+\delta_{n} \varphi_{n}\left(\operatorname{im} \partial_{n+1}\right) &amp; \subseteq \delta_{n} \varphi_{n}\left(\operatorname{ker} \partial_{n}\right) \\
+&amp; =\varphi_{n}{ }_{1} \partial_{n}\left(\operatorname{ker} \partial_{n}\right) \\
+&amp; =0,
+\end{array} \quad \text { by commutativity of the square above }
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\varphi_{n}\left(\operatorname{im} \partial_{n+1}\right) \subseteq \operatorname{ker} \delta_{n}=\operatorname{im} \delta_{n+1}\text{.}\)</span>
+</div>
+</div> <div class="para">We can now inductively construct our map of complexes <span class="process-math">\(\varphi\)</span> lifting <span class="process-math">\(f\text{.}\)</span>
+</div> <div class="para">Now suppose we are given two such maps of complexes <span class="process-math">\(P \rightarrow C\)</span> lifting <span class="process-math">\(f\text{,}\)</span> say <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\text{.}\)</span> Note that <span class="process-math">\(\varphi \quad \psi\)</span> and 0 are two liftings of the zero map. We are going to show that any map lifting the zero map <span class="process-math">\(M \rightarrow N\)</span> must be nullhomotopic, which will then imply that <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> are homotopic as well (essentially via the same homotopy!).</div> <div class="para">So let <span class="process-math">\(\varphi: P \rightarrow C\)</span> be a map of complexes lifting the zero map <span class="process-math">\(M \rightarrow N\text{,}\)</span> so that the following commutes:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-09(2).jpg" class="contained"></div> <div class="para logical">
+<div class="para">We will explicitly construct a nullhomotopy for <span class="process-math">\(\varphi\)</span> by induction. First, set <span class="process-math">\(h_{n}=0\)</span> for all <span class="process-math">\(n&lt;0\text{.}\)</span> The commutativity of the rightmost square tells us that <span class="process-math">\(\delta_{0} \varphi_{0}=0\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{im} \varphi_{0} \subseteq \operatorname{ker} \delta_{0}=\operatorname{im} \delta_{1}
+\end{equation*}
+</div>
+</div> <div class="para">Since <span class="process-math">\(P_{0}\)</span> is projective, there exists an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(h_{0}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-09(1).jpg" class="contained"></div> <div class="para logical">
+<div class="para">commutes, and thus <span class="process-math">\(\varphi_{0}=\delta_{1} h_{0}=\delta_{1} h_{0}+h_{1} \partial_{0}\text{.}\)</span> Notice also that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; \delta_{1}\left(\varphi_{1} \quad h_{0} \partial_{1}\right)=\varphi_{0} \partial_{1} \quad \delta_{1} h_{0} \partial_{1} \quad \text { because } \varphi \text { is a map of complexes } \\
+&amp; =\left(\begin{array}{lll}
+\varphi_{0} &amp; \delta_{1} h_{0}
+\end{array}\right) \partial_{1} \quad \text { factoring } \\
+&amp; =0 \quad \text { since } \varphi_{0}=\delta_{1} h_{0},
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\operatorname{im}\left(\varphi_{1} \quad h_{0} \partial_{1}\right) \subseteq \operatorname{ker} \delta_{1}=\operatorname{im} \delta_{2}\text{.}\)</span>
+</div>
+</div> <div class="para">Now assume that we have constructed maps <span class="process-math">\(h_{0}, \ldots, h_{n}\)</span> such that <span class="process-math">\(\varphi_{n}=h_{n}{ }_{1} \partial_{n}+\delta_{n+1} h_{n}\)</span> and <span class="process-math">\(\operatorname{im}\left(\varphi_{n+1} \quad h_{n} \partial_{n+1}\right) \subseteq \operatorname{im} \delta_{n+2}\text{.}\)</span> Since <span class="process-math">\(P_{n+1}\)</span> is projective, we can find a map <span class="process-math">\(h_{n+1}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-09.jpg" class="contained"></div> <div class="para logical">
+<div class="para">commutes, so <span class="process-math">\(\varphi_{n+1}=\delta_{n+2} h_{n+1}+h_{n} \partial_{n+1}\text{.}\)</span> Now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; \delta_{n+2}\left(\varphi_{n+2} \quad h_{n+1} \partial_{n+2}\right)=\varphi_{n+1} \partial_{n+2} \quad \delta_{n+2} h_{n+1} \partial_{n+2} \quad \text { since } \varphi \text { is a map of complexes } \\
+&amp; =\left(\varphi_{n+1} \quad \delta_{n+2} h_{n+1}\right) \partial_{n+2} \\
+&amp; =h_{n} \partial_{n+1} \partial_{n+2} \quad \text { by commutativity of the triangle above } \\
+&amp; =0 \quad \text { since } \partial_{n+1} \partial_{n+2}=0 \text {. }
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para">So we again obtain <span class="process-math">\(\operatorname{im}\left(\varphi_{n+2} \quad h_{n+1} \partial_{n+2}\right) \subseteq \operatorname{ker} \delta_{n+1}=\operatorname{im} \delta_{n+2}\text{.}\)</span> By induction, this process allows us to construct our homotopy <span class="process-math">\(h\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="sec-proj-res.html#thm-5.17">in-context</a></span>
+</body>
+</html>

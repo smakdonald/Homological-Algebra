@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.22</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of Minimal Free Resolutions.</span>
+</h4>
+<div class="para">Let <span class="process-math">\((R, \fm)\)</span> be a commutative ring, either a local ring or a <span class="process-math">\(\mathbb{N}\)</span>-graded graded <span class="process-math">\(k\)</span>-algebra with <span class="process-math">\(R_{0}=k\)</span> and homogeneous maximal ideal <span class="process-math">\(\fm=R_{+}\text{.}\)</span> If <span class="process-math">\(F\)</span> is a minimal free resolution of <span class="process-math">\(M\text{,}\)</span> then any free resolution for <span class="process-math">\(M\)</span> is isomorphic to a direct sum of <span class="process-math">\(F\)</span> with a trivial complex. In particular, the minimal free resolution of <span class="process-math">\(M\)</span> is unique up to isomorphism.</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(G\)</span> is another free resolution of <span class="process-math">\(M\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/thm-5.17.html" title="Theorem 5.21">Theorem 5.21</a>, there are complex maps <span class="process-math">\(\psi: G \rightarrow F\)</span> and <span class="process-math">\(\varphi: F \rightarrow G\)</span> that lift the identity map on <span class="process-math">\(M\text{.}\)</span> Then <span class="process-math">\(\psi \varphi: F \rightarrow F\)</span> is a map of complexes that lifts the identity on <span class="process-math">\(M\text{,}\)</span> and thus by <a href="" class="xref" data-knowl="./knowl/xref/thm-5.17.html" title="Theorem 5.21">Theorem 5.21</a> <span class="process-math">\(\varphi \psi\)</span> must be homotopic to the identity on <span class="process-math">\(F\text{.}\)</span> Let <span class="process-math">\(h\)</span> be a homotopy between <span class="process-math">\(\psi \varphi\)</span> and the identity, so that for all <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-5.17.html ./knowl/xref/thm-5.17.html">
+\begin{equation*}
+\text { id } \quad \psi_{n} \varphi_{n}=\partial_{n+1} h_{n}+h_{n}{ }_{1} \partial_{n}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(F\)</span> is minimal, we have <span class="process-math">\(\operatorname{im} \partial_{n} \subseteq \fm F_{n}\)</span> and <span class="process-math">\(\operatorname{im} \partial_{n+1} \subseteq \fm F_{n}\text{,}\)</span> so <span class="process-math">\(\operatorname{im}\left(\mathrm{id} \quad \psi_{n} \varphi_{n}\right) \subseteq \fm F_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span> Our first goal will be to show that <span class="process-math">\(\psi \varphi\)</span> is an isomorphism.</div>
+</div> <div class="para logical">
+<div class="para">First we do the local case. Let <span class="process-math">\(A\)</span> be the matrix representing <span class="process-math">\(\psi_{n} \varphi_{n}\)</span> in some fixed basis for <span class="process-math">\(F_{n}\text{,}\)</span> and note that  <span class="process-math">\(\id\psi_{n} \varphi_{n}\)</span> is represented by <span class="process-math">\(\Id-A\text{,}\)</span> so all the entries in  <span class="process-math">\(\Id-A\)</span> must be in <span class="process-math">\(\fm\text{.}\)</span> Our matrix <span class="process-math">\(A\)</span> can be written as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left(\begin{array}{cccc}
+1+a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1 s} \\
+a_{21} &amp; 1+a_{22} &amp; \cdots &amp; a_{2 s} \\
+&amp; \ddots &amp; &amp; \\
+a_{s 1} &amp; \cdots &amp; a_{s s} 1 &amp; 1+a_{s s}
+\end{array}\right)
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(a_{i j} \in\text{,}\)</span> so that <span class="process-math">\(\operatorname{det}(A)=1+a\)</span> for some <span class="process-math">\(a \in\text{.}\)</span> In particular, <span class="process-math">\(\operatorname{det}(A)\)</span> is invertible, and <span class="process-math">\(\psi_{n} \varphi_{n}\)</span> is an isomorphism.</div>
+</div> <div class="para">In the graded case, we have to be a bit more careful: not all elements that are not in are invertible, this is only true for homogeneous elements. First, we fix a basis of homogeneous elements <span class="process-math">\(f_{1}, \ldots, f_{s}\)</span> for <span class="process-math">\(F_{n}\)</span> with <span class="process-math">\(\operatorname{deg}\left(f_{1}\right) \leqslant \operatorname{deg}\left(f_{2}\right) \leqslant \cdots \leqslant \operatorname{deg}\left(f_{s}\right)\text{,}\)</span> and set <span class="process-math">\(\Phi:=\)</span> id <span class="process-math">\(\psi_{n} \varphi_{n}\text{.}\)</span> Since our map <span class="process-math">\(\Phi\)</span> is degree-preserving, <span class="process-math">\(\Phi\left(f_{i}\right)\)</span> is homogeneous for each <span class="process-math">\(i\text{,}\)</span> and so we can write <span class="process-math">\(\Phi\left(f_{i}\right)\)</span> as a linear combination of our basis elements <span class="process-math">\(f_{1}, \ldots, f_{s}\)</span> using only pieces of degree <span class="process-math">\(\operatorname{deg}\left(\Phi\left(f_{i}\right)\right)\text{.}\)</span> We obtain a matrix <span class="process-math">\(C=\left(c_{i j}\right)\)</span> such that <span class="process-math">\(c_{i j} \neq 0 \Longrightarrow \operatorname{deg}\left(c_{i j}\right)=\operatorname{deg}\left(f_{j}\right) \operatorname{deg}\left(f_{i}\right)\text{,}\)</span> and <span class="process-math">\(C\)</span> represents <span class="process-math">\(\Phi\text{,}\)</span> meaning <span class="process-math">\(\Phi\left(f_{i}\right)=c_{i 1} f_{1}+\cdots+c_{i s} f_{s}\)</span> for all <span class="process-math">\(i\text{.}\)</span> Now all the entries of <span class="process-math">\(C=\mathrm{Id} \quad A\)</span> must be in, so in particular we must have <span class="process-math">\(a_{i i}=1\)</span> for all <span class="process-math">\(i\text{.}\)</span> Moreover, since we chose our basis to have increasing degrees, <span class="process-math">\(\operatorname{deg}\left(c_{i j}\right)=0\)</span> whenever <span class="process-math">\(i&lt;j\text{.}\)</span> Since we must also have <span class="process-math">\(c_{i j} \in \fm\)</span> whenever <span class="process-math">\(i \neq j\text{,}\)</span> we conclude that <span class="process-math">\(c_{i j}=0\)</span> for <span class="process-math">\(i&lt;j\text{.}\)</span> We conclude that <span class="process-math">\(A\)</span> is an upper triangular matrix. Finally, <span class="process-math">\(\operatorname{det}(A)=a_{11} \cdots a_{s s}=1\text{,}\)</span> and <span class="process-math">\(A\)</span> is invertible.</div> <div class="para logical">
+<div class="para">So we have shown in both cases that <span class="process-math">\(\psi_{n} \varphi_{n}\)</span> is an isomorphism for all <span class="process-math">\(n\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/exe-25.html" title="Exercise 2.6: Understanding \mathrm{Ch}(R)">Exercise 2.6</a>, <span class="process-math">\(\psi \varphi\)</span> is in fact an isomorphism of complexes, so let <span class="process-math">\(\xi: F \rightarrow F\)</span> be its inverse. Now we want to claim that <span class="process-math">\(\varphi\)</span> splits as a map of complexes. Notice that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exe-25.html ./knowl/xref/lem-2.19.html">
+\begin{equation*}
+(\xi \psi) \varphi=\xi(\psi \varphi)=\mathrm{id}_{F}
+\end{equation*}
+</div>
+<div class="para">so let us take <span class="process-math">\(\xi \psi\)</span> to be our proposed splitting for <span class="process-math">\(\varphi\text{.}\)</span> Note that <span class="process-math">\((\xi \psi)_{n} \varphi_{n}=\operatorname{id}_{n}\)</span> implies that our map <span class="process-math">\(\xi \psi\)</span> provides splittings for the <span class="process-math">\(R\)</span>-module maps in each degree, by <a href="" class="xref" data-knowl="./knowl/xref/lem-2.19.html" title="Lemma 2.29: Splitting Lemma">Lemma 2.29</a>, so <span class="process-math">\(G_{n}=\varphi_{n}\left(F_{n}\right) \oplus \operatorname{ker}\left(\xi_{n} \psi_{n}\right)\text{.}\)</span> We just need to prove that this splitting holds as complexes, that is, that <span class="process-math">\(G=\varphi(F) \oplus \operatorname{ker}(\xi \psi)\)</span> as complexes. So let <span class="process-math">\(K:=\operatorname{ker}(\xi \psi)\text{,}\)</span> and denote the differential in <span class="process-math">\(G\)</span> by <span class="process-math">\(\delta\text{.}\)</span> We need to check that <span class="process-math">\(\delta(\varphi(F)) \subseteq \varphi(F)\)</span> and <span class="process-math">\(\delta(K) \subseteq K\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Since <span class="process-math">\(\varphi\)</span> is a map of complexes, <span class="process-math">\(\delta \varphi=\varphi \partial\text{,}\)</span> so we do get <span class="process-math">\(\delta(\varphi(F)) \subseteq \varphi(F)\text{.}\)</span> Given <span class="process-math">\(a \in K_{n+1}\text{,}\)</span> we can write <span class="process-math">\(\delta_{n+1}(a)=\varphi(b)+c\)</span> for some <span class="process-math">\(b \in F_{n}\)</span> and <span class="process-math">\(K_{n}\text{,}\)</span> since <span class="process-math">\(G_{n}=\varphi\left(F_{n}\right) \oplus K_{n}\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+b &amp; =\operatorname{id}(b) \\
+&amp; =\xi_{n} \psi_{n} \varphi_{n}(b) \\
+&amp; =\xi_{n} \psi_{n}\left(\varphi_{n}(b)+c\right) \\
+&amp; =\xi_{n} \psi_{n} \delta_{n+1}(a) \\
+&amp; =\xi_{n} \delta_{n+1} \psi_{n}(a) \\
+&amp; =\delta_{n+1}\left(\xi_{n} \psi_{n}\right)(a) \\
+&amp; =0
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(\xi_{n} \psi_{n}\)</span> is a splitting for <span class="process-math">\(\varphi_{n}\)</span> since <span class="process-math">\(c \in K_{n}\)</span> by assumption since <span class="process-math">\(\psi\)</span> is a map of complexes since <span class="process-math">\(\xi\)</span> is a map of complexes since <span class="process-math">\(a \in K_{n}\text{.}\)</span>
+</div>
+</div> <div class="para">We conclude that <span class="process-math">\(\delta_{n+1}(a) \in K_{n}\text{,}\)</span> and <span class="process-math">\(\delta(K) \subseteq K\text{.}\)</span> We have now shown that <span class="process-math">\(G \cong F \oplus K\text{.}\)</span>
+</div> <div class="para">Finally, we are going to show that <span class="process-math">\(K\)</span> is a trivial complex. First, we claim that <span class="process-math">\(K_{n}\)</span> is free for all <span class="process-math">\(n\text{.}\)</span> We have already shown that <span class="process-math">\(K_{n}\)</span> is a (graded) direct summand of a (graded) free module. In the local case, <a href="" class="xref" data-knowl="./knowl/xref/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a> says that <span class="process-math">\(K_{n}\)</span> is projective, and then <a href="" class="xref" data-knowl="./knowl/xref/exe-62.html" title="Exercise 4.48">Exercise 4.48</a> says that <span class="process-math">\(K_{n}\)</span> must in fact be free. In the graded setting, one can show that any graded module which is a direct sum of a finitely generated graded <span class="process-math">\(R\)</span>-module is a graded free module. In both cases, <span class="process-math">\(K_{n}\)</span> is free.</div> <div class="para">Since <span class="process-math">\(G \cong F \oplus K\text{,}\)</span> we have <span class="process-math">\(\mathrm{H}_{n}(G) \cong \mathrm{H}_{n}(F) \oplus \mathrm{H}_{n}(K)\text{.}\)</span> Since <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are both (graded) free resolutions for <span class="process-math">\(M\text{,}\)</span> they have the same homology: <span class="process-math">\(\mathrm{H}_{n}(F)=\mathrm{H}_{n}(G)=0\)</span> for all <span class="process-math">\(n \neq 0\text{,}\)</span> and <span class="process-math">\(\mathrm{H}_{0}(F)=\mathrm{H}_{0}(G)=M\text{.}\)</span> We conclude that <span class="process-math">\(K\)</span> is exact everywhere. Finally, <a href="" class="xref" data-knowl="./knowl/xref/lem-5.16.html" title="Lemma 5.20">Lemma 5.20</a> shows that <span class="process-math">\(K\)</span> is trivial.</div></article></details><span class="incontext"><a class="internal" href="sec-proj-res.html#thm-5.18">in-context</a></span>
+</body>
+</html>

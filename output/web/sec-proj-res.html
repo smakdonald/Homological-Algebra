@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Projective Resolutions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Homological Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-resolutions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-resolutions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-inj-res.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+\newcommand{\Ass}{\operatorname{Ass}}
+\def\Aut{\operatorname{Aut}}
+\def\can{{\mathrm {can}}}
+\def\char{\operatorname{char}}
+\def\cp{\operatorname{CharPoly}}
+\def\codim{\operatorname{codim}} 
+\def\coker{\operatorname{coker}}
+\DeclareMathOperator*{\colim}{colim} 
+\def\cont{\operatorname{cont}} 
+\def\diam{\operatorname{diam}} 
+\def\dm{\operatorname{dim}} 
+\DeclareMathOperator{\edim}{embdim} 
+\def\End{\operatorname{End}} 
+\def\eval{\operatorname{eval}} 
+\def\Ext{\operatorname{Ext}} 
+\def\Frac{\operatorname{Frac}}
+\def\Fun{\operatorname{Fun}}
+\def\Gal{\operatorname{Gal}}
+\def\gcd{\operatorname{gcd}}
+\newcommand{\GL}{\operatorname{GL}} 
+\newcommand{\ht}{\operatorname{height}} 
+\def\Hom{\operatorname{Hom}} 
+\def\id{\operatorname{id}} 
+\def\im{\operatorname{im}} 
+\def\Inn{\operatorname{Inn}}
+\def\ker{\operatorname{ker}}
+\def\lcm{\operatorname{lcm}} 
+\def\Mat{\operatorname{Mat}}
+\newcommand{\Min}{\operatorname{Min}}
+\def\mp{\operatorname{MinPoly}}
+\def\mSpec{\operatorname{mSpec}}
+\def\MSpec{\operatorname{MSpec}}
+\def\null{\operatorname{Nul}}
+\DeclareMathOperator{\ns}{nullspace}
+\newcommand{\opp}{\operatorname{opp}}
+\def\Orb{\operatorname{Orb}} 
+\def\Out{\operatorname{Out}}
+\def\Perm{\operatorname{Perm}}
+\def\ptstab{\operatorname{PtStab}} 
+\def\rad{\operatorname{rad}}
+\DeclareMathOperator{\range}{range}
+\def\rank{\operatorname{rank}}
+\def\res{\operatorname{res}}
+\def\setstab{\operatorname{SetStab}}
+\def\sign{{\operatorname{sign}}}
+\newcommand{\SL}{\operatorname{SL}}
+\def\Span{\operatorname{Span}}
+\def\Spec{\operatorname{Spec}}
+\def\Stab{\operatorname{Stab}} 
+\DeclareMathOperator{\Supp}{Supp}
+\def\Syl{\operatorname{Syl}}
+\def\Tor{\operatorname{Tor}}
+\def\trace{\operatorname{trace}}
+\def\uSpec{\operatorname{\underline{Spec}}}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}{-\mathbf{Mod}}
+\newcommand{\mod}{-\mathbf{mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\lx{\lambda_x}
+\newcommand{\a}{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd} 
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\def\xdots{x_1, \dots, x_n} 
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\udots{u_1, \dots, u_n} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-abelian-def.html" class="internal"><span class="codenumber">7.1</span> <span class="title">What’s an Abelian Category?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-mono-epi" class="internal"><span class="title">Monomorphisms and Epimorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-additive-categories" class="internal"><span class="title">Additive Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ker-coker" class="internal"><span class="title">Kernels and Cokernels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ab-cat" class="internal"><span class="title">Definition of an Abelian Category</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-complexes-ab" class="internal"><span class="title">Complexes in Abelian Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-hom-ab" class="internal"><span class="title">Homology in Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-exact-ab" class="internal"><span class="title">Exact Functors: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-yoneda-ab" class="internal"><span class="title">The Yoneda Lemma: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-diagrams-ab" class="internal"><span class="title">The Diagram Chasers: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-proj-inj-ab" class="internal"><span class="title">Projectives, Injective, and Resolutions: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-split-ab" class="internal"><span class="title">Split Exact Sequences: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-res-ab" class="internal"><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Rings and Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-proj-res"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Projective Resolutions</span>
+</h2>
+<article class="objectives goal-like" id="sec-proj-res-2"><h3 class="heading"><span class="type">Reminders and Recollections</span></h3>
+<ul class="disc"><li id="sec-proj-res-2-1-1"><div class="para" id="p-derived-sec-proj-res-2-1-1"></div></li></ul></article><section class="subsection" id="subsec-proj-res-def"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Definition, Existence, Examples</span>
+</h3>
+<blockquote class="blockquote" id="subsec-proj-res-def-2">
+<div class="para" id="subsec-proj-res-def-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-proj-res-def-3">To describe an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> we need to know a set of generators and the relations among those generators. If we continue that process, and ask for relations among the relations (treating the relations as generators for the module of relations), and relations among the relations among the relations, and so on, we construct what is known as a free resolution for <span class="process-math">\(M\text{.}\)</span> Free resolutions play a key role in many important constructions, and encode a lot of interesting information about our module. For example, if the module came from some geometric setting, geometric information about the module gets reflected in the free resolution. Studying the resolutions of all finitely generated modules over a ring <span class="process-math">\(R\)</span> also tells us important information about the ring itself, and its singularities.</div>
+<div class="para" id="subsec-proj-res-def-4">In this chapter we will introduce free resolutions, and more generally projective resolutions, as well as their injective counterpart. We will also study free resolutions in a bit more detail over commutative local noetherian rings, and the graded analogue. For more details on the basics of graded free resolutions, we recommend Irena Peeva’s excellent book [Pee11].</div>
+<article class="definition definition-like" id="def-5.1"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Projective Resolution.</span>
+</h4> <div class="para" id="def-5.1-2-1">Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module. A <em class="emphasis">projective resolution</em> is a complex</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-01.jpg" class="contained"></div> <div class="para logical" id="def-5.1-2-3">
+<div class="para">where all the <span class="process-math">\(P_{i}\)</span> are projective, <span class="process-math">\(\mathrm{H}_{0}(C)=M\text{,}\)</span> and <span class="process-math">\(\mathrm{H}_{i}(C)=0\)</span> for all <span class="process-math">\(i \neq 0\text{.}\)</span> We may also write a projective resolution for <span class="process-math">\(M\)</span> as an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \underset{\substack{\mathrm{n} \\ \cdots}}{\longrightarrow} \longrightarrow \underset{\substack{1 \\ 1}}{\longrightarrow} P_{0} \longrightarrow M \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">where all the modules <span class="process-math">\(P_{i}\)</span> are projective. The resolution is <em class="emphasis">free</em> if all the <span class="process-math">\(P_{i}\)</span> are free.</div>
+</div></article><div class="para" id="subsec-proj-res-def-6">You will find both these definitions in the literature, often indicating the second option as an abuse of notation. We will be a bit sloppy and consider both equivalently, since at the end of the day they contain the same information. One often uses the word acyclic to refer to a complex that is exact everywhere except at homological degree <span class="process-math">\(0\text{;}\)</span> but we caution the reader that some authors use the word acyclic to refer to exact complexes. For that reason, we will avoid the word acyclic altogether.</div>
+<article class="theorem theorem-like" id="thm-5.2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Every Module has a Free Resolution.</span>
+</h4>
+<div class="para" id="thm-5.2-2-1">Every <span class="process-math">\(R\)</span>-module has a free resolution, and thus it has a projective resolution.</div></article><details id="thm-5.2-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-5.2-3-1">
+<div class="para">Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module. We are going to construct a projective resolution quite explicitly. The first step is to find a projective module <span class="process-math">\(P_{0}\)</span> that surjects onto <span class="process-math">\(M\text{.}\)</span> In fact, we can find a free module surjecting onto <span class="process-math">\(M\text{,}\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/lem-4.13.html" title="Lemma 4.13">Lemma 4.13</a>. Now consider the kernel of that projection, say</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-4.13.html ./knowl/xref/lem-4.13.html">
+\begin{equation*}
+0 \longrightarrow K_{0} \stackrel{i_{0}}{\longrightarrow} P_{0} \stackrel{\pi_{0}}{\longrightarrow} M \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">Set <span class="process-math">\(\partial_{0}:=\pi_{0}\text{.}\)</span> There exists a free module <span class="process-math">\(P_{1}\)</span> surjecting onto <span class="process-math">\(K_{0}\text{,}\)</span> again by <a href="" class="xref" data-knowl="./knowl/xref/lem-4.13.html" title="Lemma 4.13">Lemma 4.13</a>. Now the map <span class="process-math">\(\partial_{1}=i_{0} \pi_{1}\)</span> satisfies <span class="process-math">\(\operatorname{im} \partial_{1}=K_{0}=\operatorname{ker} \partial_{0}\text{.}\)</span>
+</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-02.jpg" class="contained"></div> <div class="para" id="thm-5.2-3-3">Now the process continues analougously. We find a free module <span class="process-math">\(P_{2}\)</span> surjecting onto <span class="process-math">\(K_{1}:=\)</span> ker <span class="process-math">\(\partial_{1}\text{,}\)</span> and set</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-02(1).jpg" class="contained"></div> <div class="para logical" id="thm-5.2-3-5">
+<div class="para">At each stage, <span class="process-math">\(\pi_{i}: P_{i} \rightarrow K_{i} 1\)</span> is a surjective map, <span class="process-math">\(K_{i}:=\)</span> ker <span class="process-math">\(\partial_{i}, i_{i}\)</span> is the inclusion of the kernel of <span class="process-math">\(\partial_{i}\)</span> into <span class="process-math">\(P_{i}\text{,}\)</span> and we get short exact sequences</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow K_{n+1} \stackrel{i_{n} \quad 1}{\longrightarrow} P_{n+1} \stackrel{\pi_{n} \stackrel{1}{\longrightarrow}}{\longrightarrow} K_{n} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">In fact, <span class="process-math">\(\operatorname{im}\left(i_{n+1}\right)=\operatorname{ker} \partial_{n+1}=\operatorname{ker}\left(i_{n} \pi_{n+1}\right)=\operatorname{ker} \pi_{n+1}\text{.}\)</span> We can continue this process for as long as <span class="process-math">\(P_{n} \neq 0\text{,}\)</span> and the resulting sequence will be a projective resolution for <span class="process-math">\(M\text{.}\)</span>
+</div>
+</div></article></details><div class="para logical" id="subsec-proj-res-def-8">
+<div class="para">A free resolution</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow F_{2} \longrightarrow F_{1} \longrightarrow F_{0} \longrightarrow M
+\end{equation*}
+</div>
+<div class="para">gives us a detailed description of our module <span class="process-math">\(M\text{:}\)</span>
+</div>
+<ul class="disc">
+<li id="subsec-proj-res-def-8-3-1"><div class="para" id="subsec-proj-res-def-8-3-1-1">
+<span class="process-math">\(F_{0}\)</span> gives us generators for <span class="process-math">\(M\text{.}\)</span>
+</div></li>
+<li id="subsec-proj-res-def-8-3-2"><div class="para" id="subsec-proj-res-def-8-3-2-1">
+<span class="process-math">\(F_{1}\)</span> gives us generators for all the relations among our generators for <span class="process-math">\(M\text{.}\)</span>
+</div></li>
+<li id="subsec-proj-res-def-8-3-3"><div class="para" id="subsec-proj-res-def-8-3-3-1">The next module describes the relations among the relations among our generators. And so on.</div></li>
+</ul>
+</div>
+<article class="definition definition-like" id="def-5.3"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Length of Projective Resolution.</span>
+</h4> <div class="para" id="def-5.3-2-1">If <span class="process-math">\(P\)</span> is a projective resolution of <span class="process-math">\(M\text{,}\)</span> we say that <span class="process-math">\(P\)</span> has length <span class="process-math">\(d\)</span> if <span class="process-math">\(P_{n}=0\)</span> for all <span class="process-math">\(n&gt;d\)</span> and <span class="process-math">\(P_{d} \neq 0\text{.}\)</span> If no such <span class="process-math">\(d\)</span> exists, we say that <span class="process-math">\(P\)</span> has infinite length. If <span class="process-math">\(M\)</span> has no finite projective resolution, we say that <span class="process-math">\(M\)</span> has infinite projective dimension; otherwise, the projective dimension of <span class="process-math">\(M\)</span> is the smallest length of a projective resolution.</div></article><article class="remark remark-like" id="rem-5.4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Projective Dimension <span class="process-math">\(0\)</span> iff Projective.</span>
+</h4> <div class="para logical" id="rem-5.4-2">
+<div class="para">A module <span class="process-math">\(M\)</span> has <span class="process-math">\(\operatorname{pdim}(M)=0\)</span> if and only <span class="process-math">\(M\)</span> is projective. Indeed, note that if <span class="process-math">\(M\)</span> is projective, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \underset{0}{M} M \longrightarrow M \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is a projective resolution of <span class="process-math">\(M\text{.}\)</span> On the other hand, if <span class="process-math">\(M\)</span> has a projective resolution</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \underset{0}{P} P \longrightarrow M \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">then exactness tells us that <span class="process-math">\(P \cong M\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="ex-5.5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Projective Resolution for <span class="process-math">\(\mathbb{Z} / 2\)</span> over <span class="process-math">\(\mathbb{Z}\)</span>.</span>
+</h4> <div class="para logical" id="ex-5.5-2">
+<div class="para">Let us construct a free resolution for <span class="process-math">\(\mathbb{Z} / 2\)</span> over <span class="process-math">\(\mathbb{Z}\text{.}\)</span> First, since <span class="process-math">\(\mathbb{Z} / 2\)</span> has only one generator, we can start with the canonical surjection <span class="process-math">\(\pi: \mathbb{Z} \rightarrow \mathbb{Z} / 2\text{.}\)</span> Note that <span class="process-math">\(\operatorname{ker} \pi=(2)\)</span> is generated by just one element again, so we can take</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-3.15.html">
+\begin{equation*}
+\mathbb{Z} \stackrel{2}{\longrightarrow} \mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2
+\end{equation*}
+</div>
+<div class="para">But now the map <span class="process-math">\(\mathbb{Z} \stackrel{2}{\rightarrow} \mathbb{Z}\)</span> is injective, so we are done, and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-3.15.html">
+\begin{equation*}
+0 \longrightarrow \mathbb{Z} \stackrel{2}{\longrightarrow} \mathbb{Z} \longrightarrow \mathbb{Z} / 2 \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is a free resolution for <span class="process-math">\(\mathbb{Z} / 2\text{.}\)</span> This shows that <span class="process-math">\(\operatorname{pdim}(\mathbb{Z} / 2) \leqslant 1\text{.}\)</span> Also, <span class="process-math">\(\mathbb{Z} / 2\)</span> is not projective: we showed in <a href="" class="xref" data-knowl="./knowl/xref/ex-3.15.html" title="Example 3.26">Example 3.26</a> that <span class="process-math">\(\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} / 2, \quad)\)</span> is not exact. Thus <span class="process-math">\(\operatorname{pdim}(\mathbb{Z} / 2)=1\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="ex-5.6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Projective Resolution for <span class="process-math">\(k\)</span> over <span class="process-math">\(k[x] /\left(x^{3}\right)\)</span>.</span>
+</h4> <div class="para logical" id="ex-5.6-2">
+<div class="para">Consider a field <span class="process-math">\(k\)</span> and <span class="process-math">\(R=k[x] /\left(x^{3}\right)\text{.}\)</span> Let us construct a free resolution for <span class="process-math">\(M=R /(x)\text{.}\)</span> We can start with the canonical surjection <span class="process-math">\(R \rightarrow M\text{;}\)</span> the kernel is <span class="process-math">\((x)\text{,}\)</span> which is cyclic, so our resolution begins with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R \stackrel{x}{\longrightarrow} R \longrightarrow M
+\end{equation*}
+</div>
+<div class="para">Now the kernel of <span class="process-math">\(R \stackrel{x}{\rightarrow} R\)</span> is <span class="process-math">\(\left(x^{2}\right)\text{,}\)</span> which is again cyclic. Our resolution continues with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R \stackrel{x^{2}}{\longrightarrow} R \stackrel{x}{\longrightarrow} R \longrightarrow M
+\end{equation*}
+</div>
+<div class="para">Next, we need to compute the kernel of multiplication by <span class="process-math">\(x^{2}\text{;}\)</span> but that is <span class="process-math">\((x)\text{,}\)</span> a cyclic module, and the next step in the resolution is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R \stackrel{x}{\longrightarrow} R \stackrel{x^{2}}{\longrightarrow} R \stackrel{x}{\longrightarrow} R \longrightarrow M .
+\end{equation*}
+</div>
+<div class="para">But now we have a repeating pattern! Our two-periodic resolution goes on forever:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow R \stackrel{x^{2}}{\longrightarrow} R \stackrel{x}{\longrightarrow} R \stackrel{x^{2}}{\longrightarrow} R \stackrel{x}{\longrightarrow} R \longrightarrow M
+\end{equation*}
+</div>
+<div class="para">In fact, it turns out that <span class="process-math">\(\operatorname{pdim}(M)=\infty\text{.}\)</span> But to really justify that, we need to understand that this is a <em class="emphasis">minimal</em> free resolution.</div>
+</div></article></section><section class="subsection" id="subsec-grading"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">A Brief Introduction to Graded Modules</span>
+</h3>
+<blockquote class="blockquote" id="subsec-grading-2">
+<div class="para" id="subsec-grading-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-grading-3">To talk about minimal free resolutions we need some reasonable conditions to hold. For the rest of the section, all rings will be commutative, and in fact we will be focusing on two types of rings: commutative local rings or <span class="process-math">\(\mathbb{N}\)</span>-graded algebras over fields.</div>
+<article class="example example-like" id="ex-grading"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.7</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="ex-grading-1-1">
+<div class="para">When <span class="process-math">\(k\)</span> is a field, the polynomial ring <span class="process-math">\(R=k\left[x_{1}, \ldots, x_{n}\right]\)</span> can be given an <span class="process-math">\(\mathbb{N}\)</span>-grading by setting <span class="process-math">\(\operatorname{deg}\left(x_{i}\right)=d_{i}\)</span> for some <span class="process-math">\(d_{i} \in \mathbb{N}\text{.}\)</span> The most common <span class="process-math">\(\mathbb{N}\)</span>-grading, also known as the standard grading, is the one where we declare <span class="process-math">\(\operatorname{deg}\left(x_{i}\right)=1\)</span> for all <span class="process-math">\(i\text{.}\)</span> Once we declare the degrees of the variables, we can extend that grading to all monomials as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{deg}\left(x_{1}^{a_{1}} \cdots x_{n}^{a_{n}}\right)=a_{1} d_{1}+\cdots+a_{n} d_{n}
+\end{equation*}
+</div>
+</div></article><article class="definition definition-like" id="def-homogeneous-elements"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-homogeneous-elements-1-1">
+<div class="para">A homogeneous element in <span class="process-math">\(R\)</span> is any <span class="process-math">\(k\)</span>-linear combination of monomials of the same degree. We write <span class="process-math">\(R_{i}\)</span> for the set of all homogeneous elements of degree <span class="process-math">\(i\text{,}\)</span> which is an abelian group under addition, and note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R=\bigoplus_{i} R_{i}
+\end{equation*}
+</div>
+<div class="para">Note also that <span class="process-math">\(R_{i} R_{j} \subseteq R_{i+j}\)</span> for all <span class="process-math">\(i\)</span> and <span class="process-math">\(j\text{.}\)</span>
+</div>
+</div></article><div class="para logical" id="subsec-grading-6">
+<div class="para">More generally, a <em class="emphasis">graded ring</em> is any ring that can be decomposed in pieces of this form, meaning that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R=\bigoplus_{i} R_{i} \quad \text { and } \quad R_{i} R_{j}=R_{i+j}
+\end{equation*}
+</div>
+<div class="para">The elements in <span class="process-math">\(R_{i}\)</span> are called homogeneous elements of degree <span class="process-math">\(i\text{.}\)</span> Similarly, a <em class="emphasis">graded</em> <span class="process-math">\(R\)</span>-<em class="emphasis">module</em> is a module such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M=\bigoplus_{i} M_{i} \quad \text { and } \quad R_{i} M_{j}=M_{i+j}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec-grading-7">A homomorphism of graded <span class="process-math">\(R\)</span>-modules <span class="process-math">\(\varphi: M \rightarrow N\)</span> that such that <span class="process-math">\(\varphi\left(M_{i}\right) \subseteq N_{i+d}\)</span> for all <span class="process-math">\(i\)</span> is a <em class="emphasis">graded map</em> of degree <span class="process-math">\(d\text{.}\)</span> Any graded map can be thought of as a map of degree <span class="process-math">\(0\)</span> by shifting degrees. We write <span class="process-math">\(M(d)\)</span> for the graded <span class="process-math">\(R\)</span>-module with <span class="process-math">\(M(d)_{i}=M_{i} d\text{.}\)</span>
+</div>
+<div class="para logical" id="subsec-grading-8">
+<div class="para">When <span class="process-math">\(R=k\left[x_{1}, \ldots, x_{n}\right]\)</span> is standard graded,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R_{i}=\bigoplus_{a_{1}+\cdots+a_{n}=i} x_{1}^{a_{1}} \cdots x_{n}^{a_{n}}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec-grading-9">
+<div class="para">Note here that <span class="process-math">\(0\)</span> can be though of as a homogeneous element of any degree; one sometimes declares <span class="process-math">\(\operatorname{deg}(0)=\infty\text{.}\)</span> An ideal <span class="process-math">\(I\)</span> in <span class="process-math">\(R\)</span> is a <em class="emphasis">homogeneous ideal</em> if it can be generated by homogeneous elements; one can show that this is equivalent to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I=\bigoplus_{i}\left(I \cap R_{i}\right)
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec-grading-10">
+<div class="para">Finally, whenever <span class="process-math">\(I\)</span> itself is homogeneous, the grading on <span class="process-math">\(R\)</span> passes onto <span class="process-math">\(R / I\text{,}\)</span> with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(R / I)_{i}=R_{i} / I_{i}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec-grading-11">We will be concerned with finitely generated <span class="process-math">\(\mathbb{N}\)</span>-graded <span class="process-math">\(k\)</span>-algebras <span class="process-math">\(R\)</span> with <span class="process-math">\(R_{0}=k\text{,}\)</span> which are of the form <span class="process-math">\(R=k\left[x_{1}, \ldots, x_{n}\right] / I\)</span> for some homogeneous ideal <span class="process-math">\(I\text{.}\)</span> One nice feature of such rings is that while there might be many maximal ideals, there is only one homogeneous maximal ideal, which is given by</div>
+<div class="para logical" id="subsec-grading-12"><div class="displaymath process-math">
+\begin{equation*}
+R_{+}:=\bigoplus_{i&gt;0} R_{i}
+\end{equation*}
+</div></div>
+<div class="para" id="subsec-grading-13">In many ways, the behavior of such a graded ring and its unique homogeneous maximal ideal <span class="process-math">\(R_{+}\)</span>is an analogue to the behavior of a local ring <span class="process-math">\(R\)</span> and its unique maximal ideal ideal , though one always needs to provide a separate proof for the graded and local versions.</div></section><section class="subsection" id="subsec-unique-minimal"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Uniqueness of Minimal Projective Resolutions</span>
+</h3>
+<blockquote class="blockquote" id="subsec-unique-minimal-2">
+<div class="para" id="subsec-unique-minimal-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<article class="definition definition-like" id="def-5.7"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal Complex.</span>
+</h4> <div class="para logical" id="def-5.7-2-1">
+<div class="para">Let <span class="process-math">\((R, \fm)\)</span> be either a commutative local ring or a commutative <span class="process-math">\(\mathbb{N}\)</span>-graded <span class="process-math">\(k\)</span>-algebra with <span class="process-math">\(R_{0}=k\)</span> and homogeneous maximal ideal <span class="process-math">\(\fm=R_{+}\text{.}\)</span> A complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow F_{2} \stackrel{\partial_{2}}{\longrightarrow} F_{1} \stackrel{\partial_{1}}{\longrightarrow} F_{0} \longrightarrow \cdots
+\end{equation*}
+</div>
+<div class="para">is minimal if  <span class="process-math">\(\im\partial_{n+1} \subseteq \fm F_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+</div>
+</div></article><article class="remark remark-like" id="rem-5.8"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="rem-5.8-1">Remark 5.8. A complex <span class="process-math">\((F, \partial)\)</span> is minimal if and only if the differentials in the complex <span class="process-math">\(F \otimes_{R} R /\fm\)</span> are all identically <span class="process-math">\(0\text{.}\)</span> If all the <span class="process-math">\(F_{i}\)</span> are free, fix a basis for each <span class="process-math">\(F_{i}\text{.}\)</span> The differentials <span class="process-math">\(\partial_{i}\)</span> can be represented by matrices, though possibly infinite. We will be primarily interested in the case of finitely generated modules over noetherian rings, which are finitely presented, so all the <span class="process-math">\(F_{i}\)</span> are finitely generated as well, and each <span class="process-math">\(\partial_{i}\)</span> corresponds to some finite matrix. In this case, our complex is minimal if and only if all the entries in the matrices representing <span class="process-math">\(\partial_{i}\)</span> are in <span class="process-math">\(\fm\text{,}\)</span> whatever our chosen bases are.</div></article><article class="lemma theorem-like" id="lem-5.9"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="lem-5.9-1-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a commutative ring. Suppose <span class="process-math">\((R, \quad)\)</span> is either a local ring or an <span class="process-math">\(\mathbb{N}\)</span> graded <span class="process-math">\(k\)</span>-algebra with <span class="process-math">\(R_{0}=k\)</span> and homogeneous maximal ideal <span class="process-math">\(=R_{+}\text{.}\)</span> Let <span class="process-math">\(M\)</span> be a finitely generated (graded) <span class="process-math">\(R\)</span>-module. A free resolution</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F=\cdots \longrightarrow F_{2} \stackrel{\partial_{2}}{\longrightarrow} F_{1} \stackrel{\partial_{1}}{\longrightarrow} F_{0}
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(M\)</span> is a minimal complex if and only if for all <span class="process-math">\(n\)</span> the module <span class="process-math">\(F_{n}\)</span> is the free module on a minimal set of generators for  <span class="process-math">\(\ker\partial_{n} 1\text{,}\)</span> which in the graded case must be homogeneous.</div>
+</div></article><details id="lem-5.9-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="lem-5.9-2-1">
+<div class="para">Suppose there exists an <span class="process-math">\(n\)</span> such that <span class="process-math">\(F_{n}\)</span> is the free module on some non-minimal set of generators <span class="process-math">\(m_{1}, \ldots, m_{s}\)</span> for <span class="process-math">\(K_{n} 1:=\operatorname{ker} \partial_{n}{ }_{1}\text{;}\)</span> so there is a basis <span class="process-math">\(e_{1}, \ldots, e_{s}\)</span> for <span class="process-math">\(F_{n}\)</span> such that <span class="process-math">\(\partial_{n}\left(e_{i}\right)=m_{i}\text{,}\)</span> and the images of <span class="process-math">\(m_{1}, \ldots, m_{s}\)</span> in the vector space <span class="process-math">\(K_{n} 1 / \fm K_{n} 1\)</span> are linearly dependent. Then there exists <span class="process-math">\(r_{1}, \ldots, r_{s} \in R\text{,}\)</span> not all in <span class="process-math">\(\fm\text{,}\)</span> such that <span class="process-math">\(r_{1} m_{1}+\cdots+r_{s} m_{s}=0\)</span> in <span class="process-math">\(R\text{.}\)</span> In the graded case, we can take all these coefficients <span class="process-math">\(r_{i}\)</span> to be homogeneous. At least one of these coefficients is not in <span class="process-math">\(\fm\text{,}\)</span> and thus it must be invertible, <a class="xref" id="lem-5.9-2-1-16" href="" data-knowl="./knowl/fn/lem-5.9-2-1-16.html" title="Footnote 5.1.1"><sup> 1 </sup></a> so we can multiply by its inverse. So perhaps after reordering our elements, we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+m_{s}=r_{1} m_{1}+\cdots+r_{s}{ }_{1} m_{s} 1.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="lem-5.9-2-2">
+<div class="para">Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e_{s} \quad r_{1} e_{1} \quad \cdots \quad r_{s \quad 1} e_{s}{ }_{1} \in \operatorname{ker} \partial_{n}=\operatorname{im} \partial_{n+1}
+\end{equation*}
+</div>
+<div class="para">is not in <span class="process-math">\(\fm F_{n}\text{,}\)</span> so <span class="process-math">\(\im \partial_{n+1}\not\in\fm F_{n}\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="lem-5.9-2-3">
+<div class="para">Now suppose that im <span class="process-math">\(\partial_{n+1}\not\in\fm F_{n}\)</span> for some <span class="process-math">\(n\text{.}\)</span> Let <span class="process-math">\(e_{1}, \ldots, e_{s}\)</span> be a basis for <span class="process-math">\(F_{n}\text{,}\)</span> so that <span class="process-math">\(\partial_{n}\left(e_{1}\right), \ldots, \partial\left(e_{s}\right)\)</span> form a generating set for <span class="process-math">\(K_{n} \quad 1:=\operatorname{ker} \partial_{n} \quad\text{.}\)</span> By assumption, <span class="process-math">\(\operatorname{ker} \partial_{n}=\operatorname{im} \partial_{n+1}\)</span> contains some (homogeneous, in the graded case) element that is not in <span class="process-math">\(\fm F_{n}\text{.}\)</span> So there is an element <span class="process-math">\(r_{1} e_{1}+\cdots+r_{s} e_{s} \in \operatorname{ker} \partial_{n}\)</span> not in <span class="process-math">\(\fm F_{n}\text{.}\)</span> In particular, some <span class="process-math">\(r_{i} \notin \fm\text{,}\)</span> which we can assume without loss of generality to be <span class="process-math">\(r_{1}\text{.}\)</span> Multiplying by the inverse of <span class="process-math">\(r_{1}\text{,}\)</span> we get some <span class="process-math">\(c_{i} \in R\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e_{1} \quad c_{2} e_{2} \quad \cdots \quad c_{s} e_{s} \in \operatorname{ker} \partial_{n}
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\partial_{n}\left(e_{1}\right)=c_{2} \partial_{n}\left(e_{2}\right)+\cdots+c_{s} \partial_{n}\left(e_{s}\right).
+\end{equation*}
+</div>
+<div class="para">This is a nontrivial relation among our chosen set of generators of <span class="process-math">\(K_{n}\text{,}\)</span> which must then be non-minimal.</div>
+</div></article></details><div class="para" id="subsec-unique-minimal-6">So to construct a minimal free resolution of <span class="process-math">\(M\text{,}\)</span> we simply take as few generators as possible in each step. Ultimately, we can talk about <em class="emphasis">the</em> minimal free resolution of <span class="process-math">\(M\text{.}\)</span> To show that, we need some definitions and a lemma.</div>
+<article class="definition definition-like" id="def-5.10"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Direct Sum of Complexes.</span>
+</h4> <div class="para logical" id="def-5.10-2-1">
+<div class="para">Let <span class="process-math">\((F, \partial)\)</span> and <span class="process-math">\((G, \delta)\)</span> be complexes of <span class="process-math">\(R\)</span>-modules. The <em class="emphasis">direct sum</em> of <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> is the complex of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(F \oplus G\)</span> that has <span class="process-math">\((F \oplus G)_{n}=F_{n} \oplus G_{n}\text{,}\)</span> with differentials given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+F_{n+1} \stackrel{\partial_{n 1}}{\longrightarrow} F_{n} \\
+\oplus \\
+G_{n+1} \underset{\delta_{n 1}}{\longrightarrow} G_{n}
+\end{gathered}
+\end{equation*}
+</div>
+</div> <div class="para" id="def-5.10-2-2">together with the complex maps <span class="process-math">\(F \rightarrow F \oplus G\)</span> and <span class="process-math">\(G \rightarrow F \oplus G\)</span> given by the corresponding inclusion in each homological degree.</div></article><article class="exercise exercise-like" id="exe-67"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="exe-67-1">Exercise 67. Show that the direct sum of complexes is the coproduct in the category <span class="process-math">\(\mathrm{Ch}(R)\text{.}\)</span>
+</div></article><article class="proposition theorem-like" id="rem-5.11"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.14</span><span class="period">.</span>
+</h4>
+<div class="para" id="rem-5.11-1-1">The homology of a direct sum is the direct sum of the homologies.</div></article><details id="rem-5.11-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="rem-5.11-2-1">
+<div class="para">Notice</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(\partial_{n}, \delta_{n}\right)(a, b)=(0,0) \Longleftrightarrow \partial_{n}(a)=0 \text { and } \delta_{n}(b)=0 \text {, }
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a, b) \in \operatorname{im}\left(\partial_{n}, \delta_{n}\right) \text { if and only if } a \in \operatorname{im} \partial_{n} \text { and } b \in \operatorname{im} \partial_{n}
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}(F \oplus G)=\frac{\operatorname{ker}\left(\partial_{n}, \delta_{n}\right)}{\operatorname{im}\left(\partial_{n+1}, \delta_{n+1}\right)}=\frac{\operatorname{ker} \partial_{n}}{\operatorname{im} \partial_{n+1}} \oplus \frac{\operatorname{ker} \delta_{n}}{\operatorname{im} \delta_{n+1}}=\mathrm{H}_{n}(F) \oplus \mathrm{H}_{n}(G)
+\end{equation*}
+</div>
+</div></article></details><article class="remark remark-like" id="subsec-unique-minimal-10"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.15</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-unique-minimal-10-1">More generally, this is true because <em class="emphasis">Ch(R)</em> is an abelian category, where all additive functors preserve direct sums.</div></article><article class="remark remark-like" id="rem-5.12"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.16</span><span class="period">.</span><span class="space"> </span><span class="title">Direct Summands in <span class="process-math">\(Ch(R)\)</span>.</span>
+</h4> <div class="para" id="rem-5.12-2">Suppose that <span class="process-math">\(C\)</span> is a subcomplex of <span class="process-math">\(D\text{,}\)</span> and that we know that each <span class="process-math">\(C_{n}\)</span> is a direct summand of <span class="process-math">\(D_{n}\text{,}\)</span> say by <span class="process-math">\(D_{n}=C_{n} \oplus B_{n}\text{.}\)</span> In order for <span class="process-math">\(C\)</span> to be a free summand of <span class="process-math">\(D\text{,}\)</span> we also need that the differentials of <span class="process-math">\(D\)</span> behave well with <span class="process-math">\(C\text{:}\)</span> for each <span class="process-math">\(n\text{,}\)</span> we need to check that <span class="process-math">\(\partial_{n}\left(B_{n}\right) \subseteq B_{n} \quad 1\)</span> and <span class="process-math">\(\partial_{n}\left(C_{n}\right) \subseteq C_{n} 1\text{.}\)</span> This does not always hold.</div></article><article class="definition definition-like" id="def-5.13"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.17</span><span class="period">.</span><span class="space"> </span><span class="title">Trivial Complex.</span>
+</h4> <div class="para logical" id="def-5.13-2-1">
+<div class="para">A complex <span class="process-math">\(C\)</span> of <span class="process-math">\(R\)</span>-modules is <em class="emphasis">trivial</em> if it is a direct sum of complexes of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow 0 \longrightarrow R \stackrel{1}{\longrightarrow} R \longrightarrow 0 \longrightarrow \cdots
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="ex-5.14"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.18</span><span class="period">.</span><span class="space"> </span><span class="title">Trival Complex.</span>
+</h4> <div class="para logical" id="ex-5.14-2">
+<div class="para">The complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow R \stackrel{\left(\begin{array}{l}
+1 \\
+0
+\end{array}\right)}{\longrightarrow} R^{2} \stackrel{0 \quad 1}{\longrightarrow} R \longrightarrow 0 \quad \begin{array}{r}
+0 \longrightarrow R \stackrel{1}{\longrightarrow} R \longrightarrow 0 \\
+0 \longrightarrow R \stackrel{1}{\longrightarrow} R \longrightarrow 0
+\end{array}
+\end{equation*}
+</div>
+<div class="para">is trivial.</div>
+</div></article><article class="remark remark-like" id="rem-5.15"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.19</span><span class="period">.</span><span class="space"> </span><span class="title">Trivial Complexes are Exact.</span>
+</h4> <div class="para" id="rem-5.15-2">Trivial complexes are exact: they are the direct sums of exact complexes, and by <a href="" class="xref" data-knowl="./knowl/xref/rem-5.11.html" title="Proposition 5.14">Proposition 5.14</a> taking homology commutes with direct sums.</div></article><article class="lemma theorem-like" id="lem-5.16"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.20</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="lem-5.16-1-1">
+<div class="para">Let <span class="process-math">\((R, \fm)\)</span> be either a commutative local ring or a commutative <span class="process-math">\(\mathbb{N}\)</span>-graded <span class="process-math">\(k\)</span>-algebra with <span class="process-math">\(R_{0}=k\)</span> and homogeneous maximal ideal <span class="process-math">\(\fm=R_{+}\text{.}\)</span> Every (graded) complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow T_{2} \stackrel{\partial_{2}}{\longrightarrow} T_{1} \stackrel{\partial_{1}}{\longrightarrow} T_{0} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">of finitely generated (graded) free <span class="process-math">\(R\)</span>-modules that is exact everywhere must be trivial.</div>
+</div></article><details id="lem-5.16-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="lem-5.16-2-1">
+<div class="para">Since <span class="process-math">\(T_{0}\)</span> is projective, <a href="" class="xref" data-knowl="./knowl/xref/thm-4.6.html" title="Theorem 4.6: Projective Modules and Splitting">Theorem 4.6</a> says that the short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-4.6.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} \partial_{1} \longrightarrow T_{1} \stackrel{\partial_{1}}{\longrightarrow} T_{0} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">splits, so <span class="process-math">\(T_{1} \cong \operatorname{ker} \partial_{1} \oplus T_{0}\text{.}\)</span> In fact, <span class="process-math">\(\partial_{1}\)</span> is the canonical projection map <span class="process-math">\(T_{0} \oplus \operatorname{ker} \partial_{1} \rightarrow T_{0}\text{,}\)</span> and our original exact sequence breaks off as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-4.6.html">
+\begin{equation*}
+\begin{aligned}
+\cdots \longrightarrow 
+&amp; T_{2} \stackrel{\partial_{2}}{\longrightarrow} \operatorname{ker} \partial_{1} \longrightarrow 0 \\
+&amp; \oplus \\
+0 \longrightarrow 
+&amp; T_{0} \stackrel{1}{\longrightarrow} T_{0} \longrightarrow 0
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="lem-5.16-2-2">
+<div class="para">In particular, since <span class="process-math">\(0 \longrightarrow T_{0} \stackrel{1}{\longrightarrow} T_{0} \longrightarrow 0\)</span> is trivial and homology commutes with taking direct sums of complexes, by <a href="" class="xref" data-knowl="./knowl/xref/rem-5.11.html" title="Proposition 5.14">Proposition 5.14</a>, we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-5.11.html ./knowl/xref/thm-4.9.html ./knowl/xref/exe-62.html">
+\begin{equation*}
+\cdots \longrightarrow T_{2} \stackrel{\partial_{2}}{\longrightarrow} \operatorname{ker} \partial_{1} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is also exact everywhere. In particular, we have also shown that ker <span class="process-math">\(\partial_{1}\)</span> is a (graded) direct summand of the (graded) free <span class="process-math">\(R\)</span>-module <span class="process-math">\(T_{1}\text{.}\)</span> In the local case, <span class="process-math">\(\ker\partial_{1}\)</span> is a projective by <a href="" class="xref" data-knowl="./knowl/xref/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a>, and thus free by <a href="" class="xref" data-knowl="./knowl/xref/exe-62.html" title="Exercise 4.48">Exercise 4.48</a>.</div>
+</div> <div class="para logical" id="lem-5.16-2-3">
+<div class="para">In the graded setting, ?? says that ker <span class="process-math">\(\partial_{1}\)</span> is free. So we are back at our original situation, and we can repeat the same argument repeatedly to show that our complex breaks off as the direct sum of the trivial complexes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} \partial_{n} \stackrel{1}{\longrightarrow} \operatorname{ker} \partial_{n} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">and must therefore be trivial.</div>
+</div></article></details><article class="theorem theorem-like" id="thm-5.17"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.21</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="thm-5.17-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P=\cdots \longrightarrow P_{n} \longrightarrow \cdots P_{1} \stackrel{\partial_{1}}{\longrightarrow} P_{0} \stackrel{\partial_{0}}{\longrightarrow} M \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">be a complex of projective <span class="process-math">\(R\)</span>-modules, and let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C=\cdots \longrightarrow C_{n} \longrightarrow \cdots C_{1} \stackrel{\delta_{1}}{\longrightarrow} C_{0} \stackrel{\delta_{0}}{\longrightarrow} N \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">be an exact complex. Every <span class="process-math">\(R\)</span>-module map <span class="process-math">\(f: M \rightarrow N\)</span> lifts to a map of complexes <span class="process-math">\(\varphi: P \rightarrow C\text{,}\)</span> and any two such lifts are homotopic.</div>
+</div> <div class="para" id="thm-5.17-1-2">Moreover, if <span class="process-math">\(R\)</span> is a commutative graded <span class="process-math">\(k\)</span>-algebra, <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are finitely generated graded <span class="process-math">\(R\)</span>-modules, <span class="process-math">\(P_{n}\)</span> and <span class="process-math">\(C_{n}\)</span> are finitely generated graded <span class="process-math">\(R\)</span>-modules, and <span class="process-math">\(f\)</span> is a degree-preserving homomorphism, then the induced map of complexes is made out of degree-preserving <span class="process-math">\(R\)</span> module maps.</div></article><details id="thm-5.17-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-5.17-2-1">Since <span class="process-math">\(P_{0}\)</span> is projective and <span class="process-math">\(\delta_{0}\)</span> is surjective, there exists an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\varphi_{0}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-08.jpg" class="contained"></div> <div class="para logical" id="thm-5.17-2-3">
+<div class="para">commutes. Notice in fact that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\delta_{0} \varphi_{0}\left(\operatorname{im} \partial_{1}\right) &amp; \subseteq \delta_{0} \varphi_{0}\left(\operatorname{ker} \partial_{0}\right) &amp; &amp; \text { because } P \text { is a complex } \\
+&amp; =f \partial_{0}\left(\operatorname{ker} \partial_{0}\right) &amp; &amp; \text { by commutativity of the square above } \\
+&amp; =0, &amp; &amp;
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\varphi_{0}\left(\operatorname{im} \partial_{1}\right) \subseteq \operatorname{ker} \delta_{0}=\operatorname{im} \delta_{1}\text{.}\)</span> In the graded case, note that we can define <span class="process-math">\(\varphi_{0}\)</span> by sending the elements <span class="process-math">\(b_{i}\)</span> in a homogeneous basis of <span class="process-math">\(P_{0}\)</span> to homogeneous <span class="process-math">\(c_{i} \in C_{0}\)</span> such that <span class="process-math">\(\delta_{0}\left(c_{i}\right)=f \partial_{0}\left(b_{i}\right)\text{.}\)</span>
+</div>
+</div> <div class="para" id="thm-5.17-2-4">We now proceed by induction. Suppose we have constructed <span class="process-math">\(P_{n}{ }_{1} \stackrel{\varphi_{n}}{\rightarrow} \rightarrow C_{n}{ }_{1}\)</span> such that <span class="process-math">\(\varphi_{n} \quad\left(\operatorname{im} \partial_{n}\right) \subseteq \operatorname{im} \delta_{n}\text{.}\)</span> Since <span class="process-math">\(P_{n}\)</span> is projective, there exists a map <span class="process-math">\(\varphi_{n}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-08(1).jpg" class="contained"></div> <div class="para" id="thm-5.17-2-6">commutes. And again,</div> <div class="para logical" id="thm-5.17-2-7">
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rlr}
+\delta_{n} \varphi_{n}\left(\operatorname{im} \partial_{n+1}\right) &amp; \subseteq \delta_{n} \varphi_{n}\left(\operatorname{ker} \partial_{n}\right) \\
+&amp; =\varphi_{n}{ }_{1} \partial_{n}\left(\operatorname{ker} \partial_{n}\right) \\
+&amp; =0,
+\end{array} \quad \text { by commutativity of the square above }
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\varphi_{n}\left(\operatorname{im} \partial_{n+1}\right) \subseteq \operatorname{ker} \delta_{n}=\operatorname{im} \delta_{n+1}\text{.}\)</span>
+</div>
+</div> <div class="para" id="thm-5.17-2-8">We can now inductively construct our map of complexes <span class="process-math">\(\varphi\)</span> lifting <span class="process-math">\(f\text{.}\)</span>
+</div> <div class="para" id="thm-5.17-2-9">Now suppose we are given two such maps of complexes <span class="process-math">\(P \rightarrow C\)</span> lifting <span class="process-math">\(f\text{,}\)</span> say <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\text{.}\)</span> Note that <span class="process-math">\(\varphi \quad \psi\)</span> and 0 are two liftings of the zero map. We are going to show that any map lifting the zero map <span class="process-math">\(M \rightarrow N\)</span> must be nullhomotopic, which will then imply that <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> are homotopic as well (essentially via the same homotopy!).</div> <div class="para" id="thm-5.17-2-10">So let <span class="process-math">\(\varphi: P \rightarrow C\)</span> be a map of complexes lifting the zero map <span class="process-math">\(M \rightarrow N\text{,}\)</span> so that the following commutes:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-09(2).jpg" class="contained"></div> <div class="para logical" id="thm-5.17-2-12">
+<div class="para">We will explicitly construct a nullhomotopy for <span class="process-math">\(\varphi\)</span> by induction. First, set <span class="process-math">\(h_{n}=0\)</span> for all <span class="process-math">\(n&lt;0\text{.}\)</span> The commutativity of the rightmost square tells us that <span class="process-math">\(\delta_{0} \varphi_{0}=0\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{im} \varphi_{0} \subseteq \operatorname{ker} \delta_{0}=\operatorname{im} \delta_{1}
+\end{equation*}
+</div>
+</div> <div class="para" id="thm-5.17-2-13">Since <span class="process-math">\(P_{0}\)</span> is projective, there exists an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(h_{0}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-09(1).jpg" class="contained"></div> <div class="para logical" id="thm-5.17-2-15">
+<div class="para">commutes, and thus <span class="process-math">\(\varphi_{0}=\delta_{1} h_{0}=\delta_{1} h_{0}+h_{1} \partial_{0}\text{.}\)</span> Notice also that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; \delta_{1}\left(\varphi_{1} \quad h_{0} \partial_{1}\right)=\varphi_{0} \partial_{1} \quad \delta_{1} h_{0} \partial_{1} \quad \text { because } \varphi \text { is a map of complexes } \\
+&amp; =\left(\begin{array}{lll}
+\varphi_{0} &amp; \delta_{1} h_{0}
+\end{array}\right) \partial_{1} \quad \text { factoring } \\
+&amp; =0 \quad \text { since } \varphi_{0}=\delta_{1} h_{0},
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\operatorname{im}\left(\varphi_{1} \quad h_{0} \partial_{1}\right) \subseteq \operatorname{ker} \delta_{1}=\operatorname{im} \delta_{2}\text{.}\)</span>
+</div>
+</div> <div class="para" id="thm-5.17-2-16">Now assume that we have constructed maps <span class="process-math">\(h_{0}, \ldots, h_{n}\)</span> such that <span class="process-math">\(\varphi_{n}=h_{n}{ }_{1} \partial_{n}+\delta_{n+1} h_{n}\)</span> and <span class="process-math">\(\operatorname{im}\left(\varphi_{n+1} \quad h_{n} \partial_{n+1}\right) \subseteq \operatorname{im} \delta_{n+2}\text{.}\)</span> Since <span class="process-math">\(P_{n+1}\)</span> is projective, we can find a map <span class="process-math">\(h_{n+1}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-09.jpg" class="contained"></div> <div class="para logical" id="thm-5.17-2-18">
+<div class="para">commutes, so <span class="process-math">\(\varphi_{n+1}=\delta_{n+2} h_{n+1}+h_{n} \partial_{n+1}\text{.}\)</span> Now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; \delta_{n+2}\left(\varphi_{n+2} \quad h_{n+1} \partial_{n+2}\right)=\varphi_{n+1} \partial_{n+2} \quad \delta_{n+2} h_{n+1} \partial_{n+2} \quad \text { since } \varphi \text { is a map of complexes } \\
+&amp; =\left(\varphi_{n+1} \quad \delta_{n+2} h_{n+1}\right) \partial_{n+2} \\
+&amp; =h_{n} \partial_{n+1} \partial_{n+2} \quad \text { by commutativity of the triangle above } \\
+&amp; =0 \quad \text { since } \partial_{n+1} \partial_{n+2}=0 \text {. }
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para" id="thm-5.17-2-19">So we again obtain <span class="process-math">\(\operatorname{im}\left(\varphi_{n+2} \quad h_{n+1} \partial_{n+2}\right) \subseteq \operatorname{ker} \delta_{n+1}=\operatorname{im} \delta_{n+2}\text{.}\)</span> By induction, this process allows us to construct our homotopy <span class="process-math">\(h\text{.}\)</span>
+</div></article></details><article class="theorem theorem-like" id="thm-5.18"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.22</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of Minimal Free Resolutions.</span>
+</h4>
+<div class="para" id="thm-5.18-2-1">Let <span class="process-math">\((R, \fm)\)</span> be a commutative ring, either a local ring or a <span class="process-math">\(\mathbb{N}\)</span>-graded graded <span class="process-math">\(k\)</span>-algebra with <span class="process-math">\(R_{0}=k\)</span> and homogeneous maximal ideal <span class="process-math">\(\fm=R_{+}\text{.}\)</span> If <span class="process-math">\(F\)</span> is a minimal free resolution of <span class="process-math">\(M\text{,}\)</span> then any free resolution for <span class="process-math">\(M\)</span> is isomorphic to a direct sum of <span class="process-math">\(F\)</span> with a trivial complex. In particular, the minimal free resolution of <span class="process-math">\(M\)</span> is unique up to isomorphism.</div></article><details id="thm-5.18-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-5.18-3-1">
+<div class="para">Suppose that <span class="process-math">\(G\)</span> is another free resolution of <span class="process-math">\(M\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/thm-5.17.html" title="Theorem 5.21">Theorem 5.21</a>, there are complex maps <span class="process-math">\(\psi: G \rightarrow F\)</span> and <span class="process-math">\(\varphi: F \rightarrow G\)</span> that lift the identity map on <span class="process-math">\(M\text{.}\)</span> Then <span class="process-math">\(\psi \varphi: F \rightarrow F\)</span> is a map of complexes that lifts the identity on <span class="process-math">\(M\text{,}\)</span> and thus by <a href="" class="xref" data-knowl="./knowl/xref/thm-5.17.html" title="Theorem 5.21">Theorem 5.21</a> <span class="process-math">\(\varphi \psi\)</span> must be homotopic to the identity on <span class="process-math">\(F\text{.}\)</span> Let <span class="process-math">\(h\)</span> be a homotopy between <span class="process-math">\(\psi \varphi\)</span> and the identity, so that for all <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-5.17.html ./knowl/xref/thm-5.17.html">
+\begin{equation*}
+\text { id } \quad \psi_{n} \varphi_{n}=\partial_{n+1} h_{n}+h_{n}{ }_{1} \partial_{n}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(F\)</span> is minimal, we have <span class="process-math">\(\operatorname{im} \partial_{n} \subseteq \fm F_{n}\)</span> and <span class="process-math">\(\operatorname{im} \partial_{n+1} \subseteq \fm F_{n}\text{,}\)</span> so <span class="process-math">\(\operatorname{im}\left(\mathrm{id} \quad \psi_{n} \varphi_{n}\right) \subseteq \fm F_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span> Our first goal will be to show that <span class="process-math">\(\psi \varphi\)</span> is an isomorphism.</div>
+</div> <div class="para logical" id="thm-5.18-3-2">
+<div class="para">First we do the local case. Let <span class="process-math">\(A\)</span> be the matrix representing <span class="process-math">\(\psi_{n} \varphi_{n}\)</span> in some fixed basis for <span class="process-math">\(F_{n}\text{,}\)</span> and note that  <span class="process-math">\(\id\psi_{n} \varphi_{n}\)</span> is represented by <span class="process-math">\(\Id-A\text{,}\)</span> so all the entries in  <span class="process-math">\(\Id-A\)</span> must be in <span class="process-math">\(\fm\text{.}\)</span> Our matrix <span class="process-math">\(A\)</span> can be written as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left(\begin{array}{cccc}
+1+a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1 s} \\
+a_{21} &amp; 1+a_{22} &amp; \cdots &amp; a_{2 s} \\
+&amp; \ddots &amp; &amp; \\
+a_{s 1} &amp; \cdots &amp; a_{s s} 1 &amp; 1+a_{s s}
+\end{array}\right)
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(a_{i j} \in\text{,}\)</span> so that <span class="process-math">\(\operatorname{det}(A)=1+a\)</span> for some <span class="process-math">\(a \in\text{.}\)</span> In particular, <span class="process-math">\(\operatorname{det}(A)\)</span> is invertible, and <span class="process-math">\(\psi_{n} \varphi_{n}\)</span> is an isomorphism.</div>
+</div> <div class="para" id="thm-5.18-3-3">In the graded case, we have to be a bit more careful: not all elements that are not in are invertible, this is only true for homogeneous elements. First, we fix a basis of homogeneous elements <span class="process-math">\(f_{1}, \ldots, f_{s}\)</span> for <span class="process-math">\(F_{n}\)</span> with <span class="process-math">\(\operatorname{deg}\left(f_{1}\right) \leqslant \operatorname{deg}\left(f_{2}\right) \leqslant \cdots \leqslant \operatorname{deg}\left(f_{s}\right)\text{,}\)</span> and set <span class="process-math">\(\Phi:=\)</span> id <span class="process-math">\(\psi_{n} \varphi_{n}\text{.}\)</span> Since our map <span class="process-math">\(\Phi\)</span> is degree-preserving, <span class="process-math">\(\Phi\left(f_{i}\right)\)</span> is homogeneous for each <span class="process-math">\(i\text{,}\)</span> and so we can write <span class="process-math">\(\Phi\left(f_{i}\right)\)</span> as a linear combination of our basis elements <span class="process-math">\(f_{1}, \ldots, f_{s}\)</span> using only pieces of degree <span class="process-math">\(\operatorname{deg}\left(\Phi\left(f_{i}\right)\right)\text{.}\)</span> We obtain a matrix <span class="process-math">\(C=\left(c_{i j}\right)\)</span> such that <span class="process-math">\(c_{i j} \neq 0 \Longrightarrow \operatorname{deg}\left(c_{i j}\right)=\operatorname{deg}\left(f_{j}\right) \operatorname{deg}\left(f_{i}\right)\text{,}\)</span> and <span class="process-math">\(C\)</span> represents <span class="process-math">\(\Phi\text{,}\)</span> meaning <span class="process-math">\(\Phi\left(f_{i}\right)=c_{i 1} f_{1}+\cdots+c_{i s} f_{s}\)</span> for all <span class="process-math">\(i\text{.}\)</span> Now all the entries of <span class="process-math">\(C=\mathrm{Id} \quad A\)</span> must be in, so in particular we must have <span class="process-math">\(a_{i i}=1\)</span> for all <span class="process-math">\(i\text{.}\)</span> Moreover, since we chose our basis to have increasing degrees, <span class="process-math">\(\operatorname{deg}\left(c_{i j}\right)=0\)</span> whenever <span class="process-math">\(i&lt;j\text{.}\)</span> Since we must also have <span class="process-math">\(c_{i j} \in \fm\)</span> whenever <span class="process-math">\(i \neq j\text{,}\)</span> we conclude that <span class="process-math">\(c_{i j}=0\)</span> for <span class="process-math">\(i&lt;j\text{.}\)</span> We conclude that <span class="process-math">\(A\)</span> is an upper triangular matrix. Finally, <span class="process-math">\(\operatorname{det}(A)=a_{11} \cdots a_{s s}=1\text{,}\)</span> and <span class="process-math">\(A\)</span> is invertible.</div> <div class="para logical" id="thm-5.18-3-4">
+<div class="para">So we have shown in both cases that <span class="process-math">\(\psi_{n} \varphi_{n}\)</span> is an isomorphism for all <span class="process-math">\(n\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/exe-25.html" title="Exercise 2.6: Understanding \mathrm{Ch}(R)">Exercise 2.6</a>, <span class="process-math">\(\psi \varphi\)</span> is in fact an isomorphism of complexes, so let <span class="process-math">\(\xi: F \rightarrow F\)</span> be its inverse. Now we want to claim that <span class="process-math">\(\varphi\)</span> splits as a map of complexes. Notice that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exe-25.html ./knowl/xref/lem-2.19.html">
+\begin{equation*}
+(\xi \psi) \varphi=\xi(\psi \varphi)=\mathrm{id}_{F}
+\end{equation*}
+</div>
+<div class="para">so let us take <span class="process-math">\(\xi \psi\)</span> to be our proposed splitting for <span class="process-math">\(\varphi\text{.}\)</span> Note that <span class="process-math">\((\xi \psi)_{n} \varphi_{n}=\operatorname{id}_{n}\)</span> implies that our map <span class="process-math">\(\xi \psi\)</span> provides splittings for the <span class="process-math">\(R\)</span>-module maps in each degree, by <a href="" class="xref" data-knowl="./knowl/xref/lem-2.19.html" title="Lemma 2.29: Splitting Lemma">Lemma 2.29</a>, so <span class="process-math">\(G_{n}=\varphi_{n}\left(F_{n}\right) \oplus \operatorname{ker}\left(\xi_{n} \psi_{n}\right)\text{.}\)</span> We just need to prove that this splitting holds as complexes, that is, that <span class="process-math">\(G=\varphi(F) \oplus \operatorname{ker}(\xi \psi)\)</span> as complexes. So let <span class="process-math">\(K:=\operatorname{ker}(\xi \psi)\text{,}\)</span> and denote the differential in <span class="process-math">\(G\)</span> by <span class="process-math">\(\delta\text{.}\)</span> We need to check that <span class="process-math">\(\delta(\varphi(F)) \subseteq \varphi(F)\)</span> and <span class="process-math">\(\delta(K) \subseteq K\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="thm-5.18-3-5">
+<div class="para">Since <span class="process-math">\(\varphi\)</span> is a map of complexes, <span class="process-math">\(\delta \varphi=\varphi \partial\text{,}\)</span> so we do get <span class="process-math">\(\delta(\varphi(F)) \subseteq \varphi(F)\text{.}\)</span> Given <span class="process-math">\(a \in K_{n+1}\text{,}\)</span> we can write <span class="process-math">\(\delta_{n+1}(a)=\varphi(b)+c\)</span> for some <span class="process-math">\(b \in F_{n}\)</span> and <span class="process-math">\(K_{n}\text{,}\)</span> since <span class="process-math">\(G_{n}=\varphi\left(F_{n}\right) \oplus K_{n}\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+b &amp; =\operatorname{id}(b) \\
+&amp; =\xi_{n} \psi_{n} \varphi_{n}(b) \\
+&amp; =\xi_{n} \psi_{n}\left(\varphi_{n}(b)+c\right) \\
+&amp; =\xi_{n} \psi_{n} \delta_{n+1}(a) \\
+&amp; =\xi_{n} \delta_{n+1} \psi_{n}(a) \\
+&amp; =\delta_{n+1}\left(\xi_{n} \psi_{n}\right)(a) \\
+&amp; =0
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(\xi_{n} \psi_{n}\)</span> is a splitting for <span class="process-math">\(\varphi_{n}\)</span> since <span class="process-math">\(c \in K_{n}\)</span> by assumption since <span class="process-math">\(\psi\)</span> is a map of complexes since <span class="process-math">\(\xi\)</span> is a map of complexes since <span class="process-math">\(a \in K_{n}\text{.}\)</span>
+</div>
+</div> <div class="para" id="thm-5.18-3-6">We conclude that <span class="process-math">\(\delta_{n+1}(a) \in K_{n}\text{,}\)</span> and <span class="process-math">\(\delta(K) \subseteq K\text{.}\)</span> We have now shown that <span class="process-math">\(G \cong F \oplus K\text{.}\)</span>
+</div> <div class="para" id="thm-5.18-3-7">Finally, we are going to show that <span class="process-math">\(K\)</span> is a trivial complex. First, we claim that <span class="process-math">\(K_{n}\)</span> is free for all <span class="process-math">\(n\text{.}\)</span> We have already shown that <span class="process-math">\(K_{n}\)</span> is a (graded) direct summand of a (graded) free module. In the local case, <a href="" class="xref" data-knowl="./knowl/xref/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a> says that <span class="process-math">\(K_{n}\)</span> is projective, and then <a href="" class="xref" data-knowl="./knowl/xref/exe-62.html" title="Exercise 4.48">Exercise 4.48</a> says that <span class="process-math">\(K_{n}\)</span> must in fact be free. In the graded setting, one can show that any graded module which is a direct sum of a finitely generated graded <span class="process-math">\(R\)</span>-module is a graded free module. In both cases, <span class="process-math">\(K_{n}\)</span> is free.</div> <div class="para" id="thm-5.18-3-8">Since <span class="process-math">\(G \cong F \oplus K\text{,}\)</span> we have <span class="process-math">\(\mathrm{H}_{n}(G) \cong \mathrm{H}_{n}(F) \oplus \mathrm{H}_{n}(K)\text{.}\)</span> Since <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are both (graded) free resolutions for <span class="process-math">\(M\text{,}\)</span> they have the same homology: <span class="process-math">\(\mathrm{H}_{n}(F)=\mathrm{H}_{n}(G)=0\)</span> for all <span class="process-math">\(n \neq 0\text{,}\)</span> and <span class="process-math">\(\mathrm{H}_{0}(F)=\mathrm{H}_{0}(G)=M\text{.}\)</span> We conclude that <span class="process-math">\(K\)</span> is exact everywhere. Finally, <a href="" class="xref" data-knowl="./knowl/xref/lem-5.16.html" title="Lemma 5.20">Lemma 5.20</a> shows that <span class="process-math">\(K\)</span> is trivial.</div></article></details><article class="theorem theorem-like" id="thm-5.19"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.23</span><span class="period">.</span><span class="space"> </span><span class="title">Horseshoe Lemma.</span>
+</h4>
+<div class="para logical" id="thm-5.19-2-1">
+<div class="para">Consider a short exact sequence of modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(P\)</span> be a projective resolution of <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(R\)</span> be a projective resolution of <span class="process-math">\(C\text{.}\)</span> There exists a projective resolution <span class="process-math">\(Q\)</span> of <span class="process-math">\(B\)</span> and maps of complexes <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> lifting <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow P \stackrel{F}{\longrightarrow} Q \stackrel{G}{\longrightarrow} R \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is a short exact sequence of complexes.</div>
+</div></article><details id="thm-5.19-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-5.19-3-1">First, we need to introduce some general notation: given homomorphisms <span class="process-math">\(f: M \rightarrow L\)</span> and <span class="process-math">\(g: N \rightarrow L\)</span> with the same target, we will write <span class="process-math">\(f \oplus g\)</span> for the homomorphism <span class="process-math">\(M \oplus N \rightarrow L\)</span> given by <span class="process-math">\((f \oplus g)(m, n)=f(m)+g(n)\text{.}\)</span> Moreover, we will denote the differential of <span class="process-math">\(P\)</span> by <span class="process-math">\(\partial^{P}\text{,}\)</span> and the differential of <span class="process-math">\(R\)</span> by <span class="process-math">\(\partial^{R}\text{.}\)</span>
+</div> <div class="para logical" id="thm-5.19-3-2">
+<div class="para">For each <span class="process-math">\(n \geqslant 0\text{,}\)</span> set <span class="process-math">\(Q_{n}:=P_{n} \oplus R_{n}\text{,}\)</span> and let <span class="process-math">\(F_{n}: P_{n} \rightarrow Q_{n}\)</span> and <span class="process-math">\(G_{n}: Q_{n} \rightarrow R_{n}\)</span> be the canonical projections. By <a href="" class="xref" data-knowl="./knowl/xref/cor-4.11.html" title="Corollary 4.11">Corollary 4.11</a>, <span class="process-math">\(Q_{n}\)</span> is projective for all <span class="process-math">\(n\text{.}\)</span> Moreover, we get short exact sequences</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-4.11.html">
+\begin{equation*}
+0 \longrightarrow P_{n} \stackrel{F_{n}}{\longrightarrow} Q_{n} \stackrel{G_{n}}{\longrightarrow} R_{n} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n\text{.}\)</span> We will construct the missing differentials <span class="process-math">\(\partial^{Q}\)</span> inductively.</div>
+</div> <div class="para" id="thm-5.19-3-3">Since <span class="process-math">\(R_{0}\)</span> is projective and <span class="process-math">\(g\)</span> is surjective, there exists <span class="process-math">\(\gamma\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-12(2).jpg" class="contained"></div> <div class="para" id="thm-5.19-3-5">commutes. Set <span class="process-math">\(\partial_{0}^{Q}:=\left(f \partial_{0}^{P}\right) \oplus \gamma\text{.}\)</span> The universal property of the coproduct guarantees that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-12.jpg" class="contained"></div> <div class="para logical" id="thm-5.19-3-7">
+<div class="para">commutes. By the <a href="" class="xref" data-knowl="./knowl/xref/five-lemma.html" title="Exercise 2.36: The Five Lemma">The Five Lemma</a>, <span class="process-math">\(\partial_{0}^{Q}\)</span> is surjective. By the <a href="" class="xref" data-knowl="./knowl/xref/thm-2.26.html" title="Theorem 2.40: Snake Lemma">Snake Lemma</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/five-lemma.html ./knowl/xref/thm-2.26.html">
+\begin{equation*}
+\operatorname{ker} \partial_{0}^{P} \longrightarrow \operatorname{ker} \partial_{0}^{Q} \longrightarrow \operatorname{ker} \partial_{0}^{R}
+\end{equation*}
+</div>
+<div class="para">is exact. We then proceed by induction, and at each step we apply the base case to</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_20_24b20e755a5fa2ec338dg-12(1).jpg" class="contained"></div> <div class="para" id="thm-5.19-3-9">where the vertical arrows are surjective because <span class="process-math">\(P\)</span> and <span class="process-math">\(R\)</span> are projective resolutions and thus exact. Notice that by construction, the image of <span class="process-math">\(\partial_{n+1}^{Q}\)</span> is contained in <span class="process-math">\(\operatorname{ker} \partial_{n}^{Q}\text{,}\)</span> which guarantees that <span class="process-math">\(\partial\)</span> is a differential.</div> <div class="para logical" id="thm-5.19-3-10">
+<div class="para">This inductive process allows us to build a complex of projectives <span class="process-math">\(Q\)</span> and a short exact sequence of complexes</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-2.28.html">
+\begin{equation*}
+0 \longrightarrow P \stackrel{F}{\longrightarrow} Q \stackrel{G}{\longrightarrow} R \longrightarrow 0 .
+\end{equation*}
+</div>
+<div class="para">Applying the <a href="" class="xref" data-knowl="./knowl/xref/thm-2.28.html" title="Theorem 2.42: Long Exact Sequence in Homology">Long Exact Sequence in Homology</a>, we get exact sequences</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-2.28.html">
+\begin{equation*}
+0=\mathrm{H}_{n}(P) \rightarrow \mathrm{H}_{n}(Q) \longrightarrow \mathrm{H}_{n}(R)=0
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n \geqslant 1\text{,}\)</span> and thus <span class="process-math">\(\mathrm{H}_{n}(Q)=0\text{.}\)</span> Moreover, we constructed <span class="process-math">\(\delta_{0}^{Q}\)</span> so that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-2.28.html">
+\begin{equation*}
+Q_{1} \stackrel{\delta_{1}}{\longrightarrow} Q_{0} \longrightarrow B
+\end{equation*}
+</div>
+<div class="para">is exact, and thus <span class="process-math">\(\mathrm{H}_{0}(Q)=B\text{.}\)</span> We conclude that <span class="process-math">\(Q\)</span> is a projective resolution of <span class="process-math">\(B\text{.}\)</span>
+</div>
+</div></article></details><article class="remark remark-like" id="subsec-unique-minimal-19"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.24</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-unique-minimal-19-1">why its called that</div></article></section><section class="subsection" id="subsec-syzygy-betti"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Syzygys and Betti Numbers</span>
+</h3>
+<blockquote class="blockquote" id="subsec-syzygy-betti-2">
+<div class="para" id="subsec-syzygy-betti-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-syzygy-betti-3">Now that we know that minimal free resolutions exist and are unique (in the local and graded settings), we will take the rest of this section to briefly discuss how minimal free resolutions contain a lot of important information about our modules. For example, we want to keep track of the kernels of the differentials in a minimal free resolution.</div>
+<article class="definition definition-like" id="def-5.20"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.25</span><span class="period">.</span><span class="space"> </span><span class="title">Syzygy.</span>
+</h4> <div class="para logical" id="def-5.20-2-1">
+<div class="para">Let <span class="process-math">\((R, \fm)\)</span> be a commutative ring, either a local ring or an <span class="process-math">\(\mathbb{N}\)</span>-graded <span class="process-math">\(k\)</span>-algebra with <span class="process-math">\(R_{0}=k\)</span> and homogeneous maximal ideal <span class="process-math">\(\fm=R_{+}\text{.}\)</span> Let <span class="process-math">\(F\)</span> be a minimal free resolution for the finitely generated (graded) <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{.}\)</span> For each <span class="process-math">\(n \geqslant 1\text{,}\)</span> the submodule</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Omega_{n}(M):=\operatorname{im} \partial_{n}=\operatorname{ker} \partial_{n} 1
+\end{equation*}
+</div>
+<div class="para">is the <span class="process-math">\(n\)</span>th <em class="emphasis">syzygy</em> of <span class="process-math">\(M\text{.}\)</span>
+</div>
+</div></article><article class="remark remark-like" id="rem-5.21"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.26</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="rem-5.21-1">
+<div class="para">For each <span class="process-math">\(n\text{,}\)</span> we have a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} \partial_{n} \longrightarrow F_{n} \longrightarrow \operatorname{im} \partial_{n} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">But <span class="process-math">\(\ker\partial_{n}=\Omega_{n}(M)\)</span> and <span class="process-math">\(\operatorname{im} \partial_{n}=\Omega_{n}{ }_{1}(M)\text{,}\)</span> so we get a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \Omega_{n}(M) \longrightarrow F_{n} \longrightarrow \Omega_{n}{ }_{1}(M) \longrightarrow 0
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-syzygy-betti-6">Syzygies are indeed well-defined up to isomorphism.</div>
+<article class="proposition theorem-like" id="rem-5.22"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.27</span><span class="period">.</span><span class="space"> </span><span class="title">Syzygy’s Are Well-Defined.</span>
+</h4>
+<div class="para" id="rem-5.22-2-1">Syzygies are indeed well-defined up to isomorphism.</div></article><details id="rem-5.22-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="rem-5.22-3-1">Suppose that <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are two minimal free resolutions for <span class="process-math">\(M\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/thm-5.18.html" title="Theorem 5.22: Uniqueness of Minimal Free Resolutions">Theorem 5.22</a>, there exists an isomorphism between <span class="process-math">\(F\)</span> and <span class="process-math">\(G\text{,}\)</span> say <span class="process-math">\(\varphi\text{.}\)</span> Since <span class="process-math">\(\varphi\)</span> is a map of complexes, <span class="process-math">\(\varphi \partial^{F}=\partial^{G} \varphi\text{,}\)</span> and thus <span class="process-math">\(\varphi\)</span> must send elements in ker <span class="process-math">\(\partial^{F}\)</span> into elements in <span class="process-math">\(\ker\partial^{G}\text{.}\)</span> Similarly, an inverse <span class="process-math">\(\psi\)</span> to <span class="process-math">\(\varphi\)</span> sends ker <span class="process-math">\(\partial^{G}\)</span> into ker <span class="process-math">\(\partial^{F}\text{.}\)</span> In each homological degree, the induced maps <span class="process-math">\(\operatorname{ker} \partial_{n}^{F} \rightarrow \operatorname{ker} \partial_{n}^{G}\)</span> and <span class="process-math">\(\operatorname{ker} \partial_{n}^{F} \rightarrow \operatorname{ker} \partial_{n}^{G}\)</span> are inverse, and thus isomorphisms. In the graded case, one can show that we obtain graded isomorphisms, so that the graded syzygies are also well-defined up to isomorphism.</div></article></details><div class="para" id="subsec-syzygy-betti-8">The number of generators in each homological degree is also an important invariant.</div>
+<article class="definition definition-like" id="def-5.23"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.28</span><span class="period">.</span><span class="space"> </span><span class="title">Betti Number.</span>
+</h4> <div class="para logical" id="def-5.23-2-1">
+<div class="para">Let <span class="process-math">\((R, \fm)\)</span> be a commutative ring, either a local ring or an <span class="process-math">\(\mathbb{N}\)</span>-graded <span class="process-math">\(k\)</span>-algebra with <span class="process-math">\(R_{0}=k\)</span> and homogeneous maximal ideal <span class="process-math">\(\fm=R_{+}\text{.}\)</span> Let <span class="process-math">\(F\)</span> be a minimal free resolution for the finitely generated (graded) <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{.}\)</span> The <span class="process-math">\(n\)</span>th betti number of <span class="process-math">\(M\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\beta_{i}(M):=\operatorname{rank} F_{i}=\mu\left(F_{i}\right)
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-syzygy-betti-10">In the graded case, we can also talk about <em class="emphasis">graded</em> betti numbers. When <span class="process-math">\(M\)</span> is a graded module, we can write a resolution that keeps track of the grading.</div>
+<article class="definition definition-like" id="def-5.24"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.29</span><span class="period">.</span><span class="space"> </span><span class="title">Betti Table.</span>
+</h4> <div class="para" id="def-5.24-2-1">Let <span class="process-math">\(R\)</span> be a commutative <span class="process-math">\(\mathbb{N}\)</span>-graded graded <span class="process-math">\(k\)</span>-algebra with <span class="process-math">\(R_{0}=k\)</span> and homogeneous maximal ideal <span class="process-math">\(=R_{+}\text{.}\)</span> Let <span class="process-math">\(M\)</span> be a graded <span class="process-math">\(R\)</span>-module. The <span class="process-math">\((i, j)\)</span> th betti number of <span class="process-math">\(M, \beta_{i j}(M)\text{,}\)</span> counts the number of generators of <span class="process-math">\(F_{i}\)</span> in degree <span class="process-math">\(j\text{.}\)</span> We often collect the betti numbers of a module in its <em class="emphasis">betti table</em>:</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="r m b0 r0 l0 t0 lines"><span class="process-math">\(\beta(M)\)</span></th>
+<th scope="col" class="c m b0 r0 l0 t0 lines">0</th>
+<th scope="col" class="c m b0 r0 l0 t0 lines">1</th>
+<th scope="col" class="c m b0 r0 l0 t0 lines">2</th>
+<th scope="col" class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\cdots\)</span></th>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\beta_{00}(M)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\beta_{01}(M)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\beta_{02}(M)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\beta_{11}(M)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\beta_{12}(M)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\beta_{13}(M)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\beta_{22}(M)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\beta_{23}(M)\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\ddots\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></article><div class="para" id="subsec-syzygy-betti-12">By convention, the entry corresponding to <span class="process-math">\((i, j)\)</span> in the betti table of <span class="process-math">\(M\)</span> contains <span class="process-math">\(\beta_{i, i+j}(M)\text{,}\)</span> and <span class="process-math">\(\operatorname{not} \beta_{i j}(M)\text{.}\)</span> This is how Macaulay2 displays betti tables.</div>
+<article class="example example-like" id="ex-5.25"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.30</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="ex-5.25-1">
+<div class="para">Let <span class="process-math">\(R=k[x, y, z]\)</span> and <span class="process-math">\(M=R /(x y, x z, y z)\text{.}\)</span> The minimal free resolution for <span class="process-math">\(M\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left.0 \longrightarrow R^{2} \stackrel{\left(\begin{array}{cc}
+z &amp; 0 \\
+y &amp; y \\
+0 &amp; x
+\end{array}\right)}{\longrightarrow} R^{3} \longrightarrow x y \quad x z \quad y z\right) \quad R \longrightarrow M \text {. }
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-5.25-2">
+<div class="para">From this minimal resolution, we can read the betti numbers of <span class="process-math">\(M\)</span> :</div>
+<ul class="disc">
+<li id="ex-5.25-2-2-1"><div class="para" id="ex-5.25-2-2-1-1">
+<span class="process-math">\(\beta_{0}(M)=1\text{,}\)</span> since <span class="process-math">\(M\)</span> is a cyclic module;</div></li>
+<li id="ex-5.25-2-2-2"><div class="para" id="ex-5.25-2-2-2-1">
+<span class="process-math">\(\beta_{1}(M)=3\text{,}\)</span> and these three quadratic generators live in degree 2;</div></li>
+<li id="ex-5.25-2-2-3"><div class="para" id="ex-5.25-2-2-3-1">
+<span class="process-math">\(\beta_{2}(M)=2\text{,}\)</span> and these represent linear syzygies on quadrics, and thus live in degree 3 .</div></li>
+</ul>
+</div> <div class="para logical" id="ex-5.25-3">
+<div class="para">To write a graded free resolution for <span class="process-math">\(M\text{,}\)</span> we choose all maps to have degree <span class="process-math">\(0\text{,}\)</span> so that the graded free modules in each degree are sums of copies of shifts of <span class="process-math">\(R\text{.}\)</span> Here is the graded free resolution of <span class="process-math">\(M\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow R(3)^{2} \stackrel{\left(\begin{array}{cc}
+z &amp; 0 \\
+y &amp; y \\
+0 &amp; x
+\end{array}\right)}{\longrightarrow} R(2)^{3} \longrightarrow x \longrightarrow \text {. }
+\end{equation*}
+</div>
+</div> <div class="para logical" id="ex-5.25-4">
+<div class="para">Notice that the graded shifts in lower homological degrees affect all the higher homological degrees as well. For example, when we write the map in degree <span class="process-math">\(2\text{,}\)</span> we only need to shift the degree of each generator by <span class="process-math">\(1\text{,}\)</span> but since our map now lands on <span class="process-math">\(R(2)^{3}\text{,}\)</span> we have to bump up degrees from <span class="process-math">\(2\)</span> to <span class="process-math">\(3\text{,}\)</span> and write <span class="process-math">\(R(3)^{2}\text{.}\)</span> The graded betti number <span class="process-math">\(\beta_{i j}(M)\)</span> of <span class="process-math">\(M\)</span> counts the number of copies of <span class="process-math">\(R(j)\)</span> in homological degree <span class="process-math">\(i\)</span> in our resolution. So we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\beta_{00}=1, \beta_{12}=3 \text {, and } \beta_{23}=2 \text {. }
+\end{equation*}
+</div>
+</div> <div class="para" id="ex-5.25-5">We can collect the graded betti numbers of <span class="process-math">\(M\)</span> in its betti table:</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="r m b0 r0 l0 t0 lines"><span class="process-math">\(\beta(M)\)</span></th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">0</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">1</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">2</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines"></th>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></article><article class="example example-like" id="ex-5.26"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.31</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="ex-5.26-1">
+<div class="para">Let <span class="process-math">\(k\)</span> be a field, <span class="process-math">\(R=k[x, y]\text{,}\)</span> and consider the ideal</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I=\left(x^{2}, x y, y^{3}\right)
+\end{equation*}
+</div>
+<div class="para">which has two generators of degree <span class="process-math">\(2\)</span> and one of degree <span class="process-math">\(3\text{,}\)</span> so there are graded betti numbers <span class="process-math">\(\beta_{12}\)</span> and <span class="process-math">\(\beta_{13}\text{.}\)</span> The minimal free resolution for <span class="process-math">\(R / I\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; 0 \longrightarrow \underset{R()^{1}}{R} \stackrel{(3)^{1}}{\left(\begin{array}{cc}
+y &amp; 0 \\
+x &amp; y^{2} \\
+0 &amp; x
+\end{array}\right)} \underset{\bigoplus^{2}}{\longrightarrow} \stackrel{\left.x^{2} \quad x y y^{3}\right)}{\longrightarrow} R \longrightarrow R / I . \\
+&amp; R(3)^{1} \\
+&amp; \beta_{23}(R / I)=1 \beta_{12}(R / I)=2 \\
+&amp; \beta_{24}(R / I)=1 \beta_{13}(R / I)=1
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para" id="ex-5.26-2">So the betti table of <span class="process-math">\(R / I\)</span> is</div></article><div class="para" id="subsec-syzygy-betti-15">In fact, even if all we know is the betti numbers of <span class="process-math">\(M\text{,}\)</span> there is lots of information to we can extract about <span class="process-math">\(M\text{.}\)</span> For more about the beautiful theory of free resolutions and syzygies, see [Eis05]. For a detailed treatment of graded free resolutions, see [Pee11].</div></section><article class="outcomes goal-like" id="sec-proj-res-7"><h3 class="heading"><span class="type">Summary</span></h3>
+<ul class="disc"><li id="sec-proj-res-7-1-1"><div class="para" id="sec-proj-res-7-1-1-1"></div></li></ul></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-resolutions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-inj-res.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Projectives and Injectives in Abelian Categories</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Homological Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-functors-ab.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-abelian-categories.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-derived-functors-ab.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+\newcommand{\Ass}{\operatorname{Ass}}
+\def\Aut{\operatorname{Aut}}
+\def\can{{\mathrm {can}}}
+\def\char{\operatorname{char}}
+\def\cp{\operatorname{CharPoly}}
+\def\codim{\operatorname{codim}} 
+\def\coker{\operatorname{coker}}
+\DeclareMathOperator*{\colim}{colim} 
+\def\cont{\operatorname{cont}} 
+\def\diam{\operatorname{diam}} 
+\def\dm{\operatorname{dim}} 
+\DeclareMathOperator{\edim}{embdim} 
+\def\End{\operatorname{End}} 
+\def\eval{\operatorname{eval}} 
+\def\Ext{\operatorname{Ext}} 
+\def\Frac{\operatorname{Frac}}
+\def\Fun{\operatorname{Fun}}
+\def\Gal{\operatorname{Gal}}
+\def\gcd{\operatorname{gcd}}
+\newcommand{\GL}{\operatorname{GL}} 
+\newcommand{\ht}{\operatorname{height}} 
+\def\Hom{\operatorname{Hom}} 
+\def\id{\operatorname{id}} 
+\def\im{\operatorname{im}} 
+\def\Inn{\operatorname{Inn}}
+\def\ker{\operatorname{ker}}
+\def\lcm{\operatorname{lcm}} 
+\def\Mat{\operatorname{Mat}}
+\newcommand{\Min}{\operatorname{Min}}
+\def\mp{\operatorname{MinPoly}}
+\def\mSpec{\operatorname{mSpec}}
+\def\MSpec{\operatorname{MSpec}}
+\def\null{\operatorname{Nul}}
+\DeclareMathOperator{\ns}{nullspace}
+\newcommand{\opp}{\operatorname{opp}}
+\def\Orb{\operatorname{Orb}} 
+\def\Out{\operatorname{Out}}
+\def\Perm{\operatorname{Perm}}
+\def\ptstab{\operatorname{PtStab}} 
+\def\rad{\operatorname{rad}}
+\DeclareMathOperator{\range}{range}
+\def\rank{\operatorname{rank}}
+\def\res{\operatorname{res}}
+\def\setstab{\operatorname{SetStab}}
+\def\sign{{\operatorname{sign}}}
+\newcommand{\SL}{\operatorname{SL}}
+\def\Span{\operatorname{Span}}
+\def\Spec{\operatorname{Spec}}
+\def\Stab{\operatorname{Stab}} 
+\DeclareMathOperator{\Supp}{Supp}
+\def\Syl{\operatorname{Syl}}
+\def\Tor{\operatorname{Tor}}
+\def\trace{\operatorname{trace}}
+\def\uSpec{\operatorname{\underline{Spec}}}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}{-\mathbf{Mod}}
+\newcommand{\mod}{-\mathbf{mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\lx{\lambda_x}
+\newcommand{\a}{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd} 
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\def\xdots{x_1, \dots, x_n} 
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\udots{u_1, \dots, u_n} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-abelian-def.html" class="internal"><span class="codenumber">7.1</span> <span class="title">What’s an Abelian Category?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-mono-epi" class="internal"><span class="title">Monomorphisms and Epimorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-additive-categories" class="internal"><span class="title">Additive Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ker-coker" class="internal"><span class="title">Kernels and Cokernels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ab-cat" class="internal"><span class="title">Definition of an Abelian Category</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-complexes-ab" class="internal"><span class="title">Complexes in Abelian Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-hom-ab" class="internal"><span class="title">Homology in Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-exact-ab" class="internal"><span class="title">Exact Functors: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-yoneda-ab" class="internal"><span class="title">The Yoneda Lemma: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-diagrams-ab" class="internal"><span class="title">The Diagram Chasers: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-proj-inj-ab" class="internal"><span class="title">Projectives, Injective, and Resolutions: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-split-ab" class="internal"><span class="title">Split Exact Sequences: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-res-ab" class="internal"><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Rings and Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-proj-inj-ab"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.4</span><span class="space"> </span><span class="title">Projectives and Injectives in Abelian Categories</span>
+</h2>
+<section class="subsection" id="subsec-proj-inj-ab"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Projectives, Injective, and Resolutions: Revisited</span>
+</h3>
+<div class="para" id="subsec-proj-inj-ab-2">A lot of the notions we have studied this semester can be extended to the setting of a general abelian category.</div>
+<article class="definition definition-like" id="def-7.49"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.70</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-7.49-1-1">Definition 7.49. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. An object <span class="process-math">\(P\)</span> in <span class="process-math">\(\mathcal{A}\)</span> is <em class="emphasis">projective</em> if <span class="process-math">\(\operatorname{Hom}_{\mathcal{A}}(P,-)\)</span> is an exact functor. An object <span class="process-math">\(E\)</span> in <span class="process-math">\(\mathcal{A}\)</span> is <em class="emphasis">injective</em> if <span class="process-math">\(\operatorname{Hom}_{\mathcal{A}}(-, E)\)</span> is exact.</div></article><div class="para" id="subsec-proj-inj-ab-4">This generalizes the notion of projective and injective modules.</div>
+<article class="remark remark-like" id="rem-7.50"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.71</span><span class="period">.</span>
+</h4>
+<div class="para" id="rem-7.50-1">Remark 7.50. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. An object <span class="process-math">\(P\)</span> is projective if and only if every arrow <span class="process-math">\(P \longrightarrow Y\)</span> factors through every epi <span class="process-math">\(X \longrightarrow Y\)</span> :</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-18(2).jpg" class="contained"></div> <div class="para" id="rem-7.50-3">and an object <span class="process-math">\(E\)</span> is injective if and only if every arrow <span class="process-math">\(X \longrightarrow E\)</span> factors through every mono <span class="process-math">\(X \longrightarrow Y\)</span> :</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-18(1).jpg" class="contained"></div></article><article class="exercise exercise-like" id="exe-93"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.72</span><span class="period">.</span>
+</h4>
+<div class="para" id="exe-93-1">Exercise 93. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category.</div>
+<div class="para" id="exe-93-2">a) Show that <span class="process-math">\(\operatorname{Hom}_{\mathcal{A}}(x \oplus y, z)=\operatorname{Hom}_{\mathcal{A}}(x, z) \oplus \operatorname{Hom}_{\mathcal{A}}(y, z)\text{.}\)</span>
+</div>
+<div class="para" id="exe-93-3">b) Show that if <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are projective, then so is <span class="process-math">\(P \oplus Q\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-7.51"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.73</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-7.51-1-1">Definition 7.51. An abelian category <span class="process-math">\(\mathcal{A}\)</span> has <em class="emphasis">enough projectives</em> if for every object <span class="process-math">\(M\)</span> there exists a projective object <span class="process-math">\(P\)</span> and an epi <span class="process-math">\(P \longrightarrow M\text{.}\)</span> We say that <span class="process-math">\(\mathcal{A}\)</span> has <em class="emphasis">enough injectives</em> if for every object <span class="process-math">\(M\)</span> there exists an injective object <span class="process-math">\(E\)</span> and a mono <span class="process-math">\(M \longrightarrow E\text{.}\)</span>
+</div></article><div class="para" id="subsec-proj-inj-ab-8">Lemma 4.13 and Theorem 4.31 say that <span class="process-math">\(R\)</span>-Mod has enough injectives and enough projectives.</div>
+<article class="example example-like" id="ex-7.52"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.74</span><span class="period">.</span>
+</h4>
+<div class="para" id="ex-7.52-1">Example 7.52. The category of finite abelian groups has no projectives beside 0. In particular, Ab does not have enough projectives.</div></article><article class="definition definition-like" id="def-7.53"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.75</span><span class="period">.</span><span class="space"> </span><span class="title">Projective Resolution.</span>
+</h4> <div class="para logical" id="def-7.53-2-1">
+<div class="para">Definition 7.53. Let <span class="process-math">\(M\)</span> be an object in the abelian category <span class="process-math">\(\mathcal{A}\text{.}\)</span> A projective resolution of <span class="process-math">\(M\)</span> is a complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow P_{2} \longrightarrow P_{1} \longrightarrow P_{0} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">where all the <span class="process-math">\(P_{n}\)</span> are projective, <span class="process-math">\(\mathrm{H}_{0}(P)=M\text{,}\)</span> and <span class="process-math">\(\mathrm{H}_{n}(P)=0\)</span> for all <span class="process-math">\(n \neq 0\text{.}\)</span> An injective resolution of <span class="process-math">\(M\)</span> is a cochain complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow E^{0} \longrightarrow E^{1} \longrightarrow \cdots
+\end{equation*}
+</div>
+<div class="para">such that every <span class="process-math">\(E^{n}\)</span> is injective, <span class="process-math">\(\mathrm{H}^{n}(E)=0\)</span> for all <span class="process-math">\(n\text{,}\)</span> and <span class="process-math">\(\mathrm{H}^{0}(E)=M\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="thm-7.54"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.76</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-7.54-1-1">Theorem 7.54. If <span class="process-math">\(\mathcal{A}\)</span> has enough projectives, every object in <span class="process-math">\(\mathcal{A}\)</span> has a projective resolution. Similarly, if <span class="process-math">\(\mathcal{A}\)</span> has enough injectives, every object in <span class="process-math">\(\mathcal{A}\)</span> has an injective resolution.</div></article><details id="thm-7.54-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-7.54-2-1">
+<div class="para">Proof. Given be an object <span class="process-math">\(M\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> let’s construct a projective resolution explicitly. We start by picking an epi <span class="process-math">\(P_{0} \stackrel{\varepsilon}{\rightarrow} M\)</span> from a projective <span class="process-math">\(P_{0}\text{.}\)</span> Since <span class="process-math">\(\epsilon\)</span> is an epi, it is the cokernel of its kernel, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} \varepsilon \longrightarrow P_{0} \stackrel{\varepsilon}{\longrightarrow} M \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is a short exact sequence. Now we find an epi <span class="process-math">\(P_{1} \stackrel{\varepsilon_{1}}{\longrightarrow} K_{0}:=\operatorname{ker} \varepsilon\text{,}\)</span> and set <span class="process-math">\(P_{1} \xrightarrow{\partial_{1}} P_{0}\)</span> to be the composition</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-19.jpg" class="contained"></div> <div class="para" id="thm-7.54-2-3">We proceed the same way, at each step taking a projective <span class="process-math">\(P_{n}\)</span> and an epi <span class="process-math">\(\varepsilon_{n}: P_{n} \longrightarrow \operatorname{ker} \partial_{n-1}\text{,}\)</span> and setting <span class="process-math">\(\partial_{n+1}\)</span> to be the composition <span class="process-math">\(\left(\operatorname{ker} \partial_{n-1}\right) \circ \varepsilon_{n}\text{.}\)</span> By construction, <span class="process-math">\(\partial_{n}=i_{n-1} \varepsilon_{n}\text{,}\)</span> where <span class="process-math">\(\varepsilon_{n}\)</span> is an epi and ker <span class="process-math">\(\partial_{n-1}\)</span> is mono. By Exercise 85, im <span class="process-math">\(\partial_{n}=i_{n-1}=\operatorname{ker} \partial_{n-1}\text{.}\)</span>
+</div></article></details><div class="para" id="subsec-proj-inj-ab-12">This generalizes Theorem 5.2 in a natural way, and the proof is essentially the same.</div></section><section class="subsection" id="subsec-split-ab"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Split Exact Sequences: Revisited</span>
+</h3>
+<div class="para" id="subsec-split-ab-2">We can also characterize injectives in term of split short exact sequences, as we did for modules. In particular, the Splitting Lemma extends to any abelian category.</div>
+<article class="definition definition-like" id="def-7.55"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.77</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-7.55-1-1">Definition 7.55. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. A short exact sequence</div> <div class="para logical" id="def-7.55-1-2"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \xrightarrow{f} B \xrightarrow{g} C \longrightarrow 0
+\end{equation*}
+</div></div> <div class="para" id="def-7.55-1-3">splits if one of the following equivalent conditions hold:</div> <div class="para logical" id="def-7.55-1-4"><ol class="decimal">
+<li id="def-7.55-1-4-1-1"><div class="para" id="def-7.55-1-4-1-1-1">There exists an arrow <span class="process-math">\(C \stackrel{r}{\rightarrow} B\)</span> such that <span class="process-math">\(g r=\operatorname{id}_{C}\text{.}\)</span>
+</div></li>
+<li id="def-7.55-1-4-1-2"><div class="para" id="def-7.55-1-4-1-2-1">There exists an arrow <span class="process-math">\(C \stackrel{r}{\rightarrow} B\)</span> such that <span class="process-math">\(g r=\mathrm{id}_{C}\text{.}\)</span>
+</div></li>
+<li id="def-7.55-1-4-1-3"><div class="para" id="def-7.55-1-4-1-3-1">There exists an isomorphism of complexes between our sequence and</div></li>
+</ol></div> <div class="para logical" id="def-7.55-1-5"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow A \oplus C \longrightarrow C \longrightarrow 0
+\end{equation*}
+</div></div> <div class="para" id="def-7.55-1-6">where the arrows are the canonical arrows that come with the (co)product <span class="process-math">\(A \oplus C\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="thm-7.56"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.78</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-7.56-1-1">Theorem 7.56. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. Every short exact sequence</div> <div class="para logical" id="thm-7.56-1-2"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \xrightarrow{f} B \xrightarrow{f} C \longrightarrow 0
+\end{equation*}
+</div></div> <div class="para" id="thm-7.56-1-3">where <span class="process-math">\(A\)</span> is injective or <span class="process-math">\(C\)</span> is projective splits.</div></article><div class="para" id="subsec-split-ab-5">The proofs are exactly the same as in the case of <span class="process-math">\(R\)</span>-Mod, Theorem 4.6 and Theorem 4.32. Proof. If <span class="process-math">\(C\)</span> is projective, there exists <span class="process-math">\(h\)</span> such that</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-20.jpg" class="contained"></div>
+<div class="para" id="subsec-split-ab-7">commutes, so <span class="process-math">\(g h=\operatorname{id}_{C}\)</span> and <span class="process-math">\(g\)</span> is a splitting. If <span class="process-math">\(A\)</span> is injective, there exists <span class="process-math">\(h\)</span> such that</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-20(1).jpg" class="contained"></div>
+<div class="para" id="subsec-split-ab-9">commutes, so <span class="process-math">\(h f=\operatorname{id}_{A}\text{,}\)</span> and <span class="process-math">\(h\)</span> is a splitting.</div>
+<div class="para" id="subsec-split-ab-10">More generally, we can talk about split exact complexes.</div>
+<article class="definition definition-like" id="def-7.57"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.79</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-7.57-1-1">Definition 7.57. A complex <span class="process-math">\(C\)</span> in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\)</span> is split if there are arrows <span class="process-math">\(s_{n}: C_{n} \longrightarrow C_{n+1}\)</span> such that the differential <span class="process-math">\(\partial\)</span> satisfies <span class="process-math">\(\partial=\partial s \partial\text{.}\)</span> A complex is split exact if it is both exact and split.</div></article><article class="remark remark-like" id="rem-7.58"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.80</span><span class="period">.</span>
+</h4>
+<div class="para" id="rem-7.58-1">Remark 7.58. A split short exact sequence is precisely a short exact sequence that is a split complex.</div></article><article class="exercise exercise-like" id="exe-94"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.81</span><span class="period">.</span>
+</h4>
+<div class="para" id="exe-94-1">Exercise 94. Additive functors preserve split complexes, meaning that if <span class="process-math">\(C\)</span> is a split complex, then so is <span class="process-math">\(F(C)\)</span> for any additive functor <span class="process-math">\(F\text{.}\)</span> In particular, additive functors preserve split short exact sequences.</div></article></section><section class="subsection" id="subsec-res-ab"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span>
+</h3>
+<article class="lemma theorem-like" id="lem-7.59"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.82</span><span class="period">.</span>
+</h4>
+<div class="para" id="lem-7.59-1-1">Lemma 7.59. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category, <span class="process-math">\((P, \partial)\)</span> in <span class="process-math">\(\mathrm{Ch}_{\geqslant 0}(\mathcal{A})\)</span> with each <span class="process-math">\(P_{i}\)</span> projective, <span class="process-math">\(P_{0} \xrightarrow{\partial_{0}} M\)</span> an arrow in <span class="process-math">\(\mathcal{A}\)</span> such that <span class="process-math">\(\partial_{0} \partial_{1}=0\)</span> and <span class="process-math">\((Q, \delta)\)</span> a projective resolution of <span class="process-math">\(N\text{.}\)</span> Given any <span class="process-math">\(M \stackrel{f}{\rightarrow}\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> there exists a map of complexes <span class="process-math">\(P \xrightarrow{\varphi} Q\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-21(2).jpg" class="contained"></div> <div class="para" id="lem-7.59-1-3">commutes, which is unique up to homotopy.</div></article><details id="lem-7.59-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-7.59-2-1">Proof. Since <span class="process-math">\(P_{0}\)</span> is projective and <span class="process-math">\(\delta_{0}\)</span> is an epi, there exists <span class="process-math">\(\varphi_{0}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-21(1).jpg" class="contained"></div> <div class="para" id="lem-7.59-2-3">commutes.</div> <div class="para" id="lem-7.59-2-4">We proceed inductively, assuming we have <span class="process-math">\(\varphi_{0}, \ldots, \varphi_{n-1}\)</span> with <span class="process-math">\(\varphi_{n-2} \partial_{n-1}=\delta_{n-2} \varphi_{n-1}\text{.}\)</span> Since <span class="process-math">\(P_{n}\)</span> is projective, there exists <span class="process-math">\(\varphi_{n}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-21(3).jpg" class="contained"></div> <div class="para" id="lem-7.59-2-6">commutes. Commutativity gives <span class="process-math">\(\delta_{n-1} \varphi_{n-1} \partial_{n}=\varphi_{n-2} \partial_{n-1} \partial_{n}=0\text{,}\)</span> so <span class="process-math">\(\varphi_{n-1} \partial_{n}\)</span> factors through the kernel of <span class="process-math">\(\delta_{n-1}\text{.}\)</span>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-21.jpg" class="contained"></div> <div class="para" id="lem-7.59-2-8">Since <span class="process-math">\(Q\)</span> is a projective resolution of <span class="process-math">\(N\text{,}\)</span> the arrow <span class="process-math">\(Q_{n} \longrightarrow Z_{n-1}(Q)\)</span> above is an epi, so the arrow <span class="process-math">\(P_{n} \longrightarrow Z_{n-1}(Q)\)</span> we just constructed factors through <span class="process-math">\(Q_{n}\text{,}\)</span> giving us <span class="process-math">\(\varphi_{n}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-22(2).jpg" class="contained"></div> <div class="para" id="lem-7.59-2-10">commutes.</div> <div class="para" id="lem-7.59-2-11">Now suppose we are given two such maps of complexes <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> lifting <span class="process-math">\(f\text{,}\)</span> say <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\text{.}\)</span> Note that <span class="process-math">\(\varphi-\psi\)</span> and 0 are two liftings of the 0 map. We are going to show that any map lifting the 0 map <span class="process-math">\(M \longrightarrow N\)</span> must be nullhomotopic, which will then imply that <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> are homotopic as well (essentially via the same homotopy!).</div> <div class="para" id="lem-7.59-2-12">So let <span class="process-math">\(\varphi: P \longrightarrow C\)</span> be a map of complexes lifting the 0 map <span class="process-math">\(M \longrightarrow N\text{.}\)</span>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-22.jpg" class="contained"></div> <div class="para" id="lem-7.59-2-14">We will construct a nullhomotopy for <span class="process-math">\(\varphi\)</span> inductively. Set <span class="process-math">\(h_{n}=0\)</span> for all <span class="process-math">\(n&lt;0\text{.}\)</span> The commutativity of the rightmost square says that <span class="process-math">\(\delta_{0} \varphi_{0}=0\text{,}\)</span> so <span class="process-math">\(\operatorname{im} \varphi_{0} \subseteq \operatorname{ker} \delta_{0}=\operatorname{im} \delta_{1}\text{.}\)</span> Since <span class="process-math">\(\partial_{0} \varpi_{0}=0, \varphi_{0}\)</span> factors through <span class="process-math">\(Z_{0}(Q)\text{.}\)</span> But <span class="process-math">\(Q_{1} \rightarrow Z_{0}(Q)\)</span> is an epi and <span class="process-math">\(P_{0}\)</span> is projective, there exists <span class="process-math">\(H_{0}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-22(1).jpg" class="contained"></div> <div class="para" id="lem-7.59-2-16">commutes. So <span class="process-math">\(H_{0}\)</span> satisfies <span class="process-math">\(\delta_{0} H_{0}=\varphi_{0}\text{.}\)</span> Set <span class="process-math">\(H_{-1}=0\text{.}\)</span>
+</div> <div class="para" id="lem-7.59-2-17">Now suppose we have constructed <span class="process-math">\(H_{0}, \ldots, H_{n-1}\)</span> such that <span class="process-math">\(\delta_{n} H_{n-1}+H_{n-2} \partial_{n-1}=\varphi_{n-1}\text{.}\)</span> Then</div> <div class="para logical" id="lem-7.59-2-18"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\delta_{n} \varphi_{n} &amp; =\varphi_{n-1} \partial_{n} &amp; \text { since } \varphi \text { is a map of complexes } \\
+&amp; =\left(\delta_{n} H_{n-1}+H_{n-2} \partial_{n-1}\right) \partial_{n} &amp; \text { by assumption } \\
+&amp; =\delta_{n} H_{n-1} \partial_{n}+H_{n-2} \partial_{n-1} \partial_{n} &amp; \\
+&amp; =\delta_{n} H_{n-1} \partial_{n} &amp; \text { since } \partial_{n-1} \partial_{n}=0
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para" id="lem-7.59-2-19">so <span class="process-math">\(\delta_{n}\left(\varphi_{n}-H_{n-1} \partial_{n}\right)=0\text{.}\)</span> Therefore, <span class="process-math">\(\varphi_{n}\)</span> factors through <span class="process-math">\(Z_{n}(Q)\text{,}\)</span> and since <span class="process-math">\(Q\)</span> is a projective resolution of <span class="process-math">\(N, Q_{n+1} \longrightarrow Z_{n}(Q)\)</span> is an epi. Therefore, the factorization of <span class="process-math">\(\varphi_{n}-H_{n-1} \partial_{n}\)</span> through <span class="process-math">\(Z_{n}(Q)\)</span> also factors through <span class="process-math">\(Q_{n}\text{,}\)</span> and we end up with an arrow <span class="process-math">\(H_{n}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-23(1).jpg" class="contained"></div> <div class="para" id="lem-7.59-2-21">commutes. This <span class="process-math">\(H_{n}\)</span> must then satisfy <span class="process-math">\(\delta_{n-1} H_{n}+H_{n-1} \partial_{n}=\varphi_{n}\text{,}\)</span> and ultimately <span class="process-math">\(H\)</span> is a homotopy between <span class="process-math">\(\varphi\)</span> and 0 .</div></article></details><article class="theorem theorem-like" id="thm-7.60"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.83</span><span class="period">.</span>
+</h4>
+<div class="para" id="thm-7.60-1-1">Theorem 7.60 (Horseshoe Lemma). Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category, <span class="process-math">\(P\)</span> be a projective resolution of <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(R\)</span> be a projective resolution of <span class="process-math">\(C\text{.}\)</span> If</div> <div class="para logical" id="thm-7.60-1-2"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \xrightarrow{f} B \xrightarrow{g} C \longrightarrow 0
+\end{equation*}
+</div></div> <div class="para" id="thm-7.60-1-3">is an exact sequence, there exists a projective resolution <span class="process-math">\(Q\)</span> of <span class="process-math">\(B\)</span> and maps of complexes <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> lifting <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> such that</div> <div class="para logical" id="thm-7.60-1-4"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow P \xrightarrow{F} Q \stackrel{G}{\longrightarrow} R \longrightarrow 0
+\end{equation*}
+</div></div> <div class="para" id="thm-7.60-1-5">is an exact sequence in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\text{.}\)</span>
+</div></article><details id="thm-7.60-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-7.60-2-1">First, a word on notation: <span class="process-math">\(\oplus\)</span> denotes the coproduct in <span class="process-math">\(\mathcal{A}\text{,}\)</span> and given arrows <span class="process-math">\(x \stackrel{f}{\rightarrow} z\)</span> and <span class="process-math">\(y \stackrel{g}{\rightarrow} z\text{,}\)</span> we will write <span class="process-math">\(f \oplus g\)</span> for the unique arrow <span class="process-math">\(x \oplus y \longrightarrow z\)</span> induced by <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span> Moreover, we will denote the differential of <span class="process-math">\(P\)</span> by <span class="process-math">\(\partial^{P}\text{,}\)</span> and the differential of <span class="process-math">\(R\)</span> by <span class="process-math">\(\partial^{R}\text{.}\)</span>
+</div> <div class="para" id="thm-7.60-2-2">Set <span class="process-math">\(Q_{n}=P_{n} \oplus R_{n}\text{.}\)</span> Recall that the product and coproduct in <span class="process-math">\(\mathcal{A}\)</span> coincide, by Lemma 7.10, so let <span class="process-math">\(F_{n}: P_{n} \longrightarrow Q_{n}\)</span> and <span class="process-math">\(G_{n}: Q_{n} \longrightarrow R_{n}\)</span> be the canonical arrows. One can show that in fact we get short exact sequences</div> <div class="para logical" id="thm-7.60-2-3"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow P_{n} \stackrel{F_{n}}{\longrightarrow} Q_{n} \stackrel{G_{n}}{\longrightarrow} R_{n} \longrightarrow 0
+\end{equation*}
+</div></div> <div class="para" id="thm-7.60-2-4">for all <span class="process-math">\(n\text{.}\)</span> Moreover, <span class="process-math">\(Q_{n}\)</span> is projective for all <span class="process-math">\(n\text{,}\)</span> by Exercise 93. We will construct the missing differentials <span class="process-math">\(\partial^{Q}\)</span> inductively.</div> <div class="para" id="thm-7.60-2-5">Since <span class="process-math">\(R_{0}\)</span> is projective and <span class="process-math">\(g\)</span> is an epi, there exists <span class="process-math">\(\gamma\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-23(2).jpg" class="contained"></div> <div class="para" id="thm-7.60-2-7">commutes. Set <span class="process-math">\(\partial_{0}^{Q}:=\left(f \partial_{0}^{P}\right) \oplus \gamma\text{.}\)</span> The universal property of the coproduct guarantees that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-23.jpg" class="contained"></div> <div class="para logical" id="thm-7.60-2-9">
+<div class="para">commutes. By the Five Lemma, <span class="process-math">\(\partial_{0}^{Q}\)</span> is epi. By the Snake Lemma,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{ker} \partial_{0}^{P} \longrightarrow \operatorname{ker} \partial_{0}^{Q} \longrightarrow \operatorname{ker} \partial_{0}^{R}
+\end{equation*}
+</div>
+<div class="para">is exact. We then proceed by induction, and at each step we apply the base case to</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-24.jpg" class="contained"></div> <div class="para" id="thm-7.60-2-11">where the vertical arrows are epi because <span class="process-math">\(P\)</span> and <span class="process-math">\(R\)</span> are projective resolutions and thus exact.</div></article></details><article class="remark remark-like" id="rem-7.61"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.84</span><span class="period">.</span>
+</h4>
+<div class="para" id="rem-7.61-1">By duality, if <span class="process-math">\(\mathcal{A}\)</span> has enough injectives,</div> <div class="para logical" id="rem-7.61-2"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0
+\end{equation*}
+</div></div> <div class="para" id="rem-7.61-3">is exact, and <span class="process-math">\(E_{A}\)</span> and <span class="process-math">\(E_{C}\)</span> are injective resolutions for <span class="process-math">\(A\)</span> and <span class="process-math">\(C\text{,}\)</span> then there exist an injective resolution <span class="process-math">\(E_{B}\)</span> of <span class="process-math">\(B\)</span> and a short exact sequence of complexes</div> <div class="para logical" id="rem-7.61-4"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow E_{A} \longrightarrow E_{B} \longrightarrow E_{C} \longrightarrow 0
+\end{equation*}
+</div></div> <div class="para" id="rem-7.61-5">extending the given one.</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-functors-ab.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-derived-functors-ab.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

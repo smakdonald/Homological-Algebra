@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Other Derived Functors</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Homological Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-comp-ext-tor.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-derived-functors.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-abelian-categories.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+\newcommand{\Ass}{\operatorname{Ass}}
+\def\Aut{\operatorname{Aut}}
+\def\can{{\mathrm {can}}}
+\def\char{\operatorname{char}}
+\def\cp{\operatorname{CharPoly}}
+\def\codim{\operatorname{codim}} 
+\def\coker{\operatorname{coker}}
+\DeclareMathOperator*{\colim}{colim} 
+\def\cont{\operatorname{cont}} 
+\def\diam{\operatorname{diam}} 
+\def\dm{\operatorname{dim}} 
+\DeclareMathOperator{\edim}{embdim} 
+\def\End{\operatorname{End}} 
+\def\eval{\operatorname{eval}} 
+\def\Ext{\operatorname{Ext}} 
+\def\Frac{\operatorname{Frac}}
+\def\Fun{\operatorname{Fun}}
+\def\Gal{\operatorname{Gal}}
+\def\gcd{\operatorname{gcd}}
+\newcommand{\GL}{\operatorname{GL}} 
+\newcommand{\ht}{\operatorname{height}} 
+\def\Hom{\operatorname{Hom}} 
+\def\id{\operatorname{id}} 
+\def\im{\operatorname{im}} 
+\def\Inn{\operatorname{Inn}}
+\def\ker{\operatorname{ker}}
+\def\lcm{\operatorname{lcm}} 
+\def\Mat{\operatorname{Mat}}
+\newcommand{\Min}{\operatorname{Min}}
+\def\mp{\operatorname{MinPoly}}
+\def\mSpec{\operatorname{mSpec}}
+\def\MSpec{\operatorname{MSpec}}
+\def\null{\operatorname{Nul}}
+\DeclareMathOperator{\ns}{nullspace}
+\newcommand{\opp}{\operatorname{opp}}
+\def\Orb{\operatorname{Orb}} 
+\def\Out{\operatorname{Out}}
+\def\Perm{\operatorname{Perm}}
+\def\ptstab{\operatorname{PtStab}} 
+\def\rad{\operatorname{rad}}
+\DeclareMathOperator{\range}{range}
+\def\rank{\operatorname{rank}}
+\def\res{\operatorname{res}}
+\def\setstab{\operatorname{SetStab}}
+\def\sign{{\operatorname{sign}}}
+\newcommand{\SL}{\operatorname{SL}}
+\def\Span{\operatorname{Span}}
+\def\Spec{\operatorname{Spec}}
+\def\Stab{\operatorname{Stab}} 
+\DeclareMathOperator{\Supp}{Supp}
+\def\Syl{\operatorname{Syl}}
+\def\Tor{\operatorname{Tor}}
+\def\trace{\operatorname{trace}}
+\def\uSpec{\operatorname{\underline{Spec}}}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}{-\mathbf{Mod}}
+\newcommand{\mod}{-\mathbf{mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\lx{\lambda_x}
+\newcommand{\a}{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd} 
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\def\xdots{x_1, \dots, x_n} 
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\udots{u_1, \dots, u_n} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-abelian-def.html" class="internal"><span class="codenumber">7.1</span> <span class="title">What’s an Abelian Category?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-mono-epi" class="internal"><span class="title">Monomorphisms and Epimorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-additive-categories" class="internal"><span class="title">Additive Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ker-coker" class="internal"><span class="title">Kernels and Cokernels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ab-cat" class="internal"><span class="title">Definition of an Abelian Category</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-complexes-ab" class="internal"><span class="title">Complexes in Abelian Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-hom-ab" class="internal"><span class="title">Homology in Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-exact-ab" class="internal"><span class="title">Exact Functors: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-yoneda-ab" class="internal"><span class="title">The Yoneda Lemma: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-diagrams-ab" class="internal"><span class="title">The Diagram Chasers: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-proj-inj-ab" class="internal"><span class="title">Projectives, Injective, and Resolutions: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-split-ab" class="internal"><span class="title">Split Exact Sequences: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-res-ab" class="internal"><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Rings and Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-other-derived-functors"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">6.4</span><span class="space"> </span><span class="title">Other Derived Functors</span>
+</h2>
+<section class="subsection" id="subsec-group-homology"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Group Homology</span>
+</h3>
+<blockquote class="blockquote" id="subsec-group-homology-2">
+<div class="para" id="subsec-group-homology-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-group-homology-3">Here are some other examples of derived functors you may encounter.</div>
+<article class="definition definition-like" id="def-6.35"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.43</span><span class="period">.</span><span class="space"> </span><span class="title">Category of <span class="process-math">\(G\)</span>-modules.</span>
+</h4> <div class="para logical" id="def-6.35-2-1">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group. A (left) <span class="process-math">\(G\)</span>-module is an abelian group <span class="process-math">\(A\)</span> with an action of <span class="process-math">\(G\)</span> by additive maps on the left, meaning that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(a+b)=g a+g b
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(a, b \in A\)</span> and all <span class="process-math">\(g \in G\text{,}\)</span> where we write <span class="process-math">\(g a\)</span> for the action of <span class="process-math">\(g \in G\)</span> on <span class="process-math">\(a \in A\text{.}\)</span> Given two <span class="process-math">\(G\)</span>-modules <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> a morphism of <span class="process-math">\(G\)</span>-modules <span class="process-math">\(f: A \rightarrow B\)</span> is a group homomorphism that is also <span class="process-math">\(G\)</span>-equivariant, meaning <span class="process-math">\(f(g a)=g f(a)\)</span> for all <span class="process-math">\(g \in G\)</span> and <span class="process-math">\(a \in A\text{.}\)</span>
+</div>
+</div> <div class="para" id="def-6.35-2-2">The category of <span class="process-math">\(G\)</span>-modules, which we write as <span class="process-math">\(G\)</span>-mod, has objects all <span class="process-math">\(G\)</span>-modules and arrows all <span class="process-math">\(G\)</span>-module morphisms. We write <span class="process-math">\(\operatorname{Hom}_{G}(A, B)\)</span> instead of <span class="process-math">\(\operatorname{Hom}_{G} \bmod (A, B)\text{.}\)</span>
+</div> <div class="para" id="def-6.35-2-3">This category <span class="process-math">\(G\)</span>-mod can be identified with the category of <span class="process-math">\(\mathbb{Z}[G]\)</span>-modules, of modules over the (noncommutative) ring <span class="process-math">\(\mathbb{Z} G\text{,}\)</span> the group ring of <span class="process-math">\(G\text{.}\)</span> It can also be identified with the functor category <span class="process-math">\(\mathbf{A b}^{G}\)</span> of functors from the category <span class="process-math">\(G\)</span> to the category <span class="process-math">\(\mathbf{A b}\)</span> of abelian groups. As a reminder, <span class="process-math">\(G\)</span> gives a category with one object <span class="process-math">\(G\)</span> and arrows the elements of <span class="process-math">\(G\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-6.36"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.44</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-6.36-1-1">
+<div class="para">The invariant subgroup <span class="process-math">\(A^{G}\)</span> of a <span class="process-math">\(G\)</span>-module <span class="process-math">\(A\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{G}:=\{a \in A \mid g a=a \text { for all } g \in G\}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-6.36-1-2">
+<div class="para">The coinvariant subgroup <span class="process-math">\(A^{G}\)</span> of a <span class="process-math">\(G\)</span>-module <span class="process-math">\(A\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_{G}:=A / G \text {-submodule generated by }\{g a \quad a \in A \mid g \in G, a \in A\} \text {. }
+\end{equation*}
+</div>
+</div></article><article class="exercise exercise-like" id="subsec-group-homology-6"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.45</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-group-homology-6-1">Exercise 77. Given any <span class="process-math">\(G\)</span>-module <span class="process-math">\(A, A_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A\)</span> and <span class="process-math">\(A^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, A)\text{,}\)</span> where <span class="process-math">\(\mathbb{Z}\)</span> denotes the trivial <span class="process-math">\(G\)</span>-module. In fact, there are natural isomorphisms ()<span class="process-math">\(_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A\)</span> and ()<span class="process-math">\(^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, \quad)\text{.}\)</span>
+</div></article><div class="para" id="subsec-group-homology-7">Thus taking coinvariants is right exact, and taking invariants is left exact.</div>
+<article class="definition definition-like" id="def-6.37"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.46</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-6.37-1-1">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group and <span class="process-math">\(A\)</span> a <span class="process-math">\(G\)</span>-module. The homology groups of <span class="process-math">\(G\)</span> with coefficients in <span class="process-math">\(A\)</span> are the <span class="process-math">\(G\)</span>-modules <span class="process-math">\(\mathrm{H}_{i}(G, A)\)</span> obtained via the left derived functors of the coinvariants functor:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{i}(G ; A):=L_{i}\left(\quad{ }_{G}\right)(A)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-6.37-1-2">
+<div class="para">Similarly, the cohomology groups of <span class="process-math">\(G\)</span> with coefficients in <span class="process-math">\(A\)</span> are the <span class="process-math">\(G\)</span>-modules <span class="process-math">\(\mathrm{H}^{i}(G, A)\)</span> obtained via the right derived functors of the invariants functor:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}^{i}(G ; A):=R^{i}\left({ }^{G}\right)(A) .
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="subsec-group-homology-9">
+<div class="para">By Exercise 77,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{i}(G ; A) \cong \operatorname{Tor}_{i}^{\mathbb{Z}[G]}(\mathbb{Z}, A) \text { and } \mathrm{H}^{i}(G ; A) \cong \operatorname{Ext}_{\mathbb{Z}[G]}^{i}(\mathbb{Z}, A)
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec-group-homology-10">Thus to compute group (co)homology we need a projective resolution for the trivial <span class="process-math">\(\mathbb{Z}[G]\)</span>-module <span class="process-math">\(\mathbb{Z}\text{.}\)</span> Note also that by Proposition <span class="process-math">\(6.4, \mathrm{H}_{0}(G ; A)=A_{G}\)</span> and <span class="process-math">\(\mathrm{H}^{0}(G ; A)=A^{G}\text{.}\)</span>
+</div>
+<div class="para" id="subsec-group-homology-11">Group (co)homology is a rich subject. For a detailed treatment of group (co)homology, see Weibel’s Homological Algebra [Wei94].</div></section><section class="subsection" id="subsec-local-cohomology"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Local Cohomology</span>
+</h3>
+<blockquote class="blockquote" id="subsec-local-cohomology-2">
+<div class="para" id="subsec-local-cohomology-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<article class="definition definition-like" id="def-"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.47</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def--1-1">
+<div class="para">Let <span class="process-math">\(I\)</span> be an ideal in a ring <span class="process-math">\(R\text{.}\)</span> The <span class="process-math">\(I\)</span>-torsion functor <span class="process-math">\(\quad{ }_{I}: R\)</span>-Mod <span class="process-math">\(\rightarrow R\)</span>-Mod is defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{ }_{I}(M):=\left\{m \in M \mid I^{n} m=0 \text { for some } n\right\}
+\end{equation*}
+</div>
+<div class="para">which acts on maps by restriction.</div>
+</div></article><article class="exercise exercise-like" id="subsec-local-cohomology-4"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.48</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-local-cohomology-4-1">Exercise 78. The <span class="process-math">\(I\)</span>-torsion functor is a left exact covariant additive functor.</div></article><div class="para logical" id="subsec-local-cohomology-5">
+<div class="para">The <span class="process-math">\(I\)</span>-torsion functor gives rise to local cohomology, the right derived functors <span class="process-math">\(\mathrm{H}_{I}^{i}\)</span> of <span class="process-math">\({ }_{I}\text{.}\)</span> The <span class="process-math">\(i\)</span> th local cohomology of <span class="process-math">\(M\)</span> with support on <span class="process-math">\(I\)</span> is then given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{I}^{i}(M):=R_{I}^{i}{ }_{I}(M)
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec-local-cohomology-6">Local cohomology was introduced by Grothendieck in a series of seminars at Harvard in 1961, which are now very famous. Grothendieck himself never published any notes on the subject, but Robin Hartshorne’s notes of those lectures have been published.</div>
+<div class="para" id="subsec-local-cohomology-7">Local cohomology is a rich subject, and we could easily spend an entire semester on it. For a modern treatment of the local cohomology and its connections, the book 24 hours of local cohomology and the very nice notes by Craig Huneke, Mel Hochster, and Jack Jeffries are all excellent resources.</div>
+<div class="para" id="subsec-local-cohomology-8">It turns out that local cohomology modules can be defined in a few different ways, which are in no way obviously equivalent, and those different points of view are quite helpful. For example, we can define local cohomology via the Čech complex.</div>
+<article class="definition definition-like" id="def-6.38"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.49</span><span class="period">.</span><span class="space"> </span><span class="title">Čech Complex.</span>
+</h4> <div class="para logical" id="def-6.38-2-1">
+<div class="para">Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module and <span class="process-math">\(x \in R\text{.}\)</span> The Čech complex of <span class="process-math">\(x\)</span> on <span class="process-math">\(R\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\check{C}^{\bullet}(x):=\left(\begin{array}{c}
+0 \longrightarrow \\
+0
+\end{array} \underset{x}{R} \begin{array}{c}
+\longrightarrow \\
+1
+\end{array}\right)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-6.38-2-2">
+<div class="para">The Čech complex of <span class="process-math">\(f_{1}, \ldots, f_{t} \in R\)</span> on <span class="process-math">\(M\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\check{C}^{\bullet}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right):=\check{C}^{\bullet}\left(f_{1}\right) \otimes \cdots \otimes \check{C}^{\bullet}\left(f_{t}\right) \otimes M .
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="subsec-local-cohomology-10"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.50</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-local-cohomology-10-1">Example 6.39. Let’s compute the Čech complex on <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> and an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{.}\)</span>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-27.jpg" class="contained"></div></article><article class="exercise exercise-like" id="subsec-local-cohomology-11"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.51</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-local-cohomology-11-1">Exercise 79.</div>
+<div class="para" id="subsec-local-cohomology-11-2">a) <span class="process-math">\(\check{C} \bullet\left(f_{1}, \ldots, f_{t} ; M\right) \cong \bigoplus_{\left\{j_{1}, \ldots, j_{i}\right\} \subseteq[t]} M_{f_{j_{1}} \cdots f_{j_{i}}}\)</span>
+</div>
+<div class="para" id="subsec-local-cohomology-11-3">b) The maps between components corresponding to subsets <span class="process-math">\(I, J\)</span> are zero if <span class="process-math">\(I \nsubseteq J\text{,}\)</span> and \pm 1 if <span class="process-math">\(J=I \cup\{k\}\text{.}\)</span>
+</div></article><div class="para" id="subsec-local-cohomology-12">It turns out that the cohomology of the Čech complex gives us local cohomology. For an ideal <span class="process-math">\(I=\left(f_{1}, \ldots, f_{n}\right)\text{,}\)</span>
+</div>
+<div class="para logical" id="subsec-local-cohomology-13"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\mathrm{H}_{I}^{i}(M) &amp; =\mathrm{H}^{i}\left(\check{C}^{\bullet}\left(f_{1}, \ldots, f_{n} ; M\right)\right) \\
+&amp; =\mathrm{H}^{i}\left(0 \rightarrow M \rightarrow \cdots \rightarrow \bigoplus_{i} M_{f_{i}} \rightarrow \cdots \bigoplus_{i=1}^{n} M_{f_{1} \cdots \widehat{f}_{i} \cdots f_{n}} \rightarrow M_{f_{1} \cdots f_{n}} \rightarrow 0\right)
+\end{aligned}
+\end{equation*}
+</div></div>
+<div class="para" id="subsec-local-cohomology-14">so elements in the <span class="process-math">\(i\)</span> th local cohomology can be realized as equivalence classes of fractions.</div>
+<div class="para" id="subsec-local-cohomology-15">Local cohomology modules also arise as a direct limit of Ext modules:</div>
+<div class="para logical" id="subsec-local-cohomology-16"><div class="displaymath process-math">
+\begin{equation*}
+\underset{n}{\lim _{\rightarrow}} \operatorname{Ext}_{R}^{i}\left(R / I^{n}, M\right)
+\end{equation*}
+</div></div>
+<div class="para" id="subsec-local-cohomology-17">The equivalence between all these different definitions is a fundamental result in the theory of local cohomology.</div>
+<div class="para" id="subsec-local-cohomology-18">Local cohomology modules play a crucial, ubiquitous role in commutative algebra. They measure many important invariants, such as dimension and depth, and are extremely useful tools for studying all sorts of topics; for example, they can be used to detect if a ring is Gorenstein (if it has finite injective dimension as a module over itself) or Cohen-Macaulay (a nice class of rings that is both very large but also very well behaved). However, local cohomology modules are typically not finitely generated. One reason for this is that injective modules are also often not finitely generated. Local cohomology is also a major reason why commutative algebraists are interested in studying injective modules.</div>
+<div class="para" id="subsec-local-cohomology-19">In fact, local cohomology is almost never finitely generated. Here’s a very simple example.</div>
+<div class="para" id="subsec-local-cohomology-20">Example 6.40. Let <span class="process-math">\(R=k\left[x_{1}, \ldots, x_{n}\right], k\)</span> be a field, and <span class="process-math">\(\quad=\left(x_{1}, \ldots, x_{n}\right)\text{.}\)</span> Then <span class="process-math">\(\mathrm{H}^{n}(R)\)</span> has the <span class="process-math">\(k\)</span>-vector space structure</div>
+<div class="para logical" id="subsec-local-cohomology-21"><div class="displaymath process-math">
+\begin{equation*}
+\bigoplus_{\text {all } a_{i}&gt;0} k \cdot \frac{1}{x_{1}^{a_{1}} \cdots x_{n}^{a_{n}}}
+\end{equation*}
+</div></div>
+<div class="para" id="subsec-local-cohomology-22">with <span class="process-math">\(R\)</span>-module structure given by</div>
+<div class="para logical" id="subsec-local-cohomology-23"><div class="displaymath process-math">
+\begin{equation*}
+x_{1}^{b_{1}} \cdots x_{n}^{b_{n}} \cdot \frac{z}{x_{1}^{a_{1}} \cdots x_{n}^{a_{n}}}= \begin{cases}\frac{z}{x_{1}^{a_{1} b_{1} \ldots x_{n}^{a_{n} b_{n}}}} &amp; \text { if all } b_{i}&lt;a_{i} \\ 0 &amp; \text { otherwise }\end{cases}
+\end{equation*}
+</div></div>
+<div class="para" id="subsec-local-cohomology-24">This is not a finitely generated module! Note also that every finitely generated submodule only has terms with bounded negative degree. But this is still a very nice module: it looks like <span class="process-math">\(R\)</span> upside down.</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-29(1).jpg" class="contained"></div>
+<div class="para logical" id="subsec-local-cohomology-26"><div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{(x, y)}^{2}(k[x, y])
+\end{equation*}
+</div></div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-29.jpg" class="contained"></div>
+<div class="para" id="subsec-local-cohomology-28">Despite being infinitely generated, local cohomology modules enjoy many finiteness properties we have gotten used to expecting from finitely generated modules. For example, over a local ring <span class="process-math">\((R, \quad)\text{,}\)</span> the local cohomology modules <span class="process-math">\(\mathrm{H}^{i}(M)\)</span> of a finitely generated module <span class="process-math">\(M\)</span> are Artinian - but not Noetherian!</div>
+<div class="para" id="subsec-local-cohomology-29">Huneke raised the question of whether local cohomology modules of noetherian rings always have finitely many associated primes, a problem which has been a very active research are in commutative algebra in the last few decades. While the answer to Huneke’s question is no - as famous examples by Katzmann, Singh, and Singh and Swanson show - the local cohomology modules of finitely generated <span class="process-math">\(R\)</span>-modules over a regular ring do have finitely many associated primes.</div>
+<div class="para" id="subsec-local-cohomology-30">One very important invariant we can study with local cohomology is the arithmetic rank.</div>
+<div class="para" id="subsec-local-cohomology-31">Definition 6.41. Let <span class="process-math">\(I\)</span> be an ideal in a Noetherian <span class="process-math">\(\operatorname{ring} R\text{.}\)</span> The arithmetic rank of <span class="process-math">\(I\)</span> is defined by</div>
+<div class="para logical" id="subsec-local-cohomology-32"><div class="displaymath process-math">
+\begin{equation*}
+\operatorname{ara}(I):=\min \left\{s \mid \text { there exist some } x_{1}, \ldots, x_{s} \text { such that } \sqrt{\left(x_{1}, \ldots, x_{s}\right)}=\sqrt{I}\right\}
+\end{equation*}
+</div></div>
+<div class="para" id="subsec-local-cohomology-33">Given a variety <span class="process-math">\(X=V(I) \subseteq \mathbb{A}_{k}^{n}\text{,}\)</span> the arithmetic rank of its defining ideal <span class="process-math">\(I(X)\)</span> is the minimum number of equations needed to define <span class="process-math">\(X\text{.}\)</span> It turns out that this number is difficult to study, and it is best understood via local cohomology, a thought best described by Lyubeznik:</div>
+<div class="para" id="subsec-local-cohomology-34">Part of what makes the problem about the number of defining equations so interesting is that it can be very easily stated, yet a solution, in those rare cases when it is known, usually is highly nontrivial and involves a fascinating interplay of Algebra and Geometry.</div>
+<div class="para" id="subsec-local-cohomology-35">The connection to local cohomology begins with the following two elementary facts about local cohomology:</div>
+<div class="para logical" id="subsec-local-cohomology-36"><div class="displaymath process-math">
+\begin{equation*}
+\text { If } \sqrt{I}=\sqrt{J} \text {, then } \mathrm{H}_{I}^{i}(\quad)=\mathrm{H}_{J}^{i}(\quad) \text {. }
+\end{equation*}
+</div></div>
+<div class="para" id="subsec-local-cohomology-37">Given any ideal <span class="process-math">\(I, \operatorname{ara}(I) \geqslant \min \left\{i \mid \mathrm{H}_{I}^{i}(M) \neq 0\right.\)</span> for some <span class="process-math">\(R\)</span>-module <span class="process-math">\(\left.M\right\}\text{.}\)</span>
+</div>
+<div class="para" id="subsec-local-cohomology-38">So computing local cohomology modules, or deciding when they vanish, can help us find bounds on the arithmetic rank of a variety.</div>
+<div class="para" id="subsec-local-cohomology-39">We close this chapter with yet another example of a derived functor of an interesting functor.</div>
+<div class="para" id="subsec-local-cohomology-40">Exercise 80. Let <span class="process-math">\(R\)</span> be a domain and <span class="process-math">\(Q\)</span> be its fraction field. Let <span class="process-math">\(T\)</span> denote the torsion functor.</div>
+<div class="para" id="subsec-local-cohomology-41">a) Show that <span class="process-math">\(T(M)=\operatorname{Tor}_{1}^{R}(M, Q / R)\text{.}\)</span>
+</div>
+<div class="para" id="subsec-local-cohomology-42">b) Show that for every short exact sequence</div>
+<div class="para logical" id="subsec-local-cohomology-43"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow B \longrightarrow C
+\end{equation*}
+</div></div>
+<div class="para" id="subsec-local-cohomology-44">of <span class="process-math">\(R\)</span>-modules gives rise to an exact sequence</div>
+<div class="para logical" id="subsec-local-cohomology-45"><div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow T(A) \longrightarrow T(B) \longrightarrow T(C) \longrightarrow(Q / R) \otimes_{R} A \longrightarrow(Q / R) \otimes_{R} B \longrightarrow(Q / R) \otimes_{R} C \longrightarrow 0
+\end{equation*}
+</div></div>
+<div class="para" id="subsec-local-cohomology-46">c) Show that the right derived functors of <span class="process-math">\(T\)</span> are <span class="process-math">\(R^{1} T=(Q / R) \otimes_{R} \quad\)</span> and <span class="process-math">\(R^{i} T=0\)</span> for all <span class="process-math">\(i \geqslant 2\text{.}\)</span>
+</div></section><article class="outcomes goal-like" id="sec-other-derived-functors-4"><h3 class="heading"><span class="type">Summary</span></h3>
+<ul class="disc"><li id="sec-other-derived-functors-4-1-1"><div class="para" id="sec-other-derived-functors-4-1-1-1"></div></li></ul></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-comp-ext-tor.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-abelian-categories.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

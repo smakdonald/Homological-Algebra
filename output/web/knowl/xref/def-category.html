@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="definition definition-like"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Category.</span>
+</h4> <div class="para logical">
+<div class="para">A <em class="emphasis">category</em> <span class="process-math">\(\mathscr{C}\)</span> consists of three different pieces of data:</div>
+<ul class="disc">
+<li><div class="para">a collection of <em class="emphasis">objects</em>, <span class="process-math">\(\mathbf{ob}(\mathscr{C}),\)</span>
+</div></li>
+<li><div class="para">for each two objects, say <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> a collection <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> of <em class="emphasis">arrows</em> or <em class="emphasis">morphisms</em> from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\text{,}\)</span> and</div></li>
+<li>
+<div class="para">for each three objects <span class="process-math">\(A, B\text{,}\)</span> and <span class="process-math">\(C\text{,}\)</span> a <em class="emphasis">composition</em>
+</div>
+<div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\operatorname{Hom}_{\mathscr{C}}(A, B) \times \operatorname{Hom}_{\mathscr{C}}(B, C) \longrightarrow \operatorname{Hom}_{\mathscr{C}}(A, C) . \\
+(f, g) \longmapsto g \circ f
+\end{gathered}
+\end{equation*}
+</div></div>
+</li>
+</ul>
+</div> <div class="para">We will often drop the <span class="process-math">\(\circ\)</span> and write simply <span class="process-math">\(gf\)</span> for <span class="process-math">\(g \circ f\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">These ingredients satisfy the following axioms:</div>
+<ol class="decimal">
+<li><div class="para">The <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> are all disjoint. In particular, if <span class="process-math">\(f\)</span> is an arrow in <span class="process-math">\(\mathscr{C}\text{,}\)</span> we can talk about its <em class="emphasis">source</em> <span class="process-math">\(A\)</span> and its <em class="emphasis">target</em> <span class="process-math">\(B\)</span> as the objects such that <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\text{.}\)</span>
+</div></li>
+<li><div class="para">For each object <span class="process-math">\(A\text{,}\)</span> there is an <em class="emphasis">identity arrow</em> <span class="process-math">\(1_{A} \in \operatorname{Hom}_{\mathscr{C}}(A, A)\)</span> such that <span class="process-math">\(1_{A} \circ f=f\)</span> and <span class="process-math">\(g \circ 1_{A}=g\)</span> for all <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(B, A)\)</span> and all <span class="process-math">\(g \in \operatorname{Hom}_{\mathscr{C}}(A, B)\text{.}\)</span>
+</div></li>
+<li><div class="para">Composition is <em class="emphasis">associative</em>: <span class="process-math">\(f \circ(g \circ h)=(f \circ g) \circ h\)</span> for all appropriately chosen arrows.</div></li>
+</ol>
+</div></article><span class="incontext"><a class="internal" href="sec-categories.html#def-category">in-context</a></span>
+</body>
+</html>

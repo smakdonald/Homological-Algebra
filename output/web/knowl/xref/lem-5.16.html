@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.20</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\((R, \fm)\)</span> be either a commutative local ring or a commutative <span class="process-math">\(\mathbb{N}\)</span>-graded <span class="process-math">\(k\)</span>-algebra with <span class="process-math">\(R_{0}=k\)</span> and homogeneous maximal ideal <span class="process-math">\(\fm=R_{+}\text{.}\)</span> Every (graded) complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow T_{2} \stackrel{\partial_{2}}{\longrightarrow} T_{1} \stackrel{\partial_{1}}{\longrightarrow} T_{0} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">of finitely generated (graded) free <span class="process-math">\(R\)</span>-modules that is exact everywhere must be trivial.</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">Since <span class="process-math">\(T_{0}\)</span> is projective, <a href="" class="xref" data-knowl="./knowl/xref/thm-4.6.html" title="Theorem 4.6: Projective Modules and Splitting">Theorem 4.6</a> says that the short exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-4.6.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} \partial_{1} \longrightarrow T_{1} \stackrel{\partial_{1}}{\longrightarrow} T_{0} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">splits, so <span class="process-math">\(T_{1} \cong \operatorname{ker} \partial_{1} \oplus T_{0}\text{.}\)</span> In fact, <span class="process-math">\(\partial_{1}\)</span> is the canonical projection map <span class="process-math">\(T_{0} \oplus \operatorname{ker} \partial_{1} \rightarrow T_{0}\text{,}\)</span> and our original exact sequence breaks off as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-4.6.html">
+\begin{equation*}
+\begin{aligned}
+\cdots \longrightarrow 
+&amp; T_{2} \stackrel{\partial_{2}}{\longrightarrow} \operatorname{ker} \partial_{1} \longrightarrow 0 \\
+&amp; \oplus \\
+0 \longrightarrow 
+&amp; T_{0} \stackrel{1}{\longrightarrow} T_{0} \longrightarrow 0
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">In particular, since <span class="process-math">\(0 \longrightarrow T_{0} \stackrel{1}{\longrightarrow} T_{0} \longrightarrow 0\)</span> is trivial and homology commutes with taking direct sums of complexes, by <a href="" class="xref" data-knowl="./knowl/xref/rem-5.11.html" title="Proposition 5.14">Proposition 5.14</a>, we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-5.11.html ./knowl/xref/thm-4.9.html ./knowl/xref/exe-62.html">
+\begin{equation*}
+\cdots \longrightarrow T_{2} \stackrel{\partial_{2}}{\longrightarrow} \operatorname{ker} \partial_{1} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is also exact everywhere. In particular, we have also shown that ker <span class="process-math">\(\partial_{1}\)</span> is a (graded) direct summand of the (graded) free <span class="process-math">\(R\)</span>-module <span class="process-math">\(T_{1}\text{.}\)</span> In the local case, <span class="process-math">\(\ker\partial_{1}\)</span> is a projective by <a href="" class="xref" data-knowl="./knowl/xref/thm-4.9.html" title="Theorem 4.9: Projective iff Direct Summand of Free Module">Theorem 4.9</a>, and thus free by <a href="" class="xref" data-knowl="./knowl/xref/exe-62.html" title="Exercise 4.48">Exercise 4.48</a>.</div>
+</div> <div class="para logical">
+<div class="para">In the graded setting, ?? says that ker <span class="process-math">\(\partial_{1}\)</span> is free. So we are back at our original situation, and we can repeat the same argument repeatedly to show that our complex breaks off as the direct sum of the trivial complexes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{ker} \partial_{n} \stackrel{1}{\longrightarrow} \operatorname{ker} \partial_{n} \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">and must therefore be trivial.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-proj-res.html#lem-5.16">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.25</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(M\)</span> be an R-module.</div>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">The covariant functor <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> is left exact: for every exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules, the sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(M, A) \stackrel{\operatorname{Hom}_{R}(M, f)}{\longrightarrow} \operatorname{Hom}_{R}(M, B) \stackrel{\operatorname{Hom}_{R}(M, g)}{\longrightarrow} \operatorname{Hom}_{R}(M, C)
+\end{equation*}
+</div>
+<div class="para">is exact.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">The contravariant functor <span class="process-math">\(\operatorname{Hom}_{R}(-, M)\)</span> is left exact: for every exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules, the sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(C, M) \stackrel{\operatorname{Hom}_{R}(g, M)}{\longrightarrow} \operatorname{Hom}_{R}(B, M) \stackrel{\operatorname{Hom}_{R}(f, M)}{\longrightarrow} \operatorname{Hom}_{R}(A, M)
+\end{equation*}
+</div>
+<div class="para">is exact.</div>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">To make the notation less heavy, we will write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_{*}:=\operatorname{Hom}_{R}(M, f) \quad \text { and } \quad g_{*}:=\operatorname{Hom}_{R}(M, g)
+\end{equation*}
+</div>
+<div class="para">and similarly</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^{*}:=\operatorname{Hom}_{R}(f, M) \quad \text { and } \quad g^{*}:=\operatorname{Hom}_{R}(g, M) \text {. }
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Since additive functors send complexes to complexes, as outlined in <a href="" class="xref" data-knowl="./knowl/xref/rem-3.6.html" title="Remark 3.14">Remark 3.14</a>, we at least know that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-3.6.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(M, A) \stackrel{\operatorname{Hom}_{R}(M, f)}{\longrightarrow} \operatorname{Hom}_{R}(M, B) \stackrel{\operatorname{Hom}_{R}(M, g)}{\longrightarrow} \operatorname{Hom}_{R}(M, C)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-3.6.html">
+\begin{equation*}
+0 \longrightarrow \operatorname{Hom}_{R}(C, M) \stackrel{\operatorname{Hom}_{R}(g, M)}{\longrightarrow} \operatorname{Hom}_{R}(B, M) \stackrel{\operatorname{Hom}_{R}(f, M)}{\longrightarrow} \operatorname{Hom}_{R}(A, M)
+\end{equation*}
+</div>
+<div class="para">are functors, so in particular</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-3.6.html">
+\begin{equation*}
+g_{*} f_{*}=0 \Longrightarrow \operatorname{im} f_{*} \subseteq \operatorname{ker} g_{*}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem-3.6.html">
+\begin{equation*}
+f^{*} g^{*}=0 \Longrightarrow \operatorname{im} g^{*} \subseteq \operatorname{ker} f^{*}
+\end{equation*}
+</div>
+</div> <div class="para logical"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">We have two things to show:</div>
+<ol class="lower-alpha">
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(\underline{f_{*} \text { is injective: }}\)</span>.</span></span><div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(h \in \operatorname{Hom}_{R}(M, A)\)</span> is such that <span class="process-math">\(f_{*}(h)=0\text{.}\)</span> By definition, this means that <span class="process-math">\(f h=0\text{.}\)</span> But <span class="process-math">\(f\)</span> is injective, so for any <span class="process-math">\(m \in M\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f h(m)=0 \Longrightarrow h(m)=0 \text {. }
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(h=0\text{,}\)</span> and <span class="process-math">\(f_{*}\)</span> is injective.</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(\underline{\operatorname{ker} g_{*} \subseteq \operatorname{im} f_{*}:}\)</span>.</span></span><div class="para">Let <span class="process-math">\(h \in \operatorname{Hom}_{R}(M, B)\)</span> be in the kernel of <span class="process-math">\(g_{*}\text{.}\)</span> Then <span class="process-math">\(g h=g_{*}(h)=0\text{,}\)</span> so for each <span class="process-math">\(m \in M\text{,}\)</span> <span class="process-math">\(g h(m)=0\text{.}\)</span> Then <span class="process-math">\(h(m) \in \operatorname{ker} g=\operatorname{im} f\text{,}\)</span> so there exists <span class="process-math">\(a \in A\)</span> such that <span class="process-math">\(f(a)=h(m)\text{.}\)</span> Since <span class="process-math">\(f\)</span> is injective, this element <span class="process-math">\(a\)</span> is unique for each <span class="process-math">\(m \in M\text{.}\)</span> So setting <span class="process-math">\(k(m):=a\)</span> gives us a well-defined function <span class="process-math">\(k: M \longrightarrow A\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">We claim that <span class="process-math">\(k\)</span> is in fact an <span class="process-math">\(R\)</span>-module homomorphism. To see that, notice that if <span class="process-math">\(k\left(m_{1}\right)=a_{1}\)</span> and <span class="process-math">\(k\left(m_{2}\right)=a_{2}\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\left(a_{1}+a_{2}\right)=f\left(a_{1}\right)+f\left(a_{2}\right)=h\left(m_{1}\right)+h\left(m_{2}\right)=h\left(m_{1}+m_{2}\right)
+\end{equation*}
+</div>
+<div class="para">so that <span class="process-math">\(k\left(m_{1}+m_{2}\right)=a_{1}+a_{2}=k\left(m_{1}\right)+k\left(m_{2}\right)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Similarly, given any <span class="process-math">\(r \in R\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\left(r a_{1}\right)=r f\left(a_{1}\right)=r h\left(m_{1}\right)=h\left(r m_{1}\right)
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(k\left(r m_{1}\right)=r a_{1}=r k\left(m_{1}\right)\text{.}\)</span> Finally, this element <span class="process-math">\(k \in \operatorname{Hom}_{R}(M, A)\)</span> satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_{*}(k)(m)=f(k(m))=h(m)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(m \in M\text{,}\)</span> so <span class="process-math">\(f_{*}(k)=h\)</span> and <span class="process-math">\(h \in \operatorname{im} f_{*}\text{.}\)</span>
+</div>
+</div>
+</li>
+</ol>
+</div></li>
+<li><div class="para logical">
+<div class="para">Again, we have two things to show:</div>
+<ol class="lower-alpha">
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(g^{*}\)</span> is injective:.</span></span><div class="para">If <span class="process-math">\(g^{*}(h)=0\)</span> for some <span class="process-math">\(h \in \operatorname{Hom}_{R}(C, M)\text{,}\)</span> then <span class="process-math">\(h g=g^{*}(h)=0\text{.}\)</span> Consider any <span class="process-math">\(c \in C\text{.}\)</span> Since <span class="process-math">\(g\)</span> is surjective, there exists <span class="process-math">\(b \in B\)</span> such that <span class="process-math">\(g(b)=c\text{.}\)</span> Then <span class="process-math">\(h(c)=h g(b)=0\text{,}\)</span> so <span class="process-math">\(h=0\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(\underline{\operatorname{ker} f^{*} \subseteq \operatorname{im} g^{*}:}\)</span>.</span></span><div class="para logical">
+<div class="para">Let <span class="process-math">\(h \in \operatorname{Hom}_{R}(B, M)\)</span> be in <span class="process-math">\(\ker f^{*}\text{,}\)</span> so that <span class="process-math">\(h f=0\text{.}\)</span> Given any <span class="process-math">\(c \in C\text{,}\)</span> there exists <span class="process-math">\(b \in B\)</span> such that <span class="process-math">\(g(b)=c\text{,}\)</span> since <span class="process-math">\(g\)</span> is surjective. Let <span class="process-math">\(k: C \longrightarrow M\)</span> be the function defined by <span class="process-math">\(k(c):=h(b)\)</span> for some <span class="process-math">\(b\)</span> with <span class="process-math">\(g(b)=c\text{.}\)</span> This function is well-defined, since whenever <span class="process-math">\(g\left(b^{\prime}\right)=g(b)=c, b-b^{\prime} \in \operatorname{ker} g=\operatorname{im} f\text{,}\)</span> say <span class="process-math">\(b-b^{\prime}=f(a)\text{,}\)</span> and thus <span class="process-math">\(h\left(b-b^{\prime}\right)=h(f(a))=0\text{.}\)</span> Moreover, we claim that <span class="process-math">\(k\)</span> is indeed a homomorphism of <span class="process-math">\(R\)</span>-modules. If <span class="process-math">\(c_{1}, c_{2} \in C\text{,}\)</span> and <span class="process-math">\(g\left(b_{1}\right)=c_{1}, g\left(b_{2}\right)=c_{2}\text{,}\)</span> then <span class="process-math">\(g\left(b_{1}+b_{2}\right)=c_{1}+c_{2}\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k\left(c_{1}+c_{2}\right)=h\left(b_{1}+b_{2}\right)=h\left(b_{1}\right)+h\left(b_{2}\right)=k\left(b_{1}\right)+k\left(b_{2}\right)
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">Finally, this element <span class="process-math">\(k \in \operatorname{Hom}_{R}(C, M)\)</span> is such that <span class="process-math">\(g^{*}(k)\)</span> satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left(g_{*}(k)\right)(b)=k(g(b))=h(b)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(b \in B\text{,}\)</span> so <span class="process-math">\(g^{*}(k)=h\text{,}\)</span> and <span class="process-math">\(h \in \operatorname{im} g^{*}\text{.}\)</span>
+</div>
+</div>
+</li>
+</ol>
+</div></li>
+</ol></div> <div class="para">So <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> preserves kernels, and <span class="process-math">\(\operatorname{Hom}_{R}(-, N)\)</span> sends cokernels to kernels.</div></article></details><span class="incontext"><a class="internal" href="sec-hom.html#thm-3.14">in-context</a></span>
+</body>
+</html>

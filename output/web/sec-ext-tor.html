@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A First Look at \Ext and \Tor</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Homological Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-construction.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-derived-functors.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-comp-ext-tor.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+\newcommand{\Ass}{\operatorname{Ass}}
+\def\Aut{\operatorname{Aut}}
+\def\can{{\mathrm {can}}}
+\def\char{\operatorname{char}}
+\def\cp{\operatorname{CharPoly}}
+\def\codim{\operatorname{codim}} 
+\def\coker{\operatorname{coker}}
+\DeclareMathOperator*{\colim}{colim} 
+\def\cont{\operatorname{cont}} 
+\def\diam{\operatorname{diam}} 
+\def\dm{\operatorname{dim}} 
+\DeclareMathOperator{\edim}{embdim} 
+\def\End{\operatorname{End}} 
+\def\eval{\operatorname{eval}} 
+\def\Ext{\operatorname{Ext}} 
+\def\Frac{\operatorname{Frac}}
+\def\Fun{\operatorname{Fun}}
+\def\Gal{\operatorname{Gal}}
+\def\gcd{\operatorname{gcd}}
+\newcommand{\GL}{\operatorname{GL}} 
+\newcommand{\ht}{\operatorname{height}} 
+\def\Hom{\operatorname{Hom}} 
+\def\id{\operatorname{id}} 
+\def\im{\operatorname{im}} 
+\def\Inn{\operatorname{Inn}}
+\def\ker{\operatorname{ker}}
+\def\lcm{\operatorname{lcm}} 
+\def\Mat{\operatorname{Mat}}
+\newcommand{\Min}{\operatorname{Min}}
+\def\mp{\operatorname{MinPoly}}
+\def\mSpec{\operatorname{mSpec}}
+\def\MSpec{\operatorname{MSpec}}
+\def\null{\operatorname{Nul}}
+\DeclareMathOperator{\ns}{nullspace}
+\newcommand{\opp}{\operatorname{opp}}
+\def\Orb{\operatorname{Orb}} 
+\def\Out{\operatorname{Out}}
+\def\Perm{\operatorname{Perm}}
+\def\ptstab{\operatorname{PtStab}} 
+\def\rad{\operatorname{rad}}
+\DeclareMathOperator{\range}{range}
+\def\rank{\operatorname{rank}}
+\def\res{\operatorname{res}}
+\def\setstab{\operatorname{SetStab}}
+\def\sign{{\operatorname{sign}}}
+\newcommand{\SL}{\operatorname{SL}}
+\def\Span{\operatorname{Span}}
+\def\Spec{\operatorname{Spec}}
+\def\Stab{\operatorname{Stab}} 
+\DeclareMathOperator{\Supp}{Supp}
+\def\Syl{\operatorname{Syl}}
+\def\Tor{\operatorname{Tor}}
+\def\trace{\operatorname{trace}}
+\def\uSpec{\operatorname{\underline{Spec}}}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}{-\mathbf{Mod}}
+\newcommand{\mod}{-\mathbf{mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\lx{\lambda_x}
+\newcommand{\a}{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd} 
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\def\xdots{x_1, \dots, x_n} 
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\udots{u_1, \dots, u_n} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-abelian-def.html" class="internal"><span class="codenumber">7.1</span> <span class="title">What’s an Abelian Category?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-mono-epi" class="internal"><span class="title">Monomorphisms and Epimorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-additive-categories" class="internal"><span class="title">Additive Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ker-coker" class="internal"><span class="title">Kernels and Cokernels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ab-cat" class="internal"><span class="title">Definition of an Abelian Category</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-complexes-ab" class="internal"><span class="title">Complexes in Abelian Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-hom-ab" class="internal"><span class="title">Homology in Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-exact-ab" class="internal"><span class="title">Exact Functors: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-yoneda-ab" class="internal"><span class="title">The Yoneda Lemma: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-diagrams-ab" class="internal"><span class="title">The Diagram Chasers: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-proj-inj-ab" class="internal"><span class="title">Projectives, Injective, and Resolutions: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-split-ab" class="internal"><span class="title">Split Exact Sequences: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-res-ab" class="internal"><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors in Abelian Categories</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Rings and Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-ext-tor"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">6.2</span><span class="space"> </span><span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span>
+</h2>
+<article class="objectives goal-like" id="sec-ext-tor-2"><h3 class="heading"><span class="type">Reminders and Recollections</span></h3>
+<ul class="disc"><li id="sec-ext-tor-2-1-1"><div class="para" id="p-derived-sec-ext-tor-2-1-1"></div></li></ul></article><section class="subsection" id="subsec-double-complexes"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Double Complexes</span>
+</h3>
+<blockquote class="blockquote" id="subsec-double-complexes-2">
+<div class="para" id="subsec-double-complexes-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para logical" id="subsec-double-complexes-3">
+<div class="para">It’s time to return to study some concrete examples of derived functors: Ext, the derived functor of Hom, and Tor, the derived functor of tensor. Given two modules <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{,}\)</span> we may consider the derived functors of <span class="process-math">\(M \otimes_{R}\text{,}\)</span> and then plug in <span class="process-math">\(N\text{,}\)</span> or we may consider the derived functors of <span class="process-math">\(\otimes_{R} N\text{,}\)</span> and plug in <span class="process-math">\(M\text{;}\)</span> it turns out that the two are naturally isomorphic, and this is the Tor functor:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tor}_{i}^{R}(M, N):=L_{i}\left(M \otimes_{R}\right)(N) \cong L_{i}\left(\otimes_{R} N\right)(M)
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec-double-complexes-4">
+<div class="para">More precisely, if <span class="process-math">\(P\)</span> is a projective resolution of <span class="process-math">\(M\text{,}\)</span> and <span class="process-math">\(Q\)</span> is a projective resolution of <span class="process-math">\(N\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tor}_{i}^{R}(M, N):=\mathrm{H}_{i}\left(P \otimes_{R} N\right) \cong \mathrm{H}_{i}\left(M \otimes_{R} Q\right) .
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec-double-complexes-5">
+<div class="para">There are two Hom functors, each with its own derived functor: given <span class="process-math">\(R\)</span>-modules <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{,}\)</span> we may take a projective resolution <span class="process-math">\(P\)</span> of <span class="process-math">\(M\text{,}\)</span> and compute <span class="process-math">\(\mathrm{H}^{i}\left(\operatorname{Hom}_{R}(P, N)\right)\text{,}\)</span> or we could take an injective resolution <span class="process-math">\(E\)</span> of <span class="process-math">\(N\text{,}\)</span> and compute <span class="process-math">\(\mathrm{H}^{i}\left(\operatorname{Hom}_{R}(M, E)\right)\text{.}\)</span> It turns out these two completely different sounding constructions give us isomorphic <span class="process-math">\(R\)</span>-modules:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\operatorname{Ext}_{R}^{i}(M, N) &amp; :=R^{i}\left(\operatorname { H o m } _ { R } ( M , \quad ) ( N ) \cong R ^ { i } \left(\operatorname{Hom}_{R}(, N)(M)\right.\right. \\
+&amp; \cong \mathrm{H}^{i}\left(\operatorname{Hom}_{R}(P, N)\right) \cong \mathrm{H}^{i}\left(\operatorname{Hom}_{R}(M, E)\right)
+\end{aligned}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec-double-complexes-6">To show that for each of Ext and Tor these two seemingly unrelated definitions agree, we will need some more tools.</div>
+<article class="definition definition-like" id="def-6.8"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.9</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-6.8-1-1">
+<div class="para">The suspension or shift of a complex <span class="process-math">\(C\)</span> is the complex <span class="process-math">\(\Sigma C:=C[1]\)</span> with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\Sigma C)_{n}=C_{n} \quad \text { and } \quad \partial^{\Sigma C}=\partial^{C} \text {. }
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-6.8-1-2">
+<div class="para">Given an integer <span class="process-math">\(k\text{,}\)</span> the <span class="process-math">\(k\)</span> th suspension of <span class="process-math">\(C\)</span> is the complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Sigma^{k} C:=\underbrace{\sum \cdots \Sigma}_{k \text { times }} C \quad \text { with } \partial^{\Sigma^{k} C}=(1)^{k} \partial^{C}
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-double-complexes-8">Note that there are two conventions in the literature, the other one being <span class="process-math">\((\Sigma C)_{n}=C_{n+1}\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="def-6.9"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-6.9-1-1">A (homological) double complex over the ring <span class="process-math">\(R\)</span> is a family of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(\left\{C_{p, q}\right\}_{p, q \in \mathbb{Z}}\)</span> together with homomorphisms of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(d^{h}: C_{p, q} \rightarrow C_{p} \quad{ }_{1, q}\)</span> and <span class="process-math">\(d^{v}: C_{p, q} \rightarrow\)</span> <span class="process-math">\(C_{p, q} 1\)</span> satisfying</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-11.jpg" class="contained"></div> <div class="para logical" id="def-6.9-1-3"><div class="displaymath process-math">
+\begin{equation*}
+d^{h} d^{h}=0 \quad d^{v} d^{v}=0 \quad d^{h} d^{v}+d^{v} d^{h}=0
+\end{equation*}
+</div></div></article><article class="remark remark-like" id="subsec-double-complexes-10"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-double-complexes-10-1">Remark 6.10. Note that if <span class="process-math">\(C\)</span> is a double complex, then each row and each column is a complex: if we fix <span class="process-math">\(p, C_{p, \bullet}\)</span> is a complex with differential <span class="process-math">\(d^{v}\text{;}\)</span> if we fix <span class="process-math">\(q, C_{\bullet, q}\)</span> is a complex with differential <span class="process-math">\(d^{h}\text{.}\)</span>
+</div></article><div class="para" id="subsec-double-complexes-11">What we defined above is a homological double complex. A cohomological double complex would have vertical and horizontal maps that go up in index, and we instead write <span class="process-math">\(C^{p, q}\)</span> for the module in position <span class="process-math">\((p, q)\text{.}\)</span> Also, please note that there are different conventions in the literature for whether <span class="process-math">\(p\)</span> refers to the row or column.</div>
+<article class="definition definition-like" id="def-6.11"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.12</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-6.11-1-1">
+<div class="para">Given a double complex <span class="process-math">\(C\text{,}\)</span> its total complex is the complex given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tot}^{\oplus}(C)_{n}:=\bigoplus_{p+q=n} C_{p, q} \quad \text { with differential } d=d^{h}+d^{v}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-6.11-1-2">
+<div class="para">Similarly, the product total complex of <span class="process-math">\(C\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tot}^{\Pi}(C)_{n}:=\prod_{p+q=n} C_{p, q} \quad \text { with differential } d=d^{h}+d^{v}
+\end{equation*}
+</div>
+</div></article><article class="remark remark-like" id="subsec-double-complexes-13"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-double-complexes-13-1">Remark 6.12. Let <span class="process-math">\(C\)</span> be a double complex with differentials <span class="process-math">\(d^{v}\)</span> and <span class="process-math">\(d^{h}\text{.}\)</span> Then</div> <div class="para logical" id="subsec-double-complexes-13-2"><div class="displaymath process-math">
+\begin{equation*}
+\left(d^{h}+d^{v}\right)\left(d^{h}+d^{v}\right)=\underbrace{d^{h} d^{h}}_{0}+\underbrace{d^{h} d^{v}+d^{v} d^{h}}_{0}+\underbrace{d^{v} d^{v}}_{0}=0
+\end{equation*}
+</div></div> <div class="para" id="subsec-double-complexes-13-3">so <span class="process-math">\(\left(\operatorname{Tot}^{\oplus}(C), d\right)\)</span> and <span class="process-math">\(\left(\operatorname{Tot}^{\Pi}(C), d\right)\)</span> are indeed complexes.</div></article><div class="para" id="subsec-double-complexes-14">In order to prove our two definitions of Ext and Tor each agree, we will need two special double complexes: the tensor and the Hom double complex.</div>
+<article class="definition definition-like" id="def-6.13"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.14</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-6.13-1-1">
+<div class="para">Definition 6.13. Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> be complexes of <span class="process-math">\(R\)</span>-modules. The tensor product double complex of <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> is the double complex <span class="process-math">\(C \otimes D\)</span> given by taking</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(C \otimes D)_{p, q}=C_{p} \otimes D_{q} \quad d^{h}=\partial^{C} \otimes_{R} 1_{D}, \quad \text { and } \quad d^{v}=(1)^{p} 1_{C} \otimes_{R} \partial^{D}
+\end{equation*}
+</div>
+</div> <div class="para" id="def-6.13-1-2">We call the total complex of the tensor product double complex of <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> the tensor product of <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> in <span class="process-math">\(\mathrm{Ch}(R)\text{,}\)</span> and denote it by <span class="process-math">\(C \otimes D\text{.}\)</span>
+</div></article><article class="remark remark-like" id="subsec-double-complexes-16"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.15</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-double-complexes-16-1">
+<div class="para">Remark 6.14. The tensor product total complex has</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tot}^{\oplus}(C \otimes D)_{n}=\bigoplus_{p+q=n} C_{n} \otimes_{R} D_{n}
+\end{equation*}
+</div>
+<div class="para">and differential</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d(x \otimes y)=\partial(x) \otimes y+(1)^{p} x \otimes \partial(y)
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(x \in C_{p}\)</span> and <span class="process-math">\(y \in D_{q}\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="def-6.15"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.16</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-6.15-1-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> be complexes of <span class="process-math">\(R\)</span>-modules. The Hom double complex of <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> is the double complex <span class="process-math">\(\operatorname{Hom}(C, D)\)</span> given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\operatorname{Hom}(C, D))_{p, q}:=\operatorname{Hom}_{R}\left(C_{p}, D_{q}\right)
+\end{equation*}
+</div>
+<div class="para">with differentials</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{cr}
+\operatorname{Hom}_{R}\left(C_{p}, D_{q}\right) \stackrel{d^{h}}{\longrightarrow} \operatorname{Hom}_{R}\left(C_{p}{ }_{1}, D_{q}\right) &amp; \text { and } \operatorname{Hom}_{R}\left(C_{p}, D_{q}\right) \stackrel{d^{v}}{\longrightarrow} \operatorname{Hom}_{R}\left(C_{p}, D_{q}{ }^{1}\right) . \\
+f \stackrel{C}{ } \stackrel{f}{\longrightarrow}(1)^{p+q+1} \partial^{D} \circ f
+\end{array}
+\end{equation*}
+</div>
+</div> <div class="para" id="def-6.15-1-2">We call the product total complex of the Hom double complex of <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> the (internal) Hom complex of <span class="process-math">\(C\)</span> and <span class="process-math">\(D\text{,}\)</span> and denote it by <span class="process-math">\(\operatorname{Hom}(C, D)\text{.}\)</span>
+</div></article><article class="remark remark-like" id="subsec-double-complexes-18"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.17</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-double-complexes-18-1">
+<div class="para">Remark 6.16. The Hom complex of <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> is the complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}(C, D)_{n}=\prod_{p+q=n} \operatorname{Hom}_{R}\left(C_{p}, D_{q}\right)
+\end{equation*}
+</div>
+<div class="para">with differential <span class="process-math">\(d(f)=f \circ \partial^{C}+(1)^{p+q+1} \partial^{D} \circ f\)</span> for each <span class="process-math">\(f \in \operatorname{Hom}_{R}\left(C_{p}, D_{q}\right)\text{.}\)</span>
+</div>
+</div></article><article class="remark remark-like" id="subsec-double-complexes-19"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.18</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-double-complexes-19-1">Remark 6.17. Given <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> in <span class="process-math">\(\mathrm{Ch}(R)\text{,}\)</span> what is a 0 -cycle in the Hom complex <span class="process-math">\(\operatorname{Hom}(C, D)\)</span> ? A 0 -cycle is a sequence of maps of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(f_{k}: C_{k} \rightarrow D_{k}\)</span> satisfying <span class="process-math">\(f \partial^{C} \quad \partial^{D} f=0\text{,}\)</span> so the 0 -cycles are precisely the maps of complexes <span class="process-math">\(C \rightarrow D\text{.}\)</span> Similarly, a sequence of maps <span class="process-math">\(f_{k}: C_{k} \rightarrow D_{k}\)</span> is a 0-boundary if there exists a sequence of maps <span class="process-math">\(h_{k}: C_{k} \rightarrow D_{k+1}\)</span> such that <span class="process-math">\(f_{k}=\partial^{D} h_{k}+h_{k}{ }_{1} \partial^{C}\text{.}\)</span> In other words, a 0-boundary indicates a homotopy relation - if <span class="process-math">\(f \quad g\)</span> is a 0-boundary, <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are homotopic maps.</div></article><article class="definition definition-like" id="def-6.18"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.19</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-6.18-1-1">
+<div class="para">Let <span class="process-math">\(f: C \rightarrow D\)</span> be a map of complexes. The cone of <span class="process-math">\(f\)</span> is the complex cone <span class="process-math">\((f)\)</span> with cone <span class="process-math">\((f)_{n}=C_{n} \quad 1 \oplus D_{n}\)</span> and differential given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\partial_{n}:=\left(\begin{array}{cc}
+\partial_{C} &amp; 0 \\
+f &amp; \partial_{D}
+\end{array}\right): \begin{array}{cc}
+C_{n} &amp; 1 \stackrel{\partial^{C}}{\longrightarrow} C_{n} \quad 2 \\
+&amp; \oplus D_{n} \underset{\partial^{D}}{\longrightarrow} D_{n} \quad 1
+\end{array}
+\end{equation*}
+</div>
+</div></article><article class="remark remark-like" id="subsec-double-complexes-21"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.20</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-double-complexes-21-1">
+<div class="para">Remark 6.19. There are different conventions for the sign in front of <span class="process-math">\(f\)</span> in the definition of the differentials on the cone of <span class="process-math">\(f\text{.}\)</span> Weibel [Wei94] defines</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\partial_{n}:=\left(\begin{array}{cc}
+\partial_{C} &amp; 0 \\
+f &amp; \partial_{D}
+\end{array}\right)
+\end{equation*}
+</div>
+<div class="para">and some authors even write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\partial_{n}:=\left(\begin{array}{cc}
+\partial_{C} &amp; 0 \\
+(1)^{n} f &amp; \partial_{D}
+\end{array}\right)
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-double-complexes-22">All of these choices do make our proposed differential a differential (check it!). The facts below about the mapping cone are all true up to sign whatever the sign convention we follow.</div>
+<article class="exercise exercise-like" id="subsec-double-complexes-23"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.21</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-double-complexes-23-1">Exercise 69. Let <span class="process-math">\(f: C \rightarrow\)</span> be a map of complexes. Show that giving a map of complexes cone <span class="process-math">\((f) \rightarrow E\)</span> is the same as giving a map of complexes <span class="process-math">\(D \stackrel{g}{\rightarrow} E\text{,}\)</span> and a homotopy between <span class="process-math">\(g f\)</span> and 0 .</div></article><article class="exercise exercise-like" id="subsec-double-complexes-24"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.22</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-double-complexes-24-1">Exercise 70. Let <span class="process-math">\(f: A \rightarrow B\)</span> be a map of complexes. Show that <span class="process-math">\(f\)</span> is nullhomotopic if and only of <span class="process-math">\(f\)</span> factors through the canonical map <span class="process-math">\(A \rightarrow \operatorname{cone}\left(\operatorname{id}_{A}\right)\text{.}\)</span>
+</div></article><article class="remark remark-like" id="subsec-double-complexes-25"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.23</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-double-complexes-25-1">
+<div class="para">Remark 6.20. Given any map of complexes <span class="process-math">\(C \stackrel{f}{\longrightarrow} D\text{,}\)</span> there is a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow D \longrightarrow \operatorname{cone}(f) \longrightarrow \Sigma^{1} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">determined by the canonical arrows to and from the product <span class="process-math">\(\equiv\)</span> coproduct. The connecting arrows from the Snake Lemma</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n \quad 1}(C)=\mathrm{H}_{n}\left(\Sigma{ }^{1} C\right) \stackrel{\delta}{\longrightarrow} \mathrm{H}_{n \quad 1}(D)
+\end{equation*}
+</div>
+<div class="para">are exactly <span class="process-math">\(\mathrm{H}_{n} \quad 1(f): \mathrm{H}_{n} \quad{ }_{1}(C) \rightarrow \mathrm{H}_{n} \quad{ }_{1}(D)\)</span> induced by <span class="process-math">\(f\text{,}\)</span> so there is a long exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow \mathrm{H}_{n+1}(\operatorname{cone}(f)) \longrightarrow \mathrm{H}_{n}(C) \stackrel{\mathrm{H}_{n}(f)}{\longrightarrow} \mathrm{H}_{n}(D) \longrightarrow \mathrm{H}_{n}(\operatorname{cone}(f)) \longrightarrow \mathrm{H}_{n} \quad 1(C) \longrightarrow \cdots
+\end{equation*}
+</div>
+</div> <div class="para" id="subsec-double-complexes-25-2">As a consequence, <span class="process-math">\(f\)</span> is a quasi-isomorphism if and only if cone <span class="process-math">\((f)\)</span> is exact.</div></article><article class="remark remark-like" id="subsec-double-complexes-26"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.24</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-double-complexes-26-1">Remark 6.21. Given a map of complexes <span class="process-math">\(C \stackrel{f}{\longrightarrow} D\text{,}\)</span> we can construct a double complex from <span class="process-math">\(f\text{,}\)</span> as follows:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-14.jpg" class="contained"></div> <div class="para" id="subsec-double-complexes-26-3">Note that <span class="process-math">\(\operatorname{Tot}^{\oplus}(X)=\operatorname{cone}(f)\text{.}\)</span>
+</div></article><div class="para" id="subsec-double-complexes-27">Now that we have introduced all the tools we need, the last thing we need is a technical but very useful lemma.</div>
+<article class="lemma theorem-like" id="lem-6.22"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">6.25</span><span class="period">.</span><span class="space"> </span><span class="title">Acyclic Assembly Lemma.</span>
+</h4>
+<div class="para logical" id="lem-6.22-2-1">
+<div class="para">Let <span class="process-math">\(C\)</span> be a double complex in <span class="process-math">\(R\)</span> Mod.</div>
+<ol class="decimal">
+<li id="lem-6.22-2-1-3-1"><div class="para" id="lem-6.22-2-1-3-1-1">If <span class="process-math">\(C\)</span> is an upper half plane double complex with exact rows, meaning <span class="process-math">\(C_{p, q}=0\)</span> whenever <span class="process-math">\(q&lt;0\text{,}\)</span> then <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> is exact.</div></li>
+<li id="lem-6.22-2-1-3-2"><div class="para" id="lem-6.22-2-1-3-2-1">If <span class="process-math">\(C\)</span> is a right half plane double complex with exact columns, meaning <span class="process-math">\(C_{p, q}=0\)</span> whenever <span class="process-math">\(p&lt;0\text{,}\)</span> then <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> is exact.</div></li>
+<li id="lem-6.22-2-1-3-3"><div class="para" id="lem-6.22-2-1-3-3-1">If <span class="process-math">\(C\)</span> is an upper half plane double complex with exact columns, meaning <span class="process-math">\(C_{p, q}=0\)</span> whenever <span class="process-math">\(q&lt;0\text{,}\)</span> then <span class="process-math">\(\operatorname{Tot}^{\Pi}(C)\)</span> is exact.</div></li>
+<li id="lem-6.22-2-1-3-4"><div class="para" id="lem-6.22-2-1-3-4-1">If <span class="process-math">\(C\)</span> is a right half plane double complex with exact rows, meaning <span class="process-math">\(C_{p, q}=0\)</span> whenever <span class="process-math">\(p&lt;0\text{,}\)</span> then <span class="process-math">\(\operatorname{Tot}^{\Pi}(C)\)</span> is exact.</div></li>
+</ol>
+</div></article><details id="lem-6.22-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-6.22-3-1">Notice that <span class="process-math">\(\mathrm{a} \Leftrightarrow \mathrm{b}\)</span> and <span class="process-math">\(\mathrm{c} \Leftrightarrow \mathrm{d}\)</span> by switching the indexes. Moreover, we claim that it is sufficient to show <span class="process-math">\(c\text{,}\)</span> since it implies <span class="process-math">\(b\text{.}\)</span>
+</div> <div class="para logical" id="lem-6.22-3-2">
+<div class="para">To show that <span class="process-math">\(\mathrm{c}\)</span> implies <span class="process-math">\(\mathrm{b}\text{,}\)</span> we need some notation. Given a double complex <span class="process-math">\(C\text{,}\)</span> consider the <span class="process-math">\(n\)</span>th truncation <span class="process-math">\(\tau_{n}(C)\)</span> of <span class="process-math">\(C\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tau_{n}(C)_{p, q}:= \begin{cases}C_{p, q} &amp; \text { if } q&gt;n \\ \operatorname{ker}\left(C_{p, n} \stackrel{d^{v}}{\longrightarrow} C_{p, n} \quad 1\right) &amp; \text { if } q=n \\ 0 &amp; \text { if } q&lt;n\end{cases}
+\end{equation*}
+</div>
+<div class="para">The natural inclusion <span class="process-math">\(\tau_{n}(C) \rightarrow C\)</span> induces an isomorphism in homology for <span class="process-math">\(i \geqslant n\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="lem-6.22-3-3">
+<div class="para">Suppose that <span class="process-math">\(C\)</span> is a right half plane double complex with exact columns, and assume that <span class="process-math">\(\mathrm{c}\)</span> holds. Then <span class="process-math">\(\tau_{n}(C)\)</span> still has exact columns, so by c, <span class="process-math">\(\operatorname{Tot} \Pi_{(}\left(\tau_{n}(C)\right)\)</span> is exact. On the other hand, notice that up to a vertical shift, <span class="process-math">\(\tau_{n}(C)\)</span> is a first quadrant double complex, and for each fixed <span class="process-math">\(m\text{,}\)</span> there are only finitely many values of <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> with <span class="process-math">\(p+q=m\)</span> and such that <span class="process-math">\(\tau_{n}(C)_{p, q} \neq 0\text{.}\)</span> Therefore, <span class="process-math">\(\operatorname{Tot}^{\Pi}\left(\tau_{n}\left(C_{p, \bullet}\right)\right)=\operatorname{Tot}^{\oplus}\left(\tau_{n}\left(C_{p, \bullet}\right)\right)\text{,}\)</span> so <span class="process-math">\(\operatorname{Tot}^{\oplus}\left(\tau_{n}\left(C_{p, \bullet}\right)\right)\)</span> is exact. We claim that this implies that <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> is exact. One can make this precise by saying <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)=\operatorname{colim}_{n}\left(\operatorname{Tot}^{\oplus}(C)\right)\text{.}\)</span> The point is that any element <span class="process-math">\(a \in Z_{k}\left(\operatorname{Tot}^{\oplus}(C)\right)\text{,}\)</span> when we write <span class="process-math">\(a\)</span> explicitly as <span class="process-math">\(a=\left(a_{p, q}\right) \in \oplus_{p+q=k} C_{p, q}\)</span> in terms of its coordinates in each <span class="process-math">\(C_{p, q}\text{,}\)</span> only finitely many <span class="process-math">\(a_{p, q}\)</span> are nonzero. Let <span class="process-math">\(q\)</span> be the smallest such that <span class="process-math">\(a_{p, q} \neq 0\text{,}\)</span> and fix any <span class="process-math">\(n&lt;q\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a \in Z_{k}\left(\operatorname{Tot}^{\oplus}\left(\tau_{n}(C)\right)\right)=B_{k}\left(\operatorname{Tot}^{\oplus}\left(\tau_{n}(C)\right)\right) \subseteq B_{k}\left(\operatorname{Tot}^{\oplus}(C)\right)
+\end{equation*}
+</div>
+</div> <div class="para" id="lem-6.22-3-4">So <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> is exact, and b holds.</div> <div class="para logical" id="lem-6.22-3-5">
+<div class="para">All we have left to do is to show c, meaning that the product total complex of any upper half plane double complex <span class="process-math">\(C\)</span> with exact columns is exact. We are going to show that <span class="process-math">\(\mathrm{H}_{0}\left(\operatorname{Tot}^{\Pi}(C)\right)=0\text{,}\)</span> and the remaining homologies follow by shifting <span class="process-math">\(C\)</span> left and right. Consider a 0 -cycle in <span class="process-math">\(\operatorname{Tot}^{\Pi}(C)\text{,}\)</span> meaning a sequence of elements <span class="process-math">\(c_{p} \in C_{p, p}\)</span> for each <span class="process-math">\(p \geqslant 0\)</span> such that <span class="process-math">\(c=\left(c_{p}\right) \in Z_{0}\left(\operatorname{Tot}^{\Pi}(C)\right)\text{.}\)</span> So</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d(c)=0 \Leftrightarrow d^{v}\left(c_{p}\right)+d^{h}\left(c_{p} 1\right)=0 \text { for all } p \text {. }
+\end{equation*}
+</div>
+</div> <div class="para" id="lem-6.22-3-6">We will construct <span class="process-math">\(b_{p, p+1} \in C_{p, p+1}\)</span> for each <span class="process-math">\(p\)</span> such that <span class="process-math">\(d^{v}\left(b_{p, p+1}\right)+d^{h}\left(b_{p+1, p}\right)=c_{p}\text{,}\)</span> proving that <span class="process-math">\(c \in B_{0}\left(\operatorname{Tot}^{\Pi}(C)\right)\text{.}\)</span>
+</div> <div class="para" id="lem-6.22-3-7">Set <span class="process-math">\(b_{1,0}=0 \in C_{1,0}\)</span> when <span class="process-math">\(p=1\text{.}\)</span> Since <span class="process-math">\(C_{0,1}=0\text{,}\)</span> we must have <span class="process-math">\(d^{v}\left(c_{0}\right)=0 \in C_{0,1}\text{.}\)</span> We also assumed that the columns are exact, so in particular the 0th column is exact. We can then find <span class="process-math">\(b_{0,1} \in C_{0,1}\)</span> such that <span class="process-math">\(d^{v}\left(b_{0,1}\right)=c_{0}\text{,}\)</span> and thus <span class="process-math">\(d^{v}\left(b_{0,1}\right)+d^{h}\left(b_{1,0}\right)=c_{0}\text{.}\)</span>
+</div> <div class="para logical" id="lem-6.22-3-8">
+<div class="para">Now we proceed by induction. Suppose we have constructed <span class="process-math">\(b_{s+1, s}\)</span> for <span class="process-math">\(1 \leqslant s \leqslant p\)</span> with the desired property that <span class="process-math">\(d^{v}\left(b_{s, s+1}\right)+d^{h}\left(b_{s+1, s}\right)=c_{s}\)</span> for all <span class="process-math">\(s \leqslant p\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; d^{v}\left(c_{p, p} \quad d^{h}\left(b_{p+1, p}\right)\right)=d^{v}\left(c_{p}\right)+d^{h} d^{v}\left(b_{p+1, p}\right) \quad \text { since } d^{v} d^{h}+d^{h} d^{v}=0 \\
+&amp; \left.=d^{v}\left(c_{p}\right)+d^{h}\left(\begin{array}{lllll}
+c_{p} &amp; 1 &amp; d^{h}\left(b_{p+2, p}\right. &amp; 1
+\end{array}\right)\right) \quad \text { as } d^{v}\left(b_{p+1, p}\right)+d^{h}\left(\begin{array}{lll}
+b_{p+2, p} &amp; 1
+\end{array}\right)=c_{p} \quad 1 \\
+&amp; =d^{v}\left(c_{p}\right)+d^{h}\left(\begin{array}{ll}
+c_{p} &amp; 1
+\end{array}\right) \quad d^{h} d^{h}\left(\begin{array}{lll}
+b_{p+2, p} &amp; 1
+\end{array}\right) \\
+&amp; =d^{v}\left(c_{p}\right)+d^{h}\left(\begin{array}{ll}
+c_{p} &amp; 1
+\end{array}\right) \quad \text { since } d^{h} d^{h}=0 \\
+&amp; =0 \text {. }
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="lem-6.22-3-9">
+<div class="para">The last equality comes simply from the fact that <span class="process-math">\(\left(d^{v}+d^{h}\right)(c)=0\text{.}\)</span> So we have shown that <span class="process-math">\(d^{v}\left(c_{p, p} \quad d^{h}\left(b_{p+1, p}\right)\right)=0\text{.}\)</span> Since the columns are exact, we can find <span class="process-math">\(b_{p, p+1} \in C_{p, p+1}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d^{v}\left(b_{p, p+1}\right)=c_{p, p} \quad d^{h}\left(b_{p+1, p}\right)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="lem-6.22-3-10">
+<div class="para">Equivalently,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d^{v}\left(b_{p, p+1}\right)+d^{h}\left(b_{p+1, p}\right)=c_{p, p}
+\end{equation*}
+</div>
+</div></article></details><article class="exercise exercise-like" id="subsec-double-complexes-29"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.26</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-double-complexes-29-1">
+<div class="para">Exercise 71. Given a double complex <span class="process-math">\(C\)</span> with <span class="process-math">\(C_{p, q}=0\)</span> for all <span class="process-math">\(p&lt;n\text{,}\)</span> the horizontal differentials <span class="process-math">\(C_{n+1, q} \rightarrow C_{n, q}\)</span> induce a map of complexes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tot}^{\oplus}\left(C_{&gt;n, \bullet}\right) \stackrel{\varphi}{\rightarrow} C_{n, \bullet}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(C_{&gt;n, \bullet}\)</span> denotes the double complex we obtain from <span class="process-math">\(C\)</span> by excluding the leftmost nonzero column, and <span class="process-math">\(\operatorname{Tot}^{\oplus}(C) \cong \Sigma^{1} \operatorname{cone}(\varphi)\text{,}\)</span> or equivalently, <span class="process-math">\(\Sigma \operatorname{Tot}^{\oplus}(C) \cong \operatorname{cone}(\varphi)\text{.}\)</span>
+</div>
+</div></article></section><section class="subsection" id="subsec-balancing"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span>
+</h3>
+<blockquote class="blockquote" id="subsec-balancing-2">
+<div class="para" id="subsec-balancing-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-balancing-3">We are finally ready to show that the two definitions of Tor coincide.</div>
+<article class="theorem theorem-like" id="thm-6.23"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.27</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="thm-6.23-1-1">
+<div class="para">Theorem 6.23 (Balancing Tor). Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules, and <span class="process-math">\(x\)</span> projective resolutions <span class="process-math">\(P\)</span> of <span class="process-math">\(M\)</span> and <span class="process-math">\(Q\)</span> of <span class="process-math">\(N\text{.}\)</span> For all <span class="process-math">\(n \geqslant 0\text{,}\)</span> there is an isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_{n}\left(M \otimes_{R} \quad\right)(N)=\mathrm{H}_{n}\left(M \otimes_{R} Q\right) \cong \mathrm{H}_{n}\left(P \otimes_{R} N\right)=L_{n}\left(\otimes_{R} N\right)(M)
+\end{equation*}
+</div>
+</div></article><details id="thm-6.23-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="thm-6.23-2-1">Consider <span class="process-math">\(\pi: P_{0} \quad M\)</span> and <span class="process-math">\(\varepsilon: Q_{0} \quad N\)</span> and the first quadrant double complex</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-16.jpg" class="contained"></div> <div class="para" id="thm-6.23-2-3">Each <span class="process-math">\(P_{i}\)</span> and <span class="process-math">\(Q_{i}\)</span> is projective and thus flat, by Theorem 4.37, so <span class="process-math">\(P_{i} \otimes_{R}\)</span> and <span class="process-math">\(\otimes_{R} Q_{i}\)</span> are both exact functors. The rows and columns of our double complex are thus exact everywhere except for the 0th row and column. We can complete our double complex to make a double complex <span class="process-math">\(C\)</span> with both exact rows if we add in a column induced by the surjection <span class="process-math">\(\pi\)</span> :</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-17(1).jpg" class="contained"></div> <div class="para" id="thm-6.23-2-5">We can also make a double complex <span class="process-math">\(D\)</span> with exact columns by adding in a row induced by <span class="process-math">\(\varepsilon\)</span> :</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-17.jpg" class="contained"></div> <div class="para logical" id="thm-6.23-2-7">
+<div class="para">By Lemma 6.22, <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> and <span class="process-math">\(\operatorname{Tot}^{\oplus}(D)\)</span> are both exact. Notice that <span class="process-math">\(\pi \otimes Q\)</span> is a map of complexes <span class="process-math">\(\operatorname{Tot}^{\oplus}(P \otimes Q) \rightarrow M \otimes Q\text{,}\)</span> and <span class="process-math">\(P \otimes \varepsilon\)</span> is a map of <span class="process-math">\(\operatorname{complexes} \operatorname{Tot}^{\oplus}(P \otimes Q) \rightarrow P \otimes N\text{.}\)</span> By Exercise 71,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{cone}(\pi \otimes Q)=\Sigma \operatorname{Tot}^{\oplus}(C) \quad \text { and } \quad \operatorname{cone}(P \otimes \varepsilon)=\Sigma \operatorname{Tot}^{\oplus}(D)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="thm-6.23-2-8">
+<div class="para">Since <span class="process-math">\(\Sigma \operatorname{Tot}^{\oplus}(C)\)</span> and <span class="process-math">\(\Sigma \operatorname{Tot}^{\oplus}(D)\)</span> are both exact, by Remark 6.20 both</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tot}^{\oplus}(P \otimes Q) \quad \stackrel{\pi \otimes Q}{\rightarrow} M \otimes Q \quad \text { and } \quad \operatorname{Tot}^{\oplus}(P \otimes Q) \stackrel{P \otimes \varepsilon}{\rightarrow} P \otimes N
+\end{equation*}
+</div>
+<div class="para">are quasi-isomorphisms, so that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L_{n}\left(M \otimes_{R} \quad\right)(N)=\mathrm{H}_{n}\left(M \otimes_{R} Q\right) \cong \mathrm{H}_{n}\left(P \otimes_{R} N\right)=L_{n}\left(\otimes_{R} N\right)(M)
+\end{equation*}
+</div>
+</div></article></details><article class="theorem theorem-like" id="thm-6.24"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.28</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="thm-6.24-1-1">
+<div class="para">Theorem 6.24 (Balancing Ext). Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules, and <span class="process-math">\(x\)</span> a projective resolution <span class="process-math">\(P\)</span> of <span class="process-math">\(M\)</span> and an injective resolution <span class="process-math">\(E\)</span> of <span class="process-math">\(N\text{.}\)</span> For all <span class="process-math">\(n\text{,}\)</span> there is an isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R^{n} \operatorname{Hom}_{R}(M, \quad)(N)=\mathrm{H}^{n}\left(\operatorname{Hom}_{R}(M, E)\right) \cong \mathrm{H}^{n}\left(\operatorname{Hom}_{R}(P, N)\right)=R^{n} \operatorname{Hom}_{R}(, N)(M) \text {. }
+\end{equation*}
+</div>
+</div></article><details id="thm-6.24-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-6.24-2-1">
+<div class="para">We have a surjection <span class="process-math">\(\pi: P_{0} \rightarrow M\)</span> and an inclusion <span class="process-math">\(\varepsilon: M \rightarrow E_{0}\text{.}\)</span> The double cocomplex <span class="process-math">\(\operatorname{Hom}_{R}(P, E)\)</span> with <span class="process-math">\(\operatorname{Hom}_{R}(P, E)_{p, q}=\operatorname{Hom}_{R}\left(P_{p}, E^{q}\right)\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{cc}
+\operatorname{Hom}_{R}\left(P_{p}, E^{q}\right) \stackrel{d^{h}}{\longrightarrow} \operatorname{Hom}_{R}\left(P_{p+1}, E^{q}\right) &amp; \text { and } \operatorname{Hom}_{R}\left(P_{p}, E^{q}\right) \stackrel{d^{v}}{\longrightarrow} \operatorname{Hom}_{R}\left(P_{p}, D_{q+1}\right) . \\
+f \longrightarrow f \circ \partial^{P} &amp; f \longrightarrow(1)^{p+q+1} \partial^{E} \circ f
+\end{array}
+\end{equation*}
+</div>
+<div class="para">is a cohomological first quadrant double complex:</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-18(1).jpg" class="contained"></div> <div class="para" id="thm-6.24-2-3">We proceed just like in Theorem 6.23, now considering two cohomological double complexes:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-18(2).jpg" class="contained"></div> <div class="para" id="thm-6.24-2-5">and</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-18.jpg" class="contained"></div> <div class="para logical" id="thm-6.24-2-7">
+<div class="para">We obtained <span class="process-math">\(C\)</span> from <span class="process-math">\(\operatorname{Hom}(P, E)\)</span> by adding in a column induced by <span class="process-math">\(\pi\text{,}\)</span> and <span class="process-math">\(D\)</span> by adding in a row induced by <span class="process-math">\(\varepsilon\text{.}\)</span> Now we notice that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{cone}\left(\operatorname{Hom}_{R}(P, N) \rightarrow \operatorname{Tot}^{\oplus}(\operatorname{Hom}(P, E))\right)=\operatorname{Tot}^{\oplus}(C)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{cone}\left(\operatorname{Hom}_{R}(M, E) \rightarrow \operatorname{Tot}^{\oplus}(\operatorname{Hom}(P, E))\right)=\operatorname{Tot}^{\oplus}(D)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="thm-6.24-2-8">
+<div class="para">The dual of Lemma 6.22 says that <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> and <span class="process-math">\(\operatorname{Tot}^{\oplus}(D)\)</span> are both exact, and thus <span class="process-math">\(\operatorname{Hom}_{R}(P, N) \rightarrow \operatorname{Tot}^{\oplus}(\operatorname{Hom}(P, E))\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}(M, E) \rightarrow \operatorname{Tot}^{\oplus}(\operatorname{Hom}(P, E))\)</span> are both quasiisomorphisms. We conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R^{n} \operatorname{Hom}_{R}(M, \quad)(N)=\mathrm{H}^{n}\left(\operatorname{Hom}_{R}(P, N)\right) \cong \mathrm{H}^{n}\left(\operatorname{Hom}_{R}(M, E)\right)=R^{n} \operatorname{Hom}_{R}(, N)(M) \text {. }
+\end{equation*}
+</div>
+</div></article></details><article class="definition definition-like" id="def-6.25"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.29</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-6.25-1-1">
+<div class="para">Definition 6.25. Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules. The <span class="process-math">\(i\)</span> th Tor module from <span class="process-math">\(M\)</span> to <span class="process-math">\(N\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tor}_{i}^{R}(M, N):=L_{i}\left(M \otimes_{R} \quad\right)(N) \cong L_{i}\left(\otimes_{R} N\right)(M)
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-balancing-7">Notice in particular that the <span class="process-math">\(R\)</span>-module <span class="process-math">\(\operatorname{Tor}_{i}^{R}(M, N)\)</span> is defined only up to isomorphism.</div>
+<article class="definition definition-like" id="def-6.26"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.30</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-6.26-1-1">
+<div class="para">Definition 6.26. Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules. The <span class="process-math">\(i\)</span> th Ext module from <span class="process-math">\(M\)</span> to <span class="process-math">\(N\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Ext}_{R}^{i}(M, N):=R^{i} \operatorname{Hom}_{R}(M, \quad)(N) \cong R^{i} \operatorname{Hom}_{R}(, N)(M)
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-balancing-9">Notice in particular that the <span class="process-math">\(R\)</span>-module <span class="process-math">\(\operatorname{Ext}_{R}^{i}(M, N)\)</span> is only defined up to isomorphism.</div>
+<div class="para" id="subsec-balancing-10">Theorem 6.5 immediately gives us long exact sequences for Ext and Tor.</div>
+<article class="theorem theorem-like" id="thm-6.27"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.31</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="thm-6.27-1-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(M\)</span> an <span class="process-math">\(R\)</span>-module. Every short exact sequence of <span class="process-math">\(R\)</span> modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">induces a long exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\cdots \longrightarrow \operatorname{Tor}_{n+1}^{R}(M, C) \longrightarrow &amp; \operatorname{Tor}_{n}^{R}(M, A) \longrightarrow \operatorname{Tor}_{n}^{R}(M, B) \longrightarrow \operatorname{Tor}_{n}^{R}(M, A) \longrightarrow \cdots \\
+\cdots &amp; \longrightarrow \operatorname{Tor}_{1}^{R}(M, C) \longrightarrow A \otimes_{R} M \longrightarrow \otimes_{R} M \longrightarrow C \otimes_{R} M \longrightarrow 0
+\end{aligned}
+\end{equation*}
+</div>
+</div></article><article class="theorem theorem-like" id="thm-6.28"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.32</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="thm-6.28-1-1">
+<div class="para">For every <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> every short exact sequence of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">induces a natural long exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r}
+0 \longrightarrow \operatorname{Hom}_{R}(M, A) \longrightarrow \operatorname{Hom}_{R}(M, B) \longrightarrow \operatorname{Hom}_{R}(M, C) \longrightarrow \operatorname{Ext}_{R}^{n}(M, B) \longrightarrow \operatorname{Ext}_{R}^{1}(M, A) \longrightarrow \cdots \\
+\cdots
+\end{array}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r}
+0 \longrightarrow \operatorname{Hom}_{R}(C, M) \longrightarrow \operatorname{Hom}_{R}(B, M) \longrightarrow \operatorname{Hom}_{R}(A, M) \longrightarrow \operatorname{Ext}_{R}^{1}(C, M) \longrightarrow \cdots \\
+\cdots \\
+\cdots \operatorname{Ext}_{R}^{n}(B, M) \longrightarrow \operatorname{Ext}_{R}^{n}(A, M) \longrightarrow \operatorname{Ext}_{R}^{n+1}(C, M) \longrightarrow \cdots
+\end{array}
+\end{equation*}
+</div>
+</div></article><article class="theorem theorem-like" id="thm-6.29"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.33</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="thm-6.29-1-1">
+<div class="para">Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules. For all <span class="process-math">\(i\text{,}\)</span> there are natural isomorphisms</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tor}_{i}^{R}(M, N) \cong \operatorname{Tor}_{i}^{R}(N, M)
+\end{equation*}
+</div>
+</div></article><details id="thm-6.29-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-6.29-2-1">
+<div class="para">Let <span class="process-math">\(P\)</span> be a projective resolution of <span class="process-math">\(M\text{.}\)</span> By Theorem 6.23, <span class="process-math">\(\operatorname{Tor}_{i}^{R}(M, N)=\mathrm{H}_{i}\left(P \otimes_{R} N\right)\)</span> and <span class="process-math">\(\operatorname{Tor}_{i}^{R}(N, M)=\mathrm{H}_{i}\left(N \otimes_{R} P\right)\text{.}\)</span> By Lemma 3.38, <span class="process-math">\(M \otimes_{R} N\)</span> and <span class="process-math">\(N \otimes_{R} M\)</span> are naturally isomorphic. In fact, <span class="process-math">\(m \otimes n \mapsto n \otimes m\)</span> determines an isomorphism. So consider the map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{cc}
+P_{n} \otimes_{R} N \stackrel{f_{n}}{\longrightarrow} N \otimes_{R} P_{n} &amp; N \otimes_{R} M \stackrel{g_{n}}{\longrightarrow} P_{n} \otimes_{R} N \\
+m \otimes n \longrightarrow m \otimes m &amp; n \otimes m \longrightarrow n
+\end{array}
+\end{equation*}
+</div>
+<div class="para">which again are isomorphisms for all <span class="process-math">\(n\text{.}\)</span> Notice that these <span class="process-math">\(f_{n}\)</span> assemble into a map of complexes <span class="process-math">\(P \otimes_{R} N \stackrel{f}{\rightarrow} N \otimes_{R} P\text{,}\)</span> since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_{n}(\partial(m \otimes n))=f_{n}(\partial(m) \otimes n)=n \otimes \partial(m)=\partial(n \otimes m)=\partial f_{n+1}(m \otimes n)
+\end{equation*}
+</div>
+</div> <div class="para logical" id="thm-6.29-2-2">
+<div class="para">Since all the <span class="process-math">\(f_{n}\)</span> are isomorphisms, <span class="process-math">\(f\)</span> is an isomorphism of complexes, and must then induce isomorphisms in homology. We conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Tor}_{i}^{R}(M, N)=\mathrm{H}_{i}\left(P \otimes_{R} N\right) \cong \mathrm{H}_{i}\left(N \otimes_{R} P\right)=\operatorname{Tor}_{i}^{R}(N, M)
+\end{equation*}
+</div>
+</div></article></details><div class="para" id="subsec-balancing-14">However, <span class="process-math">\(\operatorname{Ext}_{R}^{i}(M, N)\)</span> and <span class="process-math">\(\operatorname{Ext}_{R}^{i}(N, M)\)</span> can be dramatically different.</div>
+<article class="example example-like" id="subsec-balancing-15"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.34</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-balancing-15-1">
+<div class="para">Let <span class="process-math">\(k\)</span> be a field and <span class="process-math">\(R=k[x]\text{.}\)</span> The following is a minimal free resolution for <span class="process-math">\(k=R /(x)\)</span> :</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow R \stackrel{x}{\longrightarrow} R \longrightarrow k \longrightarrow 0
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-balancing-15-2">
+<div class="para">To compute <span class="process-math">\(\operatorname{Ext}_{R}^{i}(k, R)\text{,}\)</span> we need only to apply <span class="process-math">\(\operatorname{Hom}_{R}(, R)\)</span> to this resolution; one needs to be careful, though, as this is a contravariant functor. We obtain the following complex:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longleftarrow \operatorname{Hom}_{R}(R, R) \stackrel{x^{*}}{\longleftarrow} \operatorname{Hom}_{R}(R, R) \longleftarrow 0
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-balancing-15-3">
+<div class="para">One can show that <span class="process-math">\(\operatorname{Hom}_{R}(x, R)\)</span> is multiplication by <span class="process-math">\(x\)</span> on <span class="process-math">\(\operatorname{Hom}_{R}(R, R)\text{;}\)</span> moreover, we have a natural isomorphism <span class="process-math">\(\operatorname{Hom}_{R}(R, R) \cong R\text{,}\)</span> giving us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C=\quad 0 \longleftarrow \underset{1}{2 \longleftarrow} R \underset{0}{\longleftarrow} R \longleftarrow 0
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-balancing-15-4">
+<div class="para">In particular,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Ext}^{1}(k, R)=\mathrm{H}^{1}(C)=R /(x) .
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-balancing-15-5">
+<div class="para">In contrast,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Ext}^{1}(R, k)=0
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(R\)</span> is free. Thus <span class="process-math">\(\operatorname{Ext}^{1}(R, k) \neq \operatorname{Ext}^{1}(k, R)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="subsec-balancing-15-6">
+<div class="para">There is an alternative description of Ext. It turns out that <span class="process-math">\(\operatorname{Ext}_{R}^{1}(M, N)\)</span> measures the extensions of <span class="process-math">\(M\)</span> by <span class="process-math">\(N\)</span> modulo split extensions. More precisely, an extension of <span class="process-math">\(M\)</span> by <span class="process-math">\(N\)</span> is a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow N \longrightarrow B \longrightarrow M \longrightarrow 0
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-balancing-15-7">
+<div class="para">We can put an abelian group structure on the set of isomorphism classes of extensions of <span class="process-math">\(M\)</span> by <span class="process-math">\(N\text{,}\)</span> using an operation called the Baer sum, and one can show that the resulting abelian group is isomorphic to <span class="process-math">\(\operatorname{Ext}_{R}^{1}(M, N)\text{.}\)</span> Via this description, the zero in <span class="process-math">\(\operatorname{Ext}_{R}^{1}(M, N)\)</span> corresponds to the split short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow N \longrightarrow N \oplus M \longrightarrow M \longrightarrow 0
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-balancing-15-8">
+<div class="para">The higher Ext modules can also be described in a similar fashion. First, we consider the set of <span class="process-math">\(n\)</span>-fold extensions of <span class="process-math">\(N\)</span> by <span class="process-math">\(M\text{,}\)</span> meaning short exact sequences of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow N \longrightarrow B_{1} \longrightarrow B_{2} \longrightarrow \cdots \longrightarrow B_{n} \longrightarrow M \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">and the equivalence relation on this set given by the existence of a map of complexes</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-21.jpg" class="contained"></div> <div class="para" id="subsec-balancing-15-10">where the maps between the <span class="process-math">\(B_{i}\)</span> are not necessarily isomorphisms. We then define an operation on the set of equivalence classes of <span class="process-math">\(n\)</span>-fold extensions of <span class="process-math">\(N\)</span> by <span class="process-math">\(M\)</span> that is also called the Baer sum, and one shows that the resulting abelian group is isomorphic to <span class="process-math">\(\operatorname{Ext}_{R}^{n}(M, n)\text{.}\)</span>
+</div> <div class="para logical" id="subsec-balancing-15-11">
+<div class="para">Via this description, <span class="process-math">\(\operatorname{Ext}_{R}^{1}(M, N)=0\)</span> if and only if every short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow N \longrightarrow B \longrightarrow M \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">splits.</div>
+</div></article><div class="para" id="subsec-balancing-16">Finally, here are some nice facts about Ext and Tor we leave as exercises.</div>
+<article class="exercise exercise-like" id="subsec-balancing-17"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.35</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-balancing-17-1">Exercise 72. If <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are finitely generated <span class="process-math">\(R\)</span>-modules and <span class="process-math">\(R\)</span> is a noetherian ring, then <span class="process-math">\(\operatorname{Ext}_{R}^{i}(M, N)\)</span> and <span class="process-math">\(\operatorname{Tor}_{i}^{R}(M, N)\)</span> are both finitely generated <span class="process-math">\(R\)</span>-modules for all <span class="process-math">\(i\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="subsec-balancing-18"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.36</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-balancing-18-1">
+<div class="para">Exercise 73. Let <span class="process-math">\(R\)</span> be a commutative ring and <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules. Consider the <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f: M \rightarrow M\)</span> given by multiplication by a fixed element <span class="process-math">\(r \in R\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="subsec-balancing-18-1-8-1"><div class="para" id="subsec-balancing-18-1-8-1-1">Show that the map <span class="process-math">\(\operatorname{Tor}_{i}^{R}(f, M): \operatorname{Tor}_{i}^{R}(M, N) \rightarrow \operatorname{Tor}_{i}^{R}(M, N)\)</span> induced by <span class="process-math">\(f\)</span> is multiplication by <span class="process-math">\(r\)</span> on <span class="process-math">\(\operatorname{Tor}_{i}^{R}(M, N)\text{.}\)</span>
+</div></li>
+<li id="subsec-balancing-18-1-8-2"><div class="para" id="subsec-balancing-18-1-8-2-1">Show that <span class="process-math">\(\operatorname{Ext}^{i}(f, M): \operatorname{Ext}_{R}^{i}(M, N) \rightarrow \operatorname{Ext}_{R}^{i}(M, N)\)</span> is multiplication by <span class="process-math">\(r\)</span> on <span class="process-math">\(\operatorname{Ext}_{R}^{i}(M, N)\text{.}\)</span>
+</div></li>
+<li id="subsec-balancing-18-1-8-3"><div class="para" id="subsec-balancing-18-1-8-3-1">Show that the map <span class="process-math">\(\operatorname{Ext}^{i}(M, f): \operatorname{Ext}_{R}^{i}(N, M) \rightarrow \operatorname{Ext}_{R}^{i}(N, M)\)</span> induced by <span class="process-math">\(f\)</span> is multiplication by <span class="process-math">\(r\)</span> on <span class="process-math">\(\operatorname{Ext}_{R}^{i}(N, M)\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="exercise exercise-like" id="subsec-balancing-19"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.37</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-balancing-19-1">
+<div class="para">Exercise 74 . Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module.</div>
+<ol class="decimal">
+<li id="subsec-balancing-19-1-3-1"><div class="para" id="subsec-balancing-19-1-3-1-1">Show that <span class="process-math">\(M\)</span> is flat if and only if <span class="process-math">\(\operatorname{Tor}_{1}^{R}(M, N)=0\)</span> for every <span class="process-math">\(R\)</span>-module <span class="process-math">\(N\text{.}\)</span>
+</div></li>
+<li id="subsec-balancing-19-1-3-2"><div class="para" id="subsec-balancing-19-1-3-2-1">Show that <span class="process-math">\(M\)</span> is projective if and only if <span class="process-math">\(\operatorname{Ext}_{R}^{1}(M, N)=0\)</span> for every <span class="process-math">\(R\)</span>-module <span class="process-math">\(N\text{.}\)</span>
+</div></li>
+<li id="subsec-balancing-19-1-3-3"><div class="para" id="subsec-balancing-19-1-3-3-1">Show that <span class="process-math">\(M\)</span> is injective if and only if <span class="process-math">\(\operatorname{Ext}_{R}^{1}(N, M)=0\)</span> for every <span class="process-math">\(R\)</span>-module <span class="process-math">\(N\text{.}\)</span>
+</div></li>
+</ol>
+</div></article></section><article class="outcomes goal-like" id="sec-ext-tor-5"><h3 class="heading"><span class="type">Summary</span></h3>
+<ul class="disc"><li id="sec-ext-tor-5-1-1"><div class="para" id="sec-ext-tor-5-1-1-1"></div></li></ul></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-construction.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-comp-ext-tor.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
