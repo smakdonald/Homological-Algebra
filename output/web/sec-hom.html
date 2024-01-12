@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -629,8 +629,8 @@ window.MathJax = {
 <div class="para" id="subsec-hom-2-1">“We shape our <span class="process-math">\(\Hom\)</span>s and then our <span class="process-math">\(\Hom\)</span>s shape us.”</div> <cite class="attribution">―Winston Churchill</cite>
 </blockquote>
 <div class="para" id="subsec-hom-3">From now on, let’s fix a ring <span class="process-math">\(R\text{.}\)</span> Recall that whenever we say an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> we mean a left <span class="process-math">\(R\)</span>-module; any general facts about left modules can be naturally converted into statements about right <span class="process-math">\(R\)</span>-modules, under small appropriate corrections. When <span class="process-math">\(M\)</span> is commutative, left and right module structures agree, so the distinction is not relevant.</div>
-<div class="para" id="subsec-hom-4">Our goal is to get to know the category <span class="process-math">\(R\)</span>-Mod, which as we are about to discover is a very nice category. One of the many nice things about <span class="process-math">\(R\)</span>-Mod is that the Hom-sets have an extra structure. (Roughly speaking, a locally small category where the Hom-sets are objects in some other category is called an enriched category).</div>
-<div class="para" id="subsec-hom-5">To make the notation less heavy, we write <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> instead of <span class="process-math">\(\operatorname{Hom}_{R-\operatorname{Mod}}(M, N)\)</span> for the Hom-set between <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> in <span class="process-math">\(R\)</span>-Mod. The arrows in <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> are all the <span class="process-math">\(R\)</span>-module homomorphisms from <span class="process-math">\(M\)</span> to <span class="process-math">\(N\text{.}\)</span> This is a locally small category, meaning that the Hom-sets are actual sets, but more even is true: the Hom-sets are actually abelian groups, and when <span class="process-math">\(R\)</span> is commutative, they are even <span class="process-math">\(R\)</span>-modules.</div>
+<div class="para" id="subsec-hom-4">Our goal is to get to know the category <span class="process-math">\(R\)</span>-Mod, which as we are about to discover is a very nice category. One of the many nice things about <span class="process-math">\(R\)</span>-Mod is that the <span class="process-math">\(\Hom\)</span>-sets have an extra structure. (Roughly speaking, a locally small category where the <span class="process-math">\(\Hom\)</span>-sets are objects in some other category is called an enriched category).</div>
+<div class="para" id="subsec-hom-5">To make the notation less heavy, we write <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> instead of <span class="process-math">\(\operatorname{Hom}_{R-\operatorname{Mod}}(M, N)\)</span> for the <span class="process-math">\(\Hom\)</span>-set between <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> in <span class="process-math">\(R\)</span>-Mod. The arrows in <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> are all the <span class="process-math">\(R\)</span>-module homomorphisms from <span class="process-math">\(M\)</span> to <span class="process-math">\(N\text{.}\)</span> This is a locally small category, meaning that the <span class="process-math">\(\Hom\)</span>-sets are actual sets, but more even is true: the <span class="process-math">\(\Hom\)</span>-sets are actually abelian groups, and when <span class="process-math">\(R\)</span> is commutative, they are even <span class="process-math">\(R\)</span>-modules.</div>
 <div class="para logical" id="subsec-hom-6">
 <div class="para">Given <span class="process-math">\(f, g \in \operatorname{Hom}_{R}(M, N), f+g\)</span> is the <span class="process-math">\(R\)</span>-module homomorphism defined by</div>
 <div class="displaymath process-math">
@@ -648,10 +648,10 @@ window.MathJax = {
 <article class="exercise exercise-like" id="exe-36"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-36-1">Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules. Then <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> is an abelian group under the sum defined above.</div></article><article class="exercise exercise-like" id="exe-37"><h4 class="heading">
+<div class="para" id="exe-36-1-1">Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules. Then <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> is an abelian group under the sum defined above.</div></article><article class="exercise exercise-like" id="exe-37"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-37-1">Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules over a commutative <span class="process-math">\(\operatorname{ring} R\text{.}\)</span> Then <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> is an <span class="process-math">\(R\)</span>-module.</div></article><article class="remark remark-like" id="rem-3.1"><h4 class="heading">
+<div class="para" id="exe-37-1-1">Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules over a commutative <span class="process-math">\(\operatorname{ring} R\text{.}\)</span> Then <span class="process-math">\(\operatorname{Hom}_{R}(M, N)\)</span> is an <span class="process-math">\(R\)</span>-module.</div></article><article class="remark remark-like" id="rem-3.1"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="rem-3.1-1">
@@ -668,18 +668,18 @@ window.MathJax = {
 \end{equation*}
 </div>
 <div class="para">This holds whenever <span class="process-math">\(r s=s r\text{,}\)</span> but not in general.</div>
-</div></article><div class="para" id="subsec-hom-11">Some Hom-sets can easily be identified with other well-understood modules.</div>
+</div></article><div class="para" id="subsec-hom-11">Some <span class="process-math">\(\Hom\)</span>-sets can easily be identified with other well-understood modules.</div>
 <article class="exercise exercise-like" id="exe-38"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.4</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="exe-38-1">
+<div class="para logical" id="exe-38-1-1">
 <div class="para">Let <span class="process-math">\(R\)</span> be a commutative ring. Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module, and <span class="process-math">\(I\)</span> an ideal in <span class="process-math">\(R\text{.}\)</span> Then we have the following isomorphisms of <span class="process-math">\(R\)</span>-modules:</div>
 <ol class="decimal">
-<li id="exe-38-1-7-1"><div class="para" id="exe-38-1-7-1-1"><span class="process-math">\(\operatorname{Hom}_{R}(R, M) \cong M\text{.}\)</span></div></li>
-<li id="exe-38-1-7-2"><div class="para" id="exe-38-1-7-2-1">
+<li id="exe-38-1-1-7-1"><div class="para" id="exe-38-1-1-7-1-1"><span class="process-math">\(\operatorname{Hom}_{R}(R, M) \cong M\text{.}\)</span></div></li>
+<li id="exe-38-1-1-7-2"><div class="para" id="exe-38-1-1-7-2-1">
 <span class="process-math">\(\operatorname{Hom}_{R}\left(R^{n}, M\right) \cong M^{n}\)</span> for any <span class="process-math">\(n \geqslant 1\text{.}\)</span>
 </div></li>
-<li id="exe-38-1-7-3"><div class="para" id="exe-38-1-7-3-1"><span class="process-math">\(\operatorname{Hom}_{R}(R / I, M) \cong\left(0:_{M} I\right):=\{m \in M \mid I m=0\}\text{.}\)</span></div></li>
+<li id="exe-38-1-1-7-3"><div class="para" id="exe-38-1-1-7-3-1"><span class="process-math">\(\operatorname{Hom}_{R}(R / I, M) \cong\left(0:_{M} I\right):=\{m \in M \mid I m=0\}\text{.}\)</span></div></li>
 </ol>
 </div></article></section><section class="subsection" id="subsec-additive-functors"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Additive Functors</span>
@@ -687,7 +687,7 @@ window.MathJax = {
 <blockquote class="blockquote" id="subsec-additive-functors-2">
 <div class="para" id="subsec-additive-functors-2-1">“To split yourself in two is just about the most radical thing you can do.”</div> <cite class="attribution">―Ani DiFranco</cite>
 </blockquote>
-<div class="para" id="subsec-additive-functors-3">Since <span class="process-math">\(R\)</span>-Mod is a locally small category, we saw in Definition 1.34 that there are two Hom-functors from <span class="process-math">\(R\)</span>-Mod to <span class="process-math">\(\Set\text{,}\)</span> the covariant functor <span class="process-math">\(\operatorname{Hom}_{R}(M,-): R\)</span>-Mod <span class="process-math">\(\longrightarrow\)</span> Set and the contravariant functor <span class="process-math">\(\operatorname{Hom}_{R}(-, N): R\)</span>-Mod <span class="process-math">\(\longrightarrow\)</span> Set. In light of <a href="" class="xref" data-knowl="./knowl/xref/exe-37.html" title="Exercise 3.2">Exercise 3.2</a>, we can upgrade these functors to land in <span class="process-math">\(\mathbf{A b}\text{,}\)</span> or in <span class="process-math">\(R\)</span>-Mod when <span class="process-math">\(R\)</span> is commutative, not just in <span class="process-math">\(\Set\text{.}\)</span> Note that while there are two Hom-functors, we will sometimes refer to the Hom functor when talking about properties that are common to both of them.</div>
+<div class="para" id="subsec-additive-functors-3">Since <span class="process-math">\(R\)</span>-Mod is a locally small category, we saw in Definition 1.34 that there are two <span class="process-math">\(\Hom\)</span>-functors from <span class="process-math">\(R\)</span>-Mod to <span class="process-math">\(\Set\text{,}\)</span> the covariant functor <span class="process-math">\(\operatorname{Hom}_{R}(M,-): R\)</span>-Mod <span class="process-math">\(\longrightarrow\)</span> Set and the contravariant functor <span class="process-math">\(\operatorname{Hom}_{R}(-, N): R\)</span>-Mod <span class="process-math">\(\longrightarrow\)</span> Set. In light of <a href="" class="xref" data-knowl="./knowl/xref/exe-37.html" title="Exercise 3.2">Exercise 3.2</a>, we can upgrade these functors to land in <span class="process-math">\(\mathbf{A b}\text{,}\)</span> or in <span class="process-math">\(R\)</span>-Mod when <span class="process-math">\(R\)</span> is commutative, not just in <span class="process-math">\(\Set\text{.}\)</span> Note that while there are two <span class="process-math">\(\Hom\)</span>-functors, we will sometimes refer to the Hom functor when talking about properties that are common to both of them.</div>
 <div class="para" id="subsec-additive-functors-4">A functor that lands in <span class="process-math">\(\mathbb{R}-\bmod\text{,}\)</span> or <span class="process-math">\(\mathbf{A b}\)</span> in particular, can have some additional good properties.</div>
 <article class="definition definition-like" id="def-3.2"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Additive Functor.</span>
@@ -724,7 +724,7 @@ f \longmapsto T(f)
 <article class="exercise exercise-like" id="exe-39"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Hom\)</span> is Additive.</span>
 </h4>
-<div class="para" id="exe-39-2">Show that <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}(-, N)\)</span> are both additive functors.</div></article><div class="para" id="subsec-additive-functors-8">Note that in <a href="" class="xref" data-knowl="./knowl/xref/exe-39.html" title="Exercise 3.6: \Hom is Additive">Exercise 3.6</a> we were purposely vague about where <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}(-, N)\)</span> land: these are additive functors whether we consider them as functors with target <span class="process-math">\(\mathbf{A b}\)</span> or target <span class="process-math">\(R\)</span>-Mod, when appropriate.</div>
+<div class="para" id="exe-39-2-1">Show that <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}(-, N)\)</span> are both additive functors.</div></article><div class="para" id="subsec-additive-functors-8">Note that in <a href="" class="xref" data-knowl="./knowl/xref/exe-39.html" title="Exercise 3.6: \Hom is Additive">Exercise 3.6</a> we were purposely vague about where <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}(-, N)\)</span> land: these are additive functors whether we consider them as functors with target <span class="process-math">\(\mathbf{A b}\)</span> or target <span class="process-math">\(R\)</span>-Mod, when appropriate.</div>
 <div class="para" id="subsec-additive-functors-9">Additive functors have many nice properties.</div>
 <article class="lemma theorem-like" id="lem-3.3"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Additive Functors.</span>
@@ -762,11 +762,11 @@ f \longmapsto T(f)
 </div></article><article class="exercise exercise-like" id="exe-40"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Homology is Additive.</span>
 </h4>
-<div class="para" id="exe-40-2">Show that homology is an additive functor.</div></article><div class="para" id="subsec-additive-functors-13">Most functors between categories or modules or chain complexes are additive. In fact, we will spend the rest of this chapter studying three very important additive functors: the two <span class="process-math">\(\Hom\)</span> functors, and a third functor we have yet to define.</div>
+<div class="para" id="exe-40-2-1">Show that homology is an additive functor.</div></article><div class="para" id="subsec-additive-functors-13">Most functors between categories or modules or chain complexes are additive. In fact, we will spend the rest of this chapter studying three very important additive functors: the two <span class="process-math">\(\Hom\)</span> functors, and a third functor we have yet to define.</div>
 <article class="exercise exercise-like" id="exe-41"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Additive Functors Preserve Direct Sums.</span>
 </h4>
-<div class="para logical" id="exe-41-2">
+<div class="para logical" id="exe-41-2-1">
 <div class="para">Let <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> be rings and let <span class="process-math">\(T: R\)</span>-Mod <span class="process-math">\(\longrightarrow S\)</span>-Mod be an additive functor. Show that for all <span class="process-math">\(R\)</span>-modules <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -835,16 +835,14 @@ f \longmapsto\left(f \iota_{i}\right)
 <article class="exercise exercise-like" id="exe-42"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.12</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-42-1">Show that the isomorphisms in <a href="" class="xref" data-knowl="./knowl/xref/thm-3.5.html" title="Theorem 3.11">Theorem 3.11</a> are natural on both components. More precisely, given any other family of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(L_{i}\)</span> such that for each <span class="process-math">\(i\)</span> there exists <span class="process-math">\(j\text{,}\)</span> a map <span class="process-math">\(\sigma_{i j}\)</span> there exist <span class="process-math">\(R\)</span>-module maps making the following diagrams commute:</div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-074(1).jpg" class="contained"></div>
-<div class="para" id="exe-42-3">In fact, one can show that more generally, <span class="process-math">\(\Hom\)</span> behaves well with limits and colimits.</div></article><article class="exercise exercise-like" id="exe-43"><h4 class="heading">
+<div class="para" id="exe-42-1-1">Show that the isomorphisms in <a href="" class="xref" data-knowl="./knowl/xref/thm-3.5.html" title="Theorem 3.11">Theorem 3.11</a> are natural on both components. More precisely, given any other family of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(L_{i}\)</span> such that for each <span class="process-math">\(i\)</span> there exists <span class="process-math">\(j\text{,}\)</span> a map <span class="process-math">\(\sigma_{i j}\)</span> there exist <span class="process-math">\(R\)</span>-module maps making the following diagrams commute:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-074(1).jpg" class="contained"></div> <div class="para" id="exe-42-1-3">In fact, one can show that more generally, <span class="process-math">\(\Hom\)</span> behaves well with limits and colimits.</div></article><article class="exercise exercise-like" id="exe-43"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.13</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="exe-43-1">
+<div class="para logical" id="exe-43-1-1">
 <div class="para">Let <span class="process-math">\(R\)</span> be any ring and consider <span class="process-math">\(R\)</span>-modules <span class="process-math">\(A\)</span> and <span class="process-math">\(\left\{M_{i}\right\}\text{.}\)</span>
 </div>
 <ol class="decimal">
-<li id="exe-43-1-5-1"><div class="para logical" id="exe-43-1-5-1-1">
+<li id="exe-43-1-1-5-1"><div class="para logical" id="exe-43-1-1-5-1-1">
 <div class="para">For any inverse system <span class="process-math">\(\left\{M_{i}\right\}\text{,}\)</span> there is a natural isomorphism</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -852,7 +850,7 @@ f \longmapsto\left(f \iota_{i}\right)
 \end{equation*}
 </div>
 </div></li>
-<li id="exe-43-1-5-2"><div class="para logical" id="exe-43-1-5-2-1">
+<li id="exe-43-1-1-5-2"><div class="para logical" id="exe-43-1-1-5-2-1">
 <div class="para">For any direct system <span class="process-math">\(\left\{M_{i}\right\}\)</span> or <span class="process-math">\(R\)</span>-modules, there is a natural isomorphism</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -919,7 +917,7 @@ F(g f)=F(g) F(f)=F(0)=0.
 </div></article><article class="exercise exercise-like" id="exe-44"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Functors are Exact iff They Commute with Homology.</span>
 </h4>
-<div class="para logical" id="exe-44-2">
+<div class="para logical" id="exe-44-2-1">
 <div class="para">Show that an additive functor <span class="process-math">\(T\)</span> is exact if it commutes with homology, that is, for all complexes <span class="process-math">\(C\)</span> and all <span class="process-math">\(n\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -985,7 +983,7 @@ T(C) \stackrel{T(g)}{\longrightarrow} T(B) \stackrel{T(f)}{\longrightarrow} T(A)
 </div></article><article class="exercise exercise-like" id="exe-45"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.19</span><span class="period">.</span><span class="space"> </span><span class="title">Exactness and SESs.</span>
 </h4>
-<div class="para logical" id="exe-45-2">
+<div class="para logical" id="exe-45-2-1">
 <div class="para">The definitions above all stay unchanged if for each condition we start with a short exact sequence. For example, a covariant additive functor <span class="process-math">\(T\)</span> is left exact if and only if for every short exact sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1193,7 +1191,7 @@ F\left(Z / p^{3}\right)=\operatorname{Hom}_{\mathbb{Z}}\left(\mathbb{Z} / p, \ma
 <article class="exercise exercise-like" id="exe-46"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3.24</span><span class="period">.</span><span class="space"> </span><span class="title">Additive Functors Preserve Split Exact Sequences.</span>
 </h4>
-<div class="para" id="exe-46-2">Show that additive functors preserve split short exact sequences.</div></article></section><section class="subsection" id="subsec-hom-left"><h3 class="heading hide-type">
+<div class="para" id="exe-46-2-1">Show that additive functors preserve split short exact sequences.</div></article></section><section class="subsection" id="subsec-hom-left"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span>
 </h3>
 <blockquote class="blockquote" id="subsec-hom-left-2">

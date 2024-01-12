@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -626,29 +626,27 @@ window.MathJax = {
 </h3>
 <div class="para" id="subsec-proj-inj-ab-2">A lot of the notions we have studied this semester can be extended to the setting of a general abelian category.</div>
 <article class="definition definition-like" id="def-7.49"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.70</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.69</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.49-1-1">Definition 7.49. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. An object <span class="process-math">\(P\)</span> in <span class="process-math">\(\mathcal{A}\)</span> is <em class="emphasis">projective</em> if <span class="process-math">\(\operatorname{Hom}_{\mathcal{A}}(P,-)\)</span> is an exact functor. An object <span class="process-math">\(E\)</span> in <span class="process-math">\(\mathcal{A}\)</span> is <em class="emphasis">injective</em> if <span class="process-math">\(\operatorname{Hom}_{\mathcal{A}}(-, E)\)</span> is exact.</div></article><div class="para" id="subsec-proj-inj-ab-4">This generalizes the notion of projective and injective modules.</div>
 <article class="remark remark-like" id="rem-7.50"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.71</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.70</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.50-1">Remark 7.50. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. An object <span class="process-math">\(P\)</span> is projective if and only if every arrow <span class="process-math">\(P \longrightarrow Y\)</span> factors through every epi <span class="process-math">\(X \longrightarrow Y\)</span> :</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-18(2).jpg" class="contained"></div> <div class="para" id="rem-7.50-3">and an object <span class="process-math">\(E\)</span> is injective if and only if every arrow <span class="process-math">\(X \longrightarrow E\)</span> factors through every mono <span class="process-math">\(X \longrightarrow Y\)</span> :</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-18(1).jpg" class="contained"></div></article><article class="exercise exercise-like" id="exe-93"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.72</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.71</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-93-1">Exercise 93. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category.</div>
-<div class="para" id="exe-93-2">a) Show that <span class="process-math">\(\operatorname{Hom}_{\mathcal{A}}(x \oplus y, z)=\operatorname{Hom}_{\mathcal{A}}(x, z) \oplus \operatorname{Hom}_{\mathcal{A}}(y, z)\text{.}\)</span>
-</div>
-<div class="para" id="exe-93-3">b) Show that if <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are projective, then so is <span class="process-math">\(P \oplus Q\text{.}\)</span>
+<div class="para" id="exe-93-1-1">Exercise 93. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category.</div> <div class="para" id="exe-93-1-2">a) Show that <span class="process-math">\(\operatorname{Hom}_{\mathcal{A}}(x \oplus y, z)=\operatorname{Hom}_{\mathcal{A}}(x, z) \oplus \operatorname{Hom}_{\mathcal{A}}(y, z)\text{.}\)</span>
+</div> <div class="para" id="exe-93-1-3">b) Show that if <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are projective, then so is <span class="process-math">\(P \oplus Q\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-7.51"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.73</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.72</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.51-1-1">Definition 7.51. An abelian category <span class="process-math">\(\mathcal{A}\)</span> has <em class="emphasis">enough projectives</em> if for every object <span class="process-math">\(M\)</span> there exists a projective object <span class="process-math">\(P\)</span> and an epi <span class="process-math">\(P \longrightarrow M\text{.}\)</span> We say that <span class="process-math">\(\mathcal{A}\)</span> has <em class="emphasis">enough injectives</em> if for every object <span class="process-math">\(M\)</span> there exists an injective object <span class="process-math">\(E\)</span> and a mono <span class="process-math">\(M \longrightarrow E\text{.}\)</span>
 </div></article><div class="para" id="subsec-proj-inj-ab-8">Lemma 4.13 and Theorem 4.31 say that <span class="process-math">\(R\)</span>-Mod has enough injectives and enough projectives.</div>
 <article class="example example-like" id="ex-7.52"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.74</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.73</span><span class="period">.</span>
 </h4>
 <div class="para" id="ex-7.52-1">Example 7.52. The category of finite abelian groups has no projectives beside 0. In particular, Ab does not have enough projectives.</div></article><article class="definition definition-like" id="def-7.53"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.75</span><span class="period">.</span><span class="space"> </span><span class="title">Projective Resolution.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.74</span><span class="period">.</span><span class="space"> </span><span class="title">Projective Resolution.</span>
 </h4> <div class="para logical" id="def-7.53-2-1">
 <div class="para">Definition 7.53. Let <span class="process-math">\(M\)</span> be an object in the abelian category <span class="process-math">\(\mathcal{A}\text{.}\)</span> A projective resolution of <span class="process-math">\(M\)</span> is a complex</div>
 <div class="displaymath process-math">
@@ -665,7 +663,7 @@ window.MathJax = {
 <div class="para">such that every <span class="process-math">\(E^{n}\)</span> is injective, <span class="process-math">\(\mathrm{H}^{n}(E)=0\)</span> for all <span class="process-math">\(n\text{,}\)</span> and <span class="process-math">\(\mathrm{H}^{0}(E)=M\text{.}\)</span>
 </div>
 </div></article><article class="theorem theorem-like" id="thm-7.54"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.76</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.75</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-7.54-1-1">Theorem 7.54. If <span class="process-math">\(\mathcal{A}\)</span> has enough projectives, every object in <span class="process-math">\(\mathcal{A}\)</span> has a projective resolution. Similarly, if <span class="process-math">\(\mathcal{A}\)</span> has enough injectives, every object in <span class="process-math">\(\mathcal{A}\)</span> has an injective resolution.</div></article><details id="thm-7.54-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-7.54-2-1">
 <div class="para">Proof. Given be an object <span class="process-math">\(M\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> let’s construct a projective resolution explicitly. We start by picking an epi <span class="process-math">\(P_{0} \stackrel{\varepsilon}{\rightarrow} M\)</span> from a projective <span class="process-math">\(P_{0}\text{.}\)</span> Since <span class="process-math">\(\epsilon\)</span> is an epi, it is the cokernel of its kernel, so</div>
@@ -681,7 +679,7 @@ window.MathJax = {
 </h3>
 <div class="para" id="subsec-split-ab-2">We can also characterize injectives in term of split short exact sequences, as we did for modules. In particular, the Splitting Lemma extends to any abelian category.</div>
 <article class="definition definition-like" id="def-7.55"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.77</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.76</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.55-1-1">Definition 7.55. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. A short exact sequence</div> <div class="para logical" id="def-7.55-1-2"><div class="displaymath process-math">
 \begin{equation*}
@@ -699,7 +697,7 @@ window.MathJax = {
 \end{equation*}
 </div></div> <div class="para" id="def-7.55-1-6">where the arrows are the canonical arrows that come with the (co)product <span class="process-math">\(A \oplus C\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="thm-7.56"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.78</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.77</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-7.56-1-1">Theorem 7.56. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. Every short exact sequence</div> <div class="para logical" id="thm-7.56-1-2"><div class="displaymath process-math">
 \begin{equation*}
@@ -712,19 +710,19 @@ window.MathJax = {
 <div class="para" id="subsec-split-ab-9">commutes, so <span class="process-math">\(h f=\operatorname{id}_{A}\text{,}\)</span> and <span class="process-math">\(h\)</span> is a splitting.</div>
 <div class="para" id="subsec-split-ab-10">More generally, we can talk about split exact complexes.</div>
 <article class="definition definition-like" id="def-7.57"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.79</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.78</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.57-1-1">Definition 7.57. A complex <span class="process-math">\(C\)</span> in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\)</span> is split if there are arrows <span class="process-math">\(s_{n}: C_{n} \longrightarrow C_{n+1}\)</span> such that the differential <span class="process-math">\(\partial\)</span> satisfies <span class="process-math">\(\partial=\partial s \partial\text{.}\)</span> A complex is split exact if it is both exact and split.</div></article><article class="remark remark-like" id="rem-7.58"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.80</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.79</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.58-1">Remark 7.58. A split short exact sequence is precisely a short exact sequence that is a split complex.</div></article><article class="exercise exercise-like" id="exe-94"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.81</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.80</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-94-1">Exercise 94. Additive functors preserve split complexes, meaning that if <span class="process-math">\(C\)</span> is a split complex, then so is <span class="process-math">\(F(C)\)</span> for any additive functor <span class="process-math">\(F\text{.}\)</span> In particular, additive functors preserve split short exact sequences.</div></article></section><section class="subsection" id="subsec-res-ab"><h3 class="heading hide-type">
+<div class="para" id="exe-94-1-1">Exercise 94. Additive functors preserve split complexes, meaning that if <span class="process-math">\(C\)</span> is a split complex, then so is <span class="process-math">\(F(C)\)</span> for any additive functor <span class="process-math">\(F\text{.}\)</span> In particular, additive functors preserve split short exact sequences.</div></article></section><section class="subsection" id="subsec-res-ab"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span>
 </h3>
 <article class="lemma theorem-like" id="lem-7.59"><h4 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.82</span><span class="period">.</span>
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.81</span><span class="period">.</span>
 </h4>
 <div class="para" id="lem-7.59-1-1">Lemma 7.59. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category, <span class="process-math">\((P, \partial)\)</span> in <span class="process-math">\(\mathrm{Ch}_{\geqslant 0}(\mathcal{A})\)</span> with each <span class="process-math">\(P_{i}\)</span> projective, <span class="process-math">\(P_{0} \xrightarrow{\partial_{0}} M\)</span> an arrow in <span class="process-math">\(\mathcal{A}\)</span> such that <span class="process-math">\(\partial_{0} \partial_{1}=0\)</span> and <span class="process-math">\((Q, \delta)\)</span> a projective resolution of <span class="process-math">\(N\text{.}\)</span> Given any <span class="process-math">\(M \stackrel{f}{\rightarrow}\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> there exists a map of complexes <span class="process-math">\(P \xrightarrow{\varphi} Q\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-21(2).jpg" class="contained"></div> <div class="para" id="lem-7.59-1-3">commutes, which is unique up to homotopy.</div></article><details id="lem-7.59-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-7.59-2-1">Proof. Since <span class="process-math">\(P_{0}\)</span> is projective and <span class="process-math">\(\delta_{0}\)</span> is an epi, there exists <span class="process-math">\(\varphi_{0}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-21(1).jpg" class="contained"></div> <div class="para" id="lem-7.59-2-3">commutes.</div> <div class="para" id="lem-7.59-2-4">We proceed inductively, assuming we have <span class="process-math">\(\varphi_{0}, \ldots, \varphi_{n-1}\)</span> with <span class="process-math">\(\varphi_{n-2} \partial_{n-1}=\delta_{n-2} \varphi_{n-1}\text{.}\)</span> Since <span class="process-math">\(P_{n}\)</span> is projective, there exists <span class="process-math">\(\varphi_{n}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-21(3).jpg" class="contained"></div> <div class="para" id="lem-7.59-2-6">commutes. Commutativity gives <span class="process-math">\(\delta_{n-1} \varphi_{n-1} \partial_{n}=\varphi_{n-2} \partial_{n-1} \partial_{n}=0\text{,}\)</span> so <span class="process-math">\(\varphi_{n-1} \partial_{n}\)</span> factors through the kernel of <span class="process-math">\(\delta_{n-1}\text{.}\)</span>
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-21.jpg" class="contained"></div> <div class="para" id="lem-7.59-2-8">Since <span class="process-math">\(Q\)</span> is a projective resolution of <span class="process-math">\(N\text{,}\)</span> the arrow <span class="process-math">\(Q_{n} \longrightarrow Z_{n-1}(Q)\)</span> above is an epi, so the arrow <span class="process-math">\(P_{n} \longrightarrow Z_{n-1}(Q)\)</span> we just constructed factors through <span class="process-math">\(Q_{n}\text{,}\)</span> giving us <span class="process-math">\(\varphi_{n}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-22(2).jpg" class="contained"></div> <div class="para" id="lem-7.59-2-10">commutes.</div> <div class="para" id="lem-7.59-2-11">Now suppose we are given two such maps of complexes <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> lifting <span class="process-math">\(f\text{,}\)</span> say <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\text{.}\)</span> Note that <span class="process-math">\(\varphi-\psi\)</span> and 0 are two liftings of the 0 map. We are going to show that any map lifting the 0 map <span class="process-math">\(M \longrightarrow N\)</span> must be nullhomotopic, which will then imply that <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> are homotopic as well (essentially via the same homotopy!).</div> <div class="para" id="lem-7.59-2-12">So let <span class="process-math">\(\varphi: P \longrightarrow C\)</span> be a map of complexes lifting the 0 map <span class="process-math">\(M \longrightarrow N\text{.}\)</span>
@@ -739,7 +737,7 @@ window.MathJax = {
 \end{aligned}
 \end{equation*}
 </div></div> <div class="para" id="lem-7.59-2-19">so <span class="process-math">\(\delta_{n}\left(\varphi_{n}-H_{n-1} \partial_{n}\right)=0\text{.}\)</span> Therefore, <span class="process-math">\(\varphi_{n}\)</span> factors through <span class="process-math">\(Z_{n}(Q)\text{,}\)</span> and since <span class="process-math">\(Q\)</span> is a projective resolution of <span class="process-math">\(N, Q_{n+1} \longrightarrow Z_{n}(Q)\)</span> is an epi. Therefore, the factorization of <span class="process-math">\(\varphi_{n}-H_{n-1} \partial_{n}\)</span> through <span class="process-math">\(Z_{n}(Q)\)</span> also factors through <span class="process-math">\(Q_{n}\text{,}\)</span> and we end up with an arrow <span class="process-math">\(H_{n}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-23(1).jpg" class="contained"></div> <div class="para" id="lem-7.59-2-21">commutes. This <span class="process-math">\(H_{n}\)</span> must then satisfy <span class="process-math">\(\delta_{n-1} H_{n}+H_{n-1} \partial_{n}=\varphi_{n}\text{,}\)</span> and ultimately <span class="process-math">\(H\)</span> is a homotopy between <span class="process-math">\(\varphi\)</span> and 0 .</div></article></details><article class="theorem theorem-like" id="thm-7.60"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.83</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.82</span><span class="period">.</span>
 </h4>
 <div class="para" id="thm-7.60-1-1">Theorem 7.60 (Horseshoe Lemma). Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category, <span class="process-math">\(P\)</span> be a projective resolution of <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(R\)</span> be a projective resolution of <span class="process-math">\(C\text{.}\)</span> If</div> <div class="para logical" id="thm-7.60-1-2"><div class="displaymath process-math">
 \begin{equation*}
@@ -764,7 +762,7 @@ window.MathJax = {
 </div>
 <div class="para">is exact. We then proceed by induction, and at each step we apply the base case to</div>
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-24.jpg" class="contained"></div> <div class="para" id="thm-7.60-2-11">where the vertical arrows are epi because <span class="process-math">\(P\)</span> and <span class="process-math">\(R\)</span> are projective resolutions and thus exact.</div></article></details><article class="remark remark-like" id="rem-7.61"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.84</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.83</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.61-1">By duality, if <span class="process-math">\(\mathcal{A}\)</span> has enough injectives,</div> <div class="para logical" id="rem-7.61-2"><div class="displaymath process-math">
 \begin{equation*}

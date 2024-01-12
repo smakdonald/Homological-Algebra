@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -626,7 +626,7 @@ window.MathJax = {
 </h3>
 <div class="para" id="subsec-derived-ab-2">We are now ready to define derived functors in full generality. The definitions will match the definitions over <span class="process-math">\(R\)</span>-modules; the one notable addition from <span class="process-math">\(R\)</span>-Mod to the general case is the new need to worry about whether the abelian category in question has enough injectives or enough projectives.</div>
 <article class="definition definition-like" id="def-7.62"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.85</span><span class="period">.</span><span class="space"> </span><span class="title">Derived functors.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.84</span><span class="period">.</span><span class="space"> </span><span class="title">Derived functors.</span>
 </h4> <div class="para" id="def-7.62-2-1">Let <span class="process-math">\(\mathcal{A}\)</span> and <span class="process-math">\(\mathcal{B}\)</span> be abelian categories.</div> <div class="para logical" id="def-7.62-2-2">
 <div class="para">Let <span class="process-math">\(F: \mathcal{A} \longrightarrow \mathcal{B}\)</span> be a covariant right exact functor. If <span class="process-math">\(\mathcal{A}\)</span> has enough projectives, the left derived functors of <span class="process-math">\(F\)</span> are a sequence of functors <span class="process-math">\(L_{i} F: \mathcal{A} \longrightarrow \mathcal{B}, i \geqslant 0\text{,}\)</span> defined as follows:</div>
 <ul class="disc">
@@ -705,15 +705,15 @@ L_{i} F(f):=\mathrm{H}_{i}(F(\varphi))
 </div></li>
 </ul>
 </div></article><article class="remark remark-like" id="rem-7.63"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.86</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.85</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.63-1">If <span class="process-math">\(F\)</span> is exact, then <span class="process-math">\(\mathrm{H}_{i}(F(C))=F\left(\mathrm{H}_{i}(C)\right)\text{,}\)</span> so <span class="process-math">\(L_{i} F=0\)</span> for all <span class="process-math">\(i&gt;0\text{.}\)</span>
 </div></article><article class="remark remark-like" id="rem-7.64"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.87</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.86</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.64-1">If <span class="process-math">\(P\)</span> is projective, then <span class="process-math">\(0 \longrightarrow P \longrightarrow 0\)</span> is a projective resolution of <span class="process-math">\(P\text{,}\)</span> and thus <span class="process-math">\(L_{i} F(P)=0\)</span> for all <span class="process-math">\(i&gt;0\text{.}\)</span> Similarly, if <span class="process-math">\(E\)</span> is injective then <span class="process-math">\(R^{i} F(E)=0\text{.}\)</span>
 </div></article><article class="proposition theorem-like" id="prop-7.65"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.88</span><span class="period">.</span>
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.87</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="prop-7.65-1-1">
 <div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category with enough projectives, and <span class="process-math">\(F\)</span> a covariant right exact functor.</div>
@@ -733,7 +733,7 @@ L_{i} F(f):=\mathrm{H}_{i}(F(\varphi))
 <li id="prop-7.65-2-1-1-1"><div class="para" id="prop-7.65-2-1-1-1-1">Let <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> be projective resolutions of <span class="process-math">\(A\text{.}\)</span> Theorem 5.17 gives us maps of complexes <span class="process-math">\(\varphi: P \rightarrow Q\)</span> and <span class="process-math">\(\psi: Q \rightarrow P\)</span> such that <span class="process-math">\(\varphi \psi\)</span> is homotopic to <span class="process-math">\(1_{Q}\)</span> and <span class="process-math">\(\psi \varphi\)</span> is homotopic to <span class="process-math">\(1_{P}\text{.}\)</span> Additive functors preserve homotopies, by Remark 7.37, so <span class="process-math">\(F(\varphi) F(\psi)\)</span> and <span class="process-math">\(F(\psi) F(\varphi)\)</span> are homotopic to the corresponding identity arrows. Homotopic maps induce the same map in homology, by Exercise 90. Therefore, <span class="process-math">\(F(\varphi)\)</span> and <span class="process-math">\(F(\psi)\)</span> induce isomorphisms in homology.</div></li>
 <li id="prop-7.65-2-1-1-2"><div class="para" id="prop-7.65-2-1-1-2-1">Fix projective resolutions <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> of <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{.}\)</span> Any two lifts <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> of <span class="process-math">\(f: M \longrightarrow N\)</span> to <span class="process-math">\(P \longrightarrow Q\)</span> are homotopic, by Lemma 7.59. Additive functors preserve homotopies, by Remark 7.37, so <span class="process-math">\(F(\varphi)\)</span> and <span class="process-math">\(F(\psi)\)</span> are homotopic. Homotopic maps induce the same map in homology, by Exercise 90, so <span class="process-math">\(L_{i} F(\varphi)=L_{i} F(\psi)\)</span> for each <span class="process-math">\(i\text{.}\)</span>
 </div></li>
-<li id="prop-7.65-2-1-1-3"><div class="para" id="prop-7.65-2-1-1-3-1">Given an arrow <span class="process-math">\(f\text{,}\)</span> fix a lift <span class="process-math">\(\varphi\)</span> of <span class="process-math">\(f\)</span> to projective resolutions of the source and target. Since <span class="process-math">\(F\)</span> is an additive functor, <span class="process-math">\(\mathrm{H}_{i}(F(\varphi))\)</span> is a homomorphism for each <span class="process-math">\(i\text{,}\)</span> and thus <span class="process-math">\(L_{i} F(f)\)</span> is a homomorphism between the corresponding Hom-groups, which as we’ve seen is independent of our choice of <span class="process-math">\(\varphi\text{.}\)</span>
+<li id="prop-7.65-2-1-1-3"><div class="para" id="prop-7.65-2-1-1-3-1">Given an arrow <span class="process-math">\(f\text{,}\)</span> fix a lift <span class="process-math">\(\varphi\)</span> of <span class="process-math">\(f\)</span> to projective resolutions of the source and target. Since <span class="process-math">\(F\)</span> is an additive functor, <span class="process-math">\(\mathrm{H}_{i}(F(\varphi))\)</span> is a homomorphism for each <span class="process-math">\(i\text{,}\)</span> and thus <span class="process-math">\(L_{i} F(f)\)</span> is a homomorphism between the corresponding <span class="process-math">\(\Hom\)</span>-groups, which as we’ve seen is independent of our choice of <span class="process-math">\(\varphi\text{.}\)</span>
 </div></li>
 <li id="prop-7.65-2-1-1-4">
 <div class="para logical" id="prop-7.65-2-1-1-4-1">
@@ -754,27 +754,27 @@ F\left(P_{1}\right) \longrightarrow F\left(P_{0}\right) \longrightarrow F(A) \lo
 </div>
 </li>
 </ol></div></article></details><article class="exercise exercise-like" id="exe-95"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.89</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.88</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="exe-95-1">
+<div class="para logical" id="exe-95-1-1">
 <div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category with enough injectives, and <span class="process-math">\(F\)</span> a covariant left exact functor.</div>
 <ol class="decimal">
-<li id="exe-95-1-3-1"><div class="para" id="exe-95-1-3-1-1">
+<li id="exe-95-1-1-3-1"><div class="para" id="exe-95-1-1-3-1-1">
 <span class="process-math">\(R^{i} F(A)\)</span> is well-defined up to isomorphism.</div></li>
-<li id="exe-95-1-3-2"><div class="para" id="exe-95-1-3-2-1">
+<li id="exe-95-1-1-3-2"><div class="para" id="exe-95-1-1-3-2-1">
 <span class="process-math">\(R^{i} F(f)\)</span> is well-defined for every arrow <span class="process-math">\(f\text{.}\)</span>
 </div></li>
-<li id="exe-95-1-3-3"><div class="para" id="exe-95-1-3-3-1">
+<li id="exe-95-1-1-3-3"><div class="para" id="exe-95-1-1-3-3-1">
 <span class="process-math">\(R^{i} F(f)\)</span> is an additive functor for every <span class="process-math">\(i\text{.}\)</span>
 </div></li>
-<li id="exe-95-1-3-4"><div class="para" id="exe-95-1-3-4-1"><span class="process-math">\(R^{0} F=F\text{.}\)</span></div></li>
+<li id="exe-95-1-1-3-4"><div class="para" id="exe-95-1-1-3-4-1"><span class="process-math">\(R^{0} F=F\text{.}\)</span></div></li>
 </ol>
 </div></article><article class="remark remark-like" id="rem-7.66"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.90</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.89</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.66-1">If <span class="process-math">\(\mathcal{A}\)</span> is an abelian category with enough injectives, then <span class="process-math">\(\mathcal{A}^{\text {op }}\)</span> is an abelian category with enough projectives. This gives us a relationship between left derived and right derived functors: <span class="process-math">\(R^{i} F=\left(L_{i} F^{\mathrm{op}}\right)^{\mathrm{op}}\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="thm-7.67"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.91</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.90</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="thm-7.67-1-1">
 <div class="para">Let <span class="process-math">\(T_{i}: \mathcal{A} \longrightarrow \mathcal{B}\)</span> be a sequence of additive covariant functors between abelian categories, where <span class="process-math">\(\mathcal{A}\)</span> has enough projectives, and <span class="process-math">\(F: \mathcal{A} \longrightarrow \mathcal{B}\)</span> a right exact functor. Suppose the following hold:</div>

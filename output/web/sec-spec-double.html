@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-spec-filt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-spectral-sequences.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="exercises.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-spec-filt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-spectral-sequences.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
 \newcommand{\Ass}{\operatorname{Ass}}
 \def\Aut{\operatorname{Aut}}
 \def\can{{\mathrm {can}}}
@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -842,9 +842,28 @@ d_{1}: \mathrm{H}_{q}^{h}\left(C_{\bullet, p}\right)=E_{p, q}^{1} \longrightarro
 </div></div>
 <div class="para" id="sec-spec-double-95">Thus we get an exact sequence</div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-48.svg" role="img" class="contained"></div>
-<div class="para" id="sec-spec-double-97">where the map <span class="process-math">\(\partial\)</span> obtained by composition is the connecting homomorphism we dreamed of.</div></section></div>
+<div class="para" id="sec-spec-double-97">where the map <span class="process-math">\(\partial\)</span> obtained by composition is the connecting homomorphism we dreamed of.</div>
+<article class="exercise exercise-like" id="exe-96"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="exe-96-1-1">Exercise 96. Show that if <span class="process-math">\(M\)</span> is a first quadrant double complex with exact rows or exact columns, then <span class="process-math">\(\operatorname{Tot}^{\oplus}(M)\)</span> is exact.</div>
+<div class="solutions"><details id="exe-96-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="exe-96-2-1"></div></div></details></div></article><article class="exercise exercise-like" id="exe-97"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="exe-97-1-1">Exercise 97. Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules and fix projective resolutions <span class="process-math">\(P\)</span> for <span class="process-math">\(M\)</span> and <span class="process-math">\(Q\)</span> for <span class="process-math">\(N\text{.}\)</span> Consider the double complex <span class="process-math">\(C=P \otimes_{R} Q\text{.}\)</span>
+</div> <div class="para" id="exe-97-1-2">a) Compute the spectral sequence associated to the First Filtration (I) on <span class="process-math">\(C\)</span> up to the <span class="process-math">\(E^{2}\)</span> page.</div> <div class="para" id="exe-97-1-3">b) Compute the spectral sequence associated to the Second Filtration II on <span class="process-math">\(C\)</span> up to the <span class="process-math">\(E^{2}\)</span> page.</div> <div class="para" id="exe-97-1-4">c) Give a new proof that Tor is balanced:</div> <div class="para logical" id="exe-97-1-5"><div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}\left(P \otimes_{R} N\right) \cong \mathrm{H}_{n}\left(M \otimes_{R} Q\right) .
+\end{equation*}
+</div></div>
+<div class="solutions"><details id="exe-97-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="exe-97-2-1"></div></div></details></div></article><article class="exercise exercise-like" id="exe-98"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="exe-98-1-1">Exercise 98. Consider the following first quadrant double complex <span class="process-math">\(C\)</span> :</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-49.svg" role="img" class="contained"></div> <div class="para" id="exe-98-1-3">a) Compute the spectral sequence associated to the First Filtration (I) until it stabilizes.</div> <div class="para" id="exe-98-1-4">b) Compute the spectral sequence associated to the Second Filtration II until it stabilizes.</div> <div class="para" id="exe-98-1-5">c) How are the two resulting <span class="process-math">\(E^{\infty}\)</span> pages even possible considering they both converge to the same thing?</div> <div class="para" id="exe-98-1-6">d) Compute <span class="process-math">\(\mathrm{H}_{3}\left(\operatorname{Tot}^{\oplus}(M)\right)\)</span> explicitly using only the two spectral sequences you calculated.</div> <div class="para" id="exe-98-1-7">e) Check your work by computing <span class="process-math">\(\mathrm{H}_{3}\left(\operatorname{Tot}^{\oplus}(M)\right)\)</span> explicitly from the definition of <span class="process-math">\(\operatorname{Tot}^{\oplus}(M)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exe-98-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="exe-98-2-1"></div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-spec-filt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="exercises.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-spec-filt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -664,21 +664,52 @@ window.MathJax = {
 <span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.2</span><span class="period">.</span>
 </h4>
 <div class="para" id="subsec-cat-5-1">We sometimes write <span class="process-math">\(f: A \rightarrow B\)</span> or <span class="process-math">\(A \stackrel{f}{\rightarrow} B\)</span> for an arrow <span class="process-math">\(f \in \operatorname{Hom}(A, B)\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="exp-unique-id-morphism"><h4 class="heading">
+</div></article><article class="exercise exercise-like" id="exe-1"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Unique Identity Morphism.</span>
 </h4>
-<div class="para" id="exp-unique-id-morphism-2-1">Every object in a category has a unique identity morphism.</div></article><div class="para" id="subsec-cat-7">Here are some categories you have likely encountered before:</div>
+<div class="para" id="exe-1-2-1">Every object in a category has a unique identity morphism.</div>
+<div class="solutions"><details id="exe-1-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="exe-1-3-1"></div></div></details></div></article><div class="para" id="subsec-cat-7">Here are some categories you have likely encountered before:</div>
 <article class="example example-like" id="ex-categories"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Categories.</span>
-</h4> <div class="para logical" id="ex-categories-2"><ol class="decimal">
-<li id="ex-categories-2-1-1"><div class="para" id="ex-categories-2-1-1-1">The category <span class="process-math">\(\Set\)</span> with objects all sets and arrows all functions between sets.</div></li>
-<li id="ex-categories-2-1-2"><div class="para" id="ex-categories-2-1-2-1">The category <span class="process-math">\(\Grp\)</span> whose objects are the collection of all groups, and whose arrows are all the homomorphisms of groups. The identity arrows are the identity homomorphisms.</div></li>
-<li id="ex-categories-2-1-3"><div class="para" id="ex-categories-2-1-3-1">The category <span class="process-math">\(\mathbf{Ab}\)</span> with objects all abelian groups, and arrows the homomorphisms of abelian groups. The identity arrows are the identity homomorphisms.</div></li>
-<li id="ex-categories-2-1-4"><div class="para" id="ex-categories-2-1-4-1">The category <span class="process-math">\(\Ring\)</span> of rings and ring homomorphisms. Contrary to what you may expect, this is not nearly as important as the next one.</div></li>
-<li id="ex-categories-2-1-5"><div class="para" id="ex-categories-2-1-5-1">The category <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> of modules over a fixed ring <span class="process-math">\(R\)</span> and with <span class="process-math">\(R\)</span>-module homomorphisms. Sometimes one writes <span class="process-math">\(R\)</span><span class="process-math">\(\Mod\)</span> for this category, and reserve <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> for the category of finitely generated <span class="process-math">\(R\)</span>-modules with <span class="process-math">\(R\)</span><span class="process-math">\(\Mod\)</span>ule homomorphisms. When <span class="process-math">\(R=k\)</span> is a field, the objects in the category <span class="process-math">\(k\)</span>-Mod are <span class="process-math">\(k\)</span>-vector spaces, and the arrows are linear transformations; we may instead refer to this category as Vect-<span class="process-math">\(k\text{.}\)</span>
-</div></li>
-<li id="ex-categories-2-1-6"><div class="para" id="ex-categories-2-1-6-1">The category Top of topological spaces and continuous functions. One may consider many variations of the categories above. Here are some variations on vector spaces:</div></li>
-</ol></div></article><div class="para" id="subsec-cat-9">While the collections of objects and arrows might not actually be sets, sometimes they are.</div>
+</h4> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><dfn class="terminology">Category</dfn></td>
+<td class="c m b1 r0 l0 t0 lines"><dfn class="terminology">Objects</dfn></td>
+<td class="c m b1 r0 l0 t0 lines"><dfn class="terminology">Morphisms</dfn></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\Set\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">sets</td>
+<td class="c m b0 r0 l0 t0 lines">functions</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\Grp\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">groups</td>
+<td class="c m b0 r0 l0 t0 lines">group homomorphisms</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\Ab\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">abelian groups</td>
+<td class="c m b0 r0 l0 t0 lines">abelian group homomorphisms</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\Ring\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">rings</td>
+<td class="c m b0 r0 l0 t0 lines">ring homomorphisms</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(R\Mod\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(R\)</span>-modules</td>
+<td class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\(R\)</span>-maps</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\Top\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">topological spaces</td>
+<td class="c m b0 r0 l0 t0 lines">continuous functions</td>
+</tr>
+</table></div></article><div class="para" id="subsec-cat-9">While the collections of objects and arrows might not actually be sets, sometimes they are.</div>
 <article class="definition definition-like" id="def-locally-small"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Locally Small.</span>
 </h4> <div class="para" id="def-locally-small-2-1">A category <span class="process-math">\(\mathscr{C}\)</span> is <em class="emphasis">locally small</em> if for all objects <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in <span class="process-math">\(\mathscr{C}, \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> is a set. A category <span class="process-math">\(\mathscr{C}\)</span> is <em class="emphasis">small</em> if it is locally small and the collection of all objects in <span class="process-math">\(\mathscr{C}\)</span> is a set.</div></article><div class="para" id="subsec-cat-11">In fact, one can define a small category as one where the collection of all arrows is a set. It follows immediately that the collection of all objects is also a set, since it must be a subset of the set of arrows - for each object, there is an identity arrow.</div>
@@ -694,22 +725,21 @@ window.MathJax = {
 <article class="example example-like" id="non-concrete-categories"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Non-Concrete Categories.</span>
 </h4> <div class="para logical" id="non-concrete-categories-2"><ol class="decimal">
-<li id="ex-poset-category"><div class="para" id="ex-poset-category-1">Given a partially ordered set <span class="process-math">\((X, \leqslant)\text{,}\)</span> we can regard <span class="process-math">\(X\)</span> itself as a category: the objects are the elements of <span class="process-math">\(X\text{,}\)</span> and for each <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in <span class="process-math">\(X, \operatorname{Hom}_{X}(x, y)\)</span> is either a singleton if <span class="process-math">\(x \leqslant y\)</span> or empty if <span class="process-math">\(x \neq y\text{.}\)</span> There is only one possible way to define composition, and the transitive property of <span class="process-math">\(\leqslant\)</span> guarantees that the composition of arrows is indeed well-defined: if there is an arrow <span class="process-math">\(i \rightarrow j\)</span> and an arrow <span class="process-math">\(j \rightarrow k\text{,}\)</span> then <span class="process-math">\(i \leqslant j\)</span> and <span class="process-math">\(j \leqslant k\text{,}\)</span> so <span class="process-math">\(i \leqslant k\)</span> and thus there is a unique arrow <span class="process-math">\(i \rightarrow k\text{.}\)</span> This category is locally small, since all nonempty Hom-sets are in fact singletons. It is in fact small, since the objects are by construction the set <span class="process-math">\(X\text{.}\)</span>
-</div></li>
+<li id="ex-poset-category">
+<span class="heading"><span class="title"><span class="process-math">\(\PO(X)\)</span>.</span></span><div class="para" id="ex-poset-category-2">Given a partially ordered set <span class="process-math">\((X, \leqslant)\text{,}\)</span> we can regard <span class="process-math">\(X\)</span> itself as a category: the objects are the elements of <span class="process-math">\(X\text{,}\)</span> and for each <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in <span class="process-math">\(X, \operatorname{Hom}_{X}(x, y)\)</span> is either a singleton if <span class="process-math">\(x \leqslant y\)</span> or empty if <span class="process-math">\(x \neq y\text{.}\)</span> There is only one possible way to define composition, and the transitive property of <span class="process-math">\(\leqslant\)</span> guarantees that the composition of arrows is indeed well-defined: if there is an arrow <span class="process-math">\(i \rightarrow j\)</span> and an arrow <span class="process-math">\(j \rightarrow k\text{,}\)</span> then <span class="process-math">\(i \leqslant j\)</span> and <span class="process-math">\(j \leqslant k\text{,}\)</span> so <span class="process-math">\(i \leqslant k\)</span> and thus there is a unique arrow <span class="process-math">\(i \rightarrow k\text{.}\)</span> This category is locally small, since all nonempty <span class="process-math">\(\Hom\)</span>-sets are in fact singletons. It is in fact small, since the objects are by construction the set <span class="process-math">\(X\text{.}\)</span>
+</div>
+</li>
 <li id="poset-categories-2">
-<span class="heading"><span class="title"><span class="process-math">\(\mathbf{n}\)</span> Category.</span></span><div class="para" id="poset-categories-2-2">For each positive integer <span class="process-math">\(n\text{,}\)</span> the category <span class="process-math">\(\mathbf{n}\)</span> has <span class="process-math">\(n\)</span> objects <span class="process-math">\(0,1, \ldots, n-1\)</span> and <span class="process-math">\(\operatorname{Hom}(i, j)\)</span> is either empty if <span class="process-math">\(i&gt;j\)</span> or a singleton if <span class="process-math">\(i \leqslant j\text{.}\)</span> As <a href="" class="xref" data-knowl="./knowl/xref/ex-poset-category.html" title="Item 1">Item 1</a>, composition is defined in the only way possible, and things work out. This is the poset category for the poset <span class="process-math">\((\{0,1, \ldots, n-1\}, \leqslant)\)</span> with the usual <span class="process-math">\(\leqslant\text{.}\)</span>
+<span class="heading"><span class="title"><span class="process-math">\(\mathbf{n}\)</span>.</span></span><div class="para" id="poset-categories-2-2">For each positive integer <span class="process-math">\(n\text{,}\)</span> the category <span class="process-math">\(\mathbf{n}\)</span> has <span class="process-math">\(n\)</span> objects <span class="process-math">\(0,1, \ldots, n-1\)</span> and <span class="process-math">\(\operatorname{Hom}(i, j)\)</span> is either empty if <span class="process-math">\(i&gt;j\)</span> or a singleton if <span class="process-math">\(i \leqslant j\text{.}\)</span> As <a href="" class="xref" data-knowl="./knowl/xref/ex-poset-category.html" title="Item 1: \PO(X)">Item 1</a>, composition is defined in the only way possible, and things work out. This is the poset category for the poset <span class="process-math">\((\{0,1, \ldots, n-1\}, \leqslant)\)</span> with the usual <span class="process-math">\(\leqslant\text{.}\)</span>
 </div>
 </li>
 <li id="ex-mat-category">
-<span class="heading"><span class="title">Matrix Category.</span></span><div class="para" id="ex-mat-category-2">Fix a field <span class="process-math">\(k\text{.}\)</span> We define a category Mat-<span class="process-math">\(k\)</span> with objects all positive integers, and given two positive integers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> the <span class="process-math">\(\operatorname{Hom}\)</span>-set <span class="process-math">\(\operatorname{Hom}(a, b)\)</span> consists of all <span class="process-math">\(b \times a\)</span> matrices with entries in <span class="process-math">\(k\text{.}\)</span> The composition rule is given by product of matrices: given <span class="process-math">\(A \in \operatorname{Hom}(a, b)\)</span> and <span class="process-math">\(B \in \operatorname{Hom}(b, c)\text{,}\)</span> the composition <span class="process-math">\(B \circ A\)</span> is the matrix <span class="process-math">\(B A \in \operatorname{Hom}(a, c)\text{.}\)</span> For each object <span class="process-math">\(a\text{,}\)</span> its identity arrow is given by the <span class="process-math">\(a \times a\)</span> identity matrix.</div>
+<span class="heading"><span class="title"><span class="process-math">\(\textbf{Mat}-k\)</span>.</span></span><div class="para" id="ex-mat-category-2">Fix a field <span class="process-math">\(k\text{.}\)</span> We define a category <span class="process-math">\(\textbf{Mat}-k\)</span> with objects all positive integers, and given two positive integers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> the <span class="process-math">\(\operatorname{Hom}\)</span>-set <span class="process-math">\(\operatorname{Hom}(a, b)\)</span> consists of all <span class="process-math">\(b \times a\)</span> matrices with entries in <span class="process-math">\(k\text{.}\)</span> The composition rule is given by product of matrices: given <span class="process-math">\(A \in \operatorname{Hom}(a, b)\)</span> and <span class="process-math">\(B \in \operatorname{Hom}(b, c)\text{,}\)</span> the composition <span class="process-math">\(B \circ A\)</span> is the matrix <span class="process-math">\(B A \in \operatorname{Hom}(a, c)\text{.}\)</span> For each object <span class="process-math">\(a\text{,}\)</span> its identity arrow is given by the <span class="process-math">\(a \times a\)</span> identity matrix.</div>
 </li>
-<li id="ex-directed-graph-category"><div class="para" id="ex-directed-graph-category-1">Let <span class="process-math">\(G\)</span> be a directed graph. We can construct a category from <span class="process-math">\(G\)</span> as follows: the objects are the vertices of <span class="process-math">\(G\text{,}\)</span> and the arrows are directed paths in the graph <span class="process-math">\(G\text{.}\)</span> In this category, composition of arrows corresponds to concatenation of paths. For each object <span class="process-math">\(A\text{,}\)</span> the identity arrow corresponds to the empty path from <span class="process-math">\(A\)</span> to <span class="process-math">\(A\text{.}\)</span>
-</div></li>
 </ol></div></article><article class="remark remark-like" id="subsec-cat-17"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-cat-17-1">A locally small category with just one element is completely determined by its unique Hom-set; it thus consists of a set <span class="process-math">\(S\)</span> with an associative operation that has an identity element, which in this class is what we call a semigroup. <a class="xref" id="subsec-cat-17-1-2" href="" data-knowl="./knowl/fn/subsec-cat-17-1-2.html" title="Footnote 1.1.2"><sup> 2 </sup></a>
-</div></article></section><section class="subsection" id="subsec-diagrams-arrows"><h3 class="heading hide-type">
+<div class="para" id="subsec-cat-17-1">A locally small category with just one element is completely determined by its unique <span class="process-math">\(\Hom\)</span>-set; it thus consists of a set <span class="process-math">\(S\)</span> with an associative operation that has an identity element, which we call a monoid.</div></article></section><section class="subsection" id="subsec-diagrams-arrows"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Diagrams and Morphisms</span>
 </h3>
 <blockquote class="blockquote" id="subsec-diagrams-arrows-2">
@@ -720,7 +750,7 @@ window.MathJax = {
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Diagram.</span>
 </h4> <div class="para" id="def-diagram-2-1">A <em class="emphasis">diagram</em> in a category <span class="process-math">\(\mathscr{C}\)</span> is a directed multigraph whose vertices are objects in <span class="process-math">\(\mathrm{C}\)</span> and whose arrows/edges are morphisms in <span class="process-math">\(\mathscr{C}\text{.}\)</span> A <em class="emphasis">commutative diagram</em> in <span class="process-math">\(\mathscr{C}\)</span> is a diagram in which for each pair of vertices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> any two paths from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\)</span> compose to the same morphism.</div></article><article class="example example-like" id="ex-commutative-diagram"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Commutative Diagram.</span>
-</h4> <div class="para" id="ex-commutative-diagram-2">The diagram</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_08_28_614593e69373955f3addg-11.jpg" class="contained"></div> <div class="para" id="ex-commutative-diagram-4">commutes if and only if <span class="process-math">\(g f=v u\text{.}\)</span>
+</h4> <div class="para" id="ex-commutative-diagram-2">The diagram</div> <div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/2023_08_28_614593e69373955f3addg-11.jpg" class="contained"></div> <div class="para" id="ex-commutative-diagram-4">commutes if and only if <span class="process-math">\(g f=v u\text{.}\)</span>
 </div></article><div class="para" id="subsec-diagrams-arrows-6">There are some special types of arrows we will want to consider.</div>
 <article class="definition definition-like" id="def-inverses"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Morphism Inverses.</span>
@@ -729,12 +759,12 @@ window.MathJax = {
 <ul class="disc">
 <li id="def-inverses-2-1-2-1">
 <div class="para" id="def-inverses-2-1-2-1-1">An arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> is <em class="emphasis">left invertible</em> if there exists <span class="process-math">\(g \in \operatorname{Hom}_{\mathscr{C}}(B, A)\)</span> such that <span class="process-math">\(g f=1_{A}\text{.}\)</span> In this case, we say that <span class="process-math">\(g\)</span> is the left inverse of <span class="process-math">\(f\text{.}\)</span> So <span class="process-math">\(g\)</span> is a left inverse of <span class="process-math">\(f\)</span> if the diagram</div>
-<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_08_28_614593e69373955f3addg-11(1).jpg" class="contained"></div>
+<div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/2023_08_28_614593e69373955f3addg-11(1).jpg" class="contained"></div>
 <div class="para" id="def-inverses-2-1-2-1-3">commutes.</div>
 </li>
 <li id="def-inverses-2-1-2-2">
 <div class="para" id="def-inverses-2-1-2-2-1">An arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> is <em class="emphasis">right invertible</em> if there exists <span class="process-math">\(g \in \operatorname{Hom}_{\mathscr{C}}(B, A)\)</span> such that <span class="process-math">\(f g=1_{B}\text{.}\)</span> In this case, we say that <span class="process-math">\(g\)</span> is the right inverse of <span class="process-math">\(f\text{.}\)</span> So <span class="process-math">\(g\)</span> is a right inverse of <span class="process-math">\(f\)</span> if the diagram</div>
-<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_08_28_614593e69373955f3addg-12.jpg" class="contained"></div>
+<div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/2023_08_28_614593e69373955f3addg-12.jpg" class="contained"></div>
 <div class="para" id="def-inverses-2-1-2-2-3">commutes.</div>
 </li>
 <li id="def-inverses-2-1-2-3"><div class="para" id="def-inverses-2-1-2-3-1">An arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> is an <em class="emphasis">isomorphism</em> if there exists <span class="process-math">\(g \in \operatorname{Hom}_{\mathscr{C}}(B, A)\)</span> such that <span class="process-math">\(g f=1_{A}\)</span> and <span class="process-math">\(f g=1_{B}\text{.}\)</span> Unsurprisingly, such an arrow <span class="process-math">\(g\)</span> is called the <em class="emphasis">inverse</em> of <span class="process-math">\(f\text{.}\)</span>
@@ -743,7 +773,7 @@ window.MathJax = {
 </div></article><article class="example example-like" id="ex-isomorphisms"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphisms.</span>
 </h4> <div class="para logical" id="ex-isomorphisms-2"><ol class="decimal">
-<li id="ex-isomorphisms-2-1-1"><div class="para" id="ex-isomorphisms-2-1-1-1">In <span class="process-math">\(\Grp\text{,}\)</span> <span class="process-math">\(\Ring\text{,}\)</span> and R<span class="process-math">\(\Mod\)</span> the isomorphisms are the morphisms that are bijective functions.</div></li>
+<li id="ex-isomorphisms-2-1-1"><div class="para" id="ex-isomorphisms-2-1-1-1">In <span class="process-math">\(\Grp\text{,}\)</span> <span class="process-math">\(\Ring\text{,}\)</span> and <span class="process-math">\(R\Mod\)</span> the isomorphisms are the morphisms that are bijective functions.</div></li>
 <li id="ex-isomorphisms-2-1-2"><div class="para" id="ex-isomorphisms-2-1-2-1">In contrast, in <span class="process-math">\(\Top\)</span> the isomorphisms are the homeomorphisms, which are the bijective continuous functions with continuous inverses. These are not the same thing as just the bijective continuous functions.</div></li>
 </ol></div></article></section><section class="subsection" id="subsec-sub-dual"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Opposite Categories and Subcategories</span>

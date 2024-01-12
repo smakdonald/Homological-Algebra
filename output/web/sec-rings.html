@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -628,7 +628,7 @@ window.MathJax = {
 <div class="para">A <em class="emphasis">ring</em> is a set <span class="process-math">\(R\)</span> equipped with two binary operations, + and <span class="process-math">\(\cdot\text{,}\)</span> satisfying:</div>
 <ol class="decimal">
 <li id="def-A1-2-1-4-1"><div class="para" id="def-A1-2-1-4-1-1">
-<span class="process-math">\((R,+)\)</span> is an abelian group with identity element denoted 0 or <span class="process-math">\(0_{R}\text{.}\)</span>
+<span class="process-math">\((R,+)\)</span> is an abelian group with identity element denoted <span class="process-math">\(0\)</span> or <span class="process-math">\(0_{R}\text{.}\)</span>
 </div></li>
 <li id="def-A1-2-1-4-2"><div class="para" id="def-A1-2-1-4-2-1">The operation <span class="process-math">\(\cdot\)</span> is associative, so that <span class="process-math">\((R, \cdot)\)</span> is a semigroup.</div></li>
 <li id="def-A1-2-1-4-3"><div class="para logical" id="def-A1-2-1-4-3-1">
@@ -648,18 +648,18 @@ a \cdot(b+c)=a \cdot b+a \cdot c \quad \text { and } \quad(a+b) \cdot c=a \cdot 
 <article class="definition definition-like" id="def-A2"><h2 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.2</span><span class="period">.</span>
 </h2>
-<div class="para" id="def-A2-1-1">Definition A.2. A ring <span class="process-math">\(R\)</span> is a commutative ring if for all <span class="process-math">\(a, b \in R\)</span> we have <span class="process-math">\(a \cdot b=b \cdot a\text{.}\)</span>
+<div class="para" id="def-A2-1-1">A ring <span class="process-math">\(R\)</span> is a <em class="emphasis">commutative ring</em> if for all <span class="process-math">\(a, b \in R\)</span> we have <span class="process-math">\(a \cdot b=b \cdot a\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-A3"><h2 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.3</span><span class="period">.</span>
 </h2>
-<div class="para" id="def-A3-1-1">Definition A.3. A ring <span class="process-math">\(R\)</span> is a division ring if <span class="process-math">\(1 \neq 0\)</span> and <span class="process-math">\(R \backslash\{0\}\)</span> is a group under <span class="process-math">\(\cdot\text{,}\)</span> so every nonzero <span class="process-math">\(r \in R\)</span> has a multiplicative inverse. A field is a commutative division ring.</div></article><article class="definition definition-like" id="def-A4"><h2 class="heading">
+<div class="para" id="def-A3-1-1">A ring <span class="process-math">\(R\)</span> is a <em class="emphasis">division ring</em> if <span class="process-math">\(1 \neq 0\)</span> and <span class="process-math">\(R \backslash\{0\}\)</span> is a group under <span class="process-math">\(\cdot\text{,}\)</span> so every nonzero <span class="process-math">\(r \in R\)</span> has a multiplicative inverse. A field is a commutative division ring.</div></article><article class="definition definition-like" id="def-A4"><h2 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.4</span><span class="period">.</span>
 </h2>
-<div class="para" id="def-A4-1-1">Definition A.4. A commutative ring <span class="process-math">\(R\)</span> is a domain, sometimes called an integral domain, if it has no zerodivisors: <span class="process-math">\(a b=0 \Rightarrow a=0\)</span> or <span class="process-math">\(b=0\text{.}\)</span> Note that in particular we reserve the word domain for commutative rings.</div></article><div class="para" id="sec-rings-9">For some familiar examples, <span class="process-math">\(\mathrm{M}_{n}(R)\)</span> (the set of <span class="process-math">\(n \times n\)</span> matrices) is a ring with the usual addition and multiplication of matrices, <span class="process-math">\(\mathbb{Z}\)</span> and <span class="process-math">\(\mathbb{Z} / n\)</span> are commutative rings, <span class="process-math">\(\mathbb{C}\)</span> and <span class="process-math">\(\mathbb{Q}\)</span> are fields, and the real Hamiltonian quaternion ring <span class="process-math">\(\mathbb{H}\)</span> is a division ring.</div>
+<div class="para" id="def-A4-1-1">A commutative ring <span class="process-math">\(R\)</span> is a <em class="emphasis">domain</em>, sometimes called an <em class="emphasis">integral domain</em>, if it has no zerodivisors: <span class="process-math">\(a b=0 \Rightarrow a=0\)</span> or <span class="process-math">\(b=0\text{.}\)</span> Note that in particular we reserve the word domain for commutative rings.</div></article><div class="para" id="sec-rings-9">For some familiar examples, <span class="process-math">\(\mathrm{M}_{n}(R)\)</span> (the set of <span class="process-math">\(n \times n\)</span> matrices) is a ring with the usual addition and multiplication of matrices, <span class="process-math">\(\mathbb{Z}\)</span> and <span class="process-math">\(\mathbb{Z} / n\)</span> are commutative rings, <span class="process-math">\(\mathbb{C}\)</span> and <span class="process-math">\(\mathbb{Q}\)</span> are fields, and the real Hamiltonian quaternion ring <span class="process-math">\(\mathbb{H}\)</span> is a division ring.</div>
 <article class="definition definition-like" id="def-A5"><h2 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.5</span><span class="period">.</span>
 </h2>
-<div class="para" id="def-A5-1-1">Definition A.5. A ring homomorphism is a function <span class="process-math">\(f: R \rightarrow S\)</span> satisfying the following:</div> <div class="para logical" id="def-A5-1-2"><ul class="disc">
+<div class="para" id="def-A5-1-1">A ring homomorphism is a function <span class="process-math">\(f: R \rightarrow S\)</span> satisfying the following:</div> <div class="para logical" id="def-A5-1-2"><ul class="disc">
 <li id="def-A5-1-2-1-1"><div class="para" id="def-A5-1-2-1-1-1">
 <span class="process-math">\(f(a+b)=f(a)+f(b)\)</span> for all <span class="process-math">\(a, b \in R\text{.}\)</span>
 </div></li>
@@ -668,19 +668,19 @@ a \cdot(b+c)=a \cdot b+a \cdot c \quad \text { and } \quad(a+b) \cdot c=a \cdot 
 </div></li>
 <li id="def-A5-1-2-1-3"><div class="para" id="def-A5-1-2-1-3-1"><span class="process-math">\(f\left(1_{R}\right)=1_{S}\text{.}\)</span></div></li>
 </ul></div></article><div class="para" id="sec-rings-11">Under this definition, the map <span class="process-math">\(f: \mathbb{R} \rightarrow \mathrm{M}_{2}(\mathbb{R})\)</span> sending <span class="process-math">\(a \mapsto\left[\begin{array}{ll}a &amp; 0 \\ 0 &amp; 0\end{array}\right]\)</span> preserves addition and multiplication but not the multiplicative identities, and thus it is not a ring homomorphism.</div>
-<article class="exercise exercise-like" id="sec-rings-12"><h2 class="heading">
+<article class="exercise exercise-like" id="exe-65"><h2 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">A.6</span><span class="period">.</span>
 </h2>
-<div class="para" id="sec-rings-12-1">Exercise 65. For any ring <span class="process-math">\(R\text{,}\)</span> there exists a unique homomorphism <span class="process-math">\(\mathbb{Z} \rightarrow R\text{.}\)</span>
+<div class="para" id="exe-65-1-1">For any ring <span class="process-math">\(R\text{,}\)</span> there exists a unique homomorphism <span class="process-math">\(\mathbb{Z} \rightarrow R\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-A6"><h2 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.7</span><span class="period">.</span>
 </h2>
-<div class="para" id="def-A6-1-1">Definition A.6. A subset <span class="process-math">\(S\)</span> of a ring <span class="process-math">\(R\)</span> is a subring of <span class="process-math">\(R\)</span> if it is a ring under the same addition and multiplication operations and <span class="process-math">\(1_{R}=1_{S}\text{.}\)</span>
+<div class="para" id="def-A6-1-1">A subset <span class="process-math">\(S\)</span> of a ring <span class="process-math">\(R\)</span> is a subring of <span class="process-math">\(R\)</span> if it is a ring under the same addition and multiplication operations and <span class="process-math">\(1_{R}=1_{S}\text{.}\)</span>
 </div></article><div class="para" id="sec-rings-14">So under this definition, <span class="process-math">\(2 \mathbb{Z}\text{,}\)</span> the set of even integers, is not a subring of <span class="process-math">\(\mathbb{Z}\text{;}\)</span> in fact, it is not even a ring, since it does not have a multiplicative identity!</div>
 <article class="definition definition-like" id="def-A7"><h2 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">A.8</span><span class="period">.</span>
 </h2>
-<div class="para" id="def-A7-1-1">Definition A.7. Let <span class="process-math">\(R\)</span> be a ring. A subset <span class="process-math">\(I\)</span> of <span class="process-math">\(R\)</span> is an ideal if:</div> <div class="para logical" id="def-A7-1-2"><ul class="disc">
+<div class="para" id="def-A7-1-1">Let <span class="process-math">\(R\)</span> be a ring. A subset <span class="process-math">\(I\)</span> of <span class="process-math">\(R\)</span> is an ideal if:</div> <div class="para logical" id="def-A7-1-2"><ul class="disc">
 <li id="def-A7-1-2-1-1"><div class="para" id="def-A7-1-2-1-1-1">
 <span class="process-math">\(I\)</span> is nonempty.</div></li>
 <li id="def-A7-1-2-1-2"><div class="para" id="def-A7-1-2-1-2-1">
@@ -692,10 +692,10 @@ a \cdot(b+c)=a \cdot b+a \cdot c \quad \text { and } \quad(a+b) \cdot c=a \cdot 
 </div>
 <div class="para" id="sec-rings-17">When <span class="process-math">\(R\)</span> is a commutative ring, the left ideals, right ideals, and ideals over <span class="process-math">\(R\)</span> are all the same. However, if <span class="process-math">\(R\)</span> is not commutative, then these can be very different classes.</div>
 <div class="para" id="sec-rings-18">One key distinction between unital rings and nonunital rings is that if one requires every ring to have a 1 , as we do, then the ideals and subrings of a ring <span class="process-math">\(R\)</span> are very different creatures. In fact, the only subring of <span class="process-math">\(R\)</span> that is also an ideal is <span class="process-math">\(R\)</span> itself. The change lies in what constitutes a subring; notice that nothing has changed in the definition of ideal.</div>
-<article class="remark remark-like" id="sec-rings-19"><h2 class="heading">
+<article class="remark remark-like" id="rem-a8"><h2 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">A.9</span><span class="period">.</span>
 </h2>
-<div class="para" id="sec-rings-19-1">Remark A.8. Every ring <span class="process-math">\(R\)</span> has two trivial ideals: <span class="process-math">\(R\)</span> itself and the zero ideal <span class="process-math">\((0)=\{0\}\text{.}\)</span>
+<div class="para" id="rem-a8-1">Every ring <span class="process-math">\(R\)</span> has two trivial ideals: <span class="process-math">\(R\)</span> itself and the zero ideal <span class="process-math">\((0)=\{0\}\text{.}\)</span>
 </div></article><div class="para" id="sec-rings-20">A nontrivial ideal <span class="process-math">\(I\)</span> of <span class="process-math">\(R\)</span> is an ideal that <span class="process-math">\(I \neq R\)</span> and <span class="process-math">\(I \neq(0)\text{.}\)</span> An ideal <span class="process-math">\(I\)</span> of <span class="process-math">\(R\)</span> is a proper ideal if <span class="process-math">\(I \neq R\text{.}\)</span>
 </div></section></div>
 <div class="ptx-content-footer">

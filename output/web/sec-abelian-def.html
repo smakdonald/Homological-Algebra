@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -628,7 +628,7 @@ window.MathJax = {
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Monic and Epic.</span>
 </h4> <div class="para logical" id="def-mono-epi-2-1"><ul class="disc">
 <li id="def-mono-epi-2-1-1-1">
-<div class="para" id="def-mono-epi-2-1-1-1-1">An arrow <span class="process-math">\(f \in \operatorname{Hom}(B, C)\)</span> is <em class="emphasis">monic</em>, a <em class="emphasis">monomorphism</em>, or a <em class="emphasis">mono</em> if for all arrows</div>
+<div class="para" id="def-mono-epi-2-1-1-1-1">An arrow <span class="process-math">\(f \in \operatorname{Hom}(B, C)\)</span> is a <em class="emphasis">monomorphism</em> or a <em class="emphasis">mono</em> if for all arrows</div>
 <div class="para logical" id="def-mono-epi-2-1-1-1-2"><div class="displaymath process-math">
 \begin{equation*}
 A \stackrel{g_{1}}{\underset{g_{2}}{\longrightarrow}} B \stackrel{f}{\longrightarrow} C
@@ -648,35 +648,36 @@ A \stackrel{f}{\longrightarrow} B \underset{g_{2}}{\stackrel{g_{1}}{\longrightar
 </div>
 </div></li>
 </ul></div></article><div class="para" id="subsec-mono-epi-3">Here are some examples:</div>
-<article class="exercise exercise-like" id="exp-mono-epi-set"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.2</span><span class="period">.</span><span class="space"> </span><span class="title">Monos and Epis in Set.</span>
+<article class="example example-like" id="subsec-mono-epi-4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2</span><span class="period">.</span><span class="space"> </span><span class="title">Monos and Epis.</span>
+</h4> <div class="para logical" id="subsec-mono-epi-4-2"><ol class="decimal">
+<li id="exe-2"><div class="para" id="exe-2-1">In <span class="process-math">\(\Set\text{,}\)</span> the monos coincide with the injective functions and the epis coincide with the surjective functions.</div></li>
+<li id="subsec-mono-epi-4-2-1-2"><div class="para" id="subsec-mono-epi-4-2-1-2-1">In <span class="process-math">\(R-\mod\text{,}\)</span> the monos coincide with the injective functions and the epis coincide with the surjective functions.</div></li>
+<li id="exe-3"><div class="para" id="exe-3-1">In any category, every isomorphism is both epi and mono.</div></li>
+</ol></div></article><article class="exercise exercise-like" id="exe-4"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Epi and Surjective not the Same.</span>
 </h4>
-<div class="para" id="exp-mono-epi-set-2">Show that in <span class="process-math">\(\Set\text{,}\)</span> the monos coincide with the injective functions and the epis coincide with the surjective functions.</div></article><article class="exercise exercise-like" id="exp-iso-mono-epi"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphisms Mono and Epi.</span>
+<div class="para" id="exe-4-2-1">Show that the usual inclusion <span class="process-math">\(\mathbb{Z} \longrightarrow \mathbb{Q}\)</span> is an epi in the category <span class="process-math">\(\Ring\text{.}\)</span>
+</div></article><div class="para" id="subsec-mono-epi-6">This should feel weird: it says being epi and being surjective are not the same thing. Similarly, being monic and being injective are not the same thing.</div>
+<article class="exercise exercise-like" id="exe-5"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Mono and Injective not the Same.</span>
 </h4>
-<div class="para" id="exp-iso-mono-epi-2">Show that in any category, every isomorphism is both epi and mono.</div></article><article class="exercise exercise-like" id="exp-epi-not-surj"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Epi and Surjective not the Same.</span>
+<div class="para" id="exe-5-2-1">Show that the canonical projection <span class="process-math">\(\mathbb{Q} \longrightarrow \mathbb{Q} / \mathbb{Z}\)</span> is a mono in the category of divisible abelian groups. <a class="xref" id="exe-5-2-1-2" href="" data-knowl="./knowl/fn/exe-5-2-1-2.html" title="Footnote 7.1.1"><sup> 1 </sup></a>
+</div></article><article class="exercise exercise-like" id="exe-6"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Monic and Epic in Poset Category.</span>
 </h4>
-<div class="para" id="exp-epi-not-surj-2">Show that the usual inclusion <span class="process-math">\(\mathbb{Z} \longrightarrow \mathbb{Q}\)</span> is an epi in the category <span class="process-math">\(\Ring\text{.}\)</span>
-</div></article><div class="para" id="subsec-mono-epi-7">This should feel weird: it says being epi and being surjective are not the same thing. Similarly, being monic and being injective are not the same thing.</div>
-<article class="exercise exercise-like" id="exp-mono-not-inj"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Mono and Injective not the Same.</span>
-</h4>
-<div class="para" id="exp-mono-not-inj-2">Show that the canonical projection <span class="process-math">\(\mathbb{Q} \longrightarrow \mathbb{Q} / \mathbb{Z}\)</span> is a mono in the category of divisible abelian groups. <a class="xref" id="exp-mono-not-inj-2-2" href="" data-knowl="./knowl/fn/exp-mono-not-inj-2-2.html" title="Footnote 7.1.1"><sup> 1 </sup></a>
-</div></article><article class="exercise exercise-like" id="exp-mono-epi-poset"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Monic and Epic in Poset Category.</span>
-</h4>
-<div class="para" id="exp-mono-epi-poset-2">Show that given any poset <span class="process-math">\(P\text{,}\)</span> in the poset category of <span class="process-math">\(P\)</span> every morphism is both monic and epic, but no nonidentity morphism has a left or right inverse.</div></article><div class="para" id="subsec-mono-epi-10">There are some special types of objects we will want to consider.</div>
+<div class="para" id="exe-6-2-1">Show that given any poset <span class="process-math">\(P\text{,}\)</span> in the poset category of <span class="process-math">\(P\)</span> every morphism is both monic and epic, but no nonidentity morphism has a left or right inverse.</div></article><div class="para" id="subsec-mono-epi-9">There are some special types of objects we will want to consider.</div>
 <article class="definition definition-like" id="def-initial-terminal"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Initial and Terminal Objects.</span>
-</h4> <div class="para" id="def-initial-terminal-2-1">Let <span class="process-math">\(\mathscr{C}\)</span> be a category. An <em class="emphasis">initial object</em> in <span class="process-math">\(\mathscr{C}\)</span> is an object <span class="process-math">\(i\)</span> such that for every object <span class="process-math">\(x\)</span> in <span class="process-math">\(\mathscr{C}, \operatorname{Hom}_{\mathscr{C}}(i, x)\)</span> is a singleton, meaning there exists a unique arrow <span class="process-math">\(i \longrightarrow x\text{.}\)</span> A <em class="emphasis">terminal object</em> in <span class="process-math">\(\mathscr{C}\)</span> is an object <span class="process-math">\(t\)</span> such that for every object <span class="process-math">\(x\)</span> in <span class="process-math">\(\mathscr{C}, \operatorname{Hom}_{\mathscr{C}}(x, t)\)</span> is a singleton, meaning there exists a unique arrow <span class="process-math">\(x \longrightarrow t\text{.}\)</span> A <em class="emphasis">zero object</em> in <span class="process-math">\(\mathscr{C}\)</span> is an object that is both initial and terminal.</div></article><article class="exercise exercise-like" id="exp-unique-initial-terminal"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.8</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of Initial and Terminal Objects.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Initial and Terminal Objects.</span>
+</h4> <div class="para" id="def-initial-terminal-2-1">Let <span class="process-math">\(\mathscr{C}\)</span> be a category. An <em class="emphasis">initial object</em> in <span class="process-math">\(\mathscr{C}\)</span> is an object <span class="process-math">\(i\)</span> such that for every object <span class="process-math">\(x\)</span> in <span class="process-math">\(\mathscr{C}, \operatorname{Hom}_{\mathscr{C}}(i, x)\)</span> is a singleton, meaning there exists a unique arrow <span class="process-math">\(i \longrightarrow x\text{.}\)</span> A <em class="emphasis">terminal object</em> in <span class="process-math">\(\mathscr{C}\)</span> is an object <span class="process-math">\(t\)</span> such that for every object <span class="process-math">\(x\)</span> in <span class="process-math">\(\mathscr{C}, \operatorname{Hom}_{\mathscr{C}}(x, t)\)</span> is a singleton, meaning there exists a unique arrow <span class="process-math">\(x \longrightarrow t\text{.}\)</span> A <em class="emphasis">zero object</em> in <span class="process-math">\(\mathscr{C}\)</span> is an object that is both initial and terminal.</div></article><article class="exercise exercise-like" id="exe-7"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of Initial and Terminal Objects.</span>
 </h4>
-<div class="para" id="exp-unique-initial-terminal-2">Initial objects are unique up to unique isomorphism. Terminal objects are unique up to unique isomorphism.</div></article><div class="para" id="subsec-mono-epi-13">So we can talk about the initial object, the terminal object, and the zero object, if they exist.</div>
+<div class="para" id="exe-7-2-1">Initial objects are unique up to unique isomorphism. Terminal objects are unique up to unique isomorphism.</div></article><div class="para" id="subsec-mono-epi-12">So we can talk about the initial object, the terminal object, and the zero object, if they exist.</div>
 <article class="example example-like" id="ex-initial-terminal"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Initial and Terminal Objects.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.8</span><span class="period">.</span><span class="space"> </span><span class="title">Initial and Terminal Objects.</span>
 </h4> <div class="para logical" id="ex-initial-terminal-2"><ol class="decimal">
-<li id="ex-initial-terminal-2-1-1"><div class="para" id="ex-initial-terminal-2-1-1-1">The empty set is initial in Set. Any singleton is terminal. Since the empty set and a singleton are not isomorphic in Set, there is no zero object in Set.</div></li>
+<li id="ex-initial-terminal-2-1-1"><div class="para" id="ex-initial-terminal-2-1-1-1">The empty set is initial in <span class="process-math">\(\Set\text{.}\)</span> Any singleton is terminal. Since the empty set and a singleton are not isomorphic in <span class="process-math">\(\Set\text{,}\)</span> there is no zero object in <span class="process-math">\(\Set\text{.}\)</span>
+</div></li>
 <li id="ex-initial-terminal-2-1-2"><div class="para" id="ex-initial-terminal-2-1-2-1">The <span class="process-math">\(0\)</span> module is the zero object in <span class="process-math">\(R\)</span><span class="process-math">\(\Mod\text{.}\)</span>
 </div></li>
 <li id="ex-initial-terminal-2-1-3"><div class="para" id="ex-initial-terminal-2-1-3-1">The trivial group <span class="process-math">\(\{e\}\)</span> is the zero object in <span class="process-math">\(\Grp\text{.}\)</span>
@@ -684,19 +685,19 @@ A \stackrel{f}{\longrightarrow} B \underset{g_{2}}{\stackrel{g_{1}}{\longrightar
 <li id="ex-initial-terminal-2-1-4"><div class="para" id="ex-initial-terminal-2-1-4-1">In the category of rings, <span class="process-math">\(\mathbb{Z}\)</span> is the initial object, but there is no terminal object unless we allow the <span class="process-math">\(0\)</span> ring.</div></li>
 <li id="ex-initial-terminal-2-1-5"><div class="para" id="ex-initial-terminal-2-1-5-1">There are neither initial nor terminal objects in the category of fields.</div></li>
 </ol></div></article><article class="definition definition-like" id="def-7.4"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Zero Arrow.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Zero Arrow.</span>
 </h4> <div class="para" id="def-7.4-2-1">Let <span class="process-math">\(\mathscr{C}\)</span> be a category with a zero object <span class="process-math">\(0\text{.}\)</span> Given two objects <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> the <em class="emphasis">zero arrow</em> from <span class="process-math">\(x\)</span> to <span class="process-math">\(y\)</span> is the unique arrow <span class="process-math">\(x \longrightarrow y\)</span> that factors through <span class="process-math">\(0\text{,}\)</span> meaning the arrow given by composition of the unique arrows <span class="process-math">\(x \longrightarrow 0 \longrightarrow y\text{.}\)</span> We will often denote both the zero object and the zero arrow by <span class="process-math">\(0\text{,}\)</span> whenever it does not lead to confusion.</div></article><article class="remark remark-like" id="rem-7.5"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.11</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.10</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.5-1">If a category <span class="process-math">\(\mathcal{A}\)</span> has a zero object, then <span class="process-math">\(\operatorname{Hom}_{\mathcal{A}}(x, y)\)</span> is always nonempty, since it contains at least the 0 arrow.</div></article><article class="remark remark-like" id="rem-7.6"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.12</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.11</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.6-1">Composing the zero arrow with any other arrow always yields the zero arrow.</div></article></section><section class="subsection" id="subsec-additive-categories"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Additive Categories</span>
 </h3>
 <div class="para" id="subsec-additive-categories-2">An abelian category is a category that has just enough extra structure to behave like <span class="process-math">\(R\)</span>-Mod: we have complexes and exact sequences, homology, the Snake Lemma, the long exact sequence in homology, and many other nice features. On the one hand, every abelian category embeds nicely in some <span class="process-math">\(R\)</span>-Mod, so it is in some ways sufficient to study <span class="process-math">\(R\)</span>-Mod. In other ways, the general nonsense definitions in an abelian category can sometimes give us a uniform, simple way to prove many results about <span class="process-math">\(R\)</span>-Mod (and <span class="process-math">\(\mathrm{Ch}(R\)</span>-Mod), and other related categories) all at once.</div>
 <article class="definition definition-like" id="def-7.1"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.13</span><span class="period">.</span><span class="space"> </span><span class="title">Preadditive Cateogory.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.12</span><span class="period">.</span><span class="space"> </span><span class="title">Preadditive Cateogory.</span>
 </h4> <div class="para logical" id="def-7.1-2-1">
 <div class="para">A category <span class="process-math">\(\mathscr{A}\)</span> is a <em class="emphasis">preadditive category</em> if:</div>
 <ul class="disc">
@@ -718,12 +719,12 @@ g \circ\left(f_{1}+f_{2}\right)=g \circ f_{1}+g \circ f_{2} \quad \text { and } 
 </ul>
 </div></article><div class="para" id="subsec-additive-categories-4">In the literature, preadditive categories are sometimes called <em class="emphasis">Ab-enriched</em> categories.</div>
 <article class="example example-like" id="ex-7.2"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.14</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.13</span><span class="period">.</span>
 </h4>
 <div class="para" id="ex-7.2-1">Our favorite category <span class="process-math">\(R\)</span>-Mod is a preadditive category; so is <span class="process-math">\(\operatorname{Ch}(R)\text{.}\)</span>
 </div></article><div class="para" id="subsec-additive-categories-6">We can talk about additive functors between any two preadditive categories.</div>
 <article class="definition definition-like" id="def-7.3"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.15</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.14</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="def-7.3-1-1">
 <div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> and <span class="process-math">\(\mathscr{B}\)</span> be preadditive categories. An <em class="emphasis">additive functor</em> <span class="process-math">\(\mathcal{A} \rightarrow \mathscr{B}\)</span> is a functor such that the map</div>
@@ -737,11 +738,11 @@ f \longmapsto F(f)
 </div>
 <div class="para">is a homomorphism of abelian groups.</div>
 </div></article><article class="remark remark-like" id="rem-7.7"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.16</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.15</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.7-1">In any preadditive category <span class="process-math">\(\mathcal{A}\)</span> with a zero object 0, the 0 arrow <span class="process-math">\(x \longrightarrow y\)</span> coincides with the 0 of the abelian <span class="process-math">\(\operatorname{group} \operatorname{Hom}_{\mathcal{A}}(x, y)\text{.}\)</span>
 </div></article><article class="remark remark-like" id="rem-7.8"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.17</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.16</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="rem-7.8-1">
 <div class="para">We can characterize the zero object 0 by the property that the zero arrow and the identity arrows on 0 coincide. To see this, notice that if <span class="process-math">\(1_{x}=x \stackrel{0}{\rightarrow} x\text{,}\)</span> then given any arrow <span class="process-math">\(x \stackrel{f}{\rightarrow} y\text{,}\)</span> we must have</div>
@@ -752,7 +753,7 @@ f=f \circ 1_{x}=f \circ 0=0
 </div>
 <div class="para">and similarly any arrow <span class="process-math">\(y \stackrel{f}{\rightarrow} x\)</span> must be 0. Then <span class="process-math">\(x\)</span> is terminal and initial, and it must be the zero object.</div>
 </div></article><article class="definition definition-like" id="def-7.9"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.18</span><span class="period">.</span><span class="space"> </span><span class="title">Additive Category.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.17</span><span class="period">.</span><span class="space"> </span><span class="title">Additive Category.</span>
 </h4> <div class="para logical" id="def-7.9-2-1">
 <div class="para">An <em class="emphasis">additive category</em> is a preadditive category <span class="process-math">\(\mathcal{A}\)</span> such that:</div>
 <ul class="disc">
@@ -763,7 +764,7 @@ f=f \circ 1_{x}=f \circ 0=0
 </div></li>
 </ul>
 </div></article><article class="lemma theorem-like" id="lem-7.10"><h4 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.19</span><span class="period">.</span>
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.18</span><span class="period">.</span>
 </h4>
 <div class="para" id="lem-7.10-1-1">In an additive category, finite coproducts exist and they agree with products.</div></article><details id="lem-7.10-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para" id="lem-7.10-2-1">Let <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> be objects in our additive category, and consider their product, which exists by assumption:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-02.jpg" class="contained"></div> <div class="para" id="lem-7.10-2-3">The universal property of the product give arrows <span class="process-math">\(\iota_{1}\)</span> and <span class="process-math">\(\iota_{2}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-02(1).jpg" class="contained"></div> <div class="para" id="lem-7.10-2-5">and</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-02(2).jpg" class="contained"></div> <div class="para" id="lem-7.10-2-7">commute. We claim that <span class="process-math">\(z\)</span> together with <span class="process-math">\(\iota_{1}\)</span> and <span class="process-math">\(\iota_{2}\)</span> form a coproduct for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> Given an object <span class="process-math">\(w\)</span> and arrows <span class="process-math">\(x \stackrel{f}{\rightarrow} w\)</span> and <span class="process-math">\(y \stackrel{g}{\rightarrow} w\text{,}\)</span> we need to show that there exists a unique arrow <span class="process-math">\(h\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-03.jpg" class="contained"></div> <div class="para" id="lem-7.10-2-9">commutes.</div> <div class="para logical" id="lem-7.10-2-10">
 <div class="para">To see such an <span class="process-math">\(h\)</span> exists, consider <span class="process-math">\(h:=f \pi_{1}+g \pi_{2}\text{.}\)</span> Then</div>
@@ -787,11 +788,11 @@ h \iota_{1}=f \underbrace{\pi_{1} \iota_{1}}_{1_{x}}+g \underbrace{\pi_{2} \iota
 \end{equation*}
 </div>
 </div></article></details><article class="convention remark-like" id="subsec-additive-categories-12"><h4 class="heading">
-<span class="type">Convention</span><span class="space"> </span><span class="codenumber">7.20</span><span class="period">.</span>
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">7.19</span><span class="period">.</span>
 </h4>
 <div class="para" id="subsec-additive-categories-12-1">Notation 7.11. In an additive category <span class="process-math">\(\mathcal{A}\text{,}\)</span> given objects <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> the notation <span class="process-math">\(A \oplus B\)</span> denotes the product <span class="process-math">\(\equiv\)</span> coproduct of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span>
 </div></article><article class="remark remark-like" id="rem-7.12"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.21</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.20</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.12-1">Remark 7.12. If <span class="process-math">\(\mathcal{A}\)</span> is additive category, the object <span class="process-math">\(A \oplus B\)</span> is characterized by the existence of arrows</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-03(1).jpg" class="contained"></div> <div class="para logical" id="rem-7.12-3">
 <div class="para">such that</div>
@@ -801,7 +802,7 @@ h \iota_{1}=f \underbrace{\pi_{1} \iota_{1}}_{1_{x}}+g \underbrace{\pi_{2} \iota
 \end{equation*}
 </div>
 </div></article><article class="lemma theorem-like" id="lem-7.13"><h4 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.22</span><span class="period">.</span>
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.21</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="lem-7.13-1-1">
 <div class="para">Lemma 7.13. Let <span class="process-math">\(F: \mathcal{A} \longrightarrow \mathcal{B}\)</span> an additive functor between additive categories, and let 0 denote the zero object on both categories.</div>
@@ -865,14 +866,14 @@ F\left(i_{A}\right) F\left(\pi_{A}\right)+F\left(i_{B}\right) F\left(\pi_{B}\rig
 </li>
 </ol>
 </div></article></details><article class="exercise exercise-like" id="exe-81"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.23</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.22</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="exe-81-1">
+<div class="para logical" id="exe-81-1-1">
 <div class="para">Exercise 81. Let <span class="process-math">\(\mathcal{A}\)</span> be an additive category.</div>
 <ol class="decimal">
-<li id="exe-81-1-2-1"><div class="para" id="exe-81-1-2-1-1">Show that an arrow <span class="process-math">\(f\)</span> is a mono if and only if <span class="process-math">\(f g=0\)</span> implies <span class="process-math">\(g=0\text{.}\)</span>
+<li id="exe-81-1-1-2-1"><div class="para" id="exe-81-1-1-2-1-1">Show that an arrow <span class="process-math">\(f\)</span> is a mono if and only if <span class="process-math">\(f g=0\)</span> implies <span class="process-math">\(g=0\text{.}\)</span>
 </div></li>
-<li id="exe-81-1-2-2"><div class="para" id="exe-81-1-2-2-1">Show that an arrow <span class="process-math">\(f\)</span> is an epi if and only if <span class="process-math">\(g f=0\)</span> implies <span class="process-math">\(g=0\text{.}\)</span>
+<li id="exe-81-1-1-2-2"><div class="para" id="exe-81-1-1-2-2-1">Show that an arrow <span class="process-math">\(f\)</span> is an epi if and only if <span class="process-math">\(g f=0\)</span> implies <span class="process-math">\(g=0\text{.}\)</span>
 </div></li>
 </ol>
 </div></article></section><section class="subsection" id="subsec-ker-coker"><h3 class="heading hide-type">
@@ -880,7 +881,7 @@ F\left(i_{A}\right) F\left(\pi_{A}\right)+F\left(i_{B}\right) F\left(\pi_{B}\rig
 </h3>
 <div class="para" id="subsec-ker-coker-2">We can now define kernels and cokernels.</div>
 <article class="definition definition-like" id="def-7.14"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.24</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.23</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="def-7.14-1-1">
 <div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be an additive category and <span class="process-math">\(f\)</span> an arrow <span class="process-math">\(x \longrightarrow y\text{.}\)</span> The <em class="emphasis">kernel</em> of <span class="process-math">\(f\)</span> is an arrow <span class="process-math">\(k \stackrel{i}{\rightarrow} x\)</span> satisfying the following properties:</div>
@@ -891,7 +892,7 @@ F\left(i_{A}\right) F\left(\pi_{A}\right)+F\left(i_{B}\right) F\left(\pi_{B}\rig
 </ul>
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-05(1).jpg" class="contained"></div> <div class="para" id="def-7.14-1-3">commutes. We denote the kernel of <span class="process-math">\(f\)</span> by <span class="process-math">\(\operatorname{ker} f\text{.}\)</span>
 </div></article><article class="remark remark-like" id="rem-7.15"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.25</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.24</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="rem-7.15-1">
 <div class="para">Remark 7.15. We claim that a kernel, if it exists, is always a mono. Indeed, suppose that</div>
@@ -904,11 +905,11 @@ z \stackrel{g_{1}}{\longrightarrow} k \stackrel{i}{\longrightarrow} x \stackrel{
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-05(2).jpg" class="contained"></div> <div class="para" id="rem-7.15-3">commutes, and <span class="process-math">\(f \circ 0=0\text{,}\)</span> so 0 factors uniquely through the kernel. But both <span class="process-math">\(g\)</span> and <span class="process-math">\(z \stackrel{0}{\rightarrow} k\)</span> are such factorizations, so <span class="process-math">\(g=0\text{.}\)</span>
 </div></article><div class="para" id="subsec-ker-coker-5">We are used to thinking about the kernel of a map <span class="process-math">\(f\)</span> as an object; but in this general context, the kernel is really an arrow, or more precisely, an object (the source of the kernel) and an arrow from that object to the source of <span class="process-math">\(f\text{.}\)</span> We sometimes refer to the kernel as the pair (object, arrow). Also, we might use the notation <span class="process-math">\(\operatorname{ker} f \longrightarrow x\)</span> for the kernel of <span class="process-math">\(f: x \rightarrow y\text{.}\)</span> W e might also abuse notation and refer to the object that is the source of <span class="process-math">\(\operatorname{ker} f\)</span> as the kernel of <span class="process-math">\(f\text{,}\)</span> motivated by the familiar case of <span class="process-math">\(R\)</span>-Mod. Nevertheless, the kernel of <span class="process-math">\(f\)</span> is technically an arrow, not an object. A good reason for identifying the arrow ker <span class="process-math">\(f\)</span> with its source object is the following rewriting of the definition:</div>
 <article class="remark remark-like" id="rem-7.16"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.26</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.25</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.16-1">Remark 7.16. If <span class="process-math">\(k_{1} \stackrel{i_{1}}{\longrightarrow} x\)</span> and <span class="process-math">\(k_{2} \xrightarrow{i_{2}} x\)</span> are both kernels of <span class="process-math">\(f\text{,}\)</span> then there exist unique arrows <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-05.jpg" class="contained"></div> <div class="para" id="rem-7.16-3">commutes. By Remark 7.15, kernels are always monic. But then <span class="process-math">\(i_{1} g h=i_{2} h=i_{1}\text{,}\)</span> and since <span class="process-math">\(i_{1}\)</span> is a mono, we must have <span class="process-math">\(g h=1\text{.}\)</span> Similarly, <span class="process-math">\(h g=1\text{,}\)</span> and <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are isomorphisms.</div> <div class="para" id="rem-7.16-4">This shows that if <span class="process-math">\(k \stackrel{i}{\longrightarrow} x\)</span> is the kernel of <span class="process-math">\(f \in \operatorname{Hom}_{\mathcal{A}}(x, y)\text{,}\)</span> the object <span class="process-math">\(k\)</span> is, up to isomorphism, the unique object that satisfies the following universal property: for every object <span class="process-math">\(z\)</span> and every arrow <span class="process-math">\(g: z \rightarrow x\)</span> such that <span class="process-math">\(f g=0\text{,}\)</span> there exists a unique arrow <span class="process-math">\(h: z \rightarrow k\)</span> such that <span class="process-math">\(i h=g\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-7.17"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.27</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.26</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.17-1-1">Definition 7.17. Let <span class="process-math">\(\mathcal{A}\)</span> be an additive category and <span class="process-math">\(f \in \operatorname{Hom}_{\mathcal{A}}(x, y)\text{.}\)</span> The <em class="emphasis">cokernel</em> of <span class="process-math">\(f\)</span> is an arrow <span class="process-math">\(y \stackrel{p}{\rightarrow} c\text{,}\)</span> denoted coker <span class="process-math">\(f\text{,}\)</span> satisfying the following properties:</div> <div class="para logical" id="def-7.17-1-2"><ul class="disc">
 <li id="def-7.17-1-2-1-1"><div class="para" id="def-7.17-1-2-1-1-1">
@@ -916,13 +917,13 @@ z \stackrel{g_{1}}{\longrightarrow} k \stackrel{i}{\longrightarrow} x \stackrel{
 <li id="def-7.17-1-2-1-2"><div class="para" id="def-7.17-1-2-1-2-1">Given any <span class="process-math">\(g \in \operatorname{Hom}_{\mathcal{A}}(y, z)\)</span> such that <span class="process-math">\(x \stackrel{f}{\longrightarrow} y \stackrel{g}{\longrightarrow} z\)</span> is 0 , there exists a unique arrow <span class="process-math">\(\varphi\)</span> such that <span class="process-math">\(i \varphi=g\text{,}\)</span> meaning that</div></li>
 </ul></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-06.jpg" class="contained"></div> <div class="para" id="def-7.17-1-4">commutes.</div></article><div class="para" id="subsec-ker-coker-8">We will sometimes use the notation <span class="process-math">\(y \rightarrow\)</span> coker <span class="process-math">\(f\)</span> for the cokernel of <span class="process-math">\(x \stackrel{f}{\longrightarrow} y\text{,}\)</span> although once again the cokernel of <span class="process-math">\(f\)</span> is an arrow rather than an object.</div>
 <article class="example example-like" id="ex-7.18"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.28</span><span class="period">.</span><span class="space"> </span><span class="title">Example 7.18.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.27</span><span class="period">.</span><span class="space"> </span><span class="title">Example 7.18.</span>
 </h4> <div class="para logical" id="ex-7.18-2"><ol class="decimal">
 <li id="ex-7.18-2-1-1"><div class="para" id="ex-7.18-2-1-1-1">The kernels and cokernels in <span class="process-math">\(R\)</span>-Mod are what we think they are: the inclusion of the usual kernel, and the projection onto the usual cokernel.</div></li>
 <li id="ex-7.18-2-1-2"><div class="para" id="ex-7.18-2-1-2-1">It’s not always true that all arrows have kernels or cokernels. For example, the category of finitely generated <span class="process-math">\(R\)</span>-modules over some nonnoetherian ring <span class="process-math">\(R\)</span> is additive, but it does not have all kernels. If <span class="process-math">\(I\)</span> is some infinitely generated ideal in <span class="process-math">\(R\text{,}\)</span> the kernel of the canonical projection <span class="process-math">\(R \longrightarrow R / I\)</span> does not exist in our category. In fact, this is an epi but not a cokernel: it should be the cokernel of the inclusion map <span class="process-math">\(I \longrightarrow R\text{,}\)</span> but that is not an arrow in our category.</div></li>
 </ol></div></article><div class="para" id="subsec-ker-coker-10">While not all epis are cokernels and not all monos are kernels, the converse is true. Just like we saw for kernels, cokernels, if they exist, are always epi, and they are unique in the sense we described in Remark 7.16.</div>
 <article class="exercise exercise-like" id="exe-82"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.29</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.28</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="exe-82-1">
 <div class="para">Exercise 82. Let <span class="process-math">\(\mathcal{A}\)</span> be an additive category.</div>
@@ -932,7 +933,7 @@ z \stackrel{g_{1}}{\longrightarrow} k \stackrel{i}{\longrightarrow} x \stackrel{
 <li id="exe-82-1-2-2"><div class="para" id="exe-82-1-2-2-1">Show that every cokernel in <span class="process-math">\(\mathcal{A}\)</span> is epi.</div></li>
 </ol>
 </div></article><article class="remark remark-like" id="rem-7.19"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.30</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.29</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="rem-7.19-1">
 <div class="para">Remark 7.19. Let <span class="process-math">\(\mathcal{A}\)</span> be an additive category, and let <span class="process-math">\(f\)</span> be any arrow such that ker coker <span class="process-math">\(f\)</span> and coker ker <span class="process-math">\(f\)</span> exist. Since <span class="process-math">\(f \circ \operatorname{ker} f=0\text{,}\)</span> then by the universal property of the cokernel <span class="process-math">\(f\)</span> factors uniquely through coker( <span class="process-math">\(\operatorname{ker} f\)</span> ), say by coker <span class="process-math">\(\operatorname{ker} f \stackrel{g}{\rightarrow} y\text{.}\)</span> Now</div>
@@ -942,13 +943,13 @@ z \stackrel{g_{1}}{\longrightarrow} k \stackrel{i}{\longrightarrow} x \stackrel{
 \end{equation*}
 </div>
 </div> <div class="para" id="rem-7.19-2">By Exercise 85, coker ker <span class="process-math">\(f\)</span> is an epi, and thus we must have coker <span class="process-math">\(f \circ g=0\text{.}\)</span> Then <span class="process-math">\(g\)</span> factors uniquely through ker coker <span class="process-math">\(f\text{,}\)</span> so we get a unique arrow such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-07(2).jpg" class="contained"></div> <div class="para" id="rem-7.19-4">commutes.</div></article><article class="example example-like" id="ex-7.20"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.31</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.30</span><span class="period">.</span>
 </h4>
 <div class="para" id="ex-7.20-1">Example 7.20. Let’s see what this factoring looks like in the more familiar example of <span class="process-math">\(R\)</span>-Mod. Given an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f: M \rightarrow N\text{,}\)</span> we get a commutative diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-07(1).jpg" class="contained"></div> <div class="para" id="ex-7.20-3">The map <span class="process-math">\(\psi\)</span> is the isomorphism given by the First Isomorphism Theorem.</div></article></section><section class="subsection" id="subsec-ab-cat"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Definition of an Abelian Category</span>
 </h3>
 <article class="definition definition-like" id="def-7.21"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.32</span><span class="period">.</span><span class="space"> </span><span class="title">Abelian Category.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.31</span><span class="period">.</span><span class="space"> </span><span class="title">Abelian Category.</span>
 </h4> <div class="para logical" id="def-7.21-2-1">
 <div class="para">Definition 7.21. An abelian category is an additive category <span class="process-math">\(\mathcal{A}\)</span> such that</div>
 <ul class="disc">
@@ -960,10 +961,10 @@ z \stackrel{g_{1}}{\longrightarrow} k \stackrel{i}{\longrightarrow} x \stackrel{
 </ul>
 </div></article><div class="para" id="subsec-ab-cat-3">Ultimately, an abelian category is one that has just enough structure so that we can extend many of the desired properties of <span class="process-math">\(R\)</span>-Mod. In particular, we will see that we can define complexes and their homology in any abelian category, and that the Snake Lemma and the long exact sequence in homology hold.</div>
 <article class="remark remark-like" id="rem-7.22"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.33</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.32</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.22-1">Remark 7.22. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category, and <span class="process-math">\(f\)</span> any arrow. As described in Remark 7.19, we have a commutative diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-07.jpg" class="contained"></div> <div class="para" id="rem-7.22-3">where <span class="process-math">\(\psi\)</span> is now assumed to be an iso. Now kernels are mono and cokernels are epi, by Exercise 85, and composing an epi (respectively, mono) with an iso gives us an epi (respectively, mono). Therefore, we can factor <span class="process-math">\(f\)</span> as a composition mono <span class="process-math">\(\circ\)</span> epi.</div></article><article class="example example-like" id="ex-7.23"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.34</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.33</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="ex-7.23-1">
 <div class="para">Example 7.23. In <span class="process-math">\(R\)</span>-Mod, this factorization is just the factoring through the image of the homomorphism: any <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f: M \rightarrow N\)</span> factors as</div>
@@ -973,7 +974,7 @@ M \rightarrow \operatorname{im} f \hookrightarrow N
 \end{equation*}
 </div>
 </div></article><article class="definition definition-like" id="def-7.24"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.35</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.34</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.24-1-1">Definition 7.24. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category, and consider an arrow <span class="process-math">\(x \stackrel{f}{\rightarrow} y\text{.}\)</span> The <em class="emphasis">image</em> of <span class="process-math">\(f\)</span> is <span class="process-math">\(\operatorname{im} f:=\operatorname{ker}(\operatorname{coker} f)\text{.}\)</span>
 </div></article><div class="para logical" id="subsec-ab-cat-7">
@@ -985,7 +986,7 @@ x \xrightarrow{\text { epi }} \operatorname{im} f \xrightarrow{\text { mono }} y
 </div>
 </div>
 <article class="exercise exercise-like" id="exe-83"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.36</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.35</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="exe-83-1">
 <div class="para">Exercise 83. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category.</div>
@@ -996,10 +997,10 @@ x \xrightarrow{\text { epi }} \operatorname{im} f \xrightarrow{\text { mono }} y
 </div></li>
 </ol>
 </div></article><article class="remark remark-like" id="rem-7.25"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.37</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.36</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.25-1">Remark 7.25. If <span class="process-math">\(\mathcal{A}\)</span> is an abelian category, its opposite category <span class="process-math">\(\mathcal{A}^{\text {op }}\)</span> is also abelian. This is just a consequence of the fact that all the requirements to be an abelian category come together with the dual requirements, so everything automatically dualizes well.</div></article><article class="example example-like" id="ex-7.26"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.38</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.37</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="ex-7.26-1">
 <div class="para">Example 7.26. Here are some examples and nonexamples of abelian categories.</div>
@@ -1023,14 +1024,14 @@ Y \longrightarrow \overline{f(X)}{ }^{\perp}
 </li>
 </ol>
 </div></article><article class="remark remark-like" id="rem-7.27"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.39</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.38</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.27-1">Remark 7.27. Suppose that <span class="process-math">\(g\)</span> factors through <span class="process-math">\(f\text{,}\)</span> meaning that there exists <span class="process-math">\(h\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-09.jpg" class="contained"></div> <div class="para" id="rem-7.27-3">commutes. Then <span class="process-math">\((\operatorname{coker} f) \circ g=(\operatorname{coker} f) \circ f \circ h=0\text{,}\)</span> so <span class="process-math">\(g\)</span> factors through <span class="process-math">\(\operatorname{ker}(\operatorname{coker} f)=\operatorname{im} f\text{,}\)</span> meaning we have another commutative diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-09(2).jpg" class="contained"></div></article><article class="exercise exercise-like" id="exe-84"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.40</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.39</span><span class="period">.</span>
 </h4>
 <div class="para" id="exe-84-1">Exercise 84. Show that the kernel of <span class="process-math">\(x \stackrel{0}{\rightarrow} y\)</span> is the identity arrow <span class="process-math">\(1_{x}\text{,}\)</span> its cokernel is the identity arrow <span class="process-math">\(1_{y}\text{,}\)</span> and <span class="process-math">\(\operatorname{im}(x \stackrel{0}{\rightarrow} y)=0\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exe-85"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.41</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.40</span><span class="period">.</span>
 </h4>
 <div class="para" id="exe-85-1">Exercise 85. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category, <span class="process-math">\(g\)</span> an epi, and <span class="process-math">\(f\)</span> a mono. Then <span class="process-math">\(\operatorname{ker}(f g)=\operatorname{ker} g\text{,}\)</span> <span class="process-math">\(\operatorname{coker}(f g)=\operatorname{coker} f\text{,}\)</span> and <span class="process-math">\(\operatorname{im}(f g)=\operatorname{im} f=f\text{.}\)</span>
 </div></article></section></section></div>

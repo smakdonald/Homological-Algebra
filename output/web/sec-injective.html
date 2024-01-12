@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -775,10 +775,10 @@ I:=\{r \in R \mid r n \in A\}
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.25</span><span class="period">.</span><span class="space"> </span><span class="title">Injective but not Divisible Module.</span>
 </h4> <div class="para" id="subsec-divisible-11-2">Example 4.25. Let <span class="process-math">\(k\)</span> be a field and <span class="process-math">\(R=k[x] /\left(x^{2}\right)\text{.}\)</span> On the one hand, <span class="process-math">\(R\)</span> is not a divisible <span class="process-math">\(R\)</span>-module, since there is no <span class="process-math">\(y \in R\)</span> such that <span class="process-math">\(x y=1\text{.}\)</span> On the other hand, <span class="process-math">\(R\)</span> is actually an injective module over itself, although we do not have the tools to justify that this is indeed an injective <span class="process-math">\(R\)</span>-module. <span class="process-math">\({ }^{1}\)</span>
 </div></article><div class="para" id="subsec-divisible-12">The converse of <a href="" class="xref" data-knowl="./knowl/xref/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a> does not hold in general, and quotients of injective modules are not necessarily injective.</div>
-<article class="exercise exercise-like" id="subsec-divisible-13"><h4 class="heading">
+<article class="exercise exercise-like" id="exe-57"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4.26</span><span class="period">.</span><span class="space"> </span><span class="title">Injective Modules not Closed Under Quotients.</span>
 </h4>
-<div class="para" id="subsec-divisible-13-2">Exercise 57. Let <span class="process-math">\(R=k[x, y]\text{,}\)</span> where <span class="process-math">\(k\)</span> is a field, let <span class="process-math">\(Q=\operatorname{frac}(R)\)</span> be the fraction field of <span class="process-math">\(R\text{.}\)</span> The <span class="process-math">\(R\)</span>-module <span class="process-math">\(M=Q / R\)</span> is divisible but not injective.</div></article><div class="para" id="subsec-divisible-14">But the converse of <a href="" class="xref" data-knowl="./knowl/xref/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a> does hold for some special classes of rings.</div>
+<div class="para" id="exe-57-2-1">Let <span class="process-math">\(R=k[x, y]\text{,}\)</span> where <span class="process-math">\(k\)</span> is a field, let <span class="process-math">\(Q=\operatorname{frac}(R)\)</span> be the fraction field of <span class="process-math">\(R\text{.}\)</span> The <span class="process-math">\(R\)</span>-module <span class="process-math">\(M=Q / R\)</span> is divisible but not injective.</div></article><div class="para" id="subsec-divisible-14">But the converse of <a href="" class="xref" data-knowl="./knowl/xref/lem-4.24.html" title="Lemma 4.24: Injective Modules Divisible in Domains">Lemma 4.24</a> does hold for some special classes of rings.</div>
 <article class="theorem theorem-like" id="lem-4.26"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.27</span><span class="period">.</span><span class="space"> </span><span class="title">Injective iff Divisible in PID.</span>
 </h4>

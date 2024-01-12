@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -625,13 +625,13 @@ window.MathJax = {
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exact Functors: Revisited</span>
 </h3>
 <article class="definition definition-like" id="def-7.40"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.59</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.58</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.40-1-1">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. A subcategory <span class="process-math">\(\mathcal{B}\)</span> of <span class="process-math">\(\mathcal{A}\)</span> is an abelian subcategory of <span class="process-math">\(\mathcal{A}\)</span> if <span class="process-math">\(\mathcal{B}\)</span> is abelian and the inclusion <span class="process-math">\(\mathcal{B} \subseteq \mathcal{A}\)</span> is an exact functor.</div></article><article class="exercise exercise-like" id="exe-91"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.60</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.59</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-91-1">Let <span class="process-math">\(\mathcal{B}\)</span> be a full subcategory of the abelian category <span class="process-math">\(\mathcal{A}\text{.}\)</span> Show that: a) <span class="process-math">\(\mathcal{B}\)</span> is an additive category if and only if <span class="process-math">\(\mathcal{B}\)</span> contains 0 and is closed under finite coproducts. b) <span class="process-math">\(\mathcal{B}\)</span> is an abelian subcategory if and only if <span class="process-math">\(\mathcal{B}\)</span> is additive and closed under kernels and cokernels.</div></article><article class="definition definition-like" id="def-7.41"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.61</span><span class="period">.</span>
+<div class="para" id="exe-91-1-1">Let <span class="process-math">\(\mathcal{B}\)</span> be a full subcategory of the abelian category <span class="process-math">\(\mathcal{A}\text{.}\)</span> Show that: a) <span class="process-math">\(\mathcal{B}\)</span> is an additive category if and only if <span class="process-math">\(\mathcal{B}\)</span> contains 0 and is closed under finite coproducts. b) <span class="process-math">\(\mathcal{B}\)</span> is an abelian subcategory if and only if <span class="process-math">\(\mathcal{B}\)</span> is additive and closed under kernels and cokernels.</div></article><article class="definition definition-like" id="def-7.41"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.60</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="def-7.41-1-1">
 <div class="para">Let <span class="process-math">\(T: \mathcal{A} \longrightarrow \mathcal{B}\)</span> be an additive covariant functor between abelian categories. We say <span class="process-math">\(T\)</span> is left exact if it takes every exact sequence</div>
@@ -710,7 +710,7 @@ T(C) \stackrel{T(g)}{\longrightarrow} T(B) \stackrel{T(f)}{\longrightarrow} T(A)
 \end{equation*}
 </div>
 </div></article><article class="theorem theorem-like" id="thm-7.42"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.62</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.61</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="thm-7.42-1-1">
 <div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category, and fix an object <span class="process-math">\(x\)</span> in <span class="process-math">\(\mathcal{A}\text{.}\)</span> The functors</div>
@@ -744,15 +744,15 @@ y \longmapsto \operatorname{Hom}_{\mathcal{A}}(x, y) &amp; &amp; y \longmapsto \
 <li id="thm-7.42-2-4-1-3"><div class="para" id="thm-7.42-2-4-1-3-1">We want to show that <span class="process-math">\(\operatorname{ker} g_{*}=\operatorname{im} f_{*}\text{,}\)</span> and these are now maps of abelian groups. So we need to show that every <span class="process-math">\(h \in \operatorname{Hom}_{\mathcal{A}}(x, C)\)</span> such that <span class="process-math">\(g h=0\)</span> factors uniquely through <span class="process-math">\(f\text{,}\)</span> meaning <span class="process-math">\(h=\operatorname{im} f_{*}\text{.}\)</span> Our assumption that the original sequence is exact implies that <span class="process-math">\(f=\operatorname{im} f=\operatorname{ker} g\text{.}\)</span> The universal of property of the kernel gives us that whenever <span class="process-math">\(g h=0, h\)</span> must factor through <span class="process-math">\(\operatorname{ker} g=f=\operatorname{im} f\text{.}\)</span>
 </div></li>
 </ul></div></article></details><article class="exercise exercise-like" id="exe-92"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.63</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.62</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-92-1">Let <span class="process-math">\(I\)</span> be any small category. Show that if <span class="process-math">\(\mathcal{A}\)</span> is an abelian category, then so is the category <span class="process-math">\(\mathcal{A}^{I}\)</span> of functors <span class="process-math">\(I \longrightarrow \mathcal{A}\text{.}\)</span>
+<div class="para" id="exe-92-1-1">Let <span class="process-math">\(I\)</span> be any small category. Show that if <span class="process-math">\(\mathcal{A}\)</span> is an abelian category, then so is the category <span class="process-math">\(\mathcal{A}^{I}\)</span> of functors <span class="process-math">\(I \longrightarrow \mathcal{A}\text{.}\)</span>
 </div></article></section><section class="subsection" id="subsec-yoneda-ab"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">The Yoneda Lemma: Revisited</span>
 </h3>
 <div class="para" id="subsec-yoneda-ab-2">We are now ready for the abelian category version of the Yoneda Lemma; this turns out to be a very useful result.</div>
 <article class="theorem theorem-like" id="thm-7.43"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.64</span><span class="period">.</span><span class="space"> </span><span class="title">Yoneda Embedding for Abelian Categories.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.63</span><span class="period">.</span><span class="space"> </span><span class="title">Yoneda Embedding for Abelian Categories.</span>
 </h4>
 <div class="para" id="thm-7.43-2-1">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. Recall that <span class="process-math">\(\boldsymbol{A b}^{\mathcal{A}^{o p}}\)</span> denotes the category of contravariant functors <span class="process-math">\(\mathcal{A} \rightarrow \boldsymbol{A} \boldsymbol{b}\text{.}\)</span> The covariant functor</div> <div class="para logical" id="thm-7.43-2-2"><div class="displaymath process-math">
 \begin{equation*}
@@ -819,7 +819,7 @@ A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
 <div class="para">is exact.</div>
 </div></article></details><div class="para" id="subsec-yoneda-ab-4">Here is a fun and very useful application of Theorem 7.43.</div>
 <article class="corollary theorem-like" id="cor-7.44"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.65</span><span class="period">.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.64</span><span class="period">.</span>
 </h4>
 <div class="para" id="cor-7.44-1-1">Let <span class="process-math">\((L, R)\)</span> be an adjoint pair of additive functors <span class="process-math">\(\mathcal{A} \underset{R}{\stackrel{L}{\longleftrightarrow}} \mathcal{B}\)</span> between abelian categories. Then <span class="process-math">\(L\)</span> is right exact, and <span class="process-math">\(R\)</span> is left exact.</div></article><details id="cor-7.44-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="cor-7.44-2-1">
 <div class="para">Consider a short exact sequence</div>
@@ -840,7 +840,7 @@ A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
 </div> <div class="para" id="cor-7.44-2-6">Finally, by Remark 7.25, <span class="process-math">\(\mathcal{A}^{\mathrm{op}}\)</span> and <span class="process-math">\(\mathcal{B}^{\mathrm{op}}\)</span> are both abelian categories. Consider the opposite functors <span class="process-math">\(L^{\mathrm{op}}\)</span> and <span class="process-math">\(R^{\mathrm{op}}\text{.}\)</span> Notice that <span class="process-math">\(L^{\mathrm{op}}\)</span> is the right adjoint to <span class="process-math">\(R^{\mathrm{op}}\text{,}\)</span> so <span class="process-math">\(L^{\mathrm{op}}\)</span> must be left exact. Therefore, <span class="process-math">\(L\)</span> must be right exact.</div></article></details><div class="para" id="subsec-yoneda-ab-6">This is possibly the first time we have encountered a proof that truly used duality in an essential and interesting way. In the case where <span class="process-math">\(\mathcal{A}=\mathcal{B}=R\)</span>-Mod, the fact that <span class="process-math">\(R\)</span> is left exact can be obtained using only methods from <span class="process-math">\(R\)</span>-Mod; but the statement about <span class="process-math">\(L\)</span> used the fact that <span class="process-math">\(\mathcal{A}^{\mathrm{op}}\)</span> is an abelian category, while the opposite category of <span class="process-math">\(R\)</span>-Mod is not another category of modules.</div>
 <div class="para" id="subsec-yoneda-ab-7">The Yoneda embedding from Theorem 7.43 is the first piece of the proof of a very important result.</div>
 <article class="theorem theorem-like" id="thm-7.45"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.66</span><span class="period">.</span><span class="space"> </span><span class="title">Freyd-Mitchell embedding theorem.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.65</span><span class="period">.</span><span class="space"> </span><span class="title">Freyd-Mitchell embedding theorem.</span>
 </h4>
 <div class="para" id="thm-7.45-2-1">Let <span class="process-math">\(\mathcal{A}\)</span> be a small abelian category. There exists a ring <span class="process-math">\(R\text{,}\)</span> possibly not commutative, and an exact, fully faithful embedding <span class="process-math">\(\mathcal{A} \longrightarrow R\)</span>-Mod.</div></article><div class="para" id="subsec-yoneda-ab-9">The full details of the proof are rather complicated, and can be found in [Fre03]. Here is a very rough map of the proof. By Theorem 7.43, we already have a fully faithful embedding of <span class="process-math">\(\mathcal{A}\)</span> in <span class="process-math">\(\mathbf{A} \mathbf{b}^{\mathcal{A}^{\text {op }}}\text{,}\)</span> so it is sufficient to show that there is a fully faithful embedding of <span class="process-math">\(\mathbf{A} \mathbf{b}^{\mathcal{A}^{\text {op }}}\)</span> into some <span class="process-math">\(R\)</span>-Mod. The idea is to quotient <span class="process-math">\(\mathbf{A b}^{\mathcal{A}^{\text {op }}}\)</span> by an abelian subcategory <span class="process-math">\(L\)</span> that contains all the kernels and cokernels of the arrows <span class="process-math">\(\operatorname{Hom}_{\mathcal{A}}(-, y) \rightarrow \operatorname{Hom}_{\mathcal{A}}(-, z)\)</span> for all epis <span class="process-math">\(y \longrightarrow z\text{,}\)</span> in such a way that the composite of the embedding in Theorem 7.43 with this quotient remains an embedding. Then one shows that this quotient category has all coproducts and also what is called a projective generator. Roughly speaking, this is a projective object <span class="process-math">\(P\)</span> such that for every object <span class="process-math">\(M\)</span> there exists an arrow <span class="process-math">\(P \rightarrow M\text{.}\)</span> Then one shows that this implies that this category is equivalent to a full abelian subcategory of <span class="process-math">\(R\)</span>-Mod for some <span class="process-math">\(R\text{.}\)</span>
 </div></section><section class="subsection" id="subsec-diagrams-ab"><h3 class="heading hide-type">
@@ -848,7 +848,7 @@ A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
 </h3>
 <div class="para" id="subsec-diagrams-ab-2">Most of the theorems we have proved about <span class="process-math">\(R\)</span>-Mod extend to any abelian category. Some of those theorems can in fact be deduced from the fact that they are true over <span class="process-math">\(R\)</span>-Mod.</div>
 <article class="theorem theorem-like" id="thm-7.46"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.67</span><span class="period">.</span><span class="space"> </span><span class="title">Snake Lemma.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.66</span><span class="period">.</span><span class="space"> </span><span class="title">Snake Lemma.</span>
 </h4>
 <div class="para" id="thm-7.46-2-1">Consider an abelian category <span class="process-math">\(\mathcal{A}\)</span> and a commutative diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-17.jpg" class="contained"></div> <div class="para logical" id="thm-7.46-2-3">
 <div class="para">If the rows of the diagram are exact, then there exists an exact sequence</div>
@@ -858,7 +858,7 @@ A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
 \end{equation*}
 </div>
 </div></article><article class="theorem theorem-like" id="thm-7.47"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.68</span><span class="period">.</span><span class="space"> </span><span class="title">Long exact sequence in homology.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.67</span><span class="period">.</span><span class="space"> </span><span class="title">Long exact sequence in homology.</span>
 </h4>
 <div class="para logical" id="thm-7.47-2-1">
 <div class="para">Given a short exact sequence in <span class="process-math">\(\operatorname{Ch}(R)\)</span>
@@ -876,7 +876,7 @@ A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
 </div>
 <div class="para">is an exact sequence.</div>
 </div></article><article class="theorem theorem-like" id="thm-7.48"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.69</span><span class="period">.</span><span class="space"> </span><span class="title">The Five Lemma.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.68</span><span class="period">.</span><span class="space"> </span><span class="title">The Five Lemma.</span>
 </h4>
 <div class="para" id="thm-7.48-2-1">Given an abelian category <span class="process-math">\(\mathcal{A}\text{,}\)</span> consider the following commutative diagram in <span class="process-math">\(\mathcal{A}\)</span> with exact rows:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-18.jpg" class="contained"></div> <div class="para" id="thm-7.48-2-3">If <span class="process-math">\(b\)</span> and <span class="process-math">\(d\)</span> are epi and <span class="process-math">\(e\)</span> is a mono, then <span class="process-math">\(c\)</span> is an epi. If <span class="process-math">\(b\)</span> and <span class="process-math">\(d\)</span> are mono and a is epi, then <span class="process-math">\(c\)</span> is mono.</div></article><div class="para" id="subsec-diagrams-ab-6">One can prove these by invoking the Freyd-Mitchell theorem and checking that one can go back and forth with our statements between some small subcategory of <span class="process-math">\(\mathcal{A}\)</span> containing our diagram and all the necessary kernels, cokernels, etc, and some <span class="process-math">\(R\)</span>-Mod where that category embeds. Alternatively, one can use what are called members, as in [ML98, VIII.4.5]. The theory of members is an attempt to fix the main difficulty when dealing with abelian categories: that the objects and arrows are not just sets and functions, so we can’t just talk about members of the objects and their images by each arrow.</div></section></section></div>
 <div class="ptx-content-footer">

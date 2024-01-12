@@ -426,7 +426,8 @@ window.MathJax = {
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
 </ul>
@@ -599,7 +600,6 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="exercises.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -625,7 +625,7 @@ window.MathJax = {
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Complexes in Abelian Categories</span>
 </h3>
 <article class="definition definition-like" id="def-7.28"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.42</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.41</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="def-7.28-1-1">
 <div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. A chain complex or simply complex <span class="process-math">\((C, \partial)\text{,}\)</span> which we sometimes write just a <span class="process-math">\(C\text{,}\)</span> is a sequence of objects and arrows</div>
@@ -636,7 +636,7 @@ window.MathJax = {
 </div>
 <div class="para">such that <span class="process-math">\(\partial_{n-1} \partial_{n}=0\)</span> for all <span class="process-math">\(n\text{.}\)</span> A map of complexes <span class="process-math">\(f: C \longrightarrow D\)</span> between two chain complexes is a sequence of arrows <span class="process-math">\(f_{n}\)</span> such that the diagram</div>
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-09(1).jpg" class="contained"></div> <div class="para" id="def-7.28-1-3">commutes. The category of (chain) complexes over <span class="process-math">\(\mathcal{A}\text{,}\)</span> denoted <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\text{,}\)</span> is the category that has objects all chain complexes in <span class="process-math">\(\mathcal{A}\)</span> and arrows all the chain complex maps.</div></article><article class="lemma theorem-like" id="lem-7.29"><h4 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.43</span><span class="period">.</span>
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.42</span><span class="period">.</span>
 </h4>
 <div class="para" id="lem-7.29-1-1">If <span class="process-math">\(\mathcal{A}\)</span> is an abelian category, then <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\)</span> is also an abelian category.</div></article><details id="lem-7.29-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="lem-7.29-2-1">
 <div class="para">Proof sketch. First, note that <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\)</span> is a preadditive category: given two maps of complexes <span class="process-math">\(f\)</span> and <span class="process-math">\(g, f+g\)</span> is obtained degreewise, by taking</div>
@@ -663,7 +663,7 @@ C \times D=\cdots \longrightarrow C_{n} \times D_{n} \stackrel{\partial_{n}^{C} 
 <div class="para">is a complex in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\text{,}\)</span> and the canonical maps <span class="process-math">\(\operatorname{ker} f_{n} \rightarrow C_{n}\)</span> assemble into a map of complexes. One can check that the universal property of the kernels <span class="process-math">\(\operatorname{ker} f_{n}\)</span> forces this complex we just constructed to be <span class="process-math">\(\operatorname{ker} f\text{.}\)</span> In particular, <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\)</span> has all kernels. Similarly, we construct cokernels in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\text{,}\)</span> building on the fact that <span class="process-math">\(\mathcal{A}\)</span> has all cokernels.</div>
 </div> <div class="para" id="lem-7.29-2-8">Finally, it remains to show that every mono is the kernel of its cokernel and every epi is the cokernel of its kernel. This boils down to the fact that <span class="process-math">\(f\)</span> is a mono if and only if all the <span class="process-math">\(f_{n}\)</span> are monos, and dually that <span class="process-math">\(f\)</span> is an epi if and only if all the <span class="process-math">\(f_{n}\)</span> are epis. The conclusion will then follow from our construction of kernels and cokernels and the fact that <span class="process-math">\(\mathcal{A}\)</span> is abelian. Our claim follows from Exercise 83 and the fact that <span class="process-math">\(f=0\)</span> if and only if all <span class="process-math">\(f_{n}=0\text{.}\)</span>
 </div></article></details><article class="definition definition-like" id="def-7.30"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.44</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.43</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="def-7.30-1-1">
 <div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. For each <span class="process-math">\(C\)</span> in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\text{,}\)</span> we define its cycles <span class="process-math">\(Z_{n}(C)\)</span> and boundaries <span class="process-math">\(B_{n}(C)\)</span> by</div>
@@ -673,16 +673,16 @@ Z_{n}(C):=\text { source ker } \partial_{n} \quad \text { and } \quad B_{n}(C):=
 \end{equation*}
 </div>
 </div></article><article class="remark remark-like" id="rem-7.31"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.45</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.44</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.31-1">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category, and <span class="process-math">\(C \stackrel{f}{\rightarrow} D \stackrel{g}{\rightarrow} E\)</span> be arrows in <span class="process-math">\(\mathcal{A}\)</span> such that <span class="process-math">\(g f=0\text{.}\)</span> By Remark 7.22, we can factor <span class="process-math">\(f\)</span> as an epi followed by <span class="process-math">\(\operatorname{im} f\text{.}\)</span>
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-10(1).jpg" class="contained"></div> <div class="para" id="rem-7.31-3">Since <span class="process-math">\(g \circ \operatorname{im} f \circ \operatorname{epi}=g f=0\text{,}\)</span> we must have <span class="process-math">\(g \circ \operatorname{im} f=0\text{,}\)</span> so <span class="process-math">\(\operatorname{im} f\)</span> factors uniquely through ker <span class="process-math">\(g\text{.}\)</span> Most importantly, there is a canonical arrow <span class="process-math">\(\operatorname{im} f \longrightarrow \operatorname{ker} g\text{.}\)</span>
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-11.jpg" class="contained"></div></article><article class="definition definition-like" id="def-7.32"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.46</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.45</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.32-1-1">Definition 7.32. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. A sequence of arrows <span class="process-math">\(C \stackrel{f}{\rightarrow} D \stackrel{g}{\rightarrow} E\)</span> in <span class="process-math">\(\mathcal{A}\)</span> is exact if <span class="process-math">\(g f=0\)</span> and <span class="process-math">\(\operatorname{ker} g=\operatorname{im} f\text{.}\)</span>
 </div></article><article class="remark remark-like" id="rem-7.33"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.47</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.46</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.33-1">Remark 7.33. In our definition of exact sequence, we really mean that the canonical arrow <span class="process-math">\(\operatorname{im} f \longrightarrow \operatorname{ker} g\)</span> we described in Remark 7.31 is an isomorphism. But notice that is equivalent to saying that the arrow <span class="process-math">\(\operatorname{im} f\)</span> is a kernel for <span class="process-math">\(g\text{,}\)</span> and <span class="process-math">\(\operatorname{ker} g\)</span> is an image for <span class="process-math">\(f\text{,}\)</span> hence the equality we wrote above, which is a more compact way of saying this.</div></article><div class="para" id="subsec-complexes-ab-8">This immediately generalizes to define an exact sequence, and once again a short exact sequence is one of the form</div>
 <div class="para logical" id="subsec-complexes-ab-9"><div class="displaymath process-math">
@@ -691,30 +691,27 @@ Z_{n}(C):=\text { source ker } \partial_{n} \quad \text { and } \quad B_{n}(C):=
 \end{equation*}
 </div></div>
 <article class="exercise exercise-like" id="exe-86"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.48</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.47</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-86-1">Exercise 86. Show that <span class="process-math">\(0 \longrightarrow A \stackrel{f}{\rightarrow} B\)</span> is exact if and only if <span class="process-math">\(f\)</span> is a mono, and <span class="process-math">\(B \stackrel{g}{\rightarrow} C \longrightarrow 0\)</span> is exact if and only if <span class="process-math">\(g\)</span> is an epi. Moreover,</div>
-<div class="para logical" id="exe-86-2"><div class="displaymath process-math">
+<div class="para" id="exe-86-1-1">Exercise 86. Show that <span class="process-math">\(0 \longrightarrow A \stackrel{f}{\rightarrow} B\)</span> is exact if and only if <span class="process-math">\(f\)</span> is a mono, and <span class="process-math">\(B \stackrel{g}{\rightarrow} C \longrightarrow 0\)</span> is exact if and only if <span class="process-math">\(g\)</span> is an epi. Moreover,</div> <div class="para logical" id="exe-86-1-2"><div class="displaymath process-math">
 \begin{equation*}
 0 \longrightarrow A \xrightarrow{f} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
 \end{equation*}
-</div></div>
-<div class="para" id="exe-86-3">is a short exact sequence if and only if</div>
-<div class="para logical" id="exe-86-4"><ul class="disc"><li id="exe-86-4-1-1"><div class="para" id="exe-86-4-1-1-1">
+</div></div> <div class="para" id="exe-86-1-3">is a short exact sequence if and only if</div> <div class="para logical" id="exe-86-1-4"><ul class="disc"><li id="exe-86-1-4-1-1"><div class="para" id="exe-86-1-4-1-1-1">
 <span class="process-math">\(f\)</span> is a mono. <span class="process-math">\(\quad \bullet g\)</span> is an epi. <span class="process-math">\(f=\operatorname{im} f=\operatorname{ker} g\text{.}\)</span> <span class="process-math">\(\bullet \operatorname{coker} f=g\text{.}\)</span>
 </div></li></ul></div></article><article class="remark remark-like" id="rem-7.34"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.49</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.48</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.34-1">Remark 7.34. Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category and <span class="process-math">\((C, \partial)\)</span> be a complex in <span class="process-math">\(\operatorname{Ch}(R)\text{.}\)</span> Since <span class="process-math">\(\partial_{n} \partial_{n+1}=0\)</span> for all <span class="process-math">\(n\text{,}\)</span> we get a canonical arrow <span class="process-math">\(B_{n}(C) \longrightarrow Z_{n}(C)\)</span> for each <span class="process-math">\(n\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="exe-87"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.50</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.49</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-87-1">Exercise 87. Given an additive category <span class="process-math">\(\mathcal{A}, B_{n}\)</span> and <span class="process-math">\(Z_{n}\)</span> are additive functors <span class="process-math">\(\operatorname{Ch}(\mathcal{A}) \longrightarrow \mathcal{A}\text{.}\)</span> In particular, an arrow <span class="process-math">\(C \stackrel{f}{\rightarrow} D\)</span> induces arrows <span class="process-math">\(Z_{n}(C) \stackrel{Z_{n}(f)}{\longrightarrow} Z_{n}(D)\)</span> and <span class="process-math">\(B_{n}(c) \stackrel{B_{n}(f)}{\longrightarrow} B_{n}(D)\text{.}\)</span>
+<div class="para" id="exe-87-1-1">Exercise 87. Given an additive category <span class="process-math">\(\mathcal{A}, B_{n}\)</span> and <span class="process-math">\(Z_{n}\)</span> are additive functors <span class="process-math">\(\operatorname{Ch}(\mathcal{A}) \longrightarrow \mathcal{A}\text{.}\)</span> In particular, an arrow <span class="process-math">\(C \stackrel{f}{\rightarrow} D\)</span> induces arrows <span class="process-math">\(Z_{n}(C) \stackrel{Z_{n}(f)}{\longrightarrow} Z_{n}(D)\)</span> and <span class="process-math">\(B_{n}(c) \stackrel{B_{n}(f)}{\longrightarrow} B_{n}(D)\text{.}\)</span>
 </div></article></section><section class="subsection" id="subsec-hom-ab"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Homology in Abelian Categories</span>
 </h3>
 <article class="definition definition-like" id="def-7.35"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.51</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.50</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="def-7.35-1-1">
 <div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category and <span class="process-math">\((C, \partial)\)</span> a complex in <span class="process-math">\(\operatorname{Ch}(R)\text{.}\)</span> The <span class="process-math">\(n\)</span>th homology of <span class="process-math">\(C\)</span> is the object</div>
@@ -732,12 +729,12 @@ Z_{n}(C):=\text { source ker } \partial_{n} \quad \text { and } \quad B_{n}(C):=
 <div class="para" id="subsec-hom-ab-8">where coker <span class="process-math">\(\beta \circ\left(Z_{n}(f)\right) \circ \alpha=\operatorname{coker} \beta \circ \beta \circ B_{n}(f)=0\text{,}\)</span> which gives us a unique factorization <span class="process-math">\(\mathrm{H}_{n}(f)\)</span> through coker <span class="process-math">\(\alpha\text{.}\)</span>
 </div>
 <article class="exercise exercise-like" id="exe-88"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.52</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.51</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-88-1">Given any abelian category <span class="process-math">\(\mathcal{A}, \mathrm{H}_{n}\)</span> is an additive functor <span class="process-math">\(\operatorname{Ch}(\mathcal{A}) \longrightarrow \mathcal{A}\text{.}\)</span>
+<div class="para" id="exe-88-1-1">Given any abelian category <span class="process-math">\(\mathcal{A}, \mathrm{H}_{n}\)</span> is an additive functor <span class="process-math">\(\operatorname{Ch}(\mathcal{A}) \longrightarrow \mathcal{A}\text{.}\)</span>
 </div></article><div class="para" id="subsec-hom-ab-10">Similarly, we can define homotopies.</div>
 <article class="definition definition-like" id="def-7.36"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.53</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.52</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.36-1-1">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category and <span class="process-math">\(f, g: F \longrightarrow G\)</span> be maps complexes in <span class="process-math">\(\mathrm{Ch}(\mathcal{A})\text{.}\)</span> A homotopy, sometimes referred to as a chain homotopy, between <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> is a sequence of arrows <span class="process-math">\(h_{n}: F_{n} \longrightarrow G_{n+1}\)</span>
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-12(2).jpg" class="contained"></div> <div class="para" id="def-7.36-1-3">such that</div> <div class="para logical" id="def-7.36-1-4"><div class="displaymath process-math">
@@ -745,23 +742,23 @@ Z_{n}(C):=\text { source ker } \partial_{n} \quad \text { and } \quad B_{n}(C):=
 \delta_{n+1} h_{n}+h_{n-1} \delta_{n}=f_{n}-g_{n}
 \end{equation*}
 </div></div> <div class="para" id="def-7.36-1-5">for all <span class="process-math">\(n\text{.}\)</span> If there exists a homotopy between <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{,}\)</span> we say that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are homotopic, and write <span class="process-math">\(f \simeq g\text{.}\)</span> If <span class="process-math">\(f\)</span> is homotopic to the zero map, we say <span class="process-math">\(f\)</span> is null-homotopic. If <span class="process-math">\(f: F \rightarrow G\)</span> and <span class="process-math">\(g: G \rightarrow F\)</span> are maps of complexes such that <span class="process-math">\(f g\)</span> is homotopic to the identity arrow <span class="process-math">\(1_{G}\)</span> and <span class="process-math">\(g f\)</span> is homotopic to the identity arrow <span class="process-math">\(1_{F}\text{,}\)</span> we say that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are homotopy equivalences and <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are homotopy equivalent.</div></article><article class="exercise exercise-like" id="exe-89"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.53</span><span class="period">.</span>
+</h4>
+<div class="para" id="exe-89-1-1">Homotopy is an equivalence relation in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exe-90"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.54</span><span class="period">.</span>
 </h4>
-<div class="para" id="exe-89-1">Homotopy is an equivalence relation in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="exe-90"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7.55</span><span class="period">.</span>
-</h4>
-<div class="para" id="exe-90-1">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. Homotopic maps of complexes in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\)</span> induce the same map on homology.</div></article><article class="remark remark-like" id="rem-7.37"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.56</span><span class="period">.</span>
+<div class="para" id="exe-90-1-1">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. Homotopic maps of complexes in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\)</span> induce the same map on homology.</div></article><article class="remark remark-like" id="rem-7.37"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.55</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-7.37-1">Let <span class="process-math">\(F\)</span> be an additive functor between abelian categories. Then <span class="process-math">\(F\)</span> must send complexes to complexes, and it induces a functor <span class="process-math">\(\operatorname{Ch}(\mathcal{A}) \rightarrow \operatorname{Ch}(\mathcal{A})\text{,}\)</span> which we also call <span class="process-math">\(F\text{.}\)</span> Now if <span class="process-math">\(h\)</span> is a homotopy between two maps of complexes, <span class="process-math">\(F\)</span> preserves the identities <span class="process-math">\(\delta_{n+1} h_{n}+h_{n-1} \delta_{n}=f_{n}-g_{n}\)</span> for all <span class="process-math">\(n\text{,}\)</span> so <span class="process-math">\(F(h)\)</span> is a homotopy between <span class="process-math">\(F(f)\)</span> and <span class="process-math">\(F(g)\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-7.38"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.57</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.56</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.38-1-1">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category. A map of complexes <span class="process-math">\(f: A \rightarrow B\)</span> in <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\)</span> is a quasi-isomorphism if <span class="process-math">\(\mathrm{H}_{n}(f)\)</span> is an isomorphism for all <span class="process-math">\(n\text{.}\)</span>
 </div></article><div class="para" id="subsec-hom-ab-16">Finally, we set up some notation we will use later.</div>
 <article class="definition definition-like" id="def-7.39"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.58</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.57</span><span class="period">.</span>
 </h4>
 <div class="para" id="def-7.39-1-1">We will denote the full subcategory of <span class="process-math">\(\operatorname{Ch}(\mathcal{A})\)</span> of complexes <span class="process-math">\(C\)</span> such that <span class="process-math">\(C_{n}=0\)</span> for all <span class="process-math">\(n&lt;k\)</span> by <span class="process-math">\(\mathrm{Ch}_{\geqslant k}(\mathcal{A})\text{.}\)</span>
 </div></article></section></section></div>

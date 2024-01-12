@@ -315,9 +315,10 @@
       \usetikzlibrary{calc}
       \usetikzlibrary{shapes}
       \usetikzlibrary{through,intersections,decorations,shadows,fadings}
-      
+      \usepackage{tikz-cd}
       \usepackage{pgfplots}
     </latex-image-preamble>
+
 
     <rename element="inlineexercise">Exercise</rename>
     <rename element="outcomes">Summary</rename>
@@ -488,13 +489,15 @@
           </definition>
 
           <exercise xml:id="rem-0.7">
-            <p>
-              We can rephrase <xref ref="thm-0.4"/> in a fancier language: if
-              <me>
-                0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
-              </me>
-              is a short exact sequence, then <m>A=\operatorname{ker} g</m> and <m>C=\operatorname{coker} f</m>.
-            </p>
+            <statement>
+              <p>
+                We can rephrase <xref ref="thm-0.4"/> in a fancier language: if
+                <me>
+                  0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+                </me>
+                is a short exact sequence, then <m>A=\operatorname{ker} g</m> and <m>C=\operatorname{coker} f</m>.
+              </p>
+            </statement>
           </exercise>
 
           <example>
@@ -603,9 +606,11 @@
           </remark>
 
           <exercise xml:id="rem-0.15">
-            <p>
-              Note that <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if and only if <m>\mathrm{H}_{n}\left(C_{\bullet}\right)=0</m>. 
-            </p>
+            <statement>
+              <p>
+                Note that <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if and only if <m>\mathrm{H}_{n}\left(C_{\bullet}\right)=0</m>. 
+              </p>
+            </statement>
           </exercise>
 
           <example>
@@ -780,12 +785,17 @@
               </p>
             </convention>
 
-            <exercise xml:id="exp-unique-id-morphism"><title>Unique Identity Morphism</title>
+            <exercise xml:id="exe-1"><title>Unique Identity Morphism</title>
               <statement>
                 <p>
                   Every object in a category has a unique identity morphism.
                 </p>
               </statement>
+              <solution>
+                <p>
+                  
+                </p>
+              </solution>
             </exercise>
 
             <p>
@@ -793,53 +803,43 @@
             </p>
 
             <example xml:id="ex-categories"><title>Categories</title>
-              <p>
-                <ol>
-                  <li>
-                    <p>
-                      The category <m>\Set</m> with objects all sets and arrows all functions between sets.
-                    </p>
-                  </li>
-            
-                  <li>
-                    <p>
-                      The category <m>\Grp</m> whose objects are the collection of all groups, and whose arrows are all the homomorphisms of groups.
-                      The identity arrows are the identity homomorphisms.
-                    </p>
-                  </li>
-            
-                  <li>
-                    <p>
-                      The category <m>\mathbf{Ab}</m> with objects all abelian groups, and arrows the homomorphisms of abelian groups. 
-                      The identity arrows are the identity homomorphisms.
-                    </p>
-                  </li>
-            
-                  <li>
-                    <p>
-                      The category <m>\Ring</m> of rings and ring homomorphisms. 
-                      Contrary to what you may expect, this is not nearly as important as the next one.
-                    </p>
-                  </li>
-            
-                  <li>
-                    <p>
-                      The category <m>R</m><m>\mod</m> of modules over a fixed ring <m>R</m> and with <m>R</m>-module homomorphisms. 
-                      Sometimes one writes <m>R</m><m>\Mod</m> for this category, and reserve <m>R</m><m>\mod</m> for the category of finitely generated <m>R</m>-modules with <m>R</m><m>\Mod</m>ule homomorphisms. 
-                      When <m>R=k</m> is a field, the objects in the category <m>k</m>-Mod are <m>k</m>-vector spaces, and the arrows are linear transformations; 
-                      we may instead refer to this category as Vect-<m>k</m>.
-                    </p>
-                  </li>
-            
-                  <li>
-                    <p>
-                      The category Top of topological spaces and continuous functions. 
-                      One may consider many variations of the categories above. 
-                      Here are some variations on vector spaces:
-                    </p>
-                  </li>
-                </ol>
-              </p>
+              <tabular>
+                <row bottom="minor">
+                  <cell halign="center"><term>Category</term></cell>
+                  <cell halign="center"><term>Objects</term></cell>
+                  <cell halign="center"><term>Morphisms</term></cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Set</m></cell>
+                  <cell halign="center">sets</cell>
+                  <cell halign="center">functions</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Grp</m></cell>
+                  <cell halign="center">groups</cell>
+                  <cell halign="center">group homomorphisms</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Ab</m></cell>
+                  <cell halign="center">abelian groups</cell>
+                  <cell halign="center">abelian group homomorphisms</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Ring</m></cell>
+                  <cell halign="center">rings</cell>
+                  <cell halign="center">ring homomorphisms</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>R\Mod</m></cell>
+                  <cell halign="center"><m>R</m>-modules</cell>
+                  <cell halign="center"><m>R</m>-maps</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Top</m></cell>
+                  <cell halign="center">topological spaces</cell>
+                  <cell halign="center">continuous functions</cell>
+                </row>
+              </tabular>
             </example>
 
             <p>
@@ -885,18 +885,18 @@
             <example xml:id="non-concrete-categories"><title>Non-Concrete Categories</title>
               <p>
                 <ol>
-                  <li xml:id="ex-poset-category">
+                  <li xml:id="ex-poset-category"><title><m>\PO(X)</m></title>
                     <p>
                       Given a partially ordered set <m>(X, \leqslant)</m>, we can regard <m>X</m> itself as a category: 
                       the objects are the elements of <m>X</m>, and for each <m>x</m> and <m>y</m> in <m>X, \operatorname{Hom}_{X}(x, y)</m> is either a singleton if <m>x \leqslant y</m> or empty if <m>x \neq y</m>. 
                       There is only one possible way to define composition, and the transitive property of <m>\leqslant</m> guarantees that the composition of arrows is indeed well-defined: 
                       if there is an arrow <m>i \rightarrow j</m> and an arrow <m>j \rightarrow k</m>, then <m>i \leqslant j</m> and <m>j \leqslant k</m>, so <m>i \leqslant k</m> and thus there is a unique arrow <m>i \rightarrow k</m>. 
-                      This category is locally small, since all nonempty Hom-sets are in fact singletons. 
+                      This category is locally small, since all nonempty <m>\Hom</m>-sets are in fact singletons. 
                       It is in fact small, since the objects are by construction the set <m>X</m>.
                     </p>
                   </li>
 
-                  <li xml:id="poset-categories-2"><title><m>\mathbf{n}</m> Category</title>
+                  <li xml:id="poset-categories-2"><title><m>\mathbf{n}</m></title>
                     <p>
                       For each positive integer <m>n</m>, the category <m>\mathbf{n}</m> has <m>n</m> objects <m>0,1, \ldots, n-1</m> and <m>\operatorname{Hom}(i, j)</m> is either empty if <m>i&gt;j</m> or a singleton if <m>i \leqslant j</m>. 
                       As <xref ref="ex-poset-category"/>, composition is defined in the only way possible, and things work out. 
@@ -904,21 +904,12 @@
                     </p>
                   </li>
 
-                  <li xml:id="ex-mat-category"><title>Matrix Category</title>
+                  <li xml:id="ex-mat-category"><title><m>\textbf{Mat}-k</m></title>
                     <p>
                       Fix a field <m>k</m>. 
-                      We define a category Mat-<m>k</m> with objects all positive integers, and given two positive integers <m>a</m> and <m>b</m>, the <m>\operatorname{Hom}</m>-set <m>\operatorname{Hom}(a, b)</m> consists of all <m>b \times a</m> matrices with entries in <m>k</m>. 
+                      We define a category <m>\textbf{Mat}-k</m> with objects all positive integers, and given two positive integers <m>a</m> and <m>b</m>, the <m>\operatorname{Hom}</m>-set <m>\operatorname{Hom}(a, b)</m> consists of all <m>b \times a</m> matrices with entries in <m>k</m>. 
                       The composition rule is given by product of matrices: given <m>A \in \operatorname{Hom}(a, b)</m> and <m>B \in \operatorname{Hom}(b, c)</m>, the composition <m>B \circ A</m> is the matrix <m>B A \in \operatorname{Hom}(a, c)</m>. 
                       For each object <m>a</m>, its identity arrow is given by the <m>a \times a</m> identity matrix.
-                    </p>
-                  </li>
-
-                  <li xml:id="ex-directed-graph-category">
-                    <p>
-                      Let <m>G</m> be a directed graph. 
-                      We can construct a category from <m>G</m> as follows: the objects are the vertices of <m>G</m>, and the arrows are directed paths in the graph <m>G</m>. 
-                      In this category, composition of arrows corresponds to concatenation of paths. 
-                      For each object <m>A</m>, the identity arrow corresponds to the empty path from <m>A</m> to <m>A</m>.
                     </p>
                   </li>
                 </ol>
@@ -927,9 +918,8 @@
 
             <remark>
               <p>
-                A locally small category with just one element is completely determined by its unique Hom-set; 
-                it thus consists of a set <m>S</m> with an associative operation that has an identity element, which in this class is what we call a semigroup. 
-                <fn>Some authors prefer the term monoid.</fn>
+                A locally small category with just one element is completely determined by its unique <m>\Hom</m>-set; 
+                it thus consists of a set <m>S</m> with an associative operation that has an identity element, which we call a monoid. 
               </p>
             </remark>
 
@@ -965,7 +955,7 @@
               <p>
                 The diagram
               </p>
-              <image source="2023_08_28_614593e69373955f3addg-11.jpg" width="30%"/>
+              <image source="2023_08_28_614593e69373955f3addg-11.jpg" width="20%"/>
               <p>
                 commutes if and only if <m>g f=v u</m>.
               </p>
@@ -986,7 +976,7 @@
                         In this case, we say that <m>g</m> is the left inverse of <m>f</m>. 
                         So <m>g</m> is a left inverse of <m>f</m> if the diagram
                       </p>
-                      <image source="2023_08_28_614593e69373955f3addg-11(1).jpg" width="30%"/>
+                      <image source="2023_08_28_614593e69373955f3addg-11(1).jpg" width="20%"/>
                       <p>
                         commutes.
                       </p>
@@ -997,7 +987,7 @@
                         An arrow <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m> is <em>right invertible</em> if there exists <m>g \in \operatorname{Hom}_{\mathscr{C}}(B, A)</m> such that <m>f g=1_{B}</m>. 
                         In this case, we say that <m>g</m> is the right inverse of <m>f</m>. So <m>g</m> is a right inverse of <m>f</m> if the diagram
                       </p>
-                      <image source="2023_08_28_614593e69373955f3addg-12.jpg" width="30%"/>
+                      <image source="2023_08_28_614593e69373955f3addg-12.jpg" width="20%"/>
                       <p>
                         commutes.
                       </p>
@@ -1019,7 +1009,7 @@
                 <ol>
                   <li>
                     <p>
-                      In <m>\Grp</m>, <m>\Ring</m>, and R<m>\Mod</m> the isomorphisms are the morphisms that are bijective functions.
+                      In <m>\Grp</m>, <m>\Ring</m>, and <m>R\Mod</m> the isomorphisms are the morphisms that are bijective functions.
                     </p>
                   </li>
 
@@ -1337,10 +1327,12 @@
               </p>
             </remark>
 
-            <exercise><title>Functors Preserve Isomorphisms</title>
-              <p>
-                Show that functors preserve isomorphisms.
-              </p>
+            <exercise xml:id="exe-8"><title>Functors Preserve Isomorphisms</title>
+              <statement>
+                <p>
+                  Show that functors preserve isomorphisms.
+                </p>
+              </statement>
             </exercise>
 
             <p>
@@ -1410,7 +1402,7 @@
               </p>
             </example>
       
-            <exercise>
+            <exercise xml:id="exe-8.5">
               <statement>
                 <p>
                   If we apply a covariant functor to a diagram, then we get a diagram of the same shape: 
@@ -1506,6 +1498,27 @@
               </p>
             </remark>
 
+            <exercise xml:id="exe-9">
+              <statement>
+                <p>
+                  Show that every fully faithful functor <m>\mathscr{C} \longrightarrow \mathscr{D}</m> reflects isos:
+                  <ol>
+                    <li>
+                      <p>
+                        If <m>f</m> is an arrow in <m>\mathscr{C}</m> such that <m>F (f )</m> is an iso, then <m>f</m> is an iso.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If <m>F (X)</m> and <m>F (Y )</m> are isomorphic, then the objects <m>X</m> and <m>Y</m> are isomorphic in <m>\mathscr{C}</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </exercise>
+
             <remark>
               <p>
                 A subcategory <m>\mathscr{C}</m> of <m>\mathscr{D}</m> is <em>full</em> if the inclusion functor <m>\mathscr{C} \longrightarrow \mathscr{D}</m> is full.
@@ -1589,10 +1602,12 @@
               </statement>
             </definition>
 
-            <exercise>
-              <p>
-                Check that <m>\operatorname{Hom}(A,-)</m> and <m>\operatorname{Hom}(-, B)</m> are indeed functors.
-              </p>
+            <exercise xml:id="exe-10">
+              <statement>
+                <p>
+                  Check that <m>\operatorname{Hom}(A,-)</m> and <m>\operatorname{Hom}(-, B)</m> are indeed functors.
+                </p>
+              </statement>
             </exercise>
       
             <p>
@@ -1746,11 +1761,13 @@
               </p>
             </remark>
 
-            <exploration>
-              <p>
-                Show that a natural transformation <m>\eta: \mathscr{C} \Longrightarrow \mathscr{D}</m> is a natural isomorphism if and only if there exists a natural transformation <m>\mu: \mathscr{D} \Longrightarrow \mathscr{C}</m> such that <m>\eta \circ \mu</m> is the identity natural isomorphism on <m>G</m> and <m>\mu \circ \eta</m> is the identity natural isomorphism on <m>F</m>.
-              </p>
-            </exploration>
+            <exercise xml:id="exe-11">
+              <statement>
+                <p>
+                  Show that a natural transformation <m>\eta: \mathscr{C} \Longrightarrow \mathscr{D}</m> is a natural isomorphism if and only if there exists a natural transformation <m>\mu: \mathscr{D} \Longrightarrow \mathscr{C}</m> such that <m>\eta \circ \mu</m> is the identity natural isomorphism on <m>G</m> and <m>\mu \circ \eta</m> is the identity natural isomorphism on <m>F</m>.
+                </p>
+              </statement>
+            </exercise>
 
             <definition xml:id="def-equivalent-categories"><title>Equivalent Categories</title>
               <statement>
@@ -1767,26 +1784,28 @@
               In fact, one can show that a functor is an equivalence of categories if and only if it is fully faithful and essentially surjective - though this fact requires the Axiom of Choice!
             </p>
 
-            <exploration>
-              <p>
-                Let <m>\mathscr{C}</m> be the category with one object <m>C</m> and a unique arrow <m>1_{C}</m>. Let <m>\mathscr{D}</m> be the category with two objects <m>D_{1}</m> and <m>D_{2}</m> and four arrows: 
-                the identities <m>1_{D_{i}}</m> and two isomorphisms <m>\alpha: D_{1} \rightarrow D_{2}</m> and <m>\beta: D_{2} \rightarrow D_{1}</m>. 
-                Let <m>\mathscr{E}</m> be the category with two objects <m>E_{1}</m> and <m>E_{2}</m> and only two arrows, <m>1_{E_{1}}</m> and <m>1_{E_{2}}</m>.
-                <ol>
-                  <li>
-                    <p>
-                      Show that <m>\mathscr{C}</m> and <m>\mathscr{D}</m> are equivalent categories.
-                    </p>
-                  </li>
+            <exercise xml:id="exe-13">
+              <statement>
+                <p>
+                  Let <m>\mathscr{C}</m> be the category with one object <m>C</m> and a unique arrow <m>1_{C}</m>. Let <m>\mathscr{D}</m> be the category with two objects <m>D_{1}</m> and <m>D_{2}</m> and four arrows: 
+                  the identities <m>1_{D_{i}}</m> and two isomorphisms <m>\alpha: D_{1} \rightarrow D_{2}</m> and <m>\beta: D_{2} \rightarrow D_{1}</m>. 
+                  Let <m>\mathscr{E}</m> be the category with two objects <m>E_{1}</m> and <m>E_{2}</m> and only two arrows, <m>1_{E_{1}}</m> and <m>1_{E_{2}}</m>.
+                  <ol>
+                    <li>
+                      <p>
+                        Show that <m>\mathscr{C}</m> and <m>\mathscr{D}</m> are equivalent categories.
+                      </p>
+                    </li>
 
-                  <li>
-                    <p>
-                      Show that <m>\mathscr{C}</m> and <m>\mathscr{E}</m> are not equivalent categories.
-                    </p>
-                  </li>
-                </ol>
-              </p>
-            </exploration>
+                    <li>
+                      <p>
+                        Show that <m>\mathscr{C}</m> and <m>\mathscr{E}</m> are not equivalent categories.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </exercise>
 
           </subsection>
 
@@ -1943,7 +1962,7 @@
 
               <proof>
                 <p>
-                  First, note that our functors are injective on objects because the Hom-sets in our category are all disjoint. 
+                  First, note that our functors are injective on objects because the <m>\Hom</m>-sets in our category are all disjoint. 
                   We need to check that given objects <m>A</m> and <m>B</m> in <m>\mathscr{C}</m>, we have bijections
                   <me>
                     \operatorname{Hom}_{\mathscr{C}}(A, B) \cong \operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(-, A), \operatorname{Hom}_{\mathscr{C}}(-, B)\right)
@@ -1979,8 +1998,8 @@
             <definition xml:id="def-representable-functor">
               <statement>
                 <p>
-                  A covariant functor <m>F: \mathscr{C} \longrightarrow</m> Set is representable if there exists an object <m>A</m> in <m>\mathscr{C}</m> such that <m>F</m> is naturally isomorphic to <m>\operatorname{Hom}_{\mathscr{C}}(A,-)</m>. 
-                  A contravariant functor <m>F: \mathscr{C} \longrightarrow</m> Set is representable if there exists an object <m>B</m> in <m>\mathscr{C}</m> such that <m>F</m> is naturally isomorphic to <m>\operatorname{Hom}_{\mathscr{C}}(-, B)</m>.
+                  A covariant functor <m>F: \mathscr{C} \longrightarrow \Set</m> is <em>representable</em> if there exists an object <m>A</m> in <m>\mathscr{C}</m> such that <m>F</m> is naturally isomorphic to <m>\operatorname{Hom}_{\mathscr{C}}(A,-)</m>. 
+                  A contravariant functor <m>F: \mathscr{C} \longrightarrow \Set</m> is <em>representable</em> if there exists an object <m>B</m> in <m>\mathscr{C}</m> such that <m>F</m> is naturally isomorphic to <m>\operatorname{Hom}_{\mathscr{C}}(-, B)</m>.
                 </p>
               </statement>
             </definition>
@@ -1997,6 +2016,22 @@
                 This data gives a natural isomorphism between the identity functor and <m>\operatorname{Hom}_{\text {Set }}(\mathbf{1},-)</m>.
               </p>
             </example>
+
+            <exercise xml:id="exe-14">
+              <statement>
+                <p>
+                  Show that the forgetful functor <m>\Grp \longrightarrow \Set</m> is representable.
+                </p>
+              </statement>
+            </exercise>
+
+            <exercise xml:id="exe-15">
+              <statement>
+                <p>
+                  Given a ring <m>R</m>, show that the forgetful functor <m>R\Mod \longrightarrow \Set</m> is representable.
+                </p>
+              </statement>
+            </exercise>
 
             <p>
               A representable functor encodes a universal property of the object that represents it. 
@@ -2041,7 +2076,7 @@
             </p>
           </introduction>
 
-          <subsection xml:id="subsec-"><title>Establishing <m>\mathrm{Ch}(R)</m></title>
+          <subsection xml:id="subsec-ch-r"><title>Establishing <m>\mathrm{Ch}(R)</m></title>
 
             <blockquote>
               <p>
@@ -2091,14 +2126,14 @@
               <statement>
                 <p>
                   Let <m>R</m> be a ring. 
-                  The <em>category of chain complexes</em> of <m>R</m>-modules, denoted <m>\mathrm{Ch}(R-\mod)</m> or simply <m>\mathrm{Ch}(R)</m>, is the category with objects all chain complexes of <m>R</m>-modules and arrows all maps of complexes of <m>R</m>-modules.
+                  The <em>category of chain complexes</em> of <m>R</m>-modules, denoted <m>\mathrm{Ch}(R\mod)</m> or simply <m>\mathrm{Ch}(R)</m>, is the category with objects all chain complexes of <m>R</m>-modules and arrows all maps of complexes of <m>R</m>-modules.
                 </p>
               </statement>
             </definition>
 
-            <convention><title><m>\mathrm{Ch}(\mathrm{Ab})</m></title>
+            <convention><title><m>\mathrm{Ch}(\Ab)</m></title>
               <p>
-                When <m>R=\mathbb{Z}</m>, we write <m>\mathrm{Ch}(\mathrm{Ab})</m> for <m>\mathrm{Ch}(\mathbb{Z})</m>, the category of chain complexes of abelian groups.
+                When <m>R=\mathbb{Z}</m>, we write <m>\mathrm{Ch}(\Ab)</m> for <m>\mathrm{Ch}(\mathbb{Z})</m>, the category of chain complexes of abelian groups.
               </p>
             </convention>
       
@@ -2129,7 +2164,70 @@
                 </ol>
               </statement>
             </exercise>
+
+            <definition xml:id="def-2.13"><title>Subcomplexes and Quotient Complexes</title>
+              <statement>
+                <p>
+                  Given complexes <m>B</m> and <m>C, B</m> is a <em>subcomplex</em> of <m>C</m> if <m>B_{n}</m> is a submodule of <m>C_{n}</m> for all <m>n</m>, and the inclusion maps <m>\iota_{n}: B_{n} \subseteq C_{n}</m> define a map of complexes <m>\iota: B \longrightarrow C</m>. 
+                </p>
+
+                <p>
+                  Given a subcomplex <m>B</m> of <m>C</m>, the <em>quotient</em> of <m>C</m> by <m>B</m> is the complex <m>C / B</m> that has <m>C_{n} / B_{n}</m> in homological degree <m>n</m>, with differential induced by the differential on <m>C_{n}</m>.
+                </p>
+              </statement>
+            </definition>
+
+            <exercise xml:id="exe-30"><title>Subcomplex Maps are Well-Defined</title>
+              <statement>
+                <p>
+                  If <m>B</m> is a subcomplex of <m>C</m>, then the differential <m>\partial</m> on <m>C</m> satisfies <m>\partial_{n}\left(B_{n}\right) \subseteq B_{n-1}</m>. 
+                  Therefore, <m>\partial_{n}</m> induces a map of <m>R</m>-modules <m>C_{n} / B_{n} \longrightarrow C_{n-1} / B_{n-1}</m> for all <m>n</m>, so that our definition of the differential on <m>C / B</m> actually makes sense.
+                </p>
+              </statement>
+            </exercise>
       
+            <p>
+              We can also talk about kernels and cokernels of maps of complexes.
+            </p>
+
+            <definition xml:id="def-2.14"><title>Kernel, Cokernel</title>
+              <statement>
+                <p>
+                  Given any map of complexes <m>f: B_{\bullet} \longrightarrow C_{\bullet}</m>, the <em>kernel</em> of <m>f</m> is the subcomplex <m>\ker f</m> of <m>B_{\bullet}</m> that we can assemble from the the kernels <m>\ker f_{n}</m>. 
+                  More precisely, <m>\operatorname{ker} f</m> is the complex
+                  <me>
+                    \cdots \longrightarrow \operatorname{ker} f_{n+1} \longrightarrow \operatorname{ker} f_{n} \longrightarrow \operatorname{ker} f_{n-1} \longrightarrow \cdots
+                  </me>
+                  where the differentials are simply the corresponding restrictions of the differentials on <m>B_{\bullet}</m>. 
+                </p>
+
+                <p>
+                  Similarly, the image of <m>f</m> is the subcomplex of <m>C</m>.
+                  <me>
+                    \cdots \longrightarrow \operatorname{im} f_{n+1} \longrightarrow \operatorname{im} f_{n} \longrightarrow \operatorname{im} f_{n-1} \longrightarrow \cdots
+                  </me>
+                  where the differentials are given by restriction of the corresponding differentials in <m>C_{\bullet}</m>. 
+                  The <em>cokernel</em> of <m>f</m> is the quotient complex <m>C_{\bullet} / \operatorname{im} f</m>.
+                </p>
+              </statement>
+            </definition>
+
+            <p>
+              Again, there are some details to check.
+            </p>
+
+            <exercise xml:id="exe-31">
+              <statement>
+                <p>
+                  Show that the kernel, image, and cokernel of a complex map are indeed complexes.
+                </p>
+              </statement>
+            </exercise>
+
+          </subsection>
+
+          <subsection xml:id="subsec-homology-functor"><title>The Homology Functor</title>
+
             <p>
               This is a good notion of map of complexes: it induces homomorphisms in homology, which in particular allows us to say that homology is a functor.
             </p>
@@ -2185,9 +2283,9 @@
                   We call the map
                   <me>
                     \begin{aligned}
-                    \mathrm{H}_{n}(h): 
-                    &amp; \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right) \\
-                    &amp; a+B_{n}(F) \longmapsto h_{n}(a)+B_{n}(G)
+                    \mathrm{H}_{n}(h): \mathrm{H}_{n}\left(F_{\bullet}\right)
+                    &amp; \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right) \\
+                    a+B_{n}(F) &amp; \longmapsto h_{n}(a)+B_{n}(G)
                     \end{aligned}
                   </me>
                   the <em>induced map in homology</em>, and sometimes denote it by <m>h_{*}</m>.
@@ -2195,7 +2293,7 @@
               </statement>
             </definition>
 
-            <exercise><title>Homology Functor</title>
+            <exercise xml:id="exe-25.5"><title>Homology Functor</title>
               <statement>
                 <p>
                   One can show that <m>\mathrm{H}_{n}</m> preserves compositions, and that moreover, the map in homology induced by the identity is the identity. 
@@ -2203,7 +2301,7 @@
                   <me>
                     \mathrm{H}_{n}: \mathrm{Ch}(R) \longrightarrow R \text {-Mod }
                   </me>
-                  which takes each map of complexes <m>h: F_{\bullet}, \longrightarrow G_{\bullet}</m> to the <m>R</m>-module homomorphism
+                  which takes each map of complexes <m>h: F_{\bullet} \longrightarrow G_{\bullet}</m> to the <m>R</m>-module homomorphism
                   <me>
                     \mathrm{H}_{n}(h): \mathrm{H}_{n}\left(F_{\bullet}\right) \longrightarrow \mathrm{H}_{n}\left(G_{\bullet}\right)
                   </me>
@@ -2253,7 +2351,7 @@
                 </p>
               </solution>
             </exercise>
-
+            
           </subsection>
 
           <subsection xml:id="subsec-homotopy"><title>Homotopy</title>
@@ -2289,9 +2387,11 @@
             </definition>
 
             <exercise xml:id="exe-27"><title>Homotopy is an Equivalence Relation</title>
-              <p>
-                Homotopy is an equivalence relation.
-              </p>
+              <statement>
+                <p>
+                  Homotopy is an equivalence relation.
+                </p>
+              </statement>
             </exercise>
           
             <p>
@@ -2321,21 +2421,48 @@
                 </p>
               </proof>
             </lemma>
+
+            <exercise xml:id="exe-27.5">
+              <statement>
+                <p>
+                  Let <m>f, g:\left(F_{\bullet}, \partial_{\bullet}^{F}\right) \longrightarrow\left(G_{\bullet}, \partial_{\bullet}^{G}\right)</m> be maps of complexes. 
+                  Show that <m>\mathrm{H}_{n}(f+g)=\mathrm{H}_{n}(f)+\mathrm{H}_{n}(g)</m> for all <m>n</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  
+                </p>
+              </solution>
+            </exercise>
+
+            <remark>
+              <p>
+                This makes homology an <em>additive functor</em>, which we define explicitly in <xref ref="def-3.2"/>.
+              </p>
+            </remark>
       
             <p>
               Notice, however, that the converse is false: the induced map in homology can be the zero map (for all homological degrees) even if the original map of complexes is not nullhomotopic.
             </p>
 
             <exercise xml:id="exe-28">
-              <p>
-                Consider the following map of complexes:
-              </p>
-              
-              <image source="2023_10_23_e2d6a27704be928b3deeg-054(1).jpg" width="75%"/>
-              
-              <p>
-                Show that this map is not nullhomotopic, but that the induced map in homology is zero.
-              </p>
+              <statement>
+                <p>
+                  Consider the following map of complexes:
+                </p>
+                
+                <image source="2023_10_23_e2d6a27704be928b3deeg-054(1).jpg" width="75%"/>
+                
+                <p>
+                  Show that this map is not nullhomotopic, but that the induced map in homology is zero.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  
+                </p>
+              </solution>
             </exercise>
 
             <definition xml:id="def-2.10"><title>Homotopy Equivalent</title>
@@ -2370,14 +2497,21 @@
             </p>
 
             <exercise xml:id="exe-29">
-              <p>
-                Let <m>\pi</m> denote the projection map from <m>\mathbb{Z}</m> to <m>\mathbb{Z} / 2 \mathbb{Z}</m>. 
-                The chain map
-              </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-054.jpg" width="75%"/>
-              <p>
-                is a quasi-isomorphism but not a homotopy equivalence.
-              </p>
+              <statement>
+                <p>
+                  Let <m>\pi</m> denote the projection map from <m>\mathbb{Z}</m> to <m>\mathbb{Z} / 2 \mathbb{Z}</m>. 
+                  The chain map
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-054.jpg" width="75%"/>
+                <p>
+                  is a quasi-isomorphism but not a homotopy equivalence.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  
+                </p>
+              </solution>
             </exercise>
 
             <remark xml:id="rem-2.12">
@@ -2403,61 +2537,6 @@
               Now that we know about maps between complexes, it's time to point out that we can also talk about complexes of complexes and exact sequences of complexes. 
               While we will later formalize this a little better when we discover that <m>\mathrm{Ch}(R)</m> is an <em>abelian category</em>, let's for now give quick definitions that we can use.
             </p>
-
-            <definition xml:id="def-2.13"><title>Subcomplexes and Quotient Complexes</title>
-              <statement>
-                <p>
-                  Given complexes <m>B</m> and <m>C, B</m> is a <em>subcomplex</em> of <m>C</m> if <m>B_{n}</m> is a submodule of <m>C_{n}</m> for all <m>n</m>, and the inclusion maps <m>\iota_{n}: B_{n} \subseteq C_{n}</m> define a map of complexes <m>\iota: B \longrightarrow C</m>. 
-                </p>
-
-                <p>
-                  Given a subcomplex <m>B</m> of <m>C</m>, the <em>quotient</em> of <m>C</m> by <m>B</m> is the complex <m>C / B</m> that has <m>C_{n} / B_{n}</m> in homological degree <m>n</m>, with differential induced by the differential on <m>C_{n}</m>.
-                </p>
-              </statement>
-            </definition>
-
-            <exercise xml:id="exe-30"><title>Subcomplex Maps are Well-Defined</title>
-              <p>
-                If <m>B</m> is a subcomplex of <m>C</m>, then the differential <m>\partial</m> on <m>C</m> satisfies <m>\partial_{n}\left(B_{n}\right) \subseteq B_{n-1}</m>. 
-                Therefore, <m>\partial_{n}</m> induces a map of <m>R</m>-modules <m>C_{n} / B_{n} \longrightarrow C_{n-1} / B_{n-1}</m> for all <m>n</m>, so that our definition of the differential on <m>C / B</m> actually makes sense.
-              </p>
-            </exercise>
-      
-            <p>
-              We can also talk about kernels and cokernels of maps of complexes.
-            </p>
-
-            <definition xml:id="def-2.14"><title>Kernel, Cokernel</title>
-              <statement>
-                <p>
-                  Given any map of complexes <m>f: B_{\bullet} \longrightarrow C_{\bullet}</m>, the <em>kernel</em> of <m>f</m> is the subcomplex <m>\ker f</m> of <m>B_{\bullet}</m> that we can assemble from the the kernels <m>\ker f_{n}</m>. 
-                  More precisely, <m>\operatorname{ker} f</m> is the complex
-                  <me>
-                    \cdots \longrightarrow \operatorname{ker} f_{n+1} \longrightarrow \operatorname{ker} f_{n} \longrightarrow \operatorname{ker} f_{n-1} \longrightarrow \cdots
-                  </me>
-                  where the differentials are simply the corresponding restrictions of the differentials on <m>B_{\bullet}</m>. 
-                </p>
-
-                <p>
-                  Similarly, the image of <m>f</m> is the subcomplex of <m>C</m>.
-                  <me>
-                    \cdots \longrightarrow \operatorname{im} f_{n+1} \longrightarrow \operatorname{im} f_{n} \longrightarrow \operatorname{im} f_{n-1} \longrightarrow \cdots
-                  </me>
-                  where the differentials are given by restriction of the corresponding differentials in <m>C_{\bullet}</m>. 
-                  The <em>cokernel</em> of <m>f</m> is the quotient complex <m>C_{\bullet} / \operatorname{im} f</m>.
-                </p>
-              </statement>
-            </definition>
-
-            <p>
-              Again, there are some details to check.
-            </p>
-
-            <exercise xml:id="exe-31">
-              <p>
-                Show that the kernel, image, and cokernel of a complex map are indeed complexes.
-              </p>
-            </exercise>
 
             <definition xml:id="def-2.15"><title>Complexes in <m>\mathrm{Ch}(R)</m></title>
               <statement>
@@ -2509,6 +2588,12 @@
 
                 </p>
               </li>
+
+              <li>
+                <p>
+
+                </p>
+              </li>
             </ul>
           </outcomes>
 
@@ -2534,13 +2619,67 @@
               </p>
               <attribution>John Cantwell Kiley</attribution>
             </blockquote>
+
+            <figure xml:id="figure-sets-mappings">
+              <caption>Mappings and relations</caption>
+      
+              <image xml:id="sets-mappings">
+                <latex-image>
+                  \begin{tikzcd}[sep=2.25em]
+                    \textcolor{white}{b} &amp;&amp;&amp;&amp;&amp; \textcolor{white}{\bullet} &amp; \textcolor{white}{\bullet} &amp; \textcolor{white}{\bullet} \\
+                    {A'} &amp;&amp;&amp; {B'} &amp;&amp; \textcolor{white}{\bullet} &amp; {C'} &amp; \textcolor{white}{\bullet} &amp;&amp; {D'} &amp;&amp;&amp; {E'} \\
+                    \\
+                    \\
+                    A &amp;&amp;&amp; B &amp;&amp;&amp; C &amp;&amp;&amp; D &amp;&amp;&amp; E
+                    \arrow["a"{description}, from=2-1, to=5-1]
+                    \arrow["b"{description}, from=2-4, to=5-4]
+                    \arrow["c"{description}, from=2-7, to=5-7]
+                    \arrow["d"{description}, from=2-10, to=5-10]
+                    \arrow["e"{description}, from=2-13, to=5-13]
+                    \arrow[""{name=0, anchor=center, inner sep=0}, "{f_1}"{description}, from=2-1, to=2-4]
+                    \arrow[""{name=1, anchor=center, inner sep=0}, "{f_2}"{description}, from=2-4, to=2-7]
+                    \arrow[""{name=2, anchor=center, inner sep=0}, "{f_4}"{description}, from=2-10, to=2-13]
+                    \arrow[""{name=3, anchor=center, inner sep=0}, "{g_1}"{description}, from=5-1, to=5-4]
+                    \arrow[""{name=4, anchor=center, inner sep=0}, "{g_2}"{description}, from=5-4, to=5-7]
+                    \arrow[""{name=5, anchor=center, inner sep=0}, "{g_4}"{description}, from=5-10, to=5-13]
+                    \arrow[""{name=6, anchor=center, inner sep=0}, "{f_3}"{description}, from=2-7, to=2-10]
+                    \arrow["{g_3}"{description}, from=5-7, to=5-10]
+                    \arrow[""{name=7, anchor=center, inner sep=0}, "{df_3(x)=0}"{description}, color={rgb,255:red,214;green,92;blue,92}, curve={height=-30pt}, from=2-7, to=5-10]
+                    \arrow[""{name=8, anchor=center, inner sep=0}, "{g_2b(y)=0}"{description}, color={rgb,255:red,214;green,214;blue,92}, curve={height=30pt}, from=2-4, to=5-7]
+                    \arrow[""{name=9, anchor=center, inner sep=0}, "{cf_2(y)=0}"{description}, color={rgb,255:red,214;green,214;blue,92}, curve={height=-30pt}, from=2-4, to=5-7]
+                    \arrow[""{name=10, anchor=center, inner sep=0}, "{g_1a(z')=b(y)}"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=30pt}, from=2-1, to=5-4]
+                    \arrow[""{name=11, anchor=center, inner sep=0}, "{bf_1(z')=b(y)}"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-30pt}, from=2-1, to=5-4]
+                    \arrow[""{name=12, anchor=center, inner sep=0}, "{g_3c(x)=0}"{description}, color={rgb,255:red,214;green,92;blue,92}, curve={height=30pt}, from=2-7, to=5-10]
+                    \arrow["{f_1(z')=y}", shift left=3, color={rgb,255:red,92;green,92;blue,214}, draw=none, from=2-1, to=2-4]
+                    \arrow["{x\in\ker(c)}"{description}, shift left=5, draw=none, from=2-6, to=2-8]
+                    \arrow["{f_2(y)=x}"{pos=0.3}, shift left=3, color={rgb,255:red,214;green,153;blue,92}, draw=none, from=2-4, to=2-7]
+                    \arrow["{g_1(z)=b(y)}"'{pos=0.3}, shift right=3, color={rgb,255:red,92;green,214;blue,92}, draw=none, from=5-1, to=5-4]
+                    \arrow["{a(z')=z}"{marking}, shift left=4, color={rgb,255:red,92;green,214;blue,214}, draw=none, from=5-1, to=2-1]
+                    \arrow["{x=f_2f_1(z')=0}"{description}, color={rgb,255:red,153;green,92;blue,214}, draw=none, from=1-1, to=1-7]
+                    \arrow["{\ker(d)=\{0\}}"'{pos=0.1}, color={rgb,255:red,214;green,153;blue,92}, draw=none, from=2, to=5]
+                    \arrow["{\text{im}(g_1)=\ker(g_2)}", color={rgb,255:red,92;green,214;blue,92}, curve={height=-12pt}, shorten &lt;=10pt, shorten &gt;=10pt, Rightarrow, from=4, to=3]
+                    \arrow["\circlearrowleft"', color={rgb,255:red,92;green,92;blue,214}, shorten &lt;=9pt, shorten &gt;=9pt, Rightarrow, from=10, to=11]
+                    \arrow["\circlearrowleft", color={rgb,255:red,214;green,214;blue,92}, shorten &lt;=9pt, shorten &gt;=9pt, Rightarrow, from=9, to=8]
+                    \arrow["\circlearrowleft"', color={rgb,255:red,214;green,92;blue,92}, shorten &lt;=9pt, shorten &gt;=9pt, Rightarrow, from=12, to=7]
+                    \arrow["{\ker(b)=\{0\}}"{pos=0.8}, shift left=2, color={rgb,255:red,92;green,214;blue,92}, draw=none, from=0, to=3]
+                    \arrow["{\text{im}(f_2)=\ker(f_3)}"', color={rgb,255:red,214;green,153;blue,92}, curve={height=18pt}, shorten &lt;=10pt, shorten &gt;=10pt, Rightarrow, from=6, to=1]
+                \end{tikzcd}
+                </latex-image>
+              </image>
+      
+      
+            </figure>
+
+            <p>
+              
+            </p>
           
             <p>
               In this section, we will discuss short exact sequences of modules in a bit more detail. 
               We note, however, that everything we will discuss here can be extended for short exact sequences of complexes, and that the generalization is not too difficult: one just needs to replace modules with complexes and maps of modules by maps of complexes.
             </p>
 
-            <example xml:id="ex-2.17">
+            <example xml:id="ex-2.17"><title>Trivial Short Exact Sequences</title>
               <p>
                 Fix a ring <m>R</m>, and let <m>A</m> and <m>C</m> be <m>R</m>-modules. 
                 Consider the inclusion <m>i: A \rightarrow A \oplus C</m> of <m>A</m> into the first component of the direct sum, and the projection map <m>\pi: A \oplus C \rightarrow C</m> onto the second component of the product. 
@@ -2604,7 +2743,7 @@
                 </p>
               </statement>
 
-              <proof>
+              <proof><title>Proof: <m>3\Rightarrow 1</m> and <m>3\Rightarrow 2</m></title>
                 <p>
                   First, we will show that c implies a and b. If the sequence splits, then consider an isomorphism of complexes
                 </p>
@@ -2635,7 +2774,9 @@
                   </me>
                   Therefore, c implies a and b.
                 </p>
-            
+              </proof>
+
+              <proof><title>Proof: <m>1\Rightarrow 3</m></title>
                 <p>
                   Now suppose that a holds, and let's show that the sequence splits. 
                   First, we need to show that <m>B \cong A \oplus C</m>. 
@@ -2673,7 +2814,9 @@
                   Since <m>\varphi</m> is an isomorphism, so is our map of complexes, and thus our original sequence is a split exact sequence. 
                   This shows that a implies <m>c</m>.
                 </p>
-            
+              </proof>
+
+              <proof><title>Proof: <m>2\Rightarrow 3</m></title>
                 <p>
                   Now assume b holds. 
                   Every <m>b \in B</m> can be written as
@@ -2715,14 +2858,14 @@
               </proof>
             </lemma>
         
-            <definition xml:id="def-2.20">
+            <definition xml:id="def-2.20"><title>Splittings</title>
               <statement>
                 <p>
                   Given a split short exact sequence
                   <me>
                     0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
                   </me>
-                  maps <m>q</m> and <m>r</m> satisfying the conditions of the Splitting Lemma are called splittings.
+                  maps <m>q</m> and <m>r</m> satisfying the conditions of the Splitting Lemma are called <em>splittings</em>.
                 </p>
               </statement>
             </definition>
@@ -2749,27 +2892,35 @@
               </p>
               <attribution></attribution>
             </blockquote>
-
-            <exercise xml:id="exe-32">
-              <p>
-                Let <m>k</m> be a field. 
-                Show that every short exact sequence of <m>k</m>-vector spaces splits.
-              </p>
-            </exercise>
-        
+      
             <p>
               The Rank-Nulity Theorem can be recast in this setting as a consequence of the fact that every short exact sequence of <m>k</m>-vector spaces splits.
             </p>
-  
-            <exercise xml:id="exe-33">
-              <p>
-                Prove the Rank-Nulity Theorem using <xref ref="exe-32"/>: show that given any linear transformation <m>T: V \rightarrow W</m> of <m>k</m>-vector spaces,
-                <me>
-                  \operatorname{dim}(\operatorname{im} T)+\operatorname{dim}(\operatorname{ker} T)=\operatorname{dim} V
-                </me>
-              </p>
+
+            <exercise xml:id="exe-32"><title>Splittings in Vector Spaces</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Let <m>k</m> be a field. 
+                        Show that every short exact sequence of <m>k</m>-vector spaces splits.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Prove the Rank-Nulity Theorem using <xref ref="exe-32"/>: show that given any linear transformation <m>T: V \rightarrow W</m> of <m>k</m>-vector spaces,
+                        <me>
+                          \operatorname{dim}(\operatorname{im} T)+\operatorname{dim}(\operatorname{ker} T)=\operatorname{dim} V
+                        </me>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
             </exercise>
-  
+
             <p>
               But over a general ring, not every short exact sequence splits.
             </p>
@@ -2841,13 +2992,15 @@
             </p>
   
             <exercise xml:id="five-lemma"><title>The Five Lemma</title>
-              <p>
-                Consider the following commutative diagram of <m>R</m>-modules with exact rows:
-              </p>
-              <image source="2023_10_23_e2d6a27704be928b3deeg-060.jpg" width="50%"/>
-              <p>
-                Show that if <m>a, b, d</m>, and <m>e</m> are isomorphisms, then <m>c</m> is an isomorphism.
-              </p>
+              <statement>
+                <p>
+                  Consider the following commutative diagram of <m>R</m>-modules with exact rows:
+                </p>
+                <image source="2023_10_23_e2d6a27704be928b3deeg-060.jpg" width="50%"/>
+                <p>
+                  Show that if <m>a, b, d</m>, and <m>e</m> are isomorphisms, then <m>c</m> is an isomorphism.
+                </p>
+              </statement>
             </exercise>
   
             <remark xml:id="rem-2.24">
@@ -2915,14 +3068,16 @@
             </p>
         
             <exercise xml:id="exe-35">
-              <p>
-                Fix a ring <m>R</m>. 
-                Show that if <m>F</m> is a free <m>R</m>-module, then every short exact sequence of <m>R</m>-modules
-                <me>
-                  0 \longrightarrow A \longrightarrow B \longrightarrow F \longrightarrow 0
-                </me>
-                splits.
-              </p>
+              <statement>
+                <p>
+                  Fix a ring <m>R</m>. 
+                  Show that if <m>F</m> is a free <m>R</m>-module, then every short exact sequence of <m>R</m>-modules
+                  <me>
+                    0 \longrightarrow A \longrightarrow B \longrightarrow F \longrightarrow 0
+                  </me>
+                  splits.
+                </p>
+              </statement>
             </exercise>
 
           </subsection>
@@ -3479,15 +3634,15 @@
       
             <p>
               Our goal is to get to know the category <m>R</m>-Mod, which as we are about to discover is a very nice category. 
-              One of the many nice things about <m>R</m>-Mod is that the Hom-sets have an extra structure. 
-              (Roughly speaking, a locally small category where the Hom-sets are objects in some other category is called an enriched category).
+              One of the many nice things about <m>R</m>-Mod is that the <m>\Hom</m>-sets have an extra structure. 
+              (Roughly speaking, a locally small category where the <m>\Hom</m>-sets are objects in some other category is called an enriched category).
             </p>
       
             <p>
-              To make the notation less heavy, we write <m>\operatorname{Hom}_{R}(M, N)</m> instead of <m>\operatorname{Hom}_{R-\operatorname{Mod}}(M, N)</m> for the Hom-set between <m>M</m> and <m>N</m> in <m>R</m>-Mod. 
+              To make the notation less heavy, we write <m>\operatorname{Hom}_{R}(M, N)</m> instead of <m>\operatorname{Hom}_{R-\operatorname{Mod}}(M, N)</m> for the <m>\Hom</m>-set between <m>M</m> and <m>N</m> in <m>R</m>-Mod. 
               The arrows in <m>\operatorname{Hom}_{R}(M, N)</m> are all the <m>R</m>-module homomorphisms from <m>M</m> to <m>N</m>. 
-              This is a locally small category, meaning that the Hom-sets are actual sets, but more even is true: 
-              the Hom-sets are actually abelian groups, and when <m>R</m> is commutative, they are even <m>R</m>-modules.
+              This is a locally small category, meaning that the <m>\Hom</m>-sets are actual sets, but more even is true: 
+              the <m>\Hom</m>-sets are actually abelian groups, and when <m>R</m> is commutative, they are even <m>R</m>-modules.
             </p>
       
             <p>
@@ -3505,17 +3660,21 @@
             </p>
 
             <exercise xml:id="exe-36">
-              <p>
-                Let <m>M</m> and <m>N</m> be <m>R</m>-modules. 
-                Then <m>\operatorname{Hom}_{R}(M, N)</m> is an abelian group under the sum defined above.
-              </p>
+              <statement>
+                <p>
+                  Let <m>M</m> and <m>N</m> be <m>R</m>-modules. 
+                  Then <m>\operatorname{Hom}_{R}(M, N)</m> is an abelian group under the sum defined above.
+                </p>
+              </statement>
             </exercise>
 
             <exercise xml:id="exe-37">
-              <p>
-                Let <m>M</m> and <m>N</m> be <m>R</m>-modules over a commutative <m>\operatorname{ring} R</m>. 
-                Then <m>\operatorname{Hom}_{R}(M, N)</m> is an <m>R</m>-module.
-              </p>
+              <statement>
+                <p>
+                  Let <m>M</m> and <m>N</m> be <m>R</m>-modules over a commutative <m>\operatorname{ring} R</m>. 
+                  Then <m>\operatorname{Hom}_{R}(M, N)</m> is an <m>R</m>-module.
+                </p>
+              </statement>
             </exercise>
             
             <remark xml:id="rem-3.1">
@@ -3533,34 +3692,36 @@
             </remark>
       
             <p>
-              Some Hom-sets can easily be identified with other well-understood modules.
+              Some <m>\Hom</m>-sets can easily be identified with other well-understood modules.
             </p>
 
             <exercise xml:id="exe-38">
-              <p>
-                Let <m>R</m> be a commutative ring. 
-                Let <m>M</m> be an <m>R</m>-module, and <m>I</m> an ideal in <m>R</m>. 
-                Then we have the following isomorphisms of <m>R</m>-modules:
-                <ol>
-                  <li>
-                    <p>
-                      <m>\operatorname{Hom}_{R}(R, M) \cong M</m>.
-                    </p>
-                  </li>
+              <statement>
+                <p>
+                  Let <m>R</m> be a commutative ring. 
+                  Let <m>M</m> be an <m>R</m>-module, and <m>I</m> an ideal in <m>R</m>. 
+                  Then we have the following isomorphisms of <m>R</m>-modules:
+                  <ol>
+                    <li>
+                      <p>
+                        <m>\operatorname{Hom}_{R}(R, M) \cong M</m>.
+                      </p>
+                    </li>
 
-                  <li>
-                    <p>
-                      <m>\operatorname{Hom}_{R}\left(R^{n}, M\right) \cong M^{n}</m> for any <m>n \geqslant 1</m>.
-                    </p>
-                  </li>
+                    <li>
+                      <p>
+                        <m>\operatorname{Hom}_{R}\left(R^{n}, M\right) \cong M^{n}</m> for any <m>n \geqslant 1</m>.
+                      </p>
+                    </li>
 
-                  <li>
-                    <p>
-                      <m>\operatorname{Hom}_{R}(R / I, M) \cong\left(0:_{M} I\right):=\{m \in M \mid I m=0\}</m>.
-                    </p>
-                  </li>
-                </ol>
-              </p>
+                    <li>
+                      <p>
+                        <m>\operatorname{Hom}_{R}(R / I, M) \cong\left(0:_{M} I\right):=\{m \in M \mid I m=0\}</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
             </exercise>
 
           </subsection>
@@ -3577,9 +3738,9 @@
             </blockquote>
             
             <p>
-              Since <m>R</m>-Mod is a locally small category, we saw in Definition 1.34 that there are two Hom-functors from <m>R</m>-Mod to <m>\Set</m>, the covariant functor <m>\operatorname{Hom}_{R}(M,-): R</m>-Mod <m>\longrightarrow</m> Set and the contravariant functor <m>\operatorname{Hom}_{R}(-, N): R</m>-Mod <m>\longrightarrow</m> Set. 
+              Since <m>R</m>-Mod is a locally small category, we saw in Definition 1.34 that there are two <m>\Hom</m>-functors from <m>R</m>-Mod to <m>\Set</m>, the covariant functor <m>\operatorname{Hom}_{R}(M,-): R</m>-Mod <m>\longrightarrow</m> Set and the contravariant functor <m>\operatorname{Hom}_{R}(-, N): R</m>-Mod <m>\longrightarrow</m> Set. 
               In light of <xref ref="exe-37"/>, we can upgrade these functors to land in <m>\mathbf{A b}</m>, or in <m>R</m>-Mod when <m>R</m> is commutative, not just in <m>\Set</m>. 
-              Note that while there are two Hom-functors, we will sometimes refer to the Hom functor when talking about properties that are common to both of them.
+              Note that while there are two <m>\Hom</m>-functors, we will sometimes refer to the Hom functor when talking about properties that are common to both of them.
             </p>
       
             <p>
@@ -3618,9 +3779,11 @@
             </p>
 
             <exercise xml:id="exe-39"><title><m>\Hom</m> is Additive</title>
-              <p>
-                Show that <m>\operatorname{Hom}_{R}(M,-)</m> and <m>\operatorname{Hom}_{R}(-, N)</m> are both additive functors.
-              </p>
+              <statement>
+                <p>
+                  Show that <m>\operatorname{Hom}_{R}(M,-)</m> and <m>\operatorname{Hom}_{R}(-, N)</m> are both additive functors.
+                </p>
+              </statement>
             </exercise>
       
             <p>
@@ -3690,9 +3853,11 @@
             </remark>
 
             <exercise xml:id="exe-40"><title>Homology is Additive</title>
-              <p>
-                Show that homology is an additive functor.
-              </p>
+              <statement>
+                <p>
+                  Show that homology is an additive functor.
+                </p>
+              </statement>
             </exercise>
       
             <p>
@@ -3701,11 +3866,13 @@
             </p>
 
             <exercise xml:id="exe-41"><title>Additive Functors Preserve Direct Sums</title>
-              <p>
-                Let <m>R</m> and <m>S</m> be rings and let <m>T: R</m>-Mod <m>\longrightarrow S</m>-Mod be an additive functor. 
-                Show that for all <m>R</m>-modules <m>A</m> and <m>B</m>,
-                <me>T(A \oplus B) \cong T(A) \oplus T(B)</me>
-              </p>
+              <statement>
+                <p>
+                  Let <m>R</m> and <m>S</m> be rings and let <m>T: R</m>-Mod <m>\longrightarrow S</m>-Mod be an additive functor. 
+                  Show that for all <m>R</m>-modules <m>A</m> and <m>B</m>,
+                  <me>T(A \oplus B) \cong T(A) \oplus T(B)</me>
+                </p>
+              </statement>
             </exercise>
       
             <p>
@@ -3802,36 +3969,40 @@
             </p>
 
             <exercise xml:id="exe-42">
-              <p>
-                Show that the isomorphisms in <xref ref="thm-3.5"/> are natural on both components. 
-                More precisely, given any other family of <m>R</m>-modules <m>L_{i}</m> such that for each <m>i</m> there exists <m>j</m>, a map <m>\sigma_{i j}</m> there exist <m>R</m>-module maps making the following diagrams commute: 
-              </p>
-              <image source='2023_10_23_e2d6a27704be928b3deeg-074(1).jpg'/>
-              <p>
-                In fact, one can show that more generally, <m>\Hom</m> behaves well with limits and colimits.
-              </p>
+              <statement>
+                <p>
+                  Show that the isomorphisms in <xref ref="thm-3.5"/> are natural on both components. 
+                  More precisely, given any other family of <m>R</m>-modules <m>L_{i}</m> such that for each <m>i</m> there exists <m>j</m>, a map <m>\sigma_{i j}</m> there exist <m>R</m>-module maps making the following diagrams commute: 
+                </p>
+                <image source='2023_10_23_e2d6a27704be928b3deeg-074(1).jpg'/>
+                <p>
+                  In fact, one can show that more generally, <m>\Hom</m> behaves well with limits and colimits.
+                </p>
+              </statement>
             </exercise>
 
             <exercise xml:id="exe-43">
-              <p>
-                Let <m>R</m> be any ring and consider <m>R</m>-modules <m>A</m> and <m>\left\{M_{i}\right\}</m>.
-                <ol>
-                  <li>
-                    <p>
-                      For any inverse system <m>\left\{M_{i}\right\}</m>, there is a natural isomorphism
-                      <me>\operatorname{Hom}_{R}\left(A, \lim _{i} M_{i}\right) \cong \lim _{i} \operatorname{Hom}_{R}\left(A, M_{i}\right)</me>
-                    </p>
-                  </li>
+              <statement>
+                <p>
+                  Let <m>R</m> be any ring and consider <m>R</m>-modules <m>A</m> and <m>\left\{M_{i}\right\}</m>.
+                  <ol>
+                    <li>
+                      <p>
+                        For any inverse system <m>\left\{M_{i}\right\}</m>, there is a natural isomorphism
+                        <me>\operatorname{Hom}_{R}\left(A, \lim _{i} M_{i}\right) \cong \lim _{i} \operatorname{Hom}_{R}\left(A, M_{i}\right)</me>
+                      </p>
+                    </li>
 
-                  <li>
-                    <p>
-                      For any direct system <m>\left\{M_{i}\right\}</m> or <m>R</m>-modules, there is a natural isomorphism
-                      <me>\operatorname{Hom}_{R}\left(\operatorname{colim}_{i} M_{i}, A\right) \cong \lim _{i} \operatorname{Hom}_{R}\left(M_{i}, B\right)</me>
-                    </p>
-                  </li>
-                </ol>
-                Moreover, when <m>R</m> is commutative, these are isomorphisms of modules.
-              </p>
+                    <li>
+                      <p>
+                        For any direct system <m>\left\{M_{i}\right\}</m> or <m>R</m>-modules, there is a natural isomorphism
+                        <me>\operatorname{Hom}_{R}\left(\operatorname{colim}_{i} M_{i}, A\right) \cong \lim _{i} \operatorname{Hom}_{R}\left(M_{i}, B\right)</me>
+                      </p>
+                    </li>
+                  </ol>
+                  Moreover, when <m>R</m> is commutative, these are isomorphisms of modules.
+                </p>
+              </statement>
             </exercise>
 
           </subsection>
@@ -3889,10 +4060,12 @@
             </definition>
 
             <exercise xml:id="exe-44"><title>Functors are Exact iff They Commute with Homology</title>
-              <p>
-                Show that an additive functor <m>T</m> is exact if it commutes with homology, that is, for all complexes <m>C</m> and all <m>n</m>,
-                <me>\mathrm{H}_{n}(T(C))=T\left(\mathrm{H}_{n}(C)\right)</me>
-              </p>
+              <statement>
+                <p>
+                  Show that an additive functor <m>T</m> is exact if it commutes with homology, that is, for all complexes <m>C</m> and all <m>n</m>,
+                  <me>\mathrm{H}_{n}(T(C))=T\left(\mathrm{H}_{n}(C)\right)</me>
+                </p>
+              </statement>
             </exercise>
       
             <p>
@@ -3931,14 +4104,16 @@
             </definition>
 
             <exercise xml:id="exe-45"><title>Exactness and SESs</title>
-              <p>
-                The definitions above all stay unchanged if for each condition we start with a short exact sequence. 
-                For example, a covariant additive functor <m>T</m> is left exact if and only if for every short exact sequence
-                <me>0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0</me>
-                of <m>R</m>-modules,
-                <me>0 \longrightarrow T(A) \stackrel{T(f)}{\longrightarrow} T(B) \stackrel{T(g)}{\longrightarrow} T(C)</me>
-                is exact.
-              </p>
+              <statement>
+                <p>
+                  The definitions above all stay unchanged if for each condition we start with a short exact sequence. 
+                  For example, a covariant additive functor <m>T</m> is left exact if and only if for every short exact sequence
+                  <me>0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0</me>
+                  of <m>R</m>-modules,
+                  <me>0 \longrightarrow T(A) \stackrel{T(f)}{\longrightarrow} T(B) \stackrel{T(g)}{\longrightarrow} T(C)</me>
+                  is exact.
+                </p>
+              </statement>
             </exercise>
 
             <remark xml:id="rem-3.10">
@@ -4098,9 +4273,11 @@
             </p>
 
             <exercise xml:id="exe-46"><title>Additive Functors Preserve Split Exact Sequences</title>
-              <p>
-                Show that additive functors preserve split short exact sequences.
-              </p>
+              <statement>
+                <p>
+                  Show that additive functors preserve split short exact sequences.
+                </p>
+              </statement>
             </exercise>
 
           </subsection>
@@ -4757,10 +4934,12 @@
               More generally, the following holds:
             </p>
 
-            <exercise>
-              <p>
-                Exercise 47. Show that if <m>d=\operatorname{gcd}(m, n)</m>, then <m>\mathbb{Z} / n \otimes_{\mathbb{Z}} \mathbb{Z} / m \cong \mathbb{Z} / d</m>.
-              </p>
+            <exercise xml:id="exe-47">
+              <statement>
+                <p>
+                  Show that if <m>d=\operatorname{gcd}(m, n)</m>, then <m>\mathbb{Z} / n \otimes_{\mathbb{Z}} \mathbb{Z} / m \cong \mathbb{Z} / d</m>.
+                </p>
+              </statement>
             </exercise>
       
             <p>
@@ -4790,10 +4969,12 @@
               Moreover, not all elements in a tensor product are simple tensors.
             </p>
 
-            <exercise>
-              <p>
-                Exercise 48. Let <m>R=\mathbb{Z}[x]</m> and consider the ideal <m>I=(2, x)</m>. Show that in <m>I \otimes_{R} I</m>, the element <m>2 \otimes 2+x \otimes x</m> is not a simple tensor.
-              </p>
+            <exercise xml:id="exe-48">
+              <statement>
+                <p>
+                  Let <m>R=\mathbb{Z}[x]</m> and consider the ideal <m>I=(2, x)</m>. Show that in <m>I \otimes_{R} I</m>, the element <m>2 \otimes 2+x \otimes x</m> is not a simple tensor.
+                </p>
+              </statement>
             </exercise>
 
           </subsection>
@@ -4963,68 +5144,71 @@
               </p>
             </example>
 
-            <exercise>
-              <p>
-                Exercise 49. Let <m>M</m> be an <m>(S, R)</m>-bimodule and <m>N</m> a left <m>R</m>-module. Consider <m>M \times N</m> as a left <m>S</m>-module via
-              </p>
-          
-              <p>
-                <me>s(m, n)=(s m, n) \text {. }</me>
-              </p>
-          
-              <p>
-                Then <m>M \otimes_{R} N</m> is a left <m>S</m>-module via
-              </p>
-          
-              <p>
-                <me>s\left(\sum_{i} m_{i} \otimes n_{i}\right)=\left(s m_{i}\right) \otimes n_{i}</me>
-              </p>
-          
-              <p>
-                The map
-              </p>
-          
-              <p>
-                <me>\begin{gathered}
-          M \times N \longrightarrow M \otimes_{R} N \\
-          (m, n) \longrightarrow m \otimes n
-          \end{gathered}</me>
-              </p>
-          
-              <p>
-                is left <m>S</m>-linear, and for any left <m>S</m>-module <m>A</m> and left <m>S</m>-linear <m>R</m>-biadditive map <m>b: M \times N \rightarrow A</m>, there is a unique left <m>S</m>-linear map <m>\alpha: M \otimes_{R} N \rightarrow A</m> such that <m>\alpha(m \otimes n)=b(m, n)</m>.
-              </p>
-          
-              <p>
-                Similarly, for a left <m>R</m>-module <m>M</m> and an <m>(R, S)</m>-bimodule <m>N, M \times N</m> is a right <m>S</m>-module via
-              </p>
-          
-              <p>
-                <me>(m, n) s=(m, n s)</me>
-              </p>
-          
-              <p>
-                Then <m>M \otimes_{R} N</m> is a right <m>S</m>-module via
-              </p>
-          
-              <p>
-                <me>\left(\sum_{i} m_{i} \otimes n_{i}\right) s=m_{i} \otimes\left(n_{i} s\right)</me>
-              </p>
-          
-              <p>
-                and the map
-              </p>
-          
-              <p>
-                <me>\begin{gathered}
-          M \times N \longrightarrow M \otimes_{R} N \\
-          (m, n) \longrightarrow m \otimes n
-          \end{gathered}</me>
-              </p>
-          
-              <p>
-                is right <m>S</m>-linear, and for any <m>S</m>-module <m>A</m> and right <m>S</m>-linear <m>R</m>-biadditive map <m>b: M \times N \rightarrow A</m>, there is a unique right <m>S</m>-linear map <m>\alpha: M \otimes_{R} N \rightarrow A</m> such that <m>\alpha(m \otimes n)=b(m, n)</m>.
-              </p>
+            <exercise xml:id="exe-49">
+              <statement>
+                <p>
+                  Let <m>M</m> be an <m>(S, R)</m>-bimodule and <m>N</m> a left <m>R</m>-module. 
+                  Consider <m>M \times N</m> as a left <m>S</m>-module via
+                </p>
+            
+                <p>
+                  <me>s(m, n)=(s m, n) \text {. }</me>
+                </p>
+            
+                <p>
+                  Then <m>M \otimes_{R} N</m> is a left <m>S</m>-module via
+                </p>
+            
+                <p>
+                  <me>s\left(\sum_{i} m_{i} \otimes n_{i}\right)=\left(s m_{i}\right) \otimes n_{i}</me>
+                </p>
+            
+                <p>
+                  The map
+                </p>
+            
+                <p>
+                  <me>\begin{gathered}
+            M \times N \longrightarrow M \otimes_{R} N \\
+            (m, n) \longrightarrow m \otimes n
+            \end{gathered}</me>
+                </p>
+            
+                <p>
+                  is left <m>S</m>-linear, and for any left <m>S</m>-module <m>A</m> and left <m>S</m>-linear <m>R</m>-biadditive map <m>b: M \times N \rightarrow A</m>, there is a unique left <m>S</m>-linear map <m>\alpha: M \otimes_{R} N \rightarrow A</m> such that <m>\alpha(m \otimes n)=b(m, n)</m>.
+                </p>
+            
+                <p>
+                  Similarly, for a left <m>R</m>-module <m>M</m> and an <m>(R, S)</m>-bimodule <m>N, M \times N</m> is a right <m>S</m>-module via
+                </p>
+            
+                <p>
+                  <me>(m, n) s=(m, n s)</me>
+                </p>
+            
+                <p>
+                  Then <m>M \otimes_{R} N</m> is a right <m>S</m>-module via
+                </p>
+            
+                <p>
+                  <me>\left(\sum_{i} m_{i} \otimes n_{i}\right) s=m_{i} \otimes\left(n_{i} s\right)</me>
+                </p>
+            
+                <p>
+                  and the map
+                </p>
+            
+                <p>
+                  <me>\begin{gathered}
+            M \times N \longrightarrow M \otimes_{R} N \\
+            (m, n) \longrightarrow m \otimes n
+            \end{gathered}</me>
+                </p>
+            
+                <p>
+                  is right <m>S</m>-linear, and for any <m>S</m>-module <m>A</m> and right <m>S</m>-linear <m>R</m>-biadditive map <m>b: M \times N \rightarrow A</m>, there is a unique right <m>S</m>-linear map <m>\alpha: M \otimes_{R} N \rightarrow A</m> such that <m>\alpha(m \otimes n)=b(m, n)</m>.
+                </p>
+              </statement>
             </exercise>   
 
           </subsection>
@@ -5426,22 +5610,24 @@
               The following follows as a corollary of Lemma 3.40 and Theorem 3.41:
             </p>
 
-            <exercise>
-              <p>
-                Exercise 50. Show that if <m>F</m> and <m>G</m> are free <m>R</m>-modules on bases <m>\left\{e_{\lambda}\right\}_{\lambda \in \Lambda}</m> and <m>\left\{e_{\gamma}\right\}_{\gamma \in \Gamma}</m>, respectively, then <m>F \otimes_{R} G</m> is the free <m>R</m>-module on basis
-              </p>
-          
-              <p>
-                <me>\left\{e_{\lambda} \otimes e_{\gamma} \mid \lambda \in \Lambda, \gamma \in \Gamma\right\}</me>
-              </p>
-          
-              <p>
-                In particular,
-              </p>
-          
-              <p>
-                <me>R^{n} \otimes R^{m} \cong R^{n m}</me>
-              </p>
+            <exercise xml:id="exe-50">
+              <statement>
+                <p>
+                  Show that if <m>F</m> and <m>G</m> are free <m>R</m>-modules on bases <m>\left\{e_{\lambda}\right\}_{\lambda \in \Lambda}</m> and <m>\left\{e_{\gamma}\right\}_{\gamma \in \Gamma}</m>, respectively, then <m>F \otimes_{R} G</m> is the free <m>R</m>-module on basis
+                </p>
+            
+                <p>
+                  <me>\left\{e_{\lambda} \otimes e_{\gamma} \mid \lambda \in \Lambda, \gamma \in \Gamma\right\}</me>
+                </p>
+            
+                <p>
+                  In particular,
+                </p>
+            
+                <p>
+                  <me>R^{n} \otimes R^{m} \cong R^{n m}</me>
+                </p>
+              </statement>
             </exercise>
 
             <example>
@@ -5549,10 +5735,12 @@
               </statement>
             </definition>
 
-            <exercise>
-              <p>
-                Exercise 51. Check that restriction of scalars as defined above is indeed a functor.
-              </p>
+            <exercise xml:id="exe-51">
+              <statement>
+                <p>
+                  Check that restriction of scalars as defined above is indeed a functor.
+                </p>
+              </statement>
             </exercise>
 
           </subsection>
@@ -5739,7 +5927,8 @@
               Example 3.50. Let <m>R</m> be a commutative ring.
             </p>
       
-            <p><ol>
+            <p>
+            <ol>
               <li>
                     <p>
               For any <m>f \in R</m>, the set <m>W=\left\{1, f, f^{2}, f^{3}, \ldots\right\}</m> is a multiplicatively closed set.
@@ -5989,24 +6178,26 @@
             </statement>
           </definition>
 
-          <exercise>
+          <exercise xml:id="exe-52">
+            <statement>
             <p>
-              Exercise 52. Show that for all <m>R</m>-module homomorphisms <m>f: M \rightarrow N</m>,
+              Show that for all <m>R</m>-module homomorphisms <m>f: M \rightarrow N</m>,
             </p>
       
-    
             <image source="2023_10_23_e2d6a27704be928b3deeg-102.jpg"/>
-              
       
             <p>
               is a homomorphism of modules over <m>W^{-1} R</m>.
             </p>
+            </statement>
           </exercise>
 
-          <exercise>
-            <p>
-              Exercise 53. Show that localization is an exact additive functor.
-            </p>
+          <exercise xml:id="exe-53">
+            <statement>
+              <p>
+                Show that localization is an exact additive functor.
+              </p>
+            </statement>
           </exercise>
 
           <theorem xml:id="thm-3.57">
@@ -6117,22 +6308,24 @@
             </proof>
           </theorem>
 
-          <exercise>
-            <p>
-              Exercise 54. Let <m>R</m> be a commutative noetherian ring, <m>W</m> be a multiplicative set, <m>M</m> be a finitely generated <m>R</m>-module, and <m>N</m> an arbitrary <m>R</m>-module. Show that
-            </p>
-      
-            <p>
-              <me>\operatorname{Hom}_{W^{-1} R}\left(W^{-1} M, W^{-1} N\right) \cong W^{-1} \operatorname{Hom}_{R}(M, N) .</me>
-            </p>
-      
-            <p>
-              In particular, if <m>P</m> is prime,
-            </p>
-      
-            <p>
-              <me>\operatorname{Hom}_{R_{P}}\left(M_{P}, N_{P}\right) \cong \operatorname{Hom}_{R}(M, N)_{P}</me>
-            </p>
+          <exercise xml:id="exe-54">
+            <statement>
+              <p>
+                Let <m>R</m> be a commutative noetherian ring, <m>W</m> be a multiplicative set, <m>M</m> be a finitely generated <m>R</m>-module, and <m>N</m> an arbitrary <m>R</m>-module. Show that
+              </p>
+        
+              <p>
+                <me>\operatorname{Hom}_{W^{-1} R}\left(W^{-1} M, W^{-1} N\right) \cong W^{-1} \operatorname{Hom}_{R}(M, N) .</me>
+              </p>
+        
+              <p>
+                In particular, if <m>P</m> is prime,
+              </p>
+        
+              <p>
+                <me>\operatorname{Hom}_{R_{P}}\left(M_{P}, N_{P}\right) \cong \operatorname{Hom}_{R}(M, N)_{P}</me>
+              </p>
+            </statement>
           </exercise>
     
           <p>
@@ -6143,10 +6336,12 @@
             One important thing to keep in mind, however, is that if <m>M</m> is a finitely generated <m>R</m> module, a localization <m>M_{W}</m> of <m>M</m> is typically not finitely generated over <m>R</m>, though it is finitely generated over <m>R_{W}</m>.
           </p>
 
-          <exercise>
-            <p>
-              Exercise 55. Let <m>R</m> be a domain and let <m>f \in R</m> be a nonzero nonunit. Then <m>R_{f}</m> is not a finitely generated <m>R</m>-module.
-            </p>
+          <exercise xml:id="exe-55">
+            <statement>
+              <p>
+                Let <m>R</m> be a domain and let <m>f \in R</m> be a nonzero nonunit. Then <m>R_{f}</m> is not a finitely generated <m>R</m>-module.
+              </p>
+            </statement>
           </exercise>
     
           <p>
@@ -6162,35 +6357,37 @@
             First, we note that <m>\operatorname{Hom}_{R}(A, B)</m> can be a module over a ring <m>S</m> when <m>A</m> or <m>B</m> have a bimodule structure.
           </p>
 
-          <exercise>
-            <p>
-              Exercise 56. 
-              Let <m>R</m> and <m>S</m> be rings.<ul>
-              <li>
-                <p>
-                  If <m>A</m> is an <m>(R, S)</m>-bimodule and <m>B</m> is a left <m>R</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a left <m>S</m>-module structure via <m>(s \cdot f)(a)=f(a s)</m>.
-                </p>
-              </li>
-      
-              <li>
-                <p>
-                  If <m>A</m> is an <m>(R, S)</m>-bimodule and <m>B</m> is a right <m>S</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a right <m>R</m>-module structure via <m>(f \cdot r)(a)=f(r a)</m>.
-                </p>
-              </li>
-      
-              <li>
-                <p>
-                  If <m>B</m> is an <m>(S, R)</m>-bimodule and <m>A</m> is a right <m>R</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a left <m>S</m>-module structure via <m>(s \cdot f)(a)=s f(a)</m>.
-                </p>
-              </li>
-      
-              <li>
-                <p>
-                  If <m>B</m> is an <m>(S, R)</m>-bimodule and <m>A</m> is a left <m>S</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a right <m>R</m>-module structure via <m>(f \cdot r)(a)=f(a) r</m>.
-                </p>
-              </li>
-            </ul>
-          </p>
+          <exercise xml:id="exe-56">
+            <statement>
+              <p>
+                Let <m>R</m> and <m>S</m> be rings.
+                <ul>
+                  <li>
+                    <p>
+                      If <m>A</m> is an <m>(R, S)</m>-bimodule and <m>B</m> is a left <m>R</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a left <m>S</m>-module structure via <m>(s \cdot f)(a)=f(a s)</m>.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      If <m>A</m> is an <m>(R, S)</m>-bimodule and <m>B</m> is a right <m>S</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a right <m>R</m>-module structure via <m>(f \cdot r)(a)=f(r a)</m>.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      If <m>B</m> is an <m>(S, R)</m>-bimodule and <m>A</m> is a right <m>R</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a left <m>S</m>-module structure via <m>(s \cdot f)(a)=s f(a)</m>.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      If <m>B</m> is an <m>(S, R)</m>-bimodule and <m>A</m> is a left <m>S</m>-module, then <m>\operatorname{Hom}_{R}(A, B)</m> has a right <m>R</m>-module structure via <m>(f \cdot r)(a)=f(a) r</m>.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </statement>
           </exercise>
     
           <p>
@@ -7298,12 +7495,13 @@
               The converse of <xref ref="lem-4.24"/> does not hold in general, and quotients of injective modules are not necessarily injective.
             </p>
 
-            <exercise><title>Injective Modules not Closed Under Quotients</title>
-              <p>
-                Exercise 57. 
-                Let <m>R=k[x, y]</m>, where <m>k</m> is a field, let <m>Q=\operatorname{frac}(R)</m> be the fraction field of <m>R</m>. 
-                The <m>R</m>-module <m>M=Q / R</m> is divisible but not injective.
-              </p>
+            <exercise xml:id="exe-57"><title>Injective Modules not Closed Under Quotients</title>
+              <statement>
+                <p>
+                  Let <m>R=k[x, y]</m>, where <m>k</m> is a field, let <m>Q=\operatorname{frac}(R)</m> be the fraction field of <m>R</m>. 
+                  The <m>R</m>-module <m>M=Q / R</m> is divisible but not injective.
+                </p>
+              </statement>
             </exercise>
       
             <p>
@@ -8123,24 +8321,24 @@
           </p>
 
           <exercise xml:id="exe-62">
-            <p>
-              Exercise 62. Let <m>R</m> be a noetherian ring, <m>W</m> be a multiplicative set, <m>M</m> be a finitely generated <m>R</m>-module, and <m>N</m> an arbitrary <m>R</m>-module. Show that
-            </p>
-      
-            <p>
-              <me>\operatorname{Hom}_{W^{-1} R}\left(W^{-1} M, W^{-1} N\right) \cong W^{-1} \operatorname{Hom}_{R}(M, N) \text {. }</me>
-            </p>
-      
-            <p>
-              In particular, if <m>P</m> is prime,
-            </p>
-      
-            <p>
-              <me>\operatorname{Hom}_{R_{P}}\left(M_{P}, N_{P}\right) \cong \operatorname{Hom}_{R}(M, N)_{P}</me>
-            </p>
+            <statement>
+              <p>
+                Let <m>R</m> be a noetherian ring, <m>W</m> be a multiplicative set, <m>M</m> be a finitely generated <m>R</m>-module, and <m>N</m> an arbitrary <m>R</m>-module. Show that
+              </p>
+        
+              <p>
+                <me>\operatorname{Hom}_{W^{-1} R}\left(W^{-1} M, W^{-1} N\right) \cong W^{-1} \operatorname{Hom}_{R}(M, N) \text {. }</me>
+              </p>
+        
+              <p>
+                In particular, if <m>P</m> is prime,
+              </p>
+        
+              <p>
+                <me>\operatorname{Hom}_{R_{P}}\left(M_{P}, N_{P}\right) \cong \operatorname{Hom}_{R}(M, N)_{P}</me>
+              </p>
+            </statement>
           </exercise>
-    
-          
     
           <p>
             Theorem 4.51. Let <m>R</m> be a commutative noetherian ring and let <m>M</m> be a finitely presented <m>R</m>-module. Then
@@ -8674,10 +8872,11 @@
             </definition>
 
             <exercise xml:id="exe-67">
-              <p>
-                Exercise 67. 
-                Show that the direct sum of complexes is the coproduct in the category <m>\mathrm{Ch}(R)</m>.
-              </p>
+              <statement>
+                <p>
+                  Show that the direct sum of complexes is the coproduct in the category <m>\mathrm{Ch}(R)</m>.
+                </p>
+              </statement>
             </exercise>
 
             <proposition xml:id="rem-5.11">
@@ -9715,36 +9914,37 @@
               </proof>
             </proposition>
   
-            <exercise>
-              <p>
-                Exercise 68. 
-                Show that the following holds for every covariant left exact functor <m>F</m> :
-                <ol>
-                  <li>
-                    <p>
-                      <m>R^{i} F(A)</m> is well-defined up to isomorphism.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      <m>R^{i} F(f)</m> is well-defined for every arrow <m>f</m>.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      <m>R^{i} F(f)</m> is an additive functor for every <m>i</m>.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      <m>R^{0} F=F</m>.
-                    </p>
-                  </li>
-                </ol>
-              </p>
+            <exercise xml:id="exe-68">
+              <statement>
+                <p>
+                  Show that the following holds for every covariant left exact functor <m>F</m> :
+                  <ol>
+                    <li>
+                      <p>
+                        <m>R^{i} F(A)</m> is well-defined up to isomorphism.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        <m>R^{i} F(f)</m> is well-defined for every arrow <m>f</m>.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        <m>R^{i} F(f)</m> is an additive functor for every <m>i</m>.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        <m>R^{0} F=F</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
             </exercise>
 
           </subsection>
@@ -10410,20 +10610,22 @@
               The facts below about the mapping cone are all true up to sign whatever the sign convention we follow.
             </p>
   
-            <exercise>
-              <p>
-                Exercise 69. 
-                Let <m>f: C \rightarrow</m> be a map of complexes. 
-                Show that giving a map of complexes cone <m>(f) \rightarrow E</m> is the same as giving a map of complexes <m>D \stackrel{g}{\rightarrow} E</m>, and a homotopy between <m>g f</m> and 0 .
-              </p>
+            <exercise xml:id="exe-69">
+              <statement>
+                <p>
+                  Let <m>f: C \rightarrow</m> be a map of complexes. 
+                  Show that giving a map of complexes cone <m>(f) \rightarrow E</m> is the same as giving a map of complexes <m>D \stackrel{g}{\rightarrow} E</m>, and a homotopy between <m>g f</m> and 0 .
+                </p>
+              </statement>
             </exercise>
   
-            <exercise>
-              <p>
-                Exercise 70. 
-                Let <m>f: A \rightarrow B</m> be a map of complexes. 
-                Show that <m>f</m> is nullhomotopic if and only of <m>f</m> factors through the canonical map <m>A \rightarrow \operatorname{cone}\left(\operatorname{id}_{A}\right)</m>.
-              </p>  
+            <exercise xml:id="exe-70">
+              <statement>
+                <p>
+                  Let <m>f: A \rightarrow B</m> be a map of complexes. 
+                  Show that <m>f</m> is nullhomotopic if and only of <m>f</m> factors through the canonical map <m>A \rightarrow \operatorname{cone}\left(\operatorname{id}_{A}\right)</m>.
+                </p>  
+              </statement>
             </exercise>
   
             <remark>
@@ -10579,13 +10781,14 @@
               </proof>
             </lemma>
   
-            <exercise>
-              <p>
-                Exercise 71. 
-                Given a double complex <m>C</m> with <m>C_{p, q}=0</m> for all <m>p&lt;n</m>, the horizontal differentials <m>C_{n+1, q} \rightarrow C_{n, q}</m> induce a map of complexes
-                <me>\operatorname{Tot}^{\oplus}\left(C_{&gt;n, \bullet}\right) \stackrel{\varphi}{\rightarrow} C_{n, \bullet}</me>
-                where <m>C_{&gt;n, \bullet}</m> denotes the double complex we obtain from <m>C</m> by excluding the leftmost nonzero column, and <m>\operatorname{Tot}^{\oplus}(C) \cong \Sigma^{1} \operatorname{cone}(\varphi)</m>, or equivalently, <m>\Sigma \operatorname{Tot}^{\oplus}(C) \cong \operatorname{cone}(\varphi)</m>.
-              </p>
+            <exercise xml:id="exe-71">
+              <statement>
+                <p>
+                  Given a double complex <m>C</m> with <m>C_{p, q}=0</m> for all <m>p&lt;n</m>, the horizontal differentials <m>C_{n+1, q} \rightarrow C_{n, q}</m> induce a map of complexes
+                  <me>\operatorname{Tot}^{\oplus}\left(C_{&gt;n, \bullet}\right) \stackrel{\varphi}{\rightarrow} C_{n, \bullet}</me>
+                  where <m>C_{&gt;n, \bullet}</m> denotes the double complex we obtain from <m>C</m> by excluding the leftmost nonzero column, and <m>\operatorname{Tot}^{\oplus}(C) \cong \Sigma^{1} \operatorname{cone}(\varphi)</m>, or equivalently, <m>\Sigma \operatorname{Tot}^{\oplus}(C) \cong \operatorname{cone}(\varphi)</m>.
+                </p>
+              </statement>
             </exercise>
             
           </subsection>
@@ -10888,64 +11091,67 @@
               Finally, here are some nice facts about Ext and Tor we leave as exercises.
             </p>
   
-            <exercise>
-              <p>
-                Exercise 72. 
-                If <m>M</m> and <m>N</m> are finitely generated <m>R</m>-modules and <m>R</m> is a noetherian ring, then <m>\operatorname{Ext}_{R}^{i}(M, N)</m> and <m>\operatorname{Tor}_{i}^{R}(M, N)</m> are both finitely generated <m>R</m>-modules for all <m>i</m>.
-              </p>
+            <exercise  xml:id="exe-72">
+              <statement>
+                <p>
+                  If <m>M</m> and <m>N</m> are finitely generated <m>R</m>-modules and <m>R</m> is a noetherian ring, then <m>\operatorname{Ext}_{R}^{i}(M, N)</m> and <m>\operatorname{Tor}_{i}^{R}(M, N)</m> are both finitely generated <m>R</m>-modules for all <m>i</m>.
+                </p>
+              </statement>
             </exercise>
   
-            <exercise>
-              <p>
-                Exercise 73.
-                Let <m>R</m> be a commutative ring and <m>M</m> and <m>N</m> be <m>R</m>-modules. 
-                Consider the <m>R</m>-module homomorphism <m>f: M \rightarrow M</m> given by multiplication by a fixed element <m>r \in R</m>.
-                <ol>
-                  <li>
-                    <p>
-                      Show that the map <m>\operatorname{Tor}_{i}^{R}(f, M): \operatorname{Tor}_{i}^{R}(M, N) \rightarrow \operatorname{Tor}_{i}^{R}(M, N)</m> induced by <m>f</m> is multiplication by <m>r</m> on <m>\operatorname{Tor}_{i}^{R}(M, N)</m>.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      Show that <m>\operatorname{Ext}^{i}(f, M): \operatorname{Ext}_{R}^{i}(M, N) \rightarrow \operatorname{Ext}_{R}^{i}(M, N)</m> is multiplication by <m>r</m> on <m>\operatorname{Ext}_{R}^{i}(M, N)</m>.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      Show that the map <m>\operatorname{Ext}^{i}(M, f): \operatorname{Ext}_{R}^{i}(N, M) \rightarrow \operatorname{Ext}_{R}^{i}(N, M)</m> induced by <m>f</m> is multiplication by <m>r</m> on <m>\operatorname{Ext}_{R}^{i}(N, M)</m>.
-                    </p>
-                  </li>
-                </ol>
-              </p>
+            <exercise xml:id="exe-73">
+              <statement>
+                <p>
+                  Let <m>R</m> be a commutative ring and <m>M</m> and <m>N</m> be <m>R</m>-modules. 
+                  Consider the <m>R</m>-module homomorphism <m>f: M \rightarrow M</m> given by multiplication by a fixed element <m>r \in R</m>.
+                  <ol>
+                    <li>
+                      <p>
+                        Show that the map <m>\operatorname{Tor}_{i}^{R}(f, M): \operatorname{Tor}_{i}^{R}(M, N) \rightarrow \operatorname{Tor}_{i}^{R}(M, N)</m> induced by <m>f</m> is multiplication by <m>r</m> on <m>\operatorname{Tor}_{i}^{R}(M, N)</m>.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        Show that <m>\operatorname{Ext}^{i}(f, M): \operatorname{Ext}_{R}^{i}(M, N) \rightarrow \operatorname{Ext}_{R}^{i}(M, N)</m> is multiplication by <m>r</m> on <m>\operatorname{Ext}_{R}^{i}(M, N)</m>.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        Show that the map <m>\operatorname{Ext}^{i}(M, f): \operatorname{Ext}_{R}^{i}(N, M) \rightarrow \operatorname{Ext}_{R}^{i}(N, M)</m> induced by <m>f</m> is multiplication by <m>r</m> on <m>\operatorname{Ext}_{R}^{i}(N, M)</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
             </exercise>
   
-            <exercise>
-              <p>
-                Exercise 74 . 
-                Let <m>M</m> be an <m>R</m>-module.
-                <ol>
-                  <li>
-                    <p>
-                      Show that <m>M</m> is flat if and only if <m>\operatorname{Tor}_{1}^{R}(M, N)=0</m> for every <m>R</m>-module <m>N</m>.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      Show that <m>M</m> is projective if and only if <m>\operatorname{Ext}_{R}^{1}(M, N)=0</m> for every <m>R</m>-module <m>N</m>.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      Show that <m>M</m> is injective if and only if <m>\operatorname{Ext}_{R}^{1}(N, M)=0</m> for every <m>R</m>-module <m>N</m>.
-                    </p>
-                  </li>
-                </ol>
-              </p>
+            <exercise xml:id="exe-74">
+              <statement>
+                <p>
+                  Let <m>M</m> be an <m>R</m>-module.
+                  <ol>
+                    <li>
+                      <p>
+                        Show that <m>M</m> is flat if and only if <m>\operatorname{Tor}_{1}^{R}(M, N)=0</m> for every <m>R</m>-module <m>N</m>.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        Show that <m>M</m> is projective if and only if <m>\operatorname{Ext}_{R}^{1}(M, N)=0</m> for every <m>R</m>-module <m>N</m>.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        Show that <m>M</m> is injective if and only if <m>\operatorname{Ext}_{R}^{1}(N, M)=0</m> for every <m>R</m>-module <m>N</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
             </exercise>
             
           </subsection>
@@ -11189,57 +11395,59 @@
               </p>
             </example>
   
-            <exercise>
-              <p>
-                Exercise 75. 
-                Let <m>k</m> be a field and <m>R=k[x] /\left(x^{3}\right)</m>.
-                <ol>
-                  <li>
-                    <p>
-                      Compute <m>\operatorname{Tor}_{i}^{R}(k, k)</m> for all <m>i</m>.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      Show that <m>\operatorname{Ext}_{R}^{i}(k, k) \neq 0</m> for all <m>i</m>.
-                    </p>
-                  </li>
-                </ol>
-              </p>
+            <exercise xml:id="exe-75">
+              <statement>
+                <p>
+                  Let <m>k</m> be a field and <m>R=k[x] /\left(x^{3}\right)</m>.
+                  <ol>
+                    <li>
+                      <p>
+                        Compute <m>\operatorname{Tor}_{i}^{R}(k, k)</m> for all <m>i</m>.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        Show that <m>\operatorname{Ext}_{R}^{i}(k, k) \neq 0</m> for all <m>i</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
             </exercise>
   
-            <exercise>
-              <p>
-                Exercise 76. 
-                Let <m>k</m> be a field, <m>R=k[x, y]</m>, and <m>\quad=(x, y)</m>.
-                <ol>
-                  <li>
-                    <p>
-                      Show that
-                      <me>
-                        0 \longrightarrow R \stackrel{\left(\begin{array}{c}
-                      y \\
-                      x
-                      \end{array}\right)}{\longrightarrow} R^{2} \stackrel{x \quad y)}{\longrightarrow} R \longrightarrow 0</me>
-                      is a free resolution for <m>k=R /</m>.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      Compute <m>\operatorname{Tor}_{i}^{R}(k, k)</m> for all <m>i</m>.
-                    </p>
-                  </li>
-  
-                  <li>
-                    <p>
-                      Show that
-                      <me>\operatorname{Tor}_{1}(, k) \cong \operatorname{Tor}_{2}(k, k)</me>
-                    </p>
-                  </li>
-                </ol>
-              </p>
+            <exercise xml:id="exe-76">
+              <statement>
+                <p>
+                  Let <m>k</m> be a field, <m>R=k[x, y]</m>, and <m>\quad=(x, y)</m>.
+                  <ol>
+                    <li>
+                      <p>
+                        Show that
+                        <me>
+                          0 \longrightarrow R \stackrel{\left(\begin{array}{c}
+                        y \\
+                        x
+                        \end{array}\right)}{\longrightarrow} R^{2} \stackrel{x \quad y)}{\longrightarrow} R \longrightarrow 0</me>
+                        is a free resolution for <m>k=R /</m>.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        Compute <m>\operatorname{Tor}_{i}^{R}(k, k)</m> for all <m>i</m>.
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        Show that
+                        <me>\operatorname{Tor}_{1}(, k) \cong \operatorname{Tor}_{2}(k, k)</me>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
             </exercise>
             
           </subsection>
@@ -11311,11 +11519,12 @@
             </definition>
 
             <exercise>
-              <p>
-                Exercise 77. 
-                Given any <m>G</m>-module <m>A, A_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A</m> and <m>A^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, A)</m>, where <m>\mathbb{Z}</m> denotes the trivial <m>G</m>-module. 
-                In fact, there are natural isomorphisms ()<m>_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A</m> and ()<m>^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, \quad)</m>.
-              </p>
+              <statement>
+                <p>
+                  Given any <m>G</m>-module <m>A, A_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A</m> and <m>A^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, A)</m>, where <m>\mathbb{Z}</m> denotes the trivial <m>G</m>-module. 
+                  In fact, there are natural isomorphisms ()<m>_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A</m> and ()<m>^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, \quad)</m>.
+                </p>
+              </statement>
             </exercise>
 
             <p>
@@ -11376,12 +11585,13 @@
               </statement>
             </definition>
 
-            <exercise>
-              <p>
-                Exercise 78. 
-                The <m>I</m>-torsion functor is a left exact covariant additive functor.
-              </p>
-            </exercise>
+            <exercise xml:id="exe-78">
+              <statement>
+                <p>
+                  The <m>I</m>-torsion functor is a left exact covariant additive functor.
+                </p>
+              </statement>
+              </exercise>
 
             <p>
               The <m>I</m>-torsion functor gives rise to local cohomology, the right derived functors <m>\mathrm{H}_{I}^{i}</m> of <m>{ }_{I}</m>. 
@@ -11434,16 +11644,16 @@
               <image source="2023_11_27_3974d73438430121205eg-27.jpg"/>
             </example>
           
-            <exercise>
-              <p>Exercise 79.</p>
-                
-              <p>
-                a) <m>\check{C} \bullet\left(f_{1}, \ldots, f_{t} ; M\right) \cong \bigoplus_{\left\{j_{1}, \ldots, j_{i}\right\} \subseteq[t]} M_{f_{j_{1}} \cdots f_{j_{i}}}</m>
-              </p>
-          
-              <p>
-                b) The maps between components corresponding to subsets <m>I, J</m> are zero if <m>I \nsubseteq J</m>, and \pm 1 if <m>J=I \cup\{k\}</m>.
-              </p>
+            <exercise xml:id="exe-79">
+              <statement>                  
+                <p>
+                  a) <m>\check{C} \bullet\left(f_{1}, \ldots, f_{t} ; M\right) \cong \bigoplus_{\left\{j_{1}, \ldots, j_{i}\right\} \subseteq[t]} M_{f_{j_{1}} \cdots f_{j_{i}}}</m>
+                </p>
+            
+                <p>
+                  b) The maps between components corresponding to subsets <m>I, J</m> are zero if <m>I \nsubseteq J</m>, and \pm 1 if <m>J=I \cup\{k\}</m>.
+                </p>
+              </statement>
             </exercise>
         
             <p>
@@ -11614,7 +11824,7 @@
                   <ul>
                     <li>
                       <p>
-                        An arrow <m>f \in \operatorname{Hom}(B, C)</m> is <em>monic</em>, a <em>monomorphism</em>, or a <em>mono</em> if for all arrows
+                        An arrow <m>f \in \operatorname{Hom}(B, C)</m> is a <em>monomorphism</em> or a <em>mono</em> if for all arrows
                       </p>
     
                       <p>
@@ -11643,23 +11853,37 @@
             <p>
               Here are some examples:
             </p>
-    
-            <exercise xml:id="exp-mono-epi-set"><title>Monos and Epis in Set</title>
+
+            <example><title>Monos and Epis</title>
               <p>
-                Show that in <m>\Set</m>, the monos coincide with the injective functions and the epis coincide with the surjective functions.
+                <ol>
+                  <li xml:id="exe-2">
+                    <p>
+                      In <m>\Set</m>, the monos coincide with the injective functions and the epis coincide with the surjective functions.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      In <m>R-\mod</m>, the monos coincide with the injective functions and the epis coincide with the surjective functions.
+                    </p>
+                  </li>
+
+                  <li xml:id="exe-3">
+                    <p>
+                      In any category, every isomorphism is both epi and mono.                    
+                    </p>
+                  </li>
+                </ol>
               </p>
-            </exercise>
+            </example>
     
-            <exercise xml:id="exp-iso-mono-epi"><title>Isomorphisms Mono and Epi</title>
-              <p>
-                Show that in any category, every isomorphism is both epi and mono.
-              </p>
-            </exercise>
-    
-            <exercise xml:id="exp-epi-not-surj"><title>Epi and Surjective not the Same</title>
-              <p>
-                Show that the usual inclusion <m>\mathbb{Z} \longrightarrow \mathbb{Q}</m> is an epi in the category <m>\Ring</m>.
-              </p>
+            <exercise xml:id="exe-4"><title>Epi and Surjective not the Same</title>
+              <statement>
+                <p>
+                  Show that the usual inclusion <m>\mathbb{Z} \longrightarrow \mathbb{Q}</m> is an epi in the category <m>\Ring</m>.
+                </p>
+              </statement>
             </exercise>
         
             <p>
@@ -11667,17 +11891,21 @@
               Similarly, being monic and being injective are not the same thing.
             </p>
     
-            <exercise xml:id="exp-mono-not-inj"><title>Mono and Injective not the Same</title>
-              <p>
-                Show that the canonical projection <m>\mathbb{Q} \longrightarrow \mathbb{Q} / \mathbb{Z}</m> is a mono in the category of divisible abelian groups.
-                <fn>An abelian group <m>A</m> is divisible if for every <m>a \in A</m> and every positive integer <m>n</m> there exists <m>b \in A</m> such that <m>n b=a</m>.</fn>
-              </p>
+            <exercise xml:id="exe-5"><title>Mono and Injective not the Same</title>
+              <statement>
+                <p>
+                  Show that the canonical projection <m>\mathbb{Q} \longrightarrow \mathbb{Q} / \mathbb{Z}</m> is a mono in the category of divisible abelian groups.
+                  <fn>An abelian group <m>A</m> is divisible if for every <m>a \in A</m> and every positive integer <m>n</m> there exists <m>b \in A</m> such that <m>n b=a</m>.</fn>
+                </p>
+              </statement>
             </exercise>
     
-            <exercise xml:id="exp-mono-epi-poset"><title>Monic and Epic in Poset Category</title>
-              <p>
-                Show that given any poset <m>P</m>, in the poset category of <m>P</m> every morphism is both monic and epic, but no nonidentity morphism has a left or right inverse.
-              </p>
+            <exercise xml:id="exe-6"><title>Monic and Epic in Poset Category</title>
+              <statement>
+                <p>
+                  Show that given any poset <m>P</m>, in the poset category of <m>P</m> every morphism is both monic and epic, but no nonidentity morphism has a left or right inverse.
+                </p>
+              </statement>
             </exercise>
     
             <p>
@@ -11695,11 +11923,13 @@
               </statement>
             </definition>
     
-            <exercise xml:id="exp-unique-initial-terminal"><title>Uniqueness of Initial and Terminal Objects</title>
-              <p>
-                Initial objects are unique up to unique isomorphism. 
-                Terminal objects are unique up to unique isomorphism.
-              </p>
+            <exercise xml:id="exe-7"><title>Uniqueness of Initial and Terminal Objects</title>
+              <statement>
+                <p>
+                  Initial objects are unique up to unique isomorphism. 
+                  Terminal objects are unique up to unique isomorphism.
+                </p>
+              </statement>
             </exercise>
     
             <p>
@@ -11711,9 +11941,9 @@
                 <ol>
                   <li>
                     <p>
-                      The empty set is initial in Set. 
+                      The empty set is initial in <m>\Set</m>. 
                       Any singleton is terminal. 
-                      Since the empty set and a singleton are not isomorphic in Set, there is no zero object in Set.
+                      Since the empty set and a singleton are not isomorphic in <m>\Set</m>, there is no zero object in <m>\Set</m>.
                     </p>
                   </li>
     
@@ -12026,23 +12256,25 @@
             </lemma>
     
             <exercise xml:id="exe-81">
-              <p>
-                Exercise 81. 
-                Let <m>\mathcal{A}</m> be an additive category.
-                <ol>
-                  <li>
-                    <p>
-                      Show that an arrow <m>f</m> is a mono if and only if <m>f g=0</m> implies <m>g=0</m>.
-                    </p>
-                  </li>
-    
-                  <li>
-                    <p>
-                      Show that an arrow <m>f</m> is an epi if and only if <m>g f=0</m> implies <m>g=0</m>.
-                    </p>
-                  </li>
-                </ol>
-              </p>
+              <statement>
+                <p>
+                  Exercise 81. 
+                  Let <m>\mathcal{A}</m> be an additive category.
+                  <ol>
+                    <li>
+                      <p>
+                        Show that an arrow <m>f</m> is a mono if and only if <m>f g=0</m> implies <m>g=0</m>.
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        Show that an arrow <m>f</m> is an epi if and only if <m>g f=0</m> implies <m>g=0</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
             </exercise>
             
           </subsection>
@@ -12567,26 +12799,28 @@
             </p>
   
             <exercise xml:id="exe-86">
-              <p>
-                Exercise 86. Show that <m>0 \longrightarrow A \stackrel{f}{\rightarrow} B</m> is exact if and only if <m>f</m> is a mono, and <m>B \stackrel{g}{\rightarrow} C \longrightarrow 0</m> is exact if and only if <m>g</m> is an epi. Moreover,
-              </p>
-        
-              <p>
-                <me>0 \longrightarrow A \xrightarrow{f} B \stackrel{g}{\longrightarrow} C \longrightarrow 0</me>
-              </p>
-        
-              <p>
-                is a short exact sequence if and only if
-              </p>
-        
-              <p><ul>
-                <li>
-                      <p>
-                <m>f</m> is a mono. <m>\quad \bullet g</m> is an epi. <m>f=\operatorname{im} f=\operatorname{ker} g</m>. <m>\bullet \operatorname{coker} f=g</m>.
-              </p>
-                </li>
-        
-              </ul></p>
+              <statement>
+                <p>
+                  Exercise 86. Show that <m>0 \longrightarrow A \stackrel{f}{\rightarrow} B</m> is exact if and only if <m>f</m> is a mono, and <m>B \stackrel{g}{\rightarrow} C \longrightarrow 0</m> is exact if and only if <m>g</m> is an epi. Moreover,
+                </p>
+          
+                <p>
+                  <me>0 \longrightarrow A \xrightarrow{f} B \stackrel{g}{\longrightarrow} C \longrightarrow 0</me>
+                </p>
+          
+                <p>
+                  is a short exact sequence if and only if
+                </p>
+          
+                <p><ul>
+                  <li>
+                        <p>
+                  <m>f</m> is a mono. <m>\quad \bullet g</m> is an epi. <m>f=\operatorname{im} f=\operatorname{ker} g</m>. <m>\bullet \operatorname{coker} f=g</m>.
+                </p>
+                  </li>
+          
+                </ul></p>
+              </statement>
             </exercise>
   
             <remark xml:id="rem-7.34">
@@ -12596,9 +12830,11 @@
             </remark>
   
             <exercise xml:id="exe-87">
-              <p>
-                Exercise 87. Given an additive category <m>\mathcal{A}, B_{n}</m> and <m>Z_{n}</m> are additive functors <m>\operatorname{Ch}(\mathcal{A}) \longrightarrow \mathcal{A}</m>. In particular, an arrow <m>C \stackrel{f}{\rightarrow} D</m> induces arrows <m>Z_{n}(C) \stackrel{Z_{n}(f)}{\longrightarrow} Z_{n}(D)</m> and <m>B_{n}(c) \stackrel{B_{n}(f)}{\longrightarrow} B_{n}(D)</m>.
-              </p>
+              <statement>
+                <p>
+                  Exercise 87. Given an additive category <m>\mathcal{A}, B_{n}</m> and <m>Z_{n}</m> are additive functors <m>\operatorname{Ch}(\mathcal{A}) \longrightarrow \mathcal{A}</m>. In particular, an arrow <m>C \stackrel{f}{\rightarrow} D</m> induces arrows <m>Z_{n}(C) \stackrel{Z_{n}(f)}{\longrightarrow} Z_{n}(D)</m> and <m>B_{n}(c) \stackrel{B_{n}(f)}{\longrightarrow} B_{n}(D)</m>.
+                </p>
+              </statement>
             </exercise>
             
           </subsection>
@@ -12637,9 +12873,11 @@
             </p>
   
             <exercise xml:id="exe-88">
-              <p>
-                Given any abelian category <m>\mathcal{A}, \mathrm{H}_{n}</m> is an additive functor <m>\operatorname{Ch}(\mathcal{A}) \longrightarrow \mathcal{A}</m>.
-              </p>
+              <statement>
+                <p>
+                  Given any abelian category <m>\mathcal{A}, \mathrm{H}_{n}</m> is an additive functor <m>\operatorname{Ch}(\mathcal{A}) \longrightarrow \mathcal{A}</m>.
+                </p>
+              </statement>
             </exercise>
       
             <p>
@@ -12672,16 +12910,20 @@
             </definition>
   
             <exercise xml:id="exe-89">
-              <p>
-                Homotopy is an equivalence relation in <m>\operatorname{Ch}(\mathcal{A})</m>.
-              </p>
+              <statement>
+                <p>
+                  Homotopy is an equivalence relation in <m>\operatorname{Ch}(\mathcal{A})</m>.
+                </p>
+              </statement>
             </exercise>
   
             <exercise xml:id="exe-90">
-              <p>
-                Let <m>\mathcal{A}</m> be an abelian category. 
-                Homotopic maps of complexes in <m>\operatorname{Ch}(\mathcal{A})</m> induce the same map on homology.
-              </p>
+              <statement>
+                <p>
+                  Let <m>\mathcal{A}</m> be an abelian category. 
+                  Homotopic maps of complexes in <m>\operatorname{Ch}(\mathcal{A})</m> induce the same map on homology.
+                </p>
+              </statement>
             </exercise>
   
             <remark xml:id="rem-7.37">
@@ -12731,9 +12973,11 @@
             </definition>
   
             <exercise xml:id="exe-91">
-              <p>
-                Let <m>\mathcal{B}</m> be a full subcategory of the abelian category <m>\mathcal{A}</m>. Show that: a) <m>\mathcal{B}</m> is an additive category if and only if <m>\mathcal{B}</m> contains 0 and is closed under finite coproducts. b) <m>\mathcal{B}</m> is an abelian subcategory if and only if <m>\mathcal{B}</m> is additive and closed under kernels and cokernels.
-              </p>
+              <statement>
+                <p>
+                  Let <m>\mathcal{B}</m> be a full subcategory of the abelian category <m>\mathcal{A}</m>. Show that: a) <m>\mathcal{B}</m> is an additive category if and only if <m>\mathcal{B}</m> contains 0 and is closed under finite coproducts. b) <m>\mathcal{B}</m> is an abelian subcategory if and only if <m>\mathcal{B}</m> is additive and closed under kernels and cokernels.
+                </p>
+              </statement>
             </exercise>
   
             <definition xml:id="def-7.41">
@@ -12838,9 +13082,11 @@
             </theorem>
             
             <exercise xml:id="exe-92">
-              <p>
-                Let <m>I</m> be any small category. Show that if <m>\mathcal{A}</m> is an abelian category, then so is the category <m>\mathcal{A}^{I}</m> of functors <m>I \longrightarrow \mathcal{A}</m>.
-              </p>
+              <statement>
+                <p>
+                  Let <m>I</m> be any small category. Show that if <m>\mathcal{A}</m> is an abelian category, then so is the category <m>\mathcal{A}^{I}</m> of functors <m>I \longrightarrow \mathcal{A}</m>.
+                </p>
+              </statement>
             </exercise>
             
           </subsection>
@@ -13095,17 +13341,19 @@
             </remark>
   
             <exercise xml:id="exe-93">
-              <p>
-                Exercise 93. Let <m>\mathcal{A}</m> be an abelian category.
-              </p>
-        
-              <p>
-                a) Show that <m>\operatorname{Hom}_{\mathcal{A}}(x \oplus y, z)=\operatorname{Hom}_{\mathcal{A}}(x, z) \oplus \operatorname{Hom}_{\mathcal{A}}(y, z)</m>.
-              </p>
-        
-              <p>
-                b) Show that if <m>P</m> and <m>Q</m> are projective, then so is <m>P \oplus Q</m>.
-              </p>
+              <statement>
+                <p>
+                  Exercise 93. Let <m>\mathcal{A}</m> be an abelian category.
+                </p>
+          
+                <p>
+                  a) Show that <m>\operatorname{Hom}_{\mathcal{A}}(x \oplus y, z)=\operatorname{Hom}_{\mathcal{A}}(x, z) \oplus \operatorname{Hom}_{\mathcal{A}}(y, z)</m>.
+                </p>
+          
+                <p>
+                  b) Show that if <m>P</m> and <m>Q</m> are projective, then so is <m>P \oplus Q</m>.
+                </p>
+              </statement>
             </exercise>
   
             <definition xml:id="def-7.51">
@@ -13285,10 +13533,12 @@
             </remark>
   
             <exercise xml:id="exe-94">
-              <p>
-                Exercise 94. Additive functors preserve split complexes, meaning that if <m>C</m> is a split complex, then so is <m>F(C)</m> for any additive functor <m>F</m>. 
-                In particular, additive functors preserve split short exact sequences.
-              </p>
+              <statement>
+                <p>
+                  Exercise 94. Additive functors preserve split complexes, meaning that if <m>C</m> is a split complex, then so is <m>F(C)</m> for any additive functor <m>F</m>. 
+                  In particular, additive functors preserve split short exact sequences.
+                </p>
+              </statement>
             </exercise>
             
           </subsection>
@@ -13651,7 +13901,7 @@
 
                     <li>
                       <p>
-                        Given an arrow <m>f</m>, fix a lift <m>\varphi</m> of <m>f</m> to projective resolutions of the source and target. Since <m>F</m> is an additive functor, <m>\mathrm{H}_{i}(F(\varphi))</m> is a homomorphism for each <m>i</m>, and thus <m>L_{i} F(f)</m> is a homomorphism between the corresponding Hom-groups, which as we’ve seen is independent of our choice of <m>\varphi</m>.
+                        Given an arrow <m>f</m>, fix a lift <m>\varphi</m> of <m>f</m> to projective resolutions of the source and target. Since <m>F</m> is an additive functor, <m>\mathrm{H}_{i}(F(\varphi))</m> is a homomorphism for each <m>i</m>, and thus <m>L_{i} F(f)</m> is a homomorphism between the corresponding <m>\Hom</m>-groups, which as we’ve seen is independent of our choice of <m>\varphi</m>.
                       </p>
                     </li>
 
@@ -13676,34 +13926,36 @@
             </proposition>
   
             <exercise xml:id="exe-95">
-              <p>
-                Let <m>\mathcal{A}</m> be an abelian category with enough injectives, and <m>F</m> a covariant left exact functor. 
-                <ol>
-                  <li>
-                    <p>
-                      <m>R^{i} F(A)</m> is well-defined up to isomorphism. 
-                    </p>
-                  </li>
+              <statement>
+                <p>
+                  Let <m>\mathcal{A}</m> be an abelian category with enough injectives, and <m>F</m> a covariant left exact functor. 
+                  <ol>
+                    <li>
+                      <p>
+                        <m>R^{i} F(A)</m> is well-defined up to isomorphism. 
+                      </p>
+                    </li>
 
-                  <li>
-                    <p>
-                      <m>R^{i} F(f)</m> is well-defined for every arrow <m>f</m>. 
-                    </p>
-                  </li>
+                    <li>
+                      <p>
+                        <m>R^{i} F(f)</m> is well-defined for every arrow <m>f</m>. 
+                      </p>
+                    </li>
 
-                  <li>
-                    <p>
-                      <m>R^{i} F(f)</m> is an additive functor for every <m>i</m>. 
-                    </p>
-                  </li>
+                    <li>
+                      <p>
+                        <m>R^{i} F(f)</m> is an additive functor for every <m>i</m>. 
+                      </p>
+                    </li>
 
-                  <li>
-                    <p>
-                      <m>R^{0} F=F</m>.
-                    </p>
-                  </li>
-                </ol>
-              </p>
+                    <li>
+                      <p>
+                        <m>R^{0} F=F</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
             </exercise>
   
             <remark xml:id="rem-7.66">
@@ -15381,61 +15633,84 @@
           <p>
             where the map <m>\partial</m> obtained by composition is the connecting homomorphism we dreamed of.
           </p>
-    
-        </section>
-    
-        <section xml:id="exercises"><title>Exercises</title>
-    
-        <p>
-          Exercise 96. Show that if <m>M</m> is a first quadrant double complex with exact rows or exact columns, then <m>\operatorname{Tot}^{\oplus}(M)</m> is exact.
-        </p>
-    
-        <p>
-          Exercise 97. Let <m>M</m> and <m>N</m> be <m>R</m>-modules and fix projective resolutions <m>P</m> for <m>M</m> and <m>Q</m> for <m>N</m>. Consider the double complex <m>C=P \otimes_{R} Q</m>.
-        </p>
-    
-        <p>
-          a) Compute the spectral sequence associated to the First Filtration (I) on <m>C</m> up to the <m>E^{2}</m> page.
-        </p>
-    
-        <p>
-          b) Compute the spectral sequence associated to the Second Filtration II on <m>C</m> up to the <m>E^{2}</m> page.
-        </p>
-    
-        <p>
-          c) Give a new proof that Tor is balanced:
-        </p>
-    
-        <p>
-          <me>\mathrm{H}_{n}\left(P \otimes_{R} N\right) \cong \mathrm{H}_{n}\left(M \otimes_{R} Q\right) .</me>
-        </p>
-    
-        <p>
-          Exercise 98. Consider the following first quadrant double complex <m>C</m> :
-        </p>
-    
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-49"/>
+
+          <exercise xml:id="exe-96">
+            <statement>
+              <p>
+                Exercise 96. Show that if <m>M</m> is a first quadrant double complex with exact rows or exact columns, then <m>\operatorname{Tot}^{\oplus}(M)</m> is exact.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                
+              </p>
+            </solution>
+          </exercise>
+
+          <exercise xml:id="exe-97">
+            <statement>
+              <p>
+                Exercise 97. Let <m>M</m> and <m>N</m> be <m>R</m>-modules and fix projective resolutions <m>P</m> for <m>M</m> and <m>Q</m> for <m>N</m>. Consider the double complex <m>C=P \otimes_{R} Q</m>.
+              </p>
           
-        <p>
-          a) Compute the spectral sequence associated to the First Filtration (I) until it stabilizes.
-        </p>
-    
-        <p>
-          b) Compute the spectral sequence associated to the Second Filtration II until it stabilizes.
-        </p>
-    
-        <p>
-          c) How are the two resulting <m>E^{\infty}</m> pages even possible considering they both converge to the same thing?
-        </p>
-    
-        <p>
-          d) Compute <m>\mathrm{H}_{3}\left(\operatorname{Tot}^{\oplus}(M)\right)</m> explicitly using only the two spectral sequences you calculated.
-        </p>
-    
-        <p>
-          e) Check your work by computing <m>\mathrm{H}_{3}\left(\operatorname{Tot}^{\oplus}(M)\right)</m> explicitly from the definition of <m>\operatorname{Tot}^{\oplus}(M)</m>.
-        </p>
+              <p>
+                a) Compute the spectral sequence associated to the First Filtration (I) on <m>C</m> up to the <m>E^{2}</m> page.
+              </p>
           
+              <p>
+                b) Compute the spectral sequence associated to the Second Filtration II on <m>C</m> up to the <m>E^{2}</m> page.
+              </p>
+          
+              <p>
+                c) Give a new proof that Tor is balanced:
+              </p>
+          
+              <p>
+                <me>\mathrm{H}_{n}\left(P \otimes_{R} N\right) \cong \mathrm{H}_{n}\left(M \otimes_{R} Q\right) .</me>
+              </p>
+            </statement>
+            <solution>
+              <p>
+                
+              </p>
+            </solution>
+          </exercise>
+
+          <exercise xml:id="exe-98">
+            <statement>
+              <p>
+                Exercise 98. Consider the following first quadrant double complex <m>C</m> :
+              </p>
+          
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-49"/>
+                
+              <p>
+                a) Compute the spectral sequence associated to the First Filtration (I) until it stabilizes.
+              </p>
+          
+              <p>
+                b) Compute the spectral sequence associated to the Second Filtration II until it stabilizes.
+              </p>
+          
+              <p>
+                c) How are the two resulting <m>E^{\infty}</m> pages even possible considering they both converge to the same thing?
+              </p>
+          
+              <p>
+                d) Compute <m>\mathrm{H}_{3}\left(\operatorname{Tot}^{\oplus}(M)\right)</m> explicitly using only the two spectral sequences you calculated.
+              </p>
+          
+              <p>
+                e) Check your work by computing <m>\mathrm{H}_{3}\left(\operatorname{Tot}^{\oplus}(M)\right)</m> explicitly from the definition of <m>\operatorname{Tot}^{\oplus}(M)</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                
+              </p>
+            </solution>
+          </exercise>
+    
         </section>
 
       </chapter>
@@ -15464,7 +15739,7 @@
                 <ol>
                   <li>
                     <p>
-                      <m>(R,+)</m> is an abelian group with identity element denoted 0 or <m>0_{R}</m>.
+                      <m>(R,+)</m> is an abelian group with identity element denoted <m>0</m> or <m>0_{R}</m>.
                     </p>
                   </li>
           
@@ -15502,7 +15777,7 @@
           <definition xml:id="def-A2">
             <statement>
               <p>
-                Definition A.2. A ring <m>R</m> is a commutative ring if for all <m>a, b \in R</m> we have <m>a \cdot b=b \cdot a</m>.
+                A ring <m>R</m> is a <em>commutative ring</em> if for all <m>a, b \in R</m> we have <m>a \cdot b=b \cdot a</m>.
               </p>
             </statement>
           </definition>
@@ -15510,7 +15785,7 @@
           <definition xml:id="def-A3">
             <statement>
               <p>
-                Definition A.3. A ring <m>R</m> is a division ring if <m>1 \neq 0</m> and <m>R \backslash\{0\}</m> is a group under <m>\cdot</m>, so every nonzero <m>r \in R</m> has a multiplicative inverse. A field is a commutative division ring.
+                A ring <m>R</m> is a <em>division ring</em> if <m>1 \neq 0</m> and <m>R \backslash\{0\}</m> is a group under <m>\cdot</m>, so every nonzero <m>r \in R</m> has a multiplicative inverse. A field is a commutative division ring.
               </p>
             </statement>
           </definition>
@@ -15518,7 +15793,8 @@
           <definition xml:id="def-A4">
             <statement>
               <p>
-                Definition A.4. A commutative ring <m>R</m> is a domain, sometimes called an integral domain, if it has no zerodivisors: <m>a b=0 \Rightarrow a=0</m> or <m>b=0</m>. Note that in particular we reserve the word domain for commutative rings.
+                A commutative ring <m>R</m> is a <em>domain</em>, sometimes called an <em>integral domain</em>, if it has no zerodivisors: <m>a b=0 \Rightarrow a=0</m> or <m>b=0</m>. 
+                Note that in particular we reserve the word domain for commutative rings.
               </p>
             </statement>
           </definition>
@@ -15530,7 +15806,7 @@
           <definition xml:id="def-A5">
             <statement>
               <p>
-                Definition A.5. A ring homomorphism is a function <m>f: R \rightarrow S</m> satisfying the following:
+                A ring homomorphism is a function <m>f: R \rightarrow S</m> satisfying the following:
               </p>
               <p><ul>
                 <li>
@@ -15559,16 +15835,18 @@
             Under this definition, the map <m>f: \mathbb{R} \rightarrow \mathrm{M}_{2}(\mathbb{R})</m> sending <m>a \mapsto\left[\begin{array}{ll}a &amp; 0 \\ 0 &amp; 0\end{array}\right]</m> preserves addition and multiplication but not the multiplicative identities, and thus it is not a ring homomorphism.
           </p>
 
-          <exercise>
-            <p>
-              Exercise 65. For any ring <m>R</m>, there exists a unique homomorphism <m>\mathbb{Z} \rightarrow R</m>.
-            </p>
+          <exercise xml:id="exe-65">
+            <statement>
+              <p>
+                For any ring <m>R</m>, there exists a unique homomorphism <m>\mathbb{Z} \rightarrow R</m>.
+              </p>
+            </statement>
           </exercise>
 
           <definition xml:id="def-A6">
             <statement>
               <p>
-                Definition A.6. A subset <m>S</m> of a ring <m>R</m> is a subring of <m>R</m> if it is a ring under the same addition and multiplication operations and <m>1_{R}=1_{S}</m>.
+                A subset <m>S</m> of a ring <m>R</m> is a subring of <m>R</m> if it is a ring under the same addition and multiplication operations and <m>1_{R}=1_{S}</m>.
               </p>
             </statement>
           </definition>
@@ -15580,30 +15858,30 @@
           <definition xml:id="def-A7">
             <statement>
               <p>
-                Definition A.7. 
                 Let <m>R</m> be a ring. A subset <m>I</m> of <m>R</m> is an ideal if:
               </p>
           
-              <p><ul>
-                <li>
+              <p>
+                <ul>
+                  <li>
                     <p>
-                <m>I</m> is nonempty.
-              </p>
-                </li>
+                      <m>I</m> is nonempty.
+                    </p>
+                  </li>
           
-                <li>
+                  <li>
                     <p>
-                <m>(I,+)</m> is a subgroup of <m>(R,+)</m>.
-              </p>
-                </li>
-          
-                <li>
+                      <m>(I,+)</m> is a subgroup of <m>(R,+)</m>.
+                    </p>
+                  </li>
+            
+                  <li>
                     <p>
-                For every <m>a \in I</m> and every <m>r \in R</m>, we have <m>r a \in I</m> and <m>a r \in I</m>.
+                      For every <m>a \in I</m> and every <m>r \in R</m>, we have <m>r a \in I</m> and <m>a r \in I</m>.
+                    </p>
+                  </li>
+                </ul>
               </p>
-                </li>
-          
-              </ul></p>
             </statement>
           </definition>
 
@@ -15624,9 +15902,8 @@
             The change lies in what constitutes a subring; notice that nothing has changed in the definition of ideal.
           </p>
 
-          <remark>
+          <remark xml:id="rem-a8">
             <p>
-              Remark A.8. 
               Every ring <m>R</m> has two trivial ideals: <m>R</m> itself and the zero ideal <m>(0)=\{0\}</m>.
             </p>
           </remark>
