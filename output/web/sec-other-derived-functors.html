@@ -563,14 +563,14 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology in Abelian Categories</span></a></div>
+<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-complexes-ab" class="internal"><span class="title">Complexes in Abelian Categories</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-hom-ab" class="internal"><span class="title">Homology in Abelian Categories</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors in Abelian Categories</span></a></div>
+<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-exact-ab" class="internal"><span class="title">Exact Functors: Revisited</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-yoneda-ab" class="internal"><span class="title">The Yoneda Lemma: Revisited</span></a></div></li>
@@ -578,7 +578,7 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives in Abelian Categories</span></a></div>
+<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-proj-inj-ab" class="internal"><span class="title">Projectives, Injective, and Resolutions: Revisited</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-split-ab" class="internal"><span class="title">Split Exact Sequences: Revisited</span></a></div></li>
@@ -586,7 +586,7 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors in Abelian Categories</span></a></div>
+<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
 </li>
 </ul>
@@ -603,6 +603,17 @@ window.MathJax = {
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-locohom.html" class="internal"><span class="codenumber">II</span> <span class="title">Local Cohomology</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-injective-modules.html" class="internal"><span class="codenumber">9</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hulls.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Essential Extensions and Injective Hulls</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-injective-noetherian.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Injective Modules in Noetherian Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mathis.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Mathis Duality</span></a></div></li>
+</ul>
+</li></ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
@@ -642,38 +653,36 @@ g(a+b)=g a+g b
 </div> <div class="para" id="def-6.35-2-2">The category of <span class="process-math">\(G\)</span>-modules, which we write as <span class="process-math">\(G\)</span>-mod, has objects all <span class="process-math">\(G\)</span>-modules and arrows all <span class="process-math">\(G\)</span>-module morphisms. We write <span class="process-math">\(\operatorname{Hom}_{G}(A, B)\)</span> instead of <span class="process-math">\(\operatorname{Hom}_{G} \bmod (A, B)\text{.}\)</span>
 </div> <div class="para" id="def-6.35-2-3">This category <span class="process-math">\(G\)</span>-mod can be identified with the category of <span class="process-math">\(\mathbb{Z}[G]\)</span>-modules, of modules over the (noncommutative) ring <span class="process-math">\(\mathbb{Z} G\text{,}\)</span> the group ring of <span class="process-math">\(G\text{.}\)</span> It can also be identified with the functor category <span class="process-math">\(\mathbf{A b}^{G}\)</span> of functors from the category <span class="process-math">\(G\)</span> to the category <span class="process-math">\(\mathbf{A b}\)</span> of abelian groups. As a reminder, <span class="process-math">\(G\)</span> gives a category with one object <span class="process-math">\(G\)</span> and arrows the elements of <span class="process-math">\(G\text{.}\)</span>
 </div></article><article class="definition definition-like" id="def-6.36"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.44</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="def-6.36-1-1">
-<div class="para">The invariant subgroup <span class="process-math">\(A^{G}\)</span> of a <span class="process-math">\(G\)</span>-module <span class="process-math">\(A\)</span> is</div>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.44</span><span class="period">.</span><span class="space"> </span><span class="title">(Co)Invariant Subgroup.</span>
+</h4> <div class="para logical" id="def-6.36-2-1">
+<div class="para">The <em class="emphasis">invariant subgroup</em> <span class="process-math">\(A^{G}\)</span> of a <span class="process-math">\(G\)</span>-module <span class="process-math">\(A\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A^{G}:=\{a \in A \mid g a=a \text { for all } g \in G\}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="def-6.36-1-2">
+</div> <div class="para logical" id="def-6.36-2-2">
 <div class="para">The coinvariant subgroup <span class="process-math">\(A^{G}\)</span> of a <span class="process-math">\(G\)</span>-module <span class="process-math">\(A\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A_{G}:=A / G \text {-submodule generated by }\{g a \quad a \in A \mid g \in G, a \in A\} \text {. }
 \end{equation*}
 </div>
-</div></article><article class="exercise exercise-like" id="subsec-group-homology-6"><h4 class="heading">
+</div></article><article class="exercise exercise-like" id="exe-77"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.45</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-group-homology-6-1-1">Given any <span class="process-math">\(G\)</span>-module <span class="process-math">\(A, A_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A\)</span> and <span class="process-math">\(A^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, A)\text{,}\)</span> where <span class="process-math">\(\mathbb{Z}\)</span> denotes the trivial <span class="process-math">\(G\)</span>-module. In fact, there are natural isomorphisms ()<span class="process-math">\(_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A\)</span> and ()<span class="process-math">\(^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, \quad)\text{.}\)</span>
+<div class="para" id="exe-77-1-1">Given any <span class="process-math">\(G\)</span>-module <span class="process-math">\(A, A_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A\)</span> and <span class="process-math">\(A^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, A)\text{,}\)</span> where <span class="process-math">\(\mathbb{Z}\)</span> denotes the trivial <span class="process-math">\(G\)</span>-module. In fact, there are natural isomorphisms ()<span class="process-math">\(_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A\)</span> and ()<span class="process-math">\(^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, \quad)\text{.}\)</span>
 </div></article><div class="para" id="subsec-group-homology-7">Thus taking coinvariants is right exact, and taking invariants is left exact.</div>
 <article class="definition definition-like" id="def-6.37"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.46</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="def-6.37-1-1">
-<div class="para">Let <span class="process-math">\(G\)</span> be a group and <span class="process-math">\(A\)</span> a <span class="process-math">\(G\)</span>-module. The homology groups of <span class="process-math">\(G\)</span> with coefficients in <span class="process-math">\(A\)</span> are the <span class="process-math">\(G\)</span>-modules <span class="process-math">\(\mathrm{H}_{i}(G, A)\)</span> obtained via the left derived functors of the coinvariants functor:</div>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.46</span><span class="period">.</span><span class="space"> </span><span class="title">(Co)Homology Groups.</span>
+</h4> <div class="para logical" id="def-6.37-2-1">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group and <span class="process-math">\(A\)</span> a <span class="process-math">\(G\)</span>-module. The <em class="emphasis">homology groups</em> of <span class="process-math">\(G\)</span> with coefficients in <span class="process-math">\(A\)</span> are the <span class="process-math">\(G\)</span>-modules <span class="process-math">\(\mathrm{H}_{i}(G, A)\)</span> obtained via the left derived functors of the coinvariants functor:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \mathrm{H}_{i}(G ; A):=L_{i}\left(\quad{ }_{G}\right)(A)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="def-6.37-1-2">
+</div> <div class="para logical" id="def-6.37-2-2">
 <div class="para">Similarly, the cohomology groups of <span class="process-math">\(G\)</span> with coefficients in <span class="process-math">\(A\)</span> are the <span class="process-math">\(G\)</span>-modules <span class="process-math">\(\mathrm{H}^{i}(G, A)\)</span> obtained via the right derived functors of the invariants functor:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -696,11 +705,10 @@ A_{G}:=A / G \text {-submodule generated by }\{g a \quad a \in A \mid g \in G, a
 <blockquote class="blockquote" id="subsec-local-cohomology-2">
 <div class="para" id="subsec-local-cohomology-2-1">“”</div> <cite class="attribution">―</cite>
 </blockquote>
-<article class="definition definition-like" id="def-"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.47</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="def--1-1">
-<div class="para">Let <span class="process-math">\(I\)</span> be an ideal in a ring <span class="process-math">\(R\text{.}\)</span> The <span class="process-math">\(I\)</span>-torsion functor <span class="process-math">\(\quad{ }_{I}: R\)</span>-Mod <span class="process-math">\(\rightarrow R\)</span>-Mod is defined by</div>
+<article class="definition definition-like" id="def-6.37.5"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.47</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(I\)</span>-torsion Functor.</span>
+</h4> <div class="para logical" id="def-6.37.5-2-1">
+<div class="para">Let <span class="process-math">\(I\)</span> be an ideal in a ring <span class="process-math">\(R\text{.}\)</span> The <span class="process-math">\(I\)</span>-<em class="emphasis">torsion functor</em> <span class="process-math">\(\quad{ }_{I}: R\)</span>-Mod <span class="process-math">\(\rightarrow R\)</span>-Mod is defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
 { }_{I}(M):=\left\{m \in M \mid I^{n} m=0 \text { for some } n\right\}
@@ -724,7 +732,7 @@ A_{G}:=A / G \text {-submodule generated by }\{g a \quad a \in A \mid g \in G, a
 <article class="definition definition-like" id="def-6.38"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.49</span><span class="period">.</span><span class="space"> </span><span class="title">Čech Complex.</span>
 </h4> <div class="para logical" id="def-6.38-2-1">
-<div class="para">Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module and <span class="process-math">\(x \in R\text{.}\)</span> The Čech complex of <span class="process-math">\(x\)</span> on <span class="process-math">\(R\)</span> is given by</div>
+<div class="para">Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module and <span class="process-math">\(x \in R\text{.}\)</span> The <em class="emphasis">Čech complex</em> of <span class="process-math">\(x\)</span> on <span class="process-math">\(R\)</span> is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \check{C}^{\bullet}(x):=\left(\begin{array}{c}
@@ -743,10 +751,10 @@ A_{G}:=A / G \text {-submodule generated by }\{g a \quad a \in A \mid g \in G, a
 \check{C}^{\bullet}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right):=\check{C}^{\bullet}\left(f_{1}\right) \otimes \cdots \otimes \check{C}^{\bullet}\left(f_{t}\right) \otimes M .
 \end{equation*}
 </div>
-</div></article><article class="example example-like" id="subsec-local-cohomology-10"><h4 class="heading">
+</div></article><article class="example example-like" id="ex-6.39"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.50</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-local-cohomology-10-1">Example 6.39. Let’s compute the Čech complex on <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> and an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{.}\)</span>
+<div class="para" id="ex-6.39-1">Let’s compute the Čech complex on <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> and an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{.}\)</span>
 </div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-27.jpg" class="contained"></div></article><article class="exercise exercise-like" id="exe-79"><h4 class="heading">
 <span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.51</span><span class="period">.</span>
 </h4>

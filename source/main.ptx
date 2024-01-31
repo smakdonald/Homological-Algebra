@@ -2460,7 +2460,33 @@
               </statement>
               <solution>
                 <p>
-                  
+                  Suppose by way of contradiction that <m>g</m> is nullhomotopic. 
+                  Thus <m>\partial_1^B h_0 + h_{-1}\partial_0^A = g - 0=g</m>, where the <m>h_i</m> arise from the definition of homotopy. 
+                  Consider <m>1 \in \mathbb{Z}/2</m>. As <m>g(1) = 2</m> and <m>h_{-1}\partial_0^A(1) = 0</m>, by the given equality we must have <m>\partial_1^B h_0(1)=2</m>. 
+                  Thus <m>h_0(1)</m> must map to either <m>1</m> or <m>3</m> in <m>\mathbb{Z}/4\Z</m>. 
+                  However, the following shows that neither can be the case:
+	              </p>
+
+                <p>
+                  <me>
+                    \begin{aligned}
+                      0 = h_0(0) &amp; = h_0(1+1)         &amp;  0 = h_0(0) &amp; = h_0(1+1+1)\\ 
+                                 &amp; = h_0(1) + h_0(1)  &amp;             &amp; = h_0(1) + h_0(1) + h_0(1)\\ 
+                                 &amp; = 1 + 1            &amp;             &amp; = 3 + 3 + 3\\
+                                 &amp; = 2.               &amp;             &amp; = 1.
+                    \end{aligned}
+                  </me>
+                </p>
+
+                <p>
+                  As <m>0 \neq 2</m> and <m>0 \neq 1</m> in <m>\Z/4\Z</m>, we have reached a contradiction. 
+                  Thus, <m>g</m> is not nullhomotopic.
+                </p>
+
+                <p>
+                  However, the induced map in homology at the <m>0^{th}</m> degree is <me>H_0(g): H_0(A) \longrightarrow H_0(B) = \mathbb{Z}/ 2 \longrightarrow \frac{\mathbb{Z}/4}{\mathbb{Z}/2},</me> where <m>x \longmapsto 2x + \mathbb{Z}/2\mathbb{Z}</m>. 
+                  As <m>2x + \mathbb{Z}/2 = 0 + \mathbb{Z}/2</m> for all <m>x</m>, we see that <m>H_0(g)=0</m>. 
+                  As this was the only location where the homology could have been nonzero, we see that the induced map on <m>g</m> is zero.
                 </p>
               </solution>
             </exercise>
@@ -2619,60 +2645,6 @@
               </p>
               <attribution>John Cantwell Kiley</attribution>
             </blockquote>
-
-            <figure xml:id="figure-sets-mappings">
-              <caption>Mappings and relations</caption>
-      
-              <image xml:id="sets-mappings">
-                <latex-image>
-                  \begin{tikzcd}[sep=2.25em]
-                    \textcolor{white}{b} &amp;&amp;&amp;&amp;&amp; \textcolor{white}{\bullet} &amp; \textcolor{white}{\bullet} &amp; \textcolor{white}{\bullet} \\
-                    {A'} &amp;&amp;&amp; {B'} &amp;&amp; \textcolor{white}{\bullet} &amp; {C'} &amp; \textcolor{white}{\bullet} &amp;&amp; {D'} &amp;&amp;&amp; {E'} \\
-                    \\
-                    \\
-                    A &amp;&amp;&amp; B &amp;&amp;&amp; C &amp;&amp;&amp; D &amp;&amp;&amp; E
-                    \arrow["a"{description}, from=2-1, to=5-1]
-                    \arrow["b"{description}, from=2-4, to=5-4]
-                    \arrow["c"{description}, from=2-7, to=5-7]
-                    \arrow["d"{description}, from=2-10, to=5-10]
-                    \arrow["e"{description}, from=2-13, to=5-13]
-                    \arrow[""{name=0, anchor=center, inner sep=0}, "{f_1}"{description}, from=2-1, to=2-4]
-                    \arrow[""{name=1, anchor=center, inner sep=0}, "{f_2}"{description}, from=2-4, to=2-7]
-                    \arrow[""{name=2, anchor=center, inner sep=0}, "{f_4}"{description}, from=2-10, to=2-13]
-                    \arrow[""{name=3, anchor=center, inner sep=0}, "{g_1}"{description}, from=5-1, to=5-4]
-                    \arrow[""{name=4, anchor=center, inner sep=0}, "{g_2}"{description}, from=5-4, to=5-7]
-                    \arrow[""{name=5, anchor=center, inner sep=0}, "{g_4}"{description}, from=5-10, to=5-13]
-                    \arrow[""{name=6, anchor=center, inner sep=0}, "{f_3}"{description}, from=2-7, to=2-10]
-                    \arrow["{g_3}"{description}, from=5-7, to=5-10]
-                    \arrow[""{name=7, anchor=center, inner sep=0}, "{df_3(x)=0}"{description}, color={rgb,255:red,214;green,92;blue,92}, curve={height=-30pt}, from=2-7, to=5-10]
-                    \arrow[""{name=8, anchor=center, inner sep=0}, "{g_2b(y)=0}"{description}, color={rgb,255:red,214;green,214;blue,92}, curve={height=30pt}, from=2-4, to=5-7]
-                    \arrow[""{name=9, anchor=center, inner sep=0}, "{cf_2(y)=0}"{description}, color={rgb,255:red,214;green,214;blue,92}, curve={height=-30pt}, from=2-4, to=5-7]
-                    \arrow[""{name=10, anchor=center, inner sep=0}, "{g_1a(z')=b(y)}"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=30pt}, from=2-1, to=5-4]
-                    \arrow[""{name=11, anchor=center, inner sep=0}, "{bf_1(z')=b(y)}"{description}, color={rgb,255:red,92;green,92;blue,214}, curve={height=-30pt}, from=2-1, to=5-4]
-                    \arrow[""{name=12, anchor=center, inner sep=0}, "{g_3c(x)=0}"{description}, color={rgb,255:red,214;green,92;blue,92}, curve={height=30pt}, from=2-7, to=5-10]
-                    \arrow["{f_1(z')=y}", shift left=3, color={rgb,255:red,92;green,92;blue,214}, draw=none, from=2-1, to=2-4]
-                    \arrow["{x\in\ker(c)}"{description}, shift left=5, draw=none, from=2-6, to=2-8]
-                    \arrow["{f_2(y)=x}"{pos=0.3}, shift left=3, color={rgb,255:red,214;green,153;blue,92}, draw=none, from=2-4, to=2-7]
-                    \arrow["{g_1(z)=b(y)}"'{pos=0.3}, shift right=3, color={rgb,255:red,92;green,214;blue,92}, draw=none, from=5-1, to=5-4]
-                    \arrow["{a(z')=z}"{marking}, shift left=4, color={rgb,255:red,92;green,214;blue,214}, draw=none, from=5-1, to=2-1]
-                    \arrow["{x=f_2f_1(z')=0}"{description}, color={rgb,255:red,153;green,92;blue,214}, draw=none, from=1-1, to=1-7]
-                    \arrow["{\ker(d)=\{0\}}"'{pos=0.1}, color={rgb,255:red,214;green,153;blue,92}, draw=none, from=2, to=5]
-                    \arrow["{\text{im}(g_1)=\ker(g_2)}", color={rgb,255:red,92;green,214;blue,92}, curve={height=-12pt}, shorten &lt;=10pt, shorten &gt;=10pt, Rightarrow, from=4, to=3]
-                    \arrow["\circlearrowleft"', color={rgb,255:red,92;green,92;blue,214}, shorten &lt;=9pt, shorten &gt;=9pt, Rightarrow, from=10, to=11]
-                    \arrow["\circlearrowleft", color={rgb,255:red,214;green,214;blue,92}, shorten &lt;=9pt, shorten &gt;=9pt, Rightarrow, from=9, to=8]
-                    \arrow["\circlearrowleft"', color={rgb,255:red,214;green,92;blue,92}, shorten &lt;=9pt, shorten &gt;=9pt, Rightarrow, from=12, to=7]
-                    \arrow["{\ker(b)=\{0\}}"{pos=0.8}, shift left=2, color={rgb,255:red,92;green,214;blue,92}, draw=none, from=0, to=3]
-                    \arrow["{\text{im}(f_2)=\ker(f_3)}"', color={rgb,255:red,214;green,153;blue,92}, curve={height=18pt}, shorten &lt;=10pt, shorten &gt;=10pt, Rightarrow, from=6, to=1]
-                \end{tikzcd}
-                </latex-image>
-              </image>
-      
-      
-            </figure>
-
-            <p>
-              
-            </p>
           
             <p>
               In this section, we will discuss short exact sequences of modules in a bit more detail. 
@@ -2919,6 +2891,48 @@
                   </ol>
                 </p>
               </statement>
+
+              <solution>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Let <m>0 \longrightarrow A \overset{f}{\longrightarrow} B  \overset{g}{\longrightarrow} C \longrightarrow 0</m> be a short exact sequence of <m>k</m>-vector spaces. 
+                        Thus <m>f</m> is injective. 
+                        Let <m>U</m> be a basis for <m>A</m>. 
+                        As <m>f</m> is injective it maps linearly independent sets to linearly independent sets, and so <m>f(U) = V</m>, where <m>V</m> is a linearly independent in <m>B</m>.
+                      </p>
+                    
+                      <p>
+                        As proved so deliciously in 818 (and 815), in vector spaces we can extend any linearly independent set into a basis (with some help from Zorn), and thus we extend <m>V</m> into a basis <m>V'</m>. 
+                        Using the UMP for free modules there exists a unique <m>k</m>-vector space homomorphism <m>q</m> such that <m>q(b) = h(b)</m> for all <m>b \in B</m>, where <m>h: W' \longrightarrow A</m> maps <m>w_i</m> to <m>v_i</m> whenever <m>f(v_i) = w_i</m>.
+                      </p>
+                    
+                      <p>
+                        Let <m>a \in A</m> and consider <m>qf(a)</m>. 
+                        As <m>a = \sum\limits_ix_iv_i</m> for <m>x_i \in k</m> and <m>v_i \in V</m>, 
+                        <me>qf(a) = qf\left(\sum\limits_ix_iv_i\right)=q\left(\sum\limits_ix_iw_i\right)=\sum\limits_ix_iq(w_i)= \sum\limits_ix_ih(w_i)=\sum\limits_ix_iv_i= a.</me>
+                      </p>
+                    
+                      <p>
+                        Thus <m>qf = \mathop{\mathrm{id}}_A</m>. 
+                        Therefore, by the Splitting Lemma, every exact sequence of <m>k</m>-vector spaces splits.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Let <m>T:V \to W</m> be a linear transformation. 
+                        Then <m>\mathop{\mathrm{im}}(T)</m> and <m>\ker(T)</m> are both subspaces (just in different places). 
+                        Consider the sequence <me>0 \longrightarrow \ker T \overset{\iota}{\longrightarrow} V \overset{T'}{\longrightarrow} \mathop{\mathrm{im}}T \longrightarrow 0</me> where <m>i</m> is the natural inclusion and <m>T'</m> is <m>T</m> restricted to its image. 
+                        As <m>\iota</m> is injective and <m>T'</m> is surjective (by definition), this sequence is exact. 
+                        By part <m>(a)</m>. the sequence splits. 
+                        Thus <m>V = \ker T \oplus \mathop{\mathrm{im}}T</m>, which implies that <m>\dim V = \dim (\ker T) + \dim (\mathop{\mathrm{im}}T)</m>, completing the proof.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </solution>
             </exercise>
 
             <p>
@@ -9731,26 +9745,25 @@
             <blockquote>
               <p>
                 <q>
-                  
+                  All things make sense; you just have to fathom how they make sense.
                 </q>
               </p>
-              <attribution></attribution>
+              <attribution>Piers Anthony</attribution>
             </blockquote>
             
             <p>
-              While Hom and tensor are not exact functors, we can measure their lack of exactness using their derived functors Ext and Tor. 
+              While <m>\Hom</m> and tensor are not exact functors, we can measure their lack of exactness using their derived functors <m>\Ext</m> and <m>\Tor</m>. 
               These are the poster child examples of what are called derived functors, which can be constructed over any abelian category provided we have enough projective or injective objects. 
-              In this chapter, we will construct derived functors over <m>R</m>-Mod (which does have enough injectives and enough projectives), and then later we will discuss the general construction.
+              In this chapter, we will construct derived functors over <m>R\Mod</m> (which does have enough injectives and enough projectives), and then later we will discuss the general construction.
             </p>
   
             <p>
-              We start with the general construction of derived functors, although we will soon focus on concrete examples, most importantly Ext and Tor, the derived functors of hom and tensor.
+              We start with the general construction of derived functors, although we will soon focus on concrete examples, most importantly <m>\Ext</m> and <m>\Tor</m>, the derived functors of <m>\Hom</m> and tensor.
             </p>
   
-            <definition xml:id="def-6.1">
+            <definition xml:id="def-6.1"><title>Derived functors</title>
               <statement>
                 <p>
-                  Definition 6.1 (Derived functors). 
                   Let <m>F: R</m>-Mod <m>\rightarrow S</m>-Mod be a covariant right exact functor. 
                   The left derived functors of <m>F</m> are a sequence of functors
                   <me>L_{i} F: R \text {-Mod } \rightarrow S \text {-Mod, for } i \geqslant 0</me>
@@ -9816,26 +9829,23 @@
               It is not clear a priori that this construction is well-defined, but we will soon show that is indeed the case.
             </p>
   
-            <remark>
+            <remark xml:id="rem-6.2"><title></title>
               <p>
-                Remark 6.2. 
                 If <m>F</m> is exact, then <m>\mathrm{H}_{i}(F(C))=F\left(\mathrm{H}_{i}(C)\right)</m>, so <m>L_{i} F=0</m> for all <m>i&gt;0</m>.
               </p>
             </remark>
   
-            <remark>
+            <remark xml:id="rem-6.3"><title></title>
               <p>
-                Remark 6.3. 
                 If <m>P</m> is projective, then <m>0 \rightarrow P \rightarrow 0</m> is a projective resolution of <m>P</m>, and thus <m>L_{i} F(P)=0</m> for all <m>i&gt;0</m>.
                 Similarly, if <m>E</m> is injective then <m>R^{i} F(E)=0</m>.
               </p>
             </remark>
   
-            <proposition xml:id="prop-6.4">
+            <proposition xml:id="prop-6.4"><title></title>
               <statement>
                 <p>
-                  Proposition 6.4. 
-                  Let <m>F: R \operatorname{Mod} \rightarrow S</m> Mod be a covariant right exact functor.
+                  Let <m>F: R \operatorname{Mod} \rightarrow S\Mod</m> be a covariant right exact functor.
                   <ol>
                     <li>
                       <p>
@@ -9870,9 +9880,9 @@
                     <li>
                       <p>
                         Let <m>P</m> and <m>Q</m> be projective resolutions of <m>A</m>. 
-                        Theorem 5.17 gives us maps of complexes <m>\varphi: P \rightarrow Q</m> and <m>\psi: Q \rightarrow P</m> such that <m>\varphi \psi</m> is homotopic to <m>1_{Q}</m> and <m>\psi \varphi</m> is homotopic to <m>1_{P}</m>. 
+                        <xref ref="thm-5.17"/> gives us maps of complexes <m>\varphi: P \rightarrow Q</m> and <m>\psi: Q \rightarrow P</m> such that <m>\varphi \psi</m> is homotopic to <m>1_{Q}</m> and <m>\psi \varphi</m> is homotopic to <m>1_{P}</m>. 
                         Additive functors preserve homotopies, by Remark 7.35, so <m>F(\varphi) F(\psi)</m> and <m>F(\psi) F(\varphi)</m> are homotopic to the corresponding identity maps. 
-                        Homotopic maps induce the same map in homology, by Lemma 2.9. 
+                        Homotopic maps induce the same map in homology, by <xref ref="lem-2.9"/>. 
                         Therefore, <m>F(\varphi)</m> and <m>F(\psi)</m> induce isomorphisms in homology.
                       </p>
                     </li>
@@ -9880,15 +9890,15 @@
                     <li>
                       <p>
                         Fix projective resolutions <m>P</m> and <m>Q</m> of <m>M</m> and <m>N</m>. 
-                        Any two lifts <m>\varphi</m> and <m>\psi</m> of <m>f: M \rightarrow N</m> to <m>P \rightarrow Q</m> are homotopic, by Theorem 5.17. 
+                        Any two lifts <m>\varphi</m> and <m>\psi</m> of <m>f: M \rightarrow N</m> to <m>P \rightarrow Q</m> are homotopic, by <xref ref="thm-5.17"/>. 
                         Additive functors preserve homotopies, by Remark 7.35, so <m>F(\varphi)</m> and <m>F(\psi)</m> are homotopic. 
-                        Homotopic maps induce the same map in homology, by Lemma 2.9, so <m>L_{i} F(\varphi)=L_{i} F(\psi)</m> for each <m>i</m>.
+                        Homotopic maps induce the same map in homology, by <xref ref="lem-2.9"/>, so <m>L_{i} F(\varphi)=L_{i} F(\psi)</m> for each <m>i</m>.
                       </p>
                     </li>
   
                     <li>
                       <p>
-                        Given an arrow <m>f</m>, fix a lift <m>\varphi</m> of <m>f</m> to projective resolutions of the source and target, which exists by Theorem 5.17.
+                        Given an arrow <m>f</m>, fix a lift <m>\varphi</m> of <m>f</m> to projective resolutions of the source and target, which exists by <xref ref="thm-5.17"/>.
                         Since <m>F</m> is an additive functor, <m>\mathrm{H}_{i}(F(\varphi))</m> is a homomorphism for each <m>i</m>, and thus <m>L_{i} F(f)</m> is a homomorphism between the corresponding Hom-groups, which as we have seen is independent of our choice of <m>\varphi</m>.
                       </p>
                     </li>
@@ -9967,7 +9977,6 @@
             <theorem xml:id="thm-6.5">
               <statement>
                 <p>
-                  Theorem 6.5. 
                   Let <m>F</m> a right exact covariant functor. 
                   Any short exact sequence
                   <me>0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0</me>
@@ -9990,14 +9999,14 @@
                 <p>
                   We give a proof for the case of right exact functors, and the remaining cases follow by duality. 
                   We start by fixing projective resolutions <m>P</m> of <m>A</m> and <m>R</m> of <m>C</m>.
-                   By Theorem 7.58, we can choose a projective resolution <m>Q</m> of <m>B</m> and lifts of <m>f</m> and <m>g</m> such that
+                  By Theorem 7.58, we can choose a projective resolution <m>Q</m> of <m>B</m> and lifts of <m>f</m> and <m>g</m> such that
                   <me>0 \longrightarrow P \longrightarrow Q \longrightarrow R \longrightarrow 0</me>
                   is a short exact sequence of complexes. 
-                  By Proposition 6.4, <m>L_{i} F</m> does not depend on the choice of resolution, so we can compute <m>L_{i} F(A), L_{i} F(B)</m>, and <m>L_{i} F(C)</m> from <m>P, Q</m>, and <m>R</m>. 
+                  By <xref ref="prop-6.4"/>, <m>L_{i} F</m> does not depend on the choice of resolution, so we can compute <m>L_{i} F(A), L_{i} F(B)</m>, and <m>L_{i} F(C)</m> from <m>P, Q</m>, and <m>R</m>. 
                   Now notice that for each <m>n, R_{n}</m> is projective, so
                   <me>0 \longrightarrow P_{n} \longrightarrow Q_{n} \longrightarrow R_{n} \longrightarrow 0</me>
                   is a split short exact sequence. 
-                  Now additive functors preserve split short exact sequences, by Exercise 94, so
+                  Now additive functors preserve split short exact sequences, by <xref ref="exe-94"/>, so
                   <me>0 \longrightarrow F\left(P_{n}\right) \longrightarrow F\left(Q_{n}\right) \longrightarrow F\left(R_{n}\right) \longrightarrow 0</me>
                   is a short exact sequence for all <m>n</m>. 
                   Then
@@ -10034,7 +10043,7 @@
           
                 <p>
                   for each <m>i</m>. 
-                  First, notice that we know that <m>a, b</m>, and <m>c</m> can be lifted to maps of complexes by Theorem 5.17, and that any two lifts of each <m>a, b</m>, or <m>c</m> are unique up to homotopy. 
+                  First, notice that we know that <m>a, b</m>, and <m>c</m> can be lifted to maps of complexes by <xref ref="thm-5.17"/>, and that any two lifts of each <m>a, b</m>, or <m>c</m> are unique up to homotopy. 
                   So let's start by fixing lifts of <m>a</m> and <m>\gamma</m> of <m>c</m>, and we will construct an appropriate lift <m>\beta</m> of <m>b</m>. 
                   Since the short exact sequences
                   <me>0 \longrightarrow P_{n} \longrightarrow Q_{n} \longrightarrow R_{n} \longrightarrow 0</me>
@@ -10056,7 +10065,8 @@
                     0 &amp; \partial_{n}^{R}
                     \end{array}\right)
                   </me>
-                  for each <m>n</m>. Since this is a differential, we have
+                  for each <m>n</m>. 
+                  Since this is a differential, we have
                   <me>\left(\partial_{n}^{Q}\right)^{2}=0 \Longrightarrow \partial_{n}^{P}{ }_{1} \mu_{n}+\mu_{n}{ }_{1} \partial_{n}^{R}=0</me>
                 </p>
           
@@ -10289,7 +10299,7 @@
                 </p>
           
                 <p>
-                  The square (5) commutes because <m>L_{i} F</m> gives rise to natural long exact sequences, by Theorem 6.5.
+                  The square (5) commutes because <m>L_{i} F</m> gives rise to natural long exact sequences, by <xref ref="thm-6.5"/>.
                 </p>
           
                 <p>
@@ -10313,9 +10323,9 @@
                 </p>
           
                 <p>
-                  On the other hand, the long exact sequence for <m>L_{i} F</m> from Theorem 6.5 says that
+                  On the other hand, the long exact sequence for <m>L_{i} F</m> from <xref ref="thm-6.5"/> says that
                   <me>L_{i} F(Q) \longrightarrow L_{i} F(N) \stackrel{\delta_{i}}{\longrightarrow} L_{i}{ }_{1} F(C)</me>
-                  is exact, but since <m>i \geqslant 1</m> and <m>Q</m> is projective we have <m>L_{i} F(Q)=0</m> by Remark 6.3. 
+                  is exact, but since <m>i \geqslant 1</m> and <m>Q</m> is projective we have <m>L_{i} F(Q)=0</m> by <xref ref="rem-6.3"/>. 
                   But the exactness of
                   <me>0 \longrightarrow L_{i} F(N) \stackrel{\delta_{i}}{\longrightarrow} L_{i}{ }_{1} F(C)</me>
                   says that <m>\delta_{i}</m> is injective. 
@@ -10425,10 +10435,10 @@
               To show that for each of Ext and Tor these two seemingly unrelated definitions agree, we will need some more tools.
             </p>
   
-            <definition xml:id="def-6.8">
+            <definition xml:id="def-6.8"><title>Suspension</title>
               <statement>
                 <p>
-                  The suspension or shift of a complex <m>C</m> is the complex <m>\Sigma C:=C[1]</m> with
+                  The <em>suspension</em> or <em>shift</em> of a complex <m>C</m> is the complex <m>\Sigma C:=C[1]</m> with
                   <me>(\Sigma C)_{n}=C_{n} \quad \text { and } \quad \partial^{\Sigma C}=\partial^{C} \text {. }</me>
                 </p>
           
@@ -10443,10 +10453,10 @@
               Note that there are two conventions in the literature, the other one being <m>(\Sigma C)_{n}=C_{n+1}</m>.
             </p>
   
-            <definition xml:id="def-6.9">
+            <definition xml:id="def-6.9"><title>Double Complex</title>
               <statement>
                 <p>
-                  A (homological) double complex over the ring <m>R</m> is a family of <m>R</m>-modules <m>\left\{C_{p, q}\right\}_{p, q \in \mathbb{Z}}</m> together with homomorphisms of <m>R</m>-modules <m>d^{h}: C_{p, q} \rightarrow C_{p} \quad{ }_{1, q}</m> and <m>d^{v}: C_{p, q} \rightarrow</m> <m>C_{p, q} 1</m> satisfying
+                  A (homological) <em>double complex</em> over the ring <m>R</m> is a family of <m>R</m>-modules <m>\left\{C_{p, q}\right\}_{p, q \in \mathbb{Z}}</m> together with homomorphisms of <m>R</m>-modules <m>d^{h}: C_{p, q} \rightarrow C_{p} \quad{ }_{1, q}</m> and <m>d^{v}: C_{p, q} \rightarrow</m> <m>C_{p, q} 1</m> satisfying
                 </p>
           
                 <image source="2023_11_27_3974d73438430121205eg-11.jpg"/>
@@ -10457,9 +10467,9 @@
               </statement>
             </definition>
   
-            <remark>
+            <remark xml:id="rem-6.10">
               <p>
-                Remark 6.10. Note that if <m>C</m> is a double complex, then each row and each column is a complex: 
+                Note that if <m>C</m> is a double complex, then each row and each column is a complex: 
                 if we fix <m>p, C_{p, \bullet}</m> is a complex with differential <m>d^{v}</m>; 
                 if we fix <m>q, C_{\bullet, q}</m> is a complex with differential <m>d^{h}</m>.
               </p>
@@ -10470,10 +10480,10 @@
               A cohomological double complex would have vertical and horizontal maps that go up in index, and we instead write <m>C^{p, q}</m> for the module in position <m>(p, q)</m>. Also, please note that there are different conventions in the literature for whether <m>p</m> refers to the row or column.
             </p>
   
-            <definition xml:id="def-6.11">
+            <definition xml:id="def-6.11"><title>Total Complex</title>
               <statement>
                 <p>
-                  Given a double complex <m>C</m>, its total complex is the complex given by
+                  Given a double complex <m>C</m>, its <em>total complex</em> is the complex given by
                   <me>\operatorname{Tot}^{\oplus}(C)_{n}:=\bigoplus_{p+q=n} C_{p, q} \quad \text { with differential } d=d^{h}+d^{v}</me>
                 </p>
           
@@ -10484,9 +10494,9 @@
               </statement>
             </definition>
   
-            <remark>
+            <remark xml:id="rem-6.12">
               <p>
-                Remark 6.12. Let <m>C</m> be a double complex with differentials <m>d^{v}</m> and <m>d^{h}</m>. Then
+                Let <m>C</m> be a double complex with differentials <m>d^{v}</m> and <m>d^{h}</m>. Then
               </p>
         
               <p>
@@ -10502,10 +10512,9 @@
               In order to prove our two definitions of Ext and Tor each agree, we will need two special double complexes: the tensor and the Hom double complex.
             </p>
   
-            <definition xml:id="def-6.13">
+            <definition xml:id="def-6.13"><title>Tensor Product Double Complex</title>
               <statement>
                 <p>
-                  Definition 6.13. 
                   Let <m>R</m> be a ring and <m>C</m> and <m>D</m> be complexes of <m>R</m>-modules. 
                   The tensor product double complex of <m>C</m> and <m>D</m> is the double complex <m>C \otimes D</m> given by taking
                   <me>(C \otimes D)_{p, q}=C_{p} \otimes D_{q} \quad d^{h}=\partial^{C} \otimes_{R} 1_{D}, \quad \text { and } \quad d^{v}=(1)^{p} 1_{C} \otimes_{R} \partial^{D}</me>
@@ -10517,9 +10526,8 @@
               </statement>
             </definition>
   
-            <remark>
+            <remark xml:id="rem-6.14">
               <p>
-                Remark 6.14. 
                 The tensor product total complex has
                 <me>\operatorname{Tot}^{\oplus}(C \otimes D)_{n}=\bigoplus_{p+q=n} C_{n} \otimes_{R} D_{n}</me>
                 and differential
@@ -10528,11 +10536,11 @@
               </p>
             </remark>
   
-            <definition xml:id="def-6.15">
+            <definition xml:id="def-6.15"><title><m>\Hom</m> Double Complex</title>
               <statement>
                 <p>
                   Let <m>R</m> be a ring and <m>C</m> and <m>D</m> be complexes of <m>R</m>-modules. 
-                  The Hom double complex of <m>C</m> and <m>D</m> is the double complex <m>\operatorname{Hom}(C, D)</m> given by
+                  The <em>Hom double complex</em> of <m>C</m> and <m>D</m> is the double complex <m>\operatorname{Hom}(C, D)</m> given by
                   <me>(\operatorname{Hom}(C, D))_{p, q}:=\operatorname{Hom}_{R}\left(C_{p}, D_{q}\right)</me>
                   with differentials
                   <me>
@@ -10549,29 +10557,27 @@
               </statement>
             </definition>
   
-            <remark>
+            <remark xml:id="rem-6.16">
               <p>
-                Remark 6.16. 
                 The Hom complex of <m>C</m> and <m>D</m> is the complex
                 <me>\operatorname{Hom}(C, D)_{n}=\prod_{p+q=n} \operatorname{Hom}_{R}\left(C_{p}, D_{q}\right)</me>
                 with differential <m>d(f)=f \circ \partial^{C}+(1)^{p+q+1} \partial^{D} \circ f</m> for each <m>f \in \operatorname{Hom}_{R}\left(C_{p}, D_{q}\right)</m>.
               </p>
             </remark>
   
-            <remark>
+            <remark xml:id="rem-6.17">
               <p>
-                Remark 6.17. 
                 Given <m>C</m> and <m>D</m> in <m>\mathrm{Ch}(R)</m>, what is a 0 -cycle in the Hom complex <m>\operatorname{Hom}(C, D)</m> ? A 0 -cycle is a sequence of maps of <m>R</m>-modules <m>f_{k}: C_{k} \rightarrow D_{k}</m> satisfying <m>f \partial^{C} \quad \partial^{D} f=0</m>, so the 0 -cycles are precisely the maps of complexes <m>C \rightarrow D</m>. 
                 Similarly, a sequence of maps <m>f_{k}: C_{k} \rightarrow D_{k}</m> is a 0-boundary if there exists a sequence of maps <m>h_{k}: C_{k} \rightarrow D_{k+1}</m> such that <m>f_{k}=\partial^{D} h_{k}+h_{k}{ }_{1} \partial^{C}</m>. 
                 In other words, a 0-boundary indicates a homotopy relation - if <m>f \quad g</m> is a 0-boundary, <m>f</m> and <m>g</m> are homotopic maps.
               </p>
             </remark>
   
-            <definition xml:id="def-6.18">
+            <definition xml:id="def-6.18"><title>Cone</title>
               <statement>
                 <p>
                   Let <m>f: C \rightarrow D</m> be a map of complexes. 
-                  The cone of <m>f</m> is the complex cone <m>(f)</m> with cone <m>(f)_{n}=C_{n} \quad 1 \oplus D_{n}</m> and differential given by
+                  The <em>cone</em> of <m>f</m> is the complex cone <m>(f)</m> with cone <m>(f)_{n}=C_{n} \quad 1 \oplus D_{n}</m> and differential given by
                   <me>
                     \partial_{n}:=\left(\begin{array}{cc}
                     \partial_{C} &amp; 0 \\
@@ -10585,9 +10591,8 @@
               </statement>
             </definition>
   
-            <remark>
+            <remark xml:id="rem-6.19">
               <p>
-                Remark 6.19. 
                 There are different conventions for the sign in front of <m>f</m> in the definition of the differentials on the cone of <m>f</m>. 
                 Weibel [Wei94] defines
                 <me>
@@ -10628,9 +10633,8 @@
               </statement>
             </exercise>
   
-            <remark>
+            <remark xml:id="rem-6.20">
               <p>
-                Remark 6.20. 
                 Given any map of complexes <m>C \stackrel{f}{\longrightarrow} D</m>, there is a short exact sequence
                 <me>0 \longrightarrow D \longrightarrow \operatorname{cone}(f) \longrightarrow \Sigma^{1} C \longrightarrow 0</me>
                 determined by the canonical arrows to and from the product <m>\equiv</m> coproduct. 
@@ -10645,9 +10649,8 @@
               </p>
             </remark>
   
-            <remark>
+            <remark xml:id="rem-6.21">
               <p>
-                Remark 6.21. 
                 Given a map of complexes <m>C \stackrel{f}{\longrightarrow} D</m>, we can construct a double complex from <m>f</m>, as follows:
               </p>
   
@@ -10798,20 +10801,19 @@
             <blockquote>
               <p>
                 <q>
-                  
+                  The balance of power is the scale of peace.
                 </q>
               </p>
-              <attribution></attribution>
+              <attribution>Thomas Paine</attribution>
             </blockquote>
 
             <p>
-              We are finally ready to show that the two definitions of Tor coincide.
+              We are finally ready to show that the two definitions of <m>\Tor</m> coincide.
             </p>
   
-            <theorem xml:id="thm-6.23">
+            <theorem xml:id="thm-6.23"><title>Balancing <m>\Tor</m></title>
               <statement>
                 <p>
-                  Theorem 6.23 (Balancing Tor). 
                   Let <m>M</m> and <m>N</m> be <m>R</m>-modules, and <m>x</m> projective resolutions <m>P</m> of <m>M</m> and <m>Q</m> of <m>N</m>. 
                   For all <m>n \geqslant 0</m>, there is an isomorphism
                   <me>L_{n}\left(M \otimes_{R} \quad\right)(N)=\mathrm{H}_{n}\left(M \otimes_{R} Q\right) \cong \mathrm{H}_{n}\left(P \otimes_{R} N\right)=L_{n}\left(\otimes_{R} N\right)(M)</me>
@@ -10826,7 +10828,7 @@
                 <image source="2023_11_27_3974d73438430121205eg-16.jpg"/>
                   
                 <p>
-                  Each <m>P_{i}</m> and <m>Q_{i}</m> is projective and thus flat, by Theorem 4.37, so <m>P_{i} \otimes_{R}</m> and <m>\otimes_{R} Q_{i}</m> are both exact functors. 
+                  Each <m>P_{i}</m> and <m>Q_{i}</m> is projective and thus flat, by <xref ref="thm-4.37"/>, so <m>P_{i} \otimes_{R}</m> and <m>\otimes_{R} Q_{i}</m> are both exact functors. 
                   The rows and columns of our double complex are thus exact everywhere except for the 0th row and column. 
                   We can complete our double complex to make a double complex <m>C</m> with both exact rows if we add in a column induced by the surjection <m>\pi</m> :
                 </p>
@@ -10840,14 +10842,14 @@
                 <image source="2023_11_27_3974d73438430121205eg-17.jpg"/>
           
                 <p>
-                  By Lemma 6.22, <m>\operatorname{Tot}^{\oplus}(C)</m> and <m>\operatorname{Tot}^{\oplus}(D)</m> are both exact. 
+                  By <xref ref="lem-6.22"/>, <m>\operatorname{Tot}^{\oplus}(C)</m> and <m>\operatorname{Tot}^{\oplus}(D)</m> are both exact. 
                   Notice that <m>\pi \otimes Q</m> is a map of complexes <m>\operatorname{Tot}^{\oplus}(P \otimes Q) \rightarrow M \otimes Q</m>, and <m>P \otimes \varepsilon</m> is a map of <m>\operatorname{complexes} \operatorname{Tot}^{\oplus}(P \otimes Q) \rightarrow P \otimes N</m>. 
-                  By Exercise 71,
+                  By <xref ref="exe-71"/>,
                   <me>\operatorname{cone}(\pi \otimes Q)=\Sigma \operatorname{Tot}^{\oplus}(C) \quad \text { and } \quad \operatorname{cone}(P \otimes \varepsilon)=\Sigma \operatorname{Tot}^{\oplus}(D)</me>
                 </p>
           
                 <p>
-                  Since <m>\Sigma \operatorname{Tot}^{\oplus}(C)</m> and <m>\Sigma \operatorname{Tot}^{\oplus}(D)</m> are both exact, by Remark 6.20 both
+                  Since <m>\Sigma \operatorname{Tot}^{\oplus}(C)</m> and <m>\Sigma \operatorname{Tot}^{\oplus}(D)</m> are both exact, by <xref ref="rem-6.20"/> both
                   <me>\operatorname{Tot}^{\oplus}(P \otimes Q) \quad \stackrel{\pi \otimes Q}{\rightarrow} M \otimes Q \quad \text { and } \quad \operatorname{Tot}^{\oplus}(P \otimes Q) \stackrel{P \otimes \varepsilon}{\rightarrow} P \otimes N</me>
                   are quasi-isomorphisms, so that
                   <me>L_{n}\left(M \otimes_{R} \quad\right)(N)=\mathrm{H}_{n}\left(M \otimes_{R} Q\right) \cong \mathrm{H}_{n}\left(P \otimes_{R} N\right)=L_{n}\left(\otimes_{R} N\right)(M)</me>
@@ -10855,10 +10857,9 @@
               </proof>
             </theorem>
   
-            <theorem xml:id="thm-6.24">
+            <theorem xml:id="thm-6.24"><title>Balancing <m>\Ext</m></title>
               <statement>
                 <p>
-                  Theorem 6.24 (Balancing Ext). 
                   Let <m>M</m> and <m>N</m> be <m>R</m>-modules, and <m>x</m> a projective resolution <m>P</m> of <m>M</m> and an injective resolution <m>E</m> of <m>N</m>. 
                   For all <m>n</m>, there is an isomorphism
                   <me>R^{n} \operatorname{Hom}_{R}(M, \quad)(N)=\mathrm{H}^{n}\left(\operatorname{Hom}_{R}(M, E)\right) \cong \mathrm{H}^{n}\left(\operatorname{Hom}_{R}(P, N)\right)=R^{n} \operatorname{Hom}_{R}(, N)(M) \text {. }</me>
@@ -10880,7 +10881,7 @@
                 <image source="2023_11_27_3974d73438430121205eg-18(1).jpg"/>
           
                 <p>
-                  We proceed just like in Theorem 6.23, now considering two cohomological double complexes:
+                  We proceed just like in <xref ref="thm-6.23"/>, now considering two cohomological double complexes:
                 </p>
           
                 <image source="2023_11_27_3974d73438430121205eg-18(2).jpg"/>
@@ -10900,17 +10901,16 @@
                 </p>
           
                 <p>
-                  The dual of Lemma 6.22 says that <m>\operatorname{Tot}^{\oplus}(C)</m> and <m>\operatorname{Tot}^{\oplus}(D)</m> are both exact, and thus <m>\operatorname{Hom}_{R}(P, N) \rightarrow \operatorname{Tot}^{\oplus}(\operatorname{Hom}(P, E))</m> and <m>\operatorname{Hom}_{R}(M, E) \rightarrow \operatorname{Tot}^{\oplus}(\operatorname{Hom}(P, E))</m> are both quasiisomorphisms. 
+                  The dual of <xref ref="lem-6.22"/> says that <m>\operatorname{Tot}^{\oplus}(C)</m> and <m>\operatorname{Tot}^{\oplus}(D)</m> are both exact, and thus <m>\operatorname{Hom}_{R}(P, N) \rightarrow \operatorname{Tot}^{\oplus}(\operatorname{Hom}(P, E))</m> and <m>\operatorname{Hom}_{R}(M, E) \rightarrow \operatorname{Tot}^{\oplus}(\operatorname{Hom}(P, E))</m> are both quasiisomorphisms. 
                   We conclude that
                   <me>R^{n} \operatorname{Hom}_{R}(M, \quad)(N)=\mathrm{H}^{n}\left(\operatorname{Hom}_{R}(P, N)\right) \cong \mathrm{H}^{n}\left(\operatorname{Hom}_{R}(M, E)\right)=R^{n} \operatorname{Hom}_{R}(, N)(M) \text {. }</me>
                 </p>
               </proof>
             </theorem>
             
-            <definition xml:id="def-6.25">
+            <definition xml:id="def-6.25"><title><m>\Tor</m> Module</title>
               <statement>
                 <p>
-                  Definition 6.25. 
                   Let <m>R</m> be a ring and <m>M</m> and <m>N</m> be <m>R</m>-modules. 
                   The <m>i</m> th Tor module from <m>M</m> to <m>N</m> is
                   <me>\operatorname{Tor}_{i}^{R}(M, N):=L_{i}\left(M \otimes_{R} \quad\right)(N) \cong L_{i}\left(\otimes_{R} N\right)(M)</me>
@@ -10922,10 +10922,9 @@
               Notice in particular that the <m>R</m>-module <m>\operatorname{Tor}_{i}^{R}(M, N)</m> is defined only up to isomorphism.
             </p>
   
-            <definition xml:id="def-6.26">
+            <definition xml:id="def-6.26"><title><m>\Ext</m> Module</title>
               <statement>
                 <p>
-                  Definition 6.26. 
                   Let <m>R</m> be a ring and <m>M</m> and <m>N</m> be <m>R</m>-modules. 
                   The <m>i</m> th Ext module from <m>M</m> to <m>N</m> is
                   <me>\operatorname{Ext}_{R}^{i}(M, N):=R^{i} \operatorname{Hom}_{R}(M, \quad)(N) \cong R^{i} \operatorname{Hom}_{R}(, N)(M)</me>
@@ -10938,10 +10937,10 @@
             </p>
       
             <p>
-              Theorem 6.5 immediately gives us long exact sequences for Ext and Tor.
+              <xref ref="thm-6.5"/> immediately gives us long exact sequences for Ext and Tor.
             </p>
   
-            <theorem xml:id="thm-6.27">
+            <theorem xml:id="thm-6.27"><title>Long Exact Sequence of <m>\Tor</m></title>
               <statement>
                 <p>
                   Let <m>R</m> be a ring and <m>M</m> an <m>R</m>-module. 
@@ -10958,7 +10957,7 @@
               </statement>
             </theorem>
   
-            <theorem xml:id="thm-6.28">
+            <theorem xml:id="thm-6.28"><title>Long Exact Sequence of <m>\Ext</m></title>
               <statement>
                 <p>
                   For every <m>R</m>-module <m>M</m>, every short exact sequence of <m>R</m>-modules
@@ -10994,8 +10993,8 @@
               <proof>
                 <p>
                   Let <m>P</m> be a projective resolution of <m>M</m>. 
-                  By Theorem 6.23, <m>\operatorname{Tor}_{i}^{R}(M, N)=\mathrm{H}_{i}\left(P \otimes_{R} N\right)</m> and <m>\operatorname{Tor}_{i}^{R}(N, M)=\mathrm{H}_{i}\left(N \otimes_{R} P\right)</m>. 
-                  By Lemma 3.38, <m>M \otimes_{R} N</m> and <m>N \otimes_{R} M</m> are naturally isomorphic. 
+                  By <xref ref="thm-6.23"/>, <m>\operatorname{Tor}_{i}^{R}(M, N)=\mathrm{H}_{i}\left(P \otimes_{R} N\right)</m> and <m>\operatorname{Tor}_{i}^{R}(N, M)=\mathrm{H}_{i}\left(N \otimes_{R} P\right)</m>. 
+                  By <xref ref="lem-3.38"/>, <m>M \otimes_{R} N</m> and <m>N \otimes_{R} M</m> are naturally isomorphic. 
                   In fact, <m>m \otimes n \mapsto n \otimes m</m> determines an isomorphism. 
                   So consider the map
                   <me>
@@ -11021,7 +11020,7 @@
               However, <m>\operatorname{Ext}_{R}^{i}(M, N)</m> and <m>\operatorname{Ext}_{R}^{i}(N, M)</m> can be dramatically different.
             </p>
   
-            <example>
+            <example xml:id="ex-6.30">
               <p>
                 Let <m>k</m> be a field and <m>R=k[x]</m>. 
                 The following is a minimal free resolution for <m>k=R /(x)</m> :
@@ -11276,9 +11275,8 @@
               Let's compute some examples.
             </p>
   
-            <example>
+            <example xml:id="ex-6.33">
               <p>
-                Example 6.33. 
                 Let's compute <m>\operatorname{Ext}_{\mathbb{Z}}^{i}(\mathbb{Z} /(2), \mathbb{Z} /(3))</m>. 
                 Injective resolutions are not so easy to find, so we start from a projective resolution for <m>\mathbb{Z} /(2)</m> :
               </p>
@@ -11296,7 +11294,7 @@
               </p>
         
               <p>
-                By Exercise <m>38, \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Z} /(3)) \cong \mathbb{Z} /(3)</m>, via the isomorphism <m>f \mapsto f(1)</m>. 
+                By <xref ref="exe-38"/>, <m>\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Z} /(3)) \cong \mathbb{Z} /(3)</m>, via the isomorphism <m>f \mapsto f(1)</m>. 
                 Since <m>2^{*}</m> was the map <m>f \mapsto(2 \cdot \quad) \circ f=2 f()</m>, we can simplify our complex to
                 <me>0 \longrightarrow \mathbb{Z} /(3) \stackrel{2}{\longrightarrow} \mathbb{Z} /(3) \longrightarrow 0</me>
               </p>
@@ -11306,9 +11304,8 @@
               </p>
             </example>
   
-            <example>
+            <example xml:id="ex-6.34">
               <p>
-                Example 6.34. 
                 Given an integer <m>n&gt;1</m>,
                 <me>0 \longrightarrow \mathbb{Z} \stackrel{n}{\longrightarrow} \mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} /(n) \longrightarrow 0</me>
                 with <m>\pi</m> the canonical projection is a free resolution for <m>\mathbb{Z} /(n)</m> over <m>\mathbb{Z}</m>. 
@@ -11319,7 +11316,7 @@
               </p>
         
               <p>
-                By Lemma 3.40, <m>\mathbb{Z} \otimes_{\mathbb{Z}} M \cong M</m>, via the map <m>k \otimes m \mapsto k m</m>, and the map <m>n \otimes 1_{M}</m> corresponds to multiplication by <m>n</m> on <m>M</m>. 
+                By <xref ref="lem-3.40"/>, <m>\mathbb{Z} \otimes_{\mathbb{Z}} M \cong M</m>, via the map <m>k \otimes m \mapsto k m</m>, and the map <m>n \otimes 1_{M}</m> corresponds to multiplication by <m>n</m> on <m>M</m>. 
                 Therefore,
                 <me>\operatorname{Tor}_{i}^{\mathbb{Z}}(\mathbb{Z} /(n), M)=\mathrm{H}_{i}(0 \longrightarrow M \stackrel{n}{\longrightarrow} M \longrightarrow 0),</me>
               </p>
@@ -11327,7 +11324,7 @@
               <p>
                 So
                 <me>\operatorname{Tor}_{i}^{\mathbb{Z}}(\mathbb{Z} /(n), M)= \begin{cases}M / n M &amp; \text { for } i=0 \\ \left(0:_{M} n\right) &amp; \text { for } i=1 \\ 0 &amp; \text { otherwise }\end{cases}</me>
-                Notice that <m>\operatorname{Tor}_{0}^{\mathbb{Z}}(\mathbb{Z} /(n), M)=M / n M=\mathbb{Z} / n \mathbb{Z} \otimes_{\mathbb{Z}} M</m>, as we already knew from Proposition 6.4.
+                Notice that <m>\operatorname{Tor}_{0}^{\mathbb{Z}}(\mathbb{Z} /(n), M)=M / n M=\mathbb{Z} / n \mathbb{Z} \otimes_{\mathbb{Z}} M</m>, as we already knew from <xref ref="prop-6.4"/>.
               </p>
         
               <p>
@@ -11336,7 +11333,7 @@
               </p>
         
               <p>
-                By Exercise <m>38, \operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z}, M) \cong M</m>, via the map <m>f \mapsto f(1)</m>, and <m>n^{*}=\operatorname{Hom}_{\mathbb{Z}}(n, M)</m> corresponds to multiplication by <m>n</m> on <m>M</m>. 
+                By <xref ref="exe-38"/>, <m>\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z}, M) \cong M</m>, via the map <m>f \mapsto f(1)</m>, and <m>n^{*}=\operatorname{Hom}_{\mathbb{Z}}(n, M)</m> corresponds to multiplication by <m>n</m> on <m>M</m>. 
                 So
                 <me>\operatorname{Ext}_{\mathbb{Z}}^{i}(\mathbb{Z} /(n), M)=\mathrm{H}^{i}(0 \longrightarrow M \stackrel{n}{\longrightarrow} M \longrightarrow 0)</me>
               </p>
@@ -11347,11 +11344,11 @@
               </p>
         
               <p>
-                Notice that <m>\operatorname{Ext}_{\mathbb{Z}}^{1}(\mathbb{Z} /(n), M)=\left(0:_{M} n\right)=\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} /(n), M)</m>, as we already knew from Proposition 6.4.
+                Notice that <m>\operatorname{Ext}_{\mathbb{Z}}^{1}(\mathbb{Z} /(n), M)=\left(0:_{M} n\right)=\operatorname{Hom}_{\mathbb{Z}}(\mathbb{Z} /(n), M)</m>, as we already knew from <xref ref="prop-6.4"/>.
               </p>
             </example>
   
-            <example>
+            <example xml:id="ex-6.35">
               <p>
                 Alternatively, we can compute <m>\operatorname{Ext}_{\mathbb{Z}}^{i}(\mathbb{Z} /(n), M)</m> and <m>\operatorname{Tor}_{i}^{\mathbb{Z}}(\mathbb{Z} /(n), M)</m> by looking at some long exact sequences. 
                 The long exact sequence for Tor induced by the short exact sequence
@@ -11504,10 +11501,10 @@
               </statement>
             </definition>
 
-            <definition xml:id="def-6.36">
+            <definition xml:id="def-6.36"><title>(Co)Invariant Subgroup</title>
               <statement>
                 <p>
-                  The invariant subgroup <m>A^{G}</m> of a <m>G</m>-module <m>A</m> is
+                  The <em>invariant subgroup</em> <m>A^{G}</m> of a <m>G</m>-module <m>A</m> is
                   <me>A^{G}:=\{a \in A \mid g a=a \text { for all } g \in G\}</me>
                 </p>
             
@@ -11518,7 +11515,7 @@
               </statement>
             </definition>
 
-            <exercise>
+            <exercise xml:id="exe-77">
               <statement>
                 <p>
                   Given any <m>G</m>-module <m>A, A_{G} \cong \mathbb{Z} \otimes_{\mathbb{Z} G} A</m> and <m>A^{G} \cong \operatorname{Hom}_{G}(\mathbb{Z}, A)</m>, where <m>\mathbb{Z}</m> denotes the trivial <m>G</m>-module. 
@@ -11531,11 +11528,11 @@
               Thus taking coinvariants is right exact, and taking invariants is left exact.
             </p>
 
-            <definition xml:id="def-6.37">
+            <definition xml:id="def-6.37"><title>(Co)Homology Groups</title>
               <statement>
                 <p>
                   Let <m>G</m> be a group and <m>A</m> a <m>G</m>-module. 
-                  The homology groups of <m>G</m> with coefficients in <m>A</m> are the <m>G</m>-modules <m>\mathrm{H}_{i}(G, A)</m> obtained via the left derived functors of the coinvariants functor:
+                  The <em>homology groups</em> of <m>G</m> with coefficients in <m>A</m> are the <m>G</m>-modules <m>\mathrm{H}_{i}(G, A)</m> obtained via the left derived functors of the coinvariants functor:
                   <me>\mathrm{H}_{i}(G ; A):=L_{i}\left(\quad{ }_{G}\right)(A)</me>
                 </p>
             
@@ -11574,11 +11571,11 @@
               <attribution></attribution>
             </blockquote>
 
-            <definition xml:id="def-">
+            <definition xml:id="def-6.37.5"><title><m>I</m>-torsion Functor</title>
               <statement>
                 <p>
                   Let <m>I</m> be an ideal in a ring <m>R</m>. 
-                  The <m>I</m>-torsion functor <m>\quad{ }_{I}: R</m>-Mod <m>\rightarrow R</m>-Mod is defined by
+                  The <m>I</m>-<em>torsion functor</em> <m>\quad{ }_{I}: R</m>-Mod <m>\rightarrow R</m>-Mod is defined by
                   <me>{ }_{I}(M):=\left\{m \in M \mid I^{n} m=0 \text { for some } n\right\}</me>
                   which acts on maps by restriction.
                 </p>
@@ -11618,7 +11615,7 @@
               <statement>
                 <p>
                   Let <m>M</m> be an <m>R</m>-module and <m>x \in R</m>. 
-                  The Čech complex of <m>x</m> on <m>R</m> is given by
+                  The <em>Čech complex</em> of <m>x</m> on <m>R</m> is given by
                   <me>\check{C}^{\bullet}(x):=\left(\begin{array}{c}
                     0 \longrightarrow \\
                     0
@@ -11636,9 +11633,9 @@
               </statement>
             </definition>
 
-            <example>
+            <example xml:id="ex-6.39">
               <p>
-                Example 6.39. Let's compute the Čech complex on <m>f</m> and <m>g</m> and an <m>R</m>-module <m>M</m>.
+                Let's compute the Čech complex on <m>f</m> and <m>g</m> and an <m>R</m>-module <m>M</m>.
               </p>
           
               <image source="2023_11_27_3974d73438430121205eg-27.jpg"/>
@@ -12670,7 +12667,7 @@
 
         </section>
 
-        <section xml:id="sec-com-hom-ab"><title>Complexes and Homology in Abelian Categories</title>
+        <section xml:id="sec-com-hom-ab"><title>Complexes and Homology</title>
 
           <subsection xml:id="subsec-complexes-ab"><title>Complexes in Abelian Categories</title>
 
@@ -12959,7 +12956,7 @@
 
         </section>
 
-        <section xml:id="sec-functors-ab"><title>Functors in Abelian Categories</title>
+        <section xml:id="sec-functors-ab"><title>Functors</title>
 
           <subsection xml:id="subsec-exact-ab"><title>Exact Functors: Revisited</title>
 
@@ -13303,7 +13300,7 @@
 
         </section>
 
-        <section xml:id="sec-proj-inj-ab"><title>Projectives and Injectives in Abelian Categories</title>
+        <section xml:id="sec-proj-inj-ab"><title>Projectives and Injectives</title>
 
           <subsection xml:id="subsec-proj-inj-ab"><title>Projectives, Injective, and Resolutions: Revisited</title>
 
@@ -13738,7 +13735,7 @@
           
         </section>
 
-        <section xml:id="sec-derived-functors-ab"><title>Derived Functors in Abelian Categories</title>
+        <section xml:id="sec-derived-functors-ab"><title>Derived Functors</title>
 
           <subsection xml:id="subsec-derived-ab"><title>Derived Functors: Revisited</title>
 
@@ -15715,6 +15712,701 @@
 
       </chapter>
 
+    </part>
+
+    <part xml:id="part-locohom"><title>Local Cohomology</title>
+
+      <chapter xml:id="ch-injective-modules"><title>Injective Modules</title>
+
+        <section xml:id="sec-hulls"><title>Essential Extensions and Injective Hulls</title>
+
+          <proposition xml:id="prop-2.11-2">
+            <statement>
+              <p>
+                Let <m>\theta: M \rightarrow N</m> be a one-to-one map of <m>R</m>-modules. The following are equivalent:
+                <ol>
+                  <li>
+                    <p>
+                      For any map <m>\alpha: N \rightarrow L, \alpha \circ \theta</m> is one-to-one <m>\Rightarrow \alpha</m> is one-to-one. In particular, if <m>M \subseteq N</m>, then <m>\left.\alpha\right|_{M}</m> is one-to-one <m>\Rightarrow \alpha</m> is one-to-one.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      Every nonzero submodule of <m>N</m> has a nonzero intersection with <m>\theta(M)</m>.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      Every nonzero element of <m>N</m> has a nonzero multiple in <m>\theta(M)</m>.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                (1) <m>\Rightarrow</m> (2): 
+                If <m>N^{\prime} \subseteq N</m> is nonzero, then <m>\alpha: N \rightarrow N / N^{\prime}</m> is not one-to-one, hence <m>\alpha \circ \theta: M \rightarrow</m> <m>N / N^{\prime}</m> is not either, so <m>M \cap N^{\prime} \neq 0</m>.
+              </p>
+        
+              <p>
+                <m>(2) \Rightarrow(3)</m>: 
+                This is the special case of a cyclic submodule.
+              </p>
+        
+              <p>
+                <m>(3) \Rightarrow(1)</m>: Given a nonzero element in <m>n \in \operatorname{ker}(\alpha), n</m> has a nonzero multiple in <m>\theta(M)</m>, and any multiple of <m>n</m> is still in the kernel of <m>\alpha</m>.
+              </p>
+            </proof>
+          </proposition>
+
+          <definition xml:id="def-2.12-2"><title>Essential Extension</title>
+            <statement>
+              <p>
+                A map <m>\theta</m> that satisfies the equivalent conditions above is called an <em>essential extension</em>. 
+                We will often say that one module is an essential extension of another, meaning that the latter is a submodule, and the inclusion map is essential.
+              </p>
+            </statement>
+          </definition>
+
+          <p>
+            Roughly, one can think of <m>A \subseteq B</m> is an essential extension as being something like a dual property to <m>A</m> being a generating set for <m>B</m> (even though generating sets aren’t modules). 
+            If <m>A \subseteq B</m> is essential, then anything in <m>B</m> can get multiplied back into <m>A</m>, whereas if <m>A</m> is a generating set for <m>B</m>, anything in <m>B</m> can be obtained by multiplying from elements in <m>A</m> (and adding).
+          </p>
+
+          <example>
+            <p>
+              Example 2.13. If <m>W</m> is a multiplicative set consisting of nonzerodivisors on <m>M</m>, then <m>W^{-1} M</m> is an essential extension of <m>M</m>. In particular, the fraction field of a domain is an essential extension of it.
+            </p>
+          </example>
+
+          <example>
+            <p>
+              Example 2.14. If <m>M</m> is a (nonzero) <m>I</m>-torsion module, that is, every element of <m>M</m> is killed by a power of <m>I</m>, then <m>\operatorname{ann}_{M}(I) \subseteq M</m> is an essential extension.
+            </p>
+          </example>
+
+          <definition xml:id="def-scole">
+            <statement>
+              <p>
+                In particular, if <m>(R, \mathfrak{m})</m> is local and <m>M</m> is <m>\mathfrak{m}</m>-torsion, <m>\operatorname{ann}_{M}(\mathfrak{m})</m> is called the socle of <m>M</m>
+              </p>
+            </statement>
+          </definition>
+
+          <proposition xml:id="prop-scole">
+            <statement>
+              <p>
+                <m>M</m> is an essential extension of its socle.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Given <m>m \in M</m>, we have that <m>\operatorname{Ass}(R m) \subseteq \operatorname{Ass}(M){ }^{2}</m>.
+                <fn>For a not-necessarily-finitely-generated module <m>M, \operatorname{Ass}(M)</m> is the set of primes <m>\mathfrak{q}</m> such that <m>R / \mathfrak{q}</m> embeds into <m>M</m>. Any nonzero module has an associated prime: this reduces to the finitely generated case by considering a nonzero finitely generated submodule.</fn>
+                Since <m>M</m> is <m>I</m>-torsion, <m>\operatorname{Ass}(M) \subseteq V(I)</m>. Let <m>\mathfrak{p} \in \operatorname{Ass}(R m)</m>, and <m>x \in R m</m> such that <m>\operatorname{ann}(x)=\mathfrak{p}</m>. 
+                Then <m>x</m> is a nonzero multiple of <m>m</m> that is killed by <m>I</m>.
+              </p>
+            </proof>
+          </proposition>
+
+          <proposition xml:id="prop-2.15-2">
+            <statement>
+              <p>
+                Let <m>L \subseteq M \subseteq N</m> be <m>R</m>-modules.
+                <ol>
+                  <li>
+                    <p>
+                      <m>L \subseteq N</m> is essential if and only if <m>L \subseteq M</m> and <m>M \subseteq N</m> are essential.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      If <m>M \subseteq N_{i} \subseteq N</m> and <m>N=\bigcup N_{i}</m>, then <m>M \subseteq N</m> is essential if and only if each <m>M \subseteq N_{i}</m> is essential.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      There is a unique <m>N^{\prime}</m> such that <m>M \subseteq N^{\prime} \subseteq N</m> that is maximal with respect to the property that <m>M \subseteq N^{\prime}</m> is essential.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+          </proposition>
+
+          <definition xml:id="def-2.16-2">
+            <statement>
+              <p>
+                A module <m>N^{\prime}</m> as in (3) above is called a maximal essential extension of <m>M</m> in <m>N</m>.
+                If <m>M \subseteq N</m> is essential, and <m>N</m> has no proper essential extensions, then we say that <m>N</m> is a maximal essential extension of <m>M</m>.
+                For a not-necessarily-finitely-generated module <m>M, \operatorname{Ass}(M)</m> is the set of primes <m>\mathfrak{q}</m> such that <m>R / \mathfrak{q}</m> embeds into <m>M</m>. 
+                Any nonzero module has an associated prime: this reduces to the finitely generated case by considering a nonzero finitely generated submodule.
+              </p>
+            </statement>
+          </definition>
+    
+          <p>
+            Beware that there are two notions of maximal essential extension above: a relative version that takes place inside another module, and an absolute version.
+          </p>
+
+          <proposition xml:id="prop-2.17-2">
+            <statement>
+              <p>
+                Let <m>M</m> be an <m>R</m>-module. The following are equivalent:
+                <ol>
+                  <li>
+                    <p>
+                      <m>M</m> is an injective module
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      every one-to-one map <m>M \rightarrow N</m> splits
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      <m>M</m> has no proper essential extensions
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                (1) <m>\Rightarrow(2)</m>: 
+                The identity map <m>M \rightarrow M</m> extends to a map <m>N \rightarrow M</m> by the definition of injective.
+              </p>
+        
+              <p>
+                <m>(2) \Rightarrow(3)</m>:
+                It suffices to note that <m>M \subseteq M \oplus M^{\prime}</m> is not essential: <m>\left(0, m^{\prime}\right)</m> has no nonzero multiple in (the image of) <m>M</m>.
+              </p>
+        
+              <p>
+                <m>(3) \Rightarrow(1)</m>: 
+                Embed <m>M</m> in an injective module, <m>E</m>. 
+                By Zorn’s lemma, there is a maximal submodule <m>N</m> of <m>E</m> such that <m>M \cap N=0</m>. 
+                Then, <m>M \rightarrow E / N</m> is essential, and by hypothesis, an isomorphism. 
+                Then, <m>E=M+N=M \oplus N</m>. 
+                Since <m>M</m> is a direct summand of an injective module, <m>M</m> is injective.
+              </p>
+            </proof>
+          </proposition>
+
+          <p>
+            In particular, any maximal essential extension in the absolute sense is an injective module.
+          </p>
+
+          <proposition xml:id="prop-2.18-2">
+            <statement>
+              <p>
+                Let <m>M</m> be an <m>R</m>-module. 
+                If <m>E</m> is an injective module with <m>M \subseteq E</m>, then the maximal essential extension of <m>M</m> in <m>E</m> is an injective module. 
+                All maximal essential extensions of <m>M</m> are isomorphic.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Let <m>E^{\prime}</m> be a maximal essential extension of <m>M</m> in <m>E</m>, and <m>Q</m> be an essential extension of <m>E^{\prime}</m> (possibly not in <m>E</m> ). 
+                Since <m>E</m> is injective, the inclusion of <m>E^{\prime} \subseteq E</m> extends to a map from <m>Q \rightarrow E</m>. 
+                Since <m>E^{\prime} \rightarrow E</m> was one-to-one, and <m>E^{\prime} \rightarrow Q</m> essential, <m>Q</m> to <m>E</m> is one-to-one. 
+                By definition of <m>E^{\prime}</m>, we have <m>E^{\prime}=Q</m>. 
+                Thus, <m>E^{\prime}</m> is an absolute maximal essential extension of <m>M</m>, hence an injective module.
+              </p>
+        
+              <p>
+                Let <m>E^{\prime}</m> and <m>E^{\prime \prime}</m> be two maximal essential extensions of <m>M</m>. 
+                The map from <m>M \rightarrow E^{\prime \prime}</m> extends to a map <m>\varphi: E^{\prime} \rightarrow E^{\prime \prime}</m>. 
+                Since <m>E^{\prime}</m> is an essential extension of <m>M</m> and <m>M \rightarrow E^{\prime \prime}</m> is one-to-one, <m>\varphi: E^{\prime} \rightarrow E^{\prime \prime}</m> is one-to-one. 
+                Since <m>E^{\prime}</m> is injective, <m>E^{\prime \prime}=\varphi\left(E^{\prime}\right) \oplus C</m> for some <m>C</m>. 
+                Since <m>\varphi\left(E^{\prime}\right) \rightarrow E^{\prime \prime}</m> is essential, <m>C=0</m>.
+              </p>
+            </proof>
+          </proposition>
+
+          <definition xml:id="def-2.19-2">
+            <statement>
+              <p>
+                An injective hull or injective envelope of an <m>R</m>-module <m>M</m> is a maximal essential extension of <m>M</m>. 
+                By the previous proposition, this is well-defined up to isomorphism. 
+                We write <m>E_{R}(M)</m> for an injective hull of <m>M</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <definition xml:id="def-2.20-2">
+            <statement>
+              <p>
+                A minimal injective resolution of an <m>R</m>-module <m>M</m> is an injective resolution <m>M \rightarrow E^{\bullet}</m> of <m>M</m> in which <m>E^{0}=E_{R}(M)</m>, and <m>E^{i}=E_{R}\left(\operatorname{coker}\left(\partial_{E^{\bullet}}^{i}\right)\right)</m> for each <m>i&gt;0</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <example>
+            <p>
+              Example 2.21.
+              <me>0(\rightarrow \mathbb{Z}) \rightarrow \mathbb{Q} \rightarrow \mathbb{Q} / \mathbb{Z} \rightarrow 0</me>
+            </p>
+      
+            <p>
+              is a minimal injective resolution of <m>\mathbb{Z}</m> as a <m>\mathbb{Z}</m>-module.
+            </p>
+          </example>
+
+        </section>
+
+        <section xml:id="sec-injective-noetherian"><title>Injective Modules in Noetherian Rings</title>
+
+          <p>
+            So far, our observations on injectives are very general. 
+            For noetherian rings, there is a beautiful structure theory of injective modules due to Bass. 
+            To prepare for the first step, we note:
+          </p>
+
+          <lemma xml:id="lem-2.22-2">
+            <statement>
+              <p>
+                If <m>M</m> is a finitely generated <m>R</m>-module, and <m>\left\{N_{i}\right\}_{i \in I}</m> is an arbitrary family of <m>R</m> modules, then
+                <me>\operatorname{Hom}_{R}\left(M, \bigoplus_{i \in I} N_{i}\right) \cong \bigoplus_{i \in I} \operatorname{Hom}_{R}\left(M, N_{i}\right)</me>
+              </p>
+
+              <p>
+                If <m>N_{0} \subseteq N_{1} \subseteq N_{2} \subseteq \cdots</m>, then
+              </p>
+        
+              <p>
+                <me>\operatorname{Hom}_{R}\left(M, \bigcup_{i \in \mathbb{N}} N_{i}\right) \cong \bigcup_{i \in \mathbb{N}} \operatorname{Hom}_{R}\left(M, N_{i}\right)</me>
+              </p>
+            </statement>
+          </lemma>
+
+          <proposition xml:id="prop-2.23-2">
+            <statement>
+              <p>
+                If <m>R</m> is noetherian, then every direct sum of injective <m>R</m>-modules is injective.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Let <m>\left\{E_{i}\right\}_{i \in I}</m> be a family of injective modules. 
+                For an ideal <m>\mathfrak{a}</m> and any <m>i, \operatorname{Hom}_{R}\left(R, E_{i}\right) \rightarrow</m> <m>\operatorname{Hom}_{R}\left(\mathfrak{a}, E_{i}\right)</m> is surjective. 
+                Applying the previous lemma and the hypothesis that <m>\mathfrak{a}</m> is finitely generated, the composition
+                <me>\operatorname{Hom}_{R}\left(R, \bigoplus_{i \in I} E_{i}\right) \cong \bigoplus_{i \in I} \operatorname{Hom}_{R}\left(R, E_{i}\right) \rightarrow \bigoplus_{i \in I} \operatorname{Hom}_{R}\left(\mathfrak{a}, E_{i}\right) \cong \operatorname{Hom}_{R}\left(\mathfrak{a}, \bigoplus_{i \in I} E_{i}\right)</me>
+                is surjective. 
+                By Baer’s criterion, <m>\bigoplus_{i \in I} E_{i}</m> is injective.
+              </p>
+            </proof>
+          </proposition>
+
+          <paragraphs><title>Associated Primes</title>
+
+            <p>
+              Evidently, the injective hulls of prime cyclic modules, <m>E_{R}(R / \mathfrak{p})</m>, are injective modules. 
+              They will be the building blocks in the structure theory. Both to that end and for our purposes later, we will want to understand their structure. 
+              We collect some of their key properties here.
+            </p>
+      
+            <p>
+              Before we do this, we recall some facts about modules that are not necessarily finitely generated.
+            </p>
+      
+            <p>
+              Recall that <m>\mathfrak{p}</m> is an associated prime of a module <m>M</m> if there is an embedding <m>R / \mathfrak{p} \hookrightarrow M</m>; 
+              we write <m>\operatorname{Ass}(M)</m> for the set of associated primes of <m>M</m>. For a general module,
+              <ul>
+                <li>
+                  <p>
+                    <m>\operatorname{Ass}(M)</m> need not be finite, and
+                  </p>
+                </li>
+        
+                <li>
+                  <p>
+                    <m>\bigcap_{\mathfrak{p} \in \operatorname{Ass}(M)} \mathfrak{p}</m> does not necessarily agree with <m>\sqrt{\operatorname{ann}_{R}(M)}</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+      
+            <p>
+              However, <m>M \subseteq N</m> implies <m>\operatorname{Ass}(M) \subseteq \operatorname{Ass}(N)</m>, and if <m>R</m> is noetherian,
+            </p>
+      
+            <p>
+              <ul>
+                <li>
+                  <p>
+                    if <m>M \neq 0</m>, then <m>\operatorname{Ass}(M) \neq \varnothing</m>, and
+                  </p>
+                </li>
+      
+                <li>
+                  <p>
+                    <m>\operatorname{Supp}(M)=\{\mathfrak{q} \in \operatorname{Spec}(R) \mid \mathfrak{q} \supseteq \mathfrak{p}</m> for some <m>\mathfrak{p} \in \operatorname{Ass}(M)\}</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+      
+            <p>
+              Proof. 
+              For the first, take some nonzero <m>m \in M ; \varnothing \neq \operatorname{Ass}(R m) \subseteq \operatorname{Ass}(M)</m>. 
+              For the second, we note that <m>(R / \mathfrak{p})_{\mathfrak{q}} \neq 0</m> if <m>\mathfrak{q} \subseteq \mathfrak{p}</m>, which yields " <m>\supseteq</m>," and if <m>x / 1 \neq 0</m> in <m>M_{\mathfrak{q}}</m>, then <m>\mathfrak{q}</m> must contain an associated prime of <m>R x</m>, which is an associated prime of <m>M</m>.
+            </p>
+            
+          </paragraphs>
+
+          <paragraphs><title><m>I</m>-torsion</title>
+
+            <p>
+              A module <m>M</m> is <m>I</m>-torsion if for every <m>m \in M, \exists N</m> such that <m>I^{N} m=0</m>. 
+              This does not necessarily imply that there is some <m>N</m> such that <m>I^{N} M=0</m>. If <m>R</m> is noetherian and <m>I=\left(f_{1}, \ldots, f_{t}\right)</m> then the following are equivalent:
+            </p>
+      
+            <p>
+              <ul>
+                <li>
+                  <p>
+                    <m>M</m> is <m>I</m>-torsion;
+                  </p>
+                </li>
+      
+                <li>
+                  <p>
+                    <m>\forall m \in M</m>, there is an <m>N</m> such that <m>f_{i}^{N} m=0</m> for all <m>i</m>;
+                  </p>
+                </li>
+      
+                <li>
+                  <p>
+                    <m>\forall \mathfrak{p} \in \operatorname{Ass}(M), \mathfrak{p} \supseteq I</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+      
+            <p>
+              Proof. 
+              For the equivalence of the first two, we note that <m>I^{N t} \subseteq\left(f_{1}^{N}, \ldots, f_{t}^{N}\right) \subseteq I^{N}</m>, so a large power of <m>I</m> kills an element iff large powers of each <m>f_{i}</m> do. 
+              This uses finite generation in a crucial way. 
+              The first implies the third since <m>I</m> contains a nonzerodivisor on the domain <m>R / \mathfrak{q}</m>, and any power of this element does not kill the generator of <m>R / \mathfrak{q}</m>. 
+              The third implies the first, since, for each <m>x \in M</m>, the associated primes of the cyclic module <m>R x</m> all are contained in <m>I</m>, so <m>\sqrt{\operatorname{ann}(x)}=\bigcap_{\mathfrak{p} \in \operatorname{Ass}(R x)} \mathfrak{p} \subseteq</m> <m>I</m>.
+            </p>
+            
+          </paragraphs>
+
+          <lemma xml:id="lem-2.24-2">
+            <statement>
+              <p>
+                If <m>M \subseteq N</m> is an essential extension, then <m>\operatorname{Ass}(M)=\operatorname{Ass}(N)</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                We only need to see that an associated prime of <m>N</m> is also associated to <m>M</m>. 
+                If <m>x</m> generates a cyclic submodule of <m>N</m> isomorphic to <m>R / \mathfrak{p}</m>, then any nonzero multiple of <m>x</m> does as well; 
+                since <m>x</m> has a nonzero multiple in <m>M</m>, we are done.
+              </p>
+            </proof>
+          </lemma>
+
+          <theorem xml:id="thm-2.25-2">
+            <statement>
+              <p>
+                Let <m>\mathfrak{p}</m> be a prime in a noetherian ring <m>R</m>. 
+                Let <m>\kappa</m> be the fraction field of <m>R / \mathfrak{p}</m> (equivalently, the residue field of <m>R_{\mathfrak{p}}</m>.) 
+                Let <m>E=E_{R}(R / \mathfrak{p})</m> be an injective hull for <m>R / \mathfrak{p}</m>.
+              </p>
+        
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      If <m>x \in R \backslash \mathfrak{p}</m>, then <m>E \stackrel{x}{\rightarrow} E</m> is an isomorphism, hence <m>E=E_{\mathfrak{p}}</m>.
+                    </p>
+                  </li>
+        
+                  <li>
+                    <p>
+                      <m>\operatorname{ann}_{E}(\mathfrak{p})=\kappa</m>.
+                    </p>
+                  </li>
+        
+                  <li>
+                    <p>
+                      <m>\kappa \subseteq E</m> is an essential extension of <m>R_{\mathfrak{p}}</m>-modules and <m>E</m> is an injective hull of <m>\kappa</m> as an <m>R_{\mathfrak{p}}</m>-module.
+                    </p>
+                  </li>
+        
+                  <li>
+                    <p>
+                      <m>E</m> is <m>\mathfrak{p}</m>-torsion, and <m>\operatorname{Ass}(E)=\{\mathfrak{p}\}</m>.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      <m>\operatorname{Hom}_{R_{\mathfrak{p}}}(\kappa, E) \cong \kappa</m> and <m>\operatorname{Hom}_{R_{\mathfrak{p}}}\left(\kappa, E_{R}(R / \mathfrak{q})_{\mathfrak{p}}\right)=0</m> for another prime <m>\mathfrak{q} \neq \mathfrak{p}</m>.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+          </theorem>
+
+          <proof>
+            <p>
+              Proof. 4. This is immediate from the previous lemma and the discussion above it.
+            </p>
+      
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    By Example ??, <m>R / \mathfrak{p} \subseteq \kappa</m> is an essential extension, so <m>E</m> must contain a copy of <m>\kappa</m>; we identify <m>\kappa</m> with its isomorphic copy in <m>E: R / \mathfrak{p} \subseteq \kappa \subseteq E</m> are all essential. Since multiplication by <m>x</m> is one-to-one on <m>\kappa</m>, it must be one-to-one on its essential extension <m>E</m>. Then, the submodule <m>x E \cong E</m> is injective, so a direct summand of <m>E</m>. But, since <m>\kappa \subseteq x E \subseteq E</m> is essential, <m>E</m> cannot decompose as a nontrivial direct sum, so <m>x E=E</m>.
+                  </p>
+                </li>
+      
+                <li>
+                  <p>
+                    By part (1), <m>\operatorname{ann}_{E}(\mathfrak{p})=\operatorname{ann}_{E}\left(\mathfrak{p} R_{\mathfrak{p}}\right)</m> is a <m>\kappa</m>-vector space, and contains the copy of <m>\kappa</m> we found earlier, so <m>\kappa \subseteq \operatorname{ann}_{E}(\mathfrak{p})</m> splits. Since the extensions <m>\kappa \subseteq \operatorname{ann}_{E}(\mathfrak{p}) \subseteq E</m> are essential, <m>\operatorname{ann}_{E}(\mathfrak{p})</m> cannot decompose as a nontrivial direct sum of <m>\kappa</m>-vector spaces.
+                  </p>
+                </li>
+      
+                <li>
+                  <p>
+                    Since <m>\kappa \subseteq E</m> is essential as <m>R</m>-modules, it is clearly essential as <m>R_{\mathfrak{p}}</m>-modules. (Any nonzero element has a nonzero <m>R</m>-multiple, hence a nonzero <m>R_{\mathfrak{p}}</m>-multiple in the submodule.) To see that <m>E</m> is a maximal essential extension of <m>\kappa</m> as an <m>R_{\mathfrak{p}}</m>-module, let <m>E \subseteq M</m> be an essential extension of <m>R_{\mathfrak{p}}</m>-modules. For any nonzero <m>m \in M</m>, there is some nonzero multiple <m>(r / s) m</m> in <m>E</m>, with <m>s \notin \mathfrak{p}</m>. Then <m>r m</m> is a nonzero multiple of <m>m</m> in <m>E</m>, so <m>E \subseteq M</m> is an essential extension as <m>R</m>-modules, so <m>M=E</m>.
+                  </p>
+                </li>
+        
+                <li>
+                  <p>
+                    We recall that <m>\operatorname{Hom}_{R_{\mathfrak{p}}}\left(R_{\mathfrak{p}} / \mathfrak{p} R_{\mathfrak{p}}, M\right)</m> can be identified with the submodule of <m>M</m> consisting of elements killed by <m>\mathfrak{p} R_{\mathfrak{p}}</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+      
+            <p>
+              Then, the first isomorphism follows from part (2) applied in <m>R_{\mathfrak{p}}</m>.
+            </p>
+      
+            <p>
+              Set <m>E^{\prime}=E_{R}(R / \mathfrak{q})</m>. 
+              By (4), <m>E_{\mathfrak{p}}^{\prime} \neq 0</m> only if <m>\mathfrak{q} \subseteq \mathfrak{p}</m>. 
+              By <m>(1), E_{\mathfrak{p}}^{\prime}=E_{R_{\mathfrak{p}}}\left(R_{\mathfrak{p}} / \mathfrak{q} R_{\mathfrak{p}}\right)</m>, which by (4) has <m>\mathfrak{q} R_{\mathfrak{p}}</m> as its only associated prime; in particular, no element is killed by <m>\mathfrak{p} R_{\mathfrak{p}}</m>, so the hom is zero.
+            </p>
+          </proof>
+    
+          <p>
+            We can now prove the structure theorem for injective modules.
+          </p>
+
+          <theorem xml:id="thm-2.26-2">
+            <statement>
+              <p>
+                Let <m>R</m> be a noetherian ring and <m>E</m> an injective <m>R</m>-module. 
+                There is a direct sum decomposition
+                <me>E \cong \bigoplus_{\mathfrak{p} \in \operatorname{Spec}(R)} E_{R}(R / \mathfrak{p})^{\mu_{\mathfrak{p}}}</me>
+                and the multiplicities <m>\mu_{\mathfrak{p}}</m> are uniquely determined by the formula <m>\mu_{\mathfrak{p}}=\operatorname{dim}_{\kappa(\mathfrak{p})} \operatorname{Hom}_{R_{\mathfrak{p}}}\left(\kappa(\mathfrak{p}), E_{\mathfrak{p}}\right)</m>, where <m>\kappa(\mathfrak{p})=R_{\mathfrak{p}} / \mathfrak{p} R_{\mathfrak{p}}</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                By Zorn’s lemma, there is a submodule <m>E^{\prime}</m> (not a priori nonzero) of <m>E</m> that is
+                <ul>
+                  <li>
+                    <p>
+                      isomorphic to a direct sum of injective hulls of prime cyclic modules: <m>E^{\prime} \cong \oplus_{\mathfrak{p}} E_{R}(R / \mathfrak{p})^{\eta_{\mathfrak{p}}}</m>,
+                    </p>
+                  </li>
+        
+                  <li>
+                    <p>
+                      and no other submodule of <m>E</m> contains <m>E^{\prime}</m> and admits a decomposition of this form.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+        
+              <p>
+                By Proposition ??, <m>E^{\prime}</m> is injective, so we can write <m>E=E^{\prime} \oplus C</m> for some <m>C</m>. 
+                If <m>E^{\prime \prime} \neq 0</m>, take <m>\mathfrak{p} \in \operatorname{Ass}\left(E^{\prime \prime}\right)</m>. 
+                The inclusion map <m>R / \mathfrak{p} \rightarrow E^{\prime \prime}</m> extends along the inclusion <m>R / \mathfrak{p} \subseteq E_{R}(R / \mathfrak{p})</m> to a map <m>E_{R}(R / \mathfrak{p})</m> since <m>E^{\prime \prime}</m> is injective; 
+                since the inclusion is essential, <m>E_{R}(R / \mathfrak{p})</m> embeds into <m>E^{\prime \prime}</m>. 
+                Since <m>E_{R}(R / \mathfrak{p})</m> is injective, it splits from <m>E^{\prime \prime}</m>, and we contradict the maximality of <m>E^{\prime}</m>. 
+                Thus, a decomposition as promised exists. Given such a decomposition, the formulas for <m>\mu(\mathfrak{p})</m> follow from part (5) of the previous theorem.
+              </p>
+            </proof>
+          </theorem>
+          
+          <p>
+            Thus, injective modules are uniquely determined by a multiplicity for each prime. This structural data, for the modules appearing in a minimal injective resolution of a module, are called Bass numbers.
+          </p>
+
+          <definition xml:id="def-2.27-2">
+            <statement>
+              <p>
+                (Bass numbers). 
+                Let <m>R</m> be a noetherian ring, and <m>M</m> an <m>R</m>-module. Given a minimal injective resolution
+                <me>0 \rightarrow(M \rightarrow) E^{0} \rightarrow E^{1} \rightarrow E^{2} \rightarrow \cdots</me>
+                and decompositions
+                <me>E^{i} \cong \bigoplus_{\mathfrak{p} \in \operatorname{Spec}(R)} E_{R}(R / \mathfrak{p})^{\mu(i, \mathfrak{p})}</me>
+                we call <m>\mu(i, \mathfrak{p})</m> the <m>\mathrm{i}</m>-th Bass number of <m>M</m> with respect to <m>\mathfrak{p}</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <theorem xml:id="thm-2.28-2">
+            <statement>
+              <p>
+                Let <m>R</m> be a noetherian ring, and <m>M</m> an <m>R</m>-module. 
+                The Bass numbers of <m>M</m> can be computed as
+                <me>\mu(i, \mathfrak{p})=\operatorname{dim}_{\kappa(\mathfrak{p})} \operatorname{Ext}_{R_{\mathfrak{p}}}^{i}\left(\kappa(\mathfrak{p}), M_{\mathfrak{p}}\right) \quad \text { where } \quad \kappa(\mathfrak{p})=R_{\mathfrak{p}} / \mathfrak{p} R_{\mathfrak{p}}</me>
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Given a minimal injective resolution
+                <me>0 \rightarrow(M \rightarrow) E^{0} \rightarrow E^{1} \rightarrow E^{2} \rightarrow \cdots</me>
+                we leave it as an exercise to check that
+                <me>0 \rightarrow\left(M_{\mathfrak{p}} \rightarrow\right) E_{\mathfrak{p}}^{0} \rightarrow E_{\mathfrak{p}}^{1} \rightarrow E_{\mathfrak{p}}^{2} \rightarrow \cdots</me>
+                is a minimal injective resolution of <m>M_{\mathfrak{p}}</m> as an <m>R_{\mathfrak{p}}</m>-module, and that the number of copies of <m>E_{R}(R / \mathfrak{p})</m> in <m>E^{i}</m> is the same as the number of copies of <m>E_{R}(R / \mathfrak{p})</m> in <m>E_{\mathfrak{p}}^{i}</m>. 
+                We compute the Ext modules in the statement from the latter injective resolution:
+                <me>\operatorname{Ext}_{R_{\mathfrak{p}}}^{i}(\kappa(\mathfrak{p}), M)=H^{i}\left(0 \rightarrow \operatorname{Hom}_{R_{\mathfrak{p}}}\left(\kappa(\mathfrak{p}), E_{\mathfrak{p}}^{0}\right) \rightarrow \operatorname{Hom}_{R_{\mathfrak{p}}}\left(\kappa(\mathfrak{p}), E_{\mathfrak{p}}^{1}\right) \rightarrow \operatorname{Hom}_{R_{\mathfrak{p}}}\left(\kappa(\mathfrak{p}), E_{\mathfrak{p}}^{2}\right) \rightarrow \cdots\right)</me>
+              </p>
+        
+              <p>
+                Claim. The differentials in the complex above are zero.
+              </p>
+        
+              <p>
+                We need to show that for any <m>R_{\mathfrak{p}}</m>-linear <m>\alpha: \kappa(\mathfrak{p}) \rightarrow E_{\mathfrak{p}}^{i}</m>, the composition <m>\delta^{i} \circ \alpha: \kappa(\mathfrak{p}) \rightarrow E_{\mathfrak{p}}^{i+1}</m> is the zero map. 
+                Let <m>x \in \kappa(\mathfrak{p})</m>, and suppose that <m>\alpha(x) \neq 0</m> in <m>E_{\mathfrak{p}}^{i}</m>. 
+                The minimality of the injective resolution implies that <m>\alpha(x)</m> has a nonzero multiple in the image of <m>\delta^{i-1}</m>. 
+                Since <m>\kappa</m> is a field, this implies that <m>\alpha(x)</m> is in the image of <m>\delta^{i-1}</m>, and hence in the kernel of <m>\delta^{i}</m>, establishing the claim.
+              </p>
+        
+              <p>
+                The proof of the theorem is now immediate, since the homology of the complex in the i-th spot is <m>\operatorname{Hom}_{R_{\mathfrak{p}}}\left(\kappa(\mathfrak{p}), E_{\mathfrak{p}}^{i}\right)</m>, which, by the previous theorem, is a <m>\kappa(\mathfrak{p})</m>-vector space of rank <m>\mu(i, \mathfrak{p})</m>.
+              </p>
+            </proof>
+          </theorem>
+
+          <corollary xml:id="cor-2.29-2">
+            <statement>
+              <p>
+                If <m>R</m> is noetherian, and <m>M</m> is a finitely generated <m>R</m>-module, all of the Bass numbers of <m>M</m> are finite.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                We can compute <m>\mu(i, \mathfrak{p})</m> by taking a minimal free resolution of <m>\kappa(\mathfrak{p})</m>, applying <m>\operatorname{Hom}_{R_{\mathfrak{p}}}\left(-, M_{\mathfrak{p}}\right)</m>, and computing homology. 
+                The complex we obtain consists of finitely generated modules, so its homology modules are finitely generated modules.
+              </p>
+            </proof>
+          </corollary>
+
+          <example>
+            <p>
+              Example 2.30. 
+              Let’s compute the Bass numbers of <m>\mathbb{Z}</m> as a <m>\mathbb{Z}</m>-module. 
+              We claim that
+              <me>\mathbb{Q} / \mathbb{Z} \cong \underset{p \text { prime }}{\bigoplus} \mathbb{Z}[1 / p] / \mathbb{Z} \cong \bigoplus_{\mathfrak{p} \in \operatorname{Spec}(\mathbb{Z}) \backslash\{(0)\}} E_{\mathbb{Z}}(\mathbb{Z} / p \mathbb{Z})</me>
+            </p>
+      
+            <p>
+              To see the first isomorphism, consider an element <m>[m / n] \in \mathbb{Q} / \mathbb{Z}</m> with <m>m / n</m> in lowest terms. 
+              We want to see that <m>[m / n]</m> has a unique expression as a sum of elements of <m>\mathbb{Z}[1 / p] / \mathbb{Z}</m>. 
+              We can discard any terms with denominators <m>q</m> not dividing <m>n</m>, since <m>(1 / q \cdot \mathbb{Z}) \cap(1 / n \cdot \mathbb{Z})=\mathbb{Z}</m>. 
+              Write <m>n=p_{1}^{e_{1}} \cdots p_{n}^{e_{n}}</m>. 
+              Then, by the Chinese remainder theorem
+              <me>
+                \begin{aligned}
+                  &amp; \frac{m}{n} \equiv \sum_{i} \frac{a_{i}}{p_{i}^{e_{i}}} \\
+                  &amp; m \equiv \sum_{i} a_{i} p_{1}^{e_{1}} \cdots \widehat{p_{i}^{e_{i}}} \cdots p_{n}^{e_{n}} \\
+                  &amp; (\bmod 1) \\
+                  &amp; (\bmod n) \\
+                  &amp; \left\{\begin{array}{c}
+                  m \equiv a_{1} \widehat{p_{1}^{e_{1}}} \cdots p_{i}^{e_{i}} \cdots p_{n}^{e_{n}} \quad\left(\bmod p_{1}^{e_{1}}\right) \\
+                  \vdots \quad \vdots \quad \vdots \\
+                  m \equiv a_{n} p_{1}^{e_{1}} \cdots p_{i}^{e_{i}} \cdots \widehat{p_{n}^{e_{n}}} \quad\left(\bmod p_{n}^{e_{n}}\right)
+                  \end{array}\right.
+                \end{aligned}
+              </me>
+            </p>
+      
+            <p>
+              In each of these congruence equations, the product of prime powers on the RHS is a unit, so we can solve uniquely for each <m>a_{i} \bmod p_{i}^{e_{i}}</m>; 
+              that is, each <m>\left[a_{i} / p_{i}^{e_{i}}\right] \in \mathbb{Z}[1 / p] / \mathbb{Z}</m> is uniquely determined. 
+              This establishes the first isomorphism.
+            </p>
+      
+            <p>
+              For the second, it suffices to note that <m>\mathbb{Z}[1 / p] / \mathbb{Z}</m> is divisible (check it!), that it is <m>p</m>-torsion (clear), and that the annihilator of <m>p</m> in this module is isomorphic to <m>\mathbb{Z} / p \mathbb{Z}</m>. 
+              From these observations, we see that the module is injective by Proposition ??, and that it is an essential extension of <m>\mathbb{Z} / p \mathbb{Z}</m> by Example ??.
+            </p>
+      
+            <p>
+              We conclude that the Bass numbers of <m>\mathbb{Z}</m> are
+              <me>\mu(0, \mathfrak{p})=\left\{\begin{array}{ll}
+                1 &amp; \text { if } \mathfrak{p}=(0) \\
+                0 &amp; \text { if } \mathfrak{p}=(p) \neq(0)
+                \end{array} \quad \text { and } \mu(1, \mathfrak{p})= \begin{cases}0 &amp; \text { if } \mathfrak{p}=(0) \\
+                1 &amp; \text { if } \mathfrak{p}=(p) \neq(0)\end{cases}\right.
+              </me>
+            </p>
+      
+            <p>
+              Each Bass number here is either 0 or 1 . 
+              We caution that the "total first Bass number," the sum of the first Bass numbers, is infinite.
+            </p>
+          </example>
+
+          <p>
+            We note also that this 116 esque game of writing a fraction as a sum of fractions with pure-power denominators is very closely related to the calculation of local cohomology.
+          </p>
+    
+          <p>
+            We now know that the indecomposable injectives of a noetherian ring are all of the form <m>E_{R}(R / \mathfrak{p})</m>, that every injective is (in a unique way) a direct sum of these, and finitely generated modules all have injective resolutions in which each injective has a finite number of copies of <m>E_{R}(R / \mathfrak{p})</m> in its direct sum decomposition. 
+            We also know many of the key structural properties of <m>E_{R}(R / \mathfrak{p})</m>, as collected in Theorem ??.
+          </p>
+    
+          <p>
+            We will want to have a better understanding of <m>E_{R}(k)</m> for the residue field of a local ring in order to the develop the duality theory hinted at on the first day of class. 
+            We note that this encompasses any indecomposable injective <m>E_{S}(S / \mathfrak{p})</m> : by part (3) of Theorem ??, <m>E_{S}(S / \mathfrak{p})=E_{R}(k)</m> for <m>R=S_{\mathfrak{p}}</m> and <m>k</m> the residue field of <m>R</m>. 
+            We will pursue this with a little bit of redundancy. 
+            First, we will discuss a model for <m>E_{R}(k)</m> when <m>R</m> has a coefficient field (e.g., when <m>R</m> is complete) and the Matlis duality functor in that setting. 
+            Then, we will develop the duality theory in full generality.
+          </p>
+          
+        </section>
+
+        <section xml:id="sec-mathis"><title>Mathis Duality</title>
+
+          <p></p>
+          
+        </section>
+        
+      </chapter>
+      
     </part>
 
     <backmatter xml:id="backmatter"><title>Backmatter</title>
