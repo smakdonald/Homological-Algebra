@@ -16406,6 +16406,507 @@
         </section>
         
       </chapter>
+
+      <chapter xml:id="ch-loco"><title>Local Cohomology</title>
+
+        <section xml:id="sec-def-loco"><title>Definitions of Local Cohomology</title>
+          
+          <p>
+            Recall that we defined <m>\mathrm{H}_{I}^{i}(M):=R^{i} \Gamma_{I}(M)</m>. 
+            Now, with the theory of injectives we have so far, we can prove some properties about these functors. 
+            But first we want to collect some other definitions of local cohomology. 
+            Some of our descriptions involve direct limits. 
+            We recall a couple of facts about direct limits.
+          </p>
+
+          <definition xml:id="def-3.1-2">
+            <statement>
+              <p>
+                Given a directed system of modules
+                <me>\left(M_{i}\right)_{i \in \mathbb{N}}=\left(\cdots \longrightarrow M_{i} \longrightarrow M_{i+1} \longrightarrow \cdots\right)</me>
+                its direct limit is the module <m>M=\lim _{i \in \mathbb{N}} M_{i}</m>, equipped with maps <m>\iota_{i}: M_{i} \rightarrow M</m> for all <m>i</m>, satisfying the property that, if there are maps <m>\alpha_{i}: M_{i} \rightarrow N</m> that commute with the maps in the system, then there is a unique map <m>\varphi: M \rightarrow N</m> such that <m>\alpha_{i}=\varphi \circ \iota_{i}</m> for all <m>i</m>.
+              </p>
+        
+              <p>
+                This notion is functorial: given two directed systems of complexes, and maps of complexes for each <m>i</m> that commute with the maps in the systems, there is an induced map on the direct limits.
+              </p>
+        
+              <p>
+                Direct limits can be realized explicitly as follows: every element is represented by a class <m>(m, i)</m> with <m>m \in M_{i}</m>. 
+                Two classes <m>(m, i),(n, j)</m> are the same if and only if for some <m>k \geq \max \{i, j\}</m>, the images of <m>m</m> and <m>n</m> under the composed transition maps agree in <m>M_{k}</m>. 
+                In particular, an element represents the zero class if and only if it is in the kernel of a large composition of the transition map.
+              </p>
+        
+              <p>
+                Similar considerations hold for systems indexed by an arbitrary poset <m>P</m>; 
+                this consists of a collection of modules <m>M_{p}</m> for <m>p \in P</m>, and commuting maps <m>M_{p} \rightarrow M_{q}</m> for all <m>p \leq q</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <remark>
+            <p>
+              Remark 3.2. 
+              We defined the tensor product of complexes in terms of homological notation before. 
+              The same definition works with cohomological indexing.
+            </p>
+          </remark>
+
+          <lemma xml:id="lem-3.3-2">
+            <statement>
+              <p>
+                (1) If
+              </p>
+          
+              <p>
+                <me>M_{\bullet}^{(0)} \longrightarrow M_{\bullet}^{(1)} \longrightarrow M_{\bullet}^{(2)} \longrightarrow \cdots</me>
+              </p>
+          
+              <p>
+                is a directed system of complexes, then
+              </p>
+          
+              <p>
+                <me>\mathrm{H}_{i}\left(\underset{t}{\lim } M_{\bullet}^{(t)}\right)=\underset{t}{\lim _{\longrightarrow}} \mathrm{H}_{i}\left(M_{\bullet}^{(t)}\right) .</me>
+              </p>
+          
+              <p>
+                (2) Given two directed systems of complexes, <m>M_{\bullet}^{(t)}</m> and <m>N_{\bullet}^{(t)}</m>, we have
+              </p>
+          
+              <p>
+                <me>\underset{t}{\lim _{\bullet}} M_{\bullet}^{(t)} \otimes N_{\bullet}^{(t)}=\left(\underset{t}{\lim _{t}} M_{\bullet}^{(t)}\right) \otimes\left(\lim _{t} N_{\bullet}^{(t)}\right)</me>
+              </p>
+
+              <p>
+                The same considerations hold for arbitrary direct limits.
+              </p>
+            </statement>
+          </lemma>
+
+          <proposition xml:id="prop-3.4-2">
+            <statement>
+              <p>
+                Let <m>R</m> be a noetherian ring and <m>I</m> an ideal in <m>R</m>. 
+                For all <m>i</m>, there is an isomorphism of functors
+                <me>\mathrm{H}_{I}^{i}(-) \cong \underset{t}{\lim } \operatorname{Ext}_{R}^{i}\left(R / I^{t},-\right)</me>
+              </p>
+          
+              <p>
+                Moreover, if <m>\left\{I_{i}\right\}_{i}</m> is a sequence of ideals such that for all <m>a \in \mathbb{N}</m> there exist <m>b, c</m> such that <m>I_{b} \subseteq I^{a}</m> and <m>I^{c} \subseteq I_{a}</m>, then
+                <me>\mathrm{H}_{I}^{i}(-) \cong \underset{t}{\lim _{t}} \operatorname{Ext}_{R}^{i}\left(R / I_{t},-\right) .</me>
+              </p>
+            </statement>
+          </proposition>
+
+          <proof>
+            <p>
+              Proof. It is enough to show the later statement. Note that
+            </p>
+        
+            <p>
+              <me>\Gamma_{I}(M)=\bigcup_{t}\left(0::_{M} I^{t}\right)=\bigcup_{t}\left(0:_{M} I_{t}\right)=\lim _{\longrightarrow} \operatorname{Hom}_{R}\left(R / I_{t}, M\right)\left(=\operatorname{Hom}_{R}^{I-c t s}(R, M)\right)</me>
+            </p>
+        
+            <p>
+              Then, if <m>M \longrightarrow E^{\bullet}</m> is an injective resolution, then
+            </p>
+        
+            <p>
+              <me>
+                \begin{aligned}
+                \mathrm{H}_{I}^{i}(M) &amp; =\mathrm{H}^{i} \Gamma_{I}\left(0 \longrightarrow E^{0} \longrightarrow E^{1} \longrightarrow \cdots\right) \\
+                &amp; =\mathrm{H}^{i} \underset{\longrightarrow}{l} \lim _{R} \operatorname{Hom}_{R}\left(R / I_{t}, E^{\bullet}\right) \\
+                &amp; =\lim _{\longrightarrow} \mathrm{H}^{i}\left(\operatorname{Hom}_{R}\left(R / I_{t}, E^{\bullet}\right)\right) \\
+                &amp; =\stackrel{\lim }{\longrightarrow} \operatorname{Ext}_{R}^{i}\left(R / I_{t}, M\right)
+                \end{aligned}
+              </me>
+            </p>
+        
+            <p>
+              It is easy to see that these isomorphisms are functorial.
+            </p>
+          </proof>
+    
+    <!-- div attr= class="center"-->
+        <figure>
+          <caption>image</caption>
+          <image source="2023_12_05_e2b943b5b28c6794a270g-042.jpg"/>
+        </figure><!--</div attr= class="center">-->
+
+        <remark>
+          <p>
+            Remark 3.5. 
+            Earlier, we saw that Koszul cohomology and <m>\operatorname{Ext}^{\bullet}(R / I,-)</m> measure similar things, and are equal when <m>I=\left(f_{1}, \ldots, f_{m}\right)</m>, is generated by a regular sequence. 
+            Since <m>f_{1}^{t}, \ldots, f_{m}^{t}</m> form an <m>R</m>-sequence as well in this case, we obtain isomorphisms
+            <me>H_{I}^{i}(M) \cong \underset{t}{\lim _{t}} \operatorname{Ext}_{R}^{i}\left(R /\left(f_{1}^{t}, \ldots, f_{m}^{t}\right), M\right) \cong \underset{t}{\lim _{t}} H^{i}\left(f_{1}^{t}, \ldots, f_{m}^{t} ; M\right)</me>
+            though we should take care that we have the right maps in the directed system.
+          </p>
+      
+          <p>
+            In general, Koszul cohomology and <m>\operatorname{Ext}^{\bullet}(R / I,-)</m> are not the same; 
+            we have seen examples in the homework. 
+            However, we will soon see that they agree in the direct limit; 
+            the isomorphism above holds for all ideals in a noetherian ring!
+          </p>
+        </remark>
+    
+        <p>
+          Let <m>M</m> be an <m>R</m>-module and <m>x \in R</m>. 
+          To compute the limit of the system
+          <me>M \stackrel{x}{\longrightarrow} M \stackrel{x}{\longrightarrow} M \stackrel{x}{\longrightarrow} M \stackrel{x}{\longrightarrow} \cdots</me>
+          we can replace <m>M</m> by <m>M^{\prime}=M / \Gamma_{x} M</m>, where <m>\Gamma_{x} M</m> are the elements killed by some composition of the maps <m>M \stackrel{x}{\longrightarrow} M</m>.
+        </p>
+    
+        <p>
+          <me>
+            \begin{aligned}
+            &amp; M^{\prime} \stackrel{x}{\longrightarrow} M^{\prime} \stackrel{x}{\longrightarrow} M^{\prime} \stackrel{x}{\longrightarrow} \cdots \\
+            &amp; M^{\prime} \stackrel{1}{\longrightarrow} \frac{1}{x} M^{\prime} \stackrel{1}{\longrightarrow} \frac{1}{x^{2}} M^{\prime} \stackrel{1}{\longrightarrow}
+            \end{aligned}
+          </me>
+          so the direct limit is <m>M_{x}</m>. 
+          Note that we have a commutative square
+        </p>
+    
+    <!-- div attr= class="center"-->
+        <figure>
+          <caption>image</caption>
+          <image source="2023_12_05_e2b943b5b28c6794a270g-043.jpg"/>
+        </figure><!--</div attr= class="center">-->
+    
+        <p>
+          so we can identify <m>M^{\prime} \stackrel{x^{t}}{\longrightarrow} M^{\prime}</m> with <m>M^{\prime} \stackrel{1}{\longrightarrow} \frac{1}{x^{t}} M^{\prime}</m>.
+        </p>
+    
+        <p>
+          Now consider a directed system of (cohomological) Koszul complexes.
+          <me>K^{\bullet}(1 ; M) \longrightarrow K^{\bullet}(x ; M) \longrightarrow K^{\bullet}\left(x^{2} ; M\right) \longrightarrow K^{\bullet}\left(x^{3} ; M\right) \longrightarrow \cdots</me>
+          that is, 
+        </p>
+
+        <image source='2023_12_05_e2b943b5b28c6794a270g-043(1).jpg'/>
+    
+        <p>
+          The limit of this system of Koszul complexes is the Čech complex of <m>x</m> on <m>M</m> :
+          <me>
+            \check{C}^{\bullet}(x ; M):=\left(\begin{array}{c}
+            0 \longrightarrow \\
+            0
+            \end{array} \underset{1}{\longrightarrow} M_{x} \longrightarrow 0\right)
+          </me>
+        </p>
+    
+        <p>
+          Given a sequence of elements <m>f_{1}, \ldots, f_{t} \in R</m>, the maps <m>K^{\bullet}\left(f_{i}^{t} ; R\right) \longrightarrow K^{\bullet}\left(f_{i}^{t+1} ; R\right)</m> given by 1 on <m>K^{0}, f_{i}</m> on <m>K^{1}</m>, induce maps
+          <me>\begin{gathered}
+            K^{\bullet}\left(f_{1}^{n}\right) \otimes \cdots \otimes K^{\bullet}\left(f_{t}^{n}\right) \otimes M \longrightarrow K^{\bullet}\left(f_{1}^{n+1}\right) \otimes \cdots \otimes K^{\bullet}\left(f_{t}^{n+1}\right) \otimes M \\
+            K^{\bullet}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right) \\
+            K^{\bullet}\left(f_{1}^{n+1}, \ldots, f_{t}^{n+1} ; M\right)
+            \end{gathered}
+          </me>
+        </p>
+    
+        <p>
+          Note that
+          <me>\underset{n}{\lim _{\longrightarrow}} K^{\bullet}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)=\bigotimes_{i=1}^{t} \lim _{\longrightarrow} K^{\bullet}\left(f_{i}^{n}\right) \otimes M=\bigotimes_{i=1}^{t} \check{C}^{\bullet}\left(f_{i}\right) \otimes M</me>
+        </p>
+
+        <definition xml:id="def-3.6-2">
+          <statement>
+            <p>
+              Definition 3.6 (Čech complex). 
+              We define the Čech complex of <m>f_{1}, \ldots, f_{t}</m> on <m>M</m> as
+              <me>\check{C}^{\bullet}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)=\check{C}^{\bullet}\left(f_{1}\right) \otimes \cdots \otimes \check{C}^{\bullet}\left(f_{t}\right) \otimes M</me>
+              This is also sometimes denoted as <m>K^{\bullet}\left(f_{1}^{\infty}, \ldots, f_{t}^{\infty} ; M\right)</m>.
+            </p>
+          </statement>
+        </definition>
+
+        <example>
+          <p>
+            Example 3.7.
+          </p>
+      
+      <!-- div attr= class="center"-->
+          <figure>
+            <caption>image</caption>
+            <image source="2023_12_05_e2b943b5b28c6794a270g-044.jpg"/>
+          </figure><!--</div attr= class="center">-->
+      
+          <p>
+            As with the Koszul complex, easy inductions show that
+            <ul>
+              <li>
+                <p>
+                  <m>\check{C}\left(f_{1}, \ldots, f_{t} ; M\right) \cong \bigoplus_{\left\{j_{1}, \ldots, j_{i}\right\} \subseteq[t]} M_{f_{j_{1}} \cdots f_{j_{i}}}</m>
+                </p>
+              </li>
+      
+            <li>
+              <p>
+                The maps between components corresponding to subsets <m>I, J</m> are zero if <m>I \not \subset J</m>, and <m>\pm 1</m> if <m>J=I \cup\{k\}</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      
+          <p>
+            Note that
+            <me>\lim _{\longrightarrow} \mathrm{H}^{i}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)=\mathrm{H}^{i}\left(\check{C}\left(f_{1}, \ldots, f_{t} ; M\right)\right)=: \check{H}^{i}(\underline{f} ; M) .</me>
+          </p>
+        </example>
+    
+        <p>
+          We will now study these cohomology modules.
+        </p>
+
+        <proposition xml:id="prop-3.8-2">
+          <statement>
+            <p>
+              Proposition 3.8. 
+              Let <m>\underline{f}=f_{1}, \ldots, f_{t} \in R</m> and <m>I=\left(f_{1}, \ldots, f_{t}\right)</m>.
+              <ol>
+                <li>
+                  <p>
+                    (1) Given a short exact sequence of R-modules
+                  </p>
+              
+                  <p>
+                    <me>0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0</me>
+                  </p>
+              
+                  <p>
+                    there is a long exact sequence
+                  </p>
+              
+                  <p>
+                    <me>0 \longrightarrow \check{H}^{0}(\underline{f} ; A) \longrightarrow \check{H}^{0}(\underline{f} ; B) \longrightarrow \check{H}^{0}(\underline{f} ; C) \longrightarrow \check{H}^{1}(\underline{f} ; A) \longrightarrow \cdots</me>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    (2) For an arbitrary direct limit system, <m>\check{H}^{j}\left(\underline{f} ; \underline{\lim } M_{\lambda}\right) \cong \underline{\lim _{\longrightarrow}} \check{H}^{j}\left(\underline{f} ; M_{\lambda}\right)</m>.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    (3) For any family of modules <m>\left\{M_{\lambda}\right\}_{\lambda \in \Lambda}, \check{H}^{j}\left(\underline{f} ; \bigoplus_{\lambda \in \Lambda} M_{\lambda}\right) \cong \bigoplus_{\lambda \in \Lambda} \check{H}^{j}\left(\underline{f} ; M_{\lambda}\right)</m>.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    (4) (invariance of base) If <m>R \stackrel{\varphi}{\longrightarrow} S</m> is a ring map, <m>M</m> an <m>S</m>-module, then
+                  </p>
+              
+                  <p>
+                    <me>\check{H}^{j}(\underline{f} ; \varphi M) \cong{ }_{\varphi} \check{H}^{j}(\underline{\varphi(f)} ; M) .</me>
+                  </p>
+                </li>
+              </ol>
+            </p>         
+          </statement>
+
+          <proof>
+            <p>
+              Proof.
+            </p>
+        
+            <p>
+              (1) Since <m>\check{C} \bullet(f ; R)</m> consists of flat modules,
+            </p>
+        
+        <!-- div attr= class="center"-->
+            <figure>
+              <caption>image</caption>
+              <image source="2023_12_05_e2b943b5b28c6794a270g-045.jpg"/>
+        </figure><!--</div attr= class="center">-->
+        
+            <p>
+              is a short exact sequence of complexes, so this induces a long exact sequence in cohomology.
+            </p>
+        
+            <p>
+              <me>\begin{aligned}
+                \check{H}^{j}\left(\underline{f} ; \underset{\lim }{\longrightarrow} M_{\lambda}\right)=\mathrm{H}^{j}\left(\check{C}^{\bullet}(\underline{f})\right. &amp; \left.\otimes \lim _{\rightarrow} M_{\lambda}\right)=\mathrm{H}^{j}\left(\underline{\lim }\left(\check{C}^{\bullet}(\underline{f}) \otimes M_{\lambda}\right)\right) \\
+                &amp; =\underline{\lim } \mathrm{H}^{j}\left(\check{C}^{\bullet}(\underline{f}) \otimes M_{\lambda}\right)=\underline{\lim } \check{H}^{j}\left(\underline{f} ; M_{\lambda}\right)
+                \end{aligned}
+              </me>
+            </p>
+        
+            <p>
+              (3) This is easy to see, since the Cech complex is compatible with the direct sum decomposition.
+            </p>
+        
+            <p>
+              (4) Follows from the same property noted for Koszul complexes.
+            </p>
+          </proof>
+        </proposition>
+
+        <theorem xml:id="thm-3.9-2">
+          <statement>
+            <p>
+              Theorem 3.9 (Fundamental Theorem of Local Cohomology). 
+              Let <m>R</m> be a noetherian ring and <m>I=\left(f_{1}, \ldots, f_{t}\right)</m> an ideal. 
+              Then, for all <m>R</m>-modules <m>M</m>,
+            </p>
+        
+            <p>
+              <me>\begin{aligned}
+                R^{i} \Gamma_{I}(M) &amp; \cong \quad \check{H}^{i}(\underline{f} ; M) \\
+                \mathbb{\|} &amp; \\
+                \underset{n}{\lim _{\longrightarrow}} \operatorname{Ext}_{R}^{i}\left(R / I^{n}, M\right) &amp; \cong \underset{n}{\longrightarrow} \mathrm{lim}^{i}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)
+                \end{aligned}
+              </me>
+            </p>
+        
+            <p>
+              These isomorphisms are functorial in <m>M</m> and extend to isomorphisms of long exact sequences given a short exact sequence
+              <me>0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0 \text {. }</me>
+            </p>
+          </statement>
+
+          <proof>
+            <p>
+              Proof. We have seen that <m>\Gamma_{I}(M) \cong \underset{n}{\lim _{n}} \operatorname{Ext}_{R}^{i}\left(R / I^{n}, M\right)</m> and <m>\check{H}^{i}(\underline{f} ; M) \cong \underset{n}{\lim _{n}} \mathrm{H}^{i}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)</m>. To show that <m>R^{i} \Gamma_{I}(M) \cong \check{H}^{i}(f ; M)</m>, we proceed in the following steps:
+            </p>
+        
+            <p>
+              Step 1: Show <m>\Gamma_{I}(M)</m> and <m>\check{H}^{0}(\underline{f} ; M)</m> are canonically isomorphic.
+            </p>
+        
+            <p>
+              Step 2: Show that <m>\check{H}^{&gt;0}(\underline{f} ; E)=0</m> for any injective module <m>E</m>.
+            </p>
+        
+            <p>
+              Step 3: Use the previous steps to conclude the proof.
+            </p>
+        
+            <p>
+              Proof of Step 1:
+            </p>
+        
+            <p>
+              <me>\begin{aligned}
+        \check{H}^{0}(\underline{f} ; M) &amp; =\mathrm{H}^{0}\left(0 \rightarrow M \rightarrow \oplus_{i} M_{f_{i}}\right) \\
+        &amp; =\left\{m \in M \mid\left[\frac{m}{1}\right]=0 \text { in } M_{f_{i}} \text { for all } i\right\} \\
+        &amp; =\left\{m \in M \mid f_{i}^{\gg 0} \cdot m=0 \text { for all } i\right\} \\
+        &amp; =\Gamma_{I}(M) .
+        \end{aligned}</me>
+            </p>
+        
+            <p>
+              We note that the last equality uses finite generation of <m>I</m> in a crucial way; only the containment " <m>\supseteq</m> " holds in general without this.
+            </p>
+        
+            <p>
+              Proof of Step 2: By the structure theorem for injectives over noetherian rings, <m>E \cong \oplus E_{\lambda}</m>, where
+            </p>
+        
+            <p>
+              <me>E_{\lambda}=E_{R}(R / P) \cong E_{R_{P}}\left(R_{P} / P R_{P}\right)</me>
+            </p>
+        
+            <p>
+              By the direct sum property, we may replace <m>E</m> by <m>E_{R}(R / P)</m>. By the invariance of base property, we may replace <m>R</m> by <m>R_{P}</m>. Now, <m>E</m> is an injective hull of the residue field, so it is artinian, and we write <m>E=\lim _{\longrightarrow} E_{t}</m> where the <m>E_{t}</m> are modules of finite length. It suffices to show that the vanishing holds for modules of finite length.
+            </p>
+        
+            <p>
+              We claim that if the desired vanishing holds for <m>M=K</m>, then it holds for all modules of finite length (which would complete Step 2). We induce on the length of <m>L</m>. If <m>1&lt;\ell(M)&lt;\infty</m>, then write <m>0 \rightarrow L \rightarrow M \rightarrow K \rightarrow 0</m>, with <m>\ell(L)&lt;\ell(M)</m>. The long exact sequence gives
+            </p>
+        
+            <p>
+              <me>\cdots \rightarrow \check{H}^{i}(\underline{f} ; L) \rightarrow \check{H}^{i}(\underline{f} ; M) \rightarrow \check{H}^{i}(\underline{f} ; K) \rightarrow \cdots,</me>
+            </p>
+        
+            <p>
+              and by the induction hypothesis,
+            </p>
+        
+            <p>
+              <me>\cdots \rightarrow 0 \rightarrow \check{H}^{i}(\underline{f} ; M) \rightarrow 0 \rightarrow \cdots,</me>
+            </p>
+        
+            <p>
+              for <m>i&gt;0</m>, establishing the claim.
+            </p>
+        
+            <p>
+              Applying the invariance of base property again, we may assume without loss of generality that <m>R=K</m>.
+            </p>
+        
+            <p>
+              There are multiple ways to deal with this case. We note that if <m>f_{i}=0</m>, then <m>\check{C}^{\bullet}\left(f_{i} ; K\right)=(0 \rightarrow K \rightarrow 0)</m>, and if <m>f_{i} \neq 0</m>, then <m>\check{C}^{\bullet}\left(f_{i} ; K\right)=(0 \rightarrow K \stackrel{1}{\longrightarrow} K \rightarrow 0)</m>. It is then an easy exercise, which we leave to you, to show that <m>\check{H}^{i}(f ; K)=K</m> for <m>i=0</m> and 0 for <m>i&gt;0</m> if all <m>f_{i}</m> ’s are zero, and that <m>\check{H}^{i}(\underline{f} ; K)=0</m> for all <m>i</m> otherwise.
+            </p>
+        
+            <p>
+              Of course, this step relied crucially on the structure theorem for injectives over noetherian rings.
+            </p>
+        
+            <p>
+              Proof of Step 3: This follows in complete generality from the previous steps.
+            </p>
+        
+            <p>
+              We proceed by induction on <m>i</m>, with the base case being Step 1 . Now, let <m>i&gt;0</m>.
+            </p>
+        
+            <p>
+              We assume that we have a canonical isomorphism between <m>H_{I}^{j}(M)</m> and <m>\check{H}^{j}(\underline{f} ; M)</m> for all <m>M</m> and all <m>j&lt;i</m>. Embed <m>M</m> into an injective <m>E</m> to get a short exact sequence
+            </p>
+        
+            <p>
+              <me>0 \rightarrow M \rightarrow E \rightarrow W \rightarrow 0</me>
+            </p>
+        
+            <p>
+              Then, there is a commutative diagram
+            </p>
+        
+        <!-- div attr= class="center"-->
+            <figure>
+              <caption>image</caption>
+              <image source="2023_12_05_e2b943b5b28c6794a270g-046.jpg"/>
+        </figure><!--</div attr= class="center">-->
+        
+            <p>
+              where bottom zero on the right comes from Step 2. This induces an isomorphism <m>H_{I}^{i}(M) \cong \check{H}^{i}(f ; M)</m>. We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.
+            </p>
+          </proof>
+        </theorem>
+    
+        <p>
+          These four different descriptions
+        </p>
+    
+        <p>
+          <me>\begin{array}{rlr}
+    (1) R^{i} \Gamma_{I}(M) &amp; \cong &amp; (2) \check{H}^{i}(\underline{f} ; M) \\
+    \mathbb{R} &amp; &amp; \mathbb{\|} \\
+    \left(1^{\prime}\right) \underset{n}{\lim _{n}} \operatorname{Ext}_{R}^{i}\left(R / I^{n}, M\right) &amp; \cong\left(2^{\prime}\right) \underset{n}{\lim _{n}} \mathrm{H}^{i}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)
+    \end{array}</me>
+        </p>
+    
+        <p>
+          of local cohomology all have different advantages for attacking problems.
+        </p>
+    
+        <p>
+          The descriptions (1) and (1’) are computed from injective resolutions, as opposed to (2) and <m>(2</m> ’), which are computed from generators. We might think of the former as being more natural, and the latter as being more flexible.
+        </p>
+    
+        <p>
+          We note that the descriptions (1) and (2) are made entirely from "big" modules that are somehow nice, whereas the descriptions (1’) and (2’) realize local cohomology as limits of finitely generated modules (if <m>M</m> is). Some natural questions to ask already are whether we can realize the limits in (1’) and (2’) as filtered limits / unions, and whether the resulting limits are determined in some sense by finite stages in the limit system. We will see a few results of this form, but it’s worth noting that questions of this form are an active topic of research.
+        </p>
+
+        </section>
+        
+      </chapter>
       
     </part>
 
