@@ -16722,7 +16722,7 @@
         <!-- div attr= class="center"-->
             <figure>
               <caption>image</caption>
-              <image source="2023_12_05_e2b943b5b28c6794a270g-045.jpg"/>
+              <image source="Loco/2023_12_05_e2b943b5b28c6794a270g-045.jpg"/>
         </figure><!--</div attr= class="center">-->
         
             <p>
@@ -16753,9 +16753,6 @@
               Theorem 3.9 (Fundamental Theorem of Local Cohomology). 
               Let <m>R</m> be a noetherian ring and <m>I=\left(f_{1}, \ldots, f_{t}\right)</m> an ideal. 
               Then, for all <m>R</m>-modules <m>M</m>,
-            </p>
-        
-            <p>
               <me>\begin{aligned}
                 R^{i} \Gamma_{I}(M) &amp; \cong \quad \check{H}^{i}(\underline{f} ; M) \\
                 \mathbb{\|} &amp; \\
@@ -16772,7 +16769,8 @@
 
           <proof>
             <p>
-              Proof. We have seen that <m>\Gamma_{I}(M) \cong \underset{n}{\lim _{n}} \operatorname{Ext}_{R}^{i}\left(R / I^{n}, M\right)</m> and <m>\check{H}^{i}(\underline{f} ; M) \cong \underset{n}{\lim _{n}} \mathrm{H}^{i}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)</m>. To show that <m>R^{i} \Gamma_{I}(M) \cong \check{H}^{i}(f ; M)</m>, we proceed in the following steps:
+              We have seen that <m>\Gamma_{I}(M) \cong \underset{n}{\lim _{n}} \operatorname{Ext}_{R}^{i}\left(R / I^{n}, M\right)</m> and <m>\check{H}^{i}(\underline{f} ; M) \cong \underset{n}{\lim _{n}} \mathrm{H}^{i}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)</m>. 
+              To show that <m>R^{i} \Gamma_{I}(M) \cong \check{H}^{i}(f ; M)</m>, we proceed in the following steps:
             </p>
         
             <p>
@@ -16792,47 +16790,41 @@
             </p>
         
             <p>
-              <me>\begin{aligned}
-        \check{H}^{0}(\underline{f} ; M) &amp; =\mathrm{H}^{0}\left(0 \rightarrow M \rightarrow \oplus_{i} M_{f_{i}}\right) \\
-        &amp; =\left\{m \in M \mid\left[\frac{m}{1}\right]=0 \text { in } M_{f_{i}} \text { for all } i\right\} \\
-        &amp; =\left\{m \in M \mid f_{i}^{\gg 0} \cdot m=0 \text { for all } i\right\} \\
-        &amp; =\Gamma_{I}(M) .
-        \end{aligned}</me>
+              <me>
+                \begin{aligned}
+                \check{H}^{0}(\underline{f} ; M) &amp; =\mathrm{H}^{0}\left(0 \rightarrow M \rightarrow \oplus_{i} M_{f_{i}}\right) \\
+                &amp; =\left\{m \in M \mid\left[\frac{m}{1}\right]=0 \text { in } M_{f_{i}} \text { for all } i\right\} \\
+                &amp; =\left\{m \in M \mid f_{i}^{\gg 0} \cdot m=0 \text { for all } i\right\} \\
+                &amp; =\Gamma_{I}(M) .
+                \end{aligned}
+              </me>
             </p>
         
             <p>
-              We note that the last equality uses finite generation of <m>I</m> in a crucial way; only the containment " <m>\supseteq</m> " holds in general without this.
+              We note that the last equality uses finite generation of <m>I</m> in a crucial way; 
+              only the containment " <m>\supseteq</m> " holds in general without this.
             </p>
         
             <p>
-              Proof of Step 2: By the structure theorem for injectives over noetherian rings, <m>E \cong \oplus E_{\lambda}</m>, where
-            </p>
-        
-            <p>
+              Proof of Step 2: 
+              By the structure theorem for injectives over noetherian rings, <m>E \cong \oplus E_{\lambda}</m>, where
               <me>E_{\lambda}=E_{R}(R / P) \cong E_{R_{P}}\left(R_{P} / P R_{P}\right)</me>
             </p>
         
             <p>
-              By the direct sum property, we may replace <m>E</m> by <m>E_{R}(R / P)</m>. By the invariance of base property, we may replace <m>R</m> by <m>R_{P}</m>. Now, <m>E</m> is an injective hull of the residue field, so it is artinian, and we write <m>E=\lim _{\longrightarrow} E_{t}</m> where the <m>E_{t}</m> are modules of finite length. It suffices to show that the vanishing holds for modules of finite length.
+              By the direct sum property, we may replace <m>E</m> by <m>E_{R}(R / P)</m>. 
+              By the invariance of base property, we may replace <m>R</m> by <m>R_{P}</m>. 
+              Now, <m>E</m> is an injective hull of the residue field, so it is artinian, and we write <m>E=\lim _{\longrightarrow} E_{t}</m> where the <m>E_{t}</m> are modules of finite length. 
+              It suffices to show that the vanishing holds for modules of finite length.
             </p>
         
             <p>
-              We claim that if the desired vanishing holds for <m>M=K</m>, then it holds for all modules of finite length (which would complete Step 2). We induce on the length of <m>L</m>. If <m>1&lt;\ell(M)&lt;\infty</m>, then write <m>0 \rightarrow L \rightarrow M \rightarrow K \rightarrow 0</m>, with <m>\ell(L)&lt;\ell(M)</m>. The long exact sequence gives
-            </p>
-        
-            <p>
+              We claim that if the desired vanishing holds for <m>M=K</m>, then it holds for all modules of finite length (which would complete Step 2). 
+              We induce on the length of <m>L</m>. If <m>1&lt;\ell(M)&lt;\infty</m>, then write <m>0 \rightarrow L \rightarrow M \rightarrow K \rightarrow 0</m>, with <m>\ell(L)&lt;\ell(M)</m>. 
+              The long exact sequence gives
               <me>\cdots \rightarrow \check{H}^{i}(\underline{f} ; L) \rightarrow \check{H}^{i}(\underline{f} ; M) \rightarrow \check{H}^{i}(\underline{f} ; K) \rightarrow \cdots,</me>
-            </p>
-        
-            <p>
               and by the induction hypothesis,
-            </p>
-        
-            <p>
               <me>\cdots \rightarrow 0 \rightarrow \check{H}^{i}(\underline{f} ; M) \rightarrow 0 \rightarrow \cdots,</me>
-            </p>
-        
-            <p>
               for <m>i&gt;0</m>, establishing the claim.
             </p>
         
@@ -16841,7 +16833,8 @@
             </p>
         
             <p>
-              There are multiple ways to deal with this case. We note that if <m>f_{i}=0</m>, then <m>\check{C}^{\bullet}\left(f_{i} ; K\right)=(0 \rightarrow K \rightarrow 0)</m>, and if <m>f_{i} \neq 0</m>, then <m>\check{C}^{\bullet}\left(f_{i} ; K\right)=(0 \rightarrow K \stackrel{1}{\longrightarrow} K \rightarrow 0)</m>. It is then an easy exercise, which we leave to you, to show that <m>\check{H}^{i}(f ; K)=K</m> for <m>i=0</m> and 0 for <m>i&gt;0</m> if all <m>f_{i}</m> ’s are zero, and that <m>\check{H}^{i}(\underline{f} ; K)=0</m> for all <m>i</m> otherwise.
+              There are multiple ways to deal with this case. We note that if <m>f_{i}=0</m>, then <m>\check{C}^{\bullet}\left(f_{i} ; K\right)=(0 \rightarrow K \rightarrow 0)</m>, and if <m>f_{i} \neq 0</m>, then <m>\check{C}^{\bullet}\left(f_{i} ; K\right)=(0 \rightarrow K \stackrel{1}{\longrightarrow} K \rightarrow 0)</m>. 
+              It is then an easy exercise, which we leave to you, to show that <m>\check{H}^{i}(f ; K)=K</m> for <m>i=0</m> and 0 for <m>i&gt;0</m> if all <m>f_{i}</m> ’s are zero, and that <m>\check{H}^{i}(\underline{f} ; K)=0</m> for all <m>i</m> otherwise.
             </p>
         
             <p>
@@ -16849,18 +16842,17 @@
             </p>
         
             <p>
-              Proof of Step 3: This follows in complete generality from the previous steps.
+              Proof of Step 3: 
+              This follows in complete generality from the previous steps.
             </p>
         
             <p>
-              We proceed by induction on <m>i</m>, with the base case being Step 1 . Now, let <m>i&gt;0</m>.
+              We proceed by induction on <m>i</m>, with the base case being Step 1 . 
+              Now, let <m>i&gt;0</m>.
             </p>
         
             <p>
               We assume that we have a canonical isomorphism between <m>H_{I}^{j}(M)</m> and <m>\check{H}^{j}(\underline{f} ; M)</m> for all <m>M</m> and all <m>j&lt;i</m>. Embed <m>M</m> into an injective <m>E</m> to get a short exact sequence
-            </p>
-        
-            <p>
               <me>0 \rightarrow M \rightarrow E \rightarrow W \rightarrow 0</me>
             </p>
         
@@ -16871,37 +16863,37 @@
         <!-- div attr= class="center"-->
             <figure>
               <caption>image</caption>
-              <image source="2023_12_05_e2b943b5b28c6794a270g-046.jpg"/>
+              <image source="Loco/2023_12_05_e2b943b5b28c6794a270g-046.jpg"/>
         </figure><!--</div attr= class="center">-->
         
             <p>
-              where bottom zero on the right comes from Step 2. This induces an isomorphism <m>H_{I}^{i}(M) \cong \check{H}^{i}(f ; M)</m>. We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.
+              where bottom zero on the right comes from Step 2. This induces an isomorphism <m>H_{I}^{i}(M) \cong \check{H}^{i}(f ; M)</m>. 
+              We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.
             </p>
           </proof>
         </theorem>
     
         <p>
           These four different descriptions
-        </p>
-    
-        <p>
-          <me>\begin{array}{rlr}
-    (1) R^{i} \Gamma_{I}(M) &amp; \cong &amp; (2) \check{H}^{i}(\underline{f} ; M) \\
-    \mathbb{R} &amp; &amp; \mathbb{\|} \\
-    \left(1^{\prime}\right) \underset{n}{\lim _{n}} \operatorname{Ext}_{R}^{i}\left(R / I^{n}, M\right) &amp; \cong\left(2^{\prime}\right) \underset{n}{\lim _{n}} \mathrm{H}^{i}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)
-    \end{array}</me>
-        </p>
-    
-        <p>
+          <me>
+            \begin{array}{rlr}
+            (1) R^{i} \Gamma_{I}(M) &amp; \cong &amp; (2) \check{H}^{i}(\underline{f} ; M) \\
+            \mathbb{R} &amp; &amp; \mathbb{\|} \\
+            \left(1^{\prime}\right) \underset{n}{\lim _{n}} \operatorname{Ext}_{R}^{i}\left(R / I^{n}, M\right) &amp; \cong\left(2^{\prime}\right) \underset{n}{\lim _{n}} \mathrm{H}^{i}\left(f_{1}^{n}, \ldots, f_{t}^{n} ; M\right)
+            \end{array}
+          </me>
           of local cohomology all have different advantages for attacking problems.
         </p>
     
         <p>
-          The descriptions (1) and (1’) are computed from injective resolutions, as opposed to (2) and <m>(2</m> ’), which are computed from generators. We might think of the former as being more natural, and the latter as being more flexible.
+          The descriptions (1) and (1’) are computed from injective resolutions, as opposed to (2) and <m>(2</m> ’), which are computed from generators. 
+          We might think of the former as being more natural, and the latter as being more flexible.
         </p>
     
         <p>
-          We note that the descriptions (1) and (2) are made entirely from "big" modules that are somehow nice, whereas the descriptions (1’) and (2’) realize local cohomology as limits of finitely generated modules (if <m>M</m> is). Some natural questions to ask already are whether we can realize the limits in (1’) and (2’) as filtered limits / unions, and whether the resulting limits are determined in some sense by finite stages in the limit system. We will see a few results of this form, but it’s worth noting that questions of this form are an active topic of research.
+          We note that the descriptions (1) and (2) are made entirely from "big" modules that are somehow nice, whereas the descriptions (1’) and (2’) realize local cohomology as limits of finitely generated modules (if <m>M</m> is). 
+          Some natural questions to ask already are whether we can realize the limits in (1’) and (2’) as filtered limits / unions, and whether the resulting limits are determined in some sense by finite stages in the limit system. 
+          We will see a few results of this form, but it’s worth noting that questions of this form are an active topic of research.
         </p>
 
         </section>
