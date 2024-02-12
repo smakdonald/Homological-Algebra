@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Height and Number of Generators</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Homological Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-noether-normalizations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-dim-theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-sops.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+\newcommand{\Ass}{\operatorname{Ass}}
+\def\Aut{\operatorname{Aut}}
+\def\can{{\mathrm {can}}}
+\def\char{\operatorname{char}}
+\def\cp{\operatorname{CharPoly}}
+\def\codim{\operatorname{codim}} 
+\def\coker{\operatorname{coker}}
+\DeclareMathOperator*{\colim}{colim} 
+\def\cont{\operatorname{cont}} 
+\def\diam{\operatorname{diam}} 
+\def\dm{\operatorname{dim}} 
+\DeclareMathOperator{\edim}{embdim} 
+\def\End{\operatorname{End}} 
+\def\eval{\operatorname{eval}} 
+\def\Ext{\operatorname{Ext}} 
+\def\Frac{\operatorname{Frac}}
+\def\Fun{\operatorname{Fun}}
+\def\Gal{\operatorname{Gal}}
+\def\gcd{\operatorname{gcd}}
+\newcommand{\GL}{\operatorname{GL}} 
+\newcommand{\ht}{\operatorname{height}} 
+\def\Hom{\operatorname{Hom}} 
+\def\id{\operatorname{id}} 
+\def\im{\operatorname{im}} 
+\def\Inn{\operatorname{Inn}}
+\def\ker{\operatorname{ker}}
+\def\lcm{\operatorname{lcm}} 
+\def\Mat{\operatorname{Mat}}
+\newcommand{\Min}{\operatorname{Min}}
+\def\mp{\operatorname{MinPoly}}
+\def\mSpec{\operatorname{mSpec}}
+\def\MSpec{\operatorname{MSpec}}
+\def\null{\operatorname{Nul}}
+\DeclareMathOperator{\ns}{nullspace}
+\newcommand{\opp}{\operatorname{opp}}
+\def\Orb{\operatorname{Orb}} 
+\def\Out{\operatorname{Out}}
+\def\Perm{\operatorname{Perm}}
+\def\ptstab{\operatorname{PtStab}} 
+\def\rad{\operatorname{rad}}
+\DeclareMathOperator{\range}{range}
+\def\rank{\operatorname{rank}}
+\def\res{\operatorname{res}}
+\def\setstab{\operatorname{SetStab}}
+\def\sign{{\operatorname{sign}}}
+\newcommand{\SL}{\operatorname{SL}}
+\def\Span{\operatorname{Span}}
+\def\Spec{\operatorname{Spec}}
+\def\Stab{\operatorname{Stab}} 
+\DeclareMathOperator{\Supp}{Supp}
+\def\Syl{\operatorname{Syl}}
+\def\Tor{\operatorname{Tor}}
+\def\trace{\operatorname{trace}}
+\def\uSpec{\operatorname{\underline{Spec}}}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}{-\mathbf{Mod}}
+\newcommand{\mod}{-\mathbf{mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\lx{\lambda_x}
+\newcommand{\a}{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd} 
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\def\xdots{x_1, \dots, x_n} 
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\udots{u_1, \dots, u_n} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-abelian-def.html" class="internal"><span class="codenumber">7.1</span> <span class="title">What’s an Abelian Category?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-mono-epi" class="internal"><span class="title">Monomorphisms and Epimorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-additive-categories" class="internal"><span class="title">Additive Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ker-coker" class="internal"><span class="title">Kernels and Cokernels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ab-cat" class="internal"><span class="title">Definition of an Abelian Category</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-complexes-ab" class="internal"><span class="title">Complexes in Abelian Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-hom-ab" class="internal"><span class="title">Homology in Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-exact-ab" class="internal"><span class="title">Exact Functors: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-yoneda-ab" class="internal"><span class="title">The Yoneda Lemma: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-diagrams-ab" class="internal"><span class="title">The Diagram Chasers: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-proj-inj-ab" class="internal"><span class="title">Projectives, Injective, and Resolutions: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-split-ab" class="internal"><span class="title">Split Exact Sequences: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-res-ab" class="internal"><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-commutative-algebra.html" class="internal"><span class="codenumber">II</span> <span class="title">Commutative Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-finiteness-conditions.html" class="internal"><span class="codenumber">9</span> <span class="title">Finiteness Conditions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gen-mod.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Generated Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-algebras.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebras</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-alg-mod-finite.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Algebra and Module Finite</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-integral-extensions.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Integral Extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sess.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Short Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-noetherian.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Noetherian Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-rings" class="internal"><span class="title">Noetherian Rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-modules" class="internal"><span class="title">Noetherian Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-hilbert" class="internal"><span class="title">Hilbert’s Basis Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-1.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Invariant Rings: Application I</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-graded-rings.html" class="internal"><span class="codenumber">10</span> <span class="title">Graded Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-rings.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graded Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-finite-conditions-graded-algebras.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Finiteness Conditions for Graded Algebras</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-2.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Invariant Rings: Application II</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-prime-ideals.html" class="internal"><span class="codenumber">11</span> <span class="title">Prime Ideals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-prime-maximal-ideals.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Prime and Maximal Ideals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spectrum.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The Spectrum of a Ring</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-prime-avoidance.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Prime Avoidance</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-local-rings.html" class="internal"><span class="codenumber">12</span> <span class="title">Local Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-rings.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Local Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localizations.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nak.html" class="internal"><span class="codenumber">12.3</span> <span class="title">NAK</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-decomposing-ideals.html" class="internal"><span class="codenumber">13</span> <span class="title">Decomposing Ideals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-min-support.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Minimal Primes and Support</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ass-primes.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Associated Primes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-primary-decomp.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Primary Decomposition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-krull-intersection.html" class="internal"><span class="codenumber">13.4</span> <span class="title">The Krull Intersection Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-dim-theory.html" class="internal"><span class="codenumber">14</span> <span class="title">Dimension Theory</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dim-height.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Dimension and Height</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-over-up-down.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Over, Up, and Down</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-noether-normalizations.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Noether Normalizations</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-height-generators.html" class="internal"><span class="codenumber">14.4</span> <span class="title">Height and Number of Generators</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sops.html" class="internal"><span class="codenumber">14.5</span> <span class="title">Systems of Parameters</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-commutative-algebra-ii.html" class="internal"><span class="codenumber">III</span> <span class="title">Commutative Algebra II</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-domains-ii.html" class="internal"><span class="codenumber">15</span> <span class="title">Domains II</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-art.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Artinian Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dvrs.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Discrete Valuation Rings and Dedekind Domains</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-depth-grade.html" class="internal"><span class="codenumber">16</span> <span class="title">Depth and Grade</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2.html" class="internal"><span class="codenumber">16.1</span> <span class="title"></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cohen.html" class="internal"><span class="codenumber">17</span> <span class="title">Cohen-Macaulay Rings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3.html" class="internal"><span class="codenumber">17.1</span> <span class="title"></span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-locohom.html" class="internal"><span class="codenumber">IV</span> <span class="title">Local Cohomology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-injective-modules.html" class="internal"><span class="codenumber">18</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hulls.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Essential Extensions and Injective Hulls</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-injective-noetherian.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Injective Modules in Noetherian Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mathis.html" class="internal"><span class="codenumber">18.3</span> <span class="title">Mathis Duality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-loco.html" class="internal"><span class="codenumber">19</span> <span class="title">Local Cohomology</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-def-loco.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Definitions of Local Cohomology</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-canonical.html" class="internal"><span class="codenumber">20</span> <span class="title">The Canonical Module</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-1.html" class="internal"><span class="codenumber">20.1</span> <span class="title"></span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Rings and Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="intro.html" class="internal"><span class="codenumber">B</span> <span class="title">Setting the Stage</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings-ideals.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Rings and Ideals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-module.html" class="internal"><span class="codenumber">B.2</span> <span class="title">Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="macaulay2.html" class="internal"><span class="codenumber">C</span> <span class="title">Macaulay2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-getting-started.html" class="internal"><span class="codenumber">C.1</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-asking-for-help.html" class="internal"><span class="codenumber">C.2</span> <span class="title">Asking Macaulay2 for Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-commands.html" class="internal"><span class="codenumber">C.3</span> <span class="title">Basic Commands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-height-generators"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">14.4</span><span class="space"> </span><span class="title">Height and Number of Generators</span>
+</h2>
+<blockquote class="blockquote" id="sec-height-generators-2">
+<div class="para" id="sec-height-generators-2-1">“You are not judged by the height you have risen, but from the deoth you have climbed.”</div>
+<cite class="attribution">―Fredrick Douglass</cite>
+</blockquote>
+<article class="theorem theorem-like" id="thm-krulls-principal-ideal-theorem"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.63</span><span class="period">.</span><span class="space"> </span><span class="title">Krull’s Principal Ideal Theorem.</span>
+</h3>
+<div class="para" id="thm-krulls-principal-ideal-theorem-3-1">Let <span class="process-math">\(R\)</span> be a noetherian ring, and <span class="process-math">\(f\in R\text{.}\)</span> Then, every minimal prime of <span class="process-math">\((f)\)</span> has height at most one.</div></article><details id="thm-krulls-principal-ideal-theorem-4" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-krulls-principal-ideal-theorem-4-1">Suppose the theorem is false, so that there is some ring <span class="process-math">\(R\text{,}\)</span> a prime <span class="process-math">\(P\text{,}\)</span> and an element <span class="process-math">\(f\)</span> such that <span class="process-math">\(P\)</span> is minimal over <span class="process-math">\((f)\)</span> and <span class="process-math">\(\ht(P)&gt;1\text{.}\)</span> If we localize at <span class="process-math">\(P\)</span> and then mod out by an appropriate minimal prime, we obtain a noetherian local domain <span class="process-math">\((R,\fm)\)</span> of dimension at least two in which <span class="process-math">\(\fm\)</span> is the unique minimal prime of <span class="process-math">\((f)\text{.}\)</span> Let’s work over that noetherian local domain <span class="process-math">\((R, \fm)\text{.}\)</span> Note that <span class="process-math">\(\overline{R} = R/(f)\)</span> is zero-dimensional, since <span class="process-math">\(\fm\)</span> is the only minimal prime over <span class="process-math">\((f)\text{.}\)</span> Back in <span class="process-math">\(R\text{,}\)</span> let <span class="process-math">\(Q\)</span> be a prime strictly in between <span class="process-math">\((0)\)</span> and <span class="process-math">\(\fm\text{,}\)</span> and notice that we necessarily have <span class="process-math">\(f \notin Q\text{.}\)</span>
+</div> <div class="para logical" id="thm-krulls-principal-ideal-theorem-4-2">
+<div class="para">Consider the symbolic powers <span class="process-math">\(Q^{(n)}\)</span> of <span class="process-math">\(Q\text{.}\)</span> We will show that these stabilize in <span class="process-math">\(R\text{.}\)</span> Since <span class="process-math">\(\overline{R} = R/(f)\)</span> is Artinian, the descending chain of ideals</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Q \overline{R} \supseteq Q^{(2)}\overline{R} \supseteq Q^{(3)}\overline{R} \supseteq \cdots
+\end{equation*}
+</div>
+<div class="para">stabilizes. We then have some <span class="process-math">\(n\)</span> such that <span class="process-math">\(Q^{(n)} \overline{R} = Q^{(m)} \overline{R}\)</span> for all <span class="process-math">\(m \geqslant n\text{,}\)</span> and in particular, <span class="process-math">\(Q^{(n)} \overline{R} = Q^{(n+1)} \overline{R}\text{.}\)</span> Pulling back to <span class="process-math">\(R\text{,}\)</span> we get <span class="process-math">\(Q^{(n)} \subseteq Q^{(n+1)} + (f)\text{.}\)</span> Then any element <span class="process-math">\(a \in Q^{(n)}\)</span> can be written as <span class="process-math">\(a = b + fr\text{,}\)</span> where <span class="process-math">\(b \in Q^{(n+1)} \subseteq Q^{(n)}\)</span> and <span class="process-math">\(r \in R\text{.}\)</span> Notice that this implies that <span class="process-math">\(fr \in Q^{(n)}\text{.}\)</span> Since <span class="process-math">\(f\notin Q\text{,}\)</span> we must have <span class="process-math">\(r\in Q^{(n)}\text{.}\)</span> This yields <span class="process-math">\(Q^{(n)} = \fq^{(n+1)} + f \fq^{(n)}\text{.}\)</span> Thus, <span class="process-math">\(Q^{(n)} / Q^{(n+1)} = f(Q^{(n)} / \fq^{(n+1)})\text{,}\)</span> so <span class="process-math">\(Q^{(n)} / Q^{(n+1)} = \fm(Q^{(n)} / Q^{(n+1)})\text{.}\)</span> By , <span class="process-math">\(Q^{(n)} = Q^{(n+1)}\)</span> in <span class="process-math">\(R\text{.}\)</span> Similarly, we obtain <span class="process-math">\(Q^{(n)} = Q^{(m)}\)</span> for all <span class="process-math">\(m \geqslant n\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="thm-krulls-principal-ideal-theorem-4-3">
+<div class="para">Now, if <span class="process-math">\(a \in Q\)</span> is nonzero, we have <span class="process-math">\(a^n\in Q^n \subseteq Q^{(n)} = Q^{(m)}\)</span> for all <span class="process-math">\(m\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bigcap_{m \geqslant 1} Q^{(m)} = \bigcap_{m \geqslant n} Q^{(m)} = Q^{(n)}.
+\end{equation*}
+</div>
+<div class="para">Notice that <span class="process-math">\(Q^n \neq 0\)</span> because <span class="process-math">\(R\)</span> is a domain, and so <span class="process-math">\(Q^{(n)} \supseteq Q^n\)</span> is also nonzero. So</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bigcap_{m \geqslant 1} Q^{(m)} = Q^{(n)} \neq 0.
+\end{equation*}
+</div>
+<div class="para">On the other hand, <span class="process-math">\(Q^{(m)} = Q^m R_Q \cap R\)</span> for all <span class="process-math">\(m\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bigcap_{m \geqslant 1} Q^{(m)} R_Q \subseteq \bigcap_{m \geqslant 1} Q^m R_{Q} = \bigcap_{m \geqslant 1} (Q R_{Q})^m = 0
+\end{equation*}
+</div>
+<div class="para">by . Since <span class="process-math">\(R\)</span> is a domain, the contraction of <span class="process-math">\((0)\)</span> in <span class="process-math">\(R_Q\)</span> back in <span class="process-math">\(R\)</span> is <span class="process-math">\((0)\text{.}\)</span> This is the contradiction we seek. So no such <span class="process-math">\(Q\)</span> exists, so that <span class="process-math">\(R\)</span> has dimension <span class="process-math">\(1\text{,}\)</span> and in the original ring, all the minimal primes over <span class="process-math">\(f\)</span> must have height at most <span class="process-math">\(1\text{.}\)</span>
+</div>
+</div></article></details><article class="remark remark-like" id="sec-height-generators-4"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">14.64</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-height-generators-4-1">Note that this is stronger than the statement that the height of <span class="process-math">\((f)\)</span> is at most one: that would only mean that some minimal prime of <span class="process-math">\((f)\)</span> has height at most one.</div></article><div class="para" id="sec-height-generators-5">Noetherianity is necessary, as the next example shows.</div>
+<article class="example example-like" id="sec-height-generators-6"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.65</span><span class="period">.</span><span class="space"> </span><span class="title">Noetherianity is Necessary.</span>
+</h3> <div class="para" id="sec-height-generators-6-2">
+<span class="process-math">\(R = k[x,xy,xy^2,\ldots] \subseteq k[x,y]\text{.}\)</span> Note that <span class="process-math">\((x)\)</span> is not prime: for <span class="process-math">\(a&gt;0\text{,}\)</span> <span class="process-math">\(xy^a \notin (x)\text{,}\)</span> since <span class="process-math">\(y^a\notin R\text{,}\)</span> but <span class="process-math">\((xy^a)^2 = x \cdot x y^{2a} \in (x)\text{.}\)</span> Thus, <span class="process-math">\(\fm = (x,xy,xy^2,\dots) \subseteq \sqrt{(x)}\text{,}\)</span> and since <span class="process-math">\(\fm\)</span> is a maximal ideal, we have equality, so <span class="process-math">\(\Min{(x)} = \{ \fm \}\text{.}\)</span> However, the ideal <span class="process-math">\(P = (xy,xy^2, xy^3,\dots) = (y) k[x,y] \cap R\)</span> is prime, and the chain <span class="process-math">\((0) \subsetneq P \subsetneq \fm\)</span> shows that <span class="process-math">\(\ht(\fm)&gt;1\text{.}\)</span>
+</div></article><article class="lemma theorem-like" id="lem-proper-containment-of-ideals-in-noetherian-ring"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">14.66</span><span class="period">.</span><span class="space"> </span><span class="title">Proper Containment of Ideals in Noetherian Ring.</span>
+</h3>
+<div class="para" id="lem-proper-containment-of-ideals-in-noetherian-ring-2-1">Let <span class="process-math">\(R\)</span> be noetherian, <span class="process-math">\(P \subsetneq Q \subsetneq \fa\)</span> be primes, and <span class="process-math">\(f \in \fa\text{.}\)</span> Then there is some <span class="process-math">\(Q'\)</span> with <span class="process-math">\(P \subsetneq Q'\subsetneq \fa\)</span> and <span class="process-math">\(f \in Q'\text{.}\)</span>
+</div></article><details id="lem-proper-containment-of-ideals-in-noetherian-ring-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="lem-proper-containment-of-ideals-in-noetherian-ring-3-1">If <span class="process-math">\(f \in P\text{,}\)</span> there is nothing to prove, since we can simply take <span class="process-math">\(Q' = Q\text{.}\)</span> Suppose <span class="process-math">\(f \notin P\text{.}\)</span> After we quotient out by <span class="process-math">\(P\)</span> and localize at <span class="process-math">\(\fa\text{,}\)</span> we may assume that <span class="process-math">\(\fa\)</span> is the unique maximal ideal and that our ring is a domain. Thus all we need is to find a nonzero prime <span class="process-math">\(Q'\)</span> which is not maximal. Note that by assumption <span class="process-math">\(\ht(\fa) \geqslant 2\text{.}\)</span> Our assumption implies that <span class="process-math">\(f \neq 0\text{,}\)</span> and then by the principal ideal theorem <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Commutative Algebra/Results/Theorem - Krull’s Principal Ideal Theorem|Krull’s Principal Ideal Theorem]], minimal primes of <span class="process-math">\((f)\)</span> have height one, hence are not maximal nor <span class="process-math">\(0\text{.}\)</span> We can take <span class="process-math">\(Q'\)</span> to be one of the minimal primes of <span class="process-math">\(f\text{.}\)</span>
+</div></article></details><article class="theorem theorem-like" id="thm-krulls-height-theorem"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.67</span><span class="period">.</span><span class="space"> </span><span class="title">Krull’s Height Theorem.</span>
+</h3>
+<div class="para" id="thm-krulls-height-theorem-3-1">Let <span class="process-math">\(R\)</span> be a noetherian ring. If <span class="process-math">\(I\)</span> is an ideal generated by <span class="process-math">\(n\)</span> elements, then every minimal prime of <span class="process-math">\(I\)</span> has height at most <span class="process-math">\(n\text{.}\)</span>
+</div></article><details id="thm-krulls-height-theorem-4" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-krulls-height-theorem-4-1">By induction on <span class="process-math">\(n\text{.}\)</span> The case <span class="process-math">\(n=1\)</span> is .</div> <div class="para" id="thm-krulls-height-theorem-4-2">Let <span class="process-math">\(I=(f_1,\dots,f_n)\)</span> be an ideal, <span class="process-math">\(P\)</span> a minimal prime of <span class="process-math">\(I\text{,}\)</span> and <span class="process-math">\(P_0 \subsetneq P_1 \subsetneq \cdots \subsetneq P_{h} = P\)</span> be a saturated chain of length <span class="process-math">\(h\)</span> ending at <span class="process-math">\(P\text{.}\)</span> If <span class="process-math">\(f_1 \in P_1\text{,}\)</span> then we can apply the induction hypothesis to the ring <span class="process-math">\(\overline{R} = R/((f_1) + P_0)\)</span> and the ideal <span class="process-math">\((f_2,\dots,f_n)\overline{R}\text{.}\)</span> Then by induction hypothesis, the chain <span class="process-math">\(P_1 \overline{R} \subsetneq \cdots \subsetneq P_{h} \overline{R}\)</span> has length at most <span class="process-math">\(n-1\text{,}\)</span> so <span class="process-math">\(h-1 \leqslant n-1\)</span> and <span class="process-math">\(P\)</span> has height at most <span class="process-math">\(n.\)</span>
+</div> <div class="para logical" id="thm-krulls-height-theorem-4-3">
+<div class="para">If <span class="process-math">\(f_1 \notin P_1\text{,}\)</span> we use the previous lemma to replace our given chain with a chain of the same length but such that <span class="process-math">\(f_1 \in P_1\text{.}\)</span> To do this, note that <span class="process-math">\(f_1 \in P_i\)</span> for some <span class="process-math">\(i\text{;}\)</span> after all, <span class="process-math">\(f_1 \in I \subseteq P\text{.}\)</span> So in the given chain, suppose that <span class="process-math">\(f_1 \in P_{i+1}\)</span> but <span class="process-math">\(f_1 \notin P_i\text{.}\)</span> If <span class="process-math">\(i&gt;0\text{,}\)</span> apply the previous lemma with <span class="process-math">\(\fa = P_{i+1}\text{,}\)</span> <span class="process-math">\(Q = P_i\text{,}\)</span> and <span class="process-math">\(P = P_{i-1}\)</span> to find <span class="process-math">\(Q_i\)</span> such that <span class="process-math">\(f_1 \in Q_i\text{.}\)</span> Replace the chain with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P_0 \subsetneq P_1 \subsetneq \cdots \subsetneq P_{i-1} \subsetneq Q_i \subsetneq P_i \subsetneq \cdots \subsetneq P_{h} = P.
+\end{equation*}
+</div>
+<div class="para">Repeat until <span class="process-math">\(f_1 \in P_1\text{.}\)</span>
+</div>
+</div></article></details><article class="example example-like" id="sec-height-generators-9"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.68</span><span class="period">.</span><span class="space"> </span><span class="title">.</span>
+</h3> <div class="para" id="sec-height-generators-9-2">If <span class="process-math">\(k\)</span> is a field and <span class="process-math">\(R = k[x_1, \ldots, xn]\text{,}\)</span> the ideal <span class="process-math">\((x_1,x_2,\dots,x_n)\)</span> generated by <span class="process-math">\(n\)</span> variables has height~<span class="process-math">\(n\text{.}\)</span> There are many other ideals that attain the bound given by . For example, <span class="process-math">\((u^3-xyz,x^2+2xz-6y^5,vx+7vy)\in k [u,v,w,x,y,z]\text{.}\)</span> An ideal of height <span class="process-math">\(n\)</span> generated by <span class="process-math">\(n\)</span> elements is called a <em class="emphasis">complete intersection</em>.</div></article><article class="example example-like" id="sec-height-generators-10"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.69</span><span class="period">.</span><span class="space"> </span><span class="title">.</span>
+</h3> <div class="para" id="sec-height-generators-10-2">The ideal <span class="process-math">\((xy,xz)\)</span> in <span class="process-math">\(k[x,y,z]\)</span> has minimal primes of heights 1 and 2.</div></article><article class="example example-like" id="sec-height-generators-11"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.70</span><span class="period">.</span><span class="space"> </span><span class="title">.</span>
+</h3> <div class="para" id="sec-height-generators-11-2">In <span class="process-math">\(R=k[x,y]/(x^2,xy)\text{,}\)</span> the ideal generated by zero elements (the zero ideal) has an associated prime of height two, namely <span class="process-math">\((x,y)\text{.}\)</span> The same phenomenon can happen even in a nice polynomial ring. For example, consider the ideal <span class="process-math">\(I=(x^3, y^3, x^2 u + xy v + y^2 w) \subseteq R= k[u,v,w,x,y]\text{.}\)</span> Note that <span class="process-math">\((u,v,w,x,y) = (I : x^2 y^2)\text{,}\)</span> so <span class="process-math">\(I\)</span> has an associated prime of height 5.</div></article><article class="example example-like" id="sec-height-generators-12"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.71</span><span class="period">.</span><span class="space"> </span><span class="title">.</span>
+</h3> <div class="para" id="sec-height-generators-12-2">Let <span class="process-math">\(R=k[x,xy,xy^2,\dots] \subseteq k[x,y]\text{.}\)</span> For all <span class="process-math">\(a \geqslant 1\text{,}\)</span> <span class="process-math">\(xy^a \notin (x)\text{,}\)</span> since <span class="process-math">\(y^a\notin R\text{,}\)</span> but <span class="process-math">\((xy^a)^2 = x \cdot x y^{2a}\in (x)\text{.}\)</span> Then <span class="process-math">\((x)\)</span> is not prime in <span class="process-math">\(R\text{,}\)</span> and moreover <span class="process-math">\(\fm=(x,xy,xy^2,\dots) \subseteq \sqrt{(x)}\text{.}\)</span> Since <span class="process-math">\(\fm\)</span> is a maximal ideal, we have equality, so <span class="process-math">\(\Min{(x)}=\{\fm\}\text{.}\)</span> However, <span class="process-math">\(\p=(xy,xy^2, xy^3,\dots) = (y) k[x,y] \cap R\)</span> is prime, and the chain <span class="process-math">\((0) \subsetneq \p \subsetneq \fm\)</span> shows that <span class="process-math">\(\ht(\fm)&gt;1\text{.}\)</span>
+</div></article><article class="corollary theorem-like" id="cor-ideals-in-noeth-rings-have-finite-height"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">14.72</span><span class="period">.</span><span class="space"> </span><span class="title">Ideals in Noeth Rings have Finite Height.</span>
+</h3>
+<div class="para" id="cor-ideals-in-noeth-rings-have-finite-height-2-1">If <span class="process-math">\(R\)</span> is a noetherian ring, then any ideal has finite height. If <span class="process-math">\((R,\fm,k)\)</span> is also local, then <span class="process-math">\(\dim(R) \leqslant \dim_k(\fm/\fm^2) &lt;\infty\text{.}\)</span>
+</div></article><details id="cor-ideals-in-noeth-rings-have-finite-height-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-ideals-in-noeth-rings-have-finite-height-3-1">If <span class="process-math">\(R\)</span> is noetherian, then every ideal is finitely generated, by , and thus by  every ideal has finite height.</div> <div class="para logical" id="cor-ideals-in-noeth-rings-have-finite-height-3-2">
+<div class="para">Now suppose that <span class="process-math">\((R,\fm,k)\)</span> is a noetherian local ring. By , <span class="process-math">\(\fm\)</span> is generated by <span class="process-math">\(\dim_k(\fm/\fm^2)\)</span> elements, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim(R) = \ht(m) \leqslant \dim_k(\fm/\fm^2).
+\end{equation*}
+</div>
+</div></article></details><article class="definition definition-like" id="defn-embedding-dimension"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.73</span><span class="period">.</span><span class="space"> </span><span class="title">Embedding Dimension.</span>
+</h3> <div class="para" id="defn-embedding-dimension-2-1">The <em class="emphasis">embedding dimension</em> of a local ring <span class="process-math">\((R, \fm)\)</span> is the minimal number of generators of <span class="process-math">\(\fm\text{,}\)</span> <span class="process-math">\(\mu(\fm)\text{.}\)</span> We write <span class="process-math">\(\textrm{embdim}(R) := \mu(\fm)\)</span> for the embedding dimension of <span class="process-math">\(R\text{.}\)</span>
+</div></article><article class="definition definition-like" id="defn-regular-local-ring"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.74</span><span class="period">.</span><span class="space"> </span><span class="title">Regular Local Ring.</span>
+</h3> <div class="para" id="defn-regular-local-ring-2-1">A noetherian local ring <span class="process-math">\((R, \fm)\)</span> is <em class="emphasis">regular</em> if <span class="process-math">\(\dim(R) = \edim(R)\text{.}\)</span>
+</div></article><article class="remark remark-like" id="sec-height-generators-16"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">14.75</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-height-generators-16-1">Power series rings <span class="process-math">\(k [[ x_1, \ldots, x_d ]]\)</span> are regular local rings. In general, a ring is regular if all its localizations are regular local rings. In order for this definition to make sense, we need to first make sure that regularity localizes, meaning that if <span class="process-math">\((R, \fm)\)</span> is a regular local ring, then <span class="process-math">\(R_P\)</span> is also regular for all primes <span class="process-math">\(P\text{.}\)</span> But to do that, we need some homological algebra. However (spoiler alert!), things do work out alright, and as you might expect, polynomial rings over fields are also regular.</div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-noether-normalizations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-sops.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

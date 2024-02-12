@@ -16841,7 +16841,7 @@
 
         </section>
 
-        <section xml:id="sec-ses"><title>Short Exact Sequences</title>
+        <section xml:id="sec-sess"><title>Short Exact Sequences</title>
           
           <blockquote>
             <p>
@@ -16867,7 +16867,7 @@
   
           </definition>
 
-          <definition xml:id="def-ses"><title>Short Exact Sequence</title>
+          <definition xml:id="def-sess"><title>Short Exact Sequence</title>
             <statement>
               <p>
                 An exact sequence of the form 
@@ -18933,10 +18933,6 @@
 
       <chapter xml:id="ch-local-rings"><title>Local Rings</title>
 
-        <!--****************
-        Chapter: Local Rings
-        *****************-->
-  
         <section xml:id="sec-local-rings">
           <title>Local Rings</title>
 
@@ -19116,7 +19112,7 @@
     
         </section>
 
-        <section xml:id="sec-localization">
+        <section xml:id="sec-localizations">
           <title>Localization</title>
 
           <!--*****************
@@ -24855,7 +24851,7 @@
           <remark><p>This theorem frequently goes by the name of The Chinese Remainder Theorem, but it has been remarked that this is somewhat like referencing the Pythagorean Theorem as The Greek Triangle Theorem or Fermat's Little Theorem as The French Power Postulate. In the interest of giving credit where credit is due, we include it here with the name of the 3rd-century Chinese mathematician, Sunzi, to whom the result is often attributed.</p></remark> 
         </section>
 
-        <section xml:id="sec-modules"><title>Modules</title>
+        <section xml:id="sec-module"><title>Modules</title>
 
           <p>Just like linear algebra is the study of vector spaces over fields, commutative algebra often focuses on the structure of modules over commutative rings. While in other branches of algebra modules might be left- or right-modules, our modules are usually two sided, and we refer to them simply as modules.</p>
 
