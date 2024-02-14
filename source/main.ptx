@@ -22911,7 +22911,7 @@
 
       <chapter xml:id="ch-depth-grade"><title>Depth and Grade</title>
 
-        <section xml:id="sec-2"><title></title>
+        <section xml:id="sec-depth-grade"><title>Depth and Grade</title>
 
           <definition xml:id="def-48">
             <statement>
@@ -23007,36 +23007,42 @@
                 Then there exists primary submodules <m>Q_1,\dots,Q_n</m> such that
               </p>
 
-            <p><ul>
-              <li>
-                <p>
-              <em><m>N=Q_1\cap \cdots \cap Q_n</m>;</em>
-            </p>
-              </li>
+              <p><ul>
+                <li>
+                  <p>
+                <m>N=Q_1\cap \cdots \cap Q_n</m>;
+              </p>
+                </li>
 
-              <li>
-                <p>
-              <em><m>N\subsetneq Q_1\cap \cdots \cap \hat{Q_i}\cap \cdots Q_n</m> for <m>i=1,\dots,n</m>;</em>
-            </p>
-              </li>
+                <li>
+                  <p>
+                <m>N\subsetneq Q_1\cap \cdots \cap \hat{Q_i}\cap \cdots Q_n</m> for <m>i=1,\dots,n</m>;
+              </p>
+                </li>
 
-              <li>
-                <p>
-              <em><m>p_1,\dots,p_n</m> are distinct prime ideals, where <m>p_i=\sqrt{\operatorname{Ann}_R M/Q_i}</m>.</em>
-            </p>
-              </li>
+                <li>
+                  <p>
+                <m>p_1,\dots,p_n</m> are distinct prime ideals, where <m>p_i=\sqrt{\operatorname{Ann}_R M/Q_i}</m>.
+              </p>
+                </li>
 
-            </ul></p>
+              </ul></p>
 
-            <p>
-              <em>The decomposition <m>N=Q_1\,\cap\cdots\cap\, Q_n</m> is called an <term>irredundant primary decomposition for <m>N\subset M</m></term>. The prime ideals <m>p_1,\dots,p_n</m> are uniquely determined by <m>N\subset M</m> and are called the <term>associated primes</term> of <m>N\subset M</m> (or more commonly, of <m>M/N</m>). We denote the set of associated primes of <m>M/N</m> by <m>\operatorname{Ass}_R M/N</m>. Moreover, a prime ideal <m>p\in \operatorname{Ass}_R M/N</m> if and only if <m>p=(N:_R x)</m> for some <m>x\in M</m>. Additionally, if <m>p_i</m> is a minimal associated prime of <m>M/N</m>, the <m>Q_i=\phi^{-1}(N_{p_i})</m> where <m>\phi:M\to M_{p_i}</m> is the natural localization map.</em>
-            </p></statement>
+              <p>
+                The decomposition <m>N=Q_1\,\cap\cdots\cap\, Q_n</m> is called an <term>irredundant primary decomposition for <m>N\subset M</m></term>. 
+                The prime ideals <m>p_1,\dots,p_n</m> are uniquely determined by <m>N\subset M</m> and are called the <term>associated primes</term> of <m>N\subset M</m> (or more commonly, of <m>M/N</m>). 
+                We denote the set of associated primes of <m>M/N</m> by <m>\operatorname{Ass}_R M/N</m>. 
+                Moreover, a prime ideal <m>p\in \operatorname{Ass}_R M/N</m> if and only if <m>p=(N:_R x)</m> for some <m>x\in M</m>. 
+                Additionally, if <m>p_i</m> is a minimal associated prime of <m>M/N</m>, the <m>Q_i=\phi^{-1}(N_{p_i})</m> where <m>\phi:M\to M_{p_i}</m> is the natural localization map.
+              </p>
+            </statement>
                     
-
-          <proof>
-            <p>
-              <em>Proof.</em> See Atiyah-Macdonald. ◻
-            </p></proof></theorem>
+            <proof>
+              <p>
+                See Atiyah-Macdonald. ◻
+              </p>
+            </proof>
+          </theorem>
 
           <theorem xml:id="thm-56"><title>Krull’s Intersection Theorem</title>
             <statement>
@@ -23047,19 +23053,22 @@
               </p>
             </statement>
                     
+            <proof>
+              <p>
+                <em>Proof.</em> Let <m>\displaystyle{N=\bigcap_{n=1}^{\infty} I^nM}</m>. 
+                We claim that <m>IN=N</m>. 
+                If <m>IN=M</m>, there is nothing to prove. 
+                Suppose <m>IN\subsetneq M</m> and let <m>IN=Q_1\cap Q_2\cap \cdots \cap Q_r</m> be a primary decomposition of <m>IN\subset M</m>. 
+                Then for each <m>i</m>, <m>IN\subseteq Q_i</m>. 
+                If <m>N\not\subset Q_i</m> then <m>I</m> consists of zero-divisors on <m>M/Q_i</m>. 
+                As <m>Q_i</m> is a primary submodule of <m>M</m>, we must have <m>I^nM\subseteq Q_i</m> for some <m>n</m>. 
+                But <m>N\subseteq I^nM</m>, so <m>N\subseteq Q_i</m>, a contradiction. 
+                Thus, <m>N\subseteq Q_1\cap\cdots \cap Q_r=IN</m>. 
+                Consequently, <m>IN=N</m>. 
+                By a homework exercise, this implies there exists <m>s\in I</m> such that <m>(1-s)N=0</m>. ◻
+              </p>
+            </proof>
           </theorem>
-
-          <proof>
-            <p>
-              <em>Proof.</em> Let <m>\displaystyle{N=\bigcap_{n=1}^{\infty} I^nM}</m>. 
-              We claim that <m>IN=N</m>. 
-              If <m>IN=M</m>, there is nothing to prove. 
-              Suppose <m>IN\subsetneq M</m> and let <m>IN=Q_1\cap Q_2\cap \cdots \cap Q_r</m> be a primary decomposition of <m>IN\subset M</m>. 
-              Then for each <m>i</m>, <m>IN\subseteq Q_i</m>. 
-              If <m>N\not\subset Q_i</m> then <m>I</m> consists of zero-divisors on <m>M/Q_i</m>. 
-              As <m>Q_i</m> is a primary submodule of <m>M</m>, we must have <m>I^nM\subseteq Q_i</m> for some <m>n</m>. 
-              But <m>N\subseteq I^nM</m>, so <m>N\subseteq Q_i</m>, a contradiction. Thus, <m>N\subseteq Q_1\cap\cdots \cap Q_r=IN</m>. Consequently, <m>IN=N</m>. By a homework exercise, this implies there exists <m>s\in I</m> such that <m>(1-s)N=0</m>. ◻
-            </p></proof>
 
           <definition xml:id="def-57">
             <statement>
@@ -24511,7 +24520,398 @@
 
       <chapter xml:id="ch-canonical"><title>The Canonical Module</title>
 
-        <section xml:id="sec-1"><title></title>
+        <section xml:id="sec-local-duality"><title>Local Duality</title>
+
+          <p>
+            Let <m>\mathfrak{m}</m> be the maximal ideal of <m>R</m>. We know that:
+            <ul>
+              <li>
+                <p>
+                  If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)</m> is an artinian module;
+                </p>
+              </li>
+      
+              <li>
+                <p>
+                  If <m>R=M</m> is a polyonomial ring over a field <m>k</m>, then <m>\mathrm{H}_{\mathfrak{m}}^{d}(M) \cong E_{R}(k)</m>.
+                </p>
+              </li>
+            </ul>
+          </p>
+      
+          <p>
+            The Matlis duals of <m>\mathrm{H}_{\mathfrak{m}}^{\bullet}(M)</m> are evidently finitely generated modules (if <m>R</m> is complete), and we might hope that they can be realized by formulas in terms of finitely generated elements.
+          </p>
+      
+          <p>
+            We will see that this turns out to be true. 
+            We will establish formulas of this form for an increasingly general class of rings. 
+            Along the way, to understand the new class of rings we will meet, we will pursue a more refined study of injective resolutions.
+          </p>
+
+          <p>
+            We will give two proofs of this fact.
+          </p>
+
+          <lemma xml:id="lem-4.1">
+            <statement>
+              <p>
+                If <m>(R, \mathfrak{m}, k)</m> is a regular local ring of dimension <m>d</m>, then <m>\mathrm{H}_{\mathfrak{m}}^{d}(R) \cong E_{R}(k)</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                First, we note that both <m>\mathrm{H}_{\mathfrak{m}}^{d}(R)</m> and <m>E_{R}(k)</m> stay the same if <m>R</m> is replaced by its completion, so we may assume that <m>R</m> is complete. 
+                By Cohen’s Structure Theorem, <m>R=K \llbracket \underline{x} \rrbracket, V \llbracket \underline{x} \rrbracket</m>, or <m>V \llbracket \underline{x} \rrbracket /(f)</m> where <m>K</m> is a field and <m>V</m> a DVR.
+              </p>
+        
+              <p>
+                We have seen this by explicit computation for <m>R=k \llbracket \underline{x} \rrbracket</m> (worksheet) or <m>R=V \llbracket \underline{x} \rrbracket</m>, where <m>V</m> is a DVR (#2 on HW #2). 
+                Also, if <m>f \in V \llbracket \underline{x} \rrbracket</m>, then, from the SES <m>0 \rightarrow R \rightarrow R \rightarrow R / f R \rightarrow 0</m>, we get the LES
+                <me>\cdots \longrightarrow 0 \longrightarrow \mathrm{H}_{\mathfrak{m}}^{d-1}(V \llbracket \underline{x} \rrbracket /(f)) \longrightarrow \mathrm{H}_{\mathfrak{m}}^{d}(V \llbracket \underline{x} \rrbracket) \stackrel{f}{\longrightarrow} \mathrm{H}_{\mathfrak{m}}^{d}(V \llbracket \underline{x} \rrbracket) \longrightarrow 0,</me>
+                where the last terms is zero since <m>\operatorname{dim}(R / f R)=d-1</m>. 
+                Consequently,
+                <me>\mathrm{H}_{\mathfrak{m}}^{d-1}(V \llbracket \underline{x} \rrbracket /(f))=\operatorname{ann}_{\mathrm{H}_{\mathfrak{m}}^{d}(V \llbracket \underline{x} \rrbracket)}(f)=\operatorname{ann}_{E_{V \llbracket \underline{x} \rrbracket}}(f)=E_{V \llbracket \underline{x} \rrbracket /(f)}(k) .</me>
+              </p>
+        
+              <p>
+                Thus, this holds for all complete regular rings.
+              </p>
+            </proof>
+
+            <proof>
+              <p>
+                When <m>R</m> is regular, the following is an injective resolution of <m>R</m> (by #6 HW #2):
+                <me>0(\rightarrow R) \rightarrow E_{R}(R) \rightarrow \bigoplus_{\mathrm{ht} \mathfrak{p}=1} E_{R}(R / \mathfrak{p}) \rightarrow \bigoplus_{\mathrm{ht} \mathfrak{p}=2} E_{R}(R / \mathfrak{p}) \rightarrow \cdots \rightarrow \bigoplus_{\mathrm{ht} \mathfrak{p}=d} E_{R}(R / \mathfrak{p}) \rightarrow 0</me>
+              </p>
+        
+              <p>
+                By applying <m>\Gamma_{\mathfrak{m}}</m> to this resolution, we are only left with <m>E(R / \mathfrak{m})</m> in the <m>d</m>-th spot.
+              </p>
+            </proof>
+          </lemma>
+
+          <p>
+            If you don’t believe in homework, don’t worry; we will generalize this soon.
+          </p>
+
+          <exercise><title>Exercise 4.2.</title>
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    If <m>P</m> is a flat <m>R</m>-module, then <m>\operatorname{Tor}_{i}^{R}(P, M)=0</m> for all <m>i&gt;0</m> and all <m>R</m>-modules <m>M</m>.
+                  </p>
+                </li>
+        
+                <li>
+                  <p>
+                    If
+                    <me>\cdots \longrightarrow P_{n} \longrightarrow \cdots \longrightarrow P_{1} \longrightarrow P_{0} \longrightarrow(M \longrightarrow) 0</me>
+                    is exact and each <m>P_{i}</m> is flat (we say this is a flat resolution of <m>M</m> ), then <m>\operatorname{Tor}_{i}^{R}(M, N)=</m> <m>\mathrm{H}_{i}\left(P_{\bullet} \otimes_{R} N\right)</m> for all <m>i</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </exercise>
+
+          <proposition xml:id="prop-4.3">
+            <statement>
+              <p>
+                If <m>(R, \mathfrak{m})</m> is Cohen-Macaulay, and <m>M</m> is an R-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M) \cong \operatorname{Tor}_{d-i}^{R}\left(M, \mathrm{H}_{\mathfrak{m}}^{d}(R)\right)</m> for all <m>i</m>. 
+                This isomorphism is functorial in <m>M</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Let <m>x_{1}, \ldots, x_{d}</m> be an SOP for <m>R</m>. The augmented Čech complex
+              </p>
+    
+              <table>
+                <title></title>
+                <tabular>
+                <row >
+                  <cell halign="left">flat resolution</cell>
+                  <cell halign="left"><m>\mathrm{d}</m></cell>
+                  <cell halign="left"><m>\mathrm{d}-1</m></cell>
+                  <cell halign="left">0</cell>
+                </row>
+                </tabular>
+              </table>
+    
+              <p>
+                <m>\begin{array}{lllll}\text { Čech indexing } &amp; 0 &amp; 1 &amp; \mathrm{~d}\end{array}</m>
+              </p>
+          
+              <p>
+                <me>0 \longrightarrow R \longrightarrow \bigoplus_{i} R_{x_{i}} \longrightarrow \cdots \longrightarrow R_{x_{1} \cdots x_{d}} \longrightarrow\left(\mathrm{H}_{\mathfrak{m}}^{d}(R) \longrightarrow\right) 0</me>
+              </p>
+          
+              <p>
+                is exact, since the lower local cohomologies vanish. Thus, <m>\check{C}^{\bullet}(\underline{x} ; R)</m> is a flat resolution of <m>\mathrm{H}_{\mathfrak{m}}^{d}(R)</m>. Then,
+              </p>
+          
+              <p>
+                <me>\mathrm{H}_{\mathfrak{m}}^{i}(M)=\check{H}^{i}\left(\check{C}^{\bullet}(\underline{x} ; M)\right)=\check{H}^{i}\left(\check{C}^{\bullet}(\underline{x} ; R) \otimes_{R} M\right)=\operatorname{Tor}_{d-i}^{R}\left(\mathrm{H}_{\mathfrak{m}}^{d}(R), M\right)</me>
+              </p>
+            </proof>
+          </proposition>
+    
+
+    
+        
+    
+        
+          
+    
+        <p>
+          We note that there is a switch from cohomological indexing of Čech complex and homological indexing of a flat resolution.
+        </p>
+
+        <proposition xml:id="prop-4.4">
+          <statement>
+            <p>
+              (Ext-Tor dualities). If <m>(R, \mathfrak{m})</m> be a local ring of dimension <m>d</m>, and let <m>(-)^{\vee}</m> denote the Matlis duality functor.
+            </p>
+            <!-- div attr= class="center"-->
+          <image source="2023_12_05_e2b943b5b28c6794a270g-056"/>
+
+        <p><ol>
+          <li>
+              <p>
+          If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\operatorname{Tor}_{i}^{R}\left(M, N^{\vee}\right) \cong \operatorname{Ext}_{R}^{i}(M, N)^{\vee}</m>.
+        </p>
+          </li>
+    
+        </ol></p>
+    
+        <p>
+          These isomorphisms are functorial in <m>M</m>.
+        </p>
+          </statement>
+
+          <proof>
+            <p>
+              Let <m>P_{\bullet}(\longrightarrow M)</m> be a projective resolution of <m>M</m>.
+
+            </p>
+
+            <p>
+              1.
+            </p>
+        
+            <p>
+              <me>\operatorname{Tor}_{i}^{R}(M, N)^{\vee} \cong \mathrm{H}_{i}\left(P_{\bullet} \otimes N\right)^{\vee} \cong \mathrm{H}_{i}\left(\left(P_{\bullet} \otimes N\right)^{\vee}\right) \cong \mathrm{H}_{i}\left(\operatorname{Hom}\left(P_{\bullet}, N^{\vee}\right)\right) \cong \operatorname{Ext}_{R}^{i}\left(M, N^{\vee}\right)</me>
+            </p>
+        
+            <p>
+              Given a map <m>M \rightarrow M^{\prime}</m>, we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.
+            </p>
+        
+            <p><ol>
+              <li>
+                  <p>
+              By taking a minimal resolution, we may assume that <m>P_{\bullet}(\longrightarrow M)</m> is a complex of finitely generated free <m>R</m>-modules. In this case, there is a natural isomorphism (exercise!)
+            </p>
+              </li>
+        
+            </ol></p>
+        
+            <p>
+              <me>P_{\bullet} \otimes \operatorname{Hom}_{R}(N, E) \cong \operatorname{Hom}_{R}\left(\operatorname{Hom}_{R}\left(P_{\bullet}, N\right), E\right)</me>
+            </p>
+        
+            <p>
+              Taking homology gives the isomorphism.
+            </p>
+          </proof>
+        </proposition>
+    
+        <p>
+          To help remember which hypothesis goes with which situation in the following, one might keep in mind that Matlis duals of artinian modules are complete.
+        </p>
+
+        <theorem xml:id="thm-4.5">
+          <statement>
+            <p>
+              Theorem 4.5 (Local Duality). Let <m>(R, \mathfrak{m}, k)</m> be a regular local ring of dimension <m>d</m>. Then
+            </p>
+        
+            <p><ol>
+              <li>
+                  <p>
+              If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)=\operatorname{Ext}_{d-i}^{R}(M, R)^{\vee}</m>.
+            </p>
+              </li>
+        
+              <li>
+                  <p>
+              If <m>R</m> is complete and <m>M</m> is arbitrary, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee}=\operatorname{Ext}_{d-i}^{R}(M, R)</m>.
+            </p>
+              </li>
+        
+            </ol></p>
+        
+            <p>
+              These isomorphisms are functorial in <m>M</m>.
+            </p>
+          </statement>
+
+          <proof>
+            <p>
+              Proof. 1.
+            </p>
+        
+            <p>
+              <me>\mathrm{H}_{\mathfrak{m}}^{i}(M) \cong \operatorname{Tor}_{d-i}^{R}\left(M, \mathrm{H}_{\mathfrak{m}}^{d}(R)\right) \cong \operatorname{Tor}_{d-i}^{R}\left(M, R^{\vee}\right) \cong \operatorname{Ext}_{R}^{d-i}(M, R)^{\vee} .</me>
+            </p>
+        
+            <p><ol>
+              <li>
+                  <p>
+              Since <m>R</m> is complete, <m>\mathrm{H}_{\mathfrak{m}}^{d}(R)^{\vee} \cong R^{\vee \vee} \cong R</m>. Then,
+            </p>
+              </li>
+        
+            </ol></p>
+        
+            <p>
+              <me>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee} \cong \operatorname{Tor}_{d-i}^{R}\left(M, \mathrm{H}_{\mathfrak{m}}^{d}(R)\right)^{\vee} \cong \operatorname{Ext}_{R}^{d-i}\left(M, \mathrm{H}_{\mathfrak{m}}^{d}(R)^{\vee}\right) \cong \operatorname{Ext}_{R}^{d-i}(M, R)</me>
+            </p>
+          </proof>
+        </theorem>
+    
+        <p>
+          One often finds the just the first statement as local duality, but the second "opposite of local duality" is quite useful as well.
+        </p>
+    
+        <p>
+          Remark 4.6. By the exact same proof, if <m>R</m> is Cohen-Macaulay and <m>W</m> is some finitely generated module such that <m>W^{\vee} \cong \mathrm{H}_{\mathfrak{m}}^{d}(R)</m>, then
+        </p>
+    
+        <p><ul>
+          <li>
+              <p>
+          If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)=\operatorname{Ext}_{R}^{d-i}(M, W)^{\vee}</m>.
+        </p>
+          </li>
+    
+          <li>
+              <p>
+          If <m>R</m> is complete, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee}=\operatorname{Ext}_{R}^{d-i}(M, W)</m> by the same proof.
+        </p>
+          </li>
+    
+        </ul></p>
+    
+        <p>
+          We will return to this later.
+        </p>
+    
+        <p>
+          Local duality is a powerful tool to study local cohomology modules. Part of its power comes from its flexibility: there are many different rings, modules, and indices to plug in. Here are some special cases:
+        </p>
+    
+        <p>
+          Example 4.7. Let <m>(R, \mathfrak{m})</m> be a local ring, and <m>(S, \mathfrak{n})</m> another local ring such that <m>S</m> is regular, and <m>R</m> is a quotient of <m>S</m>. (Such an <m>S</m> exists whenever <m>R</m> is complete, or essentially of finite type over a field or <m>\mathbb{Z}</m>.) Then, since <m>R</m> is a finitely generated <m>S</m>-module, <m>\mathrm{H}_{\mathfrak{m}}^{i}(R) \cong \mathrm{H}_{\mathfrak{n}}^{i}(R) \cong \operatorname{Ext}_{S}^{\operatorname{dim}(S)-i}(R, S)^{\vee}</m> for all <m>i</m>.
+        </p>
+    
+        <p>
+          Example 4.8. Let <m>(R, \mathfrak{m}) \rightarrow(S, \mathfrak{n})</m> be a map of complete local rings, and suppose that <m>R</m> is regular, e.g., a power series ring over a field <m>K</m>. Then, <m>\mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(S)^{\vee} \cong \operatorname{Hom}_{R}(S, R)</m>.
+        </p>
+    
+        <p>
+          Here is an important application of Local Duality. Note that we are not assuming that <m>R</m> is regular in the statement.
+        </p>
+
+        <theorem xml:id="thm-4.9-2">
+          <statement>
+            <p>
+              Theorem 4.9 (Grothendieck nonvanishing). Let <m>(R, \mathfrak{m}, k)</m> be a local ring and <m>M</m> a finitely generated <m>R</m>-module. Then <m>\operatorname{cd}(\mathfrak{m}, M)=\operatorname{dim}(M)</m>.
+
+            </p>
+          </statement>
+
+          <proof>
+            <p>
+              We already know <m>\leqslant</m>. 
+              Without loss of generality, we can assume that <m>M</m> is a faithful module, by invariance of base. 
+              Complete; <m>\widehat{M}</m> is <m>\widehat{R}</m>-faithful, <m>\operatorname{dim}(M)=\operatorname{dim}(\widehat{M})</m>, and <m>\mathrm{H}_{\mathfrak{m}}^{\bullet}(M) \cong \mathrm{H}_{\mathfrak{m} \widehat{R}}^{\bullet}(\widehat{M})</m>. 
+              Therefore, we may assume without loss of generality that <m>R</m> and <m>M</m> are complete.
+            </p>
+        
+            <p>
+              Now <m>R</m> is a quotient of a power series ring, so by invariance of base we may assume without loss of generality that <m>R</m> is a regular ring. 
+              Note, however, that <m>M</m> is not necessarily faithful anymore.
+            </p>
+        
+            <p>
+              We claim that if the depth of <m>\operatorname{ann}(M)</m> on an <m>R</m>-module <m>N</m> is <m>t</m>, then <m>\operatorname{Ext}_{R}^{&lt;t}(M, N)=0</m>. 
+              This is essentially the same as Rees’s Theorem, but we include the argument anyway. 
+              Indeed, by induction on the depth (if positive), we can assume that <m>\operatorname{Ext}_{R}^{&lt;t-1}(M, N / x N)=0</m> for <m>x</m> an <m>N</m>-regular element in <m>\operatorname{ann}(M)</m>. 
+              From the usual LES, we see that, for <m>i&lt;t, x</m> acts injectively on <m>\operatorname{Ext}_{R}^{i}(M, N)=0</m>, but <m>x</m> annihilates this module as well, so it must be the zero module. 
+              This establishes the claim.
+            </p>
+        
+            <p>
+              Now, by Local Duality, <m>\mathrm{H}_{\mathfrak{m}}^{i}(M) \cong \operatorname{Ext}_{R}^{\operatorname{dim}(R)-i}(M, R)^{\vee}</m>. 
+              Since Matlis Duality is faithful, the indicated Ext is nonzero if and only if its dual is. Thus,
+            </p>
+        
+            <p>
+              <me>\begin{aligned}
+                  \operatorname{cd}(\mathfrak{m}, M)=\max \left\{j \mid \mathrm{H}_{m}^{j}(M) \neq 0\right\} &amp; =\max \left\{\operatorname{dim}(R)-i \mid \operatorname{Ext}_{R}^{\operatorname{dim}(R)-i}(M, R) \neq 0\right\} \\
+                  &amp; =\operatorname{dim}(R)-\min \left\{i \mid \operatorname{Ext}_{R}^{i}(M, R) \neq 0\right\} \\
+                  &amp; \geq \operatorname{dim}(R)-\operatorname{depth}_{\operatorname{ann}(M)}(R) \\
+                  &amp; \geq \operatorname{dim}(R)-\operatorname{height}(\operatorname{ann}(M)) \\
+                  &amp; \geq \operatorname{dim}(R / \operatorname{ann}(M))=\operatorname{dim}(M) .
+                  \end{aligned}
+                </me>
+            </p>
+        
+            <p>
+              Since <m>\operatorname{dim}(M) \geq \operatorname{cd}(\mathfrak{m}, M)</m>, equality holds throughout.
+            </p>
+          </proof>
+        </theorem>
+    
+        <p>
+          Remark 4.10. A consequence of this argument, by taking <m>M=R / I</m>, is that if <m>R</m> is a regular local ring (or any ring for which Local Duality holds!) there are equalities for any ideal <m>I \subset R</m> :
+        </p>
+    
+        <p>
+          <me>\operatorname{depth}_{I}(R)=\operatorname{height}(I)=\operatorname{dim}(R)-\operatorname{dim}(R / I)</me>
+        </p>
+    
+        <p>
+          Of course, these can be obtained more directly (for Cohen-Macaulay rings).
+        </p>
+    
+        <p>
+          Following Remark ??, we should be able to generalize local duality, so that we can compute local cohomology as duals of Ext modules over rings that are more relevant. The best generalization would be in the case of a Cohen-Macaulay local ring <m>R</m> such that <m>R^{\vee} \cong \mathrm{H}_{\mathfrak{m}}^{d}(R)</m>. Failing that, we would like to understand when a f.g. module <m>K</m> such that <m>K^{\vee} \cong H_{\mathfrak{m}}^{d}(R)</m> exists over a CM local ring, and how else we might recognize such a <m>K</m>.
+        </p>
+          
+        </section>
+
+        <section xml:id="sec-gorenstein"><title>Gorenstein Rings</title>
+
+          <p>
+            
+          </p>
+          
+        </section>
+
+        <section xml:id="sec-canonical-mod"><title>Canonical Modules</title>
+
+          <p>
+            
+          </p>
+          
+        </section>
+
+        <section xml:id="sec-graded-local-duality"><title>Graded Local Duality and Regularity</title>
 
           <p>
             

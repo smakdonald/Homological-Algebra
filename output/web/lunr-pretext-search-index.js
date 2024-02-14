@@ -8191,27 +8191,27 @@ var ptx_lunr_docs = [
   "body": "Discrete Valuation Rings and Dedekind Domains  As we have indicated before, algebraic number theory is one of the historical sources of commutative algebra. In this chapter we specialize down to the case of interest in number theory, namely to Dedekind domains. We deduce the unique factorization of ideals in Dedekind domains from the general primary decomposition theorems. Although a direct approach is of course possible one obtains more insight our way into the precise context of number theory in commutative algebra. Another important class of Dedekind domains occurs in connection with non-singular algebraic curves. In fact the geometrical picture of the Dedekind condition is: non-singular of dimension one.  The last chapter dealt with Noetherian rings of dimension 0. Here we start by considering the next simplest case, namely Noetherian integral domains of dimension one: i.e., Noetherian domains in which every non-zero prime ideal is maximal. The first result is that in such a ring we have a unique factorization theorem for ideals:  Proposition 9.1. Let be a Noetherian domain of dimension 1. Then every non-zero ideal a in can be uniquely expressed as a product of primary ideals whose radicals are all distinct.  Proof. Since is Noetherian, a has a minimal primary decomposition by (7.13), where each is say -primary. Since and is an integral domain, each non-zero prime ideal of is maximal, hence the are distinct maximal ideals (since ), and are therefore pairwise coprime. Hence by (1.16) the are pairwise coprime and therefore by (1.10) we have . Hence .  Conversely, if , the same argument shows that ; this is a minimal primary decomposition of , in which each is an isolated primary component, and is therefore unique by (4.11).  Let be a Noetherian domain of dimension one in which every primary ideal is a prime power. By (9.1), in such a ring we shall have unique factorization of non-zero ideals into products of prime ideals. If we localize with respect to a non-zero prime ideal we get a local ring satisfying the same conditions as , and therefore in every non-zero ideal is a power of the maximal ideal. Such local rings can be characterized in other ways.  "
 },
 {
-  "id": "sec-2",
+  "id": "sec-depth-grade",
   "level": "1",
-  "url": "sec-2.html",
+  "url": "sec-depth-grade.html",
   "type": "Section",
   "number": "16.1",
-  "title": "",
-  "body": "   Let be a ring, an -module, and . We say is a regular sequence on , or simply an -sequence , if and is regular (i.e., a non-zero-divisor) on for each . An -sequence is called maximal if cannot be extended to a longer -sequence.      Example 49 . Let be a polynomial ring over the field . Then is a maximal -sequence.      Let be Noetherian and a finitely generated -module. Then   The length of every -sequence is finite.    Every -sequence can be extended to a maximal -sequence.       For part (a), note that if is an -sequence then is a strictly ascending chain of submodule of . For if for some , then . As , then is a zero-divisor on , a contradiction. Consequently, as is Noetherian, this chain must terminate. Hence, there are no -sequences of infinite length. The same argument (using ACC) proves (b) as well.      Let . Then is a maximal -sequence.    Let and . Then is a maximal -sequence. To see this, note that is a irredundant primary decomposition of . Thus, and are the associated primes of . Since is not in either associated prime, it is a non-zero-divisor on . Also, , so is -regular. Note that . Since in , consists of zero-divisors on . Thus, is a maximal -sequence.   Here we summarize some essential facts about primary decompositions for modules, and then use them to prove Krull’s Intersection Theorem.    Let be an -module. A submodule of is called primary if and for every multiplication by on is either injective or nilpotent; i.e., is either a non-zero-divisor on or for some .     Let be a primary submodule of . Then is a prime ideal of . We say that is a -primary submodule of .    Let be a Noetherian ring, a finitely generated -module and a submodule. Then there exists primary submodules such that     ;      for ;      are distinct prime ideals, where .      The decomposition is called an irredundant primary decomposition for . The prime ideals are uniquely determined by and are called the associated primes of (or more commonly, of ). We denote the set of associated primes of by . Moreover, a prime ideal if and only if for some . Additionally, if is a minimal associated prime of , the where is the natural localization map.     Proof. See Atiyah-Macdonald. ◻  Krull’s Intersection Theorem   Let be a Noetherian ring, an ideal, and a finitely generated -module. Then there exist an such that       Proof. Let . We claim that . If , there is nothing to prove. Suppose and let be a primary decomposition of . Then for each , . If then consists of zero-divisors on . As is a primary submodule of , we must have for some . But , so , a contradiction. Thus, . Consequently, . By a homework exercise, this implies there exists such that . ◻    Let be a ring. The Jacobson radical of , denoted , is the intersection of all maximal ideals of . It is easily seen that if then is a unit.      Let be a Noetherian ring, an ideal, and a finitely generated -module. Then     Apply Krull’s Intersection Theorem and use that is a unit for every .      Let be Noetherian, a finitely generated -module, and an -sequence. Then any permutation of is an -sequence.    It suffices to show that if is an -sequence then so is . First note that . We next show that is regular on : suppose for some . Then so . Write where . Then , so . Repeating the argument above, we get and hence . Continuing in this way, we obtain that . As we have and thus . This shows is regular on . Now assume for some . Then for some . Since is regular on , we obtain that for some . Consequently, . As is regular on , we then have . Hence, is regular on .      Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . Then the grade of on , denote or , is defined to be the supremum of the lengths of all -sequences contained in .     Note that it is not clear from the definition that . Although every maximal -sequence is finite, the supremum of the lengths of such sequences might be infinite.    Let be a ring and and  -modules. Define Note that for all -modules and . (Recall .)     Let be a ring, and  -modules, and such that and is regular on . Then . Furthermore, if then .    Let be a homomorphism. Then . As is regular on , we see that . Hence, and so . Now applying to the s.e.s. we get the long exact sequence Since we have for all (cf. Grifo’s 915 notes, Exercise 73(c).) Thus, for each we have an exact sequence Both conclusions follow easily from this sequence.      Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . Let be a maximal -sequence contained in . Then Consequently, all maximal -sequences contained in have the same length and In particular, .    Notice that the right-hand-side is . Suppose . Since , it must be that consists of zero-divisors on . Thus, is contained in the union of the associated primes of (Grifo 905, Theorem 6.27). By the prime avoidance lemma (Grifo 905, Theorem 3.29), for some associated prime of . Then the composition is nonzero. Hence, and . Proceeding by induction on , we may assume and that the result holds for all finitely generated -modules with and having a maximal -sequence of length at most . Let . Then and is a maximal -sequence contained in . Hence, by Proposition . Thus, , which completes the proof.      Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . If is a regular element on , then     For the first equality, observe that any sequence in is an -sequence if and only if its image in is an -sequence. For the second equality, we have by Theorem and Proposition ,       Let be a local ring and a finitely generated -module. Then the depth of , denoted , is defined to be ; i.e., the length of the longest -sequence from .     Let be a local ring and a finitely generated -module. By Theorem , we have     Note: By convention, the depth of the zero module is infinity, since .  Ischebeck’s Theorem   Let be a local ring and and finitely generated -modules. Then for .    First, if either module is zero the result trivially holds. So assume and are nonzero and let . If then has finite length. Since for all by Remark , we have for all by Lemma . Hence, the result holds for the case .  Suppose and assume the result holds for all finitely generated modules of dimension less than . Consider a filtration of : where for some primes of . (See Grifo 905 :Theorem 6.33.) Note that each contains , so for all . Hence, if we show for all and all , then we’ll have for all and all . Using the long exact sequences on arising from the short exact sequences we can conclude for all . Since , we’ll be done.  Thus, assume for some prime with . Since , let and consider the short exact sequence Since , we have for all by the induction hypothesis. Rewriting this, we have for all . From the long exact sequence on , we have By Nakayama’s Lemma, we see that for all . This completes the proof.     Let be a local ring and a nonzero finitely generated -module. Then for all . In particular, .    Let . Then . By Theorem , . ◻     Let be a field and . Let . Then has depth zero and dimension . To see , note that in , so consists of zero-divisors. For , note that is a -dimensional domain, so for any nonzero ideal . On the other hand, , which has dimension . Thus, .   "
+  "title": "Depth and Grade",
+  "body": "Depth and Grade    Let be a ring, an -module, and . We say is a regular sequence on , or simply an -sequence , if and is regular (i.e., a non-zero-divisor) on for each . An -sequence is called maximal if cannot be extended to a longer -sequence.      Example 49 . Let be a polynomial ring over the field . Then is a maximal -sequence.      Let be Noetherian and a finitely generated -module. Then   The length of every -sequence is finite.    Every -sequence can be extended to a maximal -sequence.       For part (a), note that if is an -sequence then is a strictly ascending chain of submodule of . For if for some , then . As , then is a zero-divisor on , a contradiction. Consequently, as is Noetherian, this chain must terminate. Hence, there are no -sequences of infinite length. The same argument (using ACC) proves (b) as well.      Let . Then is a maximal -sequence.    Let and . Then is a maximal -sequence. To see this, note that is a irredundant primary decomposition of . Thus, and are the associated primes of . Since is not in either associated prime, it is a non-zero-divisor on . Also, , so is -regular. Note that . Since in , consists of zero-divisors on . Thus, is a maximal -sequence.   Here we summarize some essential facts about primary decompositions for modules, and then use them to prove Krull’s Intersection Theorem.    Let be an -module. A submodule of is called primary if and for every multiplication by on is either injective or nilpotent; i.e., is either a non-zero-divisor on or for some .     Let be a primary submodule of . Then is a prime ideal of . We say that is a -primary submodule of .    Let be a Noetherian ring, a finitely generated -module and a submodule. Then there exists primary submodules such that     ;     for ;     are distinct prime ideals, where .    The decomposition is called an irredundant primary decomposition for . The prime ideals are uniquely determined by and are called the associated primes of (or more commonly, of ). We denote the set of associated primes of by . Moreover, a prime ideal if and only if for some . Additionally, if is a minimal associated prime of , the where is the natural localization map.    See Atiyah-Macdonald. ◻    Krull’s Intersection Theorem   Let be a Noetherian ring, an ideal, and a finitely generated -module. Then there exist an such that      Proof. Let . We claim that . If , there is nothing to prove. Suppose and let be a primary decomposition of . Then for each , . If then consists of zero-divisors on . As is a primary submodule of , we must have for some . But , so , a contradiction. Thus, . Consequently, . By a homework exercise, this implies there exists such that . ◻      Let be a ring. The Jacobson radical of , denoted , is the intersection of all maximal ideals of . It is easily seen that if then is a unit.      Let be a Noetherian ring, an ideal, and a finitely generated -module. Then     Apply Krull’s Intersection Theorem and use that is a unit for every .      Let be Noetherian, a finitely generated -module, and an -sequence. Then any permutation of is an -sequence.    It suffices to show that if is an -sequence then so is . First note that . We next show that is regular on : suppose for some . Then so . Write where . Then , so . Repeating the argument above, we get and hence . Continuing in this way, we obtain that . As we have and thus . This shows is regular on . Now assume for some . Then for some . Since is regular on , we obtain that for some . Consequently, . As is regular on , we then have . Hence, is regular on .      Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . Then the grade of on , denote or , is defined to be the supremum of the lengths of all -sequences contained in .     Note that it is not clear from the definition that . Although every maximal -sequence is finite, the supremum of the lengths of such sequences might be infinite.    Let be a ring and and  -modules. Define Note that for all -modules and . (Recall .)     Let be a ring, and  -modules, and such that and is regular on . Then . Furthermore, if then .    Let be a homomorphism. Then . As is regular on , we see that . Hence, and so . Now applying to the s.e.s. we get the long exact sequence Since we have for all (cf. Grifo’s 915 notes, Exercise 73(c).) Thus, for each we have an exact sequence Both conclusions follow easily from this sequence.      Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . Let be a maximal -sequence contained in . Then Consequently, all maximal -sequences contained in have the same length and In particular, .    Notice that the right-hand-side is . Suppose . Since , it must be that consists of zero-divisors on . Thus, is contained in the union of the associated primes of (Grifo 905, Theorem 6.27). By the prime avoidance lemma (Grifo 905, Theorem 3.29), for some associated prime of . Then the composition is nonzero. Hence, and . Proceeding by induction on , we may assume and that the result holds for all finitely generated -modules with and having a maximal -sequence of length at most . Let . Then and is a maximal -sequence contained in . Hence, by Proposition . Thus, , which completes the proof.      Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . If is a regular element on , then     For the first equality, observe that any sequence in is an -sequence if and only if its image in is an -sequence. For the second equality, we have by Theorem and Proposition ,       Let be a local ring and a finitely generated -module. Then the depth of , denoted , is defined to be ; i.e., the length of the longest -sequence from .     Let be a local ring and a finitely generated -module. By Theorem , we have     Note: By convention, the depth of the zero module is infinity, since .  Ischebeck’s Theorem   Let be a local ring and and finitely generated -modules. Then for .    First, if either module is zero the result trivially holds. So assume and are nonzero and let . If then has finite length. Since for all by Remark , we have for all by Lemma . Hence, the result holds for the case .  Suppose and assume the result holds for all finitely generated modules of dimension less than . Consider a filtration of : where for some primes of . (See Grifo 905 :Theorem 6.33.) Note that each contains , so for all . Hence, if we show for all and all , then we’ll have for all and all . Using the long exact sequences on arising from the short exact sequences we can conclude for all . Since , we’ll be done.  Thus, assume for some prime with . Since , let and consider the short exact sequence Since , we have for all by the induction hypothesis. Rewriting this, we have for all . From the long exact sequence on , we have By Nakayama’s Lemma, we see that for all . This completes the proof.     Let be a local ring and a nonzero finitely generated -module. Then for all . In particular, .    Let . Then . By Theorem , . ◻     Let be a field and . Let . Then has depth zero and dimension . To see , note that in , so consists of zero-divisors. For , note that is a -dimensional domain, so for any nonzero ideal . On the other hand, , which has dimension . Thus, .   "
 },
 {
   "id": "def-48",
   "level": "2",
-  "url": "sec-2.html#def-48",
+  "url": "sec-depth-grade.html#def-48",
   "type": "Definition",
   "number": "16.1",
   "title": "",
   "body": "  Let be a ring, an -module, and . We say is a regular sequence on , or simply an -sequence , if and is regular (i.e., a non-zero-divisor) on for each . An -sequence is called maximal if cannot be extended to a longer -sequence.   "
 },
 {
-  "id": "sec-2-3",
+  "id": "sec-depth-grade-3",
   "level": "2",
-  "url": "sec-2.html#sec-2-3",
+  "url": "sec-depth-grade.html#sec-depth-grade-3",
   "type": "Example",
   "number": "16.2",
   "title": "",
@@ -8220,7 +8220,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-50",
   "level": "2",
-  "url": "sec-2.html#lem-50",
+  "url": "sec-depth-grade.html#lem-50",
   "type": "Lemma",
   "number": "16.3",
   "title": "",
@@ -8229,7 +8229,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-51",
   "level": "2",
-  "url": "sec-2.html#ex-51",
+  "url": "sec-depth-grade.html#ex-51",
   "type": "Example",
   "number": "16.4",
   "title": "",
@@ -8238,7 +8238,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-52",
   "level": "2",
-  "url": "sec-2.html#ex-52",
+  "url": "sec-depth-grade.html#ex-52",
   "type": "Example",
   "number": "16.5",
   "title": "",
@@ -8247,16 +8247,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-53",
   "level": "2",
-  "url": "sec-2.html#def-53",
+  "url": "sec-depth-grade.html#def-53",
   "type": "Definition",
   "number": "16.6",
   "title": "",
   "body": "  Let be an -module. A submodule of is called primary if and for every multiplication by on is either injective or nilpotent; i.e., is either a non-zero-divisor on or for some .   "
 },
 {
-  "id": "sec-2-9",
+  "id": "sec-depth-grade-9",
   "level": "2",
-  "url": "sec-2.html#sec-2-9",
+  "url": "sec-depth-grade.html#sec-depth-grade-9",
   "type": "Remark",
   "number": "16.7",
   "title": "",
@@ -8265,34 +8265,25 @@ var ptx_lunr_docs = [
 {
   "id": "thm-55",
   "level": "2",
-  "url": "sec-2.html#thm-55",
+  "url": "sec-depth-grade.html#thm-55",
   "type": "Theorem",
   "number": "16.8",
   "title": "",
-  "body": "  Let be a Noetherian ring, a finitely generated -module and a submodule. Then there exists primary submodules such that     ;      for ;      are distinct prime ideals, where .      The decomposition is called an irredundant primary decomposition for . The prime ideals are uniquely determined by and are called the associated primes of (or more commonly, of ). We denote the set of associated primes of by . Moreover, a prime ideal if and only if for some . Additionally, if is a minimal associated prime of , the where is the natural localization map.     Proof. See Atiyah-Macdonald. ◻ "
+  "body": "  Let be a Noetherian ring, a finitely generated -module and a submodule. Then there exists primary submodules such that     ;     for ;     are distinct prime ideals, where .    The decomposition is called an irredundant primary decomposition for . The prime ideals are uniquely determined by and are called the associated primes of (or more commonly, of ). We denote the set of associated primes of by . Moreover, a prime ideal if and only if for some . Additionally, if is a minimal associated prime of , the where is the natural localization map.    See Atiyah-Macdonald. ◻   "
 },
 {
   "id": "thm-56",
   "level": "2",
-  "url": "sec-2.html#thm-56",
+  "url": "sec-depth-grade.html#thm-56",
   "type": "Theorem",
   "number": "16.9",
   "title": "Krull’s Intersection Theorem.",
-  "body": "Krull’s Intersection Theorem   Let be a Noetherian ring, an ideal, and a finitely generated -module. Then there exist an such that    "
-},
-{
-  "id": "sec-2-12",
-  "level": "2",
-  "url": "sec-2.html#sec-2-12",
-  "type": "Proof",
-  "number": "16.1.1",
-  "title": "",
-  "body": "  Proof. Let . We claim that . If , there is nothing to prove. Suppose and let be a primary decomposition of . Then for each , . If then consists of zero-divisors on . As is a primary submodule of , we must have for some . But , so , a contradiction. Thus, . Consequently, . By a homework exercise, this implies there exists such that . ◻ "
+  "body": "Krull’s Intersection Theorem   Let be a Noetherian ring, an ideal, and a finitely generated -module. Then there exist an such that      Proof. Let . We claim that . If , there is nothing to prove. Suppose and let be a primary decomposition of . Then for each , . If then consists of zero-divisors on . As is a primary submodule of , we must have for some . But , so , a contradiction. Thus, . Consequently, . By a homework exercise, this implies there exists such that . ◻   "
 },
 {
   "id": "def-57",
   "level": "2",
-  "url": "sec-2.html#def-57",
+  "url": "sec-depth-grade.html#def-57",
   "type": "Definition",
   "number": "16.10",
   "title": "",
@@ -8301,7 +8292,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-58",
   "level": "2",
-  "url": "sec-2.html#cor-58",
+  "url": "sec-depth-grade.html#cor-58",
   "type": "Corollary",
   "number": "16.11",
   "title": "",
@@ -8310,7 +8301,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-59",
   "level": "2",
-  "url": "sec-2.html#prop-59",
+  "url": "sec-depth-grade.html#prop-59",
   "type": "Proposition",
   "number": "16.12",
   "title": "",
@@ -8319,25 +8310,25 @@ var ptx_lunr_docs = [
 {
   "id": "def-60",
   "level": "2",
-  "url": "sec-2.html#def-60",
+  "url": "sec-depth-grade.html#def-60",
   "type": "Definition",
   "number": "16.13",
   "title": "",
   "body": "  Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . Then the grade of on , denote or , is defined to be the supremum of the lengths of all -sequences contained in .   "
 },
 {
-  "id": "sec-2-17",
+  "id": "sec-depth-grade-16",
   "level": "2",
-  "url": "sec-2.html#sec-2-17",
+  "url": "sec-depth-grade.html#sec-depth-grade-16",
   "type": "Remark",
   "number": "16.14",
   "title": "",
   "body": " Note that it is not clear from the definition that . Although every maximal -sequence is finite, the supremum of the lengths of such sequences might be infinite.  "
 },
 {
-  "id": "sec-2-18",
+  "id": "sec-depth-grade-17",
   "level": "2",
-  "url": "sec-2.html#sec-2-18",
+  "url": "sec-depth-grade.html#sec-depth-grade-17",
   "type": "Convention",
   "number": "16.15",
   "title": "",
@@ -8346,7 +8337,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-62",
   "level": "2",
-  "url": "sec-2.html#prop-62",
+  "url": "sec-depth-grade.html#prop-62",
   "type": "Proposition",
   "number": "16.16",
   "title": "",
@@ -8355,7 +8346,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-63",
   "level": "2",
-  "url": "sec-2.html#thm-63",
+  "url": "sec-depth-grade.html#thm-63",
   "type": "Theorem",
   "number": "16.17",
   "title": "",
@@ -8364,7 +8355,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-64",
   "level": "2",
-  "url": "sec-2.html#cor-64",
+  "url": "sec-depth-grade.html#cor-64",
   "type": "Corollary",
   "number": "16.18",
   "title": "",
@@ -8373,7 +8364,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-65",
   "level": "2",
-  "url": "sec-2.html#def-65",
+  "url": "sec-depth-grade.html#def-65",
   "type": "Definition",
   "number": "16.19",
   "title": "",
@@ -8382,16 +8373,16 @@ var ptx_lunr_docs = [
 {
   "id": "rem-66",
   "level": "2",
-  "url": "sec-2.html#rem-66",
+  "url": "sec-depth-grade.html#rem-66",
   "type": "Remark",
   "number": "16.20",
   "title": "",
   "body": " Let be a local ring and a finitely generated -module. By Theorem , we have   "
 },
 {
-  "id": "sec-2-24",
+  "id": "sec-depth-grade-23",
   "level": "2",
-  "url": "sec-2.html#sec-2-24",
+  "url": "sec-depth-grade.html#sec-depth-grade-23",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -8400,7 +8391,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-67",
   "level": "2",
-  "url": "sec-2.html#thm-67",
+  "url": "sec-depth-grade.html#thm-67",
   "type": "Theorem",
   "number": "16.21",
   "title": "Ischebeck’s Theorem.",
@@ -8409,16 +8400,16 @@ var ptx_lunr_docs = [
 {
   "id": "thm-68",
   "level": "2",
-  "url": "sec-2.html#thm-68",
+  "url": "sec-depth-grade.html#thm-68",
   "type": "Corollary",
   "number": "16.22",
   "title": "",
   "body": "  Let be a local ring and a nonzero finitely generated -module. Then for all . In particular, .    Let . Then . By Theorem , . ◻   "
 },
 {
-  "id": "sec-2-27",
+  "id": "sec-depth-grade-26",
   "level": "2",
-  "url": "sec-2.html#sec-2-27",
+  "url": "sec-depth-grade.html#sec-depth-grade-26",
   "type": "Example",
   "number": "16.23",
   "title": "",
@@ -8785,13 +8776,94 @@ var ptx_lunr_docs = [
   "body": "  Theorem 3.9 (Fundamental Theorem of Local Cohomology). Let be a noetherian ring and an ideal. Then, for all -modules ,   These isomorphisms are functorial in and extend to isomorphisms of long exact sequences given a short exact sequence     We have seen that and . To show that , we proceed in the following steps:  Step 1: Show and are canonically isomorphic.  Step 2: Show that for any injective module .  Step 3: Use the previous steps to conclude the proof.  Proof of Step 1:     We note that the last equality uses finite generation of in a crucial way; only the containment \" \" holds in general without this.  Proof of Step 2: By the structure theorem for injectives over noetherian rings, , where   By the direct sum property, we may replace by . By the invariance of base property, we may replace by . Now, is an injective hull of the residue field, so it is artinian, and we write where the are modules of finite length. It suffices to show that the vanishing holds for modules of finite length.  We claim that if the desired vanishing holds for , then it holds for all modules of finite length (which would complete Step 2). We induce on the length of . If , then write , with . The long exact sequence gives and by the induction hypothesis, for , establishing the claim.  Applying the invariance of base property again, we may assume without loss of generality that .  There are multiple ways to deal with this case. We note that if , then , and if , then . It is then an easy exercise, which we leave to you, to show that for and 0 for if all ’s are zero, and that for all otherwise.  Of course, this step relied crucially on the structure theorem for injectives over noetherian rings.  Proof of Step 3: This follows in complete generality from the previous steps.  We proceed by induction on , with the base case being Step 1 . Now, let .  We assume that we have a canonical isomorphism between and for all and all . Embed into an injective to get a short exact sequence   Then, there is a commutative diagram    image    where bottom zero on the right comes from Step 2. This induces an isomorphism . We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.   "
 },
 {
-  "id": "sec-1",
+  "id": "sec-local-duality",
   "level": "1",
-  "url": "sec-1.html",
+  "url": "sec-local-duality.html",
   "type": "Section",
   "number": "20.1",
+  "title": "Local Duality",
+  "body": "Local Duality  Let be the maximal ideal of . We know that:   If is a finitely generated -module, then is an artinian module;    If is a polyonomial ring over a field , then .     The Matlis duals of are evidently finitely generated modules (if is complete), and we might hope that they can be realized by formulas in terms of finitely generated elements.  We will see that this turns out to be true. We will establish formulas of this form for an increasingly general class of rings. Along the way, to understand the new class of rings we will meet, we will pursue a more refined study of injective resolutions.  We will give two proofs of this fact.    If is a regular local ring of dimension , then .    First, we note that both and stay the same if is replaced by its completion, so we may assume that is complete. By Cohen’s Structure Theorem, , or where is a field and a DVR.  We have seen this by explicit computation for (worksheet) or , where is a DVR (#2 on HW #2). Also, if , then, from the SES , we get the LES where the last terms is zero since . Consequently,   Thus, this holds for all complete regular rings.    When is regular, the following is an injective resolution of (by #6 HW #2):   By applying to this resolution, we are only left with in the -th spot.    If you don’t believe in homework, don’t worry; we will generalize this soon.  Exercise 4.2.    If is a flat -module, then for all and all -modules .    If is exact and each is flat (we say this is a flat resolution of ), then  for all .       If is Cohen-Macaulay, and is an R-module, then for all . This isomorphism is functorial in .    Let be an SOP for . The augmented Čech complex      flat resolution    0           is exact, since the lower local cohomologies vanish. Thus, is a flat resolution of . Then,       We note that there is a switch from cohomological indexing of Čech complex and homological indexing of a flat resolution.    (Ext-Tor dualities). If be a local ring of dimension , and let denote the Matlis duality functor.      If is a finitely generated -module, then .    These isomorphisms are functorial in .    Let be a projective resolution of .  1.     Given a map , we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.    By taking a minimal resolution, we may assume that is a complex of finitely generated free -modules. In this case, there is a natural isomorphism (exercise!)       Taking homology gives the isomorphism.    To help remember which hypothesis goes with which situation in the following, one might keep in mind that Matlis duals of artinian modules are complete.    Theorem 4.5 (Local Duality). Let be a regular local ring of dimension . Then    If is a finitely generated -module, then .    If is complete and is arbitrary, then .    These isomorphisms are functorial in .    Proof. 1.       Since is complete, . Then,         One often finds the just the first statement as local duality, but the second \"opposite of local duality\" is quite useful as well.  Remark 4.6. By the exact same proof, if is Cohen-Macaulay and is some finitely generated module such that , then    If is a finitely generated -module, then .    If is complete, then by the same proof.    We will return to this later.  Local duality is a powerful tool to study local cohomology modules. Part of its power comes from its flexibility: there are many different rings, modules, and indices to plug in. Here are some special cases:  Example 4.7. Let be a local ring, and another local ring such that is regular, and is a quotient of . (Such an exists whenever is complete, or essentially of finite type over a field or .) Then, since is a finitely generated -module, for all .  Example 4.8. Let be a map of complete local rings, and suppose that is regular, e.g., a power series ring over a field . Then, .  Here is an important application of Local Duality. Note that we are not assuming that is regular in the statement.    Theorem 4.9 (Grothendieck nonvanishing). Let be a local ring and a finitely generated -module. Then .    We already know . Without loss of generality, we can assume that is a faithful module, by invariance of base. Complete; is -faithful, , and . Therefore, we may assume without loss of generality that and are complete.  Now is a quotient of a power series ring, so by invariance of base we may assume without loss of generality that is a regular ring. Note, however, that is not necessarily faithful anymore.  We claim that if the depth of on an -module is , then . This is essentially the same as Rees’s Theorem, but we include the argument anyway. Indeed, by induction on the depth (if positive), we can assume that for an -regular element in . From the usual LES, we see that, for acts injectively on , but annihilates this module as well, so it must be the zero module. This establishes the claim.  Now, by Local Duality, . Since Matlis Duality is faithful, the indicated Ext is nonzero if and only if its dual is. Thus,     Since , equality holds throughout.    Remark 4.10. A consequence of this argument, by taking , is that if is a regular local ring (or any ring for which Local Duality holds!) there are equalities for any ideal :     Of course, these can be obtained more directly (for Cohen-Macaulay rings).  Following Remark ??, we should be able to generalize local duality, so that we can compute local cohomology as duals of Ext modules over rings that are more relevant. The best generalization would be in the case of a Cohen-Macaulay local ring such that . Failing that, we would like to understand when a f.g. module such that exists over a CM local ring, and how else we might recognize such a .  "
+},
+{
+  "id": "lem-4.1",
+  "level": "2",
+  "url": "sec-local-duality.html#lem-4.1",
+  "type": "Lemma",
+  "number": "20.1",
   "title": "",
-  "body": "   "
+  "body": "  If is a regular local ring of dimension , then .    First, we note that both and stay the same if is replaced by its completion, so we may assume that is complete. By Cohen’s Structure Theorem, , or where is a field and a DVR.  We have seen this by explicit computation for (worksheet) or , where is a DVR (#2 on HW #2). Also, if , then, from the SES , we get the LES where the last terms is zero since . Consequently,   Thus, this holds for all complete regular rings.    When is regular, the following is an injective resolution of (by #6 HW #2):   By applying to this resolution, we are only left with in the -th spot.   "
+},
+{
+  "id": "sec-local-duality-8",
+  "level": "2",
+  "url": "sec-local-duality.html#sec-local-duality-8",
+  "type": "Exercise",
+  "number": "20.2",
+  "title": "Exercise 4.2..",
+  "body": "Exercise 4.2.    If is a flat -module, then for all and all -modules .    If is exact and each is flat (we say this is a flat resolution of ), then  for all .    "
+},
+{
+  "id": "prop-4.3",
+  "level": "2",
+  "url": "sec-local-duality.html#prop-4.3",
+  "type": "Proposition",
+  "number": "20.3",
+  "title": "",
+  "body": "  If is Cohen-Macaulay, and is an R-module, then for all . This isomorphism is functorial in .    Let be an SOP for . The augmented Čech complex      flat resolution    0           is exact, since the lower local cohomologies vanish. Thus, is a flat resolution of . Then,      "
+},
+{
+  "id": "prop-4.4",
+  "level": "2",
+  "url": "sec-local-duality.html#prop-4.4",
+  "type": "Proposition",
+  "number": "20.5",
+  "title": "",
+  "body": "  (Ext-Tor dualities). If be a local ring of dimension , and let denote the Matlis duality functor.      If is a finitely generated -module, then .    These isomorphisms are functorial in .    Let be a projective resolution of .  1.     Given a map , we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.    By taking a minimal resolution, we may assume that is a complex of finitely generated free -modules. In this case, there is a natural isomorphism (exercise!)       Taking homology gives the isomorphism.   "
+},
+{
+  "id": "thm-4.5",
+  "level": "2",
+  "url": "sec-local-duality.html#thm-4.5",
+  "type": "Theorem",
+  "number": "20.6",
+  "title": "",
+  "body": "  Theorem 4.5 (Local Duality). Let be a regular local ring of dimension . Then    If is a finitely generated -module, then .    If is complete and is arbitrary, then .    These isomorphisms are functorial in .    Proof. 1.       Since is complete, . Then,        "
+},
+{
+  "id": "thm-4.9-2",
+  "level": "2",
+  "url": "sec-local-duality.html#thm-4.9-2",
+  "type": "Theorem",
+  "number": "20.7",
+  "title": "",
+  "body": "  Theorem 4.9 (Grothendieck nonvanishing). Let be a local ring and a finitely generated -module. Then .    We already know . Without loss of generality, we can assume that is a faithful module, by invariance of base. Complete; is -faithful, , and . Therefore, we may assume without loss of generality that and are complete.  Now is a quotient of a power series ring, so by invariance of base we may assume without loss of generality that is a regular ring. Note, however, that is not necessarily faithful anymore.  We claim that if the depth of on an -module is , then . This is essentially the same as Rees’s Theorem, but we include the argument anyway. Indeed, by induction on the depth (if positive), we can assume that for an -regular element in . From the usual LES, we see that, for acts injectively on , but annihilates this module as well, so it must be the zero module. This establishes the claim.  Now, by Local Duality, . Since Matlis Duality is faithful, the indicated Ext is nonzero if and only if its dual is. Thus,     Since , equality holds throughout.   "
+},
+{
+  "id": "sec-gorenstein",
+  "level": "1",
+  "url": "sec-gorenstein.html",
+  "type": "Section",
+  "number": "20.2",
+  "title": "Gorenstein Rings",
+  "body": "Gorenstein Rings    "
+},
+{
+  "id": "sec-canonical-mod",
+  "level": "1",
+  "url": "sec-canonical-mod.html",
+  "type": "Section",
+  "number": "20.3",
+  "title": "Canonical Modules",
+  "body": "Canonical Modules    "
+},
+{
+  "id": "sec-graded-local-duality",
+  "level": "1",
+  "url": "sec-graded-local-duality.html",
+  "type": "Section",
+  "number": "20.4",
+  "title": "Graded Local Duality and Regularity",
+  "body": "Graded Local Duality and Regularity    "
 },
 {
   "id": "sec-rings",

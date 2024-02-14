@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The General Construction</title>
+<title>Gorenstein Rings</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-derived-functors.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-derived-functors.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-ext-tor.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-local-duality.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-canonical.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-canonical-mod.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
 \newcommand{\Ass}{\operatorname{Ass}}
 \def\Aut{\operatorname{Aut}}
 \def\can{{\mathrm {can}}}
@@ -388,9 +388,9 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-part contains-active">
+<li class="toc-item toc-part">
 <div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
@@ -517,10 +517,10 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
@@ -691,9 +691,9 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-part">
+<li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="part-locohom.html" class="internal"><span class="codenumber">IV</span> <span class="title">Local Cohomology</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-injective-modules.html" class="internal"><span class="codenumber">18</span> <span class="title">Injective Modules</span></a></div>
 <ul class="structural toc-item-list">
@@ -706,11 +706,11 @@ window.MathJax = {
 <div class="toc-title-box"><a href="ch-loco.html" class="internal"><span class="codenumber">19</span> <span class="title">Local Cohomology</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-def-loco.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Definitions of Local Cohomology</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-canonical.html" class="internal"><span class="codenumber">20</span> <span class="title">The Canonical Module</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-duality.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Local Duality</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gorenstein.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Gorenstein Rings</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-gorenstein.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Gorenstein Rings</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-canonical-mod.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Canonical Modules</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-local-duality.html" class="internal"><span class="codenumber">20.4</span> <span class="title">Graded Local Duality and Regularity</span></a></div></li>
 </ul>
@@ -746,451 +746,12 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-construction"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">6.1</span><span class="space"> </span><span class="title">The General Construction</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-gorenstein"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">20.2</span><span class="space"> </span><span class="title">Gorenstein Rings</span>
 </h2>
-<article class="objectives goal-like" id="sec-construction-2"><h3 class="heading"><span class="type">Reminders and Recollections</span></h3>
-<ul class="disc"><li id="sec-construction-2-1-1"><div class="para" id="p-derived-sec-construction-2-1-1"></div></li></ul></article><section class="subsection" id="subsec-derived"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Making Sure Derived Functors Make Sense</span>
-</h3>
-<blockquote class="blockquote" id="subsec-derived-2">
-<div class="para" id="subsec-derived-2-1">“All things make sense; you just have to fathom how they make sense.”</div> <cite class="attribution">―Piers Anthony</cite>
-</blockquote>
-<div class="para" id="subsec-derived-3">While <span class="process-math">\(\Hom\)</span> and tensor are not exact functors, we can measure their lack of exactness using their derived functors <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\text{.}\)</span> These are the poster child examples of what are called derived functors, which can be constructed over any abelian category provided we have enough projective or injective objects. In this chapter, we will construct derived functors over <span class="process-math">\(R\Mod\)</span> (which does have enough injectives and enough projectives), and then later we will discuss the general construction.</div>
-<div class="para" id="subsec-derived-4">We start with the general construction of derived functors, although we will soon focus on concrete examples, most importantly <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\text{,}\)</span> the derived functors of <span class="process-math">\(\Hom\)</span> and tensor.</div>
-<article class="definition definition-like" id="def-6.1"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Derived functors.</span>
-</h4> <div class="para logical" id="def-6.1-2-1">
-<div class="para">Let <span class="process-math">\(F: R\)</span>-Mod <span class="process-math">\(\rightarrow S\)</span>-Mod be a covariant right exact functor. The left derived functors of <span class="process-math">\(F\)</span> are a sequence of functors</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F: R \text {-Mod } \rightarrow S \text {-Mod, for } i \geqslant 0
-\end{equation*}
-</div>
-<div class="para">defined as follows:</div>
-</div> <div class="para logical" id="def-6.1-2-2">
-<div class="para">For each <span class="process-math">\(R\)</span>-module <span class="process-math">\(A\text{,}\)</span> fix a projective resolution <span class="process-math">\(P\)</span> of <span class="process-math">\(A\text{,}\)</span> and set</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F(A):=\mathrm{H}_{i}(F(P))
-\end{equation*}
-</div>
-<div class="para">Given a <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f: A \rightarrow B\text{,}\)</span> fix projective resolutions <span class="process-math">\(P\)</span> of <span class="process-math">\(A\)</span> and <span class="process-math">\(Q\)</span> of <span class="process-math">\(B\text{,}\)</span> and a map of complexes <span class="process-math">\(\varphi: P \rightarrow Q\)</span> lifting <span class="process-math">\(f\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F(f):=\mathrm{H}_{i}(F(\varphi))
-\end{equation*}
-</div>
-</div> <div class="para logical" id="def-6.1-2-3">
-<div class="para">Let <span class="process-math">\(F: R\)</span>-Mod <span class="process-math">\(\rightarrow S\)</span>-Mod be a covariant left exact functor. The right derived functors of <span class="process-math">\(F\)</span> are a sequence of functors</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F: R \text {-Mod } \rightarrow S \text {-Mod, for } i \geqslant 0
-\end{equation*}
-</div>
-<div class="para">defined as follows:</div>
-</div> <div class="para logical" id="def-6.1-2-4">
-<div class="para">For each <span class="process-math">\(R\)</span>-module <span class="process-math">\(A\text{,}\)</span> fix an injective resolution <span class="process-math">\(E\)</span> of <span class="process-math">\(A\text{,}\)</span> and set</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F(A):=\mathrm{H}^{i}(F(E))
-\end{equation*}
-</div>
-<div class="para">Given an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f: A \rightarrow B\text{,}\)</span> fix injective resolutions <span class="process-math">\(E\)</span> of <span class="process-math">\(A\)</span> and <span class="process-math">\(I\)</span> of <span class="process-math">\(B\text{,}\)</span> and a map of complexes <span class="process-math">\(\varphi: P \rightarrow Q\)</span> extending <span class="process-math">\(f\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F(f):=\mathrm{H}^{i}(F(\varphi))
-\end{equation*}
-</div>
-</div> <div class="para logical" id="def-6.1-2-5">
-<div class="para">Let <span class="process-math">\(F: R\)</span>-Mod <span class="process-math">\(\rightarrow S\)</span>-Mod be a contravariant left exact functor. The right derived functors of <span class="process-math">\(F\)</span> are a sequence of functors</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F: R \text {-Mod } \rightarrow S \text {-Mod, for } i \geqslant 0
-\end{equation*}
-</div>
-<div class="para">defined as follows:</div>
-</div> <div class="para logical" id="def-6.1-2-6">
-<div class="para">For each <span class="process-math">\(R\)</span>-module <span class="process-math">\(A\text{,}\)</span> fix a projective resolution <span class="process-math">\(P\)</span> of <span class="process-math">\(A\text{,}\)</span> and set</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F(A):=\mathrm{H}^{i}(F(P))
-\end{equation*}
-</div>
-<div class="para">Given an <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(f: A \rightarrow B\text{,}\)</span> fix projective resolutions <span class="process-math">\(P\)</span> for <span class="process-math">\(A\)</span> and <span class="process-math">\(Q\)</span> for <span class="process-math">\(B\text{,}\)</span> and a map of complexes <span class="process-math">\(\varphi: P \rightarrow Q\)</span> extending <span class="process-math">\(f\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F(f):=\mathrm{H}^{i}(F(\varphi))
-\end{equation*}
-</div>
-</div> <div class="para logical" id="def-6.1-2-7">
-<div class="para">Finally, let <span class="process-math">\(F: R\)</span>-Mod <span class="process-math">\(\rightarrow S\)</span>-Mod be a contravariant right exact functor. The left derived functors of <span class="process-math">\(F\)</span> are a sequence of functors</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F: R \text {-Mod } \rightarrow S \text {-Mod, for } i \geqslant 0
-\end{equation*}
-</div>
-<div class="para">defined as follows:</div>
-</div> <div class="para logical" id="def-6.1-2-8">
-<div class="para">For each object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> fix an injective resolution <span class="process-math">\(E\)</span> of <span class="process-math">\(A\text{,}\)</span> and set</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F(A):=\mathrm{H}_{i}(F(E))
-\end{equation*}
-</div>
-<div class="para">Given an arrow <span class="process-math">\(A \stackrel{f}{\rightarrow} B\text{,}\)</span> fix injective resolutions <span class="process-math">\(A \rightarrow E\)</span> and <span class="process-math">\(B \rightarrow I\text{,}\)</span> and a map of complexes <span class="process-math">\(E \stackrel{\varphi}{\rightarrow} I\)</span> extending <span class="process-math">\(f\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F(f):=\mathrm{H}_{i}(F(\varphi))
-\end{equation*}
-</div>
-</div></article><div class="para" id="subsec-derived-6">It is not clear a priori that this construction is well-defined, but we will soon show that is indeed the case.</div>
-<article class="remark remark-like" id="rem-6.2"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.2</span><span class="period">.</span><span class="space"> </span><span class="title">.</span>
-</h4> <div class="para" id="rem-6.2-2">If <span class="process-math">\(F\)</span> is exact, then <span class="process-math">\(\mathrm{H}_{i}(F(C))=F\left(\mathrm{H}_{i}(C)\right)\text{,}\)</span> so <span class="process-math">\(L_{i} F=0\)</span> for all <span class="process-math">\(i&gt;0\text{.}\)</span>
-</div></article><article class="remark remark-like" id="rem-6.3"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.3</span><span class="period">.</span><span class="space"> </span><span class="title">.</span>
-</h4> <div class="para" id="rem-6.3-2">If <span class="process-math">\(P\)</span> is projective, then <span class="process-math">\(0 \rightarrow P \rightarrow 0\)</span> is a projective resolution of <span class="process-math">\(P\text{,}\)</span> and thus <span class="process-math">\(L_{i} F(P)=0\)</span> for all <span class="process-math">\(i&gt;0\text{.}\)</span> Similarly, if <span class="process-math">\(E\)</span> is injective then <span class="process-math">\(R^{i} F(E)=0\text{.}\)</span>
-</div></article><article class="proposition theorem-like" id="prop-6.4"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.4</span><span class="period">.</span><span class="space"> </span><span class="title">.</span>
-</h4>
-<div class="para logical" id="prop-6.4-2-1">
-<div class="para">Let <span class="process-math">\(F: R \operatorname{Mod} \rightarrow S\Mod\)</span> be a covariant right exact functor.</div>
-<ol class="decimal">
-<li id="prop-6.4-2-1-2-1"><div class="para" id="prop-6.4-2-1-2-1-1">
-<span class="process-math">\(L_{i} F(A)\)</span> is well-de ned up to isomorphism for every object <span class="process-math">\(A\text{.}\)</span>
-</div></li>
-<li id="prop-6.4-2-1-2-2"><div class="para" id="prop-6.4-2-1-2-2-1">
-<span class="process-math">\(L_{i} F(f)\)</span> is well-de ned for every arrow <span class="process-math">\(f\text{.}\)</span>
-</div></li>
-<li id="prop-6.4-2-1-2-3"><div class="para" id="prop-6.4-2-1-2-3-1">
-<span class="process-math">\(L_{i} F\)</span> is an additive functor for each <span class="process-math">\(i\text{.}\)</span>
-</div></li>
-<li id="prop-6.4-2-1-2-4"><div class="para" id="prop-6.4-2-1-2-4-1"><span class="process-math">\(L_{0} F=F\text{.}\)</span></div></li>
-</ol>
-</div></article><details id="prop-6.4-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="prop-6.4-3-1"><ol class="decimal">
-<li id="prop-6.4-3-1-1-1"><div class="para" id="prop-6.4-3-1-1-1-1">Let <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> be projective resolutions of <span class="process-math">\(A\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/xref/thm-5.17.html" title="Theorem 5.21">Theorem 5.21</a> gives us maps of complexes <span class="process-math">\(\varphi: P \rightarrow Q\)</span> and <span class="process-math">\(\psi: Q \rightarrow P\)</span> such that <span class="process-math">\(\varphi \psi\)</span> is homotopic to <span class="process-math">\(1_{Q}\)</span> and <span class="process-math">\(\psi \varphi\)</span> is homotopic to <span class="process-math">\(1_{P}\text{.}\)</span> Additive functors preserve homotopies, by Remark 7.35, so <span class="process-math">\(F(\varphi) F(\psi)\)</span> and <span class="process-math">\(F(\psi) F(\varphi)\)</span> are homotopic to the corresponding identity maps. Homotopic maps induce the same map in homology, by <a href="" class="xref" data-knowl="./knowl/xref/lem-2.9.html" title="Lemma 2.19: Nullhomotopic Maps Induce Zero Map in Homology">Lemma 2.19</a>. Therefore, <span class="process-math">\(F(\varphi)\)</span> and <span class="process-math">\(F(\psi)\)</span> induce isomorphisms in homology.</div></li>
-<li id="prop-6.4-3-1-1-2"><div class="para" id="prop-6.4-3-1-1-2-1">Fix projective resolutions <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> of <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{.}\)</span> Any two lifts <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> of <span class="process-math">\(f: M \rightarrow N\)</span> to <span class="process-math">\(P \rightarrow Q\)</span> are homotopic, by <a href="" class="xref" data-knowl="./knowl/xref/thm-5.17.html" title="Theorem 5.21">Theorem 5.21</a>. Additive functors preserve homotopies, by Remark 7.35, so <span class="process-math">\(F(\varphi)\)</span> and <span class="process-math">\(F(\psi)\)</span> are homotopic. Homotopic maps induce the same map in homology, by <a href="" class="xref" data-knowl="./knowl/xref/lem-2.9.html" title="Lemma 2.19: Nullhomotopic Maps Induce Zero Map in Homology">Lemma 2.19</a>, so <span class="process-math">\(L_{i} F(\varphi)=L_{i} F(\psi)\)</span> for each <span class="process-math">\(i\text{.}\)</span>
-</div></li>
-<li id="prop-6.4-3-1-1-3"><div class="para" id="prop-6.4-3-1-1-3-1">Given an arrow <span class="process-math">\(f\text{,}\)</span> fix a lift <span class="process-math">\(\varphi\)</span> of <span class="process-math">\(f\)</span> to projective resolutions of the source and target, which exists by <a href="" class="xref" data-knowl="./knowl/xref/thm-5.17.html" title="Theorem 5.21">Theorem 5.21</a>. Since <span class="process-math">\(F\)</span> is an additive functor, <span class="process-math">\(\mathrm{H}_{i}(F(\varphi))\)</span> is a homomorphism for each <span class="process-math">\(i\text{,}\)</span> and thus <span class="process-math">\(L_{i} F(f)\)</span> is a homomorphism between the corresponding Hom-groups, which as we have seen is independent of our choice of <span class="process-math">\(\varphi\text{.}\)</span>
-</div></li>
-<li id="prop-6.4-3-1-1-4">
-<div class="para logical" id="prop-6.4-3-1-1-4-1">
-<div class="para">Let <span class="process-math">\(A\)</span> be any <span class="process-math">\(R\)</span>-module and <span class="process-math">\(P\)</span> be a projective resolution of <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(P\)</span> is right exact, and</div>
-<div class="displaymath process-math">
-\begin{equation*}
-P_{1} \longrightarrow P_{0} \longrightarrow A \longrightarrow 0
-\end{equation*}
-</div>
-<div class="para">is exact, then so is</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F\left(P_{1}\right) \longrightarrow F\left(P_{0}\right) \longrightarrow F(A) \longrightarrow 0
-\end{equation*}
-</div>
-</div>
-<div class="para logical" id="prop-6.4-3-1-1-4-2">
-<div class="para">We claim that <span class="process-math">\(\mathrm{H}_{0}(F(P))=F(A)\text{.}\)</span> The last sequence above says that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F(A)=\operatorname{coker}\left(F\left(P_{1}\right) \rightarrow F\left(P_{0}\right)\right),
-\end{equation*}
-</div>
-<div class="para">and <span class="process-math">\(\mathrm{H}_{0}(F(P))=F\left(P_{0}\right) / \operatorname{im}\left(F\left(P_{1}\right) \rightarrow F\left(P_{0}\right)\right)=\operatorname{coker}\left(F\left(P_{1}\right) \rightarrow F\left(P_{0}\right)\right)\text{.}\)</span>
-</div>
-</div>
-</li>
-</ol></div></article></details><article class="exercise exercise-like" id="exe-68"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.5</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="exe-68-1-1">
-<div class="para">Show that the following holds for every covariant left exact functor <span class="process-math">\(F\)</span> :</div>
-<ol class="decimal">
-<li id="exe-68-1-1-2-1"><div class="para" id="exe-68-1-1-2-1-1">
-<span class="process-math">\(R^{i} F(A)\)</span> is well-defined up to isomorphism.</div></li>
-<li id="exe-68-1-1-2-2"><div class="para" id="exe-68-1-1-2-2-1">
-<span class="process-math">\(R^{i} F(f)\)</span> is well-defined for every arrow <span class="process-math">\(f\text{.}\)</span>
-</div></li>
-<li id="exe-68-1-1-2-3"><div class="para" id="exe-68-1-1-2-3-1">
-<span class="process-math">\(R^{i} F(f)\)</span> is an additive functor for every <span class="process-math">\(i\text{.}\)</span>
-</div></li>
-<li id="exe-68-1-1-2-4"><div class="para" id="exe-68-1-1-2-4-1"><span class="process-math">\(R^{0} F=F\text{.}\)</span></div></li>
-</ol>
-</div></article></section><section class="subsection" id="subsec-forcing-exactness"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Forcing Exactness</span>
-</h3>
-<blockquote class="blockquote" id="subsec-forcing-exactness-2">
-<div class="para" id="subsec-forcing-exactness-2-1">“”</div> <cite class="attribution">―</cite>
-</blockquote>
-<div class="para" id="subsec-forcing-exactness-3">And now we are ready to prove the most important result about derived functors: they fix the lack of exactness of the functor we are deriving, by inducing a long exact sequence in homology from any given short exact sequence.</div>
-<article class="theorem theorem-like" id="thm-6.5"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.6</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="thm-6.5-1-1">
-<div class="para">Let <span class="process-math">\(F\)</span> a right exact covariant functor. Any short exact sequence</div>
-<div class="displaymath process-math">
-\begin{equation*}
-0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
-\end{equation*}
-</div>
-<div class="para">induces a natural long exact sequence</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\cdots \longrightarrow L_{2} F(C) \longrightarrow L_{1} F(A) \longrightarrow L_{1} F(B) \longrightarrow L_{1} F(C) \longrightarrow F(A) \longrightarrow F(B) \longrightarrow F(C) \longrightarrow 0
-\end{equation*}
-</div>
-</div> <div class="para logical" id="thm-6.5-1-2">
-<div class="para">Similarly, if <span class="process-math">\(F\)</span> is a left exact covariant functor, we obtain a long exact sequence</div>
-<div class="displaymath process-math">
-\begin{equation*}
-0 \longrightarrow F(A) \longrightarrow F(B) \longrightarrow F(C) \longrightarrow R^{1} F(A) \longrightarrow R^{1} F(B) \longrightarrow R^{1} F(C) \longrightarrow R^{2} F(A) \longrightarrow \cdots
-\end{equation*}
-</div>
-</div> <div class="para logical" id="thm-6.5-1-3">
-<div class="para">If <span class="process-math">\(F\)</span> is a contravariant left exact functor, we obtain a natural long exact sequence</div>
-<div class="displaymath process-math">
-\begin{equation*}
-0 \longrightarrow F(C) \longrightarrow F(B) \longrightarrow F(A) \longrightarrow R^{1} F(C) \longrightarrow R^{1} F(B) \longrightarrow R^{1} F(A) \longrightarrow R^{2} F(C) \longrightarrow \cdots
-\end{equation*}
-</div>
-</div></article><details id="thm-6.5-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-6.5-2-1">
-<div class="para">We give a proof for the case of right exact functors, and the remaining cases follow by duality. We start by fixing projective resolutions <span class="process-math">\(P\)</span> of <span class="process-math">\(A\)</span> and <span class="process-math">\(R\)</span> of <span class="process-math">\(C\text{.}\)</span> By Theorem 7.58, we can choose a projective resolution <span class="process-math">\(Q\)</span> of <span class="process-math">\(B\)</span> and lifts of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> such that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-6.4.html ./knowl/xref/exe-94.html">
-\begin{equation*}
-0 \longrightarrow P \longrightarrow Q \longrightarrow R \longrightarrow 0
-\end{equation*}
-</div>
-<div class="para">is a short exact sequence of complexes. By <a href="" class="xref" data-knowl="./knowl/xref/prop-6.4.html" title="Proposition 6.4: ">Proposition 6.4</a>, <span class="process-math">\(L_{i} F\)</span> does not depend on the choice of resolution, so we can compute <span class="process-math">\(L_{i} F(A), L_{i} F(B)\text{,}\)</span> and <span class="process-math">\(L_{i} F(C)\)</span> from <span class="process-math">\(P, Q\text{,}\)</span> and <span class="process-math">\(R\text{.}\)</span> Now notice that for each <span class="process-math">\(n, R_{n}\)</span> is projective, so</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-6.4.html ./knowl/xref/exe-94.html">
-\begin{equation*}
-0 \longrightarrow P_{n} \longrightarrow Q_{n} \longrightarrow R_{n} \longrightarrow 0
-\end{equation*}
-</div>
-<div class="para">is a split short exact sequence. Now additive functors preserve split short exact sequences, by <a href="" class="xref" data-knowl="./knowl/xref/exe-94.html" title="Exercise 7.80">Exercise 7.80</a>, so</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-6.4.html ./knowl/xref/exe-94.html">
-\begin{equation*}
-0 \longrightarrow F\left(P_{n}\right) \longrightarrow F\left(Q_{n}\right) \longrightarrow F\left(R_{n}\right) \longrightarrow 0
-\end{equation*}
-</div>
-<div class="para">is a short exact sequence for all <span class="process-math">\(n\text{.}\)</span> Then</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-6.4.html ./knowl/xref/exe-94.html">
-\begin{equation*}
-0 \longrightarrow F(P) \longrightarrow F(Q) \longrightarrow F(R) \longrightarrow 0
-\end{equation*}
-</div>
-<div class="para">is a short exact sequence of complexes. Note, however, that this sequence is not necessarily split anymore, since the splittings at each level do not necessarily assemble into a map of complexes. The Long Exact Sequence in homology now gives us the long exact sequence we desire.</div>
-</div> <div class="para" id="thm-6.5-2-2">There were many choices along the way. First, we chose resolutions <span class="process-math">\(P, Q\text{,}\)</span> and <span class="process-math">\(R\text{,}\)</span> and lifts of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span> We have shown our computations of <span class="process-math">\(L_{i} F(\quad)\)</span> are independent of these choices. We should check, however, that the resulting connecting arrows are natural transformations that do not depend on our choice of lifts. Once a lift is fixed, we know we already have naturality from the Snake Lemma or the Long Exact Sequence in homology. It remains to check naturality. What is left to check is that given a commutative diagram with exact rows</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-05(2).jpg" class="contained"></div> <div class="para" id="thm-6.5-2-4">and chosen lifts of the original short exact sequences to projective resolutions, there are maps of complexes such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-05.jpg" class="contained"></div> <div class="para" id="thm-6.5-2-6">commutes. Our derived functors <span class="process-math">\(L_{i} F\)</span> will preserve these maps of complexes and the commutativity of the diagram above, so we get commutative diagrams</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-05(3).jpg" class="contained"></div> <div class="para logical" id="thm-6.5-2-8">
-<div class="para">for each <span class="process-math">\(i\text{.}\)</span> First, notice that we know that <span class="process-math">\(a, b\text{,}\)</span> and <span class="process-math">\(c\)</span> can be lifted to maps of complexes by <a href="" class="xref" data-knowl="./knowl/xref/thm-5.17.html" title="Theorem 5.21">Theorem 5.21</a>, and that any two lifts of each <span class="process-math">\(a, b\text{,}\)</span> or <span class="process-math">\(c\)</span> are unique up to homotopy. So let’s start by fixing lifts of <span class="process-math">\(a\)</span> and <span class="process-math">\(\gamma\)</span> of <span class="process-math">\(c\text{,}\)</span> and we will construct an appropriate lift <span class="process-math">\(\beta\)</span> of <span class="process-math">\(b\text{.}\)</span> Since the short exact sequences</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-5.17.html">
-\begin{equation*}
-0 \longrightarrow P_{n} \longrightarrow Q_{n} \longrightarrow R_{n} \longrightarrow 0
-\end{equation*}
-</div>
-</div> <div class="para" id="thm-6.5-2-9">split for each <span class="process-math">\(n\text{,}\)</span> we might as well assume that <span class="process-math">\(Q_{n}=P_{n} \oplus R_{n}\)</span> and that the arrows <span class="process-math">\(P \rightarrow Q\)</span> and <span class="process-math">\(Q \rightarrow R\)</span> are given by the canonical arrows to and from the product <span class="process-math">\(\equiv\)</span> coproduct in each homological degree. We cannot, however, assume <span class="process-math">\(Q=P \oplus R\)</span> as complexes, only that <span class="process-math">\(Q_{n}=P_{n} \oplus R_{n}\)</span> in each homological degree <span class="process-math">\(n\text{.}\)</span> The commutativity of</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-05(1).jpg" class="contained"></div> <div class="para logical" id="thm-6.5-2-11">
-<div class="para">does imply that <span class="process-math">\(\partial^{Q}(P) \subseteq P\text{,}\)</span> so we can say that <span class="process-math">\(\partial^{Q}\)</span> is of the form</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\partial_{n}^{Q}=\left(\begin{array}{cc}
-\partial_{n}^{P} &amp; \mu_{n} \\
-0 &amp; \partial_{n}^{R}
-\end{array}\right)
-\end{equation*}
-</div>
-<div class="para">for each <span class="process-math">\(n\text{.}\)</span> Since this is a differential, we have</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left(\partial_{n}^{Q}\right)^{2}=0 \Longrightarrow \partial_{n}^{P}{ }_{1} \mu_{n}+\mu_{n}{ }_{1} \partial_{n}^{R}=0
-\end{equation*}
-</div>
-</div> <div class="para logical" id="thm-6.5-2-12">
-<div class="para">Similarly, all this applies to <span class="process-math">\(\partial_{n}^{Q^{\prime}}\text{,}\)</span> which must be of the form</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\partial_{n}^{Q^{\prime}}=\left(\begin{array}{cc}
-\partial_{n}^{P^{\prime}} &amp; \mu_{n}^{\prime} \\
-0 &amp; \partial_{n}^{R^{\prime}}
-\end{array}\right)
-\end{equation*}
-</div>
-</div> <div class="para logical" id="thm-6.5-2-13">
-<div class="para">We claim that we can define <span class="process-math">\(\beta_{n}=\left(\begin{array}{cc}n &amp; \nu_{n} \\ 0 &amp; \gamma_{n}\end{array}\right)\)</span> for each <span class="process-math">\(n\)</span> such that <span class="process-math">\(\beta\)</span> is a map of complexes, meaning</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\partial_{n}^{Q^{\prime}} \beta_{n}=\beta_{n \quad 1} \partial_{n}^{Q}
-\end{equation*}
-</div>
-</div> <div class="para" id="thm-6.5-2-14">Writing the corresponding products of matrices, we must have</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-06(1).jpg" class="contained"></div> <div class="para logical" id="thm-6.5-2-16">
-<div class="para">The only nontrivial statement we want to guarantee is that <span class="process-math">\(\partial_{n}^{P^{\prime}} \nu_{n}+\mu_{n}^{\prime} \gamma_{n}={ }_{n}{ }_{1} \mu_{n}+\nu_{n}{ }_{1} \partial_{n}^{R}\text{.}\)</span> We can solve this inductively for each <span class="process-math">\(n\text{,}\)</span> and construct an appropriate <span class="process-math">\(\nu_{n}\)</span> inductively. Given <span class="process-math">\(\nu_{n}\text{,}\)</span> set</div>
-<div class="displaymath process-math">
-\begin{equation*}
-{ }_{n}:={ }_{n}{ }_{1} \mu_{n}+\nu_{n}{ }_{1} \partial_{n}^{R} \quad \mu_{n}^{\prime} \gamma_{n}
-\end{equation*}
-</div>
-</div> <div class="para" id="thm-6.5-2-17">We want to construct <span class="process-math">\(\nu_{n}\)</span> such that <span class="process-math">\(R_{n} \stackrel{\nu_{n}}{\longrightarrow} P_{n}^{\prime} \quad\)</span> commutes, assuming we have constructed</div> <div class="para" id="thm-6.5-2-18">
-<span class="process-math">\(\nu_{n}\)</span> 1. First, we claim that <span class="process-math">\(\partial_{n}^{P^{\prime}}{ }_{1}{ }_{n}=0\text{.}\)</span>
-</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-06(2).jpg" class="contained"></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-06(3).jpg" class="contained"></div> <div class="para logical" id="thm-6.5-2-21">
-<div class="para">By induction,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\partial_{n}^{P_{1} \nu_{n}{ }_{1}}+\mu_{n{ }_{1}}^{\prime} \gamma_{n}{ }_{1}={ }_{n}{ }_{2} \mu_{n \quad 1}+\nu_{n}{ }_{2} \partial_{n}^{R}{ }_{1}^{R} \text {. }
-\end{equation*}
-</div>
-</div> <div class="para" id="thm-6.5-2-22">Using this to replace <span class="process-math">\(\partial_{n}^{P^{\prime}}{ }_{1} \nu_{n}{ }_{1}\)</span> in the equation above, we get</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-06.jpg" class="contained"></div> <div class="para logical" id="thm-6.5-2-24"><div class="displaymath process-math">
-\begin{equation*}
-\begin{aligned}
-&amp; ={ }_{n}{ }_{2}{ }_{2} \mu_{n}{ }_{1} \partial_{n}^{R}+\partial_{n}^{P^{\prime}{ }_{1}}{ }_{n}{ }_{1}{ }_{1} \mu_{n}+\nu_{n}{ }_{2} \partial_{n}{ }_{1}^{R} \partial_{n}^{R} \quad \mu_{n}^{\prime}{ }_{1}\left(\partial_{n}^{P^{\prime}} \gamma_{n}+\gamma_{n}{ }_{1} \partial_{n}^{R}\right) \\
-&amp; ={ }_{n}{ }_{2} \partial_{n}{ }_{1}{ }_{1} \mu_{n}+\partial_{n}^{P^{\prime}{ }_{1}}{ }_{n}{ }_{1}{ }_{1} \mu_{n}+\nu_{n}{ }_{2} \partial_{n}{ }_{1}{ }_{1} \partial_{n}^{R} \quad \mu_{n}^{\prime}{ }_{1}\left(\partial_{n}^{P^{\prime}} \gamma_{n}+\gamma_{n}{ }_{1} \partial_{n}^{R}\right)
-\end{aligned}
-\end{equation*}
-</div></div> <div class="para logical" id="thm-6.5-2-25">
-<div class="para">We showed above that <span class="process-math">\(\partial_{n}^{P^{\prime}} \gamma_{n}+\gamma_{n}{ }_{1} \partial_{n}^{R}=0\text{.}\)</span> Moreover, <span class="process-math">\(\partial_{n}^{R}{ }_{1} \partial_{n}^{R}=0\text{.}\)</span> We conclude that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{rlr}
-\partial_{n{ }_{1}{ }_{n}}^{P^{\prime}} &amp; ={ }_{n}{ }_{2} \partial_{n}^{P}{ }_{1} \mu_{n}+\partial_{n}^{P_{1}}{ }_{1}{ }_{n}{ }_{1} \mu_{n} &amp; \\
-&amp; ={ }_{n}{ }_{2} \partial_{n}^{P}{ }_{1} \mu_{n}+{ }_{n}{ }_{2} \partial_{n}^{P^{\prime}} \mu_{n} &amp; \text { since } \quad \text { is a map of complexes } \\
-&amp; ={ }_{n}{ }_{2}\left(\partial_{n}^{P}{ }_{1} \mu_{n}+\partial_{n}^{P^{\prime}} \mu_{n}\right) &amp; \\
-&amp; =0 &amp; \text { since } \partial_{n}^{P}{ }_{1} \mu_{n}+\partial_{n}^{P^{\prime}} \mu_{n}=0 .
-\end{array}
-\end{equation*}
-</div>
-</div> <div class="para" id="thm-6.5-2-26">So this concludes the proof that <span class="process-math">\(\partial_{n}^{P^{\prime}}{ }_{1}{ }_{n}=0\text{.}\)</span> Therefore, <span class="process-math">\({ }_{n}\)</span> must factor through the <span class="process-math">\(\operatorname{ker} \partial_{n}^{P^{\prime}}{ }_{1}\)</span> :</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-07(2).jpg" class="contained"></div> <div class="para" id="thm-6.5-2-28">On the other hand, <span class="process-math">\(P^{\prime}\)</span> is a resolution and thus exact, so <span class="process-math">\(\operatorname{im} \partial_{n}=\operatorname{ker} \partial_{n} 1\text{,}\)</span> and <span class="process-math">\(\partial_{n}\)</span> factors through <span class="process-math">\(\operatorname{ker} \partial_{n}{ }_{1}\)</span> as</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-07(1).jpg" class="contained"></div> <div class="para" id="thm-6.5-2-30">via some epi <span class="process-math">\(\varphi_{n}\text{.}\)</span> Finally, <span class="process-math">\(R_{n}\)</span> is projective, so there exists <span class="process-math">\(\nu_{n}\)</span> such that</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-07.jpg" class="contained"></div> <div class="para" id="thm-6.5-2-32">commutes - this was the <span class="process-math">\(\nu_{n}\)</span> we were searching for.</div></article></details><article class="theorem theorem-like" id="thm-6.6"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.7</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="thm-6.6-1-1">
-<div class="para">Let <span class="process-math">\(T_{i}: R \operatorname{Mod} \rightarrow S\)</span> Mod be a sequence of additive covariant functors, and <span class="process-math">\(F: R \operatorname{Mod} \rightarrow S\)</span> Mod a right exact functor. Suppose that the following hold:</div>
-<ol class="decimal">
-<li id="thm-6.6-1-1-3-1"><div class="para logical" id="thm-6.6-1-1-3-1-1">
-<div class="para">For every short exact sequence <span class="process-math">\(0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0\)</span> in <span class="process-math">\(R\)</span> Mod, we get a natural long exact sequence</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\cdots \longrightarrow T_{2}(C) \longrightarrow T_{1}(A) \longrightarrow T_{1}(B) \longrightarrow T_{1}(C) \longrightarrow T_{0}(A) \longrightarrow T_{0}(B) \longrightarrow T_{0}(C) \longrightarrow 0
-\end{equation*}
-</div>
-</div></li>
-<li id="thm-6.6-1-1-3-2"><div class="para" id="thm-6.6-1-1-3-2-1">
-<span class="process-math">\(T_{0}\)</span> is naturally isomorphic to <span class="process-math">\(F\text{.}\)</span>
-</div></li>
-<li id="thm-6.6-1-1-3-3"><div class="para" id="thm-6.6-1-1-3-3-1">
-<span class="process-math">\(T_{n}(P)=0\)</span> for every projective <span class="process-math">\(P\)</span> and all <span class="process-math">\(n \geqslant 1\text{.}\)</span>
-</div></li>
-</ol>
-<div class="para">Then <span class="process-math">\(T_{n}\)</span> is naturally isomorphic to <span class="process-math">\(L_{n} F\)</span> for all <span class="process-math">\(n \geqslant 0\text{.}\)</span>
-</div>
-</div></article><details id="thm-6.6-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="thm-6.6-2-1">
-<div class="para">We are going to show that <span class="process-math">\(T_{n}\)</span> is naturally isomorphic to <span class="process-math">\(L_{n} F\)</span> by all <span class="process-math">\(n\text{.}\)</span> The statement for <span class="process-math">\(n=0\)</span> is one of our assumptions. When <span class="process-math">\(n=1\text{,}\)</span> fix an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> and consider a short exact sequence</div>
-<div class="displaymath process-math">
-\begin{equation*}
-0 \longrightarrow K \stackrel{f}{\longrightarrow} P \longrightarrow M \longrightarrow 0
-\end{equation*}
-</div>
-<div class="para">with <span class="process-math">\(P\)</span> projective. By assumption (1), we get a long exact sequence on the <span class="process-math">\(T_{i}\text{,}\)</span> and by (2), there exist isomorphisms <span class="process-math">\(\tau_{0}\)</span> such that the following is a commutative diagram:</div>
-</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-07(3).jpg" class="contained"></div> <div class="para logical" id="thm-6.6-2-3">
-<div class="para">By <span class="process-math">\((3), T_{1}(P)=0\text{,}\)</span> and <span class="process-math">\(L_{1} F(P)=0\)</span> by construction. The exactness of each row now implies that <span class="process-math">\(\Delta_{1}\)</span> and <span class="process-math">\(\delta_{1}\)</span> are both injective. Moreover,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{rlr}
-F(f) \tau_{0}(K) \Delta_{1} &amp; =\tau_{0}(P) T_{0}(f) \Delta_{1} &amp; \text { by commutativity of the diagram } \\
-&amp; =0 &amp; \text { since } T_{0}(f) \Delta_{1}=0 .
-\end{array}
-\end{equation*}
-</div>
-<div class="para">so the image of <span class="process-math">\(\tau(k) \Delta_{1}\)</span> is contained in <span class="process-math">\(\operatorname{ker} F(f)=\operatorname{im} \delta_{1}\text{.}\)</span> Define <span class="process-math">\(\tau_{1}(M): T_{1}(M) \rightarrow L_{1} F(M)\)</span> as follows: we send each <span class="process-math">\(a \in T_{1}(M)\)</span> to the unique <span class="process-math">\(b \in L_{1} F(M)\)</span> such that <span class="process-math">\(\delta_{1}(b)=\tau_{0}(K) \Delta_{1}(a)\text{.}\)</span> This is a homomorphism of <span class="process-math">\(R\)</span>-modules because so are <span class="process-math">\(\delta_{1}, \tau_{0}(K)\text{,}\)</span> and <span class="process-math">\(\Delta_{1}\text{.}\)</span> Moreover, since <span class="process-math">\(\tau_{0}(K)\)</span> is an isomorphism and <span class="process-math">\(\Delta_{1}\)</span> is injective, the composition <span class="process-math">\(\tau_{0}(K) \Delta_{1}\)</span> is injective. As a consequence, <span class="process-math">\(\tau_{1}(M)\)</span> is injective. On the other hand, we claim that <span class="process-math">\(\tau_{1}(M)\)</span> is also surjective. Given any <span class="process-math">\(b \in L_{1} F(M)\text{,}\)</span> since <span class="process-math">\(\tau_{0}(K)\)</span> is an isomorphism there exists <span class="process-math">\(c \in T_{0}(K)\)</span> such that <span class="process-math">\(\tau_{0}(K)(c)=\delta_{1}(b)\text{.}\)</span> Thus</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{rlr}
-\tau_{0}(P) T_{0}(f)(c) &amp; =F(f) \tau_{0}(K)(c) &amp; \text { by commutativity } \\
-&amp; =F(f) \delta_{1}(b) &amp; \text { since } \tau_{0}(K)(c)=\delta_{1}(b) \\
-&amp; =0 &amp; \text { since the bottom row is a complex }
-\end{array}
-\end{equation*}
-</div>
-</div> <div class="para" id="thm-6.6-2-4">Since <span class="process-math">\(\tau_{0}(P)\)</span> is an iso, we must have <span class="process-math">\(c \in \operatorname{ker}\left(T_{0}(f)\right)=\operatorname{im} \Delta_{1}\text{.}\)</span> Thus we can choose <span class="process-math">\(a \in T_{1}(M)\)</span> such that <span class="process-math">\(\Delta_{1}(a)=c\text{,}\)</span> which implies that <span class="process-math">\(\tau_{1}(M)(a)=b\text{.}\)</span> Therefore, <span class="process-math">\(\tau_{1}(M)\)</span> is an isomorphism.</div> <div class="para logical" id="thm-6.6-2-5">
-<div class="para">This shows that <span class="process-math">\(T_{1}(M) \cong L_{1} F(M)\text{.}\)</span> Now let <span class="process-math">\(n \geqslant 1\text{,}\)</span> and consider the diagram with exact rows</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{gathered}
-T_{n+1}(P) \longrightarrow T_{n+1}(M) \stackrel{\Delta_{n} 1}{\longrightarrow} T_{n}(K) \longrightarrow T_{n}(P) \\
-L_{n+1} F(P) \longrightarrow L_{n+1} F(M) \underset{\delta_{n \quad 1}}{\longrightarrow} L_{n} F(K) \longrightarrow L_{n} F(P)
-\end{gathered}
-\end{equation*}
-</div>
-</div> <div class="para" id="thm-6.6-2-6">By (3), <span class="process-math">\(T_{n+1}(P)=0=T_{n}(P)\text{,}\)</span> and by construction <span class="process-math">\(L_{n+1} F(P)=0=L_{n} F(P)\text{.}\)</span> Therefore, <span class="process-math">\(\Delta_{n+1}\)</span> and <span class="process-math">\(\delta_{n+1}\)</span> are isomorphisms. Since <span class="process-math">\(\tau_{n}(K)\)</span> is also an isomorphism, we conclude that <span class="process-math">\(T_{n+1}(M) \cong L_{n+1} F(M)\text{.}\)</span> Therefore, <span class="process-math">\(T_{n}(M) \cong L_{n} F(M)\)</span> for all <span class="process-math">\(n\text{.}\)</span>
-</div> <div class="para" id="thm-6.6-2-7">It remains to show that these isomorphisms are natural, that is, that any <span class="process-math">\(R\)</span>-module map <span class="process-math">\(f: M \rightarrow N\)</span> gives rise to commutative diagrams</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-08.jpg" class="contained"></div> <div class="para logical" id="thm-6.6-2-9">
-<div class="para">We will prove this by induction on <span class="process-math">\(i\text{.}\)</span> First, note that the commutativity of the square holds for <span class="process-math">\(i=0\)</span> by (2). Let <span class="process-math">\(i \geqslant 1\text{.}\)</span> Fix projectives <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> and short exact sequences</div>
-<div class="displaymath process-math">
-\begin{equation*}
-0 \longrightarrow K \longrightarrow P \longrightarrow M \longrightarrow 0 \quad \text { and } \quad 0 \longrightarrow C \longrightarrow Q \longrightarrow N \longrightarrow
-\end{equation*}
-</div>
-</div> <div class="para" id="thm-6.6-2-10">Since <span class="process-math">\(Q\)</span> is projective and <span class="process-math">\(Q \rightarrow N\)</span> is surjective, <span class="process-math">\(f\)</span> lifts to a map <span class="process-math">\(g: P \rightarrow Q\text{.}\)</span> Moreover, an argument similar to the one we used above shows that we can define a map <span class="process-math">\(h\)</span> giving a commutative diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-09.jpg" class="contained"></div> <div class="para" id="thm-6.6-2-12">Now consider the following diagram:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_11_27_3974d73438430121205eg-09(1).jpg" class="contained"></div> <div class="para" id="thm-6.6-2-14">The big square and (1) commute by definition of <span class="process-math">\(\tau_{i}\text{.}\)</span>
-</div> <div class="para" id="thm-6.6-2-15">The square (3) commutes because we assumed in (1) that <span class="process-math">\(T_{i}\)</span> gives rise to long exact sequences which are natural.</div> <div class="para" id="thm-6.6-2-16">The square (5) commutes because <span class="process-math">\(L_{i} F\)</span> gives rise to natural long exact sequences, by <a href="" class="xref" data-knowl="./knowl/xref/thm-6.5.html" title="Theorem 6.6">Theorem 6.6</a>.</div> <div class="para" id="thm-6.6-2-17">The square (4) commutes by induction hypothesis.</div> <div class="para logical" id="thm-6.6-2-18">
-<div class="para">Our goal is to show that (2) commutes. First, we claim that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\delta_{i} \circ \tau_{i}(N) \circ T_{i}(f)=\delta_{i} \circ L_{i} F(f) \circ \tau_{i}(M)
-\end{equation*}
-</div>
-<div class="para">Indeed, using the commutativity of the various other parts of the diagram, we get</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{array}{rlr}
-\delta_{i} \circ \tau_{i}(N) \circ T_{i}(f) &amp; =\tau_{i}{ }_{1}(C) \circ \Delta_{i} \circ T_{i}(f) &amp; \text { by commutativity of (1) } \\
-&amp; =\tau_{i}{ }_{1}(C) \circ T_{i}{ }_{1}(h) \circ \Delta_{i} &amp; \text { by commutativity of (3) } \\
-&amp; =L_{i}{ }_{1} F(h) \circ \tau_{i}{ }_{1}(K) \circ \Delta_{i} &amp; \text { by commutativity of (4) } \\
-&amp; =L_{i}{ }_{1} F(h) \circ \delta_{i} \circ \tau_{i}(M) &amp; \text { by commutativity of the big square } \\
-&amp; =\delta_{i} \circ L_{i} F(f) \circ \tau_{i}(M) &amp; \text { by commutativity of (5). }
-\end{array}
-\end{equation*}
-</div>
-</div> <div class="para logical" id="thm-6.6-2-19">
-<div class="para">On the other hand, the long exact sequence for <span class="process-math">\(L_{i} F\)</span> from <a href="" class="xref" data-knowl="./knowl/xref/thm-6.5.html" title="Theorem 6.6">Theorem 6.6</a> says that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-6.5.html ./knowl/xref/rem-6.3.html">
-\begin{equation*}
-L_{i} F(Q) \longrightarrow L_{i} F(N) \stackrel{\delta_{i}}{\longrightarrow} L_{i}{ }_{1} F(C)
-\end{equation*}
-</div>
-<div class="para">is exact, but since <span class="process-math">\(i \geqslant 1\)</span> and <span class="process-math">\(Q\)</span> is projective we have <span class="process-math">\(L_{i} F(Q)=0\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/rem-6.3.html" title="Remark 6.3: ">Remark 6.3</a>. But the exactness of</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-6.5.html ./knowl/xref/rem-6.3.html">
-\begin{equation*}
-0 \longrightarrow L_{i} F(N) \stackrel{\delta_{i}}{\longrightarrow} L_{i}{ }_{1} F(C)
-\end{equation*}
-</div>
-<div class="para">says that <span class="process-math">\(\delta_{i}\)</span> is injective. Therefore,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-6.5.html ./knowl/xref/rem-6.3.html">
-\begin{equation*}
-\delta_{i} \circ \tau_{i}(N) \circ T_{i}(f)=\delta_{i} \circ L_{i} F(f) \circ \tau_{i}(M) \Longrightarrow \tau_{i}(N) \circ T_{i}(f)=L_{i} F(f) \circ \tau_{i}(M),
-\end{equation*}
-</div>
-<div class="para">and 2 commutes, as desired.</div>
-</div></article></details><div class="para" id="subsec-forcing-exactness-6">There are versions of this theorem for the three remaining cases as well; we record one of them here:</div>
-<article class="theorem theorem-like" id="thm-6.7"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.8</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="thm-6.7-1-1">
-<div class="para">Suppose <span class="process-math">\(T_{i}: R \operatorname{Mod} \rightarrow S\)</span> Mod is a sequence of additive covariant functors and <span class="process-math">\(F: R \operatorname{Mod} \rightarrow S\)</span> Mod a left exact functor such that</div>
-<ol class="decimal">
-<li id="thm-6.7-1-1-3-1"><div class="para logical" id="thm-6.7-1-1-3-1-1">
-<div class="para">For every short exact sequence <span class="process-math">\(0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow\)</span> in <span class="process-math">\(R\)</span> Mod, we get a long exact sequence</div>
-<div class="displaymath process-math">
-\begin{equation*}
-0 \longrightarrow T_{0}(A) \longrightarrow T_{0}(B) \longrightarrow T_{0}(C) \longrightarrow T_{1}(A) \longrightarrow T_{1}(B) \longrightarrow T_{1}(C) \longrightarrow \cdots
-\end{equation*}
-</div>
-</div></li>
-<li id="thm-6.7-1-1-3-2"><div class="para" id="thm-6.7-1-1-3-2-1">
-<span class="process-math">\(T_{0}\)</span> is naturally isomorphic to <span class="process-math">\(F\text{.}\)</span>
-</div></li>
-<li id="thm-6.7-1-1-3-3"><div class="para" id="thm-6.7-1-1-3-3-1">
-<span class="process-math">\(T_{n}(E)=0\)</span> for every injective <span class="process-math">\(E\)</span> and all <span class="process-math">\(n \geqslant 1\text{.}\)</span>
-</div></li>
-</ol>
-<div class="para">Then <span class="process-math">\(T_{n}\)</span> is naturally isomorphic to <span class="process-math">\(R^{n} F\)</span> for all <span class="process-math">\(n\text{.}\)</span>
-</div>
-</div></article><div class="para" id="subsec-forcing-exactness-8">We leave the proof of this and the other two cases as an exercise.</div></section><article class="outcomes goal-like" id="sec-construction-5"><h3 class="heading"><span class="type">Summary</span></h3>
-<ul class="disc"><li id="sec-construction-5-1-1"><div class="para" id="sec-construction-5-1-1-1"></div></li></ul></article></section></div>
+<div class="para" id="sec-gorenstein-2"></div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-derived-functors.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-ext-tor.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-local-duality.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-canonical-mod.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
