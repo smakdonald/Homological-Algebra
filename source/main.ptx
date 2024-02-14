@@ -24515,6 +24515,384 @@
         </p>
 
         </section>
+
+        <section xml:id="sec-cech-complex"><title>The Čech Complex</title>
+
+          <p>
+            
+          </p>
+          
+        </section>
+
+        <section xml:id="sec-properties-vanishing"><title>Properties and Vanishing Theorems</title>
+
+          <p>
+            Let’s collect some basic properties of local cohomology. 
+            We note that many (but not all) of the following facts can be proven quickly from more than one characterization of local cohomology.
+          </p>
+    
+          <p>
+            Let <m>R</m> be a noetherian ring, <m>I</m> an ideal, and <m>M</m> an <m>R</m>-module. 
+            Let <m>\psi: R \rightarrow S</m> be a ring homomorphism, and <m>N</m> an <m>S</m>-module.
+          </p>
+    
+          <p>
+            <ol>
+              <li>
+                <p>
+                  <m>\mathrm{H}_{I}^{i}(M)</m> is <m>I</m>-torsion for every <m>i \geq 0</m>.
+                </p>
+              </li>
+    
+              <li>
+                <p>
+                  If <m>\sqrt{J}=\sqrt{I}</m>, then <m>\mathrm{H}_{I}^{i}(M)=\mathrm{H}_{J}^{i}(M)</m> for every <m>i \geq 0</m>.
+                </p>
+              </li>
+    
+              <li>
+                <p>
+                  (Invariance of base) <m>\mathrm{H}_{I}^{i}\left({ }_{\psi} N\right)</m> has a natural <m>S</m>-module structure, and <m>\mathrm{H}_{I}^{i}\left({ }_{\psi} N\right) \cong \mathrm{H}_{\psi(I) S}^{i}(N)</m> as <m>S</m>-modules. We often write <m>\mathrm{H}_{I}^{i}(N)=\mathrm{H}_{I S}^{i}(N)</m> to abbreviate this when the map is implicit.
+                </p>
+              </li>
+    
+              <li>
+                <p>
+                  For any arbitrary direct limit system, <m>\mathrm{H}_{I}^{i}\left(\lim _{\longrightarrow} M_{\lambda}\right) \cong \underline{\lim } \mathrm{H}_{I}^{i}\left(M_{\lambda}\right)</m>.
+                </p>
+              </li>
+    
+              <li>
+                <p>
+                  (Flat base change) If <m>\psi</m> is flat, then <m>S \otimes_{R} \mathrm{H}_{I}^{i}(M) \cong \mathrm{H}_{I}^{i}\left(S \otimes_{R} M\right) \cong \mathrm{H}_{I S}^{i}\left(S \otimes_{R} M\right)</m>.
+                </p>
+              </li>
+        
+              <li>
+                <p>
+                  If <m>\mathfrak{p} \in \operatorname{Spec}(R)</m>, then <m>\mathrm{H}_{I}^{i}(M)_{\mathfrak{p}} \cong \mathrm{H}_{I_{\mathfrak{p}}}^{i}\left(M_{\mathfrak{p}}\right)</m>.
+                </p>
+              </li>
+            </ol>
+          </p>
+    
+          <p>
+            Proof. 1. Any submodule or quotient module of an <m>I</m>-torsion module is <m>I</m>-torsion. Thus, the cohomology of a complex of <m>I</m>-torsion modules, e.g., <m>\Gamma_{I}\left(E^{\bullet}\right)</m> for some injective resolution <m>M \rightarrow E^{\bullet}</m>, is also <m>I</m>-torsion.
+          </p>
+    
+          <p>
+            <ol>
+              <li>
+                <p>
+                  The functors <m>\Gamma_{I}</m> and <m>\Gamma_{J}</m> are the same, so they yield the same thing when applied to an injective resolution.
+                </p>
+              </li>
+    
+              <li>
+                <p>
+                  For any <m>x \in S</m>, the <m>S</m>-linear map <m>N \stackrel{\cdot x}{\longrightarrow} N</m> is the same as the <m>R</m>-linear map <m>{ }_{\psi} N \stackrel{\cdot x}{\longrightarrow} \psi N</m>; this gives a <m>\operatorname{map} \mathrm{H}_{I}^{i}\left({ }_{\psi} N\right) \stackrel{\cdot x}{\longrightarrow} \mathrm{H}_{I}^{i}\left({ }_{\psi} N\right)</m> by functoriality; it follows from functoriality that the map <m>\cdot x y</m> agrees with the composition of maps <m>\cdot x</m> and <m>\cdot y</m>, so this is an <m>S</m>-module action.
+                </p>
+              </li>
+            </ol>
+          </p>
+    
+          <p>
+            The noted isomorphism follows from the Čech cohomology isomorphism <m>\check{H}^{i}\left(\underline{f} ;{ }_{\psi} N\right) \cong \check{H}^{i}(\underline{\psi(f)} ; N)</m>.
+          </p>
+    
+          <p>
+            <ol>
+              <li>
+                <p>
+                  This again follows from the Čech cohomology statement.
+                </p>
+              </li>
+    
+              <li>
+                <p>
+                  <m>\left.\check{C} \bullet(\underline{f} ; M) \otimes_{R} S \cong \check{C} \bullet \underline{f \otimes 1} ; M \otimes_{R} S\right)</m>. By flatness of <m>S</m>, cohomology commutes with taking the tensor product.
+                 </p>
+                </li>
+    
+              <li>
+                <p>
+                  Special case of flat base change.
+                </p>
+              </li>
+            </ol>
+          </p>
+    
+          <p>
+            We will find that we have the best understanding of local cohomology modules <m>\mathrm{H}_{I}^{i}(M)</m> in two situations: 
+            when <m>I</m> is a maximal ideal, or when <m>M=R</m> is a regular ring. 
+            Apropos the first of these settings:
+          </p>
+    
+          <p>
+            Proposition 3.11. Let <m>R</m> be a noetherian ring, <m>I</m> an ideal, and <m>M</m> an <m>R</m>-module. Let <m>\mathfrak{m}</m> be a maximal ideal of <m>R</m>.
+          </p>
+    
+          <p><ol>
+            <li>
+                  <p>
+            If <m>M</m> is finitely generated, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)</m> is artinian for all <m>i</m>.
+          </p>
+            </li>
+    
+            <li>
+                  <p>
+            <m>\mathrm{H}_{\mathfrak{m}}^{i}(M) \cong \mathrm{H}_{\mathfrak{m}}^{i}(M)_{\mathfrak{m}} \cong \mathrm{H}_{\mathfrak{m} R_{\mathfrak{m}}}^{i}\left(M_{\mathfrak{m}}\right)</m>.
+          </p>
+            </li>
+    
+            <li>
+                  <p>
+            If <m>(R, \mathfrak{m})</m> is local, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M) \cong \mathrm{H}_{\mathfrak{m} \widehat{R}}^{i}\left(\widehat{R} \otimes_{R} M\right)</m>. In particular, if <m>M</m> is finitely generated, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M) \cong \mathrm{H}_{\mathfrak{m} \widehat{R}}^{i}(\widehat{M})</m>.
+          </p>
+            </li>
+    
+            <li>
+                  <p>
+            If <m>(R, \mathfrak{m}) \rightarrow(S, \mathfrak{n})</m> is a local homomorphism, and <m>S</m> is module-finite over the image of <m>R</m>, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(S)=\mathrm{H}_{\mathfrak{n}}^{i}(S)</m>.
+          </p>
+            </li>
+    
+          </ol></p>
+    
+          <p>
+            Proof. 1. By Problem #6 of HW #1, if <m>M \rightarrow E^{\bullet}</m> is an injective resolution,
+          </p>
+    
+          <p>
+            <me>\Gamma_{\mathfrak{m}}\left(E^{\bullet}\right)=0 \rightarrow E_{R}(R / \mathfrak{m})^{\mu(0, \mathfrak{m})} \rightarrow E_{R}(R / \mathfrak{m})^{\mu(1, \mathfrak{m})} \rightarrow \cdots</me>
+          </p>
+    
+          <p>
+            The Bass number <m>\mu(i, \mathfrak{m})(M)</m> is finite, so the complex above is a complex of artinian modules. Thus, <m>H_{\mathfrak{m}}^{i}(M)</m> is a quotient of a submodule of a finite direct sum of copies of <m>E_{R}(R / \mathfrak{m})</m>, hence, artinian.
+          </p>
+    
+          <p><ol>
+            <li>
+                  <p>
+            If <m>M</m> is <m>\mathfrak{m}</m>-torsion, then any element outside of <m>\mathfrak{m}</m> acts on <m>M</m> invertibly (check!). Then the second is a special case of 6 above.
+          </p>
+            </li>
+    
+            <li>
+                  <p>
+            By flat base change, <m>\widehat{R} \otimes_{R} \mathrm{H}_{\mathfrak{m}}^{i}(M) \cong \mathrm{H}_{\mathfrak{m} \widehat{R}}^{i}\left(\widehat{R} \otimes_{R} M\right)</m>. Since <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)</m> is <m>\mathfrak{m}</m>-torsion, it is already the same as <m>\widehat{R} \otimes_{R} \mathrm{H}_{\mathfrak{m}}^{i}(M)</m>.
+          </p>
+            </li>
+    
+            <li>
+                  <p>
+            <m>\mathrm{H}_{\mathfrak{m}}^{i}(S)=\mathrm{H}_{\mathfrak{m} S}^{i}(S)=\mathrm{H}_{\mathfrak{n}}^{i}(S)</m>, since <m>\sqrt{\mathfrak{m} S}=\mathfrak{n}</m>.
+          </p>
+            </li>
+    
+          </ol></p>
+    
+          <p>
+            Remark 3.12. Both <m>\# 1</m> and <m>\# 2</m> of the previous proposition fail for the module <m>\mathrm{H}_{(x, y)}^{2}\left(\frac{K[x, y, u, v]}{(x u-y v)}\right)</m> from worksheet <m>\# 3</m>, with <m>\mathfrak{m}</m> replaced by <m>\mathfrak{p}=(x, y)</m>.
+          </p>
+    
+          <p>
+            We want to note now that if <m>R</m> is a graded ring, <m>M</m> a graded module, and <m>I</m> a homogeneous ideal (i.e., an ideal generated by homogeneous elements <m>f_{1}, \ldots, f_{t}</m> ) then the local cohomology modules <m>\mathrm{H}_{I}^{i}(M)</m> are graded as well. This can be seen from the Čech complex:
+          </p>
+    
+          <p>
+            <me>0 \rightarrow M \rightarrow \bigoplus_{1 \leq i \leq t} M_{f_{i}} \rightarrow \bigoplus_{1 \leq i&lt;j \leq t} M_{f_{i} f_{j}} \rightarrow \cdots \rightarrow \bigoplus_{1 \leq i \leq t} M_{f_{1} \cdots \widehat{f}_{i} \cdots f_{t}} \rightarrow M_{f_{1} \cdots f_{t}} \rightarrow 0</me>
+          </p>
+    
+          <p>
+            which is evidently a complex of graded modules in this case.
+          </p>
+    
+          <p>
+            We could also see the grading from the other descriptions of local cohomology. This clear for the Koszul description, and is easily seen to give the same grading. There is also a classification of which graded modules are injective as objects in the category of graded modules. This endows the other two descriptions of local cohomology with a grading, and the Fundamental Theorem is compatible with this extra structure. We won’t develop this approach (unless I change my mind!), but note that it is carried out throughly in Bruns &amp; Herzog as well as Brodmann &amp; Sharp.
+          </p>
+    
+       
+    
+       
+    
+          <p>
+            Our goal now is to understand, for an ideal <m>I</m> in a noetherian <m>\operatorname{ring} R</m>, and an <m>R</m>-module <m>M</m>, what are the least and greatest <m>i</m>, respectively, for which <m>\mathrm{H}_{I}^{i}(M) \neq 0</m>.
+          </p>
+    
+          <p>
+            There is an obvious guess (and obvious lower bound) for the least nonvanishing index: the depth of <m>I</m> on <m>M</m>. This guess turns out to be correct.
+          </p>
+    
+          <p>
+            Theorem 3.13. Let <m>R</m> be a noetherian ring, <m>I</m> an ideal, and <m>M</m> a finitely generated <m>R</m>-module. Then,
+          </p>
+    
+          <p>
+            <me>\min \left\{i \mid \mathrm{H}_{I}^{i}(M) \neq 0\right\}=\operatorname{depth}_{I}(M) .</me>
+          </p>
+    
+          <p>
+            Our convention is that <m>\min (\varnothing)=\operatorname{depth}_{I}(M)=\infty</m> if <m>I M=M</m>. In particular, if <m>\mathfrak{p}</m> is prime and <m>R</m> is Cohen-Macaulay, then
+          </p>
+    
+          <p>
+            <me>\min \left\{i \mid \mathrm{H}_{\mathfrak{p}}^{i}(R) \neq 0\right\}=\operatorname{ht}(\mathfrak{p}) .</me>
+          </p>
+    
+          <p>
+            Proof. If <m>I M=M</m>, then there is some <m>f \in I</m> that acts as the identity on <m>M</m>, so <m>I^{n} \mathrm{H}_{I}^{i}(M)=</m> <m>f^{n} \mathrm{H}_{I}^{i}(M)=\mathrm{H}_{I}^{i}(M)</m> for all <m>n</m>. On the other hand, <m>\mathrm{H}_{I}^{i}(M)</m> is <m>I</m>-torsion, so it must be the zero module.
+          </p>
+    
+          <p>
+            We now assume that <m>I M \neq M</m> and argue by induction on the depth.
+          </p>
+    
+          <p>
+            If <m>\operatorname{depth}_{I}(M)=0</m>, then every element of <m>I</m> is a zerodivisor on <m>M</m>, so <m>I</m> is contained in the union of the associated primes of <m>M</m>, and hence in some associated prime <m>\mathfrak{p}</m> of <m>M</m> by prime avoidance. Then, the copy of <m>R / \mathfrak{p}</m> in <m>M</m> is killed by <m>I</m>, hence nonzero in <m>\mathrm{H}_{I}^{0}(M)</m>.
+          </p>
+    
+          <p>
+            Now, if the depth is <m>d&gt;0</m>, take a regular element <m>x \in I</m> on <m>M</m>. The SES
+          </p>
+    
+          <p>
+            <me>0 \rightarrow M \stackrel{x}{\longrightarrow} M \rightarrow M / x M \rightarrow 0</me>
+          </p>
+    
+          <p>
+            yields the LES
+          </p>
+    
+          <p>
+            <me>\cdots \rightarrow H_{I}^{i-1}(M) \rightarrow H_{I}^{i-1}(M / x M) \rightarrow H_{I}^{i}(M) \stackrel{x}{\longrightarrow} H_{I}^{i}(M) \rightarrow \cdots</me>
+          </p>
+    
+          <p>
+            For <m>i&lt;d</m>, we obtain that <m>x</m> is a nzd on <m>H_{I}^{i}(M)</m>, but this module is <m>I</m>-torsion (hence <m>x</m>-torsion), so it must be zero. Then, the LES shows that <m>0 \neq H_{I}^{d-1}(M / x M)</m> injects into <m>H_{I}^{i}(M)</m>, so the latter is nonzero.
+          </p>
+    
+          <p>
+            We turn our attention to the top nonvanishing local cohomology module. This will be of recurring interest, so we give it some nomenclature.
+          </p>
+    
+          <p>
+            Definition 3.14. Let <m>R</m> be a ring, <m>I</m> an ideal, and <m>M</m> an <m>R</m>-module. The cohomological dimension of <m>I</m> on <m>M</m> is
+          </p>
+    
+          <p>
+            <me>\operatorname{cd}(I, M):=\max \left\{i \mid \mathrm{H}_{I}^{i}(M) \neq 0\right\}</me>
+          </p>
+    
+          <p>
+            This is closely related to another invariant of independent interest.
+          </p>
+    
+          <p>
+            Definition 3.15. Let <m>R</m> be a ring, <m>I</m> an ideal. The arithmetic rank of <m>I</m> is
+          </p>
+    
+          <p>
+            <me>\operatorname{ara}(I):=\min \left\{t \mid \text { there exist } f_{1}, \ldots, f_{t} \text { such that } \sqrt{I}=\sqrt{\left(f_{1}, \ldots, f_{t}\right)}\right\} \text {. }</me>
+          </p>
+    
+          <p>
+            The following fact, now easy to prove, is one of the key points to many applications of local cohomology.
+          </p>
+    
+          <p>
+            Theorem 3.16. Let <m>R</m> be a noetherian ring, <m>I</m> an ideal. Then <m>\operatorname{ara}(I) \geq \operatorname{cd}(I, M)</m> for all <m>R</m> modules <m>M</m>.
+          </p>
+    
+          <p>
+            Proof. Let <m>\sqrt{\left(f_{1}, \ldots, f_{t}\right)}=\sqrt{I}</m>. Then <m>\mathrm{H}_{I}^{i}(M)=\check{H}^{i}\left(f_{1}, \ldots, f_{t} ; M\right)</m>, and the latter vanishes for <m>i&gt;t</m>, since the Čech complex on <m>t</m> elements lives only in cohomological degrees less than or equal to <m>t</m>.
+          </p>
+    
+          <p>
+            This Theorem is useful both for understanding rank and for understanding cohomological dimension. We will employ it for the latter purpose first.
+          </p>
+    
+          <p>
+            Example 3.17. Let <m>K</m> be a field, and <m>T=\frac{K[x, y, u, v]}{(x u-y v)}</m>. Let <m>I=(x, y)</m>. We saw in worksheet #3 that <m>\mathrm{H}_{I}^{2}(T) \neq 0</m>. We claim that the support of <m>\mathrm{H}_{I}^{2}(T)</m> is <m>\mathcal{V}((x, y, u, v))</m>, so <m>\operatorname{Ass}\left(\mathrm{H}_{I}^{2}(T)\right)=\{(x, y, u, v)\}</m>. If <m>\mathfrak{p}</m> is a prime that does not contain <m>x</m> or <m>y</m>, then <m>I_{\mathfrak{p}}</m> is the unit ideal, so <m>\mathrm{H}_{I}^{2}(T)_{\mathfrak{p}}=\mathrm{H}_{I_{\mathfrak{p}}}^{2}\left(T_{\mathfrak{p}}\right)=0</m>. If <m>\mathfrak{p}</m> does not contain <m>u</m>, then <m>x=\frac{y v}{u}</m> in <m>T_{\mathfrak{p}}</m>, so <m>I_{\mathfrak{p}}=(y)</m>. Thus, <m>\mathrm{H}_{I}^{2}(T)_{\mathfrak{p}}=\mathrm{H}_{I_{\mathfrak{p}}}^{2}\left(T_{\mathfrak{p}}\right)=0</m>. Similarly, if <m>\mathfrak{p}</m> does not contain <m>v</m>, the same vanishing occurs.
+          </p>
+    
+          <p>
+            Proposition 3.18. Let <m>R</m> be a noetherian ring, <m>I</m> an ideal. For any <m>R</m>-module, <m>\operatorname{cd}(I, M) \leq \operatorname{cd}(I, R)</m>.
+          </p>
+    
+          <p>
+            Proof. Let <m>c=\operatorname{cd}(I)</m>. Since local cohomology commutes with direct sums, we have that <m>\mathrm{H}_{I}^{i}(F)=0</m> for any free module <m>F</m> and any <m>i&gt;c</m>. Now, given an arbitrary module <m>M</m>, take a short exact sequence
+          </p>
+    
+          <p>
+            <me>0 \rightarrow M^{\prime} \rightarrow F \rightarrow M \rightarrow 0</me>
+          </p>
+    
+          <p>
+            with <m>F</m> free. The LES of local cohomology gives isomorphisms <m>\mathrm{H}_{I}^{i+1}\left(M^{\prime}\right) \cong \mathrm{H}_{I}^{i}(M)</m> for all <m>i&gt;c</m>. Repeating this, we find for all <m>a&gt;0</m>, that there is some module <m>L</m> such that <m>\mathrm{H}_{I}^{i}(M) \cong \mathrm{H}_{I}^{i+a}\left(M^{(a)}\right)</m>. But, since <m>I</m> is finitely generated, <m>\operatorname{ara}(I)</m> is finite, and <m>\operatorname{cd}\left(I,\left(M^{(a)}\right)\right.</m> is less than this number for all modules. Hence, we must have that <m>\mathrm{H}_{I}^{i}(M)=0</m>.
+          </p>
+    
+          <p>
+            Following the last proposition, we write <m>\operatorname{cd}(I)</m> for <m>\operatorname{cd}(I, R)</m>. When <m>I=\mathfrak{m}</m> is a maximal ideal, we can say a bit more about cohomological dimension. Recall that, by the dimension of a module, we mean simply the dimension of <m>R / \operatorname{ann}(M)</m>. We note that, if <m>M</m> is finitely generated, this agrees with the dimension of the support of <m>M</m> as a subset of <m>\operatorname{Spec}(R)</m>, but this is not true if <m>M</m> is arbitrary (e.g. take <m>M=E_{R}(k)</m> for <m>R</m> of positive dimension).
+          </p>
+    
+          <p>
+            Proposition 3.19. Let <m>(R, \mathfrak{m})</m> be local, and <m>M</m> an <m>R</m>-module. Then <m>\operatorname{cd}(\mathfrak{m}, M) \leq \operatorname{dim}(M)</m>.
+          </p>
+    
+          <p>
+            Proof. By the invariance of base property, we may replace <m>R</m> by <m>R / \operatorname{ann}(M)</m>, and <m>\mathfrak{m}</m> by its image there, thus we can assume that <m>\operatorname{dim}(M)=\operatorname{dim}(R)</m>. The maximal ideal of <m>R</m> is generated by <m>\operatorname{dim}(R)</m> elements up to radical, so <m>\operatorname{cd}(\mathfrak{m}, M) \leq \operatorname{dim}(R)</m>, as required.
+          </p>
+    
+          <p>
+            Corollary 3.20. Let <m>(R, \mathfrak{m})</m> be local. The ring <m>R</m> is Cohen-Macaulay if and only if <m>\mathrm{H}_{\mathfrak{m}}^{i}(R)=0</m> for all <m>i \neq \operatorname{dim}(R)</m>.
+          </p>
+    
+          <p>
+            We want to now extend our cohomological dimension bounds to all ideals.
+          </p>
+    
+          <p>
+            Theorem 3.21. If <m>I</m> is a proper ideal in a local ring <m>(R, \mathfrak{m}, k)</m> of dimension <m>d</m>, then <m>\operatorname{ara}(I) \leq d</m>.
+          </p>
+    
+          <p>
+            Proof. If <m>I=\mathfrak{m}</m>, this is standard, so we assume that the height of <m>I</m> is less than <m>d</m>.
+          </p>
+    
+          <p>
+            Let <m>\mathcal{P}_{n}=\{\mathfrak{p} \in \operatorname{Spec}(R) \mid \operatorname{height}(\mathfrak{p})=n</m> and <m>\mathfrak{p} \nsupseteq I\}</m>. We will inductively find
+          </p>
+    
+          <p>
+            <me>r_{0}, \ldots, r_{n} \in I \text { such that }\left(r_{0}, \ldots, r_{n}\right) \nsubseteq \mathfrak{p} \text { for any } \mathfrak{p} \in \mathcal{P}_{n}</me>
+          </p>
+    
+          <p>
+            Once we have done this for <m>n=d-1</m>, we have <m>d</m> elements such that <m>\mathcal{V}\left(\left(r_{0}, \ldots, r_{d-1}\right)\right)=\mathcal{V}(I)</m>, and we are done.
+          </p>
+    
+          <p>
+            To choose <m>r_{0}</m>, we only need to avoid a subset of the minimal primes of <m>R</m>, which is finite, so we can do this by prime avoidance.
+          </p>
+    
+          <p>
+            Suppose that we have elements satisfying the specified condition for all <m>i&lt;n</m>. The set of minimal primes of <m>\left(r_{0}, \ldots, r_{n}\right)</m> of height <m>n+1</m> not containing <m>I, \operatorname{Min}\left(\left(r_{0}, \ldots, r_{n}\right)\right) \cap \mathcal{P}_{n+1}</m>, is finite (and <m>I</m> is clearly not any such <m>I</m> ), so we can choose an element <m>r_{n+1}</m> in <m>I</m> not in any of these.
+          </p>
+    
+          <p>
+            Now, suppose that <m>\left(r_{0}, \ldots, r_{n}, r_{n+1}\right)</m> is contained in some <m>\mathfrak{p}</m> in <m>\mathcal{P}_{n+1}</m>. Then, <m>\left(r_{0}, \ldots, r_{n}\right) \subseteq \mathfrak{p}</m> as well. If <m>\mathfrak{p}</m> is not minimal over <m>\left(r_{0}, \ldots, r_{n}\right)</m>, then take some <m>\mathfrak{q}</m> in between. The height of <m>\mathfrak{q}</m> is less than <m>n+1</m>, so <m>\mathfrak{q}</m> contradicts the induction hypothesis. If <m>\mathfrak{p}</m> is minimal over <m>\left(r_{0}, \ldots, r_{n}\right)</m>, then <m>\mathfrak{p} \in \operatorname{Min}\left(\left(r_{0}, \ldots, r_{n}\right)\right) \cap \mathcal{P}_{n+1}</m>, and <m>r_{n+1} \in \mathfrak{p}</m> contradicts the choice of <m>r_{n+1}</m>.
+          </p>
+    
+          <p>
+            Corollary 3.22. If <m>I</m> is an ideal in a noetherian ring, and <m>M</m> an <m>R</m>-module, then <m>\operatorname{cd}(I, M) \leq</m> <m>\operatorname{dim}(M)</m>.
+          </p>
+    
+          <p>
+            Proof. Given a counterexample, we can localize at an associated prime of <m>\mathrm{H}_{I}^{i}(M)</m>, and since <m>\mathrm{H}_{I}^{i}(M)_{\mathfrak{p}}=\mathrm{H}_{I_{\mathfrak{p}}}^{i}\left(M_{\mathfrak{p}}\right)</m> for all <m>\mathfrak{p}</m>, and <m>\operatorname{dim}\left(M_{\mathfrak{p}}\right) \leq \operatorname{dim}(M)</m>, it suffices to assume that <m>R</m> is local. Moreover, by invariance of base, we can replace <m>R</m> by <m>R / \operatorname{ann}(M)</m>, and assume that <m>\operatorname{dim}(R)=\operatorname{dim}(M)</m>. Then, applying the previous theorem, <m>\operatorname{cd}(I, M) \leq \operatorname{ara}(I) \leq \operatorname{dim}(R)=\operatorname{dim}(M)</m>.
+          </p>
+          
+        </section>
         
       </chapter>
 
@@ -24659,13 +25037,6 @@
             </proof>
           </proposition>
     
-
-    
-        
-    
-        
-          
-    
         <p>
           We note that there is a switch from cohomological indexing of Čech complex and homological indexing of a flat resolution.
         </p>
@@ -24710,16 +25081,14 @@
               Given a map <m>M \rightarrow M^{\prime}</m>, we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.
             </p>
         
-            <p><ol>
-              <li>
-                  <p>
-              By taking a minimal resolution, we may assume that <m>P_{\bullet}(\longrightarrow M)</m> is a complex of finitely generated free <m>R</m>-modules. In this case, there is a natural isomorphism (exercise!)
-            </p>
-              </li>
-        
-            </ol></p>
-        
             <p>
+              <ol>
+                <li>
+                  <p>
+                    By taking a minimal resolution, we may assume that <m>P_{\bullet}(\longrightarrow M)</m> is a complex of finitely generated free <m>R</m>-modules. In this case, there is a natural isomorphism (exercise!)
+                  </p>
+                </li>
+              </ol>
               <me>P_{\bullet} \otimes \operatorname{Hom}_{R}(N, E) \cong \operatorname{Hom}_{R}\left(\operatorname{Hom}_{R}\left(P_{\bullet}, N\right), E\right)</me>
             </p>
         
@@ -24736,23 +25105,26 @@
         <theorem xml:id="thm-4.5">
           <statement>
             <p>
-              Theorem 4.5 (Local Duality). Let <m>(R, \mathfrak{m}, k)</m> be a regular local ring of dimension <m>d</m>. Then
+              Theorem 4.5 (Local Duality). 
+              Let <m>(R, \mathfrak{m}, k)</m> be a regular local ring of dimension <m>d</m>. 
+              Then
             </p>
         
-            <p><ol>
-              <li>
+            <p>
+              <ol>
+                <li>
                   <p>
-              If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)=\operatorname{Ext}_{d-i}^{R}(M, R)^{\vee}</m>.
-            </p>
-              </li>
+                    If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)=\operatorname{Ext}_{d-i}^{R}(M, R)^{\vee}</m>.
+                  </p>
+                </li>
         
-              <li>
+                <li>
                   <p>
-              If <m>R</m> is complete and <m>M</m> is arbitrary, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee}=\operatorname{Ext}_{d-i}^{R}(M, R)</m>.
+                    If <m>R</m> is complete and <m>M</m> is arbitrary, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee}=\operatorname{Ext}_{d-i}^{R}(M, R)</m>.
+                  </p>
+                </li>
+              </ol>
             </p>
-              </li>
-        
-            </ol></p>
         
             <p>
               These isomorphisms are functorial in <m>M</m>.
@@ -24768,14 +25140,15 @@
               <me>\mathrm{H}_{\mathfrak{m}}^{i}(M) \cong \operatorname{Tor}_{d-i}^{R}\left(M, \mathrm{H}_{\mathfrak{m}}^{d}(R)\right) \cong \operatorname{Tor}_{d-i}^{R}\left(M, R^{\vee}\right) \cong \operatorname{Ext}_{R}^{d-i}(M, R)^{\vee} .</me>
             </p>
         
-            <p><ol>
-              <li>
+            <p>
+              <ol>
+                <li>
                   <p>
-              Since <m>R</m> is complete, <m>\mathrm{H}_{\mathfrak{m}}^{d}(R)^{\vee} \cong R^{\vee \vee} \cong R</m>. Then,
+                    Since <m>R</m> is complete, <m>\mathrm{H}_{\mathfrak{m}}^{d}(R)^{\vee} \cong R^{\vee \vee} \cong R</m>. Then,
+                  </p>
+                </li>
+              </ol>
             </p>
-              </li>
-        
-            </ol></p>
         
             <p>
               <me>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee} \cong \operatorname{Tor}_{d-i}^{R}\left(M, \mathrm{H}_{\mathfrak{m}}^{d}(R)\right)^{\vee} \cong \operatorname{Ext}_{R}^{d-i}\left(M, \mathrm{H}_{\mathfrak{m}}^{d}(R)^{\vee}\right) \cong \operatorname{Ext}_{R}^{d-i}(M, R)</me>
