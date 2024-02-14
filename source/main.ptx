@@ -19112,13 +19112,8 @@
     
         </section>
 
-        <section xml:id="sec-localizations">
-          <title>Localization</title>
+        <section xml:id="sec-localizations"><title>Localization</title>
 
-          <!--*****************
-          Section: Localization
-          ******************-->
-          
           <blockquote>
             <p>
               <q>The best way to be global is to be local.</q>
@@ -19127,15 +19122,10 @@
           </blockquote>
 
           <example xml:id="ex-powers-of-element-is-multiplicatively-closed"><title>Powers of Element is Multiplicatively Closed</title>
-    
-    
             <statement>
-              
-    
               <p>
                 Let <m>R</m> be a ring. For any <m>f\in R</m>, the set <m>W=\{1, f, f^2, f^3, \dots\}</m> is a multiplicative set.
               </p>
-    
             </statement>
           </example>
     
@@ -19620,12 +19610,7 @@
 
         </section>
 
-        <section xml:id="sec-nak">
-          <title>NAK</title>
-
-          <!--********
-          Section: NAK
-          *********-->
+        <section xml:id="sec-nak"><title>NAK</title>
           
           <blockquote>
             <p>
@@ -19843,17 +19828,9 @@
       </chapter>
 
       <chapter xml:id="ch-decomposing-ideals"><title>Decomposing Ideals</title>
-
-        <!--***********************
-        Chapter: Decomposing Ideals
-        ************************-->
   
         <section xml:id="sec-min-support"><title>Minimal Primes and Support</title>
 
-          <!--*****************************
-          Section: Minimal Primes & Support
-          ******************************-->
-          
           <blockquote>
             <p>
               <q>There is no support so strong as the strength that enables one to stand alone.</q>
@@ -20154,12 +20131,8 @@
 
         </section>
 
-        <section xml:id="sec-ass-primes">
-          <title>Associated Primes</title>
+        <section xml:id="sec-ass-primes"><title>Associated Primes</title>
 
-          <!--**********************
-          Section: Associated Primes
-          ***********************-->
           
           <blockquote>
             <p>
@@ -20781,12 +20754,7 @@
 
         </section>
 
-        <section xml:id="sec-primary-decomp">
-          <title>Primary Decomposition</title>
-
-          <!--**************************
-          Section: Primary Decomposition
-          ***************************-->
+        <section xml:id="sec-primary-decomp"><title>Primary Decomposition</title>
           
           <blockquote>
             <p>
@@ -21320,13 +21288,8 @@
 
         </section>
 
-        <section xml:id="sec-krull-intersection">
-          <title>The Krull Intersection Theorem</title>
-
-          <!--***********************
-          Section: Krull Intersection
-          ************************-->
-          
+        <section xml:id="sec-krull-intersection"><title>The Krull Intersection Theorem</title>
+ 
           <blockquote>
             <p>
               <q>Life happens at intersections.</q>
@@ -21342,12 +21305,7 @@
 
       <chapter xml:id="ch-dim-theory"><title>Dimension Theory</title>
   
-        <section xml:id="sec-dim-height">
-          <title>Dimension and Height</title>
-
-          <!--***********************
-          Section: Dimension & Height
-          ************************-->
+        <section xml:id="sec-dim-height"><title>Dimension and Height</title>
           
           <blockquote>
             <p>
@@ -21581,12 +21539,7 @@
 
         </section>
 
-        <section xml:id="sec-over-up-down">
-          <title>Over, Up, and Down</title>
-
-          <!--*******************
-          Section: Over, Up, Down
-          ********************-->
+        <section xml:id="sec-over-up-down"><title>Over, Up, and Down</title>
           
           <blockquote>
             <p>
@@ -22083,13 +22036,8 @@
 
         </section>
 
-        <section xml:id="sec-noether-normalizations">
-          <title>Noether Normalizations</title>
+        <section xml:id="sec-noether-normalizations"><title>Noether Normalizations</title>
 
-          <!--***************************
-          Section: Noether Normalizations
-          ****************************-->
-          
           <blockquote>
             <p>
               <q>I think normalization is a good thing.</q>
@@ -22439,12 +22387,15 @@
         </section>
 
         <section xml:id="sec-height-generators"><title>Height and Number of Generators</title>
-
-          <!--**********************************
-          Section: Height & Number of Generators
-          ***********************************-->
           
-          <blockquote><p><q>You are not judged by the height you have risen, but from the deoth you have climbed.</q></p><attribution>Fredrick Douglass</attribution></blockquote>
+          <blockquote>
+            <p>
+              <q>
+                You are not judged by the height you have risen, but from the deoth you have climbed.
+              </q>
+            </p>
+            <attribution>Fredrick Douglass</attribution>
+          </blockquote>
   
           <theorem xml:id="thm-krulls-principal-ideal-theorem"><title>Krull's Principal Ideal Theorem</title>
             <idx><h>Krull's Principal Ideal Theorem</h></idx>
@@ -22551,55 +22502,57 @@
           </blockquote>
   
           <theorem xml:id="thm-existence-of-sops"><title>Existence of SOPs</title>
-    
-    
             <statement>
-              
-    
               <p>
-                Let <m>(R,\fm)</m> be a noetherian local ring of dimension <m>d</m>. There there exist <m>x_1,\dots,x_d\in \fm</m> such that <m>\fm= \sqrt{(x_1,\dots,x_d)}</m>.
+                Let <m>(R,\fm)</m> be a noetherian local ring of dimension <m>d</m>. 
+                There there exist <m>x_1,\dots,x_d\in \fm</m> such that <m>\fm= \sqrt{(x_1,\dots,x_d)}</m>.
               </p>
-
             </statement>
   
-  
             <proof>
-
-  
               <p>
-                Let <m>d := \dim(R)</m>. If <m>d=0</m>, then <m>\fm=\sqrt{(0)}</m>, so the statement holds.
+                Let <m>d := \dim(R)</m>. 
+                If <m>d=0</m>, then <m>\fm=\sqrt{(0)}</m>, so the statement holds.
               </p>
   
               <p>
-                In general, we will show that we can choose <m>x_1,\dots, x_i\in \fm</m> inductively such that every minimal prime of <m>J_i= (x_1,\dots,x_i)</m> has height <m>i</m>. The case <m>i=0</m> is clear from the comment above. Say that we have chosen the first <m>i</m> elements. If <m>i&lt;d</m>, note that <m>\fm</m> is not a minimal prime of <m>J_i</m>, as this would contradict . Note that <m>R</m> is noetherian and thus <m>J_i</m> has finitely many minimal primes, by . Thus, by , we can choose <m>x_{i+1} \in \fm</m> not in any minimal prime of <m>J_i</m>. Then by  every minimal prime of <m>J_{i+1} := J_i +(x_{i+1})</m> has height at most <m>i+1</m>. On the other hand, every <m>Q \in \Min(J_{i+1})</m> contains some <m>P \in \Min(J_i)</m>, and in fact we must have <m>Q \supsetneq P</m>, since <m>x_{i+1}\in Q \smallsetminus P</m>. Since <m>P</m> has height <m>i</m> and <m>P \supsetneq Q</m>, then <m>Q</m> must have height at least <m>i+1</m>. Therefore, <m>Q</m> must have height exactly <m>i+1</m>, completing the induction.
+                In general, we will show that we can choose <m>x_1,\dots, x_i\in \fm</m> inductively such that every minimal prime of <m>J_i= (x_1,\dots,x_i)</m> has height <m>i</m>. 
+                The case <m>i=0</m> is clear from the comment above. 
+                Say that we have chosen the first <m>i</m> elements. 
+                If <m>i&lt;d</m>, note that <m>\fm</m> is not a minimal prime of <m>J_i</m>, as this would contradict. 
+                Note that <m>R</m> is noetherian and thus <m>J_i</m> has finitely many minimal primes, by . 
+                Thus, by , we can choose <m>x_{i+1} \in \fm</m> not in any minimal prime of <m>J_i</m>. 
+                Then by  every minimal prime of <m>J_{i+1} := J_i +(x_{i+1})</m> has height at most <m>i+1</m>. 
+                On the other hand, every <m>Q \in \Min(J_{i+1})</m> contains some <m>P \in \Min(J_i)</m>, and in fact we must have <m>Q \supsetneq P</m>, since <m>x_{i+1}\in Q \smallsetminus P</m>. 
+                Since <m>P</m> has height <m>i</m> and <m>P \supsetneq Q</m>, then <m>Q</m> must have height at least <m>i+1</m>. 
+                Therefore, <m>Q</m> must have height exactly <m>i+1</m>, completing the induction.
               </p>
   
               <p>
                 Since every minimal prime of <m>J_d = (x_1,\dots,x_d)</m> has height <m>d</m>, its unique minimal prime must be <m>\fm</m>. It follows that <m>\sqrt{J_d}=\fm</m>.
               </p>
-  
             </proof>
           </theorem>
   
           <corollary xml:id="cor-dim-embdim"><title>Dim <m>&lt;</m>= EmbDim</title>
-  
-  
             <statement>
-              
-  
               <p>
-                Let <m>(R,\fm,k)</m> be a noetherian local ring. Then <me>\dim(R)=\min\{ n \ | \ \sqrt{(f_1,\dots,f_n)}=\fm \textrm{ for some } f_1,\dots,f_n \} \leqslant \mu(\fm).</me> In particular, a noetherian local ring has finite dimension.
+                Let <m>(R,\fm,k)</m> be a noetherian local ring. 
+                Then 
+                <me>\dim(R)=\min\{ n \ | \ \sqrt{(f_1,\dots,f_n)}=\fm \textrm{ for some } f_1,\dots,f_n \} \leqslant \mu(\fm).</me> 
+                In particular, a noetherian local ring has finite dimension.
               </p>
-  
             </statement>
   
             <proof>
-  
-  
               <p>
-                Suppose that <m>\sqrt{(f_1,\dots,f_n)}=\fm</m>. Then <m>\fm</m> is a minimal prime of <m>(f_1, \ldots, f_n)</m>, and thus <m>\fm</m> has height at most <m>n</m> by . The dimension of a local ring is the height of its maximal ideal, so <m>\dim(R) \leqslant n</m>, and thus <m>\dim(R)</m> is bounded above by the minimum in the middle. On the other hand, if <m>d = \dim(R)</m> then by  there exist <m>f_1, \ldots, f_d</m> such that <m>\fm = (f_1, \ldots, f_d)</m>, which gives the other inequality, showing<me>\dim(R)=\min\{ n \ | \ \sqrt{(f_1,\dots,f_n)}=\fm \textrm{ for some } f_1,\dots,f_n \}.</me>Finally, since <m>\fm</m> is generated by <m>\mu(\fm)</m> elements, there are in particular <m>\mu(\fm)</m> elements whose radical is <m>\fm</m>.
+                Suppose that <m>\sqrt{(f_1,\dots,f_n)}=\fm</m>. 
+                Then <m>\fm</m> is a minimal prime of <m>(f_1, \ldots, f_n)</m>, and thus <m>\fm</m> has height at most <m>n</m> by. 
+                The dimension of a local ring is the height of its maximal ideal, so <m>\dim(R) \leqslant n</m>, and thus <m>\dim(R)</m> is bounded above by the minimum in the middle. 
+                On the other hand, if <m>d = \dim(R)</m> then by  there exist <m>f_1, \ldots, f_d</m> such that <m>\fm = (f_1, \ldots, f_d)</m>, which gives the other inequality, showing
+                <me>\dim(R)=\min\{ n \ | \ \sqrt{(f_1,\dots,f_n)}=\fm \textrm{ for some } f_1,\dots,f_n \}.</me>
+                Finally, since <m>\fm</m> is generated by <m>\mu(\fm)</m> elements, there are in particular <m>\mu(\fm)</m> elements whose radical is <m>\fm</m>.
               </p>
-  
             </proof>
           </corollary>
   
@@ -22618,38 +22571,39 @@
           </definition>
   
           <definition xml:id="defn-absolutely-minimal-prime"><title>Absolutely Minimal Prime</title>
-          <statement>
-            <p>
-              Let <m>R</m> be a noetherian ring. A prime <m>P</m> of <m>R</m> is an <em>absolutely minimal prime</em><idx><h>absolutely minimal prime</h></idx> of <m>R</m> if <m>\dim(R)=\dim(R/P)</m>.
-            </p>
-          </statement>
+            <statement>
+              <p>
+                Let <m>R</m> be a noetherian ring. 
+                A prime <m>P</m> of <m>R</m> is an <em>absolutely minimal prime</em><idx><h>absolutely minimal prime</h></idx> of <m>R</m> if <m>\dim(R)=\dim(R/P)</m>.
+              </p>
+            </statement>
           </definition>
   
           <theorem xml:id="thm-sop-stuff-theorem"><title>SOP Stuff Theorem</title>
-  
-  
             <statement>
-              
-  
               <p>
                 Let <m>(R,\fm)</m> be a noetherian local ring, and <m>x_1,\dots,x_t\in \fm</m>. (a) <m>{\dim(R/(x_1,\dots,x_t))\geqslant \dim(R)-t}.</m> (b) <m>x_1,\dots,x_t</m> are parameters if and only if <m>\dim(R/(x_1,\dots,x_t))=\dim(R)-t</m>. (c) <m>x_1,\dots,x_t</m> are parameters if and only if <m>x_1</m> is not in any absolutely minimal prime of <m>R</m> and <m>x_i</m> is not contained in any absolutely minimal prime of <m>R/(x_1,\dots,x_{i-1})</m> for each <m>i=2,\dots,t</m>.
               </p>
-  
             </statement>
   
             <proof>
-
-  
               <p>
-                If <m>\dim(R/(x_1,\dots,x_t)) = s</m>, then take a system of parameters <m>y_1,\dots,y_s</m> for <m>R/(x_1,\dots,x_t)</m>, and pull back to <m>R</m> to get <m>x_1,\dots,x_t,y'_1,\dots,y'_s</m> in <m>R</m> such that the quotient of <m>R</m> modulo the ideal generated by these elements has dimension zero. By Krull height, we get that <m>t+s\geqslant \dim(R)</m>.
+                If <m>\dim(R/(x_1,\dots,x_t)) = s</m>, then take a system of parameters <m>y_1,\dots,y_s</m> for <m>R/(x_1,\dots,x_t)</m>, and pull back to <m>R</m> to get <m>x_1,\dots,x_t,y'_1,\dots,y'_s</m> in <m>R</m> such that the quotient of <m>R</m> modulo the ideal generated by these elements has dimension zero. 
+                By Krull height, we get that <m>t+s\geqslant \dim(R)</m>.
               </p>
   
               <p>
-                Let <m>d=\dim(R)</m>. Suppose first that <m>\dim(R/(x_1,\dots,x_t))=d-t</m>. Then, there is a SOP <m>y_1,\dots,y_{d-t}</m> for <m>R/(x_1,\dots,x_t)</m>; lift back to <m>R</m> to get a sequence of <m>d</m> elements <m>x_1,\dots,x_t,y_1,\dots,y_{d-t}</m> that generate an <m>\fm</m>-primary ideal. This is a SOP, so <m>x_1,\dots,x_t</m> are parameters.
+                Let <m>d=\dim(R)</m>. 
+                Suppose first that <m>\dim(R/(x_1,\dots,x_t))=d-t</m>. 
+                Then, there is a SOP <m>y_1,\dots,y_{d-t}</m> for <m>R/(x_1,\dots,x_t)</m>; lift back to <m>R</m> to get a sequence of <m>d</m> elements <m>x_1,\dots,x_t,y_1,\dots,y_{d-t}</m> that generate an <m>\fm</m>-primary ideal. 
+                This is a SOP, so <m>x_1,\dots,x_t</m> are parameters.
               </p>
   
               <p>
-                On the other hand, if <m>x_1,\dots,x_t</m>, are parameters, extend to a SOP <m>x_1,\dots,x_d</m>. If <m>I</m> is the image of <m>(x_{t+1},\dots,x_d)</m> in <m>R'=R/(x_1,\dots,x_t)</m>, we have <m>R'/I</m> is zero-dimensional, hence has finite length, so <m>\Ass_{R'}(R'/I)=\{\fm\}</m>, and <m>I</m> is <m>\fm</m>-primary in <m>R'</m>. Thus, <m>\dim(R')</m> is equal to the height of <m>I</m>, which is then <m>\leqslant d-t</m> by Krull height. That is, <m>\dim(R') \leqslant d-t</m>, and using the first statement, we have equality.
+                On the other hand, if <m>x_1,\dots,x_t</m>, are parameters, extend to a SOP <m>x_1,\dots,x_d</m>. 
+                If <m>I</m> is the image of <m>(x_{t+1},\dots,x_d)</m> in <m>R'=R/(x_1,\dots,x_t)</m>, we have <m>R'/I</m> is zero-dimensional, hence has finite length, so <m>\Ass_{R'}(R'/I)=\{\fm\}</m>, and <m>I</m> is <m>\fm</m>-primary in <m>R'</m>. 
+                Thus, <m>\dim(R')</m> is equal to the height of <m>I</m>, which is then <m>\leqslant d-t</m> by Krull height. 
+                That is, <m>\dim(R') \leqslant d-t</m>, and using the first statement, we have equality.
               </p>
   
               <p>
@@ -22657,11 +22611,16 @@
               </p>
   
               <p>
-                Let <m>R=\Z_{(2)}[x]</m>. This ring has dimension at least two, but <m>R/(2x-1)\cong \mathbb{Q}</m> has dimension zero.
+                Let <m>R=\Z_{(2)}[x]</m>. 
+                This ring has dimension at least two, but <m>R/(2x-1)\cong \mathbb{Q}</m> has dimension zero.
               </p>
   
               <p>
-                For an example that is a finitely generated algebra over a field, consider <m>R = S/I</m> with <m>S = k[x,y,z]</m> and <m>I =(xy,xz,x^2-x)</m>. This ring has dimension two: <m>A=k[y,z]</m> is a noether normalization, as <m>x^2-x=0</m> makes <m>x</m> integral over <m>A</m>, and no nonzero polynomial in <m>y,z</m> in <m>k[x,y,z]</m> can belong to the ideal <m>(x) \supseteq (xy,xz,x^2-x)</m>. However, <me>\displaystyle R/(x-1) \cong \frac{k[x,y,z]}{(y,z,x-1)}\cong k</me> has dimension zero.
+                For an example that is a finitely generated algebra over a field, consider <m>R = S/I</m> with <m>S = k[x,y,z]</m> and <m>I =(xy,xz,x^2-x)</m>. 
+                This ring has dimension two: <m>A=k[y,z]</m> is a noether normalization, as <m>x^2-x=0</m> makes <m>x</m> integral over <m>A</m>, and no nonzero polynomial in <m>y,z</m> in <m>k[x,y,z]</m> can belong to the ideal <m>(x) \supseteq (xy,xz,x^2-x)</m>. 
+                However, 
+                <me>\displaystyle R/(x-1) \cong \frac{k[x,y,z]}{(y,z,x-1)}\cong k</me> 
+                has dimension zero.
               </p>
             </proof>
   
@@ -22954,9 +22913,397 @@
 
         <section xml:id="sec-2"><title></title>
 
-          <p>
+          <definition xml:id="def-48">
+            <statement>
+              <p>
+                Let <m>R</m> be a ring, <m>M</m> an <m>R</m>-module, and <m>{\bf x}=x_1,\dots,x_n\in R</m>.
+                We say <m>{\bf x}</m> is a <em>regular sequence on <m>M</m></em>, or simply an <em><m>M</m>-sequence</em>, if <m>(x_1,\dots, x_n)M\neq M</m> and <m>x_i</m> is regular (i.e., a non-zero-divisor) on <m>M/(x_1,\dots,x_{i-1})M</m> for each <m>i=1,\dots,n</m>. 
+                An <m>M</m>-sequence <m>{\bf x}</m> is called <em>maximal</em> if <m>{\bf x}</m> cannot be extended to a longer <m>M</m>-sequence.
+              </p>
+            </statement>
+          </definition>
+
+          <example>
+            <p>
+              <term>Example 49</term>.  <em>Let <m>R=k[x_1,\dots,x_n]</m> be a polynomial ring over the field <m>k</m>. Then <m>x_1,\dots,x_n</m> is a maximal <m>R</m>-sequence.</em>
+            </p>
+          </example>
+
+          <lemma xml:id="lem-50">
+            <statement>
+              <p>
+                Let <m>R</m> be Noetherian and <m>M</m> a finitely generated <m>R</m>-module. Then
+                <ol>
+                  <li>
+                    <p>
+                      The length of every <m>M</m>-sequence is finite.
+                    </p>
+                  </li>
             
+                  <li>
+                    <p>
+                      Every <m>M</m>-sequence can be extended to a maximal <m>M</m>-sequence.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                For part (a), note that if <m>x_1,\dots,x_n</m> is an <m>M</m>-sequence then <me>0\subset (x_1)M\subset (x_1,x_2)M\subset \cdots \subset (x_1,\dots,x_n)M</me> is a strictly ascending chain of submodule of <m>M</m>. 
+                For if <m>(x_1,\dots,x_i)M=(x_1,\dots,x_{i+1})M</m> for some <m>i</m>, then <m>x_{i+1}M\subseteq (x_1,\dots,x_i)M</m>. 
+                As <m>M\neq (x_1,\dots,x_i)M</m>, then <m>x_{i+1}</m> is a zero-divisor on <m>M/(x_1,\dots,x_i)M</m>, a contradiction. 
+                Consequently, as <m>M</m> is Noetherian, this chain must terminate. 
+                Hence, there are no <m>M</m>-sequences of infinite length. The same argument (using ACC) proves (b) as well. 
+              </p>
+            </proof>
+          </lemma>
+
+          <example xml:id="ex-51">
+            <p>
+              Let <m>R=k[x,y,x]</m>. 
+              Then <m>x,y,z</m> is a maximal <m>R</m>-sequence.
+            </p> 
+          </example>
+
+          <example xml:id="ex-52">
+            <p>
+              Let <m>R=k[x,y,z]_{(x,y,z)}</m> and <m>M=R/(xy,yz)</m>. 
+              Then <m>y-z</m> is a maximal <m>M</m> -sequence. 
+              To see this, note that <m>(xy,xz)=(y)\cap (x,z)</m> is a irredundant primary decomposition of <m>I</m>. 
+              Thus, <m>(y)</m> and <m>(x,z)</m> are the associated primes of <m>M</m>. 
+              Since <m>y-z</m> is not in either associated prime, it is a non-zero-divisor on <m>M</m>. 
+              Also, <m>M\neq (y-z)M</m>, so <m>y-z</m> is <m>M</m>-regular.
+              Note that <m>M/(y-z)M\cong k[x,y,z]_{(x,y,z)}/(xy, xz, y-z)\cong k[x,y]_{(x,y)}/(xy, y^2)</m>. 
+              Since <m>(x,y)x=0</m> in <m>k[x,y]_{(x,y)}/(xy, y^2)</m>, <m>(x,y)</m> consists of zero-divisors on <m>M/(y-z)M</m>. 
+              Thus, <m>y-z</m> is a maximal <m>M</m>-sequence.
+            </p> </example>
+
+            <p>
+              Here we summarize some essential facts about primary decompositions for modules, and then use them to prove Krull’s Intersection Theorem.
+            </p>
+
+          <definition xml:id="def-53">
+            <statement>
+              <p>
+                Let <m>M</m> be an <m>R</m>-module. 
+                A submodule <m>Q</m> of <m>M</m> is called <em>primary</em> if <m>Q\subsetneq M</m> and for every <m>r\in R</m> multiplication by <m>r</m> on <m>M/Q</m> is either injective or nilpotent; i.e., <m>r</m> is either a non-zero-divisor on <m>M/Q</m> or <m>r^nM\subseteq Q</m> for some <m>n</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <remark>
+            <p>
+              Let <m>Q</m> be a primary submodule of <m>M</m>. 
+              Then <m>p:=\sqrt{\operatorname{Ann}_R M/Q}</m> is a prime ideal of <m>R</m>. 
+              We say that <m>Q</m> is a <m>p</m>-primary submodule of <m>M</m>.
+            </p></remark>
+
+          <theorem xml:id="thm-55">
+            <statement>
+              <p>
+                Let <m>R</m> be a Noetherian ring, <m>M</m> a finitely generated <m>R</m>-module and <m>N\subsetneq M</m> a submodule. 
+                Then there exists primary submodules <m>Q_1,\dots,Q_n</m> such that
+              </p>
+
+            <p><ul>
+              <li>
+                <p>
+              <em><m>N=Q_1\cap \cdots \cap Q_n</m>;</em>
+            </p>
+              </li>
+
+              <li>
+                <p>
+              <em><m>N\subsetneq Q_1\cap \cdots \cap \hat{Q_i}\cap \cdots Q_n</m> for <m>i=1,\dots,n</m>;</em>
+            </p>
+              </li>
+
+              <li>
+                <p>
+              <em><m>p_1,\dots,p_n</m> are distinct prime ideals, where <m>p_i=\sqrt{\operatorname{Ann}_R M/Q_i}</m>.</em>
+            </p>
+              </li>
+
+            </ul></p>
+
+            <p>
+              <em>The decomposition <m>N=Q_1\,\cap\cdots\cap\, Q_n</m> is called an <term>irredundant primary decomposition for <m>N\subset M</m></term>. The prime ideals <m>p_1,\dots,p_n</m> are uniquely determined by <m>N\subset M</m> and are called the <term>associated primes</term> of <m>N\subset M</m> (or more commonly, of <m>M/N</m>). We denote the set of associated primes of <m>M/N</m> by <m>\operatorname{Ass}_R M/N</m>. Moreover, a prime ideal <m>p\in \operatorname{Ass}_R M/N</m> if and only if <m>p=(N:_R x)</m> for some <m>x\in M</m>. Additionally, if <m>p_i</m> is a minimal associated prime of <m>M/N</m>, the <m>Q_i=\phi^{-1}(N_{p_i})</m> where <m>\phi:M\to M_{p_i}</m> is the natural localization map.</em>
+            </p></statement>
+                    
+
+          <proof>
+            <p>
+              <em>Proof.</em> See Atiyah-Macdonald. ◻
+            </p></proof></theorem>
+
+          <theorem xml:id="thm-56"><title>Krull’s Intersection Theorem</title>
+            <statement>
+              <p>
+                Let <m>R</m> be a Noetherian ring, <m>I</m> an ideal, and <m>M</m> a finitely generated <m>R</m>-module. 
+                Then there exist an <m>s\in I</m> such that 
+                <me>(1-s)\bigcap_{n=1}^{\infty} I^nM=0.</me>
+              </p>
+            </statement>
+                    
+          </theorem>
+
+          <proof>
+            <p>
+              <em>Proof.</em> Let <m>\displaystyle{N=\bigcap_{n=1}^{\infty} I^nM}</m>. 
+              We claim that <m>IN=N</m>. 
+              If <m>IN=M</m>, there is nothing to prove. 
+              Suppose <m>IN\subsetneq M</m> and let <m>IN=Q_1\cap Q_2\cap \cdots \cap Q_r</m> be a primary decomposition of <m>IN\subset M</m>. 
+              Then for each <m>i</m>, <m>IN\subseteq Q_i</m>. 
+              If <m>N\not\subset Q_i</m> then <m>I</m> consists of zero-divisors on <m>M/Q_i</m>. 
+              As <m>Q_i</m> is a primary submodule of <m>M</m>, we must have <m>I^nM\subseteq Q_i</m> for some <m>n</m>. 
+              But <m>N\subseteq I^nM</m>, so <m>N\subseteq Q_i</m>, a contradiction. Thus, <m>N\subseteq Q_1\cap\cdots \cap Q_r=IN</m>. Consequently, <m>IN=N</m>. By a homework exercise, this implies there exists <m>s\in I</m> such that <m>(1-s)N=0</m>. ◻
+            </p></proof>
+
+          <definition xml:id="def-57">
+            <statement>
+              <p>
+                Let <m>R</m> be a ring. 
+                The <em>Jacobson radical of <m>R</m></em>, denoted <m>J(R)</m>, is the intersection of all maximal ideals of <m>R</m>. 
+                It is easily seen that if <m>r\in J(R)</m> then <m>1-r</m> is a unit.
+              </p>
+            </statement>
+          </definition>
+
+          <corollary xml:id="cor-58">
+            <statement>
+              <p>
+                Let <m>R</m> be a Noetherian ring, <m>I\subseteq J(R)</m> an ideal, and <m>M</m> a finitely generated <m>R</m>-module. 
+                Then 
+                <me>\bigcap_{n=1}^{\infty} I^nM=0.</me>
+              </p>
+            </statement>
+                
+            <proof>
+              <p>
+                Apply Krull’s Intersection Theorem and use that <m>1-s</m> is a unit for every <m>s\in I</m>.
+              </p>
+            </proof> 
+          </corollary>
+
+          <proposition xml:id="prop-59">
+            <statement>
+              <p>
+                Let <m>R</m> be Noetherian, <m>M</m> a finitely generated <m>R</m>-module, and <m>{\bf x}=x_1,\dots,x_n\in J(R)</m> an <m>M</m>-sequence. 
+                Then any permutation of <m>{\bf x}</m> is an <m>M</m>-sequence.
+              </p>
+            </statement>
+                
+            <proof>
+              <p>
+                It suffices to show that if <m>x,y\in J(R)</m> is an <m>M</m>-sequence then so is <m>y,x</m>. 
+                First note that <m>(y,x)M=(x,y)M\neq M</m>. 
+                We next show that <m>y</m> is regular on <m>M</m>: suppose <m>yu=0</m> for some <m>u\in M</m>. 
+                Then <m>yu\in xM</m> so <m>u\in xM</m>. 
+                Write <m>u=xu_1</m> where <m>u_1\in M</m>. 
+                Then <m>0=yu=xyu_1</m>, so <m>yu_1=0</m>. 
+                Repeating the argument above, we get <m>u_1\in xM</m> and hence <m>u\in (x)^2M</m>. 
+                Continuing in this way, we obtain that <m>u\in \bigcap_{n\geqslant 1} (x)^nM</m>. 
+                As <m>(x)\subseteq J(R)</m> we have <m>\bigcap_{n\geqslant 1} (x)^nM=0</m> and thus <m>u=0</m>. 
+                This shows <m>y</m> is regular on <m>M</m>. 
+                Now assume <m>xv\in yM</m> for some <m>v\in M</m>. 
+                Then <m>xv=yw</m> for some <m>w\in M</m>. 
+                Since <m>y</m> is regular on <m>M/xM</m>, we obtain that <m>w=xz</m> for some <m>z\in M</m>. 
+                Consequently, <m>xv=xyz</m>. As <m>x</m> is regular on <m>M</m>, we then have <m>v=yz\in yM</m>. 
+                Hence, <m>x</m> is regular on <m>M/yM</m>.
+              </p>
+            </proof> 
+          </proposition>
+
+          <definition xml:id="def-60">
+            <statement>
+              <p>
+                Let <m>R</m> be a Noetherian ring, <m>I</m> an ideal of <m>R</m>, and <m>M</m> a finitely generated <m>R</m>-module such that <m>IM\neq M</m>. 
+                Then the <em>grade of <m>I</m> on <m>M</m></em>, denote <m>\operatorname{grade}_I M</m> or <m>\operatorname{grade}(I,M)</m>, is defined to be the supremum of the lengths of all <m>M</m>-sequences contained in <m>I</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <remark>
+            <p>
+              Note that it is not clear from the definition that <m>\operatorname{grade}_I M&lt;\infty</m>. 
+              Although every maximal <m>M</m>-sequence is finite, the supremum of the lengths of such sequences might be infinite.
+            </p>
+          </remark>
+
+          <convention>
+            <p>
+              Let <m>R</m> be a ring and <m>L</m> and <m>M</m> <m>R</m>-modules. 
+              Define 
+              <me>g(L,M):=\inf \{n\mid \operatorname{Ext}^n_R(L,M)\neq 0\}.</me> 
+              Note that <m>g(L,M)\geqslant 0</m> for all <m>R</m>-modules <m>L</m> and <m>M</m>. 
+              (Recall <m>\inf \emptyset=\infty</m>.)
+            </p>
+          </convention>
+
+          <proposition xml:id="prop-62">
+            <statement>
+              <p>
+                Let <m>R</m> be a ring, <m>L</m> and <m>M</m> <m>R</m>-modules, and <m>x\in R</m> such that <m>xL=0</m> and <m>x</m> is regular on <m>M</m>. Then <m>g(L,M/xM)=g(L,M)-1</m>. Furthermore, if <m>g:=g(L,M)&lt;\infty</m> then <m>\operatorname{Ext}^{g-1}_R(L,M/xM)\cong \operatorname{Ext}^g_R(L,M)</m>.
+              </p>
+            </statement>
+                
+            <proof>
+              <p>
+                Let <m>f:L\to M</m> be a homomorphism. 
+                Then <m>xf(L)=f(xL)=f(0)=0</m>. 
+                As <m>x</m> is regular on <m>M</m>, we see that <m>f(L)=0</m>. 
+                Hence, <m>\operatorname{Hom}_R(L,M)=0</m> and so <m>g&gt;0</m>. 
+                Now applying <m>\operatorname{Hom}_R(L,-)</m> to the s.e.s. <m>0\to M\xrightarrow{x} M\to M/xM\to 0</m> we get the long exact sequence 
+                <me>\cdots\to \operatorname{Ext}^i_R(L,M)\xrightarrow{x} \operatorname{Ext}^i_R(L,M)\to \operatorname{Ext}^i_R(L,M/xM) \to \operatorname{Ext}^{i+1}_R(L,M)\xrightarrow{x} \cdots</me> 
+                Since <m>xL=0</m> we have <m>x\operatorname{Ext}^i_R(L,M)=0</m> for all <m>i</m> (cf. Grifo’s 915 notes, Exercise 73(c).) 
+                Thus, for each <m>i</m> we have an exact sequence 
+                <me>0\to \operatorname{Ext}^i_R(L,M)\to \operatorname{Ext}^i_R(L,M/xM) \to \operatorname{Ext}^{i+1}_R(L,M)\to 0.</me> 
+                Both conclusions follow easily from this sequence.
+              </p>
+            </proof> 
+          </proposition>
+
+          <theorem xml:id="thm-63">
+            <statement>
+              <p>
+                Let <m>R</m> be a Noetherian ring, <m>I</m> an ideal of <m>R</m>, and <m>M</m> a finitely generated <m>R</m>-module such that <m>IM\neq M</m>. 
+                Let <m>x_1,\dots,x_r</m> be a maximal <m>M</m>-sequence contained in <m>I</m>. 
+                Then <m>r=\sup\{n\mid \operatorname{Ext}^n_R(R/I,M)\neq 0\}.</m> 
+                Consequently, all maximal <m>M</m>-sequences contained in <m>I</m> have the same length and 
+                <me>\operatorname{grade}_IM=\inf\{n\mid \operatorname{Ext}^n_R(R/I,M)\neq 0\}.</me> 
+                In particular, <m>\operatorname{grade}_I M&lt;\infty</m>.
+              </p>
+            </statement>
+                
+            <proof>
+              <p>
+                Notice that the right-hand-side is <m>g:=g(R/I,M)</m>. 
+                Suppose <m>r=0</m>. Since <m>IM\neq M</m>, it must be that <m>I</m> consists of zero-divisors on <m>M</m>. 
+                Thus, <m>I</m> is contained in the union of the associated primes of <m>M</m> (Grifo 905, Theorem 6.27). 
+                By the prime avoidance lemma (Grifo 905, Theorem 3.29), <m>I\subseteq p</m> for some associated prime <m>p</m> of <m>M</m>. 
+                Then the composition <m>R/I\to R/p\hookrightarrow M</m> is nonzero. 
+                Hence, <m>\operatorname{Hom}_R(R/I,M)=\operatorname{Ext}^0_R(R/I,M)\neq 0</m> and <m>g=0=r</m>. 
+                Proceeding by induction on <m>r</m>, we may assume <m>r&gt;0</m> and that the result holds for all finitely generated <m>R</m>-modules <m>N</m> with <m>IN\neq N</m> and having a maximal <m>N</m>-sequence of length at most <m>r-1</m>. 
+                Let <m>N=M/x_1M</m>. 
+                Then <m>IN\neq N</m> and <m>x_2,\dots, x_r</m> is a maximal <m>N</m>-sequence contained in <m>I</m>. 
+                Hence, <m>r-1=g(R/I,N)=g-1</m> by Proposition <xref ref="prop-62" />. 
+                Thus, <m>r=g</m>, which completes the proof.
+              </p>
+            </proof> 
+          </theorem>
+
+          <corollary xml:id="cor-64">
+            <statement>
+              <p>
+                Let <m>R</m> be a Noetherian ring, <m>I</m> an ideal of <m>R</m>, and <m>M</m> a finitely generated <m>R</m>-module such that <m>IM\neq M</m>. 
+                If <m>x\in I</m> is a regular element on <m>M</m>, then 
+                <me>\operatorname{grade}_{I/(x)}M/xM=\operatorname{grade}_I M/xM=\operatorname{grade}_I M-1.</me>
+              </p>
+            </statement>
+                
+            <proof>
+              <p>
+                For the first equality, observe that any sequence <m>{\bf y}</m> in <m>I</m> is an <m>M/xM</m>-sequence if and only if its image <m>{\bf \overline{y}}</m> in <m>I/(x)</m> is an <m>M/xM</m>-sequence. 
+                For the second equality, we have by Theorem <xref ref="thm-63"/> and Proposition <xref ref="prop-62" />, 
+                <me>\operatorname{grade}_I M/xM=g(R/I,M/xM)=g(R/I,M)-1=\operatorname{grade}_I M-1.</me>
+              </p>
+            </proof> 
+          </corollary>
+
+          <definition xml:id="def-65">
+            <statement>
+              <p>
+                Let <m>(R,m)</m> be a local ring and <m>M</m> a finitely generated <m>R</m>-module. 
+                Then the <em>depth of <m>M</m></em>, denoted <m>\operatorname{depth}M</m>, is defined to be <m>\operatorname{grade}_m M</m>; 
+                i.e., the length of the longest <m>M</m>-sequence from <m>R</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <remark xml:id="rem-66"><!--xml:id="depth-Ext"-->
+            <p>
+              Let <m>R</m> be a local ring and <m>M</m> a finitely generated <m>R</m>-module. 
+              By Theorem <xref ref="thm-63" />, we have 
+              <me>\operatorname{depth}M=\inf \{n \mid \operatorname{Ext}^n_R(R/m,M)\neq 0\}.</me>
+            </p>
+          </remark>
+
+          <p>
+            <term>Note:</term> By convention, the depth of the zero module is infinity, since <m>\inf \emptyset = \infty</m>.
           </p>
+
+          <theorem xml:id="thm-67"><title>Ischebeck’s Theorem</title>
+            <statement>
+              <p>
+                Let <m>(R,m)</m> be a local ring and <m>M</m> and <m>N</m> finitely generated <m>R</m>-modules. 
+                Then <m>\operatorname{Ext}^i_R(M,N)=0</m> for <m>i&lt;\operatorname{depth}N - \operatorname{dim}M</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                First, if either module is zero the result trivially holds. 
+                So assume <m>M</m> and <m>N</m> are nonzero and let <m>d=\operatorname{dim}M</m>. If <m>d=0</m> then <m>M</m> has finite length. 
+                Since <m>\operatorname{Ext}^i_R(R/m,N)=0</m> for all <m>i&lt;\operatorname{depth}N</m> by Remark <xref ref="rem-66" />, we have <m>\operatorname{Ext}^i_R(M,N)=0</m> for all <m>i&lt;\operatorname{depth}N</m> by Lemma <xref ref="bass3" />. 
+                Hence, the result holds for the case <m>d=0</m>.
+              </p>
+  
+              <p>
+                Suppose <m>d&gt;0</m> and assume the result holds for all finitely generated modules of dimension less than <m>d</m>.
+                Consider a filtration of <m>M</m>: 
+                <me>0=M_0\subset M_1\subset \cdots \subset M_n=M</me> where <m>M_j/M_{j-1}\cong R/p_j</m> for some primes <m>p_1,\dots,p_n</m> of <m>R</m>. (See Grifo 905 :Theorem 6.33.) 
+                Note that each <m>p_j</m> contains <m>\operatorname{Ann}_R M</m>, so <m>\operatorname{dim}R/p_j\leqslant d</m> for all <m>j</m>. 
+                Hence, if we show <m>\operatorname{Ext}^i_R(R/p_j,N)=0</m> for all <m>i&lt;\operatorname{depth}N-\operatorname{dim}R/p_j</m> and all <m>j</m>, then we’ll have <m>\operatorname{Ext}^i_R(M_j/M_{j-1},N)=0</m> for all <m>i&lt;\operatorname{depth}N-d</m> and all <m>j</m>. 
+                Using the long exact sequences on <m>\operatorname{Ext}</m> arising from the short exact sequences 
+                <me>0\to M_{j-1}\to M_j\to M_j/M_{j-1}\to 0,</me>
+                we can conclude <m>\operatorname{Ext}^i_R(M_j,N)=0</m> for all <m>i&lt;\operatorname{depth}N-d</m>. 
+                Since <m>M_n=M</m>, we’ll be done.
+              </p>
+  
+              <p>
+                Thus, assume <m>M\cong R/p</m> for some prime <m>p</m> with <m>\operatorname{dim}R/p=d&gt;0</m>. 
+                Since <m>p\subsetneq m</m>, let <m>x\in m\setminus p</m> and consider the short exact sequence 
+                <me>0\to R/p\xrightarrow{x} R/p\to R/(p,x)\to 0.</me> 
+                Since <m>\operatorname{dim}R/(p,x)\leqslant d-1</m>, we have <m>\operatorname{Ext}^i_R(R/(p,x), N)=0</m> for all <m>i&lt;\operatorname{depth}N-d+1</m> by the induction hypothesis. 
+                Rewriting this, we have <m>\operatorname{Ext}^{i+1}_R(R/(p,x),N)=0</m> for all <m>i&lt;\operatorname{depth}N-d</m>. 
+                From the long exact sequence on <m>\operatorname{Ext}</m>, we have 
+                <me>\operatorname{Ext}^i_R(R/p,N)\xrightarrow{x} \operatorname{Ext}^i_R(R/p,N)\to \operatorname{Ext}^{i+1}_R(R/(p,x),N).</me> 
+                By Nakayama’s Lemma, we see that <m>\operatorname{Ext}^i_R(R/p,N)=0</m> for all <m>i&lt;\operatorname{depth}N-d</m>. 
+                This completes the proof.
+              </p></proof>
+          </theorem>
+
+          <corollary xml:id="thm-68">
+            <statement>
+              <p>
+                Let <m>(R,m)</m> be a local ring and <m>M</m> a nonzero finitely generated <m>R</m>-module. 
+                Then <m>\operatorname{depth}M\leqslant\operatorname{dim}R/p</m> for all <m>p\in \operatorname{Ass}_R M</m>. 
+                In particular, <m>\operatorname{depth}M\leqslant\operatorname{dim}M</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Let <m>p\in \operatorname{Ass}_R M</m>. 
+                Then <m>\operatorname{Ext}^0_R(R/p,M)=\operatorname{Hom}_R(R/p,M)\neq 0</m>. 
+                By Theorem <xref ref="thm-67" />, <m>\operatorname{depth}M\leqslant\operatorname{dim}R/p</m>. ◻
+              </p>
+            </proof>
+          </corollary>
+
+          <example>
+            <p>
+                Let <m>k</m> be a field and <m>R=k[x_1,\dots,x_{d+1}]/(x_1,\dots,x_{d+1})(x_{d+1})</m>. 
+                Let <m>m=(x_1,\dots,x_{d+1})R</m>. 
+                Then <m>R_m</m> has depth zero and dimension <m>d</m>. 
+                To see <m>\operatorname{depth}R_m=0</m>, note that <m>mx_{d+1}=0</m> in <m>R_m</m>, so <m>mR_m</m> consists of zero-divisors. 
+                For <m>\operatorname{dim}R_m</m>, note that <m>\operatorname{dim}k[x_1,\dots,x_{d+1}]_m</m> is a <m>(d+1)</m>-dimensional domain, so <m>\operatorname{dim}R_m/I\leqslant d</m> for any nonzero ideal <m>I</m>. 
+                On the other hand, <m>R_m/(x_{d+1})R_m\cong k[x_1,\dots,x_d]_{(x_1,\dots,x_d)}</m>, which has dimension <m>d</m>. 
+                Thus, <m>\operatorname{dim}R_m\geqslant d</m>.
+            </p> 
+          </example>
           
         </section>
         

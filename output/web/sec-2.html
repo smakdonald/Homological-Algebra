@@ -744,7 +744,208 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-2"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">16.1</span><span class="space"> </span><span class="title"></span>
 </h2>
-<div class="para" id="sec-2-2"></div></section></div>
+<article class="definition definition-like" id="def-48"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-48-1-1">Let <span class="process-math">\(R\)</span> be a ring, <span class="process-math">\(M\)</span> an <span class="process-math">\(R\)</span>-module, and <span class="process-math">\({\bf x}=x_1,\dots,x_n\in R\text{.}\)</span> We say <span class="process-math">\({\bf x}\)</span> is a <em class="emphasis">regular sequence on <span class="process-math">\(M\)</span></em>, or simply an <em class="emphasis"><span class="process-math">\(M\)</span>-sequence</em>, if <span class="process-math">\((x_1,\dots, x_n)M\neq M\)</span> and <span class="process-math">\(x_i\)</span> is regular (i.e., a non-zero-divisor) on <span class="process-math">\(M/(x_1,\dots,x_{i-1})M\)</span> for each <span class="process-math">\(i=1,\dots,n\text{.}\)</span> An <span class="process-math">\(M\)</span>-sequence <span class="process-math">\({\bf x}\)</span> is called <em class="emphasis">maximal</em> if <span class="process-math">\({\bf x}\)</span> cannot be extended to a longer <span class="process-math">\(M\)</span>-sequence.</div></article><article class="example example-like" id="sec-2-3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">16.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-2-3-1">
+<dfn class="terminology">Example 49</dfn>.  <em class="emphasis">Let <span class="process-math">\(R=k[x_1,\dots,x_n]\)</span> be a polynomial ring over the field <span class="process-math">\(k\text{.}\)</span> Then <span class="process-math">\(x_1,\dots,x_n\)</span> is a maximal <span class="process-math">\(R\)</span>-sequence.</em>
+</div></article><article class="lemma theorem-like" id="lem-50"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">16.3</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="lem-50-1-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be Noetherian and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module. Then</div>
+<ol class="decimal">
+<li id="lem-50-1-1-4-1"><div class="para" id="lem-50-1-1-4-1-1">The length of every <span class="process-math">\(M\)</span>-sequence is finite.</div></li>
+<li id="lem-50-1-1-4-2"><div class="para" id="lem-50-1-1-4-2-1">Every <span class="process-math">\(M\)</span>-sequence can be extended to a maximal <span class="process-math">\(M\)</span>-sequence.</div></li>
+</ol>
+</div></article><details id="lem-50-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="lem-50-2-1">
+<div class="para">For part (a), note that if <span class="process-math">\(x_1,\dots,x_n\)</span> is an <span class="process-math">\(M\)</span>-sequence then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\subset (x_1)M\subset (x_1,x_2)M\subset \cdots \subset (x_1,\dots,x_n)M
+\end{equation*}
+</div>
+<div class="para">is a strictly ascending chain of submodule of <span class="process-math">\(M\text{.}\)</span> For if <span class="process-math">\((x_1,\dots,x_i)M=(x_1,\dots,x_{i+1})M\)</span> for some <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(x_{i+1}M\subseteq (x_1,\dots,x_i)M\text{.}\)</span> As <span class="process-math">\(M\neq (x_1,\dots,x_i)M\text{,}\)</span> then <span class="process-math">\(x_{i+1}\)</span> is a zero-divisor on <span class="process-math">\(M/(x_1,\dots,x_i)M\text{,}\)</span> a contradiction. Consequently, as <span class="process-math">\(M\)</span> is Noetherian, this chain must terminate. Hence, there are no <span class="process-math">\(M\)</span>-sequences of infinite length. The same argument (using ACC) proves (b) as well. </div>
+</div></article></details><article class="example example-like" id="ex-51"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">16.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="ex-51-1">Let <span class="process-math">\(R=k[x,y,x]\text{.}\)</span> Then <span class="process-math">\(x,y,z\)</span> is a maximal <span class="process-math">\(R\)</span>-sequence.</div></article><article class="example example-like" id="ex-52"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">16.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="ex-52-1">Let <span class="process-math">\(R=k[x,y,z]_{(x,y,z)}\)</span> and <span class="process-math">\(M=R/(xy,yz)\text{.}\)</span> Then <span class="process-math">\(y-z\)</span> is a maximal <span class="process-math">\(M\)</span> -sequence. To see this, note that <span class="process-math">\((xy,xz)=(y)\cap (x,z)\)</span> is a irredundant primary decomposition of <span class="process-math">\(I\text{.}\)</span> Thus, <span class="process-math">\((y)\)</span> and <span class="process-math">\((x,z)\)</span> are the associated primes of <span class="process-math">\(M\text{.}\)</span> Since <span class="process-math">\(y-z\)</span> is not in either associated prime, it is a non-zero-divisor on <span class="process-math">\(M\text{.}\)</span> Also, <span class="process-math">\(M\neq (y-z)M\text{,}\)</span> so <span class="process-math">\(y-z\)</span> is <span class="process-math">\(M\)</span>-regular. Note that <span class="process-math">\(M/(y-z)M\cong k[x,y,z]_{(x,y,z)}/(xy, xz, y-z)\cong k[x,y]_{(x,y)}/(xy, y^2)\text{.}\)</span> Since <span class="process-math">\((x,y)x=0\)</span> in <span class="process-math">\(k[x,y]_{(x,y)}/(xy, y^2)\text{,}\)</span> <span class="process-math">\((x,y)\)</span> consists of zero-divisors on <span class="process-math">\(M/(y-z)M\text{.}\)</span> Thus, <span class="process-math">\(y-z\)</span> is a maximal <span class="process-math">\(M\)</span>-sequence.</div></article><div class="para" id="sec-2-7">Here we summarize some essential facts about primary decompositions for modules, and then use them to prove Krull’s Intersection Theorem.</div>
+<article class="definition definition-like" id="def-53"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.6</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-53-1-1">Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module. A submodule <span class="process-math">\(Q\)</span> of <span class="process-math">\(M\)</span> is called <em class="emphasis">primary</em> if <span class="process-math">\(Q\subsetneq M\)</span> and for every <span class="process-math">\(r\in R\)</span> multiplication by <span class="process-math">\(r\)</span> on <span class="process-math">\(M/Q\)</span> is either injective or nilpotent; i.e., <span class="process-math">\(r\)</span> is either a non-zero-divisor on <span class="process-math">\(M/Q\)</span> or <span class="process-math">\(r^nM\subseteq Q\)</span> for some <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="remark remark-like" id="sec-2-9"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">16.7</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-2-9-1">Let <span class="process-math">\(Q\)</span> be a primary submodule of <span class="process-math">\(M\text{.}\)</span> Then <span class="process-math">\(p:=\sqrt{\operatorname{Ann}_R M/Q}\)</span> is a prime ideal of <span class="process-math">\(R\text{.}\)</span> We say that <span class="process-math">\(Q\)</span> is a <span class="process-math">\(p\)</span>-primary submodule of <span class="process-math">\(M\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="thm-55"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.8</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-55-1-1">Let <span class="process-math">\(R\)</span> be a Noetherian ring, <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module and <span class="process-math">\(N\subsetneq M\)</span> a submodule. Then there exists primary submodules <span class="process-math">\(Q_1,\dots,Q_n\)</span> such that</div> <div class="para logical" id="thm-55-1-2"><ul class="disc">
+<li id="thm-55-1-2-1-1"><div class="para" id="thm-55-1-2-1-1-1"><em class="emphasis"><span class="process-math">\(N=Q_1\cap \cdots \cap Q_n\text{;}\)</span></em></div></li>
+<li id="thm-55-1-2-1-2"><div class="para" id="thm-55-1-2-1-2-1"><em class="emphasis"><span class="process-math">\(N\subsetneq Q_1\cap \cdots \cap \hat{Q_i}\cap \cdots Q_n\)</span> for <span class="process-math">\(i=1,\dots,n\text{;}\)</span></em></div></li>
+<li id="thm-55-1-2-1-3"><div class="para" id="thm-55-1-2-1-3-1"><em class="emphasis"><span class="process-math">\(p_1,\dots,p_n\)</span> are distinct prime ideals, where <span class="process-math">\(p_i=\sqrt{\operatorname{Ann}_R M/Q_i}\text{.}\)</span></em></div></li>
+</ul></div> <div class="para" id="thm-55-1-3"><em class="emphasis">The decomposition <span class="process-math">\(N=Q_1\,\cap\cdots\cap\, Q_n\)</span> is called an <dfn class="terminology">irredundant primary decomposition for <span class="process-math">\(N\subset M\)</span></dfn>. The prime ideals <span class="process-math">\(p_1,\dots,p_n\)</span> are uniquely determined by <span class="process-math">\(N\subset M\)</span> and are called the <dfn class="terminology">associated primes</dfn> of <span class="process-math">\(N\subset M\)</span> (or more commonly, of <span class="process-math">\(M/N\)</span>). We denote the set of associated primes of <span class="process-math">\(M/N\)</span> by <span class="process-math">\(\operatorname{Ass}_R M/N\text{.}\)</span> Moreover, a prime ideal <span class="process-math">\(p\in \operatorname{Ass}_R M/N\)</span> if and only if <span class="process-math">\(p=(N:_R x)\)</span> for some <span class="process-math">\(x\in M\text{.}\)</span> Additionally, if <span class="process-math">\(p_i\)</span> is a minimal associated prime of <span class="process-math">\(M/N\text{,}\)</span> the <span class="process-math">\(Q_i=\phi^{-1}(N_{p_i})\)</span> where <span class="process-math">\(\phi:M\to M_{p_i}\)</span> is the natural localization map.</em></div></article><details id="thm-55-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-55-2-1">
+<em class="emphasis">Proof.</em> See Atiyah-Macdonald. ◻</div></article></details><article class="theorem theorem-like" id="thm-56"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.9</span><span class="period">.</span><span class="space"> </span><span class="title">Krull’s Intersection Theorem.</span>
+</h3>
+<div class="para logical" id="thm-56-2-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a Noetherian ring, <span class="process-math">\(I\)</span> an ideal, and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module. Then there exist an <span class="process-math">\(s\in I\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(1-s)\bigcap_{n=1}^{\infty} I^nM=0.
+\end{equation*}
+</div>
+</div></article><details id="sec-2-12" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="sec-2-12-1">
+<em class="emphasis">Proof.</em> Let <span class="process-math">\(\displaystyle{N=\bigcap_{n=1}^{\infty} I^nM}\text{.}\)</span> We claim that <span class="process-math">\(IN=N\text{.}\)</span> If <span class="process-math">\(IN=M\text{,}\)</span> there is nothing to prove. Suppose <span class="process-math">\(IN\subsetneq M\)</span> and let <span class="process-math">\(IN=Q_1\cap Q_2\cap \cdots \cap Q_r\)</span> be a primary decomposition of <span class="process-math">\(IN\subset M\text{.}\)</span> Then for each <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(IN\subseteq Q_i\text{.}\)</span> If <span class="process-math">\(N\not\subset Q_i\)</span> then <span class="process-math">\(I\)</span> consists of zero-divisors on <span class="process-math">\(M/Q_i\text{.}\)</span> As <span class="process-math">\(Q_i\)</span> is a primary submodule of <span class="process-math">\(M\text{,}\)</span> we must have <span class="process-math">\(I^nM\subseteq Q_i\)</span> for some <span class="process-math">\(n\text{.}\)</span> But <span class="process-math">\(N\subseteq I^nM\text{,}\)</span> so <span class="process-math">\(N\subseteq Q_i\text{,}\)</span> a contradiction. Thus, <span class="process-math">\(N\subseteq Q_1\cap\cdots \cap Q_r=IN\text{.}\)</span> Consequently, <span class="process-math">\(IN=N\text{.}\)</span> By a homework exercise, this implies there exists <span class="process-math">\(s\in I\)</span> such that <span class="process-math">\((1-s)N=0\text{.}\)</span> ◻</div></article></details><article class="definition definition-like" id="def-57"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.10</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-57-1-1">Let <span class="process-math">\(R\)</span> be a ring. The <em class="emphasis">Jacobson radical of <span class="process-math">\(R\)</span></em>, denoted <span class="process-math">\(J(R)\text{,}\)</span> is the intersection of all maximal ideals of <span class="process-math">\(R\text{.}\)</span> It is easily seen that if <span class="process-math">\(r\in J(R)\)</span> then <span class="process-math">\(1-r\)</span> is a unit.</div></article><article class="corollary theorem-like" id="cor-58"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">16.11</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="cor-58-1-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a Noetherian ring, <span class="process-math">\(I\subseteq J(R)\)</span> an ideal, and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bigcap_{n=1}^{\infty} I^nM=0.
+\end{equation*}
+</div>
+</div></article><details id="cor-58-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-58-2-1">Apply Krull’s Intersection Theorem and use that <span class="process-math">\(1-s\)</span> is a unit for every <span class="process-math">\(s\in I\text{.}\)</span>
+</div></article></details><article class="proposition theorem-like" id="prop-59"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">16.12</span><span class="period">.</span>
+</h3>
+<div class="para" id="prop-59-1-1">Let <span class="process-math">\(R\)</span> be Noetherian, <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module, and <span class="process-math">\({\bf x}=x_1,\dots,x_n\in J(R)\)</span> an <span class="process-math">\(M\)</span>-sequence. Then any permutation of <span class="process-math">\({\bf x}\)</span> is an <span class="process-math">\(M\)</span>-sequence.</div></article><details id="prop-59-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="prop-59-2-1">It suffices to show that if <span class="process-math">\(x,y\in J(R)\)</span> is an <span class="process-math">\(M\)</span>-sequence then so is <span class="process-math">\(y,x\text{.}\)</span> First note that <span class="process-math">\((y,x)M=(x,y)M\neq M\text{.}\)</span> We next show that <span class="process-math">\(y\)</span> is regular on <span class="process-math">\(M\text{:}\)</span> suppose <span class="process-math">\(yu=0\)</span> for some <span class="process-math">\(u\in M\text{.}\)</span> Then <span class="process-math">\(yu\in xM\)</span> so <span class="process-math">\(u\in xM\text{.}\)</span> Write <span class="process-math">\(u=xu_1\)</span> where <span class="process-math">\(u_1\in M\text{.}\)</span> Then <span class="process-math">\(0=yu=xyu_1\text{,}\)</span> so <span class="process-math">\(yu_1=0\text{.}\)</span> Repeating the argument above, we get <span class="process-math">\(u_1\in xM\)</span> and hence <span class="process-math">\(u\in (x)^2M\text{.}\)</span> Continuing in this way, we obtain that <span class="process-math">\(u\in \bigcap_{n\geqslant 1} (x)^nM\text{.}\)</span> As <span class="process-math">\((x)\subseteq J(R)\)</span> we have <span class="process-math">\(\bigcap_{n\geqslant 1} (x)^nM=0\)</span> and thus <span class="process-math">\(u=0\text{.}\)</span> This shows <span class="process-math">\(y\)</span> is regular on <span class="process-math">\(M\text{.}\)</span> Now assume <span class="process-math">\(xv\in yM\)</span> for some <span class="process-math">\(v\in M\text{.}\)</span> Then <span class="process-math">\(xv=yw\)</span> for some <span class="process-math">\(w\in M\text{.}\)</span> Since <span class="process-math">\(y\)</span> is regular on <span class="process-math">\(M/xM\text{,}\)</span> we obtain that <span class="process-math">\(w=xz\)</span> for some <span class="process-math">\(z\in M\text{.}\)</span> Consequently, <span class="process-math">\(xv=xyz\text{.}\)</span> As <span class="process-math">\(x\)</span> is regular on <span class="process-math">\(M\text{,}\)</span> we then have <span class="process-math">\(v=yz\in yM\text{.}\)</span> Hence, <span class="process-math">\(x\)</span> is regular on <span class="process-math">\(M/yM\text{.}\)</span>
+</div></article></details><article class="definition definition-like" id="def-60"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.13</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-60-1-1">Let <span class="process-math">\(R\)</span> be a Noetherian ring, <span class="process-math">\(I\)</span> an ideal of <span class="process-math">\(R\text{,}\)</span> and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module such that <span class="process-math">\(IM\neq M\text{.}\)</span> Then the <em class="emphasis">grade of <span class="process-math">\(I\)</span> on <span class="process-math">\(M\)</span></em>, denote <span class="process-math">\(\operatorname{grade}_I M\)</span> or <span class="process-math">\(\operatorname{grade}(I,M)\text{,}\)</span> is defined to be the supremum of the lengths of all <span class="process-math">\(M\)</span>-sequences contained in <span class="process-math">\(I\text{.}\)</span>
+</div></article><article class="remark remark-like" id="sec-2-17"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">16.14</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-2-17-1">Note that it is not clear from the definition that <span class="process-math">\(\operatorname{grade}_I M&lt;\infty\text{.}\)</span> Although every maximal <span class="process-math">\(M\)</span>-sequence is finite, the supremum of the lengths of such sequences might be infinite.</div></article><article class="convention remark-like" id="sec-2-18"><h3 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">16.15</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec-2-18-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(L\)</span> and <span class="process-math">\(M\)</span> <span class="process-math">\(R\)</span>-modules. Define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(L,M):=\inf \{n\mid \operatorname{Ext}^n_R(L,M)\neq 0\}.
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(g(L,M)\geqslant 0\)</span> for all <span class="process-math">\(R\)</span>-modules <span class="process-math">\(L\)</span> and <span class="process-math">\(M\text{.}\)</span> (Recall <span class="process-math">\(\inf \emptyset=\infty\text{.}\)</span>)</div>
+</div></article><article class="proposition theorem-like" id="prop-62"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">16.16</span><span class="period">.</span>
+</h3>
+<div class="para" id="prop-62-1-1">Let <span class="process-math">\(R\)</span> be a ring, <span class="process-math">\(L\)</span> and <span class="process-math">\(M\)</span> <span class="process-math">\(R\)</span>-modules, and <span class="process-math">\(x\in R\)</span> such that <span class="process-math">\(xL=0\)</span> and <span class="process-math">\(x\)</span> is regular on <span class="process-math">\(M\text{.}\)</span> Then <span class="process-math">\(g(L,M/xM)=g(L,M)-1\text{.}\)</span> Furthermore, if <span class="process-math">\(g:=g(L,M)&lt;\infty\)</span> then <span class="process-math">\(\operatorname{Ext}^{g-1}_R(L,M/xM)\cong \operatorname{Ext}^g_R(L,M)\text{.}\)</span>
+</div></article><details id="prop-62-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="prop-62-2-1">
+<div class="para">Let <span class="process-math">\(f:L\to M\)</span> be a homomorphism. Then <span class="process-math">\(xf(L)=f(xL)=f(0)=0\text{.}\)</span> As <span class="process-math">\(x\)</span> is regular on <span class="process-math">\(M\text{,}\)</span> we see that <span class="process-math">\(f(L)=0\text{.}\)</span> Hence, <span class="process-math">\(\operatorname{Hom}_R(L,M)=0\)</span> and so <span class="process-math">\(g&gt;0\text{.}\)</span> Now applying <span class="process-math">\(\operatorname{Hom}_R(L,-)\)</span> to the s.e.s. <span class="process-math">\(0\to M\xrightarrow{x} M\to M/xM\to 0\)</span> we get the long exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots\to \operatorname{Ext}^i_R(L,M)\xrightarrow{x} \operatorname{Ext}^i_R(L,M)\to \operatorname{Ext}^i_R(L,M/xM) \to \operatorname{Ext}^{i+1}_R(L,M)\xrightarrow{x} \cdots
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(xL=0\)</span> we have <span class="process-math">\(x\operatorname{Ext}^i_R(L,M)=0\)</span> for all <span class="process-math">\(i\)</span> (cf. Grifo’s 915 notes, Exercise 73(c).) Thus, for each <span class="process-math">\(i\)</span> we have an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to \operatorname{Ext}^i_R(L,M)\to \operatorname{Ext}^i_R(L,M/xM) \to \operatorname{Ext}^{i+1}_R(L,M)\to 0.
+\end{equation*}
+</div>
+<div class="para">Both conclusions follow easily from this sequence.</div>
+</div></article></details><article class="theorem theorem-like" id="thm-63"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.17</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="thm-63-1-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a Noetherian ring, <span class="process-math">\(I\)</span> an ideal of <span class="process-math">\(R\text{,}\)</span> and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module such that <span class="process-math">\(IM\neq M\text{.}\)</span> Let <span class="process-math">\(x_1,\dots,x_r\)</span> be a maximal <span class="process-math">\(M\)</span>-sequence contained in <span class="process-math">\(I\text{.}\)</span> Then <span class="process-math">\(r=\sup\{n\mid \operatorname{Ext}^n_R(R/I,M)\neq 0\}.\)</span> Consequently, all maximal <span class="process-math">\(M\)</span>-sequences contained in <span class="process-math">\(I\)</span> have the same length and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{grade}_IM=\inf\{n\mid \operatorname{Ext}^n_R(R/I,M)\neq 0\}.
+\end{equation*}
+</div>
+<div class="para">In particular, <span class="process-math">\(\operatorname{grade}_I M&lt;\infty\text{.}\)</span>
+</div>
+</div></article><details id="thm-63-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-63-2-1">Notice that the right-hand-side is <span class="process-math">\(g:=g(R/I,M)\text{.}\)</span> Suppose <span class="process-math">\(r=0\text{.}\)</span> Since <span class="process-math">\(IM\neq M\text{,}\)</span> it must be that <span class="process-math">\(I\)</span> consists of zero-divisors on <span class="process-math">\(M\text{.}\)</span> Thus, <span class="process-math">\(I\)</span> is contained in the union of the associated primes of <span class="process-math">\(M\)</span> (Grifo 905, Theorem 6.27). By the prime avoidance lemma (Grifo 905, Theorem 3.29), <span class="process-math">\(I\subseteq p\)</span> for some associated prime <span class="process-math">\(p\)</span> of <span class="process-math">\(M\text{.}\)</span> Then the composition <span class="process-math">\(R/I\to R/p\hookrightarrow M\)</span> is nonzero. Hence, <span class="process-math">\(\operatorname{Hom}_R(R/I,M)=\operatorname{Ext}^0_R(R/I,M)\neq 0\)</span> and <span class="process-math">\(g=0=r\text{.}\)</span> Proceeding by induction on <span class="process-math">\(r\text{,}\)</span> we may assume <span class="process-math">\(r&gt;0\)</span> and that the result holds for all finitely generated <span class="process-math">\(R\)</span>-modules <span class="process-math">\(N\)</span> with <span class="process-math">\(IN\neq N\)</span> and having a maximal <span class="process-math">\(N\)</span>-sequence of length at most <span class="process-math">\(r-1\text{.}\)</span> Let <span class="process-math">\(N=M/x_1M\text{.}\)</span> Then <span class="process-math">\(IN\neq N\)</span> and <span class="process-math">\(x_2,\dots, x_r\)</span> is a maximal <span class="process-math">\(N\)</span>-sequence contained in <span class="process-math">\(I\text{.}\)</span> Hence, <span class="process-math">\(r-1=g(R/I,N)=g-1\)</span> by Proposition <a href="" class="xref" data-knowl="./knowl/xref/prop-62.html" title="Proposition 16.16">Proposition 16.16</a>. Thus, <span class="process-math">\(r=g\text{,}\)</span> which completes the proof.</div></article></details><article class="corollary theorem-like" id="cor-64"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">16.18</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="cor-64-1-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a Noetherian ring, <span class="process-math">\(I\)</span> an ideal of <span class="process-math">\(R\text{,}\)</span> and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module such that <span class="process-math">\(IM\neq M\text{.}\)</span> If <span class="process-math">\(x\in I\)</span> is a regular element on <span class="process-math">\(M\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{grade}_{I/(x)}M/xM=\operatorname{grade}_I M/xM=\operatorname{grade}_I M-1.
+\end{equation*}
+</div>
+</div></article><details id="cor-64-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="cor-64-2-1">
+<div class="para">For the first equality, observe that any sequence <span class="process-math">\({\bf y}\)</span> in <span class="process-math">\(I\)</span> is an <span class="process-math">\(M/xM\)</span>-sequence if and only if its image <span class="process-math">\({\bf \overline{y}}\)</span> in <span class="process-math">\(I/(x)\)</span> is an <span class="process-math">\(M/xM\)</span>-sequence. For the second equality, we have by Theorem <a href="" class="xref" data-knowl="./knowl/xref/thm-63.html" title="Theorem 16.17">Theorem 16.17</a> and Proposition <a href="" class="xref" data-knowl="./knowl/xref/prop-62.html" title="Proposition 16.16">Proposition 16.16</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-63.html ./knowl/xref/prop-62.html">
+\begin{equation*}
+\operatorname{grade}_I M/xM=g(R/I,M/xM)=g(R/I,M)-1=\operatorname{grade}_I M-1.
+\end{equation*}
+</div>
+</div></article></details><article class="definition definition-like" id="def-65"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.19</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-65-1-1">Let <span class="process-math">\((R,m)\)</span> be a local ring and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module. Then the <em class="emphasis">depth of <span class="process-math">\(M\)</span></em>, denoted <span class="process-math">\(\operatorname{depth}M\text{,}\)</span> is defined to be <span class="process-math">\(\operatorname{grade}_m M\text{;}\)</span> i.e., the length of the longest <span class="process-math">\(M\)</span>-sequence from <span class="process-math">\(R\text{.}\)</span>
+</div></article><article class="remark remark-like" id="rem-66"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">16.20</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="rem-66-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a local ring and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module. By Theorem <a href="" class="xref" data-knowl="./knowl/xref/thm-63.html" title="Theorem 16.17">Theorem 16.17</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-63.html">
+\begin{equation*}
+\operatorname{depth}M=\inf \{n \mid \operatorname{Ext}^n_R(R/m,M)\neq 0\}.
+\end{equation*}
+</div>
+</div></article><div class="para" id="sec-2-24">
+<dfn class="terminology">Note:</dfn> By convention, the depth of the zero module is infinity, since <span class="process-math">\(\inf \emptyset = \infty\text{.}\)</span>
+</div>
+<article class="theorem theorem-like" id="thm-67"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.21</span><span class="period">.</span><span class="space"> </span><span class="title">Ischebeck’s Theorem.</span>
+</h3>
+<div class="para" id="thm-67-2-1">Let <span class="process-math">\((R,m)\)</span> be a local ring and <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> finitely generated <span class="process-math">\(R\)</span>-modules. Then <span class="process-math">\(\operatorname{Ext}^i_R(M,N)=0\)</span> for <span class="process-math">\(i&lt;\operatorname{depth}N - \operatorname{dim}M\text{.}\)</span>
+</div></article><details id="thm-67-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-67-3-1">First, if either module is zero the result trivially holds. So assume <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are nonzero and let <span class="process-math">\(d=\operatorname{dim}M\text{.}\)</span> If <span class="process-math">\(d=0\)</span> then <span class="process-math">\(M\)</span> has finite length. Since <span class="process-math">\(\operatorname{Ext}^i_R(R/m,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N\)</span> by Remark <a href="" class="xref" data-knowl="./knowl/xref/rem-66.html" title="Remark 16.20">Remark 16.20</a>, we have <span class="process-math">\(\operatorname{Ext}^i_R(M,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N\)</span> by Lemma <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "bass3" missing or not unique]</code>. Hence, the result holds for the case <span class="process-math">\(d=0\text{.}\)</span>
+</div> <div class="para logical" id="thm-67-3-2">
+<div class="para">Suppose <span class="process-math">\(d&gt;0\)</span> and assume the result holds for all finitely generated modules of dimension less than <span class="process-math">\(d\text{.}\)</span> Consider a filtration of <span class="process-math">\(M\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0=M_0\subset M_1\subset \cdots \subset M_n=M
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(M_j/M_{j-1}\cong R/p_j\)</span> for some primes <span class="process-math">\(p_1,\dots,p_n\)</span> of <span class="process-math">\(R\text{.}\)</span> (See Grifo 905 :Theorem 6.33.) Note that each <span class="process-math">\(p_j\)</span> contains <span class="process-math">\(\operatorname{Ann}_R M\text{,}\)</span> so <span class="process-math">\(\operatorname{dim}R/p_j\leqslant d\)</span> for all <span class="process-math">\(j\text{.}\)</span> Hence, if we show <span class="process-math">\(\operatorname{Ext}^i_R(R/p_j,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-\operatorname{dim}R/p_j\)</span> and all <span class="process-math">\(j\text{,}\)</span> then we’ll have <span class="process-math">\(\operatorname{Ext}^i_R(M_j/M_{j-1},N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d\)</span> and all <span class="process-math">\(j\text{.}\)</span> Using the long exact sequences on <span class="process-math">\(\operatorname{Ext}\)</span> arising from the short exact sequences</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to M_{j-1}\to M_j\to M_j/M_{j-1}\to 0,
+\end{equation*}
+</div>
+<div class="para">we can conclude <span class="process-math">\(\operatorname{Ext}^i_R(M_j,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d\text{.}\)</span> Since <span class="process-math">\(M_n=M\text{,}\)</span> we’ll be done.</div>
+</div> <div class="para logical" id="thm-67-3-3">
+<div class="para">Thus, assume <span class="process-math">\(M\cong R/p\)</span> for some prime <span class="process-math">\(p\)</span> with <span class="process-math">\(\operatorname{dim}R/p=d&gt;0\text{.}\)</span> Since <span class="process-math">\(p\subsetneq m\text{,}\)</span> let <span class="process-math">\(x\in m\setminus p\)</span> and consider the short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to R/p\xrightarrow{x} R/p\to R/(p,x)\to 0.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\operatorname{dim}R/(p,x)\leqslant d-1\text{,}\)</span> we have <span class="process-math">\(\operatorname{Ext}^i_R(R/(p,x), N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d+1\)</span> by the induction hypothesis. Rewriting this, we have <span class="process-math">\(\operatorname{Ext}^{i+1}_R(R/(p,x),N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d\text{.}\)</span> From the long exact sequence on <span class="process-math">\(\operatorname{Ext}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Ext}^i_R(R/p,N)\xrightarrow{x} \operatorname{Ext}^i_R(R/p,N)\to \operatorname{Ext}^{i+1}_R(R/(p,x),N).
+\end{equation*}
+</div>
+<div class="para">By Nakayama’s Lemma, we see that <span class="process-math">\(\operatorname{Ext}^i_R(R/p,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d\text{.}\)</span> This completes the proof.</div>
+</div></article></details><article class="corollary theorem-like" id="thm-68"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">16.22</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-68-1-1">Let <span class="process-math">\((R,m)\)</span> be a local ring and <span class="process-math">\(M\)</span> a nonzero finitely generated <span class="process-math">\(R\)</span>-module. Then <span class="process-math">\(\operatorname{depth}M\leqslant\operatorname{dim}R/p\)</span> for all <span class="process-math">\(p\in \operatorname{Ass}_R M\text{.}\)</span> In particular, <span class="process-math">\(\operatorname{depth}M\leqslant\operatorname{dim}M\text{.}\)</span>
+</div></article><details id="thm-68-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-68-2-1">Let <span class="process-math">\(p\in \operatorname{Ass}_R M\text{.}\)</span> Then <span class="process-math">\(\operatorname{Ext}^0_R(R/p,M)=\operatorname{Hom}_R(R/p,M)\neq 0\text{.}\)</span> By Theorem <a href="" class="xref" data-knowl="./knowl/xref/thm-67.html" title="Theorem 16.21: Ischebeck’s Theorem">Theorem 16.21</a>, <span class="process-math">\(\operatorname{depth}M\leqslant\operatorname{dim}R/p\text{.}\)</span> ◻</div></article></details><article class="example example-like" id="sec-2-27"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">16.23</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-2-27-1">Let <span class="process-math">\(k\)</span> be a field and <span class="process-math">\(R=k[x_1,\dots,x_{d+1}]/(x_1,\dots,x_{d+1})(x_{d+1})\text{.}\)</span> Let <span class="process-math">\(m=(x_1,\dots,x_{d+1})R\text{.}\)</span> Then <span class="process-math">\(R_m\)</span> has depth zero and dimension <span class="process-math">\(d\text{.}\)</span> To see <span class="process-math">\(\operatorname{depth}R_m=0\text{,}\)</span> note that <span class="process-math">\(mx_{d+1}=0\)</span> in <span class="process-math">\(R_m\text{,}\)</span> so <span class="process-math">\(mR_m\)</span> consists of zero-divisors. For <span class="process-math">\(\operatorname{dim}R_m\text{,}\)</span> note that <span class="process-math">\(\operatorname{dim}k[x_1,\dots,x_{d+1}]_m\)</span> is a <span class="process-math">\((d+1)\)</span>-dimensional domain, so <span class="process-math">\(\operatorname{dim}R_m/I\leqslant d\)</span> for any nonzero ideal <span class="process-math">\(I\text{.}\)</span> On the other hand, <span class="process-math">\(R_m/(x_{d+1})R_m\cong k[x_1,\dots,x_d]_{(x_1,\dots,x_d)}\text{,}\)</span> which has dimension <span class="process-math">\(d\text{.}\)</span> Thus, <span class="process-math">\(\operatorname{dim}R_m\geqslant d\text{.}\)</span>
+</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-depth-grade.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-cohen.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

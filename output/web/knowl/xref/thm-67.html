@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.21</span><span class="period">.</span><span class="space"> </span><span class="title">Ischebeck’s Theorem.</span>
+</h3>
+<div class="para">Let <span class="process-math">\((R,m)\)</span> be a local ring and <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> finitely generated <span class="process-math">\(R\)</span>-modules. Then <span class="process-math">\(\operatorname{Ext}^i_R(M,N)=0\)</span> for <span class="process-math">\(i&lt;\operatorname{depth}N - \operatorname{dim}M\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para">First, if either module is zero the result trivially holds. So assume <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are nonzero and let <span class="process-math">\(d=\operatorname{dim}M\text{.}\)</span> If <span class="process-math">\(d=0\)</span> then <span class="process-math">\(M\)</span> has finite length. Since <span class="process-math">\(\operatorname{Ext}^i_R(R/m,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N\)</span> by Remark <a href="" class="xref" data-knowl="./knowl/xref/rem-66.html" title="Remark 16.20">Remark 16.20</a>, we have <span class="process-math">\(\operatorname{Ext}^i_R(M,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N\)</span> by Lemma <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "bass3" missing or not unique]</code>. Hence, the result holds for the case <span class="process-math">\(d=0\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Suppose <span class="process-math">\(d&gt;0\)</span> and assume the result holds for all finitely generated modules of dimension less than <span class="process-math">\(d\text{.}\)</span> Consider a filtration of <span class="process-math">\(M\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0=M_0\subset M_1\subset \cdots \subset M_n=M
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(M_j/M_{j-1}\cong R/p_j\)</span> for some primes <span class="process-math">\(p_1,\dots,p_n\)</span> of <span class="process-math">\(R\text{.}\)</span> (See Grifo 905 :Theorem 6.33.) Note that each <span class="process-math">\(p_j\)</span> contains <span class="process-math">\(\operatorname{Ann}_R M\text{,}\)</span> so <span class="process-math">\(\operatorname{dim}R/p_j\leqslant d\)</span> for all <span class="process-math">\(j\text{.}\)</span> Hence, if we show <span class="process-math">\(\operatorname{Ext}^i_R(R/p_j,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-\operatorname{dim}R/p_j\)</span> and all <span class="process-math">\(j\text{,}\)</span> then we’ll have <span class="process-math">\(\operatorname{Ext}^i_R(M_j/M_{j-1},N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d\)</span> and all <span class="process-math">\(j\text{.}\)</span> Using the long exact sequences on <span class="process-math">\(\operatorname{Ext}\)</span> arising from the short exact sequences</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to M_{j-1}\to M_j\to M_j/M_{j-1}\to 0,
+\end{equation*}
+</div>
+<div class="para">we can conclude <span class="process-math">\(\operatorname{Ext}^i_R(M_j,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d\text{.}\)</span> Since <span class="process-math">\(M_n=M\text{,}\)</span> we’ll be done.</div>
+</div> <div class="para logical">
+<div class="para">Thus, assume <span class="process-math">\(M\cong R/p\)</span> for some prime <span class="process-math">\(p\)</span> with <span class="process-math">\(\operatorname{dim}R/p=d&gt;0\text{.}\)</span> Since <span class="process-math">\(p\subsetneq m\text{,}\)</span> let <span class="process-math">\(x\in m\setminus p\)</span> and consider the short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to R/p\xrightarrow{x} R/p\to R/(p,x)\to 0.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\operatorname{dim}R/(p,x)\leqslant d-1\text{,}\)</span> we have <span class="process-math">\(\operatorname{Ext}^i_R(R/(p,x), N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d+1\)</span> by the induction hypothesis. Rewriting this, we have <span class="process-math">\(\operatorname{Ext}^{i+1}_R(R/(p,x),N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d\text{.}\)</span> From the long exact sequence on <span class="process-math">\(\operatorname{Ext}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Ext}^i_R(R/p,N)\xrightarrow{x} \operatorname{Ext}^i_R(R/p,N)\to \operatorname{Ext}^{i+1}_R(R/(p,x),N).
+\end{equation*}
+</div>
+<div class="para">By Nakayama’s Lemma, we see that <span class="process-math">\(\operatorname{Ext}^i_R(R/p,N)=0\)</span> for all <span class="process-math">\(i&lt;\operatorname{depth}N-d\text{.}\)</span> This completes the proof.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-2.html#thm-67">in-context</a></span>
+</body>
+</html>
