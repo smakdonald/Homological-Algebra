@@ -22874,36 +22874,445 @@
 
         <section xml:id="sec-dvrs"><title>Discrete Valuation Rings and Dedekind Domains</title>
 
-          <p>
-            As we have indicated before, algebraic number theory is one of the historical sources of commutative algebra. 
-            In this chapter we specialize down to the case of interest in number theory, namely to Dedekind domains. 
-            We deduce the unique factorization of ideals in Dedekind domains from the general primary decomposition theorems. 
-            Although a direct approach is of course possible one obtains more insight our way into the precise context of number theory in commutative algebra. 
-            Another important class of Dedekind domains occurs in connection with non-singular algebraic curves. 
-            In fact the geometrical picture of the Dedekind condition is: non-singular of dimension one.
-          </p>
+          <subsection xml:id="sec-dvr" ><title>Discrete Valuation Rings</title>
+
+            <p>
+              As we have indicated before, algebraic number theory is one of the historical sources of commutative algebra. 
+              In this chapter we specialize down to the case of interest in number theory, namely to Dedekind domains. 
+              We deduce the unique factorization of ideals in Dedekind domains from the general primary decomposition theorems. 
+              Although a direct approach is of course possible one obtains more insight our way into the precise context of number theory in commutative algebra. 
+              Another important class of Dedekind domains occurs in connection with non-singular algebraic curves. 
+              In fact the geometrical picture of the Dedekind condition is: non-singular of dimension one.
+            </p>
+        
+            <p>
+              The last chapter dealt with Noetherian rings of dimension 0 . 
+              Here we start by considering the next simplest case, namely Noetherian integral domains of dimension one: i.e., Noetherian domains in which every non-zero prime ideal is maximal. 
+              The first result is that in such a ring we have a unique factorization theorem for ideals:
+            </p>
+
+            <proposition xml:id="prop-9.1-at">
+              <statement>
+                <p>
+                  Let <m>A</m> be a Noetherian domain of dimension 1. 
+                  Then every non-zero ideal a in <m>A</m> can be uniquely expressed as a product of primary ideals whose radicals are all distinct.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  Since <m>A</m> is Noetherian, a has a minimal primary decomposition <m>\mathfrak{a}=\bigcap_{i=1}^{n} \mathfrak{q}_{i}</m> by (7.13), where each <m>\mathfrak{q}_{1}</m> is say <m>\mathfrak{p}_{1}</m>-primary. 
+                  Since <m>\operatorname{dim} A=1</m> and <m>A</m> is an integral domain, each non-zero prime ideal of <m>A</m> is maximal, hence the <m>\mathfrak{p}_{i}</m> are distinct maximal ideals (since <m>\mathfrak{p}_{\mathfrak{i}} \supseteq \mathfrak{q}_{\mathfrak{i}} \supseteq \mathfrak{a} \neq 0</m> ), and are therefore pairwise coprime. Hence by (1.16) the <m>\mathfrak{q}_{1}</m> are pairwise coprime and therefore by (1.10) we have <m>\prod \mathfrak{q}_{\mathfrak{i}}=\bigcap \mathfrak{q}_{\mathfrak{i}}</m>. 
+                  Hence <m>\mathfrak{a}=\prod \mathfrak{q}_{\mathfrak{i}}</m>.
+                </p>
+              </proof>
+            </proposition>
+        
+            <p>
+              Conversely, if <m>\mathfrak{a}=\Pi \mathfrak{q}_{\mathfrak{i}}</m>, the same argument shows that <m>\mathfrak{a}=\cap \mathfrak{q}_{i}</m>; 
+              this is a minimal primary decomposition of <m>\mathfrak{a}</m>, in which each <m>\mathfrak{a}_{\mathfrak{i}}</m> is an isolated primary component, and is therefore unique by (4.11).
+            </p>
+        
+            <p>
+              Let <m>A</m> be a Noetherian domain of dimension one in which every primary ideal is a prime power. 
+              By (9.1), in such a ring we shall have unique factorization of non-zero ideals into products of prime ideals. 
+              If we localize <m>A</m> with respect to a non-zero prime ideal <m>p</m> we get a local ring <m>A_{p}</m> satisfying the same conditions as <m>A</m>, and therefore in <m>A_{\mathfrak{p}}</m> every non-zero ideal is a power of the maximal ideal. 
+              Such local rings can be characterized in other ways.
+            </p>    
+        
+            <p>
+              Let <m>K</m> be a field. 
+              A discrete valuation on <m>K</m> is a mapping <m>v</m> of <m>K^{*}</m> onto <m>\mathbf{Z}</m> (where <m>K^{*}=K-\{0\}</m> is the multiplicative group of <m>K</m> ) such that
+            </p>
+        
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    <m>v(x y)=v(x)+v(y)</m>, i.e., <m>v</m> is a homomorphism;
+                  </p>
+                </li>
+        
+                <li>
+                  <p>
+                    <m>v(x+y) \geqslant \min (v(x), v(y))</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+        
+            <p>
+              The set consisting of 0 and all <m>x \in K^{*}</m> such that <m>v(x) \geqslant 0</m> is a ring, called the valuation ring of <m>v</m>. 
+              It is a valuation ring of the field <m>K</m>. 
+              It is sometimes convenient to extend <m>v</m> to the whole of <m>K</m> by putting <m>v(0)=+\infty</m>.
+            </p>
+        
+            <p>
+              Examples. The two standard examples are:
+            </p>
+        
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    <m>K=\mathbf{Q}</m>. Take a fixed prime <m>p</m>, then any non zero <m>x \in \mathbf{Q}</m> can be written uniquely in the form <m>p^{a} y</m>, where <m>a \in \mathbf{Z}</m> and both numerator and denominator of <m>y</m> are prime to <m>p</m>. Define <m>v_{p}(x)</m> to be <m>a</m>. The valuation ring of <m>v_{p}</m> is the local ring <m>\mathbf{Z}_{(p)}</m>
+                  </p>
+                </li>
+        
+                <li>
+                  <p>
+                    <m>K=k(x)</m>, where <m>k</m> is a field and <m>x</m> an indeterminate. Take a fixed irreducible polynomial <m>f \in k[x]</m> and define <m>v_{f}</m> just as in 1 ). The valuation ring of <m>v_{f}</m> is then the local ring of <m>k[x]</m> with respect to the prime ideal <m>(f)</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+        
+            <p>
+              An integral domain <m>A</m> is a discrete valuation ring if there is a discrete valuation <m>v</m> of its field of fractions <m>K</m> such that <m>A</m> is the valuation ring of <m>v</m>. 
+              By (5.18), <m>A</m> is a local ring, anci its maximal ideal <m>m</m> is the set of all <m>x \in K</m> such that <m>v(x)&gt;0</m>.
+            </p>
+        
+            <p>
+              If two elements <m>x, y</m> of <m>A</m> have the same value, that is if <m>v(x)=v(y)</m>, then <m>v\left(x y^{-1}\right)=0</m> and therefore <m>u=x y^{-1}</m> is a unit in <m>A</m>. 
+              Hence <m>(x)=(y)</m>.
+            </p>
+        
+            <p>
+              If <m>\mathfrak{a} \neq 0</m> is an ideal in <m>A</m>, there is a least integer <m>k</m> such that <m>v(x)=k</m> for some <m>x \in a</m>. 
+              It follows that <m>a</m> contains every <m>y \in A</m> with <m>v(y) \geqslant k</m>, and therefore the only ideals <m>\neq 0</m> in <m>A</m> are the ideals <m>\mathfrak{m}_{k}=\{y \in A: v(y) \geqslant k\}</m>. 
+              These form a single chain <m>\mathfrak{m} \supset \mathfrak{m}_{2} \supset \mathfrak{m}_{3} \supset \cdots</m>, and therefore <m>A</m> is Noetherian.
+            </p>
+        
+            <p>
+              Moreover, since <m>v: K^{*} \rightarrow Z</m> is surjective, there exists <m>x \in \mathfrak{m}</m> such that <m>v(x)=1</m>, and then <m>\mathfrak{m}=(x)</m>, and <m>\mathfrak{m}_{k}=\left(x^{k}\right)(k \geqslant 1)</m>. 
+              Hence <m>\mathfrak{m}</m> is the only non-zero prime ideal of <m>A</m>, and <m>A</m> is thus a Noetherian local domain of dimension one in which every non-zero ideal is a power of the maximal ideal. 
+              In fact many of these properties are characteristic of discrete valuation rings.
+            </p>
+
+            <proposition xml:id="prop-9.2-at">
+              <statement>
+                <p>
+                  Let <m>A</m> be a Noetherian local domain of dimension one, <m>\mathfrak{m}</m> its maximal ideal, <m>k=A / \mathrm{m}</m> its residue field. 
+                  Then the following are equivalent: 
+                  i) <m>A</m> is a discrete valuation ring;
+                  ii) <m>A</m> is integrally closed;
+                  iii) <m>\mathfrak{m}</m> is a principal ideal; 
+                  iv) <m>\operatorname{dim}_{k}\left(\mathfrak{m} / \mathfrak{m}^{2}\right)=1</m>;
+                  v) Every non-zero ideal is a power of <m>\mathfrak{m}</m>;
+                  vi) There exists <m>x \in A</m> such that every non-zero ideal is of the form <m>\left(x^{k}\right)</m>, <m>k \geqslant 0</m>.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  Before we start going the rounds, we make two remarks:
+                  (A) If <m>\mathfrak{a}</m> is an ideal <m>\neq 0</m>, (1), then <m>\mathfrak{a}</m> is <m>\mathfrak{m}</m>-primary and <m>\mathfrak{a} \supseteq \mathfrak{m}^{n}</m> for some <m>n</m>. 
+                  For <m>r(\mathfrak{a})=\mathfrak{m}</m>, since <m>\mathfrak{m}</m> is the only non-zero prime ideal; now use (7.16).
+                  (B) <m>\mathfrak{m}^{n} \neq \mathfrak{m}^{n+1}</m> for all <m>n \geqslant 0</m>. 
+                  This follows from (8.6). 
+
+                  i) <m>\Rightarrow</m> ii) 
+                  by (5.18).
+                  ii) <m>\Rightarrow</m> iii). 
+                  Let <m>a \in \mathfrak{m}</m> and <m>a \neq 0</m>. 
+                  By remark (A) there exists an integer <m>n</m> such that <m>\mathfrak{m}^{n} \subseteq(a), \mathfrak{m}^{n-1} \ddagger(a)</m>. 
+                  Choose <m>b \in \mathfrak{m}^{n-1}</m> and <m>b \notin(a)</m>, and let <m>x=</m> <m>a / b \in K</m>, the field of fractions of <m>A</m>. 
+                  We have <m>x^{-1} \notin A</m> (since <m>b \notin(a)</m> ), hence <m>x^{-1}</m> is not integral over <m>A</m>, and therefore by (5.1) we have <m>x^{-1} \mathfrak{m} \ddagger \mathfrak{m}</m> (for if <m>x^{-1} \mathfrak{m} \subseteq \mathfrak{m}</m>, m would be a faithful <m>A\left[x^{-1}\right]</m>-module, finitely generated as an <m>A</m>-module). 
+                  But <m>x^{-1} \mathfrak{m} \subseteq A</m> by construction of <m>x</m>, hence <m>x^{-1} \mathfrak{m}=A</m> and therefore <m>\mathfrak{m}=A x=(x)</m>.
+                  iii) <m>\Rightarrow</m> iv). 
+                  By (2.8) we have <m>\operatorname{dim}_{k}\left(\mathfrak{m} / \mathfrak{m}^{2}\right) \leqslant 1</m>, and by remark (B) <m>\mathfrak{m} / \mathfrak{m}^{2} \neq 0</m>.
+                  iv) <m>\Rightarrow v</m> ). 
+                  Let <m>\mathfrak{a}</m> be an ideal <m>\neq(0)</m>, (1). 
+                  By remark (A) we have <m>\mathfrak{a} \supseteq \mathfrak{m}^{n}</m> for some <m>n</m>; 
+                  from (8.8) (applied to <m>A / \mathfrak{m}^{n}</m> ) it follows that <m>\mathfrak{a}</m> is a power of <m>\mathfrak{m}</m>. 
+                  v) <m>\Rightarrow</m> vi). 
+                  By remark (B), <m>\mathfrak{m} \neq \mathfrak{m}^{2}</m>, hence there exists <m>x \in \mathfrak{m}, x \notin \mathfrak{m}^{2}</m>. 
+                  But <m>(x)=\mathfrak{m}^{r}</m> by hypothesis, hence <m>r=1,(x)=\mathfrak{m},\left(x^{k}\right)=\mathfrak{m}^{k}</m>.
+                  vi) <m>\Rightarrow</m> i). 
+                  Clearly <m>(x)=\mathfrak{m}</m>, hence <m>\left(x^{k}\right) \neq\left(x^{k+1}\right)</m> by remark (B). 
+                  Hence if <m>a</m> is any non-zero element of <m>A</m>, we have <m>(a)=\left(x^{k}\right)</m> for exactly one value of <m>k</m>. 
+                  Define <m>v(a)=k</m> and extend <m>v</m> to <m>K^{*}</m> by defining <m>v\left(a b^{-1}\right)=v(a)-v(b)</m>. 
+                  Check that <m>v</m> is well-defined and is a discrete valuation, and that <m>A</m> is the valuation ring of <m>v</m>.
+                </p>
+              </proof>
+            </proposition>
+        
+          </subsection>
       
-          <p>
-            The last chapter dealt with Noetherian rings of dimension 0. 
-            Here we start by considering the next simplest case, namely Noetherian integral domains of dimension one: i.e., Noetherian domains in which every non-zero prime ideal is maximal. 
-            The first result is that in such a ring we have a unique factorization theorem for ideals:
-          </p>
-      
-          <p>
-            Proposition 9.1. Let <m>A</m> be a Noetherian domain of dimension 1. Then every non-zero ideal a in <m>A</m> can be uniquely expressed as a product of primary ideals whose radicals are all distinct.
-          </p>
-      
-          <p>
-            Proof. Since <m>A</m> is Noetherian, a has a minimal primary decomposition <m>\mathfrak{a}=\bigcap_{i=1}^{n} \mathfrak{q}_{i}</m> by (7.13), where each <m>\mathfrak{q}_{1}</m> is say <m>\mathfrak{p}_{1}</m>-primary. Since <m>\operatorname{dim} A=1</m> and <m>A</m> is an integral domain, each non-zero prime ideal of <m>A</m> is maximal, hence the <m>\mathfrak{p}_{i}</m> are distinct maximal ideals (since <m>\mathfrak{p}_{\mathfrak{i}} \supseteq \mathfrak{q}_{\mathfrak{i}} \supseteq \mathfrak{a} \neq 0</m> ), and are therefore pairwise coprime. Hence by (1.16) the <m>\mathfrak{q}_{1}</m> are pairwise coprime and therefore by (1.10) we have <m>\prod \mathfrak{q}_{\mathfrak{i}}=\bigcap \mathfrak{q}_{\mathfrak{i}}</m>. Hence <m>\mathfrak{a}=\prod \mathfrak{q}_{\mathfrak{i}}</m>.
-          </p>
-      
-          <p>
-            Conversely, if <m>\mathfrak{a}=\Pi \mathfrak{q}_{\mathfrak{i}}</m>, the same argument shows that <m>\mathfrak{a}=\cap \mathfrak{q}_{i}</m>; this is a minimal primary decomposition of <m>\mathfrak{a}</m>, in which each <m>\mathfrak{a}_{\mathfrak{i}}</m> is an isolated primary component, and is therefore unique by (4.11).
-          </p>
-      
-          <p>
-            Let <m>A</m> be a Noetherian domain of dimension one in which every primary ideal is a prime power. By (9.1), in such a ring we shall have unique factorization of non-zero ideals into products of prime ideals. If we localize <m>A</m> with respect to a non-zero prime ideal <m>p</m> we get a local ring <m>A_{p}</m> satisfying the same conditions as <m>A</m>, and therefore in <m>A_{\mathfrak{p}}</m> every non-zero ideal is a power of the maximal ideal. Such local rings can be characterized in other ways.
-          </p>
+          <subsection xml:id="dedekind-domains" ><title>Dedekind Domains</title>
+
+            <theorem xml:id="thm-9.3-at">
+              <statement>
+                <p>
+                  Let <m>A</m> be a Noetherian domain of dimension one. 
+                  Then the following are equivalent: 
+                  i) <m>A</m> is integrally closed;
+                  ii) Every primary ideal in <m>A</m> is a prime power;
+                  iii) Every local ring <m>A_{\mathfrak{p}}(\mathfrak{p} \neq 0)</m> is a discrete valuation ring.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  i) <m>\Leftrightarrow</m> iii) by (9.2) and (5.13).
+                  ii) <m>\Leftrightarrow</m> iii). Use (9.2) and the fact that primary ideals and powers of ideals behave well under localization: (4.8), (3.11).    
+                </p>
+              </proof>
+            </theorem>
+
+            <p>
+              A ring satisfying the conditions of (9.3) is called a Dedekind domain.
+            </p>
+
+            <corollary xml:id="cor-9.4-at">
+              <statement>
+                <p>
+                  In a Dedekind domain every non-zero ideal has a unique factorization as a product of prime ideals.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  (9.1) and (9.3).
+                </p>
+              </proof>
+            </corollary>
+
+            <p>
+              Examples. 
+            </p>
+        
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    1) Any principal ideal domain A. 
+                    For <m>A</m> is Noetherian (since every ideal is finitely generated) and of dimension one (Example 3 after (1.6)). 
+                    Also every local ring <m>A_{\mathfrak{p}}(\mathfrak{p} \neq 0)</m> is a principal ideal domain, hence by <m>(9.2)</m> a discrete valuation ring; 
+                    hence <m>A</m> is a Dedekind domain by (9.3).
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    Let <m>K</m> be an algebraic number field (a finite algebraic extension of <m>\mathbf{Q}</m> ). 
+                    Its ring of integers <m>A</m> is the integral closure of <m>\mathbf{Z}</m> in <m>K</m>. 
+                    (For example, if <m>K=\mathbf{Q}(i)</m>, then <m>A=\mathbf{Z}[i]</m>, the ring of Gaussian integers.)
+                      Then <m>A</m> is a Dedekind domain:
+                  </p>
+                </li>
+              </ol>
+            </p>
+
+            <theorem xml:id="thm-9.5-at">
+              <statement>
+                <p>
+                  The ring of integers in an algebraic number field <m>K</m> is a Dedekind domain.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  <m>K</m> is a separable extension of <m>\mathbf{Q}</m> (because the characteristic is zero), hence by (5.17) there is a basis <m>v_{1}, \ldots, v_{n}</m> of <m>K</m> over <m>\mathbf{Q}</m> such that <m>A \subseteq \Sigma \mathbf{Z}^{\prime}</m>, 
+                  Hence <m>A</m> is finitely generated as a <m>\mathbf{Z}</m>-module and therefore Noetherian. 
+                  Also <m>A</m> is integrally closed by (5.5). 
+                  To complete the proof we must show that every nonzero prime ideal <m>\mathfrak{p}</m> of <m>A</m> is maximal, and this follows from (5.8) and (5.9): 
+                  (5.9) shows that <m>\mathfrak{p} \cap \mathbf{Z} \neq 0</m>, hence <m>\mathfrak{p} \cap \mathbf{Z}</m> is a maximal ideal of <m>\mathbf{Z}</m> and therefore <m>\mathfrak{p}</m> is maximal in <m>A</m> by (5.8).    
+                </p>
+              </proof>
+            </theorem>
+        
+            <p>
+              Remark. 
+              The unique factorization theorem (9.4) was originally proved for rings of integers in algebraic number fields. 
+              The uniqueness theorems of Chapter 4 may be regarded as generalizations of this result: 
+              prime powers have to be replaced by primary ideals, and products by intersections.
+            </p>
+        
+          </subsection>
+        
+          <subsection xml:id="fractional-ideals"><title>Fractional Ideals</title>
+        
+            <p>
+              Let <m>A</m> be an integral domain, <m>K</m> its field of fractions. 
+              An <m>A</m>-submodule <m>M</m> of <m>K</m> is a fractional ideal of <m>A</m> if <m>x M \subseteq A</m> for some <m>x \neq 0</m> in <m>A</m>. 
+              In particular, the "ordinary" ideals (now called integral ideals) are fractional ideals (take <m>x=1</m> ). 
+              Any element <m>u \in K</m> generates a fractional ideal, denoted by <m>(u)</m> or <m>A u</m>, and called principal. 
+              If <m>M</m> is a fractional ideal, the set of all <m>x \in K</m> such that <m>x M \subseteq A</m> is denoted by <m>(A: M)</m>.
+            </p>
+        
+            <p>
+              Every finitely generated <m>A</m>-submodule <m>M</m> of <m>K</m> is a fractional ideal. 
+              For if <m>M</m> is generated by <m>x_{1}, \ldots, x_{n} \in K</m>, we can write <m>x_{i}=y_{i} z^{-1}(1 \leqslant i \leqslant n)</m> where <m>y_{i}</m> and <m>z</m> are in <m>A</m>, and then <m>z M \subseteq A</m>. 
+              Conversely, if <m>A</m> is Noetherian, every fractional ideal is finitely generated, for it is of the form <m>x^{-1} \mathfrak{a}</m> for some integral ideal <m>a</m>.
+            </p>
+        
+            <p>
+              An <m>A</m>-submodule <m>M</m> of <m>K</m> is an invertible ideal if there exists a submodule <m>N</m> of <m>K</m> such that <m>M N=A</m>. 
+              The module <m>N</m> is then unique and equal to <m>(A: M)</m>, for we have <m>N \subseteq(A: M)=(A: M) M N \subseteq A N=N</m>. 
+              It follows that <m>M</m> is finitely generated, and therefore a fractional ideal: 
+              for since <m>M \cdot(A: M)=A</m> there exist <m>x_{i} \in M</m> and <m>y_{i} \in(A: M)(1 \leqslant i \leqslant n)</m> such that <m>\sum x_{i} y_{i}=1</m>, and hence for any <m>x \in M</m> we have <m>x=\sum\left(y_{i} x\right) x_{i}</m> : 
+              each <m>y_{i} x \in A</m>, so that <m>M</m> is generated by <m>x_{1}, \ldots, x_{n}</m>.
+            </p>
+        
+            <p>
+              Clearly every non-zero principal fractional ideal <m>(u)</m> is invertible, its inverse being <m>\left(u^{-1}\right)</m>. 
+              The invertible ideals form a group with respect to multiplication, whose identity element is <m>A=</m> (1).
+            </p>
+        
+            <p>
+              Invertibility is a local property:
+            </p>
+
+            <proposition xml:id="prop-9.6-at">
+              <statement>
+                <p>
+                  For a fractional ideal <m>M</m>, the following are equivalent: 
+                  i) <m>M</m> is invertible;
+                  ii) <m>M</m> is finitely generated and, for each prime ideal <m>\mathfrak{p}, M_{\mathfrak{p}}</m> is invertible:
+                  iii) <m>M</m> is finitely generated and, for each maximal ideal <m>\mathfrak{m}, M_{\mathfrak{m}}</m> is invertible.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  i) <m>\Rightarrow</m> ii): <m>A_{\mathfrak{p}}=(M \cdot(A: M))_{\mathfrak{p}}=M_{\mathfrak{p}} \cdot\left(A_{\mathfrak{p}}: M_{\mathfrak{p}}\right)</m> by (3.11) and (3.15) (for <m>M</m> is finitely generated, because invertible).
+                  ii) <m>\Rightarrow</m> iii) as usual.
+                  iii <m>\Rightarrow \mathrm{i})</m> : Let <m>\mathfrak{a}=M \cdot(A: M)</m>, which is an integral ideal. For each maximal ideal <m>\mathfrak{m}</m> we have <m>\mathfrak{a}_{\mathfrak{m}}=M_{\mathfrak{m}} \cdot\left(A_{\mathfrak{m}}: M_{\mathfrak{m}}\right)</m> (by (3.11) and (3.15)) <m>=A_{\mathfrak{n}}</m> because <m>M_{\mathfrak{m}}</m> is invertible. 
+                  Hence <m>\mathfrak{a} \neq \mathfrak{m}</m>. 
+                  Consequently <m>\mathfrak{a}=A</m> and therefore <m>M</m> is invertible.
+                </p>
+              </proof>
+            </proposition>
+
+            <proposition xml:id="prop-9.7-at">
+              <statement>
+                <p>
+                  Let <m>A</m> be a local domain. 
+                  Then <m>A</m> is a discrete valuation ring <m>\Leftrightarrow</m> every non-zero fractional ideal of <m>A</m> is invertible.
+                </p>
+            
+              </statement>
+  
+              <proof>
+                <p>
+                <m>\Rightarrow</m>. Let <m>x</m> be a generator of the maximal ideal <m>\mathfrak{m}</m> of <m>A</m>, and let <m>M \neq 0</m> be a fractional ideal. 
+                  Then there exists <m>y \in A</m> such that <m>y M \subseteq A</m> : 
+                  thus <m>y M</m> is an integral ideal, say <m>\left(x^{r}\right)</m>, and therefore <m>M=\left(x^{r-s}\right)</m> where <m>s=v(y)</m>.
+                </p>
+            
+                <p>
+                  <m>\Leftarrow</m> : 
+                  Every non-zero integral ideal is invertible and therefore finitely generated; 
+                  so that <m>A</m> is Noetherian. 
+                  It is therefore enough to prove that every nonzero integral ideal is a power of <m>m</m>. 
+                  Suppose this is false; 
+                  let <m>\Sigma</m> be the set of nonzero ideals which are not powers of <m>\mathfrak{m}</m>, and let <m>\mathfrak{a}</m> be a maximal element of <m>\Sigma</m>. 
+                  Then <m>\mathfrak{a} \neq \mathfrak{m}</m>, hence <m>\mathfrak{a} \subset \mathfrak{m}</m>; 
+                  hence <m>\mathfrak{m}^{-1} \mathfrak{a} \subset \mathfrak{m}^{-1} \mathfrak{m}=A</m> is a proper (integral) ideal, and <m>\mathfrak{m}^{-1} \mathfrak{a} \supseteq \mathfrak{a}</m>. 
+                  If <m>\mathfrak{m}^{-1} \mathfrak{a}=\mathfrak{a}</m>, then <m>\mathfrak{a}=\mathfrak{m} \mathfrak{a}</m> and therefore <m>\mathfrak{a}=0</m> by Nakayama’s lemma (2.6); 
+                  hence <m>\mathfrak{m}^{-1} \mathfrak{a} \supset \mathfrak{a}</m> and hence <m>\mathfrak{m}^{-1} \mathfrak{a}</m> is a power of <m>\mathfrak{m}</m> (by the maximality of <m>\mathfrak{a}</m> ). 
+                  Hence <m>\mathfrak{a}</m> is a power of <m>\mathfrak{m}</m> : contradiction.
+                </p>
+              </proof>
+            </proposition>
+        
+            <p>
+              The "global" counterpart of (9.7) is
+            </p>
+
+            <theorem xml:id="thm-9.8-at">
+              <statement>
+                <p>
+                  Let <m>A</m> be an integral domain. 
+                  Then <m>A</m> is a Dedekind domain <m>\Leftrightarrow</m> every non-zero fractional ideal of <m>A</m> is invertible.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  <m>\Rightarrow</m> : Let <m>M \neq 0</m> be a fractional ideal. 
+                  Since <m>A</m> is Noetherian, <m>M</m> is finitely generated. 
+                  For each prime ideal <m>\mathfrak{p} \neq 0, M_{\mathfrak{p}}</m> is a fractional ideal <m>\neq 0</m> of the discrete valuation ring <m>A_{\mathfrak{p}}</m>, hence is invertible by (9.7). 
+                  Hence <m>M</m> is invertible, by (9.6).
+                </p>
+            
+                <p>
+                  <m>\Leftarrow</m>: Every non-zero integral ideal is invertible, hence finitely generated, hence <m>A</m> is Noetherian. 
+                  We shall show that each <m>A_{\mathfrak{p}}(\mathfrak{p} \neq 0)</m> is a discrete valuation ring. 
+                  For this it is enough to show that each integral ideal <m>\neq 0</m> in <m>A_{\mathfrak{p}}</m> is invertible, and then use (9.7). 
+                  Let <m>\mathfrak{b} \neq 0</m> be an (integral) ideal in <m>A_{\mathfrak{p}}</m>, and let <m>\mathfrak{a}=\mathfrak{b}^{\mathfrak{c}}=\mathfrak{b} \cap A</m>. 
+                  Then <m>\mathfrak{a}</m> is invertible, hence <m>\mathfrak{b}=\mathfrak{a}_{\mathfrak{p}}</m> is invertible by (9.7).
+                </p>
+              </proof>
+            </theorem>
+
+            <corollary xml:id="cor-9.9-at">
+              <statement>
+                <p>
+                  If <m>A</m> is a Dedekind domain, the non-zero fractional ideals of <m>A</m> form a group with respect to multiplication.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                 
+                </p>
+              </proof>
+            </corollary>
+        
+            <p>
+              This group is called the group of ideals of <m>A</m>; we denote it by <m>I</m>. 
+              In this terminology (9.4) says that <m>I</m> is a free (abelian) group, generated by the non-zero prime ideals of <m>A</m>.
+            </p>
+        
+            <p>
+              Let <m>K^{*}</m> denote the multiplicative group of the field of fractions <m>K</m> of <m>A</m>. 
+              Each <m>u \in K^{*}</m> defines a fractional ideal <m>(u)</m>, and the mapping <m>u \mapsto(u)</m> is a homomorphism <m>\phi: K^{*} \rightarrow I</m>. 
+              The image <m>P</m> of <m>\phi</m> is the group of principal fractional ideals: the quotient group <m>H=I / P</m> is called the ideal class group of <m>A</m>. 
+              The kernel <m>U</m> of <m>\phi</m> is the set of all <m>u \in K^{*}</m> such that <m>(u)=(1)</m>, so that it is the group of units of <m>A</m>. 
+              We have an exact sequence
+            </p>
+        
+            <p>
+              <me>1 \rightarrow U \rightarrow K^{*} \rightarrow I \rightarrow H \rightarrow 1 .</me>
+            </p>
+        
+            <p>
+              Remark. 
+              For the Dedekind domains that arise in number theory, there are classical theorems relating to the groups <m>H</m> and <m>U</m>. 
+              Let <m>K</m> be an algebraic number field and let <m>A</m> be its ring of integers, which is a Dedekind domain by (9.5). In this case:
+            </p>
+        
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    <m>H</m> is a finite group. Its order <m>h</m> is the class number of the field <m>K</m>. The following are equivalent: (i) <m>h=1</m>; (ii) <m>I=P</m>; (iii) <m>A</m> is a principal ideal domain; (iv) <m>A</m> is a unique factorization domain.
+                  </p>
+                </li>
+        
+                <li>
+                  <p>
+                    <m>U</m> is a finitely-generated abelian group. More precisely, we can specify the number of generators of <m>U</m>. First, the elements of finite order in <m>U</m> are just the roots of unity which lie in <m>K</m>, and they form a finite cyclic group <m>W ; U / W</m> is torsion-free. The number of generators of <m>U / W</m> is given as follows: if <m>(K: \mathbf{Q})=n</m> there are <m>n</m> distinct embeddings <m>K \rightarrow \mathbf{C}</m> (the field of complex numbers). Of these, say <m>r_{1}</m> map <m>K</m> into <m>\mathbf{R}</m>, and the rest pair off (if <m>\alpha</m> is one, then <m>\omega \circ \alpha</m> is a nother, where <m>\omega</m> is the automorphism of <m>\mathbf{C}</m> defined by <m>\omega(z)=\bar{z})</m> into say <m>r_{2}</m> pairs: thus <m>r_{1}+2 r_{2}=n</m>. The number of generators of <m>U / W</m> is then <m>r_{1}+r_{2}-1</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+        
+            <p>
+              The proofs of these results belong to algebraic number theory and not to commutative algebra: 
+              they require techniques of a different nature from those used in this book.
+            </p>
+        
+            <p>
+              Examples. 
+              1) <m>K=\mathrm{Q}(\sqrt{-1})</m>; <m>n=2, r_{1}=0, r_{2}=1, r_{1}+r_{2}-1=0</m>. 
+              The only units in <m>\mathrm{Z}[i]=A</m> are the four roots of unity <m>\pm 1, \pm i</m>. 
+              2) <m>K=\mathbf{Q}(\sqrt{2}) ; n=2, r_{1}=2, r_{2}=0, r_{1}+r_{2}-1=1 . \quad W=\{ \pm 1\}</m>, and <m>U / W</m> is infinite cyclic. 
+              In fact the units in <m>A=\mathbf{Z}[\sqrt{2}]</m> are <m>\pm(1+\sqrt{2})^{n}</m>, where <m>n</m> is any rational integer.
+            </p>
+          </subsection>
           
         </section>
         
