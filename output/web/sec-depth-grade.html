@@ -14,7 +14,7 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Homological Algebra">
 <meta property="book:author" content="Sam Macdonald">
-<script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -41,7 +41,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -767,8 +784,7 @@ window.MathJax = {
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">16.2</span><span class="period">.</span>
 </h3>
 <div class="para" id="sec-depth-grade-3-1">
-<dfn class="terminology">Example 49</dfn>.  <em class="emphasis">Let <span class="process-math">\(R=k[x_1,\dots,x_n]\)</span> be a polynomial ring over the field <span class="process-math">\(k\text{.}\)</span> Then <span class="process-math">\(x_1,\dots,x_n\)</span> is a maximal <span class="process-math">\(R\)</span>-sequence.</em>
-</div></article><article class="lemma theorem-like" id="lem-50"><h3 class="heading">
+<dfn class="terminology">Example 49</dfn>.  Let <span class="process-math">\(R=k[x_1,\dots,x_n]\)</span> be a polynomial ring over the field <span class="process-math">\(k\text{.}\)</span> Then <span class="process-math">\(x_1,\dots,x_n\)</span> is a maximal <span class="process-math">\(R\)</span>-sequence.</div></article><article class="lemma theorem-like" id="lem-50"><h3 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">16.3</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="lem-50-1-1">

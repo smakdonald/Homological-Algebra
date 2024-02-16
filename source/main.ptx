@@ -18297,16 +18297,8 @@
       </chapter>
 
       <chapter xml:id="ch-prime-ideals"><title>Prime Ideals</title>
-
-        <!--*****************
-        Chapter: Prime Ideals
-        ******************-->
   
         <section xml:id="sec-prime-maximal-ideals"><title>Prime and Maximal Ideals</title>
-
-          <!--***************************
-          Section: Prime & Maximal Ideals
-          ****************************-->
           
           <blockquote>
             <p>
@@ -18325,8 +18317,6 @@
           </definition>
     
           <example xml:id="ex-prime-ideals-in-z"><title>Prime Ideals in <m>\Z</m></title>
-  
-  
             <statement>
               <p>
                 The prime ideals in <m>\mathbb{Z}</m> are those of the form <m>(p)</m> for <m>p</m> a prime integer, and <m>(0)</m>.
@@ -18339,29 +18329,34 @@
               <p>
                 When <m>k</m> is a field, prime ideals in <m>k[x]</m> are easy to describe: <m>k[x]</m> is a principal ideal domain, and <m>(f)\neq 0</m> is prime if and only if <m>f</m> is an irreducible polynomial. Moreover, <m>(0)</m> is also a prime ideal, since <m>k[x]</m> is a domain.
               </p>
-  
             </statement>
           </example>
   
           <example xml:id="ex-x3-y2-in-kxy-is-prime"><title><m>(x^3-y^2)</m> in <m>k[x,y]</m> is Prime</title>
-  
-  
             <statement>
-              
-  
               <p>
-                Let <m>k</m> be a field. The ideal <m>P = (x^3-y^2)</m> in <m>R=k[x,y]</m> is prime: one can show that <m>R/P \cong k[t^2,t^3] \subseteq k[t]</m>, which is a domain.
+                Let <m>k</m> be a field. 
+                The ideal <m>P = (x^3-y^2)</m> in <m>R=k[x,y]</m> is prime: 
+                one can show that <m>R/P \cong k[t^2,t^3] \subseteq k[t]</m>, which is a domain.
               </p>
-  
             </statement>
           </example>
 
           <example><title>Primes, Presentations, and Macaulay2</title>
             <p>
-              The <m>k</m>-algebra <m>R = k[t^3,t^4,t^5] \subseteq k[t]</m> is a domain, so its defining ideal <m>P</m> in <m>k[x,y,z,]</m> is prime. This is the kernel of the presentation of <m>R</m> sending <m>x,y,z</m> to each of our 3 algebra generators, which we can compute with Macaulay2:
+              The <m>k</m>-algebra <m>R = k[t^3,t^4,t^5] \subseteq k[t]</m> is a domain, so its defining ideal <m>P</m> in <m>k[x,y,z,]</m> is prime. 
+              This is the kernel of the presentation of <m>R</m> sending <m>x,y,z</m> to each of our 3 algebra generators, which we can compute with Macaulay2:
             </p>
 
-              <pre>
+            <sage language="macaulay2">
+              <input>
+                k = QQ
+                f = map(k[t],k[x,y,z],{t^3,t^4,t^5})
+                P = ker f
+              </input>
+            </sage>
+
+            <pre>
               i1 : k = QQ
 
               o1 = QQ
@@ -23334,14 +23329,15 @@
 
           <example>
             <p>
-              <term>Example 49</term>.  <em>Let <m>R=k[x_1,\dots,x_n]</m> be a polynomial ring over the field <m>k</m>. Then <m>x_1,\dots,x_n</m> is a maximal <m>R</m>-sequence.</em>
+              <term>Example 49</term>.  Let <m>R=k[x_1,\dots,x_n]</m> be a polynomial ring over the field <m>k</m>. Then <m>x_1,\dots,x_n</m> is a maximal <m>R</m>-sequence.
             </p>
           </example>
 
           <lemma xml:id="lem-50">
             <statement>
               <p>
-                Let <m>R</m> be Noetherian and <m>M</m> a finitely generated <m>R</m>-module. Then
+                Let <m>R</m> be Noetherian and <m>M</m> a finitely generated <m>R</m>-module. 
+                Then
                 <ol>
                   <li>
                     <p>

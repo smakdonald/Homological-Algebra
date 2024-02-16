@@ -14,7 +14,7 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Homological Algebra">
 <meta property="book:author" content="Sam Macdonald">
-<script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -41,7 +41,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -69,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-macaulay2' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-macaulay2",
+  "linked": true,
+  "linkKey": "linked-macaulay2",
+  "autoeval": false,
+  "languages": [
+    "macaulay2"
+  ],
+  "evalButtonText": "Evaluate (Macaulay2)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -778,7 +807,10 @@ window.MathJax = {
 </h3>
 <div class="para" id="ex-x3-y2-in-kxy-is-prime-2-1">Let <span class="process-math">\(k\)</span> be a field. The ideal <span class="process-math">\(P = (x^3-y^2)\)</span> in <span class="process-math">\(R=k[x,y]\)</span> is prime: one can show that <span class="process-math">\(R/P \cong k[t^2,t^3] \subseteq k[t]\text{,}\)</span> which is a domain.</div></article><article class="example example-like" id="sec-prime-maximal-ideals-7"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">11.5</span><span class="period">.</span><span class="space"> </span><span class="title">Primes, Presentations, and Macaulay2.</span>
-</h3> <div class="para" id="sec-prime-maximal-ideals-7-2">The <span class="process-math">\(k\)</span>-algebra <span class="process-math">\(R = k[t^3,t^4,t^5] \subseteq k[t]\)</span> is a domain, so its defining ideal <span class="process-math">\(P\)</span> in <span class="process-math">\(k[x,y,z,]\)</span> is prime. This is the kernel of the presentation of <span class="process-math">\(R\)</span> sending <span class="process-math">\(x,y,z\)</span> to each of our 3 algebra generators, which we can compute with Macaulay2:</div>
+</h3> <div class="para" id="sec-prime-maximal-ideals-7-2">The <span class="process-math">\(k\)</span>-algebra <span class="process-math">\(R = k[t^3,t^4,t^5] \subseteq k[t]\)</span> is a domain, so its defining ideal <span class="process-math">\(P\)</span> in <span class="process-math">\(k[x,y,z,]\)</span> is prime. This is the kernel of the presentation of <span class="process-math">\(R\)</span> sending <span class="process-math">\(x,y,z\)</span> to each of our 3 algebra generators, which we can compute with Macaulay2:</div> <pre id="sec-prime-maximal-ideals-7-3" class="ptx-sagecell sagecell-macaulay2"><script type="text/x-sage">k = QQ
+f = map(k[t],k[x,y,z],{t^3,t^4,t^5})
+P = ker f
+</script></pre>
 <pre class="code-block tex2jax_ignore">i1 : k = QQ
 
 o1 = QQ
