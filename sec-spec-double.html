@@ -8,11 +8,11 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The Spectral Sequence of a Double Complex</title>
+<title>Double Complexes</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Homological Algebra">
+<meta property="book:title" content="Postmodern Algebra">
 <meta property="book:author" content="Sam Macdonald">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
@@ -109,7 +109,7 @@ window.MathJax = {
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<h1 class="heading"><a href="book-homological.html"><span class="title">Postmodern Algebra</span></a></h1>
 <p class="byline">Sam Macdonald</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -404,7 +404,13 @@ window.MathJax = {
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
 <ul class="structural toc-item-list contains-active">
@@ -614,9 +620,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Filtered Complexes</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Double Complexes</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -783,7 +789,7 @@ window.MathJax = {
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-spec-double"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.6</span><span class="space"> </span><span class="title">The Spectral Sequence of a Double Complex</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.6</span><span class="space"> </span><span class="title">Double Complexes</span>
 </h2>
 <div class="para" id="sec-spec-double-2">One important example of a spectral sequence induced by a filtered complex is the case of the spectral sequence of a double complex.</div>
 <div class="para" id="sec-spec-double-3">Definition 8.41. Let <span class="process-math">\(C\)</span> be a double complex. There are two canonical filtrations on the total complex of <span class="process-math">\(C\)</span> :</div>
@@ -1008,11 +1014,11 @@ d_{1}: \mathrm{H}_{q}^{h}\left(C_{\bullet, p}\right)=E_{p, q}^{1} \longrightarro
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-48.svg" role="img" class="contained"></div>
 <div class="para" id="sec-spec-double-97">where the map <span class="process-math">\(\partial\)</span> obtained by composition is the connecting homomorphism we dreamed of.</div>
 <article class="exercise exercise-like" id="exe-96"><h3 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.3</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.39</span><span class="period">.</span>
 </h3>
 <div class="para" id="exe-96-1-1">Exercise 96. Show that if <span class="process-math">\(M\)</span> is a first quadrant double complex with exact rows or exact columns, then <span class="process-math">\(\operatorname{Tot}^{\oplus}(M)\)</span> is exact.</div>
 <div class="solutions"><details id="exe-96-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="exe-96-2-1"></div></div></details></div></article><article class="exercise exercise-like" id="exe-97"><h3 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.4</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.40</span><span class="period">.</span>
 </h3>
 <div class="para" id="exe-97-1-1">Exercise 97. Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be <span class="process-math">\(R\)</span>-modules and fix projective resolutions <span class="process-math">\(P\)</span> for <span class="process-math">\(M\)</span> and <span class="process-math">\(Q\)</span> for <span class="process-math">\(N\text{.}\)</span> Consider the double complex <span class="process-math">\(C=P \otimes_{R} Q\text{.}\)</span>
 </div> <div class="para" id="exe-97-1-2">a) Compute the spectral sequence associated to the First Filtration (I) on <span class="process-math">\(C\)</span> up to the <span class="process-math">\(E^{2}\)</span> page.</div> <div class="para" id="exe-97-1-3">b) Compute the spectral sequence associated to the Second Filtration II on <span class="process-math">\(C\)</span> up to the <span class="process-math">\(E^{2}\)</span> page.</div> <div class="para" id="exe-97-1-4">c) Give a new proof that Tor is balanced:</div> <div class="para logical" id="exe-97-1-5"><div class="displaymath process-math">
@@ -1021,7 +1027,7 @@ d_{1}: \mathrm{H}_{q}^{h}\left(C_{\bullet, p}\right)=E_{p, q}^{1} \longrightarro
 \end{equation*}
 </div></div>
 <div class="solutions"><details id="exe-97-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="exe-97-2-1"></div></div></details></div></article><article class="exercise exercise-like" id="exe-98"><h3 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.5</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.41</span><span class="period">.</span>
 </h3>
 <div class="para" id="exe-98-1-1">Exercise 98. Consider the following first quadrant double complex <span class="process-math">\(C\)</span> :</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-49.svg" role="img" class="contained"></div> <div class="para" id="exe-98-1-3">a) Compute the spectral sequence associated to the First Filtration (I) until it stabilizes.</div> <div class="para" id="exe-98-1-4">b) Compute the spectral sequence associated to the Second Filtration II until it stabilizes.</div> <div class="para" id="exe-98-1-5">c) How are the two resulting <span class="process-math">\(E^{\infty}\)</span> pages even possible considering they both converge to the same thing?</div> <div class="para" id="exe-98-1-6">d) Compute <span class="process-math">\(\mathrm{H}_{3}\left(\operatorname{Tot}^{\oplus}(M)\right)\)</span> explicitly using only the two spectral sequences you calculated.</div> <div class="para" id="exe-98-1-7">e) Check your work by computing <span class="process-math">\(\mathrm{H}_{3}\left(\operatorname{Tot}^{\oplus}(M)\right)\)</span> explicitly from the definition of <span class="process-math">\(\operatorname{Tot}^{\oplus}(M)\text{.}\)</span>
 </div>

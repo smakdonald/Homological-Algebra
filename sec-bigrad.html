@@ -12,7 +12,7 @@
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Homological Algebra">
+<meta property="book:title" content="Postmodern Algebra">
 <meta property="book:author" content="Sam Macdonald">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
@@ -109,7 +109,7 @@ window.MathJax = {
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<h1 class="heading"><a href="book-homological.html"><span class="title">Postmodern Algebra</span></a></h1>
 <p class="byline">Sam Macdonald</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -404,7 +404,13 @@ window.MathJax = {
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
 <ul class="structural toc-item-list contains-active">
@@ -614,9 +620,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Filtered Complexes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Double Complexes</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -786,98 +792,137 @@ window.MathJax = {
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">8.2</span><span class="space"> </span><span class="title">Graded and Bigraded Modules</span>
 </h2>
 <div class="para" id="sec-bigrad-2">We can be a bit more formal and say that a page in a spectral sequence is a differential bigraded module. The goal of this section is to set up some background on the topic of differential bigraded modules.</div>
-<div class="para" id="sec-bigrad-3">Definition 8.5. Let <span class="process-math">\(R\)</span> be a ring. A graded module over <span class="process-math">\(R\)</span> is a family <span class="process-math">\(M=\left(M_{n}\right)_{n \in \mathbb{Z}}\)</span> of <span class="process-math">\(R\)</span>-modules indexed by <span class="process-math">\(\mathbb{Z}\text{.}\)</span> We sometimes denote <span class="process-math">\(M\)</span> by <span class="process-math">\(M_{\bullet}\text{.}\)</span>
-</div>
-<div class="para" id="sec-bigrad-4">More precisely, these are <span class="process-math">\(\mathbb{Z}\)</span>-graded modules. More generally, we have discussed <span class="process-math">\(\mathbb{Z}\)</span>-graded modules over any graded ring; in that case, the action of <span class="process-math">\(R\)</span> on <span class="process-math">\(M\)</span> must respect the grading. But here we are not assuming any grading on <span class="process-math">\(R\text{,}\)</span> so we have no such conditions. One may reinterpret our definition of graded module as assuming that <span class="process-math">\(R\)</span> is given the trivial grading concentrated in degree 0 , so that <span class="process-math">\(R_{0}=R\)</span> and <span class="process-math">\(R_{i}=0\)</span> otherwise, and thus the condition on the action of <span class="process-math">\(R\)</span> becomes trivial.</div>
-<div class="para" id="sec-bigrad-5">Example 8.6. If <span class="process-math">\(C\)</span> is a complex of <span class="process-math">\(R\)</span>-modules, then <span class="process-math">\(\left(C_{n}\right)_{n \in \mathbb{Z}}\)</span> is a graded module. Moreover, its homology <span class="process-math">\(H=\left(H_{n}(C)\right)\)</span> also forms a graded module.</div>
-<div class="para" id="sec-bigrad-6">Definition 8.7. Given graded modules <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{,}\)</span> a graded map of degree <span class="process-math">\(d\)</span> is a family</div>
-<div class="para logical" id="sec-bigrad-7"><div class="displaymath process-math">
+<article class="definition definition-like" id="def-8.5"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-8.5-1-1">Definition 8.5. Let <span class="process-math">\(R\)</span> be a ring. A graded module over <span class="process-math">\(R\)</span> is a family <span class="process-math">\(M=\left(M_{n}\right)_{n \in \mathbb{Z}}\)</span> of <span class="process-math">\(R\)</span>-modules indexed by <span class="process-math">\(\mathbb{Z}\text{.}\)</span> We sometimes denote <span class="process-math">\(M\)</span> by <span class="process-math">\(M_{\bullet}\text{.}\)</span>
+</div></article><div class="para" id="sec-bigrad-4">More precisely, these are <span class="process-math">\(\mathbb{Z}\)</span>-graded modules. More generally, we have discussed <span class="process-math">\(\mathbb{Z}\)</span>-graded modules over any graded ring; in that case, the action of <span class="process-math">\(R\)</span> on <span class="process-math">\(M\)</span> must respect the grading. But here we are not assuming any grading on <span class="process-math">\(R\text{,}\)</span> so we have no such conditions. One may reinterpret our definition of graded module as assuming that <span class="process-math">\(R\)</span> is given the trivial grading concentrated in degree 0, so that <span class="process-math">\(R_{0}=R\)</span> and <span class="process-math">\(R_{i}=0\)</span> otherwise, and thus the condition on the action of <span class="process-math">\(R\)</span> becomes trivial.</div>
+<article class="example example-like" id="sec-bigrad-5"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-bigrad-5-1">Example 8.6. If <span class="process-math">\(C\)</span> is a complex of <span class="process-math">\(R\)</span>-modules, then <span class="process-math">\(\left(C_{n}\right)_{n \in \mathbb{Z}}\)</span> is a graded module. Moreover, its homology <span class="process-math">\(H=\left(H_{n}(C)\right)\)</span> also forms a graded module.</div></article><article class="definition definition-like" id="def-8.7"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.7</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.7-1-1">
+<div class="para">Definition 8.7. Given graded modules <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{,}\)</span> a graded map of degree <span class="process-math">\(d\)</span> is a family</div>
+<div class="displaymath process-math">
 \begin{equation*}
 f=\left(f_{n}: M_{n} \rightarrow N_{n+d}\right)_{n \in \mathbb{Z}}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-8">of homomorphisms of <span class="process-math">\(R\)</span>-modules, which we denote by <span class="process-math">\(f: M \rightarrow N\text{.}\)</span> We write <span class="process-math">\(\operatorname{deg}(f)=d\)</span> to denote that the degree <span class="process-math">\(f\)</span> is <span class="process-math">\(d\text{.}\)</span>
 </div>
-<article class="example example-like" id="sec-bigrad-9"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Example 8.8..</span>
-</h3> <div class="para logical" id="sec-bigrad-9-2"><ol class="decimal">
-<li id="sec-bigrad-9-2-1-1"><div class="para" id="sec-bigrad-9-2-1-1-1">If <span class="process-math">\(C\)</span> is a complex of <span class="process-math">\(R\)</span>-modules, the differential <span class="process-math">\(d\)</span> is a graded map <span class="process-math">\(d: C \rightarrow C\)</span> of degree -1 . If <span class="process-math">\(C\)</span> is a cochain complex, the differential is a graded map of degree 1 .</div></li>
-<li id="sec-bigrad-9-2-1-2"><div class="para" id="sec-bigrad-9-2-1-2-1">Any map of complexes <span class="process-math">\(f: C \rightarrow D\)</span> is a graded map of degree 0 .</div></li>
-<li id="sec-bigrad-9-2-1-3"><div class="para" id="sec-bigrad-9-2-1-3-1">A homotopy is a map of degree 1 .</div></li>
-</ol></div></article><div class="para" id="sec-bigrad-10">Definition 8.9. Let <span class="process-math">\(R\)</span> be a ring. The category of graded modules over <span class="process-math">\(R\)</span> has objects all graded modules and arrows all graded maps of graded modules over <span class="process-math">\(R\text{.}\)</span>
+<div class="para">of homomorphisms of <span class="process-math">\(R\)</span>-modules, which we denote by <span class="process-math">\(f: M \rightarrow N\text{.}\)</span> We write <span class="process-math">\(\operatorname{deg}(f)=d\)</span> to denote that the degree <span class="process-math">\(f\)</span> is <span class="process-math">\(d\text{.}\)</span>
 </div>
-<div class="para" id="sec-bigrad-11">Definition 8.10. Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be graded modules over a <span class="process-math">\(\operatorname{ring} R\text{.}\)</span> We say <span class="process-math">\(N\)</span> is a submodule of <span class="process-math">\(M\text{,}\)</span> and write <span class="process-math">\(N \subseteq M\text{,}\)</span> if <span class="process-math">\(N_{n} \subseteq M_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span> The quotient of <span class="process-math">\(M\)</span> by <span class="process-math">\(N\)</span> is the graded module</div>
-<div class="para logical" id="sec-bigrad-12"><div class="displaymath process-math">
+</div></article><article class="example example-like" id="sec-bigrad-7"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Example 8.8..</span>
+</h3> <div class="para logical" id="sec-bigrad-7-2"><ol class="decimal">
+<li id="sec-bigrad-7-2-1-1"><div class="para" id="sec-bigrad-7-2-1-1-1">If <span class="process-math">\(C\)</span> is a complex of <span class="process-math">\(R\)</span>-modules, the differential <span class="process-math">\(d\)</span> is a graded map <span class="process-math">\(d: C \rightarrow C\)</span> of degree -1 . If <span class="process-math">\(C\)</span> is a cochain complex, the differential is a graded map of degree 1 .</div></li>
+<li id="sec-bigrad-7-2-1-2"><div class="para" id="sec-bigrad-7-2-1-2-1">Any map of complexes <span class="process-math">\(f: C \rightarrow D\)</span> is a graded map of degree 0 .</div></li>
+<li id="sec-bigrad-7-2-1-3"><div class="para" id="sec-bigrad-7-2-1-3-1">A homotopy is a map of degree 1 .</div></li>
+</ol></div></article><article class="definition definition-like" id="def-8.9"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.9</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-8.9-1-1">Definition 8.9. Let <span class="process-math">\(R\)</span> be a ring. The category of graded modules over <span class="process-math">\(R\)</span> has objects all graded modules and arrows all graded maps of graded modules over <span class="process-math">\(R\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-8.10"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.10</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.10-1-1">
+<div class="para">Definition 8.10. Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be graded modules over a <span class="process-math">\(\operatorname{ring} R\text{.}\)</span> We say <span class="process-math">\(N\)</span> is a submodule of <span class="process-math">\(M\text{,}\)</span> and write <span class="process-math">\(N \subseteq M\text{,}\)</span> if <span class="process-math">\(N_{n} \subseteq M_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span> The quotient of <span class="process-math">\(M\)</span> by <span class="process-math">\(N\)</span> is the graded module</div>
+<div class="displaymath process-math">
 \begin{equation*}
 M / N:=\left(M_{n} / N_{n}\right)_{n}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-13">Definition 8.11. Let <span class="process-math">\(f: M \rightarrow N\)</span> be a graded map of degree <span class="process-math">\(d\)</span> between graded modules. The kernel of <span class="process-math">\(f\)</span> is the graded module</div>
-<div class="para logical" id="sec-bigrad-14"><div class="displaymath process-math">
+</div>
+</div></article><article class="definition definition-like" id="def-8.11"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.11</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.11-1-1">
+<div class="para">Definition 8.11. Let <span class="process-math">\(f: M \rightarrow N\)</span> be a graded map of degree <span class="process-math">\(d\)</span> between graded modules. The kernel of <span class="process-math">\(f\)</span> is the graded module</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{ker} f:=\left(\operatorname{ker} f_{n}\right)_{n \in \mathbb{Z}}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-15">and the image of <span class="process-math">\(f\)</span> is the graded module</div>
-<div class="para logical" id="sec-bigrad-16"><div class="displaymath process-math">
+</div>
+<div class="para">and the image of <span class="process-math">\(f\)</span> is the graded module</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{im} f:=\left(\operatorname{im} f_{n-d}\right)_{n \in \mathbb{Z}}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-17">Definition 8.12. Consider graded maps of graded modules</div>
-<div class="para logical" id="sec-bigrad-18"><div class="displaymath process-math">
+</div>
+</div></article><article class="definition definition-like" id="def-8.12"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.12</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.12-1-1">
+<div class="para">Definition 8.12. Consider graded maps of graded modules</div>
+<div class="displaymath process-math">
 \begin{equation*}
 A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-19">We say this is an exact sequence if <span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\text{.}\)</span>
 </div>
-<div class="para" id="sec-bigrad-20">Remark 8.13. By our definition of kernel and image, <span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\)</span> says that <span class="process-math">\(\operatorname{im} f_{n-d}=\operatorname{ker} g_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+<div class="para">We say this is an exact sequence if <span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\text{.}\)</span>
 </div>
-<div class="para" id="sec-bigrad-21">Definition 8.14. Let <span class="process-math">\(R\)</span> be a ring. A bigraded module over <span class="process-math">\(R\)</span> is a family <span class="process-math">\(M=\left(M_{p, q}\right)_{p, q \in \mathbb{Z}}\)</span> of <span class="process-math">\(R\)</span>-modules indexed by <span class="process-math">\(\mathbb{Z} \times \mathbb{Z}\text{.}\)</span> We sometimes denote <span class="process-math">\(M\)</span> by <span class="process-math">\(M_{\bullet, \bullet}\text{.}\)</span>
-</div>
-<div class="para" id="sec-bigrad-22">Definition 8.15. Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be bigraded modules over a ring <span class="process-math">\(R\text{.}\)</span> A bigraded map <span class="process-math">\(f: M \rightarrow N\)</span> of degree <span class="process-math">\((a, b)\)</span> is a family of homomorphisms of <span class="process-math">\(R\)</span>-modules</div>
-<div class="para logical" id="sec-bigrad-23"><div class="displaymath process-math">
+</div></article><article class="remark remark-like" id="sec-bigrad-12"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.13</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-bigrad-12-1">Remark 8.13. By our definition of kernel and image, <span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\)</span> says that <span class="process-math">\(\operatorname{im} f_{n-d}=\operatorname{ker} g_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-8.14"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.14</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-8.14-1-1">Definition 8.14. Let <span class="process-math">\(R\)</span> be a ring. A bigraded module over <span class="process-math">\(R\)</span> is a family <span class="process-math">\(M=\left(M_{p, q}\right)_{p, q \in \mathbb{Z}}\)</span> of <span class="process-math">\(R\)</span>-modules indexed by <span class="process-math">\(\mathbb{Z} \times \mathbb{Z}\text{.}\)</span> We sometimes denote <span class="process-math">\(M\)</span> by <span class="process-math">\(M_{\bullet, \bullet}\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-8.15"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.15</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.15-1-1">
+<div class="para">Definition 8.15. Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be bigraded modules over a ring <span class="process-math">\(R\text{.}\)</span> A bigraded map <span class="process-math">\(f: M \rightarrow N\)</span> of degree <span class="process-math">\((a, b)\)</span> is a family of homomorphisms of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
 \begin{equation*}
 f=\left(f_{p, q}: M_{p, q} \rightarrow N_{p+a, q+b}\right)_{p, q \in \mathbb{Z}}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-24">We denote the degree of <span class="process-math">\(f\)</span> by <span class="process-math">\(\operatorname{deg}(f)=(a, b)\text{.}\)</span>
 </div>
-<div class="para" id="sec-bigrad-25">The kernel of <span class="process-math">\(f\)</span> is the bigraded module</div>
-<div class="para logical" id="sec-bigrad-26"><div class="displaymath process-math">
+</div> <div class="para" id="def-8.15-1-2">We denote the degree of <span class="process-math">\(f\)</span> by <span class="process-math">\(\operatorname{deg}(f)=(a, b)\text{.}\)</span>
+</div> <div class="para logical" id="def-8.15-1-3">
+<div class="para">The kernel of <span class="process-math">\(f\)</span> is the bigraded module</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{ker} f:=\left(\operatorname{ker} f_{p, q}\right)_{p, q \in \mathbb{Z}}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-27">and the image of <span class="process-math">\(f\)</span> is the bigraded module</div>
-<div class="para logical" id="sec-bigrad-28"><div class="displaymath process-math">
+</div>
+<div class="para">and the image of <span class="process-math">\(f\)</span> is the bigraded module</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{im} f:=\left(\operatorname{im} f_{p-a, q-b}\right)_{p, q \in \mathbb{Z}}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-29">We say a sequence of graded maps</div>
-<div class="para logical" id="sec-bigrad-30"><div class="displaymath process-math">
+</div>
+</div> <div class="para logical" id="def-8.15-1-4">
+<div class="para">We say a sequence of graded maps</div>
+<div class="displaymath process-math">
 \begin{equation*}
 A \stackrel{f}{\longrightarrow} B \xrightarrow{g} C
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-31">is exact if <span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\text{.}\)</span>
 </div>
-<div class="para" id="sec-bigrad-32">Definition 8.16. A differential (bi)graded module <span class="process-math">\((M, d)\)</span> over a ring <span class="process-math">\(R\)</span> consists of a (bi)graded module <span class="process-math">\(M\)</span> and a graded map <span class="process-math">\(d: M \rightarrow M\text{,}\)</span> which we call the differential, such that <span class="process-math">\(d d=0\text{.}\)</span>
+<div class="para">is exact if <span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\text{.}\)</span>
 </div>
-<div class="para" id="sec-bigrad-33">We can think of (bi)graded modules as differential (bi)graded modules with zero differential.</div>
-<div class="para" id="sec-bigrad-34">Example 8.17. A double complex <span class="process-math">\(C\)</span> with differentials <span class="process-math">\(d^{h}\)</span> and <span class="process-math">\(d^{v}\)</span> gives rise to two differential bigraded complexes: <span class="process-math">\(\left(C, d^{h}\right)\)</span> and <span class="process-math">\(\left(C, d^{v}\right)\text{.}\)</span>
-</div>
-<div class="para" id="sec-bigrad-35">Definition 8.18. Let <span class="process-math">\((M, d)\)</span> be a differential (bi)graded module. The homology of <span class="process-math">\(M\)</span> is the (bi)graded module</div>
-<div class="para logical" id="sec-bigrad-36"><div class="displaymath process-math">
+</div></article><article class="definition definition-like" id="def-8.16"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.16</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-8.16-1-1">Definition 8.16. A differential (bi)graded module <span class="process-math">\((M, d)\)</span> over a ring <span class="process-math">\(R\)</span> consists of a (bi)graded module <span class="process-math">\(M\)</span> and a graded map <span class="process-math">\(d: M \rightarrow M\text{,}\)</span> which we call the differential, such that <span class="process-math">\(d d=0\text{.}\)</span>
+</div></article><div class="para" id="sec-bigrad-16">We can think of (bi)graded modules as differential (bi)graded modules with zero differential.</div>
+<article class="example example-like" id="sec-bigrad-17"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.17</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-bigrad-17-1">Example 8.17. A double complex <span class="process-math">\(C\)</span> with differentials <span class="process-math">\(d^{h}\)</span> and <span class="process-math">\(d^{v}\)</span> gives rise to two differential bigraded complexes: <span class="process-math">\(\left(C, d^{h}\right)\)</span> and <span class="process-math">\(\left(C, d^{v}\right)\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-8.18"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.18</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.18-1-1">
+<div class="para">Definition 8.18. Let <span class="process-math">\((M, d)\)</span> be a differential (bi)graded module. The homology of <span class="process-math">\(M\)</span> is the (bi)graded module</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \mathrm{H}(M, d)=\operatorname{ker} d / \operatorname{im} d
 \end{equation*}
-</div></div>
-<div class="para" id="sec-bigrad-37">We sometimes shorten this to <span class="process-math">\(\mathrm{H}(M)\text{.}\)</span>
 </div>
-<div class="para" id="sec-bigrad-38">A spectral sequence can now be recast as a sequence <span class="process-math">\(\left(E^{r}, d^{r}\right)\)</span> of differential bigraded modules such that <span class="process-math">\(E^{r+1}=\mathrm{H}\left(E^{r}, d^{r}\right)\text{.}\)</span>
+<div class="para">We sometimes shorten this to <span class="process-math">\(\mathrm{H}(M)\text{.}\)</span>
+</div>
+</div></article><div class="para" id="sec-bigrad-19">A spectral sequence can now be recast as a sequence <span class="process-math">\(\left(E^{r}, d^{r}\right)\)</span> of differential bigraded modules such that <span class="process-math">\(E^{r+1}=\mathrm{H}\left(E^{r}, d^{r}\right)\text{.}\)</span>
 </div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-what-is-spectral.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-filtrations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
