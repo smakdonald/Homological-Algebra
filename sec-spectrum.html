@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Spectrum of a Ring</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Homological Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-prime-maximal-ideals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-prime-ideals.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-ops.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+\newcommand{\Ass}{\operatorname{Ass}}
+\def\Aut{\operatorname{Aut}}
+\def\can{{\mathrm {can}}}
+\def\char{\operatorname{char}}
+\def\cp{\operatorname{CharPoly}}
+\def\codim{\operatorname{codim}} 
+\def\coker{\operatorname{coker}}
+\DeclareMathOperator*{\colim}{colim} 
+\def\cont{\operatorname{cont}} 
+\def\diam{\operatorname{diam}} 
+\def\dm{\operatorname{dim}} 
+\DeclareMathOperator{\edim}{embdim} 
+\def\End{\operatorname{End}} 
+\def\eval{\operatorname{eval}} 
+\def\Ext{\operatorname{Ext}} 
+\def\Frac{\operatorname{Frac}}
+\def\Fun{\operatorname{Fun}}
+\def\Gal{\operatorname{Gal}}
+\def\gcd{\operatorname{gcd}}
+\newcommand{\GL}{\operatorname{GL}} 
+\newcommand{\ht}{\operatorname{height}} 
+\def\Hom{\operatorname{Hom}} 
+\def\id{\operatorname{id}} 
+\def\im{\operatorname{im}} 
+\def\Inn{\operatorname{Inn}}
+\def\ker{\operatorname{ker}}
+\def\lcm{\operatorname{lcm}} 
+\def\Mat{\operatorname{Mat}}
+\newcommand{\Min}{\operatorname{Min}}
+\def\mp{\operatorname{MinPoly}}
+\def\mSpec{\operatorname{mSpec}}
+\def\MSpec{\operatorname{MSpec}}
+\def\null{\operatorname{Nul}}
+\DeclareMathOperator{\ns}{nullspace}
+\newcommand{\opp}{\operatorname{opp}}
+\def\Orb{\operatorname{Orb}} 
+\def\Out{\operatorname{Out}}
+\def\Perm{\operatorname{Perm}}
+\def\ptstab{\operatorname{PtStab}} 
+\def\rad{\operatorname{rad}}
+\DeclareMathOperator{\range}{range}
+\def\rank{\operatorname{rank}}
+\def\res{\operatorname{res}}
+\def\setstab{\operatorname{SetStab}}
+\def\sign{{\operatorname{sign}}}
+\newcommand{\SL}{\operatorname{SL}}
+\def\Span{\operatorname{Span}}
+\def\Spec{\operatorname{Spec}}
+\def\Stab{\operatorname{Stab}} 
+\DeclareMathOperator{\Supp}{Supp}
+\def\Syl{\operatorname{Syl}}
+\def\Tor{\operatorname{Tor}}
+\def\trace{\operatorname{trace}}
+\def\uSpec{\operatorname{\underline{Spec}}}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}{-\mathbf{Mod}}
+\newcommand{\mod}{-\mathbf{mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\lx{\lambda_x}
+\newcommand{\a}{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd} 
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\def\xdots{x_1, \dots, x_n} 
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\udots{u_1, \dots, u_n} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-abelian-def.html" class="internal"><span class="codenumber">7.1</span> <span class="title">What’s an Abelian Category?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-mono-epi" class="internal"><span class="title">Monomorphisms and Epimorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-additive-categories" class="internal"><span class="title">Additive Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ker-coker" class="internal"><span class="title">Kernels and Cokernels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ab-cat" class="internal"><span class="title">Definition of an Abelian Category</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-complexes-ab" class="internal"><span class="title">Complexes in Abelian Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-hom-ab" class="internal"><span class="title">Homology in Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-exact-ab" class="internal"><span class="title">Exact Functors: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-yoneda-ab" class="internal"><span class="title">The Yoneda Lemma: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-diagrams-ab" class="internal"><span class="title">The Diagram Chasers: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-proj-inj-ab" class="internal"><span class="title">Projectives, Injective, and Resolutions: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-split-ab" class="internal"><span class="title">Split Exact Sequences: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-res-ab" class="internal"><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-commutative-algebra.html" class="internal"><span class="codenumber">II</span> <span class="title">Commutative Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-finiteness-conditions.html" class="internal"><span class="codenumber">9</span> <span class="title">Finiteness Conditions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gen-mod.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Generated Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-algebras.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebras</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-alg-mod-finite.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Algebra and Module Finite</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sess.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Short Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-noetherian.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Noetherian Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-rings" class="internal"><span class="title">Noetherian Rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-modules" class="internal"><span class="title">Noetherian Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-hilbert" class="internal"><span class="title">Hilbert’s Basis Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-1.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Invariant Rings: Application I</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-graded-rings.html" class="internal"><span class="codenumber">10</span> <span class="title">Graded Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-rings.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graded Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-finite-conditions-graded-algebras.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Finiteness Conditions for Graded Algebras</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-2.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Invariant Rings: Application II</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-local-rings.html" class="internal"><span class="codenumber">11</span> <span class="title">Local Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-rings.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Local Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localizations.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nak.html" class="internal"><span class="codenumber">11.3</span> <span class="title">NAK</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-prime-ideals.html" class="internal"><span class="codenumber">12</span> <span class="title">Prime Ideals</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-prime-maximal-ideals.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Prime and Maximal Ideals</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-spectrum.html" class="internal"><span class="codenumber">12.2</span> <span class="title">The Spectrum of a Ring</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ops.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ops.html#subsec-colon-annihilator" class="internal"><span class="title">Colons and Annihilators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ops.html#sec-prime-avoidance" class="internal"><span class="title">Prime Avoidance</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-decomposing-ideals.html" class="internal"><span class="codenumber">13</span> <span class="title">Decomposing Ideals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-min-support.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Minimal Primes and Support</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ass-primes.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Associated Primes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-primary-decomp.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Primary Decomposition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-krull-intersection.html" class="internal"><span class="codenumber">13.4</span> <span class="title">The Krull Intersection Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integral-extensions.html" class="internal"><span class="codenumber">14</span> <span class="title">Integral Extensions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-integral-extensions.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Integral Extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-over-up-down.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Over, Up, and Down</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dim-theory.html" class="internal"><span class="codenumber">15</span> <span class="title">Dimension Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dim-height.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Dimension and Height</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-noether-normalizations.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Noether Normalizations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-height-generators.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Height and Number of Generators</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sops.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Systems of Parameters</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-commutative-algebra-ii.html" class="internal"><span class="codenumber">III</span> <span class="title">Commutative Algebra II</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-domains-ii.html" class="internal"><span class="codenumber">16</span> <span class="title">Domains II</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-art.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Artinian Rings</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dvrs.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Discrete Valuation Rings and Dedekind Domains</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dvrs.html#sec-dvr" class="internal"><span class="title">Discrete Valuation Rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dvrs.html#dedekind-domains" class="internal"><span class="title">Dedekind Domains</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dvrs.html#fractional-ideals" class="internal"><span class="title">Fractional Ideals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-depth-grade.html" class="internal"><span class="codenumber">17</span> <span class="title">Depth and Grade</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-depth-grade.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Depth and Grade</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-depth-m2.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Macaulay2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cohen.html" class="internal"><span class="codenumber">18</span> <span class="title">Cohen-Macaulay Rings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3.html" class="internal"><span class="codenumber">18.1</span> <span class="title"></span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-locohom.html" class="internal"><span class="codenumber">IV</span> <span class="title">Local Cohomology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-injective-modules.html" class="internal"><span class="codenumber">19</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hulls.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Essential Extensions and Injective Hulls</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-injective-noetherian.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Injective Modules in Noetherian Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mathis.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Mathis Duality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-loco.html" class="internal"><span class="codenumber">20</span> <span class="title">Local Cohomology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-def-loco.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Definitions of Local Cohomology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cech-complex.html" class="internal"><span class="codenumber">20.2</span> <span class="title">The Čech Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-properties-vanishing.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Properties and Vanishing Theorems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-canonical.html" class="internal"><span class="codenumber">21</span> <span class="title">The Canonical Module</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-duality.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Local Duality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gorenstein.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Gorenstein Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-canonical-mod.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Canonical Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-local-duality.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Graded Local Duality and Regularity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Foundational Knowledge</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Ring Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Module Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-topology.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Topology</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="macaulay2.html" class="internal"><span class="codenumber">B</span> <span class="title">Macaulay2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-getting-started.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-asking-for-help.html" class="internal"><span class="codenumber">B.2</span> <span class="title">Asking Macaulay2 for Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-commands.html" class="internal"><span class="codenumber">B.3</span> <span class="title">Basic Commands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-spectrum"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">12.2</span><span class="space"> </span><span class="title">The Spectrum of a Ring</span>
+</h2>
+<blockquote class="blockquote" id="sec-spectrum-2">
+<div class="para" id="sec-spectrum-2-1">“What is life but a spectrum and what is music but life itself.”</div> <cite class="attribution">―Billy Cobham</cite>
+</blockquote>
+<article class="definition definition-like" id="defn-prime-spectrum"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.12</span><span class="period">.</span><span class="space"> </span><span class="title">Prime Spectrum.</span>
+</h3> <div class="para" id="defn-prime-spectrum-2-1">Let <span class="process-math">\(R\)</span> be a ring. The <em class="emphasis">prime spectrum</em>  of <span class="process-math">\(R\text{,}\)</span> denoted <span class="process-math">\(\Spec(R)\text{,}\)</span> is the set of prime ideals of <span class="process-math">\(R\text{.}\)</span> The set of maximal ideals of <span class="process-math">\(R\)</span> is denoted <span class="process-math">\(\mSpec(R)\)</span> .</div></article><article class="definition definition-like" id="defn-vi"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.13</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(V(I)\)</span>.</span>
+</h3> <div class="para logical" id="defn-vi-2-1">
+<div class="para">For a ring <span class="process-math">\(R\)</span> and an ideal <span class="process-math">\(I\text{,}\)</span> we set </div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(I) :=  \{ P \in \Spec(R) \ \mid \ I \sse P\}.
+\end{equation*}
+</div>
+</div></article><article class="proposition theorem-like" id="prop-properties-of-v"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">12.14</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of V.</span>
+</h3>
+<div class="para logical" id="prop-properties-of-v-2-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring, and <span class="process-math">\(I_{\lambda},J\)</span> be ideals, not necessarily proper.</div>
+<ol class="decimal">
+<li id="prop-properties-of-v-2-1-3-1"><div class="para" id="prop-properties-of-v-2-1-3-1-1">
+<span class="process-math">\(V(R) = \varnothing\)</span> and <span class="process-math">\(V(0) = \Spec(R)\text{.}\)</span>
+</div></li>
+<li id="prop-properties-of-v-2-1-3-2"><div class="para" id="prop-properties-of-v-2-1-3-2-1">If <span class="process-math">\(I \subseteq J\text{,}\)</span> then <span class="process-math">\(V(J)\subseteq V(I)\text{.}\)</span>
+</div></li>
+<li id="prop-properties-of-v-2-1-3-3"><div class="para" id="prop-properties-of-v-2-1-3-3-1"><span class="process-math">\(V(I) \cup V(J) = V(I \cap J)=V(IJ)\text{.}\)</span></div></li>
+<li id="prop-properties-of-v-2-1-3-4"><div class="para" id="prop-properties-of-v-2-1-3-4-1"><span class="process-math">\(\bigcap_{\lambda} V(I_{\lambda}) =V(\sum_{\lambda} I_{\lambda})\text{.}\)</span></div></li>
+</ol>
+</div></article><details id="prop-properties-of-v-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="prop-properties-of-v-3-1">Both <span class="process-math">\((a)\)</span> and <span class="process-math">\((b)\)</span> are straightforward, so we just prove <span class="process-math">\((c)\text{.}\)</span>
+</div> <div class="para" id="prop-properties-of-v-3-2">To see <span class="process-math">\(V(I)\cup V(J) \subseteq V(I \cap J)\text{,}\)</span> just observe that if <span class="process-math">\(I \sse P\)</span> or <span class="process-math">\(J \sse P\text{,}\)</span> then <span class="process-math">\(I \cap J \sse P\text{.}\)</span>
+</div> <div class="para" id="prop-properties-of-v-3-3">Since <span class="process-math">\(IJ \subseteq I \cap J\text{,}\)</span> we have <span class="process-math">\(V(I \cap J) \subseteq V(IJ)\text{.}\)</span> To show <span class="process-math">\(V(IJ) \subseteq V(I) \cup V(J)\text{,}\)</span> if <span class="process-math">\(P\)</span> is a prime and <span class="process-math">\(P \notin V(I) \cup V(J)\text{,}\)</span> then <span class="process-math">\(P \not\supseteq I, P \not\supseteq J\text{.}\)</span> Thus we can find <span class="process-math">\(f \in I\text{,}\)</span> and <span class="process-math">\(g \in J\)</span> such that <span class="process-math">\(f, g \notin P\text{.}\)</span> Since <span class="process-math">\(P\)</span> is prime, <span class="process-math">\(fg \notin P\text{,}\)</span> while also <span class="process-math">\(fg \in IJ\text{.}\)</span> Therefore, <span class="process-math">\(P \nsubseteq IJ\text{.}\)</span>
+</div> <div class="para" id="prop-properties-of-v-3-4">To show <span class="process-math">\((d)\text{,}\)</span> since ideals are closed for sums, if <span class="process-math">\(P \supseteq I_\lambda\)</span> for all <span class="process-math">\(\lambda\text{,}\)</span> then <span class="process-math">\(P \supseteq \sum_{\lambda} I_{\lambda}\text{.}\)</span> Moreover, if <span class="process-math">\(P \supseteq \sum_{\lambda} I_{\lambda}\text{,}\)</span> then in particular <span class="process-math">\(P \supseteq I_\lambda\text{.}\)</span>
+</div></article></details><article class="example example-like" id="ex-poset-structure-of-spec"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.15</span><span class="period">.</span><span class="space"> </span><span class="title">Poset Structure of Spec.</span>
+</h3>
+<div class="para logical" id="ex-poset-structure-of-spec-2-1">
+<div class="para">Note that <span class="process-math">\(\Spec(R)\)</span> is also a poset under inclusion. Show that the poset structure of <span class="process-math">\(\Spec(R)\)</span> can be recovered from the topology as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P \subseteq Q \quad \Leftrightarrow \quad Q \in \overline{\{ P \}}.
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="ex-spectrum-of-z"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.16</span><span class="period">.</span><span class="space"> </span><span class="title">Spectrum of Z.</span>
+</h3>
+<div class="para" id="ex-spectrum-of-z-2-1">The spectrum of <span class="process-math">\(\mathbb{Z}\)</span> is, as a poset:</div>
+<div class="solutions"><details id="ex-spectrum-of-z-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="ex-spectrum-of-z-3-1">#empty</div> <div class="para" id="ex-spectrum-of-z-3-2">The closed sets are of the form <span class="process-math">\(V((n))\text{,}\)</span> which are the whole space when <span class="process-math">\(n=0\text{,}\)</span> the empty set when <span class="process-math">\(n=1\text{,}\)</span> and any finite union of things in the top row. Any closed set that contains <span class="process-math">\((0)\)</span> must be all of <span class="process-math">\(\Spec(\Z)\text{.}\)</span>
+</div>
+</div></details></div></article><article class="definition definition-like" id="defn-radical-ideal"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.17</span><span class="period">.</span><span class="space"> </span><span class="title">Radical Ideal.</span>
+</h3> <div class="para logical" id="defn-radical-ideal-2-1">
+<div class="para">The <em class="emphasis">radical</em>  of an ideal <span class="process-math">\(I\)</span>  in a ring <span class="process-math">\(R\)</span> is the ideal</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sqrt{I} :=  \{f\in R \ | \ f^n\in I \textrm{ for some } n\}.
+\end{equation*}
+</div>
+<div class="para">An ideal is a <em class="emphasis">radical ideal</em>  if <span class="process-math">\(I=\sqrt{I}\text{.}\)</span>
+</div>
+</div></article><article class="proposition theorem-like" id="prop-radical-ideal-is-an-ideal"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">12.18</span><span class="period">.</span><span class="space"> </span><span class="title">Radical Ideal is an Ideal.</span>
+</h3>
+<div class="para logical" id="prop-radical-ideal-is-an-ideal-2-1">
+<div class="para">To see that <span class="process-math">\(\sqrt{I}\)</span> is an ideal, note that if <span class="process-math">\(f^m, g^n \in I\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned} (f+g)^{m+n-1} 
+&amp;= \sum_{i=0}^{m+n-1} \binom{m+n-1}{i} f^i g^{m+n-1-i} \\
+&amp;= f^m \left(f^{n-1} + \binom{m+n-1}{1} f^{n-2}g + \cdots + \binom{m+n-1}{n-1} g^{n-1}\right) \\
+&amp;+ g^n \left(\binom{m+n-1}{n} f^{m-1} + \binom{m+n-1}{n+1} f^{m-2} g + \cdots + g^{m-1} \right) \in I,
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\((rf)^m=r^m f^m \in I\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="defn-reduced-ring"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.19</span><span class="period">.</span><span class="space"> </span><span class="title">Reduced Ring.</span>
+</h3> <div class="para" id="defn-reduced-ring-2-1">A ring <span class="process-math">\(R\)</span> is <em class="emphasis">reduced</em> if it has no nonzero nilpotents.</div></article><article class="example example-like" id="ex-ideal-radical-iff-ri-reduced"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.20</span><span class="period">.</span><span class="space"> </span><span class="title">Ideal Radical iff R/I Reduced.</span>
+</h3>
+<div class="para" id="ex-ideal-radical-iff-ri-reduced-2-1">An ideal <span class="process-math">\(I\)</span> in <span class="process-math">\(R\)</span> is radical if and only if <span class="process-math">\(R/I\)</span> is reduced.</div></article><article class="lemma theorem-like" id="lem-v-and-radical-ideals"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">12.21</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(V\)</span> and Radical Ideals.</span>
+</h3>
+<div class="para" id="lem-v-and-radical-ideals-2-1">Let <span class="process-math">\(R\)</span> be a ring. For any ideal <span class="process-math">\(I\text{,}\)</span> <span class="process-math">\(V(I)=V(\sqrt{I})\text{.}\)</span>
+</div></article><details id="lem-v-and-radical-ideals-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="lem-v-and-radical-ideals-3-1">The containment <span class="process-math">\(I \subseteq \sqrt{I}\)</span> is immediate from the definition of radical, and thus we have <span class="process-math">\(V(I) \subseteq V(\sqrt{I})\text{.}\)</span> Now let <span class="process-math">\(P \supseteq I\)</span> be a prime ideal, and let <span class="process-math">\(f \in \sqrt{I}\text{.}\)</span> By definition, there exists some <span class="process-math">\(n\)</span> such that <span class="process-math">\(f^n \in I \subseteq P\text{,}\)</span> but since <span class="process-math">\(P\)</span> is prime, we conclude that <span class="process-math">\(f \in P\text{.}\)</span> Therefore, <span class="process-math">\(V(\sqrt{I}) \subseteq V(I)\text{,}\)</span> and we are done.</div></article></details><article class="lemma theorem-like" id="lem-preimage-of-prime-is-prime"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">12.22</span><span class="period">.</span><span class="space"> </span><span class="title">Preimage of Prime is Prime.</span>
+</h3>
+<div class="para" id="lem-preimage-of-prime-is-prime-2-1">Let <span class="process-math">\(R \xrightarrow{\varphi} S\)</span> be a ring homomorphism and <span class="process-math">\(P \subset S\)</span> be prime. Then <span class="process-math">\(P \cap R\)</span> is also prime.</div></article><details id="lem-preimage-of-prime-is-prime-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="lem-preimage-of-prime-is-prime-3-1">Let <span class="process-math">\(P\)</span> be a prime ideal in <span class="process-math">\(S\text{.}\)</span> Given elements <span class="process-math">\(f, g \in R\)</span> such that <span class="process-math">\(fg \in P \cap R\text{,}\)</span> then <span class="process-math">\(\varphi(f)\varphi(g)=\varphi(fg) \in P\text{,}\)</span> and since <span class="process-math">\(P\)</span> is prime, we conclude that <span class="process-math">\(\varphi(f) \in P\)</span> or <span class="process-math">\(\varphi(g) \in P\text{.}\)</span> Therefore, <span class="process-math">\(f \in P \cap R\)</span> or <span class="process-math">\(g \in P \cap R\text{.}\)</span>
+</div></article></details><article class="definition definition-like" id="defn-induced-map-on-spec"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.23</span><span class="period">.</span><span class="space"> </span><span class="title">Induced Map on <span class="process-math">\(\Spec\)</span>.</span>
+</h3> <div class="para" id="defn-induced-map-on-spec-2-1">Each ring homomorphism <span class="process-math">\(\varphi\!: R\to S\)</span> induces a map on spectra <span class="process-math">\(\varphi^*\!:\Spec(S)\to\Spec(R)\)</span> given by <span class="process-math">\(\varphi^*(P)=\varphi^{-1}(P) = P \cap R\text{.}\)</span> </div></article><article class="example example-like" id="ex-induced-map-on-spec-continuous"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.24</span><span class="period">.</span><span class="space"> </span><span class="title">Induced Map on Spec Continuous.</span>
+</h3>
+<div class="para logical" id="ex-induced-map-on-spec-continuous-2-1">
+<div class="para">The induced map on spectra is not only an order-preserving map, but also it is continuous: if <span class="process-math">\(U\subseteq \Spec(R)\)</span> is open, we have <span class="process-math">\(U=\Spec(R) \setminus V(I)\)</span> for some ideal <span class="process-math">\(I\text{;}\)</span> then for a prime <span class="process-math">\(Q\)</span> of <span class="process-math">\(S\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Q \in (\varphi^*)^{-1}(U) \quad \Longleftrightarrow \quad Q \cap R \not\supseteq I  \quad \Longleftrightarrow  \quad Q \not\supseteq IS  \quad \Longleftrightarrow  \quad Q \notin V(IS).
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\((\varphi^*)^{-1}(U)\)</span> is the complement of <span class="process-math">\(V(IS)\text{,}\)</span> and thus open.</div>
+</div></article><article class="definition definition-like" id="defn-minimal-prime-2"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.25</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal Prime.</span>
+</h3> <div class="para" id="defn-minimal-prime-2-2-1">Let <span class="process-math">\(I\)</span> be an ideal in a ring <span class="process-math">\(R\text{.}\)</span> A prime <span class="process-math">\(P\)</span> is a <em class="emphasis">minimal prime</em> of <span class="process-math">\(I\)</span> if <span class="process-math">\(P\)</span> is minimal in <span class="process-math">\(V(I)\text{.}\)</span> A <em class="emphasis">minimal prime</em> of <span class="process-math">\(R\)</span> is a minimal element in <span class="process-math">\(\Spec(R)\text{.}\)</span> </div></article><article class="definition definition-like" id="defn-minimal-prime-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.26</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal Prime.</span>
+</h3> <div class="para" id="defn-minimal-prime-3-2-1">Let <span class="process-math">\(I\)</span> be an ideal in a ring <span class="process-math">\(R\text{.}\)</span> A <em class="emphasis">minimal prime</em> of <span class="process-math">\(I\)</span> is a minimal element (with respect to containment) in <span class="process-math">\(V(I)\text{.}\)</span> More precisely, <span class="process-math">\(P\)</span> is a minimal prime of <span class="process-math">\(I\)</span> if the following hold: - <span class="process-math">\(P\)</span> is a prime ideal, - <span class="process-math">\(P \supseteq I\text{,}\)</span> and - if <span class="process-math">\(Q\)</span> is also a prime ideal and <span class="process-math">\(I \subseteq Q \subseteq P\text{,}\)</span> then <span class="process-math">\(Q = P\text{.}\)</span>
+</div> <div class="para" id="defn-minimal-prime-3-2-2">The set of minimal primes of <span class="process-math">\(I\)</span> is denoted <span class="process-math">\(\Min(I)\)</span> .</div></article><article class="lemma theorem-like" id="lem-every-prime-contains-minimal-prime"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">12.27</span><span class="period">.</span><span class="space"> </span><span class="title">Every Prime Contains Minimal Prime.</span>
+</h3>
+<div class="para" id="lem-every-prime-contains-minimal-prime-2-1">Let <span class="process-math">\(R\)</span> be a ring, and <span class="process-math">\(I\)</span> an ideal. Every prime <span class="process-math">\(P\)</span> that contains <span class="process-math">\(I\)</span> contains a minimal prime of <span class="process-math">\(I\text{.}\)</span>
+</div></article><details id="lem-every-prime-contains-minimal-prime-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="lem-every-prime-contains-minimal-prime-3-1">
+<div class="para">Fix an ideal <span class="process-math">\(I\)</span> and a prime <span class="process-math">\(P \supseteq I\text{,}\)</span> and consider the set</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+S = \lbrace Q \in V(I) \mid P \supseteq Q \rbrace,
+\end{equation*}
+</div>
+<div class="para">which is partially ordered with <span class="process-math">\(\supseteq\text{.}\)</span> On the one hand, <span class="process-math">\(P \in S\text{,}\)</span> so <span class="process-math">\(S\)</span> is nonempty. On the other hand, given any chain <span class="process-math">\(\{ Q_i \}_i\)</span> in <span class="process-math">\(S\text{,}\)</span> <span class="process-math">\(Q := \bigcap_i Q_i\)</span> is a prime ideal in <span class="process-math">\(R\)</span> ( #prove !). Moreover, <span class="process-math">\(Q\)</span> contains <span class="process-math">\(I\text{,}\)</span> since every <span class="process-math">\(Q_i\)</span> contain <span class="process-math">\(I\text{,}\)</span> and <span class="process-math">\(Q\)</span> is contained in <span class="process-math">\(P\text{,}\)</span> since every <span class="process-math">\(P_i \subseteq Q\text{.}\)</span> Therefore, <span class="process-math">\(Q \in S\text{,}\)</span> and Zorn’s Lemma applies to <span class="process-math">\(S\text{.}\)</span> By <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Foundations/Results/Theorem - Zorn’s Lemma]], <span class="process-math">\(S\)</span> contains a maximal element for <span class="process-math">\(\supseteq\text{,}\)</span> say <span class="process-math">\(Q\text{.}\)</span>
+</div>
+</div> <div class="para" id="lem-every-prime-contains-minimal-prime-3-2">Notice that <span class="process-math">\(Q\)</span> is equivalently a minimal element for <span class="process-math">\(\subseteq\text{.}\)</span> Now if <span class="process-math">\(Q'\)</span> is a prime ideal with <span class="process-math">\(I \subseteq Q' \subseteq Q\text{,}\)</span> then <span class="process-math">\(Q' \subseteq Q \subseteq P\text{,}\)</span> and thus <span class="process-math">\(Q' \in S\text{.}\)</span> Therefore, we must have <span class="process-math">\(Q' = Q\text{,}\)</span> by maximality of <span class="process-math">\(Q\)</span> with respect to <span class="process-math">\(\supseteq\text{.}\)</span> We conclude that <span class="process-math">\(Q\)</span> is a minimal prime of <span class="process-math">\(I\text{,}\)</span> and by definition <span class="process-math">\(Q\)</span> is contained in <span class="process-math">\(P\text{.}\)</span>
+</div></article></details><article class="definition definition-like" id="defn-multiplicatively-closed-set"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.28</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplicatively Closed Set.</span>
+</h3> <div class="para" id="defn-multiplicatively-closed-set-2-1">Suppose <span class="process-math">\(R\)</span> is a commutative ring and <span class="process-math">\(S \subseteq R\)</span> is a subset such that 1. <span class="process-math">\(1 \in S\text{,}\)</span> 2. <span class="process-math">\(S\)</span> is closed under multiplication (i.e., if <span class="process-math">\(x,y \in S\text{,}\)</span> then <span class="process-math">\(xy \in S\)</span>), and 3. <span class="process-math">\(S\)</span> does not contain <span class="process-math">\(0\)</span> nor any zerodivisors. Such a subset <span class="process-math">\(S\)</span> is called a <em class="emphasis">multiplicatively closed subset of non zero divisors</em>  of <span class="process-math">\(R\text{.}\)</span>
+</div></article><article class="lemma theorem-like" id="lem-spec-strong-nullstellensatz"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">12.29</span><span class="period">.</span><span class="space"> </span><span class="title">Spec Strong Nullstellensatz.</span>
+</h3>
+<div class="para" id="lem-spec-strong-nullstellensatz-2-1">Let <span class="process-math">\(R\)</span> be a ring, <span class="process-math">\(I\)</span> an ideal, and <span class="process-math">\(W\)</span> a multiplicatively closed subset. If <span class="process-math">\(W \cap I = \es\text{,}\)</span> then there is a prime ideal <span class="process-math">\(P\)</span> with <span class="process-math">\(P \supseteq I\)</span> and <span class="process-math">\(P \cap W= \es\text{.}\)</span>
+</div></article><details id="lem-spec-strong-nullstellensatz-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="lem-spec-strong-nullstellensatz-3-1">
+<div class="para">Consider the family of ideals <span class="process-math">\(\mathcal{F} := \{ J \ | \ J \supseteq I, J \cap W=\varnothing\}\)</span> ordered with inclusion. This is nonempty, since it contains <span class="process-math">\(I\text{,}\)</span> and any chain <span class="process-math">\(J_1 \subseteq J_2 \subseteq \cdots\)</span> has an upper bound <span class="process-math">\(\cup_i J_i\text{.}\)</span> Therefore, <span class="process-math">\(\mathcal{F}\)</span> has some maximal element <span class="process-math">\(\A\)</span> by a basic application of <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Foundations/Results/Theorem - Zorn’s Lemma|Zorn’s Lemma]]. We claim <span class="process-math">\(\A\)</span> is prime. Suppose <span class="process-math">\(f,g\notin \A\text{.}\)</span> By maximality, <span class="process-math">\(\A+(f)\)</span> and <span class="process-math">\(\A+(g)\)</span> both have nonempty intersection with <span class="process-math">\(W\text{,}\)</span> so there exist <span class="process-math">\(r_1f+a_1\text{,}\)</span> <span class="process-math">\(r_2 g+a_2 \in W\text{,}\)</span> with <span class="process-math">\(a_1,a_2\in \A\text{.}\)</span> If <span class="process-math">\(fg\in \A\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\underset{\in W}{(r_1f+a_1)}\underset{\in W}{(r_2g+a_2)} = r_1 r_2 fg + r_1 f \underset{\in \mathbb{A}}{a_2} + r_2 g \underset{\in \mathbb{A}}{a_1} + \underset{\in \mathbb{A}}{a_1 a_2} \in W \cap \A,
+\end{equation*}
+</div>
+</div></article></details><article class="theorem theorem-like" id="thm-spectrum-analogue-of-strong-nullstellensatz"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.30</span><span class="period">.</span><span class="space"> </span><span class="title">Spectrum Analogue of Strong Nullstellensatz.</span>
+</h3>
+<div class="para logical" id="thm-spectrum-analogue-of-strong-nullstellensatz-2-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring, and <span class="process-math">\(I\)</span> be an ideal. For <span class="process-math">\(f\in R\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(I) \subseteq V(f) \Longleftrightarrow f\in \sqrt{I}.
+\end{equation*}
+</div>
+<div class="para">Moreover,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sqrt{I} = \bigcap_{P \in V(I)} P = \bigcap_{P \in \Min(I)} P.
+\end{equation*}
+</div>
+</div></article><details id="thm-spectrum-analogue-of-strong-nullstellensatz-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="thm-spectrum-analogue-of-strong-nullstellensatz-3-1">
+<div class="para">First to justify the equivalence of the two statements we observe:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V(I) \subseteq V(f) \Longleftrightarrow f\in P \ \text{for all} \ P \in V(I)  \Longleftrightarrow f \in \bigcap_{P \in V(I)} P.
+\end{equation*}
+</div>
+<div class="para">Now we will show that <span class="process-math">\(\displaystyle\bigcap_{P \in V(I)} P = \sqrt{I}\text{:}\)</span>
+</div>
+</div> <div class="para logical" id="thm-spectrum-analogue-of-strong-nullstellensatz-3-2">
+<div class="para">
+<span class="process-math">\((\supseteq)\text{:}\)</span> It suffices to show that <span class="process-math">\(P \supseteq I\)</span> implies <span class="process-math">\(P \supseteq \sqrt{I}\text{,}\)</span> and indeed</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f \in \sqrt{I} \implies f^n\in I \subseteq P \implies f\in P.
+\end{equation*}
+</div>
+</div> <div class="para" id="thm-spectrum-analogue-of-strong-nullstellensatz-3-3">
+<span class="process-math">\((\subseteq)\text{:}\)</span> If <span class="process-math">\(f\notin \sqrt{I}\text{,}\)</span> consider the multiplicatively closed set <span class="process-math">\(W=\{1,f,f^2,f^3,\ldots\}\text{.}\)</span> We have <span class="process-math">\(W\cap I=\varnothing\)</span> by hypothesis. There is a prime <span class="process-math">\(P\)</span> in <span class="process-math">\(V(I)\)</span> that does not intersect <span class="process-math">\(W\text{,}\)</span> and hence <span class="process-math">\(P\)</span> does not contain <span class="process-math">\(f.\)</span>
+</div> <div class="para logical" id="thm-spectrum-analogue-of-strong-nullstellensatz-3-4">
+<div class="para">Finally, <span class="process-math">\(\Min(I) \subseteq V(I)\text{,}\)</span> and since every prime in <span class="process-math">\(V(I)\)</span> contains a minimal prime of <span class="process-math">\(I\text{,}\)</span> we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bigcap_{P \in V(I)} P = \bigcap_{P \in \Min(I)} P.
+\end{equation*}
+</div>
+</div></article></details><article class="example example-like" id="ex-radical-of-x2-is-x"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.31</span><span class="period">.</span><span class="space"> </span><span class="title">Radical of <span class="process-math">\((x^2)\)</span> is <span class="process-math">\((x)\)</span>.</span>
+</h3>
+<div class="para" id="ex-radical-of-x2-is-x-2-1">Let <span class="process-math">\(k\)</span> be a field, <span class="process-math">\(R = k[x]\text{,}\)</span> and <span class="process-math">\(I = (x^2)\text{.}\)</span> On the one hand, it is immediate form the definition that <span class="process-math">\(x \in \sqrt{I}\text{,}\)</span> and thus <span class="process-math">\((x) \subseteq \sqrt{I}\text{.}\)</span> On the other hand, <span class="process-math">\((x)\)</span> is a prime ideal that contains <span class="process-math">\(I\text{,}\)</span> and thus by <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Commutative Algebra/Results/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]] we must have <span class="process-math">\(\sqrt{I} = (x)\text{.}\)</span>
+</div></article><article class="corollary theorem-like" id="cor-vivj-iff-radicals-are-equal"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">12.32</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(V(I)=V(J)\)</span> iff Radicals are Equal.</span>
+</h3>
+<div class="para logical" id="cor-vivj-iff-radicals-are-equal-2-1">
+<div class="para">Let <span class="process-math">\(R\)</span> a ring. There is an order-reversing bijection</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{ \text{closed subsets of } \Spec(R) \}\longleftrightarrow\{\text{radical ideals } I\subseteq R\}
+\end{equation*}
+</div>
+<div class="para">In particular, for two ideals <span class="process-math">\(I\)</span> and <span class="process-math">\(J\text{,}\)</span> we have <span class="process-math">\(V(I)=V(J)\)</span> if and only if <span class="process-math">\(\sqrt{I}=\sqrt{J}\text{.}\)</span>
+</div>
+</div></article><details id="cor-vivj-iff-radicals-are-equal-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="cor-vivj-iff-radicals-are-equal-3-1">
+<div class="para">The closed sets of <span class="process-math">\(\Spec(R)\)</span> are precisely the sets of the form <span class="process-math">\(V(I)\)</span> for some ideal <span class="process-math">\(I\text{.}\)</span> As <span class="process-math">\(V(I) = V(\sqrt{I})\)</span> the closed sets of <span class="process-math">\(\Spec(R)\)</span> are given by <span class="process-math">\(V(I)\)</span> where <span class="process-math">\(I\)</span> ranges over all radical ideals. We showed in <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Commutative Algebra/Results/Proposition - Properties of V|Proposition]] that the map</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+V: \{\text{radical ideals } I\subseteq R\} \longrightarrow \{ \text{closed subsets of } \Spec(R) \}
+\end{equation*}
+</div>
+<div class="para">is order-reversing. Finally, suppose that <span class="process-math">\(I\)</span> and <span class="process-math">\(J\)</span> are ideals such that <span class="process-math">\(V(I) = V(J)\text{.}\)</span> By <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Commutative Algebra/Results/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]],</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\sqrt{I} = \bigcap_{P \in V(I)} P = \bigcap_{P \in V(J)} P = \sqrt{J}.
+\end{equation*}
+</div>
+<div class="para">Conversely, suppose that <span class="process-math">\(\sqrt{I} = \sqrt{J}\text{.}\)</span> Given a prime <span class="process-math">\(P \in V(I)\text{,}\)</span> we also have <span class="process-math">\(P \in V(\sqrt{I})\text{,}\)</span> and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+P \supseteq \sqrt{I} = \sqrt{J} \supseteq J,
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(P \in V(I)\text{.}\)</span> Since the same argument applies to show that <span class="process-math">\(V(J) \supseteq V(I)\text{,}\)</span> we conclude that <span class="process-math">\(V(I) = V(J)\text{.}\)</span>
+</div>
+</div></article></details><article class="example example-like" id="ex-properties-of-radical-ideals"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.33</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Radical Ideals.</span>
+</h3>
+<div class="para" id="ex-properties-of-radical-ideals-2-1">Let <span class="process-math">\(I\)</span> and <span class="process-math">\(J\)</span> be ideals in a ring <span class="process-math">\(R\text{.}\)</span> (a) Show that <span class="process-math">\(\sqrt{\sqrt{I}} = \sqrt{I}\text{.}\)</span> (b) Show that if <span class="process-math">\(I \subseteq J\text{,}\)</span> then <span class="process-math">\(\sqrt{I} \subseteq \sqrt{J}\text{.}\)</span> (c) Show that <span class="process-math">\(\sqrt{I \cap J} = \sqrt{I} \cap \sqrt{J}\text{.}\)</span> (d) Show that <span class="process-math">\(\sqrt{I^n} = \sqrt{I}\)</span> for all <span class="process-math">\(n \geqslant 1\text{.}\)</span> (e) Show that if <span class="process-math">\(P\)</span> is a prime ideal, then <span class="process-math">\(\sqrt{P^n} = P\)</span> for all <span class="process-math">\(n \geqslant 1\text{.}\)</span>
+</div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-prime-maximal-ideals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-ops.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

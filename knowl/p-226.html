@@ -12,7 +12,20 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">from the category <span class="process-math">\(\mathscr{C}\)</span> to the category of covariant functors <span class="process-math">\(\mathscr{C} \longrightarrow\)</span> Set is also an embedding.</div>
+<div class="para logical">
+<div class="para">First, note that our functors are injective on objects because the Hom-sets in our category are all disjoint. We need to check that given objects <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> we have bijections</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{\mathscr{C}}(A, B) \cong \operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(-, A), \operatorname{Hom}_{\mathscr{C}}(-, B)\right)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{\mathscr{C} \text { op }}(A, B) \cong \operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(A,-) \operatorname{Hom}_{\mathscr{C}}(B,-)\right).
+\end{equation*}
+</div>
+</div>
 <span class="incontext"><a href="sec-natural-transformations.html#p-226" class="internal">in-context</a></span>
 </body>
 </html>

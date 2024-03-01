@@ -12,7 +12,39 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Show that <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> and <span class="process-math">\(\operatorname{Hom}_{R}(-, N)\)</span> are both additive functors.</div>
+<div class="para logical">
+<div class="para">Applying <span class="process-math">\(\mathrm{H}_{0}\)</span> gives us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\mathrm{H}_{0}(A) \stackrel{\mathrm{H}_{0}(f)}{\longrightarrow} \mathrm{H}_{0}(B) \\
+\mathbb{Z} \stackrel{0}{\longrightarrow} 0
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">which is not injective, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \mathrm{H}_{0}(A) \stackrel{\mathrm{H}_{0}(f)}{\longrightarrow} \mathrm{H}_{0}(B) \stackrel{\mathrm{H}_{0}(g)}{\longrightarrow} \mathrm{H}_{0}(C)
+\end{equation*}
+</div>
+<div class="para">is not exact. Similarly, applying <span class="process-math">\(\mathrm{H}_{1}\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\mathrm{H}_{1}(B) \stackrel{\mathrm{H}_{1}(g)}{\longrightarrow} \mathrm{H}_{1}(C) \\
+0 \stackrel{0}{\longrightarrow} \mathbb{Z}
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">which is not surjective, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{1}(A) \stackrel{\mathrm{H}_{1}(f)}{\longrightarrow} \mathrm{H}_{1}(B) \stackrel{\mathrm{H}_{1}(g)}{\longrightarrow} \mathrm{H}_{1}(C) \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is not exact. Thus homology is neither left exact nor right exact, though it is exact in the middle.</div>
+</div>
 <span class="incontext"><a href="sec-hom.html#p-469" class="internal">in-context</a></span>
 </body>
 </html>

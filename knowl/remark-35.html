@@ -12,27 +12,24 @@
 </head>
 <body class="ignore-math">
 <article class="remark remark-like"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.65</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.8</span><span class="period">.</span>
 </h4>
-<div class="para">Remark 3.49. Let <span class="process-math">\(R\)</span> be a ring, <span class="process-math">\(M\)</span> be a right <span class="process-math">\(R\)</span>-module, and <span class="process-math">\(N\)</span> be a left <span class="process-math">\(R\)</span>-module. We can compute <span class="process-math">\(M \otimes_{R} N\)</span> by taking a presentation of <span class="process-math">\(M\)</span>
-</div> <div class="para logical"><div class="displaymath process-math">
+<div class="para logical">
+<div class="para">Remark 4.8. Saying that <span class="process-math">\(M\)</span> is a direct summand of <span class="process-math">\(N\)</span> is equivalent to giving a splitting <span class="process-math">\(\pi\)</span> of the inclusion map <span class="process-math">\(i: M \hookrightarrow N\text{,}\)</span> meaning that <span class="process-math">\(\pi i=\mathrm{id}_{N}\text{.}\)</span> As we have argued in <a href="" class="xref" data-knowl="./knowl/lem-2.19.html" title="Lemma 2.26: Splitting Lemma">Lemma 2.26</a>, such a splitting <span class="process-math">\(\pi\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-2.19.html">
 \begin{equation*}
-R^{\oplus \Gamma} \stackrel{\phi}{\longrightarrow} R^{\oplus \Lambda} \longrightarrow M \longrightarrow 0
+N=\operatorname{im} i \oplus \operatorname{ker} \pi
 \end{equation*}
-</div></div> <div class="para">and tensoring with <span class="process-math">\(N\)</span> to get</div> <div class="para logical"><div class="displaymath process-math">
+</div>
+</div> <div class="para logical">
+<div class="para">Essentially repeating the argument we used in <a href="" class="xref" data-knowl="./knowl/lem-2.19.html" title="Lemma 2.26: Splitting Lemma">Lemma 2.26</a>, every element in <span class="process-math">\(N\)</span> can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-2.19.html">
 \begin{equation*}
-N^{\oplus \Gamma} \longrightarrow N^{\oplus \Lambda} \longrightarrow M \otimes_{R} N \longrightarrow 0
+n=(n-i \pi(n))+i \pi(n)
 \end{equation*}
-</div></div> <div class="para">so <span class="process-math">\(M \otimes_{R} N\)</span> is the cokernel of the map <span class="process-math">\(N^{\oplus \Gamma} \rightarrow N^{\oplus \Lambda}\)</span> induced by <span class="process-math">\(\phi\text{.}\)</span> We can also compute <span class="process-math">\(M \otimes_{R} N\)</span> by taking a presentation of <span class="process-math">\(N\)</span>
-</div> <div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-R^{\oplus \Xi} \stackrel{\psi}{\longrightarrow} R^{\oplus \Omega} \longrightarrow N \longrightarrow 0
-\end{equation*}
-</div></div> <div class="para">and tensoring with <span class="process-math">\(M\)</span> to get</div> <div class="para logical"><div class="displaymath process-math">
-\begin{equation*}
-M^{\oplus \Xi} \longrightarrow M^{\oplus \Omega} \longrightarrow M \otimes_{R} N \longrightarrow 0
-\end{equation*}
-</div></div> <div class="para">so <span class="process-math">\(M \otimes_{R} N\)</span> is isomorphic to the cokernel of the map <span class="process-math">\(M^{\oplus \Gamma} \rightarrow M^{\oplus \Lambda}\)</span> induced by <span class="process-math">\(\psi\text{.}\)</span>
-</div></article><span class="incontext"><a href="sec-tensor.html#remark-35" class="internal">in-context</a></span>
+</div>
+<div class="para">where <span class="process-math">\(i \pi(n) \in \operatorname{im} i\)</span> and <span class="process-math">\(n-i \pi(n) \in \operatorname{ker} \pi\text{,}\)</span> and <span class="process-math">\(\operatorname{ker} \pi \cap \operatorname{im} i=0\)</span> because if <span class="process-math">\(i(a) \in \operatorname{ker} \pi\)</span> then <span class="process-math">\(a=\pi i(a)=0\text{.}\)</span>
+</div>
+</div> <div class="para">Note that when we are dealing with graded modules over a graded ring, the kernels and images of graded maps are graded modules, and the equality <span class="process-math">\(N=\operatorname{im} i \oplus \operatorname{ker} \pi\)</span> is a graded direct sum of graded modules.</div></article><span class="incontext"><a href="sec-projective.html#remark-35" class="internal">in-context</a></span>
 </body>
 </html>

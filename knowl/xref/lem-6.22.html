@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">6.25</span><span class="period">.</span><span class="space"> </span><span class="title">Acyclic Assembly Lemma.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(C\)</span> be a double complex in <span class="process-math">\(R\)</span> Mod.</div>
+<ol class="decimal">
+<li><div class="para">If <span class="process-math">\(C\)</span> is an upper half plane double complex with exact rows, meaning <span class="process-math">\(C_{p, q}=0\)</span> whenever <span class="process-math">\(q&lt;0\text{,}\)</span> then <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> is exact.</div></li>
+<li><div class="para">If <span class="process-math">\(C\)</span> is a right half plane double complex with exact columns, meaning <span class="process-math">\(C_{p, q}=0\)</span> whenever <span class="process-math">\(p&lt;0\text{,}\)</span> then <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> is exact.</div></li>
+<li><div class="para">If <span class="process-math">\(C\)</span> is an upper half plane double complex with exact columns, meaning <span class="process-math">\(C_{p, q}=0\)</span> whenever <span class="process-math">\(q&lt;0\text{,}\)</span> then <span class="process-math">\(\operatorname{Tot}^{\Pi}(C)\)</span> is exact.</div></li>
+<li><div class="para">If <span class="process-math">\(C\)</span> is a right half plane double complex with exact rows, meaning <span class="process-math">\(C_{p, q}=0\)</span> whenever <span class="process-math">\(p&lt;0\text{,}\)</span> then <span class="process-math">\(\operatorname{Tot}^{\Pi}(C)\)</span> is exact.</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">Notice that <span class="process-math">\(\mathrm{a} \Leftrightarrow \mathrm{b}\)</span> and <span class="process-math">\(\mathrm{c} \Leftrightarrow \mathrm{d}\)</span> by switching the indexes. Moreover, we claim that it is sufficient to show <span class="process-math">\(c\text{,}\)</span> since it implies <span class="process-math">\(b\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">To show that <span class="process-math">\(\mathrm{c}\)</span> implies <span class="process-math">\(\mathrm{b}\text{,}\)</span> we need some notation. Given a double complex <span class="process-math">\(C\text{,}\)</span> consider the <span class="process-math">\(n\)</span>th truncation <span class="process-math">\(\tau_{n}(C)\)</span> of <span class="process-math">\(C\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tau_{n}(C)_{p, q}:= \begin{cases}C_{p, q} &amp; \text { if } q&gt;n \\ \operatorname{ker}\left(C_{p, n} \stackrel{d^{v}}{\longrightarrow} C_{p, n} \quad 1\right) &amp; \text { if } q=n \\ 0 &amp; \text { if } q&lt;n\end{cases}
+\end{equation*}
+</div>
+<div class="para">The natural inclusion <span class="process-math">\(\tau_{n}(C) \rightarrow C\)</span> induces an isomorphism in homology for <span class="process-math">\(i \geqslant n\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Suppose that <span class="process-math">\(C\)</span> is a right half plane double complex with exact columns, and assume that <span class="process-math">\(\mathrm{c}\)</span> holds. Then <span class="process-math">\(\tau_{n}(C)\)</span> still has exact columns, so by c, <span class="process-math">\(\operatorname{Tot} \Pi_{(}\left(\tau_{n}(C)\right)\)</span> is exact. On the other hand, notice that up to a vertical shift, <span class="process-math">\(\tau_{n}(C)\)</span> is a first quadrant double complex, and for each fixed <span class="process-math">\(m\text{,}\)</span> there are only finitely many values of <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> with <span class="process-math">\(p+q=m\)</span> and such that <span class="process-math">\(\tau_{n}(C)_{p, q} \neq 0\text{.}\)</span> Therefore, <span class="process-math">\(\operatorname{Tot}^{\Pi}\left(\tau_{n}\left(C_{p, \bullet}\right)\right)=\operatorname{Tot}^{\oplus}\left(\tau_{n}\left(C_{p, \bullet}\right)\right)\text{,}\)</span> so <span class="process-math">\(\operatorname{Tot}^{\oplus}\left(\tau_{n}\left(C_{p, \bullet}\right)\right)\)</span> is exact. We claim that this implies that <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> is exact. One can make this precise by saying <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)=\operatorname{colim}_{n}\left(\operatorname{Tot}^{\oplus}(C)\right)\text{.}\)</span> The point is that any element <span class="process-math">\(a \in Z_{k}\left(\operatorname{Tot}^{\oplus}(C)\right)\text{,}\)</span> when we write <span class="process-math">\(a\)</span> explicitly as <span class="process-math">\(a=\left(a_{p, q}\right) \in \oplus_{p+q=k} C_{p, q}\)</span> in terms of its coordinates in each <span class="process-math">\(C_{p, q}\text{,}\)</span> only finitely many <span class="process-math">\(a_{p, q}\)</span> are nonzero. Let <span class="process-math">\(q\)</span> be the smallest such that <span class="process-math">\(a_{p, q} \neq 0\text{,}\)</span> and fix any <span class="process-math">\(n&lt;q\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a \in Z_{k}\left(\operatorname{Tot}^{\oplus}\left(\tau_{n}(C)\right)\right)=B_{k}\left(\operatorname{Tot}^{\oplus}\left(\tau_{n}(C)\right)\right) \subseteq B_{k}\left(\operatorname{Tot}^{\oplus}(C)\right)
+\end{equation*}
+</div>
+</div> <div class="para">So <span class="process-math">\(\operatorname{Tot}^{\oplus}(C)\)</span> is exact, and b holds.</div> <div class="para logical">
+<div class="para">All we have left to do is to show c, meaning that the product total complex of any upper half plane double complex <span class="process-math">\(C\)</span> with exact columns is exact. We are going to show that <span class="process-math">\(\mathrm{H}_{0}\left(\operatorname{Tot}^{\Pi}(C)\right)=0\text{,}\)</span> and the remaining homologies follow by shifting <span class="process-math">\(C\)</span> left and right. Consider a 0 -cycle in <span class="process-math">\(\operatorname{Tot}^{\Pi}(C)\text{,}\)</span> meaning a sequence of elements <span class="process-math">\(c_{p} \in C_{p, p}\)</span> for each <span class="process-math">\(p \geqslant 0\)</span> such that <span class="process-math">\(c=\left(c_{p}\right) \in Z_{0}\left(\operatorname{Tot}^{\Pi}(C)\right)\text{.}\)</span> So</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d(c)=0 \Leftrightarrow d^{v}\left(c_{p}\right)+d^{h}\left(c_{p} 1\right)=0 \text { for all } p \text {. }
+\end{equation*}
+</div>
+</div> <div class="para">We will construct <span class="process-math">\(b_{p, p+1} \in C_{p, p+1}\)</span> for each <span class="process-math">\(p\)</span> such that <span class="process-math">\(d^{v}\left(b_{p, p+1}\right)+d^{h}\left(b_{p+1, p}\right)=c_{p}\text{,}\)</span> proving that <span class="process-math">\(c \in B_{0}\left(\operatorname{Tot}^{\Pi}(C)\right)\text{.}\)</span>
+</div> <div class="para">Set <span class="process-math">\(b_{1,0}=0 \in C_{1,0}\)</span> when <span class="process-math">\(p=1\text{.}\)</span> Since <span class="process-math">\(C_{0,1}=0\text{,}\)</span> we must have <span class="process-math">\(d^{v}\left(c_{0}\right)=0 \in C_{0,1}\text{.}\)</span> We also assumed that the columns are exact, so in particular the 0th column is exact. We can then find <span class="process-math">\(b_{0,1} \in C_{0,1}\)</span> such that <span class="process-math">\(d^{v}\left(b_{0,1}\right)=c_{0}\text{,}\)</span> and thus <span class="process-math">\(d^{v}\left(b_{0,1}\right)+d^{h}\left(b_{1,0}\right)=c_{0}\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Now we proceed by induction. Suppose we have constructed <span class="process-math">\(b_{s+1, s}\)</span> for <span class="process-math">\(1 \leqslant s \leqslant p\)</span> with the desired property that <span class="process-math">\(d^{v}\left(b_{s, s+1}\right)+d^{h}\left(b_{s+1, s}\right)=c_{s}\)</span> for all <span class="process-math">\(s \leqslant p\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; d^{v}\left(c_{p, p} \quad d^{h}\left(b_{p+1, p}\right)\right)=d^{v}\left(c_{p}\right)+d^{h} d^{v}\left(b_{p+1, p}\right) \quad \text { since } d^{v} d^{h}+d^{h} d^{v}=0 \\
+&amp; \left.=d^{v}\left(c_{p}\right)+d^{h}\left(\begin{array}{lllll}
+c_{p} &amp; 1 &amp; d^{h}\left(b_{p+2, p}\right. &amp; 1
+\end{array}\right)\right) \quad \text { as } d^{v}\left(b_{p+1, p}\right)+d^{h}\left(\begin{array}{lll}
+b_{p+2, p} &amp; 1
+\end{array}\right)=c_{p} \quad 1 \\
+&amp; =d^{v}\left(c_{p}\right)+d^{h}\left(\begin{array}{ll}
+c_{p} &amp; 1
+\end{array}\right) \quad d^{h} d^{h}\left(\begin{array}{lll}
+b_{p+2, p} &amp; 1
+\end{array}\right) \\
+&amp; =d^{v}\left(c_{p}\right)+d^{h}\left(\begin{array}{ll}
+c_{p} &amp; 1
+\end{array}\right) \quad \text { since } d^{h} d^{h}=0 \\
+&amp; =0 \text {. }
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">The last equality comes simply from the fact that <span class="process-math">\(\left(d^{v}+d^{h}\right)(c)=0\text{.}\)</span> So we have shown that <span class="process-math">\(d^{v}\left(c_{p, p} \quad d^{h}\left(b_{p+1, p}\right)\right)=0\text{.}\)</span> Since the columns are exact, we can find <span class="process-math">\(b_{p, p+1} \in C_{p, p+1}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d^{v}\left(b_{p, p+1}\right)=c_{p, p} \quad d^{h}\left(b_{p+1, p}\right)
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Equivalently,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d^{v}\left(b_{p, p+1}\right)+d^{h}\left(b_{p+1, p}\right)=c_{p, p}
+\end{equation*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-ext-tor.html#lem-6.22">in-context</a></span>
+</body>
+</html>

@@ -11,14 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h2 class="heading"><span class="type">Paragraph</span></h2>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">We will not need to make such a distinction, so we will call both of these complexes and most often follow the convention in the definition above. We will say a complex <span class="process-math">\(C\)</span> is bounded above if <span class="process-math">\(C_{n}=0\)</span> for all <span class="process-math">\(n \gg 0\text{,}\)</span> and bounded below if <span class="process-math">\(C_{n}=0\)</span> for all <span class="process-math">\(n \ll 0\text{.}\)</span> A bounded complex is one that is both bounded above and below. If a complex is bounded, we may sometimes simply write it as a finite complex, say</div>
+<div class="para">The complex <span class="process-math">\(\left(C_{\bullet}, \partial_{\bullet}\right)\)</span> is exact at <span class="process-math">\(n\)</span> if im <span class="process-math">\(\partial_{n+1}=\operatorname{ker} \partial_{n}\text{.}\)</span> An exact sequence is a complex that is exact everywhere. More precisely, an exact sequence of <span class="process-math">\(R\)</span>-modules is a sequence</div>
 <div class="displaymath process-math">
 \begin{equation*}
-C_{n} \stackrel{\partial_{n}}{\longrightarrow} C_{n-1} \longrightarrow \cdots \longrightarrow C_{m}.
+\cdots \stackrel{f_{n-1}}{\longrightarrow} C_{n} \stackrel{f_{n}}{\longrightarrow} C_{n+1} \stackrel{f_{n+1}}{\longrightarrow} \cdots
 \end{equation*}
 </div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules and <span class="process-math">\(R\)</span>-module homomorphisms such that <span class="process-math">\(\operatorname{im} f_{n}=\operatorname{ker} f_{n+1}\)</span> for all <span class="process-math">\(n\text{.}\)</span> An exact sequence of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is a short exact sequence, sometimes written ses. </div>
 </div>
 <span class="incontext"><a href="ch-intro.html#p-5" class="internal">in-context</a></span>
 </body>

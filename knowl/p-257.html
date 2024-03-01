@@ -12,7 +12,14 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Let <span class="process-math">\(f, g: F \longrightarrow G\)</span> be maps complexes. A homotopy, sometimes referred to as a chain homotopy, between <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> is a sequence of maps <span class="process-math">\(h_{n}: F_{n} \longrightarrow G_{n+1}\)</span>
+<div class="para logical">
+<div class="para">such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\partial_{n+1} h_{n}+h_{n-1} \partial_{n}=f_{n}-g_{n}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n\text{.}\)</span> If there exists a homotopy between <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{,}\)</span> we say that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are homotopic or that they have the same homotopy type. We write <span class="process-math">\(f \simeq g\)</span> to say that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are homotopic. If <span class="process-math">\(f\)</span> is homotopic to the zero map, we say <span class="process-math">\(f\)</span> is nullhomotopic, and write <span class="process-math">\(f \simeq 0\text{.}\)</span> This should not be confused with the notation <span class="process-math">\(C \simeq D\)</span> on complexes.</div>
 </div>
 <span class="incontext"><a href="sec-compelx-maps.html#p-257" class="internal">in-context</a></span>
 </body>

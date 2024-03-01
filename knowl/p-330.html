@@ -12,11 +12,51 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical"><div class="displaymath process-math">
+<div class="para logical">
+<div class="para">First, let's show that <span class="process-math">\(\partial(0)\)</span> is well-defined. Ultimately, our definition of <span class="process-math">\(\partial\)</span> only involves one choice, when we pick <span class="process-math">\(b^{\prime} \in B^{\prime}\)</span> such that <span class="process-math">\(p^{\prime}\left(b^{\prime}\right)=0\text{;}\)</span> we need to show that <span class="process-math">\(\partial(0)\)</span> does not depend on the choice of <span class="process-math">\(b^{\prime}\text{.}\)</span> Given <span class="process-math">\(b^{\prime} \in B^{\prime}\)</span> such that <span class="process-math">\(p^{\prime}\left(b^{\prime}\right)=0\text{,}\)</span> by exactness we have <span class="process-math">\(b^{\prime} \in \operatorname{ker} p^{\prime}=\operatorname{im} i^{\prime}\text{.}\)</span> Therefore, there exists <span class="process-math">\(a^{\prime} \in A^{\prime}\)</span> such that <span class="process-math">\(i^{\prime}\left(a^{\prime}\right)=b^{\prime}\text{.}\)</span> Notice that <span class="process-math">\(a:=f\left(a^{\prime}\right) \in A\)</span> is such that</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\operatorname{ker} f \stackrel{i^{\prime}}{\longrightarrow} \operatorname{ker} g \stackrel{p^{\prime}}{\longrightarrow} \operatorname{ker} h
+i(a)=i f\left(a^{\prime}\right)=g i^{\prime}\left(a^{\prime}\right)=g\left(b^{\prime}\right) .
 \end{equation*}
-</div></div>
+</div>
+<div class="para">Thus our definition says that <span class="process-math">\(\partial(0)=a+\operatorname{im} f \in \operatorname{coker} f\text{.}\)</span> Since <span class="process-math">\(a=f\left(a^{\prime}\right) \in \operatorname{im} f\text{,}\)</span> we conclude that <span class="process-math">\(a+\operatorname{im} f=0\text{,}\)</span> so <span class="process-math">\(\partial(0)=0\)</span> for any choice of <span class="process-math">\(b^{\prime}\text{.}\)</span> Now consider any <span class="process-math">\(c^{\prime} \in \operatorname{ker} h\text{.}\)</span> Again, to show <span class="process-math">\(\partial\)</span> is well-defined, we need only to show it does not depend on the choice of <span class="process-math">\(b^{\prime}\)</span> such that <span class="process-math">\(p^{\prime}\left(b^{\prime}\right)=c^{\prime}\text{.}\)</span> Consider <span class="process-math">\(b_{1}^{\prime}, b_{2}^{\prime} \in B^{\prime}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p^{\prime}\left(b_{1}^{\prime}\right)=p^{\prime}\left(b_{2}^{\prime}\right)=c^{\prime},
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(a_{1}, a_{2} \in A\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+i\left(a_{1}\right)=g\left(b_{1}^{\prime}\right) \quad \text { and } \quad i\left(a_{2}\right)=g\left(b_{2}^{\prime}\right) \text {. }
+\end{equation*}
+</div>
+<div class="para">Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+i\left(a_{1}-a_{2}\right)=g\left(b_{1}^{\prime}-b_{2}^{\prime}\right)
+\end{equation*}
+</div>
+<div class="para">and since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p^{\prime}\left(b_{1}^{\prime}-b_{2}^{\prime}\right)=c^{\prime}-c^{\prime}=0
+\end{equation*}
+</div>
+<div class="para">we must have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{1}-a_{2}+\operatorname{im} f=\partial(0)=0
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{1}+\operatorname{im} f=a_{2}+\operatorname{im} f,
+\end{equation*}
+</div>
+<div class="para">and this concludes our proof that <span class="process-math">\(\partial\)</span> is well-defined.</div>
+</div>
 <span class="incontext"><a href="sec-les.html#p-330" class="internal">in-context</a></span>
 </body>
 </html>

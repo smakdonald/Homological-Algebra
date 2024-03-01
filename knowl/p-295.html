@@ -12,35 +12,7 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical">
-<div class="para">Now suppose that a holds, and let's show that the sequence splits. First, we need to show that <span class="process-math">\(B \cong A \oplus C\text{.}\)</span> Every <span class="process-math">\(b \in B\)</span> can be written as</div>
-<div class="displaymath process-math">
-\begin{equation*}
-b=(b-f q(b))+f q(b)
-\end{equation*}
-</div>
-<div class="para">where <span class="process-math">\(f q(b) \in \operatorname{im} f \cong A\text{,}\)</span> and</div>
-<div class="displaymath process-math">
-\begin{equation*}
-q(b-f q(b))=q(b)-\underbrace{q f}_{\operatorname{id}_{A}}(q(b))=q(b)-q(b)=0
-\end{equation*}
-</div>
-<div class="para">so <span class="process-math">\(b-f q(b) \in \operatorname{ker} q\text{.}\)</span> This shows that <span class="process-math">\(B=\operatorname{im} f+\operatorname{ker} q\text{.}\)</span> Moreover, if <span class="process-math">\(f(a) \in \operatorname{ker} q\text{,}\)</span> then <span class="process-math">\(a=q f(a)=0\text{,}\)</span> so <span class="process-math">\(\operatorname{im} f \cap \operatorname{ker} q=0\text{,}\)</span> and <span class="process-math">\(B=\operatorname{im} f \oplus \operatorname{ker} q\text{.}\)</span> Now when we restrict <span class="process-math">\(g\)</span> to <span class="process-math">\(\operatorname{ker} q, g\)</span> becomes injective. We claim it is also surjective, and thus an isomorphism. Indeed, for any <span class="process-math">\(c \in C\)</span> we can pick <span class="process-math">\(b \in B\)</span> such that <span class="process-math">\(g(b)=c\text{,}\)</span> since <span class="process-math">\(g\)</span> is surjective, and we showed that we can write <span class="process-math">\(b=f(a)+k\)</span> for some <span class="process-math">\(k \in \operatorname{ker} q\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-g(k)=\underbrace{g f}_{0}(a)+g(k)=g(b)=c.
-\end{equation*}
-</div>
-<div class="para">Finally, note that <span class="process-math">\(\operatorname{im} f \cong A\text{,}\)</span> so we conclude that <span class="process-math">\(B \cong A \oplus C\text{,}\)</span> via the isomorphism <span class="process-math">\(\varphi\)</span> given by</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{aligned}
-&amp; B \longrightarrow \operatorname{im} f \oplus \operatorname{ker} q \longrightarrow A \oplus C \\
-&amp; b \longmapsto(f q(b), b-f q(b)) \longmapsto(q(b), g(b)) .
-\end{aligned}
-\end{equation*}
-</div>
-<div class="para">Since <span class="process-math">\(g f=0\)</span> and <span class="process-math">\(q f=\operatorname{id}_{A}, \varphi f(a)=(q f(a), 0)=(a, 0)\text{,}\)</span> so <span class="process-math">\(\varphi f=i\text{,}\)</span> where <span class="process-math">\(i: A \longrightarrow A \oplus C\)</span> is the inclusion on the first factor. If <span class="process-math">\(p: A \oplus C \longrightarrow C\)</span> denotes the projection onto the second factor, <span class="process-math">\(p \varphi=g\text{.}\)</span> Together, these two facts say that the following is a map of complexes:</div>
+<div class="para">Since <span class="process-math">\(\varphi\)</span> is an isomorphism, so is our map of complexes, and thus our original sequence is a split exact sequence. This shows that a implies <span class="process-math">\(c\text{.}\)</span>
 </div>
 <span class="incontext"><a href="sec-ses.html#p-295" class="internal">in-context</a></span>
 </body>

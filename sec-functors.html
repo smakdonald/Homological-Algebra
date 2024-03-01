@@ -5,7 +5,7 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Functors</title>
@@ -14,172 +14,116 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Homological Algebra">
 <meta property="book:author" content="Sam Macdonald">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
 <p class="byline">Sam Macdonald</p>
 </div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
-</h2>
-<div id="searchempty"><span>No results.</span></div>
-<ol id="searchresults"></ol>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
 </div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-categories.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-categories.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-natural-transformations.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-categories.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-categories.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-natural-transformations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
 \newcommand{\Ass}{\operatorname{Ass}}
 \def\Aut{\operatorname{Aut}}
 \def\can{{\mathrm {can}}}
@@ -459,133 +403,435 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth3 parts"><ul class="structural">
-<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li>
-<div class="toc-item"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
-<li>
-<div class="toc-item"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
-<li><div class="toc-item"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
-<li><div class="toc-item"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite and Subcategories</span></a></div></li>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
 </ul>
 </li>
-<li class="active">
-<div class="toc-item"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed 'er!</span></a></div></li>
-<li><div class="toc-item"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
-<li><div class="toc-item"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div></li>
-<li><div class="toc-item"><a href="sec-ses.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Short Exact Sequences</span></a></div></li>
-<li><div class="toc-item"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">Introducing <span class="process-math">\(\Hom\)</span></span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
-<li><div class="toc-item"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
-</ul>
-</li>
-<li><div class="toc-item"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
-<li><div class="toc-item"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
-</ul>
-</li>
-<li>
-<div class="toc-item"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div></li>
-<li><div class="toc-item"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-abelian-def.html" class="internal"><span class="codenumber">7.1</span> <span class="title">What’s an Abelian Category?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-mono-epi" class="internal"><span class="title">Monomorphisms and Epimorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-additive-categories" class="internal"><span class="title">Additive Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ker-coker" class="internal"><span class="title">Kernels and Cokernels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ab-cat" class="internal"><span class="title">Definition of an Abelian Category</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-complexes-ab" class="internal"><span class="title">Complexes in Abelian Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-hom-ab" class="internal"><span class="title">Homology in Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-exact-ab" class="internal"><span class="title">Exact Functors: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-yoneda-ab" class="internal"><span class="title">The Yoneda Lemma: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-diagrams-ab" class="internal"><span class="title">The Diagram Chasers: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-proj-inj-ab" class="internal"><span class="title">Projectives, Injective, and Resolutions: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-split-ab" class="internal"><span class="title">Split Exact Sequences: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-res-ab" class="internal"><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-commutative-algebra.html" class="internal"><span class="codenumber">II</span> <span class="title">Commutative Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-finiteness-conditions.html" class="internal"><span class="codenumber">9</span> <span class="title">Finiteness Conditions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gen-mod.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Generated Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-algebras.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebras</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-alg-mod-finite.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Algebra and Module Finite</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sess.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Short Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-noetherian.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Noetherian Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-rings" class="internal"><span class="title">Noetherian Rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-modules" class="internal"><span class="title">Noetherian Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-hilbert" class="internal"><span class="title">Hilbert’s Basis Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-1.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Invariant Rings: Application I</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-graded-rings.html" class="internal"><span class="codenumber">10</span> <span class="title">Graded Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-rings.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graded Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-finite-conditions-graded-algebras.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Finiteness Conditions for Graded Algebras</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-2.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Invariant Rings: Application II</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-local-rings.html" class="internal"><span class="codenumber">11</span> <span class="title">Local Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-rings.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Local Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localizations.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nak.html" class="internal"><span class="codenumber">11.3</span> <span class="title">NAK</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-prime-ideals.html" class="internal"><span class="codenumber">12</span> <span class="title">Prime Ideals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-prime-maximal-ideals.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Prime and Maximal Ideals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spectrum.html" class="internal"><span class="codenumber">12.2</span> <span class="title">The Spectrum of a Ring</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ops.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ops.html#subsec-colon-annihilator" class="internal"><span class="title">Colons and Annihilators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ops.html#sec-prime-avoidance" class="internal"><span class="title">Prime Avoidance</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-decomposing-ideals.html" class="internal"><span class="codenumber">13</span> <span class="title">Decomposing Ideals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-min-support.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Minimal Primes and Support</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ass-primes.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Associated Primes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-primary-decomp.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Primary Decomposition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-krull-intersection.html" class="internal"><span class="codenumber">13.4</span> <span class="title">The Krull Intersection Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integral-extensions.html" class="internal"><span class="codenumber">14</span> <span class="title">Integral Extensions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-integral-extensions.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Integral Extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-over-up-down.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Over, Up, and Down</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dim-theory.html" class="internal"><span class="codenumber">15</span> <span class="title">Dimension Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dim-height.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Dimension and Height</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-noether-normalizations.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Noether Normalizations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-height-generators.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Height and Number of Generators</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sops.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Systems of Parameters</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-commutative-algebra-ii.html" class="internal"><span class="codenumber">III</span> <span class="title">Commutative Algebra II</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-domains-ii.html" class="internal"><span class="codenumber">16</span> <span class="title">Domains II</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-art.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Artinian Rings</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dvrs.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Discrete Valuation Rings and Dedekind Domains</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dvrs.html#sec-dvr" class="internal"><span class="title">Discrete Valuation Rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dvrs.html#dedekind-domains" class="internal"><span class="title">Dedekind Domains</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dvrs.html#fractional-ideals" class="internal"><span class="title">Fractional Ideals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-depth-grade.html" class="internal"><span class="codenumber">17</span> <span class="title">Depth and Grade</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-depth-grade.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Depth and Grade</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-depth-m2.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Macaulay2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cohen.html" class="internal"><span class="codenumber">18</span> <span class="title">Cohen-Macaulay Rings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3.html" class="internal"><span class="codenumber">18.1</span> <span class="title"></span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-locohom.html" class="internal"><span class="codenumber">IV</span> <span class="title">Local Cohomology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-injective-modules.html" class="internal"><span class="codenumber">19</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hulls.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Essential Extensions and Injective Hulls</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-injective-noetherian.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Injective Modules in Noetherian Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mathis.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Mathis Duality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-loco.html" class="internal"><span class="codenumber">20</span> <span class="title">Local Cohomology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-def-loco.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Definitions of Local Cohomology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cech-complex.html" class="internal"><span class="codenumber">20.2</span> <span class="title">The Čech Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-properties-vanishing.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Properties and Vanishing Theorems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-canonical.html" class="internal"><span class="codenumber">21</span> <span class="title">The Canonical Module</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-duality.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Local Duality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gorenstein.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Gorenstein Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-canonical-mod.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Canonical Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-local-duality.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Graded Local Duality and Regularity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Foundational Knowledge</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Ring Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Module Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-topology.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Topology</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="macaulay2.html" class="internal"><span class="codenumber">B</span> <span class="title">Macaulay2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-getting-started.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-asking-for-help.html" class="internal"><span class="codenumber">B.2</span> <span class="title">Asking Macaulay2 for Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-commands.html" class="internal"><span class="codenumber">B.3</span> <span class="title">Basic Commands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-functors"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Functors</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Functors</span>
 </h2>
-<section class="subsection" id="subsec-functors"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Functor? Damn Near Killed 'er!</span>
+<article class="objectives goal-like" id="sec-functors-2"><h3 class="heading"><span class="type">Reminders and Recollections</span></h3>
+<ul class="disc"><li id="sec-functors-2-1-1"><div class="para" id="p-derived-sec-functors-2-1-1">
+<a href="sec-categories.html#def-category" class="xref" data-knowl="./knowl/xref/def-category.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1: Category">Category</a> <a href="sec-categories.html#def-inverses" class="xref" data-knowl="./knowl/xref/def-inverses.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.12: Morphism Inverses">Morphism Inverses</a> <a href="sec-categories.html#def-diagram" class="xref" data-knowl="./knowl/xref/def-diagram.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.10: Diagram">Diagram</a>
+</div></li></ul></article><section class="subsection" id="subsec-functors"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Functor? Damn Near Killed ’er!</span>
 </h3>
-<div class="para" id="p-136">Many mathematical constructions are functorial, in the sense that they behave well with respect to morphisms. In the formalism of category theory, this means that we can think of a functorial construction as a functor.</div>
+<blockquote class="blockquote" id="subsec-functors-2">
+<div class="para" id="subsec-functors-2-1">“If you’re brave enough to say goodbye, life will reward you with a new hello.”</div> <cite class="attribution">―Paulo Coelho</cite>
+</blockquote>
+<div class="para" id="subsec-functors-3">Many mathematical constructions are functorial, in the sense that they behave well with respect to morphisms. In the formalism of category theory, this means that we can think of a functorial construction as a functor.</div>
 <article class="definition definition-like" id="def-functor"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Functor.</span>
-</h4> <div class="para logical" id="p-137">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Functor.</span>
+</h4> <div class="para logical" id="def-functor-2-1">
 <div class="para">Let <span class="process-math">\(\mathscr{C}\)</span> and <span class="process-math">\(\mathscr{D}\)</span> be categories. A covariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> is a mapping that assigns to each object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\)</span> an object <span class="process-math">\(F(A)\)</span> in <span class="process-math">\(\mathscr{D}\text{,}\)</span> and to each arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> an arrow <span class="process-math">\(F(f) \in \operatorname{Hom}_{\mathscr{D}}(F(A), F(B))\text{,}\)</span> such that</div>
 <ul class="disc">
-<li id="li-39"><div class="para" id="p-138">
+<li id="def-functor-2-1-10-1"><div class="para" id="def-functor-2-1-10-1-1">
 <span class="process-math">\(F\)</span> preserves the composition of maps, meaning <span class="process-math">\(F(f g)=F(f) F(g)\)</span> for all arrows <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> and</div></li>
-<li id="li-40"><div class="para" id="p-139">
+<li id="def-functor-2-1-10-2"><div class="para" id="def-functor-2-1-10-2-1">
 <span class="process-math">\(F\)</span> preserves the identity arrows, meaning <span class="process-math">\(F\left(1_{A}\right)=1_{F(A)}\)</span> for all objects <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\text{.}\)</span>
 </div></li>
 </ul>
-</div> <div class="para logical" id="p-140">
+</div> <div class="para logical" id="def-functor-2-2">
 <div class="para">A <em class="emphasis">contravariant functor</em> <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> is a mapping that assigns to each object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\)</span> an object <span class="process-math">\(F(A)\)</span> in <span class="process-math">\(\mathscr{D}\text{,}\)</span> and to each arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, B)\)</span> an arrow <span class="process-math">\(F(f) \in \operatorname{Hom}_{\mathscr{D}}(F(B), F(A))\text{,}\)</span> such that</div>
 <ul class="disc">
-<li id="li-41"><div class="para" id="p-141">
+<li id="def-functor-2-2-9-1"><div class="para" id="def-functor-2-2-9-1-1">
 <span class="process-math">\(F\)</span> preserves the composition of maps, meaning <span class="process-math">\(F(f g)=F(g) F(f)\)</span> for all composable arrows <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> and</div></li>
-<li id="li-42"><div class="para" id="p-142">
+<li id="def-functor-2-2-9-2"><div class="para" id="def-functor-2-2-9-2-1">
 <span class="process-math">\(F\)</span> preserves the identity arrows, meaning <span class="process-math">\(F\left(1_{A}\right)=1_{F(A)}\)</span> for all objects <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\text{.}\)</span>
 </div></li>
 </ul>
-</div></article><div class="para" id="p-143">So a contravariant functor is a functor that flips all the arrows. We can also describe a contravariant functor as a covariant functor from <span class="process-math">\(\mathscr{C}\)</span> to the opposite category of <span class="process-math">\(\mathscr{D}\text{,}\)</span> <span class="process-math">\(\mathscr{D}{ }^{\text {op }}\text{.}\)</span>
+</div></article><div class="para" id="subsec-functors-5">So a contravariant functor is a functor that flips all the arrows. We can also describe a contravariant functor as a covariant functor from <span class="process-math">\(\mathscr{C}\)</span> to the opposite category of <span class="process-math">\(\mathscr{D}\text{,}\)</span> <span class="process-math">\(\mathscr{D}{ }^{\text {op }}\text{.}\)</span>
 </div>
-<article class="remark remark-like" id="remark-8"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.26</span><span class="period">.</span>
+<article class="remark remark-like" id="subsec-functors-6"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.22</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-144">A contravariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> can be thought of as a covariant functor <span class="process-math">\(\mathscr{C}^{\text {op }} \longrightarrow \mathscr{D}\text{,}\)</span> or also as a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}\text{.}\)</span> If using one of these conventions, one needs to be careful, however, when composing functors, so that the respective sources and targets match up correctly. While we haven't specially discussed how one composes functors, it should be clear that applying a functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> is the same as applying a functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}\text{,}\)</span> which we can write as <span class="process-math">\(G F\text{.}\)</span>
-</div> <div class="para" id="p-145">For example, if <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> are both contravariant functors, the composition <span class="process-math">\(G F: \mathscr{C} \longrightarrow \mathscr{E}\)</span> is a covariant functor, since</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-15.jpg" class="contained"></div> <div class="para" id="p-146">So we could think of <span class="process-math">\(F\)</span> as a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}\)</span> and <span class="process-math">\(G\)</span> as a covariant functor <span class="process-math">\(\mathscr{D}^{\text {op }} \longrightarrow \mathscr{E}\text{.}\)</span> Similarly, if <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> is a covariant functor and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> is a contravariant functor, <span class="process-math">\(G F: \mathscr{C} \longrightarrow \mathscr{E}\)</span> is a contravariant functor. In this case, we can think of <span class="process-math">\(G\)</span> as a covariant functor <span class="process-math">\(\mathscr{D} \longrightarrow \mathscr{E}^{\mathrm{op}}\text{,}\)</span> so that <span class="process-math">\(G F\)</span> is now a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{E}^{\mathrm{op}}\text{.}\)</span>
-</div></article><article class="exploration project-like" id="exploration-8"><a href="" data-knowl="" class="id-ref exploration-knowl original" data-refid="hk-exploration-8"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.8</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exploration-8"><article class="exploration project-like"><div class="para" id="p-147">Show that functors preserve isomorphisms.</div></article></div>
-<article class="remark remark-like" id="remark-9"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.27</span><span class="period">.</span>
+<div class="para" id="subsec-functors-6-1">A contravariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> can be thought of as a covariant functor <span class="process-math">\(\mathscr{C}^{\text {op }} \longrightarrow \mathscr{D}\text{,}\)</span> or also as a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}\text{.}\)</span> If using one of these conventions, one needs to be careful, however, when composing functors, so that the respective sources and targets match up correctly. While we haven’t specially discussed how one composes functors, it should be clear that applying a functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> is the same as applying a functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}\text{,}\)</span> which we can write as <span class="process-math">\(G F\text{.}\)</span>
+</div> <div class="para" id="subsec-functors-6-2">For example, if <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> are both contravariant functors, the composition <span class="process-math">\(G F: \mathscr{C} \longrightarrow \mathscr{E}\)</span> is a covariant functor, since</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-15.jpg" class="contained"></div> <div class="para" id="subsec-functors-6-4">So we could think of <span class="process-math">\(F\)</span> as a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}\)</span> and <span class="process-math">\(G\)</span> as a covariant functor <span class="process-math">\(\mathscr{D}^{\text {op }} \longrightarrow \mathscr{E}\text{.}\)</span> Similarly, if <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> is a covariant functor and <span class="process-math">\(G: \mathscr{D} \longrightarrow \mathscr{E}\)</span> is a contravariant functor, <span class="process-math">\(G F: \mathscr{C} \longrightarrow \mathscr{E}\)</span> is a contravariant functor. In this case, we can think of <span class="process-math">\(G\)</span> as a covariant functor <span class="process-math">\(\mathscr{D} \longrightarrow \mathscr{E}^{\mathrm{op}}\text{,}\)</span> so that <span class="process-math">\(G F\)</span> is now a covariant functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{E}^{\mathrm{op}}\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exe-8"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.23</span><span class="period">.</span><span class="space"> </span><span class="title">Functors Preserve Isomorphisms.</span>
 </h4>
-<div class="para" id="p-148">Any functor sends isos to isos, since it preserves compositions and identities.</div></article><div class="para" id="p-149">Here are some examples of functors you may have encountered before.</div>
-<article class="example example-like" id="example-19"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.28</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="p-150"><ol class="decimal">
-<li id="li-43"><div class="para" id="p-151">Many categories one may think about are concrete categories, where the objects are sets with some extra structure, and the arrows are functions between those sets that preserved that extra structure. The <em class="emphasis">forgetful functor</em> from such a category to <span class="process-math">\(\Set\)</span> is the functor that, just as the name says, forgets that extra structure, and sees only the underlying sets and functions of sets. For example, the forgetful functor <span class="process-math">\(\mathbf{G r} \longrightarrow\)</span> <span class="process-math">\(\Set\)</span> sends each group to its underlying set, and each group homomorphism to the corresponding function of sets.</div></li>
-<li id="li-44"><div class="para" id="p-152">The <em class="emphasis">identity functor</em> <span class="process-math">\(1_{\mathscr{C}}\)</span> on any category <span class="process-math">\(\mathscr{C}\)</span> does what the name suggests: it sends each object to itself and each arrow to itself.</div></li>
-<li id="li-45"><div class="para logical" id="p-153">
+<div class="para" id="exe-8-2-1">Show that functors preserve isomorphisms.</div></article><div class="para" id="subsec-functors-8">Here are some examples of functors you may have encountered before.</div>
+<article class="example example-like" id="subsec-functors-9"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.24</span><span class="period">.</span><span class="space"> </span><span class="title">Functors.</span>
+</h4> <div class="para logical" id="subsec-functors-9-2"><ol class="decimal">
+<li id="subsec-functors-9-2-1-1"><div class="para" id="subsec-functors-9-2-1-1-1">Many categories one may think about are concrete categories, where the objects are sets with some extra structure, and the arrows are functions between those sets that preserved that extra structure. The <dfn class="terminology">forgetful functor</dfn> from such a category to <span class="process-math">\(\Set\)</span> is the functor that, just as the name says, forgets that extra structure, and sees only the underlying sets and functions of sets. For example, the forgetful functor <span class="process-math">\(\mathbf{G r} \longrightarrow\)</span> <span class="process-math">\(\Set\)</span> sends each group to its underlying set, and each group homomorphism to the corresponding function of sets.</div></li>
+<li id="subsec-functors-9-2-1-2"><div class="para" id="subsec-functors-9-2-1-2-1">The <dfn class="terminology">identity functor</dfn> <span class="process-math">\(1_{\mathscr{C}}\)</span> on any category <span class="process-math">\(\mathscr{C}\)</span> does what the name suggests: it sends each object to itself and each arrow to itself.</div></li>
+<li id="subsec-functors-9-2-1-3"><div class="para logical" id="subsec-functors-9-2-1-3-1">
 <div class="para">Given a group <span class="process-math">\(G\text{,}\)</span> the subgroup <span class="process-math">\([G, G]\)</span> of <span class="process-math">\(G\)</span> generated by the set of commutators</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -595,7 +841,7 @@ window.MathJax = {
 <div class="para">is a normal subgroup, and the quotient <span class="process-math">\(G^{\text {ab }}:=G /[G, G]\)</span> is called the abelianization of <span class="process-math">\(G\text{.}\)</span> The group <span class="process-math">\(G^{\text {ab }}\)</span> is abelian. Given a group homomorphism <span class="process-math">\(f: G \rightarrow H, f\)</span> automatically takes commutators to commutators, so it induces a homomorphism <span class="process-math">\(\tilde{f}: G^{\mathrm{ab}} \rightarrow H^{\mathrm{ab}}\text{.}\)</span> More precisely, abelianization gives a covariant functor from <span class="process-math">\(\Grp\)</span> to <span class="process-math">\(\Ab\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-46"><div class="para logical" id="p-154">
+<li id="subsec-functors-9-2-1-4"><div class="para logical" id="subsec-functors-9-2-1-4-1">
 <div class="para">The <em class="emphasis">unit group functor</em> <span class="process-math">\(-^{*}\)</span> : <span class="process-math">\(\Ring\)</span> <span class="process-math">\(\rightarrow\)</span> <span class="process-math">\(\Grp\)</span> sends a ring <span class="process-math">\(R\)</span> to its group of units <span class="process-math">\(R^{*}\text{.}\)</span> To see this is indeed a functor, we should check it behaves well on morphisms; and indeed if <span class="process-math">\(f: R \rightarrow S\)</span> is a ring homomorphism, and <span class="process-math">\(u \in R^{*}\)</span> is a unit in <span class="process-math">\(R\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -604,81 +850,99 @@ f(u) f\left(u^{-1}\right)=f\left(u u^{-1}\right)=f\left(1_{R}\right)=1_{S},
 </div>
 <div class="para">so <span class="process-math">\(f(u)\)</span> is a unit in <span class="process-math">\(S\text{.}\)</span> Thus <span class="process-math">\(f\)</span> induces a function <span class="process-math">\(R^{*} \rightarrow S^{*}\)</span> given by restriction of <span class="process-math">\(f\)</span> to <span class="process-math">\(R^{*}\text{,}\)</span> which must therefore be a group homomorphism since <span class="process-math">\(f\)</span> preserves products.</div>
 </div></li>
-<li id="li-47"><div class="para" id="p-155">Fix a field <span class="process-math">\(k\text{.}\)</span> Given a vector space <span class="process-math">\(V\text{,}\)</span> the collection <span class="process-math">\(V^{*}\)</span> of linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(k\)</span> is again a <span class="process-math">\(k\)</span>-vector space, the <em class="emphasis">dual vector space</em> of <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(\varphi: W \rightarrow V\)</span> is a linear transformation and <span class="process-math">\(\ell: V \rightarrow K\)</span> is an element of <span class="process-math">\(V^{*}\text{,}\)</span> then <span class="process-math">\(\ell \circ \varphi: W \rightarrow k\)</span> is in <span class="process-math">\(W^{*}\text{.}\)</span> Doing this for all elements <span class="process-math">\(\ell \in V^{*}\)</span> gives a function <span class="process-math">\(\varphi^{*}: V^{*} \rightarrow W^{*}\text{,}\)</span> and one can show that <span class="process-math">\(\varphi^{*}\)</span> is a linear transformation. The assignment that sends each vector space <span class="process-math">\(V\)</span> to its dual vector space <span class="process-math">\(V^{*}\)</span> and each linear transformation <span class="process-math">\(\varphi\)</span> to <span class="process-math">\(\varphi^{*}\)</span> is a contravariant functor on Vect- <span class="process-math">\(k\text{.}\)</span>
+<li id="subsec-functors-9-2-1-5"><div class="para" id="subsec-functors-9-2-1-5-1">Fix a field <span class="process-math">\(k\text{.}\)</span> Given a vector space <span class="process-math">\(V\text{,}\)</span> the collection <span class="process-math">\(V^{*}\)</span> of linear transformations from <span class="process-math">\(V\)</span> to <span class="process-math">\(k\)</span> is again a <span class="process-math">\(k\)</span>-vector space, the <em class="emphasis">dual vector space</em> of <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(\varphi: W \rightarrow V\)</span> is a linear transformation and <span class="process-math">\(\ell: V \rightarrow K\)</span> is an element of <span class="process-math">\(V^{*}\text{,}\)</span> then <span class="process-math">\(\ell \circ \varphi: W \rightarrow k\)</span> is in <span class="process-math">\(W^{*}\text{.}\)</span> Doing this for all elements <span class="process-math">\(\ell \in V^{*}\)</span> gives a function <span class="process-math">\(\varphi^{*}: V^{*} \rightarrow W^{*}\text{,}\)</span> and one can show that <span class="process-math">\(\varphi^{*}\)</span> is a linear transformation. The assignment that sends each vector space <span class="process-math">\(V\)</span> to its dual vector space <span class="process-math">\(V^{*}\)</span> and each linear transformation <span class="process-math">\(\varphi\)</span> to <span class="process-math">\(\varphi^{*}\)</span> is a contravariant functor on Vect- <span class="process-math">\(k\text{.}\)</span>
 </div></li>
-<li id="li-48"><div class="para" id="p-156">Localization is a functor. Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(W\)</span> be a multiplicatively closed set in <span class="process-math">\(R\text{.}\)</span> There is localization at <span class="process-math">\(W\)</span> induces a a functor <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> <span class="process-math">\(\longrightarrow W^{-1} R\)</span><span class="process-math">\(\mod\)</span> that sends each <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> to <span class="process-math">\(W^{-1} M\text{,}\)</span> and each <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\alpha: M \longrightarrow N\)</span> to the <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(W^{-1} \alpha: W^{-1} M \longrightarrow W^{-1} N\text{.}\)</span>
+<li id="subsec-functors-9-2-1-6"><div class="para" id="subsec-functors-9-2-1-6-1">Localization is a functor. Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(W\)</span> be a multiplicatively closed set in <span class="process-math">\(R\text{.}\)</span> There is localization at <span class="process-math">\(W\)</span> induces a a functor <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> <span class="process-math">\(\longrightarrow W^{-1} R\)</span><span class="process-math">\(\mod\)</span> that sends each <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> to <span class="process-math">\(W^{-1} M\text{,}\)</span> and each <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\alpha: M \longrightarrow N\)</span> to the <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(W^{-1} \alpha: W^{-1} M \longrightarrow W^{-1} N\text{.}\)</span>
 </div></li>
-</ol></div></article><article class="remark remark-like" id="remark-10"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.29</span><span class="period">.</span>
+</ol></div></article><article class="exercise exercise-like" id="exe-8.5"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.25</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-157">If we apply a covariant functor to a diagram, then we get a diagram of the same shape:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-16.jpg" class="contained"></div> <div class="para" id="p-158">However, if we apply a contravariant functor to the same diagram, we get a similar diagram but with the arrows reversed:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-17.jpg" class="contained"></div></article><article class="definition definition-like" id="def-cat-cat"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.30</span><span class="period">.</span><span class="space"> </span><span class="title">Category of Small Categories.</span>
-</h4> <div class="para" id="p-159">The category Cat has objects all small categories and arrows all functors between them.</div></article></section><section class="subsection" id="subsec-funcor-props"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber"></span> <span class="title">Properties of Functors</span>
+<div class="para" id="exe-8.5-1-1">If we apply a covariant functor to a diagram, then we get a diagram of the same shape:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-16.jpg" class="contained"></div> <div class="para" id="exe-8.5-1-3">However, if we apply a contravariant functor to the same diagram, we get a similar diagram but with the arrows reversed:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-17.jpg" class="contained"></div></article></section><section class="subsection" id="subsec-funcor-props"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Properties of Functors</span>
 </h3>
-<div class="para" id="p-160">If we think about functors as functions between categories, it's natural to consider what would be the appropriate versions of the notions of injective or surjective.</div>
+<blockquote class="blockquote" id="subsec-funcor-props-2">
+<div class="para" id="subsec-funcor-props-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-funcor-props-3">If we think about functors as functions between categories, it’s natural to consider what would be the appropriate versions of the notions of injective or surjective.</div>
 <article class="definition definition-like" id="def-functor-properties"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.31</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.26</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-161">A covariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> between locally small categories is</div> <div class="para logical" id="p-162"><ul class="disc">
-<li id="li-49">
-<div class="para" id="p-163">
+<div class="para logical" id="def-functor-properties-1-1">
+<div class="para">A covariant functor <span class="process-math">\(F: \mathscr{C} \longrightarrow \mathscr{D}\)</span> between locally small categories is</div>
+<ul class="disc">
+<li id="def-functor-properties-1-1-2-1"><div class="para logical" id="def-functor-properties-1-1-2-1-1">
+<div class="para">
 <em class="emphasis">faithful</em> if all the functions of sets</div>
-<div class="para logical" id="p-164"><div class="displaymath process-math">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{gathered}
 \operatorname{Hom}_{\mathscr{C}}(A, B) \longrightarrow \operatorname{Hom}_{\mathscr{D}}(F(A), F(B)) \\
 f \longmapsto F(f)
 \end{gathered}
 \end{equation*}
-</div></div>
-<div class="para" id="p-165">are injective.</div>
-</li>
-<li id="li-50">
-<div class="para" id="p-166">
+</div>
+<div class="para">are injective.</div>
+</div></li>
+<li id="def-functor-properties-1-1-2-2"><div class="para logical" id="def-functor-properties-1-1-2-2-1">
+<div class="para">
 <em class="emphasis">full</em> if all the functions of sets</div>
-<div class="para logical" id="p-167"><div class="displaymath process-math">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{gathered}
 \operatorname{Hom}_{\mathscr{C}}(A, B) \longrightarrow \operatorname{Hom}_{\mathscr{D}}(F(A), F(B)) \\
 f \longmapsto F(f)
 \end{gathered}
 \end{equation*}
-</div></div>
-<div class="para" id="p-168">are surjective.</div>
-</li>
-<li id="li-51"><div class="para" id="p-169">
+</div>
+<div class="para">are surjective.</div>
+</div></li>
+<li id="def-functor-properties-1-1-2-3"><div class="para" id="def-functor-properties-1-1-2-3-1">
 <em class="emphasis">fully faithful</em> if it is full and faithful.</div></li>
-<li id="li-52"><div class="para" id="p-170">
+<li id="def-functor-properties-1-1-2-4"><div class="para" id="def-functor-properties-1-1-2-4-1">
 <em class="emphasis">essentially surjective</em> if every object <span class="process-math">\(d\)</span> in <span class="process-math">\(\mathscr{D}\)</span> is isomorphic to <span class="process-math">\(F c\)</span> for <span class="process-math">\(c\)</span> in <span class="process-math">\(\mathscr{C}\text{.}\)</span>
 </div></li>
-<li id="li-53"><div class="para" id="p-171">an <em class="emphasis">embedding</em> if it is fully faithful and injective on objects.</div></li>
-</ul></div></article><article class="example example-like" id="example-20"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.32</span><span class="period">.</span>
+<li id="def-functor-properties-1-1-2-5"><div class="para" id="def-functor-properties-1-1-2-5-1">an <em class="emphasis">embedding</em> if it is fully faithful and injective on objects.</div></li>
+</ul>
+</div></article><article class="example example-like" id="subsec-funcor-props-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.27</span><span class="period">.</span><span class="space"> </span><span class="title">Forgetfull Functor is Faithful.</span>
+</h4> <div class="para" id="subsec-funcor-props-5-2">The forgetful functor <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> <span class="process-math">\(\longrightarrow\)</span> <span class="process-math">\(\Set\)</span> is faithful since any two maps of <span class="process-math">\(R\)</span>-modules with the same source and target coincide if and only if they are the same function of sets. This functor is not full, since there not every functions between the underlying sets of two <span class="process-math">\(R\)</span>-modules is an <span class="process-math">\(R\)</span>-module homomorphism.</div></article><article class="remark remark-like" id="subsec-funcor-props-6"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.28</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-172">The forgetful functor <span class="process-math">\(R\)</span><span class="process-math">\(\mod\)</span> <span class="process-math">\(\longrightarrow\)</span> <span class="process-math">\(\Set\)</span> is faithful since any two maps of <span class="process-math">\(R\)</span>-modules with the same source and target coincide if and only if they are the same function of sets. This functor is not full, since there not every functions between the underlying sets of two <span class="process-math">\(R\)</span>-modules is an <span class="process-math">\(R\)</span>-module homomorphism.</div></article><article class="remark remark-like" id="remark-11"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.33</span><span class="period">.</span>
+<div class="para" id="subsec-funcor-props-6-1">A fully faithful functor is not necessarily injective on objects, but it is injective on objects up to isomorphism.</div></article><article class="exercise exercise-like" id="exe-9"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.29</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-173">A fully faithful functor is not necessarily injective on objects, but it is injective on objects up to isomorphism.</div></article><article class="remark remark-like" id="remark-12"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.34</span><span class="period">.</span>
-</h4>
-<div class="para" id="p-174">A subcategory <span class="process-math">\(\mathscr{C}\)</span> of <span class="process-math">\(\mathscr{D}\)</span> is full if the inclusion functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}\)</span> is full.</div></article><article class="example example-like" id="example-21"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.35</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="p-175"><ol class="decimal">
-<li id="li-54"><div class="para" id="p-176">The category <span class="process-math">\(\mathbf{A b}\)</span> of abelian groups is a full subcategory of <span class="process-math">\(\Grp\text{.}\)</span>
+<div class="para logical" id="exe-9-1-1">
+<div class="para">Show that every fully faithful functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}\)</span> reflects isos:</div>
+<ol class="decimal">
+<li id="exe-9-1-1-2-1"><div class="para" id="exe-9-1-1-2-1-1">If <span class="process-math">\(f\)</span> is an arrow in <span class="process-math">\(\mathscr{C}\)</span> such that <span class="process-math">\(F (f )\)</span> is an iso, then <span class="process-math">\(f\)</span> is an iso.</div></li>
+<li id="exe-9-1-1-2-2"><div class="para" id="exe-9-1-1-2-2-1">If <span class="process-math">\(F (X)\)</span> and <span class="process-math">\(F (Y )\)</span> are isomorphic, then the objects <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are isomorphic in <span class="process-math">\(\mathscr{C}\text{.}\)</span>
 </div></li>
-<li id="li-55"><div class="para" id="p-177">The category whose objects are all sets and with arrows all bijections is a subcategory of <span class="process-math">\(\Set\)</span> that is not full.</div></li>
-</ol></div></article><div class="para" id="p-178">To close this section, here are the two of the most important functors we will discuss this semester:</div>
-<article class="definition definition-like" id="def-represent-functor"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.36</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Hom\)</span> Functors.</span>
-</h4> <div class="para logical" id="p-179">
+</ol>
+</div></article><article class="remark remark-like" id="subsec-funcor-props-8"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.30</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-funcor-props-8-1">A subcategory <span class="process-math">\(\mathscr{C}\)</span> of <span class="process-math">\(\mathscr{D}\)</span> is <em class="emphasis">full</em> if the inclusion functor <span class="process-math">\(\mathscr{C} \longrightarrow \mathscr{D}\)</span> is full.</div></article><article class="example example-like" id="subsec-funcor-props-9"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.31</span><span class="period">.</span><span class="space"> </span><span class="title">Full Subcategories.</span>
+</h4> <div class="para logical" id="subsec-funcor-props-9-2"><ol class="decimal">
+<li id="subsec-funcor-props-9-2-1-1"><div class="para" id="subsec-funcor-props-9-2-1-1-1">The category <span class="process-math">\(\mathbf{A b}\)</span> of abelian groups is a full subcategory of <span class="process-math">\(\Grp\text{.}\)</span>
+</div></li>
+<li id="subsec-funcor-props-9-2-1-2"><div class="para" id="subsec-funcor-props-9-2-1-2-1">The category whose objects are all sets and with arrows all bijections is a subcategory of <span class="process-math">\(\Set\)</span> that is not full.</div></li>
+</ol></div></article></section><section class="subsection" id="subsec-hom-functors"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span>
+</h3>
+<blockquote class="blockquote" id="subsec-hom-functors-2">
+<div class="para" id="subsec-hom-functors-2-1">“”</div> <cite class="attribution">―</cite>
+</blockquote>
+<div class="para" id="subsec-hom-functors-3">To close this section, here are the two of the most important functors we will discuss this semester:</div>
+<article class="definition definition-like" id="def-hom-functor"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.32</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Hom\)</span> Functors.</span>
+</h4> <div class="para logical" id="def-hom-functor-2-1">
 <div class="para">Let <span class="process-math">\(\mathscr{C}\)</span> be a locally small category. An object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathscr{C}\)</span> induces two <span class="process-math">\(\Hom\)</span> functors:</div>
 <ul class="disc">
-<li id="li-56">
-<div class="para" id="p-180">The covariant functor <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A,-): \mathscr{C} \longrightarrow\)</span> Set is defined as follows:</div>
+<li id="def-hom-functor-2-1-5-1">
+<div class="para" id="def-hom-functor-2-1-5-1-1">The covariant functor <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A,-): \mathscr{C} \longrightarrow\)</span> Set is defined as follows:</div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-18(1).jpg" class="contained"></div>
-<div class="para logical" id="p-181">
+<div class="para logical" id="def-hom-functor-2-1-5-1-3">
 <div class="para">We may refer to this functor as the covariant functor represented by <span class="process-math">\(A\text{.}\)</span> Given an arrow <span class="process-math">\(f\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> we write <span class="process-math">\(f_{*}:=\operatorname{Hom}_{\mathscr{C}}(A, f)\text{.}\)</span> It is easier to see what <span class="process-math">\(f_{*}\)</span> does through the following commutative diagram:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -686,12 +950,12 @@ f_{*}=\operatorname{Hom}_{\mathscr{C}}(A, f):
 \end{equation*}
 </div>
 </div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-18(3).jpg" class="contained"></div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_08_28_614593e69373955f3addg-18(3).jpg" class="contained"></div>
 </li>
-<li id="li-57">
-<div class="para" id="p-182">The contravariant functor <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(-, B): \mathscr{C} \longrightarrow\Set\)</span> is defined as follows:</div>
+<li id="def-hom-functor-2-1-5-2">
+<div class="para" id="def-hom-functor-2-1-5-2-1">The contravariant functor <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(-, B): \mathscr{C} \longrightarrow\Set\)</span> is defined as follows:</div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-18(2).jpg" class="contained"></div>
-<div class="para logical" id="p-183">
+<div class="para logical" id="def-hom-functor-2-1-5-2-3">
 <div class="para">We may refer to this functor as the contravariant functor represented by <span class="process-math">\(B\text{.}\)</span> Given an arrow <span class="process-math">\(f\)</span> in <span class="process-math">\(\mathscr{C}\text{,}\)</span> we write <span class="process-math">\(f^{*}:=\operatorname{Hom}_{\mathscr{C}}(A,-)\text{.}\)</span> It is easier to see what <span class="process-math">\(f^{*}\)</span> does through the following commutative diagram:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -699,18 +963,22 @@ f^{*}=\operatorname{Hom}_{\mathscr{C}}(f, B):
 \end{equation*}
 </div>
 </div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-18.jpg" class="contained"></div>
+<div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_08_28_614593e69373955f3addg-18.jpg" class="contained"></div>
 </li>
 </ul>
-</div></article><article class="exploration project-like" id="exploration-9"><a href="" data-knowl="" class="id-ref exploration-knowl original" data-refid="hk-exploration-9"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exploration-9"><article class="exploration project-like"><div class="para" id="p-184">Check that <span class="process-math">\(\operatorname{Hom}(A,-)\)</span> and <span class="process-math">\(\operatorname{Hom}(-, B)\)</span> are indeed functors.</div></article></div>
-<div class="para" id="p-185">We will be particularly interested in the Hom-functors in the category <span class="process-math">\(R\)</span><span class="process-math">\(\mod\text{,}\)</span> which we will study in detail in a later chapter.</div></section></section></div>
+</div></article><article class="exercise exercise-like" id="exe-10"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.33</span><span class="period">.</span>
+</h4>
+<div class="para" id="exe-10-1-1">Check that <span class="process-math">\(\operatorname{Hom}(A,-)\)</span> and <span class="process-math">\(\operatorname{Hom}(-, B)\)</span> are indeed functors.</div></article><div class="para" id="subsec-hom-functors-6">We will be particularly interested in the <span class="process-math">\(\Hom\)</span>-functors in the category <span class="process-math">\(R\)</span><span class="process-math">\(\mod\text{,}\)</span> which we will study in detail in a later chapter.</div></section><section class="conclusion" id="sec-functors-6"><div class="para" id="sec-functors-6-1">Functors we will be using: Hom, tensor, homology, localization</div></section><article class="outcomes goal-like" id="sec-functors-7"><h3 class="heading"><span class="type">Summary</span></h3>
+<ul class="disc">
+<li id="sec-functors-7-1-1"><div class="para" id="sec-functors-7-1-1-1">Functors are generalizatons of functions that allow us to move between categories. They can be either covariant or contravariant.</div></li>
+<li id="sec-functors-7-1-2"><div class="para" id="sec-functors-7-1-2-1">Two extremely important functors are the <span class="process-math">\(\Hom\)</span> functors.</div></li>
+</ul></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-categories.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-natural-transformations.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="sec-categories.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-natural-transformations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
-<div id="ptx-page-footer">
+<div id="ptx-page-footer" class="ptx-page-footer">
 <a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>

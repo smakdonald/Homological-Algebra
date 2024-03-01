@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.55</span><span class="period">.</span>
+</h4>
+<div class="para">Theorem 3.41. Let <span class="process-math">\(M\)</span> be a right <span class="process-math">\(R\)</span>-module, and let <span class="process-math">\(\left\{N_{i}\right\}_{i \in I}\)</span> be an arbitrary family of left <span class="process-math">\(R\)</span>-modules. Then the map</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+M \otimes_{R}\left(\bigoplus_{i \in I} N_{i}\right) \cong \underset{i \in I}{\rightrightarrows} \bigoplus_{i \in I} M \otimes_{R} N_{i} \\
+m \otimes\left(a_{i}\right)_{i} \longmapsto \\
+\longrightarrow\left(m \otimes a_{i}\right)
+\end{gathered}
+\end{equation*}
+</div></div> <div class="para">is an isomorphism of abelian groups in general, of <span class="process-math">\(R\)</span>-modules in the commutative case, of <span class="process-math">\(S\)</span> modules if each <span class="process-math">\(N_{i}\)</span> is an <span class="process-math">\((S, R)\)</span>-bimodule, and of right <span class="process-math">\(S\)</span>-modules if <span class="process-math">\(N\)</span> is an <span class="process-math">\((R, S)\)</span>-bimodule. Moreover, this isomorphism is natural: given two families of left <span class="process-math">\(R\)</span>-modules <span class="process-math">\(\left\{A_{i}\right\}_{i \in I}\)</span> and <span class="process-math">\(\left\{B_{j}\right\}_{j \in J}\text{,}\)</span> and left <span class="process-math">\(R\)</span>-module homomorphisms <span class="process-math">\(\sigma_{i j}: A_{i} \longrightarrow B_{j}\text{,}\)</span> the <span class="process-math">\(R\)</span>-module homomorphisms</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; \bigoplus_{i \in I} A_{i} \stackrel{\sigma}{\longrightarrow} \bigoplus_{j \in J} B_{j} \quad \text { and } \quad \tilde{\sigma}=\bigoplus_{i \in I} \sigma_{i j}: \bigoplus_{i \in I} M \otimes_{R} A_{i} \longrightarrow \bigoplus_{j \in J} M \otimes_{R} B_{j} \\
+&amp; \left(a_{i}\right)_{i \in I} \longmapsto\left(\sigma_{i j}\left(a_{i}\right)\right)_{j \in J}
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para">give a commutative diagram</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+M \otimes_{R}\left(\bigoplus_{i \in I} A_{i}\right) &amp; \cong \bigoplus_{i \in I} M \otimes_{R} A_{i} \\
+1 \otimes \sigma &amp; \downarrow \\
+M \otimes_{R}\left(\bigoplus_{j \in J} B_{j}\right) &amp; \stackrel{\sim}{\longleftarrow} \bigoplus_{j \in J} M \otimes_{R} B_{j} .
+\end{aligned}
+\end{equation*}
+</div></div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">Proof. First, note that the function</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+M \times\left(\bigoplus_{i \in I} A_{i}\right) \longrightarrow \bigoplus_{i \in I}\left(M \otimes_{R} A_{i}\right) \\
+\left(m,\left(a_{i}\right)_{i}\right) \longmapsto\left(m \otimes a_{i}\right)
+\end{gathered}
+\end{equation*}
+</div></div> <div class="para">is <span class="process-math">\(R\)</span>-bilinear, so it induces a homomorphism</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+M \otimes_{R}\left(\bigoplus_{i \in I} A_{i}\right) \stackrel{\tau}{\longrightarrow} \bigoplus_{i \in I}\left(M \otimes_{R} A_{i}\right)
+\end{equation*}
+</div></div> <div class="para">For each <span class="process-math">\(k \in I\text{,}\)</span> let <span class="process-math">\(\iota_{k}\)</span> denote the inclusion map <span class="process-math">\(A_{k} \subseteq \bigoplus_{i} A_{i}\text{.}\)</span> The universal property of the coproduct (which in the case of <span class="process-math">\(R\)</span>-modules, means the direct sum) gives an <span class="process-math">\(R\)</span>-module homomorphism</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r}
+\bigoplus_{i \in I}\left(M \otimes_{R} A_{i}\right) \stackrel{\lambda}{\longrightarrow} M \otimes_{R} \bigoplus_{i \in I}\left(A_{i}\right) \\
+\left(m \otimes a_{i}\right)_{i} \longmapsto m \otimes \sum_{i} \iota_{i}\left(a_{i}\right)
+\end{array}
+\end{equation*}
+</div></div> <div class="para">which we obtain by assembling the <span class="process-math">\(R\)</span>-module homomorphisms <span class="process-math">\(1 \otimes \iota_{i}\text{.}\)</span> It is routine to check that <span class="process-math">\(\lambda\)</span> is the inverse of <span class="process-math">\(\tau\text{,}\)</span> which must then be an isomorphism. Finally, we can check naturality by checking commutativity of the square above, element by element:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-096.jpg" class="contained"></div></article></details><span class="incontext"><a class="internal" href="sec-tensor.html#thm-3.41">in-context</a></span>
+</body>
+</html>

@@ -13,20 +13,19 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">Note that the category of chain complexes also has a similar structure to <span class="process-math">\(R\)</span>-Mod: given two maps of complexes <span class="process-math">\(f, g: C \rightarrow D\text{,}\)</span> we define a map of complexes <span class="process-math">\(f+g\)</span> : <span class="process-math">\(C \rightarrow D\)</span> given by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.3.html">
+<div class="para">The covariant functor <span class="process-math">\(\operatorname{Hom}_{R}(M,-)\)</span> is left exact: for every exact sequence</div>
+<div class="displaymath process-math">
 \begin{equation*}
-(f+g)_{n}:=f_{n}+g_{n}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
 \end{equation*}
 </div>
-<div class="para">It is routine to check that this again gives a map of complexes, and that this operation gives the <span class="process-math">\(\Hom\)</span>-sets in <span class="process-math">\(\operatorname{Ch}(R)\)</span> the structure of an abelian group. In fact, this abelian group structure can be upgraded to an <span class="process-math">\(R\)</span>-module structure when <span class="process-math">\(R\)</span> is commutative, by setting</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem-3.3.html">
+<div class="para">of <span class="process-math">\(R\)</span>-modules, the sequence</div>
+<div class="displaymath process-math">
 \begin{equation*}
-(r f)_{n}:=r f_{n}
+0 \longrightarrow \operatorname{Hom}_{R}(M, A) \stackrel{\operatorname{Hom}_{R}(M, f)}{\longrightarrow} \operatorname{Hom}_{R}(M, B) \stackrel{\operatorname{Hom}_{R}(M, g)}{\longrightarrow} \operatorname{Hom}_{R}(M, C)
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(r \in R\text{.}\)</span> This allows us to talk about additive functors to and from the category <span class="process-math">\(\operatorname{Ch}(R)\text{,}\)</span> and there is a version of <a href="" class="xref" data-knowl="./knowl/lem-3.3.html" title="Lemma 3.7: Properties of Additive Functors">Lemma 3.7</a> in <span class="process-math">\(\mathrm{Ch}(R)\text{.}\)</span>
-</div>
+<div class="para">is exact.</div>
 </div>
 <span class="incontext"><a href="sec-hom.html#p-478" class="internal">in-context</a></span>
 </body>

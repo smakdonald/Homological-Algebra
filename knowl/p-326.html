@@ -12,11 +12,44 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical"><div class="displaymath process-math">
+<div class="para logical">
+<div class="para">Similarly, if <span class="process-math">\(a \in \operatorname{im} f\text{,}\)</span> the commutativity of the diagram guarantees that <span class="process-math">\(i(a) \in \operatorname{im} g\text{,}\)</span> and if <span class="process-math">\(b \in \operatorname{im} g\text{,}\)</span> then <span class="process-math">\(p(b) \in \operatorname{im} h\text{.}\)</span> So the maps <span class="process-math">\(A \stackrel{i}{\longrightarrow} B \stackrel{p}{\longrightarrow} C\)</span> restrict to maps</div>
+<div class="displaymath process-math">
 \begin{equation*}
-g\left(i^{\prime}\left(a^{\prime}\right)\right)=i f\left(a^{\prime}\right)=0
+\operatorname{im} f \stackrel{i}{\longrightarrow} \operatorname{im} g \stackrel{p}{\longrightarrow} \operatorname{im} h
 \end{equation*}
-</div></div>
+</div>
+<div class="para">which then induce maps</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text { coker } f \longrightarrow \text { coker } g \longrightarrow \text { coker } h \text {. }
+\end{equation*}
+</div>
+<div class="para">To make the notation less heavy, we denote the induced maps on the quotients by <span class="process-math">\(i\)</span> and <span class="process-math">\(p\text{.}\)</span> Again, the fact that <span class="process-math">\(p i=0\)</span> automatically gives us that the restrictions satisfy</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{im}(\operatorname{coker} f \rightarrow \operatorname{coker} g) \subseteq \operatorname{ker}(\operatorname{coker} g \rightarrow \operatorname{coker} h)
+\end{equation*}
+</div>
+<div class="para">so we only need to check equality. Consider <span class="process-math">\(b+\operatorname{im} g\)</span> such that <span class="process-math">\(p(b+\operatorname{im} g)=0\text{,}\)</span> meaning that <span class="process-math">\(p(b)=0\text{,}\)</span> meaning that <span class="process-math">\(p(b) \in \operatorname{im} h\text{.}\)</span> Let <span class="process-math">\(c^{\prime} \in C\)</span> be such that <span class="process-math">\(h\left(c^{\prime}\right)=p(b)\text{.}\)</span> Since <span class="process-math">\(p^{\prime}\)</span> is surjective, there exists <span class="process-math">\(b^{\prime} \in B^{\prime}\)</span> such that <span class="process-math">\(p^{\prime}\left(b^{\prime}\right)=c^{\prime}\text{,}\)</span> and by commutativity,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p g\left(b^{\prime}\right)=h p^{\prime}\left(b^{\prime}\right)=h\left(c^{\prime}\right)=p(b) \text {. }
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(b-g\left(b^{\prime}\right) \in \operatorname{ker} p=\operatorname{im} i\text{.}\)</span> Let <span class="process-math">\(a \in A\)</span> be such that <span class="process-math">\(i(a)=b-g\left(b^{\prime}\right)\text{.}\)</span> Now in coker <span class="process-math">\(g\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+b+\operatorname{im} g &amp; =b-g\left(b^{\prime}\right)+\operatorname{im} g \\
+&amp; =i(a)+\operatorname{im} g \\
+&amp; =i(a+\operatorname{im} f)
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">This concludes the proof of exactness of <span class="process-math">\(\operatorname{ker} f \longrightarrow \operatorname{ker} g \longrightarrow \operatorname{ker} h \quad\)</span> and <span class="process-math">\(\quad\)</span> coker <span class="process-math">\(f \longrightarrow \operatorname{coker} g \longrightarrow\coker h\text{.}\)</span>
+</div>
+</div>
 <span class="incontext"><a href="sec-les.html#p-326" class="internal">in-context</a></span>
 </body>
 </html>

@@ -11,9 +11,25 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para">For a prime ideal <span class="process-math">\(P\)</span> in <span class="process-math">\(R\text{,}\)</span> we generally write <span class="process-math">\(R_{P}\)</span> for <span class="process-math">\((R \backslash P)^{-1} R\text{,}\)</span> and call it the localization of <span class="process-math">\(R\)</span> at <span class="process-math">\(P\text{.}\)</span> Given an ideal <span class="process-math">\(I\)</span> in <span class="process-math">\(R\text{,}\)</span> we sometimes write <span class="process-math">\(I_{P}\)</span> to refer to <span class="process-math">\(I R_{P}\text{,}\)</span> the image of <span class="process-math">\(I\)</span> via the canonical map <span class="process-math">\(R \rightarrow R_{P}\text{.}\)</span> Notice that when we localize at a prime <span class="process-math">\(P\text{,}\)</span> the resulting ring is a local ring <span class="process-math">\(\left(R_{P}, P_{P}\right)\text{.}\)</span> We can think of the process of localization at <span class="process-math">\(P\)</span> as zooming in at the prime <span class="process-math">\(P\text{.}\)</span> Many properties of an ideal <span class="process-math">\(I\)</span> can be checked locally, by checking them for <span class="process-math">\(I R_{P}\)</span> for each prime <span class="process-math">\(P \in V(I)\text{.}\)</span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">By Zorn’s Lemma, <span class="process-math">\(X\)</span> has a maximal element, say <span class="process-math">\((A, g)\text{.}\)</span> We claim that <span class="process-math">\(A=N\text{.}\)</span> Suppose not, and let <span class="process-math">\(n \in N\)</span> be an element not in <span class="process-math">\(A\text{.}\)</span> One can check that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I:=\{r \in R \mid r n \in A\}
+\end{equation*}
 </div>
-<span class="incontext"><a href="sec-localization.html#p-983" class="internal">in-context</a></span>
+<div class="para">is an ideal in <span class="process-math">\(R\text{,}\)</span> and that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; I \stackrel{h}{\longrightarrow} E \\
+&amp; r \longrightarrow g(r n)
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">is an <span class="process-math">\(R\)</span>-module homomorphism.</div>
+</div>
+<span class="incontext"><a href="sec-injective.html#p-983" class="internal">in-context</a></span>
 </body>
 </html>
