@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Proof. The bilinear map <span class="process-math">\(\quad W^{-1} R \times M \longrightarrow W^{-1} M\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\left(\frac{r}{w}, m\right) \longmapsto \frac{r m}{w}
+\end{equation*}
+</div></div> <div class="para">induces a homomorphism <span class="process-math">\(\psi: W^{-1} R \times M \rightarrow W^{-1} M\)</span> that is surjective.</div> <div class="para">For an inverse map, set <span class="process-math">\(\phi\left(\frac{m}{w}\right):=\frac{1}{w} \otimes m\text{.}\)</span> To see this is well-defined, suppose <span class="process-math">\(\frac{m}{w}=\frac{m^{\prime}}{w^{\prime}}\text{,}\)</span> so there exists some <span class="process-math">\(v \in W\)</span> such that <span class="process-math">\(v\left(m w^{\prime}-m^{\prime} w\right)=0\text{.}\)</span> Then,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\phi\left(\frac{m}{w}\right)-\phi\left(\frac{m^{\prime}}{w^{\prime}}\right)=\frac{1}{w} \otimes m-\frac{1}{w^{\prime}} \otimes m^{\prime}
+\end{equation*}
+</div></div> <div class="para">We can multiply through by <span class="process-math">\(\frac{v w w^{\prime}}{v w w^{\prime}}\)</span> to get</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\frac{v w^{\prime}}{v w w^{\prime}} \otimes m-\frac{v w}{v w w^{\prime}} \otimes m^{\prime}=\frac{1}{v w w^{\prime}} \otimes v\left(m w^{\prime}-m^{\prime} w\right)=0
+\end{equation*}
+</div></div> <div class="para">To see this is a homomorphism, we note that</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\phi\left(\frac{m}{w}+\frac{m^{\prime}}{w^{\prime}}\right) &amp; =\phi\left(\frac{m w^{\prime}+m^{\prime} w}{w w^{\prime}}\right)=\frac{1}{w w^{\prime}} \otimes\left(m w^{\prime}+m^{\prime} w\right)=\frac{1}{w w^{\prime}} \otimes m w^{\prime}+\frac{1}{w w^{\prime}} \otimes m^{\prime} w \\
+&amp; =\frac{w^{\prime}}{w w^{\prime}} \otimes m+\frac{w}{w w^{\prime}} \otimes m^{\prime}=\frac{1}{w} \otimes m+\frac{1}{w^{\prime}} \otimes m^{\prime}=\phi\left(\frac{m}{w}\right)+\phi\left(\frac{m^{\prime}}{w^{\prime}}\right)
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para">and</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\phi\left(r \frac{m}{w}\right)=\frac{1}{w} \otimes r m=r\left(\frac{1}{w} \otimes m\right)=r \phi\left(\frac{m}{w}\right)
+\end{equation*}
+</div></div> <div class="para">The composition <span class="process-math">\(\phi \circ \psi\)</span> sends</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\frac{r}{w} \otimes m \mapsto \frac{r m}{w} \mapsto \frac{1}{w} \otimes r m=\frac{r}{w} \otimes m
+\end{equation*}
+</div></div> <div class="para">Since this is the identity on simple tensors, and simple tensors generated the tensor product, it must be the identity.</div> <div class="para">For the claim about maps, we need check that <span class="process-math">\(\psi_{N} \circ\left(W^{-1} R \otimes \alpha\right)=W^{-1} \alpha \circ \psi_{M}\)</span> for every <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\alpha !: M \rightarrow N\text{.}\)</span> And indeed,</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\left(\psi_{N} \circ\left(W^{-1} R \otimes \alpha\right)\right)\left(\frac{r}{w} \otimes m\right) &amp; =\psi_{N}\left(\frac{r}{w} \otimes \alpha(m)\right)=\frac{r \alpha(m)}{w} \\
+&amp; =\frac{\alpha(r m)}{w}=W^{-1} \alpha\left(\frac{r m}{w}\right)=\left(W^{-1} \alpha \circ \psi_{M}\right)\left(\frac{r}{w} \otimes m\right)
+\end{aligned}
+\end{equation*}
+</div></div> <div class="para">Finally, we note that our isomorphisms <span class="process-math">\(W^{-1} R \otimes_{R} M \cong W^{-1} M\)</span> give a natural isomorphism between the localization functor <span class="process-math">\(W^{-1}(-)\)</span> and the tensor functor <span class="process-math">\(W^{-1} R \otimes_{R}-\text{.}\)</span> Indeed, given a map of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(M \stackrel{f}{\rightarrow} N\text{,}\)</span> the diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-104(1).jpg" class="contained"></div> <div class="para">commutes, since it commutes for simple tensors:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-104.jpg" class="contained"></div> <div class="para">Now since localization is exact, we conclude that <span class="process-math">\(W^{-1} R \otimes_{R}-\)</span> is an exact functor for all commutative rings <span class="process-math">\(R\)</span> and all multiplicatively closed subsets <span class="process-math">\(W\text{.}\)</span>
+</div></article></body>
+</html>

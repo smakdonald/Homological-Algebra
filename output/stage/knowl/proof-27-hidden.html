@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para">Proof. Consider the map</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r}
+\operatorname{Hom}_{S}\left(M \otimes_{R} N, P\right) \stackrel{\tau}{\longrightarrow} \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(N, P)\right) \\
+f \longmapsto m \mapsto(n \mapsto f(m \otimes n))
+\end{array}
+\end{equation*}
+</div></div> <div class="para">Fix <span class="process-math">\(f\text{.}\)</span> For each <span class="process-math">\(m \in M\text{,}\)</span> let <span class="process-math">\(\tau_{m}\)</span> be the map <span class="process-math">\(N \longrightarrow P\)</span> defined by <span class="process-math">\(\tau_{m}(n):=f(m \otimes n)\text{.}\)</span> Note that <span class="process-math">\(\tau_{m}\)</span> is indeed a homomorphism of <span class="process-math">\(S\)</span>-modules, since it is the composition of two <span class="process-math">\(S\)</span>-module maps, <span class="process-math">\(f\)</span> and <span class="process-math">\(m \otimes_{R} \operatorname{id}_{N}\text{,}\)</span> where <span class="process-math">\(m\)</span> is the constant map <span class="process-math">\(M \longrightarrow M\)</span> equal to <span class="process-math">\(m\text{.}\)</span>
+</div> <div class="para">We should check that our proposed map <span class="process-math">\(\tau\)</span> is indeed a map of abelian groups. It is immediate from the definition that <span class="process-math">\(\tau\)</span> sends the 0-map to the 0-map. Moreover, given <span class="process-math">\(S\)</span> module homomorphisms <span class="process-math">\(f, g: M \otimes N \longrightarrow P\text{,}\)</span> and any <span class="process-math">\(n \in N\text{,}\)</span> we have</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rlr}
+\tau_{m}(f+g)(n) &amp; =(f+g)(m \otimes n) &amp; \text { by definition } \\
+&amp; =f(m \otimes n)+g(m \otimes n) &amp; \text { since } f \text { and } g \text { are } S \text {-module maps } \\
+&amp; =\tau_{m}(f)(n)+\tau_{m}(g)(n) &amp; \text { by definition }
+\end{array}
+\end{equation*}
+</div></div> <div class="para">so <span class="process-math">\(\tau_{m}(f+g)=\tau_{m}(f)+\tau_{m}(g)\)</span> for all <span class="process-math">\(m \in M\text{,}\)</span> and thus <span class="process-math">\(\tau(f+g)=\tau(f)+\tau(g)\text{.}\)</span>
+</div> <div class="para">Suppose that <span class="process-math">\(\tau(f)=0\text{.}\)</span> Then for every <span class="process-math">\(m \in M\)</span> and every <span class="process-math">\(n \in N\text{,}\)</span>
+</div> <div class="para logical"><div class="displaymath process-math">
+\begin{equation*}
+0=\tau(f)(m)(n)=\tau_{m}(f)(n)=f(m \otimes n)
+\end{equation*}
+</div></div> <div class="para">so <span class="process-math">\(f\)</span> vanishes at every simple tensor, and we must have <span class="process-math">\(f=0\text{.}\)</span> On the other hand, if we are given <span class="process-math">\(g \in \operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{S}(N, P)\right)\text{,}\)</span> consider the map <span class="process-math">\(M \times N \longrightarrow P\)</span> defined by <span class="process-math">\(\tilde{f}(m, n)=g(m)(n)\text{.}\)</span> Since <span class="process-math">\(g\)</span> is a homomorphism of <span class="process-math">\(R\)</span>-modules, it is <span class="process-math">\(R\)</span>-linear on <span class="process-math">\(m\text{.}\)</span> Moreover, for each fixed <span class="process-math">\(m, g(m)\)</span> is a homomorphism of <span class="process-math">\(S\)</span>-modules, so in particular <span class="process-math">\(g(m)\)</span> is <span class="process-math">\(R\)</span>-linear. Together, these say that <span class="process-math">\(\tilde{f}\)</span> is an <span class="process-math">\(R\)</span>-bilinear map. Let <span class="process-math">\(f\)</span> be the homomorphism of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(M \otimes_{R} N \longrightarrow P\)</span> induced by <span class="process-math">\(\tilde{f}\text{.}\)</span> By definition, <span class="process-math">\(f(m \otimes n)=\tilde{f}(m, n)=g(m)(n)\text{,}\)</span> so <span class="process-math">\(\tau(f)=g\text{.}\)</span> We conclude that <span class="process-math">\(\tau\)</span> is a bijection.</div> <div class="para">We leave the statements about naturality as exercises.</div></article></body>
+</html>

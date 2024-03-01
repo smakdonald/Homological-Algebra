@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<section class="paragraphs"><h2 class="heading"><span class="title">Homology.</span></h2> <div class="para">Historically, chain complexes first appeared in topology. To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.</div> <article class="definition definition-like"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.15</span><span class="period">.</span><span class="space"> </span><span class="title">Homology.</span>
+</h3> <div class="para logical">
+<div class="para">The homology of the complex <span class="process-math">\(\left(C_{\bullet}, \partial_{\bullet}\right)\)</span> is the sequence of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}\left(C_{\bullet}\right)=\mathrm{H}_{n}(C):=\frac{\operatorname{ker} \partial_{n}}{\operatorname{im} \partial_{n+1}} .
+\end{equation*}
+</div>
+</div> <div class="para">The <span class="process-math">\(n\)</span>th homology of <span class="process-math">\(\left(C_{\bullet}, \partial_{\bullet}\right)\)</span> is <span class="process-math">\(\mathrm{H}_{n}(C)\text{.}\)</span>
+</div></article> <article class="convention remark-like"><h3 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">0.16</span><span class="period">.</span>
+</h3>
+<div class="para">The submodules <span class="process-math">\(Z_{n}\left(C_{\bullet}\right)=Z_{n}(C):=\operatorname{ker} \partial_{n} \subseteq C_{n}\)</span> are sometimes called <em class="emphasis">cycles</em>, while the submodules <span class="process-math">\(B_{n}\left(C_{\bullet}\right)=B_{n}(C):=\operatorname{im} \partial_{n+1} \subseteq C_{n}\)</span> are sometimes called <em class="emphasis">boundaries</em>. One sometimes uses the word boundary to refer an element of <span class="process-math">\(B_{n}(C)\)</span> (an <span class="process-math">\(n\)</span>-boundary), and the word cycle to refer to an element of <span class="process-math">\(Z_{n}(C)\)</span> (an <span class="process-math">\(n\)</span>-cycle).</div></article> <article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.17</span><span class="period">.</span>
+</h3>
+<div class="para">The homology of a complex measures how far our complex is from being exact at each point. Again, we can talk about the cohomology of a cochain complex instead, which we write as <span class="process-math">\(\mathrm{H}^{n}(C)\text{;}\)</span> we will for now not worry about the distinction.</div></article> <article class="exercise exercise-like"><a href="" class="exercise-knowl original" data-knowl="./knowl/rem-0.15-hidden.html" title="Exercise 0.18"><h3 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">0.18</span><span class="period">.</span>
+</h3></a></article> <article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.19</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(R=k[x] /\igen{x^3}\text{.}\)</span> Consider the following complex:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_{\bullet}=\cdots \longrightarrow R \stackrel{\cdot x^{2}}{\longrightarrow} R \stackrel{\cdot x^{2}}{\longrightarrow} R \longrightarrow \cdots .
+\end{equation*}
+</div>
+<div class="para">The image of multiplication by <span class="process-math">\(x^{2}\)</span> is <span class="process-math">\(\igen{x^2}\text{,}\)</span> while the the kernel of multiplication by <span class="process-math">\(x^{2}\)</span> is <span class="process-math">\(\igen{x} \supseteq\igen{x^2}\text{.}\)</span> For all <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}\left(F_{\bullet}\right)=\igen{x} /\igen{x^2} \cong R /\igen{x}
+\end{equation*}
+</div>
+</div></article> <article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.20</span><span class="period">.</span>
+</h3>
+<div class="para">Let <span class="process-math">\(\mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z}\)</span> be the canonical projection map. Then</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/2023_08_28_614593e69373955f3addg-07.jpg" class="contained"></div> <div class="para logical">
+<div class="para">is a complex of abelian groups, since the image of multiplication by <span class="process-math">\(4\)</span> is <span class="process-math">\(4 \mathbb{Z}\text{,}\)</span> and that is certainly contained in <span class="process-math">\(\operatorname{ker} \pi=2 \mathbb{Z}\text{.}\)</span> The homology of <span class="process-math">\(C\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ll}
+\mathrm{H}_{n}(C)=0 &amp; \text { for } n \geqslant 3 \\
+\mathrm{H}_{2}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}{\operatorname{im}(0 \longrightarrow \mathbb{Z})}=\frac{0}{0}=0 &amp; \\
+\mathrm{H}_{1}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{\pi}{\rightarrow} \mathbb{Z} / 2 \mathbb{Z})}{\operatorname{im}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}=\frac{2 \mathbb{Z}}{4 \mathbb{Z}} \cong \mathbb{Z} / 2 \mathbb{Z} &amp; \\
+\mathrm{H}_{0}(C)=\frac{\operatorname{ker}(\mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0)}{\operatorname{im}(\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z})}=\frac{\mathbb{Z} / 2 \mathbb{Z}}{\mathbb{Z} / 2 \mathbb{Z}}=0 &amp; \text { for } n&lt;0 \\
+\mathrm{H}_{n}(C)=0 &amp;
+\end{array}
+\end{equation*}
+</div>
+</div> <div class="para">Notice that our complex is exact at <span class="process-math">\(2\)</span> and <span class="process-math">\(0\text{.}\)</span> The exactness at <span class="process-math">\(2\)</span> says that the map <span class="process-math">\(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z}\)</span> is injective, while exactness at <span class="process-math">\(0\)</span> says that <span class="process-math">\(\pi\)</span> is surjective.</div></article> <div class="para">Before we can continue any further into the world of homological algebra, we will need some categorical language. We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.</div></section><span class="incontext"><a href="ch-intro.html#paragraphs-2" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.59</span><span class="period">.</span><span class="space"> </span><span class="title">Hilbert’s Basis Theorem.</span>
+</h4>
+<div class="para">If <span class="process-math">\(R\)</span> is a noetherian ring, then the polynomial rings <span class="process-math">\(R[x_1,\dots,x_d]\)</span> and <span class="process-math">\(R[[ x_1,\dots,x_d]]\)</span> are noetherian for any <span class="process-math">\(d \geqslant 1\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para">We will give the proof for polynomial rings, and at the end we will indicate what the difference is in the argument for the power series ring case. First, note that by induction on <span class="process-math">\(d\text{,}\)</span> we can reduce to the case <span class="process-math">\(d=1\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Given an ideal <span class="process-math">\(I\subseteq R[x]\text{,}\)</span> consider the set of leading coefficients of all polynomials in <span class="process-math">\(I\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+J :=  \{ a \in R \ \mid  \ \textrm{there is some } a x^n + \text{lower order terms (with respect to }x) \in I\}.
+\end{equation*}
+</div>
+<div class="para">By the <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Commutative Algebra/Results/Exercise - Hilbert Basis Lemma|Hilbert Basis Lemma]], we see that this is an ideal of <span class="process-math">\(R\text{.}\)</span> Since <span class="process-math">\(R\)</span> is noetherian, <span class="process-math">\(J\)</span> is finitely generated, so let <span class="process-math">\(J = (a_1,\dots,a_t)\text{.}\)</span> Pick <span class="process-math">\(f_1,\dots,f_t\in R[x]\)</span> such that the leading coefficient of <span class="process-math">\(f_i\)</span> is <span class="process-math">\(a_i\text{,}\)</span> and set <span class="process-math">\(N=\displaystyle\max_i \{\deg{f_i} \}\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(f \in I\text{.}\)</span> The leading coefficient of <span class="process-math">\(f\)</span> is an <span class="process-math">\(R\)</span>-linear combination of <span class="process-math">\(a_1, \ldots, a_t\text{.}\)</span> If <span class="process-math">\(f\)</span> has degree greater than <span class="process-math">\(N\text{,}\)</span> then we can cancel off the leading term of <span class="process-math">\(f\)</span> by subtracting a suitable combination of the <span class="process-math">\(f_i\text{.}\)</span> Therefore, any <span class="process-math">\(f \in I\)</span> can be written as <span class="process-math">\(f = g+ h\)</span> for some <span class="process-math">\(h \in (f_1, \ldots, f_t)\)</span> and <span class="process-math">\(g \in I\)</span> with degree at most <span class="process-math">\(N\text{.}\)</span> In particular, note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g \in I \cap \frac{R + Rx + \cdots + R x^N}.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(I \cap (R + Rx + \cdots + R x^N)\)</span> is a submodule of the finitely generated free <span class="process-math">\(R\)</span>-module <span class="process-math">\(R + Rx + \cdots + R x^N\text{,}\)</span> it must also be finitely generated as an <span class="process-math">\(R\)</span>-module. Given such a generating set, say <span class="process-math">\(I \cap (R + Rx + \cdots + Rx^N) = (f_{t+1}, \ldots, f_s)\text{,}\)</span> we can write any element <span class="process-math">\(f \in I\)</span> as an <span class="process-math">\(R[x]\)</span>-linear combination of these generators <span class="process-math">\(f_{t+1}, \ldots, f_s\)</span> and the original <span class="process-math">\(f_{1}, \ldots, f_t\text{.}\)</span> Therefore, <span class="process-math">\(I = (f_1, \ldots, f_t, f_{t+1}, \ldots, f_s)\)</span> is finitely generated as an ideal in <span class="process-math">\(R[x]\text{,}\)</span> and <span class="process-math">\(R[x]\)</span> is a noetherian ring.</div>
+</div> <div class="para">In the power series case, take <span class="process-math">\(J\)</span> to be the set of coefficients of lowest degree terms.</div></article></details><span class="incontext"><a class="internal" href="sec-noetherian.html#hilbert-basis-theorem">in-context</a></span>
+</body>
+</html>

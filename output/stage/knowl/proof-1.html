@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para">Let <span class="process-math">\(\varphi\)</span> be a natural transformation in <span class="process-math">\(\operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(A,-), F\right)\text{.}\)</span> The proof of the Yoneda Lemma is essentially the following diagram:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_08_28_614593e69373955f3addg-21.jpg" class="contained"></div> <div class="para">Our bijection will be defined by <span class="process-math">\(\gamma(\varphi):=\varphi_{A}\left(1_{A}\right)\text{.}\)</span> We should first check that this makes sense: arrows in Set are just functions between sets, and so <span class="process-math">\(\varphi_{A}\)</span> is a function of sets <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A, A) \longrightarrow F(A)\text{.}\)</span> Also, <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A, A)\)</span> is a set that contains at least the element <span class="process-math">\(1_{A}\text{,}\)</span> and <span class="process-math">\(\varphi_{A}\left(1_{A}\right)\)</span> is some element in the set <span class="process-math">\(F(A)\text{.}\)</span>
+</div> <div class="para">Given any fixed <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, X)\text{,}\)</span> the fact that <span class="process-math">\(\varphi\)</span> is a natural transformation translates into the outer commutative diagram. In particular, the maps of sets <span class="process-math">\(F(f) \varphi_{A}\)</span> and <span class="process-math">\(\varphi_{X} \operatorname{Hom}_{\mathscr{C}}(A, f)\)</span> coincide, and must in particular take <span class="process-math">\(1_{A}\)</span> to the same element in <span class="process-math">\(F(X)\text{.}\)</span> This is the commutativity of the inner diagram, with <span class="process-math">\(u:=\varphi_{A}\left(1_{A}\right)\text{.}\)</span>
+</div> <div class="para">The commutativity of the diagram above says that <span class="process-math">\(\varphi\)</span> is completely determined by <span class="process-math">\(\varphi_{A}\left(1_{A}\right)\text{,}\)</span> since for any other object <span class="process-math">\(X\)</span> in <span class="process-math">\(\mathscr{C}\)</span> and any arrow <span class="process-math">\(f \in \operatorname{Hom}_{\mathscr{C}}(A, X)\text{,}\)</span> we necessarily have <span class="process-math">\(\varphi_{X}(f)=F(f) \varphi_{A}\left(1_{A}\right)\text{.}\)</span> In particular, our map <span class="process-math">\(\gamma(\varphi)=\varphi_{A}\left(1_{A}\right)\)</span> is injective. Moreover, note that each choice of <span class="process-math">\(u \in F(A)\)</span> gives rise to a different natural transformation <span class="process-math">\(\varphi\)</span> by setting <span class="process-math">\(\varphi_{X}(f)=F(f) u\text{.}\)</span> So our map <span class="process-math">\(\gamma\)</span> is indeed a bijection.</div> <div class="para">We now have two naturality statements to prove. Naturality in the functor means that given a natural isomorphism <span class="process-math">\(\eta: F \longrightarrow G\text{,}\)</span> the diagram</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/2023_08_28_614593e69373955f3addg-22.jpg" class="contained"></div> <div class="para logical">
+<div class="para">commutes. Given a natural transformation <span class="process-math">\(\varphi\)</span> between <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A,-)\)</span> and <span class="process-math">\(F\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{rlr}
+\eta_{A} \circ \gamma_{F}(\varphi) &amp; =\eta_{A}\left(\varphi_{A}\left(1_{A}\right)\right) &amp; \text { by definition of } \gamma \\
+&amp; =(\eta \circ \varphi)_{A}\left(1_{A}\right) &amp; \text { by definition of composition of natural transformations } \\
+&amp; =\gamma_{G}(\eta \circ \varphi) &amp; \text { by definition of } \gamma \\
+&amp; =\gamma_{G} \circ \eta_{*}(\varphi) &amp; \text { by definition of } \eta_{*}
+\end{array}
+\end{equation*}
+</div>
+<div class="para">so commutativity does hold. Naturality on the object means that given an arrow <span class="process-math">\(f: A \longrightarrow B\text{,}\)</span> the diagram</div>
+</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/2023_08_28_614593e69373955f3addg-22(1).jpg" class="contained"></div> <div class="para logical">
+<div class="para">commutes. Given a natural transformation <span class="process-math">\(\varphi\)</span> between <span class="process-math">\(\operatorname{Hom}_{\mathscr{C}}(A,-)\)</span> and <span class="process-math">\(F\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(f) \circ \gamma_{A}(\varphi)=F(f)\left(\varphi_{A}\left(1_{A}\right)\right)
+\end{equation*}
+</div>
+<div class="para">while</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma_{B} \circ\left(f^{*}\right)^{*}(\varphi)=\gamma_{B}\left(\varphi \circ f^{*}\right)=\left(\varphi \circ f^{*}\right)_{B}\left(1_{B}\right)
+\end{equation*}
+</div>
+<div class="para">Now notice that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r}
+\operatorname{Hom}_{\mathscr{C}}(B, B) \stackrel{f^{*}}{\longrightarrow} \operatorname{Hom}_{\mathscr{C}}(A, B) \stackrel{\varphi_{B}}{\longrightarrow} F(B) . \\
+1_{B} \longmapsto f \longmapsto \varphi_{B}(f)
+\end{array}
+\end{equation*}
+</div>
+</div> <div class="para">Let's look back at the big commutative diagram we started our proof with: it says in particular that <span class="process-math">\(\varphi_{B}(f)=F(f)\left(\varphi_{A}\left(1_{A}\right)\right)\text{.}\)</span> So commutativity does hold, and we are done.</div></article><span class="incontext"><a href="sec-natural-transformations.html#proof-1" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.22</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Example 3.12. The homology functor is exact in the middle: given a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">the exactness of the long exact sequence in homology says in particular that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}(A) \stackrel{\mathrm{H}_{n}(f)}{\longrightarrow} \mathrm{H}_{n}(B) \stackrel{\mathrm{H}_{n}(g)}{\longrightarrow} \mathrm{H}_{n}(C)
+\end{equation*}
+</div>
+<div class="para">is exact for all <span class="process-math">\(n\text{.}\)</span> On the other hand, we claim that the homology functor is neither left exact nor right exact. More precisely, <span class="process-math">\(\mathrm{H}_{n}(f)\)</span> might fail to be injective and <span class="process-math">\(\mathrm{H}_{n}(g)\)</span> might fail to be surjective. Finding a counterexample amounts to finding a short exact sequence of complexes such that the connecting homomorphism in the long exact sequence in homology is not the zero map.</div>
+</div> <div class="para">For example, consider the following complexes and maps of complexes:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-078.jpg" class="contained"></div> <div class="para logical">
+<div class="para">Applying <span class="process-math">\(\mathrm{H}_{0}\)</span> gives us</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\mathrm{H}_{0}(A) \stackrel{\mathrm{H}_{0}(f)}{\longrightarrow} \mathrm{H}_{0}(B) \\
+\mathbb{Z} \stackrel{0}{\longrightarrow} 0
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">which is not injective, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow \mathrm{H}_{0}(A) \stackrel{\mathrm{H}_{0}(f)}{\longrightarrow} \mathrm{H}_{0}(B) \stackrel{\mathrm{H}_{0}(g)}{\longrightarrow} \mathrm{H}_{0}(C)
+\end{equation*}
+</div>
+<div class="para">is not exact. Similarly, applying <span class="process-math">\(\mathrm{H}_{1}\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\mathrm{H}_{1}(B) \stackrel{\mathrm{H}_{1}(g)}{\longrightarrow} \mathrm{H}_{1}(C) \\
+0 \stackrel{0}{\longrightarrow} \mathbb{Z}
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">which is not surjective, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{1}(A) \stackrel{\mathrm{H}_{1}(f)}{\longrightarrow} \mathrm{H}_{1}(B) \stackrel{\mathrm{H}_{1}(g)}{\longrightarrow} \mathrm{H}_{1}(C) \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is not exact. Thus homology is neither left exact nor right exact, though it is exact in the middle.</div>
+</div></article><span class="incontext"><a href="sec-hom.html#example-28" class="internal">in-context</a></span>
+</body>
+</html>

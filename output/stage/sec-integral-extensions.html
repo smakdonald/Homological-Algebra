@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Integral Extensions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Homological Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-integral-extensions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-integral-extensions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-over-up-down.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+\newcommand{\Ass}{\operatorname{Ass}}
+\def\Aut{\operatorname{Aut}}
+\def\can{{\mathrm {can}}}
+\def\char{\operatorname{char}}
+\def\cp{\operatorname{CharPoly}}
+\def\codim{\operatorname{codim}} 
+\def\coker{\operatorname{coker}}
+\DeclareMathOperator*{\colim}{colim} 
+\def\cont{\operatorname{cont}} 
+\def\diam{\operatorname{diam}} 
+\def\dm{\operatorname{dim}} 
+\DeclareMathOperator{\edim}{embdim} 
+\def\End{\operatorname{End}} 
+\def\eval{\operatorname{eval}} 
+\def\Ext{\operatorname{Ext}} 
+\def\Frac{\operatorname{Frac}}
+\def\Fun{\operatorname{Fun}}
+\def\Gal{\operatorname{Gal}}
+\def\gcd{\operatorname{gcd}}
+\newcommand{\GL}{\operatorname{GL}} 
+\newcommand{\ht}{\operatorname{height}} 
+\def\Hom{\operatorname{Hom}} 
+\def\id{\operatorname{id}} 
+\def\im{\operatorname{im}} 
+\def\Inn{\operatorname{Inn}}
+\def\ker{\operatorname{ker}}
+\def\lcm{\operatorname{lcm}} 
+\def\Mat{\operatorname{Mat}}
+\newcommand{\Min}{\operatorname{Min}}
+\def\mp{\operatorname{MinPoly}}
+\def\mSpec{\operatorname{mSpec}}
+\def\MSpec{\operatorname{MSpec}}
+\def\null{\operatorname{Nul}}
+\DeclareMathOperator{\ns}{nullspace}
+\newcommand{\opp}{\operatorname{opp}}
+\def\Orb{\operatorname{Orb}} 
+\def\Out{\operatorname{Out}}
+\def\Perm{\operatorname{Perm}}
+\def\ptstab{\operatorname{PtStab}} 
+\def\rad{\operatorname{rad}}
+\DeclareMathOperator{\range}{range}
+\def\rank{\operatorname{rank}}
+\def\res{\operatorname{res}}
+\def\setstab{\operatorname{SetStab}}
+\def\sign{{\operatorname{sign}}}
+\newcommand{\SL}{\operatorname{SL}}
+\def\Span{\operatorname{Span}}
+\def\Spec{\operatorname{Spec}}
+\def\Stab{\operatorname{Stab}} 
+\DeclareMathOperator{\Supp}{Supp}
+\def\Syl{\operatorname{Syl}}
+\def\Tor{\operatorname{Tor}}
+\def\trace{\operatorname{trace}}
+\def\uSpec{\operatorname{\underline{Spec}}}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}{-\mathbf{Mod}}
+\newcommand{\mod}{-\mathbf{mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\lx{\lambda_x}
+\newcommand{\a}{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd} 
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\def\xdots{x_1, \dots, x_n} 
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\udots{u_1, \dots, u_n} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-categories.html" class="internal"><span class="codenumber">1</span> <span class="title">Categories for the Working Homological Algebraist</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-categories.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-cat" class="internal"><span class="title">Definition and First Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-diagrams-arrows" class="internal"><span class="title">Diagrams and Morphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categories.html#subsec-sub-dual" class="internal"><span class="title">Opposite Categories and Subcategories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-functors" class="internal"><span class="title">Functor? Damn Near Killed ’er!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-funcor-props" class="internal"><span class="title">Properties of Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors.html#subsec-hom-functors" class="internal"><span class="title">The <span class="process-math">\(\Hom\)</span> Functors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-natural-transformations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Natural Transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-natural" class="internal"><span class="title">Natural Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-natural-transformations.html#subsec-yoneda" class="internal"><span class="title">The Yoneda Lemma</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">2</span> <span class="title">The Category of Chain Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Maps of Complexes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homotopy" class="internal"><span class="title">Homotopy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-complex-complex" class="internal"><span class="title">Complexes of Complexes</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rmod.html" class="internal"><span class="codenumber">3</span> <span class="title"><span class="process-math">\(R\)</span>-Mod</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-hom.html" class="internal"><span class="codenumber">3.1</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom" class="internal"><span class="title">There’s No Place Like <span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-additive-functors" class="internal"><span class="title">Additive Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-exact-functors" class="internal"><span class="title">Exact Functors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hom.html#subsec-hom-left" class="internal"><span class="title"><span class="process-math">\(\Hom\)</span> is Left Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-tensor.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Tensor Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-biadditive" class="internal"><span class="title">Biadditive Maps and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-elements" class="internal"><span class="title">Elements in Tensor Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-module" class="internal"><span class="title">Bimodules and When Tensor Products are Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-functor" class="internal"><span class="title">The Tensor Product Functor</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-tensor.html#subsec-tensor-right-exact" class="internal"><span class="title">Tensor is Right Exact</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localization.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hom-tensor.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Hom-Tensor Adjunction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-proj-inj.html" class="internal"><span class="codenumber">4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-projective.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Projective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-free-projective" class="internal"><span class="title">Definition, Free Modules are Projective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-projective.html#subsec-direct-summands" class="internal"><span class="title">Direct Summands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-injective.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-injective" class="internal"><span class="title">Definition and Baer’s Criterion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-divisible" class="internal"><span class="title">Divisible Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-injective.html#subsec-inject-embed" class="internal"><span class="title">Every Module Embeds into an Injective Module</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-flat.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Flat Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-flat" class="internal"><span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-flat.html#subsec-torsion" class="internal"><span class="title">Torsion Submodules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="commutative-local-rings.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Commutative Local Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-resolutions.html" class="internal"><span class="codenumber">5</span> <span class="title">Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-res.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Projective Resolutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-proj-res-def" class="internal"><span class="title">Definition, Existence, Examples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-grading" class="internal"><span class="title">A Brief Introduction to Graded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-unique-minimal" class="internal"><span class="title">Uniqueness of Minimal Projective Resolutions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-res.html#subsec-syzygy-betti" class="internal"><span class="title">Syzygys and Betti Numbers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inj-res.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Injective Resolutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-derived-functors.html" class="internal"><span class="codenumber">6</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">6.1</span> <span class="title">The General Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-derived" class="internal"><span class="title">Making Sure Derived Functors Make Sense</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-construction.html#subsec-forcing-exactness" class="internal"><span class="title">Forcing Exactness</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ext-tor.html" class="internal"><span class="codenumber">6.2</span> <span class="title">A First Look at <span class="process-math">\(\Ext\)</span> and <span class="process-math">\(\Tor\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-double-complexes" class="internal"><span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ext-tor.html#subsec-balancing" class="internal"><span class="title">Balancing <span class="process-math">\(\Tor\)</span> and <span class="process-math">\(\Ext\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-comp-ext-tor.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Computing Ext and Tor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-constructions" class="internal"><span class="title">The Constructions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-comp-ext-tor.html#subsec-examples" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-other-derived-functors.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Other Derived Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-group-homology" class="internal"><span class="title">Group Homology</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-other-derived-functors.html#subsec-local-cohomology" class="internal"><span class="title">Local Cohomology</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">7</span> <span class="title">Abelian Categories</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-abelian-def.html" class="internal"><span class="codenumber">7.1</span> <span class="title">What’s an Abelian Category?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-mono-epi" class="internal"><span class="title">Monomorphisms and Epimorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-additive-categories" class="internal"><span class="title">Additive Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ker-coker" class="internal"><span class="title">Kernels and Cokernels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-abelian-def.html#subsec-ab-cat" class="internal"><span class="title">Definition of an Abelian Category</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-com-hom-ab.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Complexes and Homology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-complexes-ab" class="internal"><span class="title">Complexes in Abelian Categories</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-com-hom-ab.html#subsec-hom-ab" class="internal"><span class="title">Homology in Abelian Categories</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-functors-ab.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Functors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-exact-ab" class="internal"><span class="title">Exact Functors: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-yoneda-ab" class="internal"><span class="title">The Yoneda Lemma: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-functors-ab.html#subsec-diagrams-ab" class="internal"><span class="title">The Diagram Chasers: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proj-inj-ab.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Projectives and Injectives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-proj-inj-ab" class="internal"><span class="title">Projectives, Injective, and Resolutions: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-split-ab" class="internal"><span class="title">Split Exact Sequences: Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-res-ab" class="internal"><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Derived Functors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-commutative-algebra.html" class="internal"><span class="codenumber">II</span> <span class="title">Commutative Algebra</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-finiteness-conditions.html" class="internal"><span class="codenumber">9</span> <span class="title">Finiteness Conditions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gen-mod.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Generated Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-algebras.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebras</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-alg-mod-finite.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Algebra and Module Finite</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sess.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Short Exact Sequences</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-noetherian.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Noetherian Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-rings" class="internal"><span class="title">Noetherian Rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-modules" class="internal"><span class="title">Noetherian Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-hilbert" class="internal"><span class="title">Hilbert’s Basis Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-1.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Invariant Rings: Application I</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-graded-rings.html" class="internal"><span class="codenumber">10</span> <span class="title">Graded Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-rings.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graded Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-finite-conditions-graded-algebras.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Finiteness Conditions for Graded Algebras</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-2.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Invariant Rings: Application II</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-local-rings.html" class="internal"><span class="codenumber">11</span> <span class="title">Local Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-rings.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Local Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-localizations.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Localization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nak.html" class="internal"><span class="codenumber">11.3</span> <span class="title">NAK</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-prime-ideals.html" class="internal"><span class="codenumber">12</span> <span class="title">Prime Ideals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-prime-maximal-ideals.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Prime and Maximal Ideals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spectrum.html" class="internal"><span class="codenumber">12.2</span> <span class="title">The Spectrum of a Ring</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ops.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ops.html#subsec-colon-annihilator" class="internal"><span class="title">Colons and Annihilators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ops.html#sec-prime-avoidance" class="internal"><span class="title">Prime Avoidance</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-decomposing-ideals.html" class="internal"><span class="codenumber">13</span> <span class="title">Decomposing Ideals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-min-support.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Minimal Primes and Support</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ass-primes.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Associated Primes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-primary-decomp.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Primary Decomposition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-krull-intersection.html" class="internal"><span class="codenumber">13.4</span> <span class="title">The Krull Intersection Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-integral-extensions.html" class="internal"><span class="codenumber">14</span> <span class="title">Integral Extensions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-integral-extensions.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Integral Extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-over-up-down.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Over, Up, and Down</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-dim-theory.html" class="internal"><span class="codenumber">15</span> <span class="title">Dimension Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dim-height.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Dimension and Height</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-noether-normalizations.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Noether Normalizations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-height-generators.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Height and Number of Generators</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sops.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Systems of Parameters</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-commutative-algebra-ii.html" class="internal"><span class="codenumber">III</span> <span class="title">Commutative Algebra II</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-domains-ii.html" class="internal"><span class="codenumber">16</span> <span class="title">Domains II</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-art.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Artinian Rings</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dvrs.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Discrete Valuation Rings and Dedekind Domains</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dvrs.html#sec-dvr" class="internal"><span class="title">Discrete Valuation Rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dvrs.html#dedekind-domains" class="internal"><span class="title">Dedekind Domains</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dvrs.html#fractional-ideals" class="internal"><span class="title">Fractional Ideals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-depth-grade.html" class="internal"><span class="codenumber">17</span> <span class="title">Depth and Grade</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-depth-grade.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Depth and Grade</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-depth-m2.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Macaulay2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cohen.html" class="internal"><span class="codenumber">18</span> <span class="title">Cohen-Macaulay Rings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-3.html" class="internal"><span class="codenumber">18.1</span> <span class="title"></span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-locohom.html" class="internal"><span class="codenumber">IV</span> <span class="title">Local Cohomology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-injective-modules.html" class="internal"><span class="codenumber">19</span> <span class="title">Injective Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hulls.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Essential Extensions and Injective Hulls</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-injective-noetherian.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Injective Modules in Noetherian Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mathis.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Mathis Duality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-loco.html" class="internal"><span class="codenumber">20</span> <span class="title">Local Cohomology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-def-loco.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Definitions of Local Cohomology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cech-complex.html" class="internal"><span class="codenumber">20.2</span> <span class="title">The Čech Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-properties-vanishing.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Properties and Vanishing Theorems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-canonical.html" class="internal"><span class="codenumber">21</span> <span class="title">The Canonical Module</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-duality.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Local Duality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gorenstein.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Gorenstein Rings</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-canonical-mod.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Canonical Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-local-duality.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Graded Local Duality and Regularity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Foundational Knowledge</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Ring Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Module Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-topology.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Topology</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="macaulay2.html" class="internal"><span class="codenumber">B</span> <span class="title">Macaulay2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-getting-started.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-asking-for-help.html" class="internal"><span class="codenumber">B.2</span> <span class="title">Asking Macaulay2 for Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-commands.html" class="internal"><span class="codenumber">B.3</span> <span class="title">Basic Commands</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-integral-extensions"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">14.1</span><span class="space"> </span><span class="title">Integral Extensions</span>
+</h2>
+<blockquote class="blockquote" id="sec-integral-extensions-2">
+<div class="para" id="sec-integral-extensions-2-1">“What you do not wish upon yourself, extend not to others.”</div>
+<cite class="attribution">―Confucius</cite>
+</blockquote>
+<div class="para" id="sec-integral-extensions-3">In field theory, there is a close relationship between (vector space-)finite field extensions and algebraic equations. The situation for rings is similar, but much more subtle.</div>
+<article class="definition definition-like" id="defn-integral-element"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.1</span><span class="period">.</span><span class="space"> </span><span class="title">Integral Element.</span>
+</h3> <div class="para logical" id="defn-integral-element-2-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring, <span class="process-math">\(S\)</span> an <span class="process-math">\(R\)</span>-algebra, and <span class="process-math">\(I\)</span> an ideal. An element <span class="process-math">\(r\)</span> of <span class="process-math">\(R\)</span> is <em class="emphasis">integral</em> over <span class="process-math">\(I\)</span> if it satisfies an equation of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r^n + a_1 r^{n-1} + \cdots + a_{n-1} r + a_n = 0 \quad \text{with} \ a_i \in I^i \ \text{for all} \  i.
+\end{equation*}
+</div>
+<div class="para">An element of <span class="process-math">\(S\)</span> is <em class="emphasis">integral</em> over <span class="process-math">\(I\)</span> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^n + a_1 s^{n-1} + \cdots + a_{n-1} s + a_n = 0 \quad \text{with} \ a_i \in I^i \ \text{for all} \  i.
+\end{equation*}
+</div>
+<div class="para">In both cases, we say that <span class="process-math">\(r\)</span> and <span class="process-math">\(s\)</span> satisfy an <em class="emphasis">equation of integral dependence</em> over <span class="process-math">\(I.\)</span>
+</div>
+</div></article><div class="para" id="sec-integral-extensions-5">FIX</div>
+<article class="remark remark-like" id="sec-integral-extensions-6"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">14.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-integral-extensions-6-1">Integral automatically implies algebraic, but the condition that there exists an equation of algebraic dependence that is <em class="emphasis">monic</em> is stronger in the setting of rings. This is very different to what happens over fields, where algebraic and integral are equivalent conditions.</div></article><article class="example example-like" id="ex-sqrt2-integral-in-z"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.3</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\sqrt{2}\)</span> Integral in <span class="process-math">\(\Z\)</span>.</span>
+</h3>
+<div class="para" id="ex-sqrt2-integral-in-z-2-1">Consider the <span class="process-math">\(\Z\)</span>-algebra <span class="process-math">\(R = \Z[\sqrt{2}] = \{ a + b \sqrt{2} \mid a, b \in \Z \}\text{.}\)</span> The element <span class="process-math">\(\sqrt{2}\)</span> is integral over <span class="process-math">\(\Z.\)</span>
+</div>
+<div class="solutions"><details id="ex-sqrt2-integral-in-z-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="ex-sqrt2-integral-in-z-3-1">since it satisfies the equation of integral dependence <span class="process-math">\(x^2-2 = 0\text{.}\)</span>
+</div></div></details></div></article><article class="example example-like" id="ex-frac12-in-q-not-integral-in-z"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\frac{1}{2}\)</span> in <span class="process-math">\(\Q\)</span> Not Integral in <span class="process-math">\(\Z\)</span>.</span>
+</h3>
+<div class="para" id="ex-frac12-in-q-not-integral-in-z-2-1">Prove <span class="process-math">\(\frac{1}{2} \in \mathbb{Q}\)</span> is not integral over <span class="process-math">\(\mathbb{Z}.\)</span>
+</div>
+<div class="solutions"><details id="ex-frac12-in-q-not-integral-in-z-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-frac12-in-q-not-integral-in-z-3-1">
+<div class="para">If <span class="process-math">\(a_0, \ldots, a_{n-1} \in \Z\)</span> are such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \frac{1}{2} \right)^n + a_{n-1} \left( \frac{1}{2} \right)^{n-1} + \cdots + a_0 = 0,
+\end{equation*}
+</div>
+<div class="para">then multiplying by <span class="process-math">\(2^n\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 + 2a_{n-1} + \cdots + 2^n a_0 = 0,
+\end{equation*}
+</div>
+<div class="para">which is impossible for parity reasons (the left hand-side is odd!). Notice, in contrast, that <span class="process-math">\(\frac{1}{2}\)</span> is algebraic over <span class="process-math">\(\Z\text{,}\)</span> since it satisfies <span class="process-math">\(2x-1=0\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="definition definition-like" id="defn-integrally-closed"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.5</span><span class="period">.</span><span class="space"> </span><span class="title">Integrally Closed.</span>
+</h3> <div class="para" id="defn-integrally-closed-2-1">Consider an an inclusion of rings <span class="process-math">\(A \subseteq R\text{.}\)</span> The <em class="emphasis">integral closure</em> of <span class="process-math">\(A\)</span> in <span class="process-math">\(R\)</span> is the set of elements in <span class="process-math">\(R\)</span> that are integral over <span class="process-math">\(A\text{.}\)</span> We say <span class="process-math">\(A\)</span> is <em class="emphasis">integrally closed</em>  in <span class="process-math">\(R\)</span> if <span class="process-math">\(A\)</span> is its own integral closure in <span class="process-math">\(R\text{.}\)</span> The integral closure of a domain <span class="process-math">\(R\)</span> in its field of fractions is usually denoted by <span class="process-math">\(\overline{R}.\)</span> </div></article><article class="definition definition-like" id="defn-normal-domain"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.6</span><span class="period">.</span><span class="space"> </span><span class="title">Normal Domain.</span>
+</h3> <div class="para" id="defn-normal-domain-2-1">A <em class="emphasis">normal domain</em> is a domain <span class="process-math">\(R\)</span> that is integrally closed in its field of fractions, meaning <span class="process-math">\(R = \overline{R}.\)</span>
+</div></article><article class="example example-like" id="ex-integers-are-a-normal-domain"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.7</span><span class="period">.</span><span class="space"> </span><span class="title">Integers are a Normal Domain.</span>
+</h3>
+<div class="para" id="ex-integers-are-a-normal-domain-2-1">The ring of integers <span class="process-math">\(\mathbb{Z}\)</span> is a integrally closed, meaning its integral closure in its fraction field <span class="process-math">\(\mathbb{Q}\)</span> is <span class="process-math">\(\mathbb{Z}\)</span> itself. The key idea to show this is similar to the argument we used <a href="sec-integral-extensions.html#ex-frac12-in-q-not-integral-in-z" class="xref" data-knowl="./knowl/xref/ex-frac12-in-q-not-integral-in-z.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 14.4: \frac{1}{2} in \Q Not Integral in \Z">Example 14.4</a> is not integral over <span class="process-math">\(\Z\text{.}\)</span>
+</div></article><div class="para" id="sec-integral-extensions-12">In fact, this is a special case of the fact that every UFD is normal.</div>
+<article class="example example-like" id="ex-ufds-are-normal"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.8</span><span class="period">.</span><span class="space"> </span><span class="title">UFDs are Normal.</span>
+</h3>
+<div class="para" id="ex-ufds-are-normal-2-1">Show that every UFD is normal.</div></article><article class="remark remark-like" id="sec-integral-extensions-14"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">14.9</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-integral-extensions-14-1">We cannot talk about the integral closure of a ring <span class="process-math">\(R\)</span> without specifying in what extension; the integral closures of <span class="process-math">\(R\)</span> in different extension can be very different. In <a href="sec-integral-extensions.html#ex-frac12-in-q-not-integral-in-z" class="xref" data-knowl="./knowl/xref/ex-frac12-in-q-not-integral-in-z.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 14.4: \frac{1}{2} in \Q Not Integral in \Z">Example 14.4</a>, we saw that the integral closure of <span class="process-math">\(\Z\)</span> in <span class="process-math">\(\Z[\sqrt{2}]\)</span> contains at least <span class="process-math">\(\Z\)</span> and <span class="process-math">\(\sqrt{2}\text{,}\)</span> while <a href="sec-integral-extensions.html#ex-integers-are-a-normal-domain" class="xref" data-knowl="./knowl/xref/ex-integers-are-a-normal-domain.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 14.7: Integers are a Normal Domain">Example 14.7</a> says that the integral closure of <span class="process-math">\(\Z\)</span> in <span class="process-math">\(\Q\)</span> is <span class="process-math">\(\Z\text{.}\)</span>
+</div> <div class="para" id="sec-integral-extensions-14-2">When <span class="process-math">\(R\)</span> is a domain, if we ever refer to <em class="emphasis">the</em> integral closure of <span class="process-math">\(R\text{,}\)</span> it is understood that we mean the integral closure of <span class="process-math">\(R\)</span> in its field of fractions, <span class="process-math">\(\overline{R}\text{.}\)</span>
+</div></article><article class="remark remark-like" id="sec-integral-extensions-15"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">14.10</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-integral-extensions-15-1">An element <span class="process-math">\(r \in R\)</span> is integral over <span class="process-math">\(A\)</span> if and only if <span class="process-math">\(r\)</span> is integral over the subring <span class="process-math">\(\varphi(A)\subseteq R\text{,}\)</span> so we might as well assume that <span class="process-math">\(\varphi\)</span> is injective.</div></article><article class="proposition theorem-like" id="prop-f.g.-by-intl-modfin"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">14.11</span><span class="period">.</span><span class="space"> </span><span class="title">F.G.-by-Intl-Modfin.</span>
+</h3>
+<div class="para logical" id="prop-f.g.-by-intl-modfin-2-1">
+<div class="para">Consider a ring extension <span class="process-math">\(A\subseteq R\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="prop-f.g.-by-intl-modfin-2-1-2-1"><div class="para" id="prop-f.g.-by-intl-modfin-2-1-2-1-1">If <span class="process-math">\(r \in R\)</span> is integral over <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(A[r]\)</span> is module-finite over <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+<li id="prop-f.g.-by-intl-modfin-2-1-2-2"><div class="para" id="prop-f.g.-by-intl-modfin-2-1-2-2-1">If <span class="process-math">\(r_1,\dots,r_t \in R\)</span> are integral over <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(A[r_1,\dots,r_t]\)</span> is module-finite over <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="prop-f.g.-by-intl-modfin-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="prop-f.g.-by-intl-modfin-3-1"><ol class="decimal"><li id="prop-f.g.-by-intl-modfin-3-1-1-1"><div class="para" id="p-derived-prop-f.g.-by-intl-modfin-3-1-1-1">Let <span class="process-math">\(r\)</span> be integral over <span class="process-math">\(A\text{,}\)</span> with <span class="process-math">\(r^n + a_{n-1} r^{n-1} + \cdots + a_1 r + a_0 = 0\)</span> for some <span class="process-math">\(a_i \in A\text{.}\)</span> We claim that <span class="process-math">\(A[r] = A + Ar + \cdots + A r^{n-1}\text{.}\)</span> Since <span class="process-math">\(A[r]\)</span> is generated by all the powers <span class="process-math">\(r^m\)</span> of <span class="process-math">\(r\)</span> as an <span class="process-math">\(A\)</span>-module, to show that any polynomial <span class="process-math">\(p(r) \in A[r]\)</span> is in <span class="process-math">\(A + Ar + \cdots + A r^{n-1}\)</span> it is enough to show that <span class="process-math">\(r^m \in A + Ar + \cdots + A r^{n-1}\)</span> for all <span class="process-math">\(m\text{.}\)</span>
+</div></li></ol></div> <div class="para logical" id="prop-f.g.-by-intl-modfin-3-2">
+<div class="para">Using induction on <span class="process-math">\(m\text{,}\)</span> the base cases <span class="process-math">\(1, r, \ldots, r^{n-1} \in A + Ar + \cdots + A r^{n-1}\)</span> follow from the fact that <span class="process-math">\(r^{k}\)</span> is contained in the <span class="process-math">\(Ar^{k}\)</span>-th component. For the induction step, we need to show that <span class="process-math">\(r^m \in A + Ar + \cdots + A r^{n-1}\)</span> for all <span class="process-math">\(m \geq n-1\text{;}\)</span> we can do this by induction because we can use the equation above to rewrite <span class="process-math">\(r^m\)</span> as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}r^m &amp; = - r^{m-n}(a_{n-1} r^{n-1} + \cdots + a_1 r + a_0) \\&amp; = - a_{n-1} r^{m-1} - \cdots a_1 r^{m-n+1} - a_0 r^{m-n},\end{aligned}
+\end{equation*}
+</div>
+<div class="para">which is a linear combination of powers of <span class="process-math">\(r\)</span> of degree up to <span class="process-math">\(m-1\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="prop-f.g.-by-intl-modfin-3-3"><ol class="decimal"><li id="prop-f.g.-by-intl-modfin-3-3-1-1"><div class="para" id="p-derived-prop-f.g.-by-intl-modfin-3-3-1-1">Write<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+A_0 :=  A \subseteq A_1 :=  A[r_1] \subseteq A_2 :=  A[r_1,r_2] \subseteq \cdots \subseteq A_t :=  A[r_1,\dots,r_t].
+\end{equation*}
+</div>Since <span class="process-math">\(r_i\)</span> is integral over <span class="process-math">\(A\text{,}\)</span> it is also integral over <span class="process-math">\(A_{i-1}\text{,}\)</span> via the same monic equation that <span class="process-math">\(r_i\)</span> satisfies over <span class="process-math">\(A\text{.}\)</span> By Part (a), we conclude that the each extension <span class="process-math">\(A_{i-1} \subseteq A_i\)</span> is module-finite. Thus the inclusion <span class="process-math">\(A \subseteq A[r_1,\dots,r_t]\)</span> is a composition of module-finite maps, and thus by this <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Commutative Algebra/Results/Lemma - Compositions Preserve Module Finite|Lemma]] it is also module-finite.</div></li></ol></div></article></details><div class="para" id="sec-integral-extensions-17">In what follows, we will need the following elementary linear algebra fact, which is actually very useful in various contexts within commutative algebra. In fact, later in this class we will use this useful fact again, perhaps when you least expect it. This is a nice example of an algebra fact that holds over any ring that we can actually reduce to the case of fields.</div>
+<article class="definition definition-like" id="defn-classical-adjoint"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">14.12</span><span class="period">.</span><span class="space"> </span><span class="title">Classical Adjoint.</span>
+</h3> <div class="para logical" id="defn-classical-adjoint-2-1">
+<div class="para">The <em class="emphasis">classical adjoint</em> of an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(B=[b_{ij}]\)</span> is the matrix <span class="process-math">\(\mathrm{adj}(B)\)</span> with entries</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{adj}(B)_{ij}=(-1)^{i+j} \det(\widehat{B_{{ji}}}),
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\widehat{B_{{ji}}}\)</span> is the matrix obtained from <span class="process-math">\(B\)</span> by deleting its <span class="process-math">\(j\)</span>th row and <span class="process-math">\(i\)</span>th column. </div>
+</div></article><article class="lemma theorem-like" id="lem-determinantal-technique"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">14.13</span><span class="period">.</span><span class="space"> </span><span class="title">Determinantal Technique.</span>
+</h3>
+<div class="para" id="lem-determinantal-technique-3-1">Let <span class="process-math">\(R\)</span> be a ring, <span class="process-math">\(B \in M_{n\times n}(R)\text{,}\)</span> <span class="process-math">\(v\in R^n\text{,}\)</span> and <span class="process-math">\(r\in R\text{.}\)</span> (a) <span class="process-math">\(\mathrm{adj}(B) B = \det(B) I_{n\times n}\text{.}\)</span> (b) If <span class="process-math">\(B v = r v\text{,}\)</span> then <span class="process-math">\(\det(r I_{n\times n} - B) v=0\text{.}\)</span>
+</div></article><details id="lem-determinantal-technique-4" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="lem-determinantal-technique-4-1"><ol class="decimal">
+<li id="lem-determinantal-technique-4-1-1-1"><div class="para" id="p-derived-lem-determinantal-technique-4-1-1-1">When <span class="process-math">\(R\)</span> is a field, this is a basic linear algebra fact. We will deduce the case of a general ring from the field case. The ring <span class="process-math">\(R\)</span> is a <span class="process-math">\(\Z\)</span>-algebra, so we can write <span class="process-math">\(R\)</span> as a quotient of some polynomial ring <span class="process-math">\(\Z[X]\text{.}\)</span> Let <span class="process-math">\(\psi:\Z[X]\to R\)</span> be a surjection, <span class="process-math">\(a_{ij}\in \Z[X]\)</span> be such that <span class="process-math">\(\psi(a_{ij})=b_{ij},\)</span> and let <span class="process-math">\(A=[a_{ij}]\text{.}\)</span> Note that<div class="displaymath process-math">
+\begin{equation*}
+\psi(\mathrm{adj}(A)_{ij})=\mathrm{adj}(B)_{ij} \quad \textrm{ and } \quad \psi((\mathrm{adj}(A) A)_{ij}) = (\mathrm{adj}(B) B)_{ij},
+\end{equation*}
+</div>since <span class="process-math">\(\psi\)</span> is a homomorphism, and the entries are the same polynomial functions of the entries of the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> respectively. Thus, it suffices to establish<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{adj}(B) B = \det(B) I_{n\times n}
+\end{equation*}
+</div>in the case when <span class="process-math">\(R=\Z[X]\text{,}\)</span> and we can do this entry by entry. Now, <span class="process-math">\(R=\Z[X]\)</span> is an integral domain, hence a subring of a field (its fraction field). Since both sides of the equation<div class="displaymath process-math">
+\begin{equation*}
+\left( \mathrm{adj}(B) B \right)_{ij} = \left( \det(B) I_{n\times n}\right)_{ij}
+\end{equation*}
+</div>live in <span class="process-math">\(R\)</span> and are equal in the fraction field (by linear algebra) they are equal in <span class="process-math">\(R\text{.}\)</span> This holds for all <span class="process-math">\(i, j\text{,}\)</span> and thus 1) holds.</div></li>
+<li id="lem-determinantal-technique-4-1-1-2"><div class="para" id="p-derived-lem-determinantal-technique-4-1-1-2">By assumption, we have <span class="process-math">\((r I_{n\times n} - B) v=0\text{,}\)</span> so by part 1)<div class="displaymath process-math">
+\begin{equation*}
+\det(r I_{n\times n} - B) v=\mathrm{adj}(r I_{n\times n} - B) (r I_{n\times n} - B) v = 0.
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article></details><article class="theorem theorem-like" id="thm-module-finite-implies-integral"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.14</span><span class="period">.</span><span class="space"> </span><span class="title">Module Finite Implies Integral.</span>
+</h3>
+<div class="para" id="thm-module-finite-implies-integral-2-1">Let <span class="process-math">\(A\subseteq R\)</span> be module-finite. Then <span class="process-math">\(R\)</span> is integral over <span class="process-math">\(A\text{.}\)</span>
+</div></article><details id="thm-module-finite-implies-integral-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-module-finite-implies-integral-3-1">Given <span class="process-math">\(r\in R\text{,}\)</span> we want to show that <span class="process-math">\(r\)</span> is integral over <span class="process-math">\(A\text{.}\)</span> The idea is to show that multiplication by <span class="process-math">\(r\text{,}\)</span> realized as a linear transformation over <span class="process-math">\(A\text{,}\)</span> satisfies the characteristic polynomial of that linear transformation.</div> <div class="para logical" id="thm-module-finite-implies-integral-3-2">
+<div class="para">Suppose that <span class="process-math">\(R = A f_1 + \cdots + A f_n\text{.}\)</span> We may assume that <span class="process-math">\(f_1=1\text{,}\)</span> perhaps by adding a module generator. Since every element in <span class="process-math">\(R\)</span> is an <span class="process-math">\(A\)</span>-linear combination of <span class="process-math">\(f_1, \ldots, f_n\text{,}\)</span> this is in particular true for the elements <span class="process-math">\(rf_1, \ldots, r f_n\text{.}\)</span> Thus we can find <span class="process-math">\(a_{ij} \in A\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r f_i = \sum_{j=1}^t a_{ij} f_j
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(i\text{.}\)</span> Consider the matrix <span class="process-math">\(C=[a_{ij}]\)</span> and the column vector <span class="process-math">\(v=(f_1,\dots,f_n)\text{.}\)</span> We can now write the equalities above more compactly as <span class="process-math">\(r v = C v\text{.}\)</span> By the Determinantal Technique, <span class="process-math">\(\det(r I_{n\times n} - C)v=0\text{.}\)</span> Since we chose one of the entries of <span class="process-math">\(v\)</span> to be <span class="process-math">\(1\text{,}\)</span> we have in particular that <span class="process-math">\(\det(r I_{n\times n} - C)=0\text{.}\)</span> Expanding this determinant as a polynomial in <span class="process-math">\(r\text{,}\)</span> this is a monic equation with coefficients in <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="sec-integral-extensions-21">We are now ready to show the following important characterization of module-finite extensions, which tells us exactly what we need besides algebra-finite to force an extension to be module-finite:</div>
+<article class="corollary theorem-like" id="cor-mod-fin-iff-integral-and-alg-fin"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">14.15</span><span class="period">.</span><span class="space"> </span><span class="title">Mod Fin iff Integral and Alg Fin.</span>
+</h3>
+<div class="para" id="cor-mod-fin-iff-integral-and-alg-fin-2-1">An <span class="process-math">\(A\)</span>-algebra <span class="process-math">\(R\)</span> is module-finite over <span class="process-math">\(A\)</span> if and only if <span class="process-math">\(R\)</span> is integral and algebra-finite over <span class="process-math">\(A\text{.}\)</span>
+</div></article><details id="cor-mod-fin-iff-integral-and-alg-fin-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-mod-fin-iff-integral-and-alg-fin-3-1">(<span class="process-math">\(\Rightarrow\)</span>): Module-finite implies integral, and algebra-finite.</div> <div class="para" id="cor-mod-fin-iff-integral-and-alg-fin-3-2">(<span class="process-math">\(\Leftarrow\)</span>): If <span class="process-math">\(R=A[r_1,\dots,r_t]\)</span> is integral over <span class="process-math">\(A\text{,}\)</span> then each <span class="process-math">\(r_i\)</span> is integral over <span class="process-math">\(A\text{,}\)</span> and this implies <span class="process-math">\(R\)</span> is module-finite over <span class="process-math">\(A\text{.}\)</span>
+</div></article></details><article class="corollary theorem-like" id="cor-extensions-gen-by-integral-elements-are-integral"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">14.16</span><span class="period">.</span><span class="space"> </span><span class="title">Extensions Gen by Integral Elements are Integral.</span>
+</h3>
+<div class="para" id="cor-extensions-gen-by-integral-elements-are-integral-2-1">If <span class="process-math">\(R\)</span> is generated as an algebra over <span class="process-math">\(A\)</span> by integral elements, then <span class="process-math">\(R\)</span> is integral over <span class="process-math">\(A\text{.}\)</span>
+</div></article><details id="cor-extensions-gen-by-integral-elements-are-integral-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-extensions-gen-by-integral-elements-are-integral-3-1">Let <span class="process-math">\(R=A[\Lambda]\text{,}\)</span> with <span class="process-math">\(\lambda\)</span> integral over <span class="process-math">\(A\)</span> for all <span class="process-math">\(\lambda\in\Lambda\text{.}\)</span> Given <span class="process-math">\(r\in R\text{,}\)</span> there is a finite subset <span class="process-math">\(L\subseteq \Lambda\)</span> such that <span class="process-math">\(r\in A[L]\text{.}\)</span> This <span class="process-math">\(A[L]\)</span> is now a finitely-generated algebra generated by integral elements, and thus it must be module-finite over <span class="process-math">\(A\text{.}\)</span> Module-finite implies integral, and thus <span class="process-math">\(A[L]\)</span> is an integral extension of <span class="process-math">\(A\text{.}\)</span> In particular, <span class="process-math">\(r \in A[L]\)</span> is integral over <span class="process-math">\(A\text{.}\)</span>
+</div></article></details><article class="corollary theorem-like" id="cor-integral-elements-form-subring"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">14.17</span><span class="period">.</span><span class="space"> </span><span class="title">Integral Elements form Subring.</span>
+</h3>
+<div class="para" id="cor-integral-elements-form-subring-2-1">Given any ring extension <span class="process-math">\(A\subseteq S\text{,}\)</span> the set of elements of <span class="process-math">\(S\)</span> that are integral over <span class="process-math">\(A\)</span> form a subring of <span class="process-math">\(S\text{.}\)</span>
+</div></article><details id="cor-integral-elements-form-subring-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="cor-integral-elements-form-subring-3-1">
+<div class="para">By <code class="code-inline tex2jax_ignore">[provisional cross-reference: cor]</code> the <span class="process-math">\(A\)</span>-subalgebra of <span class="process-math">\(R\)</span> generated by all elements in <span class="process-math">\(R\)</span> that are integral over <span class="process-math">\(A\)</span> is integral over <span class="process-math">\(A\text{,}\)</span> so it is contained in the set of all elements that are integral over <span class="process-math">\(A\text{:}\)</span> this means that</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\{\text{integral elements}\} \subseteq A[\{\text{integral elements}\}] \subseteq \{\text{integral elements}\}, 
+\end{equation*}
+</div>
+<div class="para">so equality holds throughout, and <span class="process-math">\(\{\text{integral elements}\}\)</span> is a ring contained in <span class="process-math">\(S\)</span> by definition.</div>
+</div></article></details><div class="para" id="sec-integral-extensions-25">In other words, the integral closure of <span class="process-math">\(A\)</span> in <span class="process-math">\(R\)</span> is a subring of <span class="process-math">\(R\)</span> containing <span class="process-math">\(A\text{.}\)</span>
+</div>
+<article class="example example-like" id="ex-integral-examples"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.18</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Z[\sqrt{d}]\)</span> Integral Over <span class="process-math">\(\Z\)</span>.</span>
+</h3>
+<div class="para logical" id="ex-integral-examples-2-1"><ol class="decimal">
+<li id="ex-integral-examples-2-1-1-1"><div class="para" id="ex-integral-examples-2-1-1-1-1">The ring <span class="process-math">\(\mathbb{Z}[\sqrt{d}]\text{,}\)</span> where <span class="process-math">\(d \in \mathbb{Z}\)</span> is not a perfect square, is integral over <span class="process-math">\(\mathbb{Z}\text{.}\)</span>                 Indeed, <span class="process-math">\(\sqrt{d}\)</span> satisfies the monic polynomial <span class="process-math">\(x^2-d\text{,}\)</span> and since the integral closure of <span class="process-math">\(\mathbb{Z}\)</span> is a ring containing <span class="process-math">\(\mathbb{Z}\)</span> and <span class="process-math">\(\sqrt{d}\text{,}\)</span> and <span class="process-math">\(\mathbb{Z}[\sqrt{d}]\)</span> is the smallest such ring, we conclude that every element in <span class="process-math">\(\Z[\sqrt{d}]\)</span> is integral over <span class="process-math">\(\mathbb{Z}\text{.}\)</span>
+</div></li>
+<li id="ex-integral-examples-2-1-1-2">
+<div class="para logical" id="ex-integral-examples-2-1-1-2-1">
+<div class="para">Let <span class="process-math">\(R=\C[x,y] \subseteq S=\C[x,y,z]/(x^2+y^2+z^2)\text{.}\)</span> Then we claim that <span class="process-math">\(S\)</span> is module-finite over <span class="process-math">\(R.\)</span> To see this we first need to realize <span class="process-math">\(R\)</span> as a subring of <span class="process-math">\(S\text{.}\)</span> To do that, consider the <span class="process-math">\(\C\)</span>-algebra homomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{CD}
+R@&gt;\varphi&gt;&gt; S\\\\
+(x,y)@&gt;&gt;&gt; (x,y)
+\end{CD}
+\end{equation*}
+</div>
+<div class="para">The kernel of <span class="process-math">\(\varphi\)</span> consists of the polynomials in <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> that are multiples of <span class="process-math">\(x^2+y^2+z^2\text{,}\)</span> but any nonzero multiple of <span class="process-math">\(x^2+y^2+z^2\)</span> in <span class="process-math">\(\C[x,y,z]=R[z]\)</span> must have <span class="process-math">\(z\)</span>-degree at least <span class="process-math">\(2\text{,}\)</span> which implies it involves <span class="process-math">\(z\)</span> and thus it is not in <span class="process-math">\(\C[x,y]\text{.}\)</span> We conclude that <span class="process-math">\(\varphi\)</span> is injective, and thus <span class="process-math">\(R \subseteq S.\)</span>
+</div>
+</div>
+<div class="para" id="ex-integral-examples-2-1-1-2-2">Now <span class="process-math">\(S\)</span> is generated over <span class="process-math">\(R\)</span> as an algebra by one element, <span class="process-math">\(z\text{,}\)</span> and <span class="process-math">\(z\)</span> satisfies the monic equation <span class="process-math">\(t^2 + (x^2+y^2) = 0\text{,}\)</span> so <span class="process-math">\(S\)</span> is integral over <span class="process-math">\(R\text{.}\)</span>
+</div>
+</li>
+</ol></div></article><div class="para" id="sec-integral-extensions-27">Note, however, that not all integral extensions are module-finite.</div>
+<article class="example example-like" id="ex-integral-but-not-algebra-or-module-finite"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.19</span><span class="period">.</span><span class="space"> </span><span class="title">Integral but Not Algebra or Module Finite.</span>
+</h3>
+<div class="para logical" id="ex-integral-but-not-algebra-or-module-finite-2-1">
+<div class="para">Let <span class="process-math">\(k\)</span> be a field, and consider the <span class="process-math">\(k[x]\)</span>-algebra <span class="process-math">\(R\)</span> given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k[x] \subseteq R=k[x,x^{1/2},x^{1/3},x^{1/4},x^{1/5},\ldots].
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(x^{1/n}\)</span> satisfies the monic polynomial <span class="process-math">\(t^n - x\text{,}\)</span> and thus it is integral over <span class="process-math">\(k[x]\text{.}\)</span> Since <span class="process-math">\(R\)</span> is generated by elements that are integral over <span class="process-math">\(k[x]\text{,}\)</span> by  it must be an integral extension of <span class="process-math">\(A\text{.}\)</span> However, <span class="process-math">\(k[x] \subseteq R\)</span> is not algebra-finite, and thus it is also not module-finite.</div>
+</div></article><article class="example example-like" id="ex-tower-integral-iff-each-piece-integral"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">14.20</span><span class="period">.</span><span class="space"> </span><span class="title">Tower Integral iff Each Piece Integral.</span>
+</h3>
+<div class="para" id="ex-tower-integral-iff-each-piece-integral-2-1">Given ring extensions <span class="process-math">\(A \subseteq B \subseteq C\text{,}\)</span> the extensions <span class="process-math">\(A \subseteq B\)</span> and <span class="process-math">\(B \subseteq C\)</span> are integral if and only if <span class="process-math">\(A \subseteq C\)</span> is integral.</div></article><div class="para" id="sec-integral-extensions-30">Finally, here is a useful fact about integral extensions that we will use multiple times.</div>
+<article class="theorem theorem-like" id="thm-int-ext-domains-field"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.21</span><span class="period">.</span><span class="space"> </span><span class="title">Int Ext Domains Field.</span>
+</h3>
+<div class="para" id="thm-int-ext-domains-field-2-1">If <span class="process-math">\(R \subseteq S\)</span> is an integral extension of domains, then <span class="process-math">\(R\)</span> is a field if and only if <span class="process-math">\(S\)</span> is a field.</div></article><details id="thm-int-ext-domains-field-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-int-ext-domains-field-3-1">Suppose that <span class="process-math">\(R\)</span> is a field, and let <span class="process-math">\(s \in S\)</span> be a nonzero element, which is necessarily integral over <span class="process-math">\(R\text{.}\)</span> The ring <span class="process-math">\(R[s]\)</span> is algebra-finite over <span class="process-math">\(R\)</span> by construction, and integral over <span class="process-math">\(R\text{.}\)</span> Since <span class="process-math">\(R \subseteq R[s]\)</span> is integral and algebra-finite, it must also be module-finite. Since <span class="process-math">\(R\)</span> is a field, this means that <span class="process-math">\(R[s]\)</span> is a finite-dimensional vector space over <span class="process-math">\(R\text{.}\)</span> Since <span class="process-math">\(R[s] \subseteq S\)</span> is a domain, the map <span class="process-math">\(R[s] \xrightarrow{\, s \,} R[s]\)</span> is injective. Notice that this is a map of finite-dimensional <span class="process-math">\(R\)</span>-vector spaces, and thus it must also be surjective. In particular, there exists an element <span class="process-math">\(t \in R[s]\)</span> such that <span class="process-math">\(st = 1,\)</span> and thus <span class="process-math">\(s\)</span> is invertible. We conclude that <span class="process-math">\(S\)</span> must be a field.</div> <div class="para logical" id="thm-int-ext-domains-field-3-2">
+<div class="para">Now suppose that <span class="process-math">\(S\)</span> is a field, and let <span class="process-math">\(r \in R\text{.}\)</span> Since <span class="process-math">\(r \in R \subseteq S\text{,}\)</span> there exists an inverse <span class="process-math">\(r^{-1}\)</span> for <span class="process-math">\(r\)</span> in <span class="process-math">\(S\text{,}\)</span> which must be integral over <span class="process-math">\(R\text{.}\)</span> Given any equation of integral dependence for <span class="process-math">\(r^{-1}\)</span> over <span class="process-math">\(R\text{,}\)</span> say</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(r^{-1})^n + a_{n-1} (r^{-1})^{n-1} + \cdots + a_0 = 0
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(a_i \in R\text{,}\)</span> we can multiply by <span class="process-math">\(r^{n-1}\)</span> to obtain</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r^{-1} = -a_{n-1} - \cdots -a_0 r^{n-1} \in R.
+\end{equation*}
+</div>
+<div class="para">Therefore, <span class="process-math">\(r\)</span> is invertible in <span class="process-math">\(R\text{,}\)</span> and <span class="process-math">\(R\)</span> is a field.</div>
+</div></article></details><div class="para" id="sec-integral-extensions-32">Before we move on from algebra-finite and module-finite extensions, we should remark on what the situation looks like over fields. First, note that over a field, module-finite just means finite dimensional vector space. While over a general ring the notions of algebra-finite and module-finite are quite different, they are actually equivalent over a field. This is a very deep fact, and we will unfortunately skip its proof — since it is a key ingredient in proving a fundamental result in algebraic geometry, we will leave it for the algebraic geometry class next semester. This is a nice application of the Artin-Tate Lemma, which we are going to discuss shortly, together with some facts about transcendent elements.</div>
+<article class="theorem theorem-like" id="thm-zariskis-lemma"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.22</span><span class="period">.</span><span class="space"> </span><span class="title">Zariski’s Lemma.</span>
+</h3>
+<div class="para" id="thm-zariskis-lemma-2-1">A field extension <span class="process-math">\(k \subseteq L\)</span> is algebra-finite if and only if it is module-finite.</div></article><div class="para" id="sec-integral-extensions-34">The following corollary follows immediately from what we proved in this section:</div>
+<article class="corollary theorem-like" id="cor-alg-fin-ext-of-alg-closed-field"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">14.23</span><span class="period">.</span><span class="space"> </span><span class="title">Alg-Fin Ext of Alg Closed Field.</span>
+</h3>
+<div class="para" id="cor-alg-fin-ext-of-alg-closed-field-2-1">Let <span class="process-math">\(k\)</span> be an algebraically closed field. If the field extension <span class="process-math">\(k \subseteq L\)</span> is algebra-finite, then <span class="process-math">\(k = L\text{.}\)</span>
+</div></article><details id="cor-alg-fin-ext-of-alg-closed-field-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-alg-fin-ext-of-alg-closed-field-3-1">By Zariski’s Lemma, <span class="process-math">\(k \subseteq L\)</span> must be module-finite, making the extension integral. When we are over a field, integral is the same as algebraic, but integrally closed fields have no nontrivial algebraic extensions.</div></article></details></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-integral-extensions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-over-up-down.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
