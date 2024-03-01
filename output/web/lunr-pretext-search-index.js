@@ -4363,7 +4363,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.1",
   "title": "What is a Spectral Sequence?",
-  "body": "What is a Spectral Sequence?  It has been suggested that the name \"spectral\" was given because, like spectres, spectral sequences are terrifying, evil, and dangerous. I have heard no one disagree with this interpretation, which is perhaps not surprising since I just made it up.  (Ravi Vakil, in Spectral Sequences: friend or foe?)  Spectral sequences are useful bookkeeping tools for computing, among other things, the homology and cohomology of complicated complexes. Unfortunately, spectral sequences have a bad reputation for being difficult and scary; but continuing Vakil’s quote above, \"you can use spectral sequences without hesitation or fear, and [...] you shouldn’t be frightened when they come up in a seminar\". Rotman wisely says that \"Of course, the reader must digest these new ideas in order to apply them, but it is worth the effort\" [Rot09, page 608].  Spectral sequences were introduced independently by Leray and Lyndon in the 1940s. Leray came up with the idea while he was a prisoner of the nazis during WWII. The primary usages of spectral sequences are in homotopy theory and topology more generally, but there are also applications in commutative algebra and other fields. Due to its topological roots, the subject is best learned with a topological backdrop - which provides many motivating examples - but since we are not assuming any particular topological background, we will give only a very brief introduction to the subject, and from a more algebraic perspective.  Here are some recommended sources to learn more about spectral sequences:    Rotman’s book An introduction to Homological Algebra (second edition) [Rot09].    John McCleary’s A user’s guide to spectral sequences [McC01].    Ravi Vakil’s notes Spectral Sequences: friend or foe?    Hatcher’s additional chapter on spectral sequences, an addition to his Algebraic Topology book [Hat02].    Weibel’s book An introduction to homological algebra [Wei94].    Eisenbud’s Appendix A3.13 to his book Commutative algebra with a view towards algebraic geometry [Eis95].    Mel Hochster’s notes.    Michael Hutchings notes.    Roughly speaking, a spectral sequence is a book where each page is a plane with a module (or more general, an object in an abelian category) sitting in each point with integer coordinates. To pass the pages, we take the (co)homology of a differential, and attach to the next page a new differential with a different shape.  Definition 8.1. A cohomological spectral sequence consists of the following data:    A family of -modules ranging over all integers with . For a fixed , the collection of modules is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :       Differentials       so -module homomorphisms such that , or more precisely,       Isomorphisms       meaning     for every .  Remark 8.2. The differential in the th page is a map of degree . Here are some examples:   0th page   1st page   2nd page  We can define spectral sequences more generally over any abelian category. However, most spectral sequences the typical mathematician ever computes are over -modules (or even just vector spaces!), so we will keep things friendly by sticking to -modules.  Definition 8.3. A homological spectral sequence is a sequence consists of the following data:    A family of -modules ranging over all integers with . For a fixed , the collection of objects is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :       Differentials       and for each isomorphisms , meaning     for every .    Isomorphisms       meaning     for every .  Remark 8.4. The differential in the th page is a map of degree .   0th page   1st page   2nd page  "
+  "body": "What is a Spectral Sequence?  It has been suggested that the name \"spectral\" was given because, like spectres, spectral sequences are terrifying, evil, and dangerous. I have heard no one disagree with this interpretation, which is perhaps not surprising since I just made it up.  (Ravi Vakil, in Spectral Sequences: friend or foe?)  Spectral sequences are useful bookkeeping tools for computing, among other things, the homology and cohomology of complicated complexes. Unfortunately, spectral sequences have a bad reputation for being difficult and scary; but continuing Vakil’s quote above, \"you can use spectral sequences without hesitation or fear, and [...] you shouldn’t be frightened when they come up in a seminar\". Rotman wisely says that \"Of course, the reader must digest these new ideas in order to apply them, but it is worth the effort\" [Rot09, page 608].  Spectral sequences were introduced independently by Leray and Lyndon in the 1940s. Leray came up with the idea while he was a prisoner of the nazis during WWII. The primary usages of spectral sequences are in homotopy theory and topology more generally, but there are also applications in commutative algebra and other fields. Due to its topological roots, the subject is best learned with a topological backdrop - which provides many motivating examples - but since we are not assuming any particular topological background, we will give only a very brief introduction to the subject, and from a more algebraic perspective.  Here are some recommended sources to learn more about spectral sequences:    Rotman’s book An introduction to Homological Algebra (second edition) [Rot09].    John McCleary’s A user’s guide to spectral sequences [McC01].    Ravi Vakil’s notes Spectral Sequences: friend or foe?    Hatcher’s additional chapter on spectral sequences, an addition to his Algebraic Topology book [Hat02].    Weibel’s book An introduction to homological algebra [Wei94].    Eisenbud’s Appendix A3.13 to his book Commutative algebra with a view towards algebraic geometry [Eis95].    Mel Hochster’s notes.    Michael Hutchings notes.    Roughly speaking, a spectral sequence is a book where each page is a plane with a module (or more general, an object in an abelian category) sitting in each point with integer coordinates. To pass the pages, we take the (co)homology of a differential, and attach to the next page a new differential with a different shape.  Definition 8.1. A cohomological spectral sequence consists of the following data:    A family of -modules ranging over all integers with . For a fixed , the collection of modules is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :       Differentials       so -module homomorphisms such that , or more precisely,       Isomorphisms       meaning     for every .   Remark 8.2. The differential in the th page is a map of degree . Here are some examples:    0th page   1st page   2nd page  We can define spectral sequences more generally over any abelian category. However, most spectral sequences the typical mathematician ever computes are over -modules (or even just vector spaces!), so we will keep things friendly by sticking to -modules.  Definition 8.3. A homological spectral sequence is a sequence consists of the following data:    A family of -modules ranging over all integers with . For a fixed , the collection of objects is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :       Differentials       and for each isomorphisms , meaning     for every .    Isomorphisms       meaning     for every .  Remark 8.4. The differential in the th page is a map of degree .   0th page   1st page   2nd page  "
+},
+{
+  "id": "sec-what-is-spectral-21",
+  "level": "2",
+  "url": "sec-what-is-spectral.html#sec-what-is-spectral-21",
+  "type": "Remark",
+  "number": "8.1",
+  "title": "",
+  "body": " Remark 8.2. The differential in the th page is a map of degree . Here are some examples:  "
 },
 {
   "id": "sec-bigrad",
@@ -4379,7 +4388,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-bigrad.html#sec-bigrad-9",
   "type": "Example",
-  "number": "8.1",
+  "number": "8.2",
   "title": "Example 8.8..",
   "body": " Example 8.8.    If is a complex of -modules, the differential is a graded map of degree -1 . If is a cochain complex, the differential is a graded map of degree 1 .    Any map of complexes is a graded map of degree 0 .    A homotopy is a map of degree 1 .    "
 },
@@ -4424,7 +4433,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-spec-double.html#exe-96",
   "type": "Exercise",
-  "number": "8.2",
+  "number": "8.3",
   "title": "",
   "body": " Exercise 96. Show that if is a first quadrant double complex with exact rows or exact columns, then is exact.     "
 },
@@ -4433,7 +4442,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-spec-double.html#exe-97",
   "type": "Exercise",
-  "number": "8.3",
+  "number": "8.4",
   "title": "",
   "body": " Exercise 97. Let and be -modules and fix projective resolutions for and for . Consider the double complex .  a) Compute the spectral sequence associated to the First Filtration (I) on up to the page.  b) Compute the spectral sequence associated to the Second Filtration II on up to the page.  c) Give a new proof that Tor is balanced:        "
 },
@@ -4442,7 +4451,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-spec-double.html#exe-98",
   "type": "Exercise",
-  "number": "8.4",
+  "number": "8.5",
   "title": "",
   "body": " Exercise 98. Consider the following first quadrant double complex :   a) Compute the spectral sequence associated to the First Filtration (I) until it stabilizes.  b) Compute the spectral sequence associated to the Second Filtration II until it stabilizes.  c) How are the two resulting pages even possible considering they both converge to the same thing?  d) Compute explicitly using only the two spectral sequences you calculated.  e) Check your work by computing explicitly from the definition of .     "
 },
@@ -4453,7 +4462,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.1",
   "title": "Generated Modules",
-  "body": "Generated Modules    True success comes only when every generation continues to develop the next generation.   John C. Maxwell   In many ways, commutative algebra is the study of finitely generated modules. While vector spaces make for a great first example of modules, many of the basic facts we are used to from linear algebra are often a little more subtle in commutative algebra. These differences are features, not bugs. The first big noticeable difference between vector spaces and general modules is that while every vector space has a basis, most modules do not.  Generated Module  basis free module generating set generators for an -module   Let be an -module and . The submodule of  generated by (also known as the submodule spanned by) , denoted , is the smallest (with respect to containment) submodule of containing . module generated by a subset   We say  generates  , or is a set of generators for , if , meaning that every element in can be written as a finite linear combination of elements in .    Basis   A subset of an -module is a basis of , if the set generates and is linearly independent. generating set  set of generators  basis of a module     Free Module   An -module M is a free  -module if admits at least one a basis. free module     Vector Space is a Free Module  Every vector space over a field is a free -module.   Free -module Isomorphic to Copies of   Every free -module is isomorphic to a direct sum of copies of .    To construct such an isomorphism for the free -module , take a basis for and let be a map such that The condition that is a basis for is equivalent to being an isomorphism of -modules.    One of the key things that makes commutative algebra so rich and beautiful is that most modules are in fact not free. In general, every -module has a generating set --- for example, itself. Given some generating set for , we can always write a presentation presentation  EMPTY  for , but in general will have a nontrivial kernel. A nonzero kernel element corresponds to a relation between the generators. relation   Homomorphism Determined of Images of Elements   A homomorphism of -modules is completely determined by the images of the elements on any given set of generators for .    Generated Module Equivalencies   The following are equivalent:     generates as an -module.  Every element of can be written as a finite linear combination of the elements of with coefficients in .  The homomorphism , where is a free -module with basis in bijection with via , is surjective.         (1 2) Suppose generates as an -module. The definition of a generated submodule is that it is the smallest submodule containing all linear combinations of the generators of . Thus every element of can be written as a finite linear combination of elements of .  (2 3) Suppose every element of can be written as a finite linear combination of the elements of with coefficients in , and let be defined as above. Let . Thus can be written in the form , where and and . As is in bijection with , we see that there exist such that for each . Thus the element maps to via .    (3 1) Suppose the homomorphism , where is a free -module with basis in bijection with via , is surjective. Thus for any there exists some such that . As is a basis for there exist such that . As is a homomorphism, we see that where each and each . Thus every element of can be written as a finite linear combination of elements of with coefficients in .        The equivalence between (1) and (2) in says that the submodule generated by is exactly the set of all finite linear combinations of elements in with coefficients in , which explains the notation .   Finitely Generated Module   We say that a module is finitely generated if we can find a finite generating set for finitely generated module    A better name might be finitely generatable , since we do not need to know an actual finite set of generators to say that a module is finitely generated.    An -module is cyclic if it can be generated by one element. cyclic module Equivalently, we can write as a quotient of by some ideal .    Indeed, given a generator for , the kernel of the map induced by is some ideal . Since we assumed that generates , is automatically surjective, and thus induces an isomorphism .     More generally, if an -module has generators, we can naturally think about it as a quotient of by the submodule of relations among those generators. More precisely, if is generated by , then the homomorphism of -modules that sends each of the canonical generators of to is surjective; more precisely, this is a presentation for . presentation By the , .   Macaulay 2  Defining free modules in Macaulay2 is straightforward:  i1 : R = QQ[x,y,z]; i2 : M = R^3 3 o2 = R o2 : R-module, free  Note that from now on and until we reset Macaulay2, whenever you write R it will be read as a ring, not a module; if instead you want to refer to the module , you can write it as R^1 . Alternatively, you can also use the command module and write module R . If you do calculations that require a module and not a ring, it is important to be careful about whether you write R or R^1 ; this is an easy way to get an error message.  If we want to define a module that happens to be an ideal, but we want to think about it as a module, we can use the command module to turn the ideal into a module:  i3 : I = ideal\"xy,yz\" o3 = ideal (x*y, y*z) o3 : Ideal of R i4 : N = module I o4 = image | xy yz | 1 o4 : R-module, submodule of R  If we forget that this is actually an ideal, and simply think about as a submodule of the module , we can also view this module as the image of a map, as we described in : if a submodule of has generators, we can view it as the the image of the map that sends each of the canonical generators of to the generators we chose for our module. In our example, our module is the image of the following map from to :  i5 : phi = map(R^1,R^2,{{x*y,y*z}}) o5 = | xy yz | 1 2 o5 : Matrix R <--- R i6 : L = image phi o6 = image | xy yz | 1 o6 : R-module, submodule of R  Note that above, when we first defined the module , Macaulay2 immediately stored that information in this exact way, as the image of the same map we just defined. This is useful to keep in mind when you see the results for a computation: if a module is given to us as the image of a matrix, then we are being told that our module is a submodule of some free module. If the matrix has rows, then that means our module is a submodule of . Each column corresponds to a generator of our module (as a submodule of ).  Of course that the modules , , and we have defined are all the same module: the ideal . It is our job to know that; depending on how you ask the question, Macaulay2 might not be able to identify this. Finally, we can also describe this module by saying that it has two generators, say and , and there is a unique relation between them: This means that our module is the quotient of by the submodule generated by the relation . We can write this as the quotient of by the image of a map landing in , meaning it is the cokernel of a map.  i7 : psi = map(R^2,R^1,{{-z},{y}}) o7 = | -z | | y | 2 1 o7 : Matrix R <--- R i8 : K = coker psi o8 = cokernel | -z | | y | 2 o8 : R-module, quotient of R  When a module is given to us in this format, as the cokernel of some matrix, we are essentially being given a presentation: the number of rows is the number of generators, while each column corresponds to a relation among those generators. If one the vector appears in a column of the matrix, that means that the generators satisfy the relation Keep in mind that when you do a calculation and the result is a module given to you in this format, Macaulay2 will not necessarily respond with a minimal presentation: one of the generators given might actually be a linear combination of the remaining ones, so there might be more generators than necessary, and there might be superfluous relations which follow as linear combinations of the others. You might be able to get rid of some superfluous generators and relations using the command prune . We will discuss this in more detail when we talk about local rings in .   "
+  "body": "Generated Modules    True success comes only when every generation continues to develop the next generation.   John C. Maxwell   In many ways, commutative algebra is the study of finitely generated modules. While vector spaces make for a great first example of modules, many of the basic facts we are used to from linear algebra are often a little more subtle in commutative algebra. These differences are features, not bugs. The first big noticeable difference between vector spaces and general modules is that while every vector space has a basis, most modules do not.  Generated Module  basis free module generating set generators for an -module   Let be an -module and . The submodule of  generated by (also known as the submodule spanned by) , denoted , is the smallest (with respect to containment) submodule of containing . module generated by a subset   We say  generates  , or is a set of generators for , if , meaning that every element in can be written as a finite linear combination of elements in .    Basis   A subset of an -module is a basis of , if the set generates and is linearly independent. generating set  set of generators  basis of a module     Free Module   An -module M is a free  -module if admits at least one a basis. free module     Vector Space is a Free Module  Every vector space over a field is a free -module.   Free -module Isomorphic to Copies of   Every free -module is isomorphic to a direct sum of copies of .    To construct such an isomorphism for the free -module , take a basis for and let be a map such that The condition that is a basis for is equivalent to being an isomorphism of -modules.    One of the key things that makes commutative algebra so rich and beautiful is that most modules are in fact not free. In general, every -module has a generating set --- for example, itself. Given some generating set for , we can always write a presentation presentation  EMPTY  for , but in general will have a nontrivial kernel. A nonzero kernel element corresponds to a relation between the generators. relation   Homomorphism Determined of Images of Elements   A homomorphism of -modules is completely determined by the images of the elements on any given set of generators for .    Generated Module Equivalencies   The following are equivalent:     generates as an -module.  Every element of can be written as a finite linear combination of the elements of with coefficients in .  The homomorphism , where is a free -module with basis in bijection with via , is surjective.         (1 2) Suppose generates as an -module. The definition of a generated submodule is that it is the smallest submodule containing all linear combinations of the generators of . Thus every element of can be written as a finite linear combination of elements of .  (2 3) Suppose every element of can be written as a finite linear combination of the elements of with coefficients in , and let be defined as above. Let . Thus can be written in the form , where and and . As is in bijection with , we see that there exist such that for each . Thus the element maps to via .    (3 1) Suppose the homomorphism , where is a free -module with basis in bijection with via , is surjective. Thus for any there exists some such that . As is a basis for there exist such that . As is a homomorphism, we see that where each and each . Thus every element of can be written as a finite linear combination of elements of with coefficients in .        The equivalence between (1) and (2) in says that the submodule generated by is exactly the set of all finite linear combinations of elements in with coefficients in , which explains the notation .   Finitely Generated Module   We say that a module is finitely generated if we can find a finite generating set for finitely generated module      A better name might be finitely generatable , since we do not need to know an actual finite set of generators to say that a module is finitely generated.     An -module is cyclic if it can be generated by one element. cyclic module Equivalently, we can write as a quotient of by some ideal .    Indeed, given a generator for , the kernel of the map induced by is some ideal . Since we assumed that generates , is automatically surjective, and thus induces an isomorphism .     More generally, if an -module has generators, we can naturally think about it as a quotient of by the submodule of relations among those generators. More precisely, if is generated by , then the homomorphism of -modules that sends each of the canonical generators of to is surjective; more precisely, this is a presentation for . presentation By the , .   Macaulay 2  Defining free modules in Macaulay2 is straightforward:   i1 : R = QQ[x,y,z]; i2 : M = R^3 3 o2 = R o2 : R-module, free  Note that from now on and until we reset Macaulay2, whenever you write R it will be read as a ring, not a module; if instead you want to refer to the module , you can write it as R^1 . Alternatively, you can also use the command module and write module R . If you do calculations that require a module and not a ring, it is important to be careful about whether you write R or R^1 ; this is an easy way to get an error message.  If we want to define a module that happens to be an ideal, but we want to think about it as a module, we can use the command module to turn the ideal into a module:   i3 : I = ideal\"xy,yz\" o3 = ideal (x*y, y*z) o3 : Ideal of R i4 : N = module I o4 = image | xy yz | 1 o4 : R-module, submodule of R  If we forget that this is actually an ideal, and simply think about as a submodule of the module , we can also view this module as the image of a map, as we described in : if a submodule of has generators, we can view it as the the image of the map that sends each of the canonical generators of to the generators we chose for our module. In our example, our module is the image of the following map from to :   i5 : phi = map(R^1,R^2,{{x*y,y*z}}) o5 = | xy yz | 1 2 o5 : Matrix R <--- R i6 : L = image phi o6 = image | xy yz | 1 o6 : R-module, submodule of R  Note that above, when we first defined the module , Macaulay2 immediately stored that information in this exact way, as the image of the same map we just defined. This is useful to keep in mind when you see the results for a computation: if a module is given to us as the image of a matrix, then we are being told that our module is a submodule of some free module. If the matrix has rows, then that means our module is a submodule of . Each column corresponds to a generator of our module (as a submodule of ).  Of course that the modules , , and we have defined are all the same module: the ideal . It is our job to know that; depending on how you ask the question, Macaulay2 might not be able to identify this. Finally, we can also describe this module by saying that it has two generators, say and , and there is a unique relation between them: This means that our module is the quotient of by the submodule generated by the relation . We can write this as the quotient of by the image of a map landing in , meaning it is the cokernel of a map.   i7 : psi = map(R^2,R^1,{{-z},{y}}) o7 = | -z | | y | 2 1 o7 : Matrix R <--- R i8 : K = coker psi o8 = cokernel | -z | | y | 2 o8 : R-module, quotient of R  When a module is given to us in this format, as the cokernel of some matrix, we are essentially being given a presentation: the number of rows is the number of generators, while each column corresponds to a relation among those generators. If one the vector appears in a column of the matrix, that means that the generators satisfy the relation Keep in mind that when you do a calculation and the result is a module given to you in this format, Macaulay2 will not necessarily respond with a minimal presentation: one of the generators given might actually be a linear combination of the remaining ones, so there might be more generators than necessary, and there might be superfluous relations which follow as linear combinations of the others. You might be able to get rid of some superfluous generators and relations using the command prune . We will discuss this in more detail when we talk about local rings in .   "
 },
 {
   "id": "def-generated-module",
@@ -4552,7 +4561,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "9.9",
   "title": "Finitely Generated Module.",
-  "body": "Finitely Generated Module   We say that a module is finitely generated if we can find a finite generating set for finitely generated module   "
+  "body": "Finitely Generated Module   We say that a module is finitely generated if we can find a finite generating set for finitely generated module    "
 },
 {
   "id": "sec-gen-mod-16",
@@ -4561,7 +4570,7 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "9.10",
   "title": "",
-  "body": "A better name might be finitely generatable , since we do not need to know an actual finite set of generators to say that a module is finitely generated. "
+  "body": " A better name might be finitely generatable , since we do not need to know an actual finite set of generators to say that a module is finitely generated.  "
 },
 {
   "id": "ex-cyclic-modules-isomorphic-to-quotient",
@@ -4588,7 +4597,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.2",
   "title": "Algebras",
-  "body": "Algebras  I don't know why I should have to learn Algebra... I'm never likely to go there. Billy Connolly  Algebra   Given a ring , an - algebra is a ring equipped with a ring homomorphism . This defines an -module structure on given by restriction of scalars: for each and , . This -module structure on is compatible with the internal multiplication of i.e., restriction of scalars We will call the structure homomorphism of the -algebra . structure homomorphism of an algebra    Polynomial Rings are Algebras   If is a ring and are indeterminates, the inclusion map makes the polynomial ring into an -algebra.    Inclusion Maps Give Algebra Structure   More generally, any inclusion map gives an -algebra structure. In this case the -module multiplication coincides with the internal (ring) multiplication on .    Rings Have Unique Structure as -algebra   Any ring comes with a unique structure as a -algebra, since there is a unique ring homomorphism : the one given by .    Generated Algebra   Let be an -algebra with structure homomorphism and let be a set. The -algebra generated by a subset of , denoted , is the smallest (with respect to containment) subring of containing and . A set of elements  generates  as an -algebra if .    Note that there are two different meanings for the notation for a ring and set : one calls for a polynomial ring, and the other calls for a subring of something. If is a subset of elements of some other larger ring which is clear from context, then we are talking about the algebra generated by ; in contrast, if is a set of indeterminates, then we are talking about a polynomial ring in those variables.  This can be unpackaged more concretely in a number of equivalent ways.  Generated Algebra Equivalencies   The following are equivalent:    generates as an -algebra.    Every element in admits a polynomial expression in with coefficients in , i.e.     If is a polynomial ring on a set of indeterminates in bijection with , then the -algebra homomorphism is surjective.       Let .  For the equivalence between (2) and (3), we note that is the image of . In particular, is a subring of . It then follows from the definition that (1) implies (2). Conversely, any subring of containing and certainly must contain , so (2) implies (1).    Let be an -algebra generated by , let be the surjective map in part (3) of , and let . By the , we have a ring isomorphism . The elements of are the relations among the generators in . relations If we understand the ring and generators and relations for over , we can get a pretty concrete understanding of .  Free Algebra   Suppose generates as an -algebra. Let be a polynomial ring on a set of indeterminates in bijection with , and let denote the -algebra homomorphism If the homomorphism is injective (and thus an isomorphism) we say that is a free algebra ; a free algebra on is isomorphic to a polynomial ring on .  The ideal measures how far is from being a free -algebra and is called the set of relations on . relations of an algebra    and are -algebras   You may have seen this used in for some to describe the ring The -algebra generated by in the most natural place, the algebraic closure of , is exactly the set above.    The point is that for any power , we can always write with , so is in the algebra generated by and .  We can also write the one-generated -algebra as a quotient of a polynomial ring in one variable: if is not a perfect square, the map in part (3) of this is and its kernel is generated by , so .  Similarly, the ring can be written as which is a quotient of , and the map from is     Macaulay2  Unfortunately, Macaulay2 does not understand subalgebras directly, only quotient rings. But as we have discussed, any -algebra can be thought of as a quotient of a polynomial ring over . For example, the Veronese algebra is a quotient of a polynomial ring over in variables, since it has algebra generators. More precisely, is the image of the map so by the , .  i4 : use R; i5 : aux = QQ[w_1 .. w_6] o5 = aux o5 : PolynomialRing i6 : p = map(R,aux,{x^2,x*y,x*z,y^2,y*z,z^2}) 2 2 2 o6 = map (R, aux, {x , x*y, x*z, y , y*z, z }) o6 : RingMap R <--- aux i7 : V = aux\/ker p o7 = V o7 : QuotientRing  To do calculations with , note that is actually , is , and so on.   Algebra-Finite   We say that is algebra-finite , or is a finitely generated  -algebra, or is of finite type over , if there exists a finite set of elements that generates as an -algebra. algebra-finite finitely generated algebra finite type    A better name might be finitely generatable , since we do not need to know an actual finite set of generators to say that an algebra is finitely generated.  Algebra Finite iff Quotient of Polynomial Ring  From the discussion above, we conclude that is a finitely generated -algebra if and only if is a quotient of some polynomial ring over in finitely many variables.  If is generated over by , we will use the notation to denote . Of course, for this notation to properly specify a ring, we need to understand how these generators behave under the operations; this is no problem if and are understood to be contained in some larger ring.   Jacobian Determinant and Generation   There are many basic questions about algebra generators that are surprisingly difficult. Let and . When do generate over ? It is not too hard to show that the Jacobian determinant Jacobian  must be a nonzero constant. It is a big open question whether this is in fact a sufficient condition!    "
+  "body": "Algebras    I don't know why I should have to learn Algebra... I'm never likely to go there.   Billy Connolly   Algebra   Given a ring , an - algebra is a ring equipped with a ring homomorphism . This defines an -module structure on given by restriction of scalars: for each and , . This -module structure on is compatible with the internal multiplication of i.e., restriction of scalars  We will call the structure homomorphism of the -algebra . structure homomorphism of an algebra     Polynomial Rings are Algebras   If is a ring and are indeterminates, the inclusion map makes the polynomial ring into an -algebra.    Inclusion Maps Give Algebra Structure   More generally, any inclusion map gives an -algebra structure. In this case the -module multiplication coincides with the internal (ring) multiplication on .    Rings Have Unique Structure as -algebra   Any ring comes with a unique structure as a -algebra, since there is a unique ring homomorphism : the one given by .    Generated Algebra   Let be an -algebra with structure homomorphism and let be a set. The -algebra generated by a subset of , denoted , is the smallest (with respect to containment) subring of containing and . A set of elements  generates  as an -algebra if .    Note that there are two different meanings for the notation for a ring and set : one calls for a polynomial ring, and the other calls for a subring of something. If is a subset of elements of some other larger ring which is clear from context, then we are talking about the algebra generated by ; in contrast, if is a set of indeterminates, then we are talking about a polynomial ring in those variables.  This can be unpackaged more concretely in a number of equivalent ways.  Generated Algebra Equivalencies   The following are equivalent:    generates as an -algebra.    Every element in admits a polynomial expression in with coefficients in , i.e.     If is a polynomial ring on a set of indeterminates in bijection with , then the -algebra homomorphism is surjective.       Let .  For the equivalence between (2) and (3), we note that is the image of . In particular, is a subring of . It then follows from the definition that (1) implies (2). Conversely, any subring of containing and certainly must contain , so (2) implies (1).     Let be an -algebra generated by , let be the surjective map in part (3) of , and let . By the , we have a ring isomorphism . The elements of are the relations among the generators in . relations If we understand the ring and generators and relations for over , we can get a pretty concrete understanding of .   Free Algebra   Suppose generates as an -algebra. Let be a polynomial ring on a set of indeterminates in bijection with , and let denote the -algebra homomorphism If the homomorphism is injective (and thus an isomorphism) we say that is a free algebra ; a free algebra on is isomorphic to a polynomial ring on .  The ideal measures how far is from being a free -algebra and is called the set of relations on . relations of an algebra     and are -algebras   You may have seen this used in for some to describe the ring The -algebra generated by in the most natural place, the algebraic closure of , is exactly the set above.    The point is that for any power , we can always write with , so is in the algebra generated by and .  We can also write the one-generated -algebra as a quotient of a polynomial ring in one variable: if is not a perfect square, the map in part (3) of this is and its kernel is generated by , so .  Similarly, the ring can be written as which is a quotient of , and the map from is     Macaulay2  Unfortunately, Macaulay2 does not understand subalgebras directly, only quotient rings. But as we have discussed, any -algebra can be thought of as a quotient of a polynomial ring over . For example, the Veronese algebra is a quotient of a polynomial ring over in variables, since it has algebra generators. More precisely, is the image of the map so by the , .  i4 : use R; i5 : aux = QQ[w_1 .. w_6] o5 = aux o5 : PolynomialRing i6 : p = map(R,aux,{x^2,x*y,x*z,y^2,y*z,z^2}) 2 2 2 o6 = map (R, aux, {x , x*y, x*z, y , y*z, z }) o6 : RingMap R <--- aux i7 : V = aux\/ker p o7 = V o7 : QuotientRing  To do calculations with , note that is actually , is , and so on.   Algebra-Finite   We say that is algebra-finite , or is a finitely generated  -algebra, or is of finite type over , if there exists a finite set of elements that generates as an -algebra. algebra-finite finitely generated algebra finite type      A better name might be finitely generatable , since we do not need to know an actual finite set of generators to say that an algebra is finitely generated.   Algebra Finite iff Quotient of Polynomial Ring  From the discussion above, we conclude that is a finitely generated -algebra if and only if is a quotient of some polynomial ring over in finitely many variables.  If is generated over by , we will use the notation to denote . Of course, for this notation to properly specify a ring, we need to understand how these generators behave under the operations; this is no problem if and are understood to be contained in some larger ring.   Jacobian Determinant and Generation   There are many basic questions about algebra generators that are surprisingly difficult. Let and . When do generate over ? It is not too hard to show that the Jacobian determinant Jacobian  must be a nonzero constant. It is a big open question whether this is in fact a sufficient condition!    "
 },
 {
   "id": "def-algebra",
@@ -4597,7 +4606,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "9.13",
   "title": "Algebra.",
-  "body": "Algebra   Given a ring , an - algebra is a ring equipped with a ring homomorphism . This defines an -module structure on given by restriction of scalars: for each and , . This -module structure on is compatible with the internal multiplication of i.e., restriction of scalars We will call the structure homomorphism of the -algebra . structure homomorphism of an algebra   "
+  "body": "Algebra   Given a ring , an - algebra is a ring equipped with a ring homomorphism . This defines an -module structure on given by restriction of scalars: for each and , . This -module structure on is compatible with the internal multiplication of i.e., restriction of scalars  We will call the structure homomorphism of the -algebra . structure homomorphism of an algebra    "
 },
 {
   "id": "ex-polynomial-rings-are-algebras",
@@ -4651,7 +4660,7 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "9.19",
   "title": "",
-  "body": "Let be an -algebra generated by , let be the surjective map in part (3) of , and let . By the , we have a ring isomorphism . The elements of are the relations among the generators in . relations If we understand the ring and generators and relations for over , we can get a pretty concrete understanding of . "
+  "body": " Let be an -algebra generated by , let be the surjective map in part (3) of , and let . By the , we have a ring isomorphism . The elements of are the relations among the generators in . relations If we understand the ring and generators and relations for over , we can get a pretty concrete understanding of .  "
 },
 {
   "id": "def-free-algebra",
@@ -4660,7 +4669,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "9.20",
   "title": "Free Algebra.",
-  "body": "Free Algebra   Suppose generates as an -algebra. Let be a polynomial ring on a set of indeterminates in bijection with , and let denote the -algebra homomorphism If the homomorphism is injective (and thus an isomorphism) we say that is a free algebra ; a free algebra on is isomorphic to a polynomial ring on .  The ideal measures how far is from being a free -algebra and is called the set of relations on . relations of an algebra   "
+  "body": "Free Algebra   Suppose generates as an -algebra. Let be a polynomial ring on a set of indeterminates in bijection with , and let denote the -algebra homomorphism If the homomorphism is injective (and thus an isomorphism) we say that is a free algebra ; a free algebra on is isomorphic to a polynomial ring on .  The ideal measures how far is from being a free -algebra and is called the set of relations on . relations of an algebra    "
 },
 {
   "id": "ex-zsqrtd-and-zsqrt3d-are-z-algebras",
@@ -4678,7 +4687,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "9.22",
   "title": "Algebra-Finite.",
-  "body": "Algebra-Finite   We say that is algebra-finite , or is a finitely generated  -algebra, or is of finite type over , if there exists a finite set of elements that generates as an -algebra. algebra-finite finitely generated algebra finite type   "
+  "body": "Algebra-Finite   We say that is algebra-finite , or is a finitely generated  -algebra, or is of finite type over , if there exists a finite set of elements that generates as an -algebra. algebra-finite finitely generated algebra finite type    "
 },
 {
   "id": "sec-algebras-16",
@@ -4687,7 +4696,7 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "9.23",
   "title": "",
-  "body": "A better name might be finitely generatable , since we do not need to know an actual finite set of generators to say that an algebra is finitely generated. "
+  "body": " A better name might be finitely generatable , since we do not need to know an actual finite set of generators to say that an algebra is finitely generated.  "
 },
 {
   "id": "ex-algebra-finite-iff-quotient-of-polynomial-ring",
@@ -4714,7 +4723,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.3",
   "title": "Algebra and Module Finite",
-  "body": "Algebra and Module Finite  All poetry is putting the infinite within the finite. Robert Browning  Module Finite   Given an -algebra , we say is module-finite over if it is finitely generated as an -module.    Instead of asking about how is generated as an algebra over , we can ask how it is generated as a module over . The notion of module-finite is much stronger than algebra-finite, since a linear combination is a very special type of polynomial expression.  Subsets of Generating Sets    If is a finitely generated -module, then any generating set for as an -module contains a finite subset that generates .  If the ring is algebra-finite over , then any generating set for as an -algebra contains a finite subset that also generates as an -algebra.     Let be a generating set for as an -module. If is a finitely generated -module, then we can find elements that generate as an -module. Since generates , for each we can find finitely many elements and -coefficients such The submodule of generated by all the contains the elements , but since , we conclude that is generated by those finitely many , and thus by a finite subset of .  The other proof is essentially the same, with the appropriate replacements: whenever we talk about a set that generates as an -module, we should instead consider a set that generates as an -algebra, and instead of taking linear combinations of elements we should consider polynomials in those elements with -coefficients.    Mod Finite and Algebra Finite Expressions   If is an -algebra,    is algebra-finite if and only if for some .   is module-finite if and only if for some .       Suppose is algebra-finite, i.e., is a finitely generated -algebra. Then, there exist such that . To see this, note that since is finitely generated over , we can write for some . Then, we can express each as a polynomial in with coefficients in , so . Conversely, if for some , then is generated over by , and so is algebra-finite.    Suppose is module-finite, i.e., is a finitely generated -module. Then, there exist such that . To see this, note that since is finitely generated over , we can write for some . Then, we can express each as a linear combination of with coefficients in , so . Conversely, if for some , then is generated over by , and so is module-finite.      Not Free Algebra  Given , the -algebra is generated as an algebra by the element . Note, however, that this is not a free -algebra.   Module Finite Implies Algebra Finite   If is a module-finite -algebra, then it is also algebra-finite.    Let , meaning that is a set of module generators for over . Note that every -linear combination of is also an element of , and thus is a subalgebra of .  On the other hand, since and is an -algebra, every polynomial in with coefficients in is also in , and thus , so that is algebra-finite over .    The converse, however, is false: it is harder to be module-finite than algebra-finite.      The Gaussian integers  Gaussian integers satisfy the well-known property (or definition, depending on your source) that any element admits a unique expression with . That is, is generated as a -module by ; moreover, is a free module basis! As a -algebra, is generated by , but it is not a free -algebra, since .    If is a ring and an indeterminate, the algebra-finite extension is not module-finite. Indeed, is a free -module on the basis .    Another map that is not module-finite is the inclusion . First, note that any element of can be written in the form for some and some . Now any finitely generated -submodule of is of the form If , then .    The extension is neither module-finite nor algebra-finite. To see that, we first claim that the set generates as a -algebra. The key point here is the Fundamental Theorem of Arithmetic: since any positive integer can be written as a product where the are all prime and the are nonnegative integers, we see that the rational number can be written as On the other hand, note that any finite subset of is contained in for some fixed prime , and that contains only rational numbers whose denominator is a product of primes smaller than . But there are infinitely many primes, and thus this cannot be all of . By this , we can conclude that is not a algebra-finite over . But then cannot be module-finite over by .      Compositions Preserve Module Finite   If is module-finite and is a finitely generated -module, then is a finitely generated -module by restriction of scalars. In particular, the composition of two module-finite ring maps is module-finite.    Let and . Then we claim Indeed, given , rewrite each and substitute to get as an -linear combination of the .    Algebra Finite and Transitivity   Let be rings. It follows from the definitions that   If algebra-finite and algebra finite, then algebra finite.            Infinitely Generated Subalgebra   Let be a field and where and are indeterminates. While and are both -algebras, is a finitely generated -algebra, while is not.    To see this, first note by this it is sufficient to show that no finite subset of generates over . Since any such subset is contained in for some fixed it is sufficient to show that is not for any . Now note that every element of is a -linear combination of monomials with , so this ring does not contain . Therefore, is not a finitely generated -algebra.     Let be rings. It follows from the definitions that   If module-finite and module-finite, then module-finite.           However, we will see that module-finite module-finite. This construction is a bit more involved, so we will leave it for the problem sets.   Any surjective ring homomorphism is both algebra-finite and module-finite, since must then be generated over by . Moreover, we can always factor as the surjection  followed by the inclusion , so to understand algebra-finiteness or module-finiteness it suffices to restrict our attention to injective homomorphisms.   "
+  "body": "Algebra and Module Finite    All poetry is putting the infinite within the finite.   Robert Browning   Module Finite   Given an -algebra , we say is module-finite over if it is finitely generated as an -module.     Instead of asking about how is generated as an algebra over , we can ask how it is generated as a module over . The notion of module-finite is much stronger than algebra-finite, since a linear combination is a very special type of polynomial expression.   Subsets of Generating Sets     If is a finitely generated -module, then any generating set for as an -module contains a finite subset that generates .  If the ring is algebra-finite over , then any generating set for as an -algebra contains a finite subset that also generates as an -algebra.      Let be a generating set for as an -module. If is a finitely generated -module, then we can find elements that generate as an -module. Since generates , for each we can find finitely many elements and -coefficients such The submodule of generated by all the contains the elements , but since , we conclude that is generated by those finitely many , and thus by a finite subset of .  The other proof is essentially the same, with the appropriate replacements: whenever we talk about a set that generates as an -module, we should instead consider a set that generates as an -algebra, and instead of taking linear combinations of elements we should consider polynomials in those elements with -coefficients.    Mod Finite and Algebra Finite Expressions   If is an -algebra,     is algebra-finite if and only if for some .   is module-finite if and only if for some .         Suppose is algebra-finite, i.e., is a finitely generated -algebra. Then, there exist such that . To see this, note that since is finitely generated over , we can write for some . Then, we can express each as a polynomial in with coefficients in , so . Conversely, if for some , then is generated over by , and so is algebra-finite.    Suppose is module-finite, i.e., is a finitely generated -module. Then, there exist such that . To see this, note that since is finitely generated over , we can write for some . Then, we can express each as a linear combination of with coefficients in , so . Conversely, if for some , then is generated over by , and so is module-finite.       Not Free Algebra  Given , the -algebra is generated as an algebra by the element . Note, however, that this is not a free -algebra.   Module Finite Implies Algebra Finite   If is a module-finite -algebra, then it is also algebra-finite.    Let , meaning that is a set of module generators for over . Note that every -linear combination of is also an element of , and thus is a subalgebra of .  On the other hand, since and is an -algebra, every polynomial in with coefficients in is also in , and thus , so that is algebra-finite over .    The converse, however, is false: it is harder to be module-finite than algebra-finite.      The Gaussian integers  Gaussian integers satisfy the well-known property (or definition, depending on your source) that any element admits a unique expression with . That is, is generated as a -module by ; moreover, is a free module basis! As a -algebra, is generated by , but it is not a free -algebra, since .    If is a ring and an indeterminate, the algebra-finite extension is not module-finite. Indeed, is a free -module on the basis .    Another map that is not module-finite is the inclusion . First, note that any element of can be written in the form for some and some . Now any finitely generated -submodule of is of the form If , then .    The extension is neither module-finite nor algebra-finite. To see that, we first claim that the set generates as a -algebra. The key point here is the Fundamental Theorem of Arithmetic: since any positive integer can be written as a product where the are all prime and the are nonnegative integers, we see that the rational number can be written as On the other hand, note that any finite subset of is contained in for some fixed prime , and that contains only rational numbers whose denominator is a product of primes smaller than . But there are infinitely many primes, and thus this cannot be all of . By this , we can conclude that is not a algebra-finite over . But then cannot be module-finite over by .      Compositions Preserve Module Finite   If is module-finite and is a finitely generated -module, then is a finitely generated -module by restriction of scalars. In particular, the composition of two module-finite ring maps is module-finite.    Let and . Then we claim Indeed, given , rewrite each and substitute to get as an -linear combination of the .    Algebra Finite and Transitivity   Let be rings. It follows from the definitions that   If algebra-finite and algebra finite, then algebra finite.            Infinitely Generated Subalgebra   Let be a field and where and are indeterminates. While and are both -algebras, is a finitely generated -algebra, while is not.    To see this, first note by this it is sufficient to show that no finite subset of generates over . Since any such subset is contained in for some fixed it is sufficient to show that is not for any . Now note that every element of is a -linear combination of monomials with , so this ring does not contain . Therefore, is not a finitely generated -algebra.     Let be rings. It follows from the definitions that   If module-finite and module-finite, then module-finite.           However, we will see that module-finite module-finite. This construction is a bit more involved, so we will leave it for the problem sets.   Any surjective ring homomorphism is both algebra-finite and module-finite, since must then be generated over by . Moreover, we can always factor as the surjection  followed by the inclusion , so to understand algebra-finiteness or module-finiteness it suffices to restrict our attention to injective homomorphisms.   "
 },
 {
   "id": "def-module-finite",
@@ -4732,7 +4741,7 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "9.27",
   "title": "",
-  "body": "Instead of asking about how is generated as an algebra over , we can ask how it is generated as a module over . The notion of module-finite is much stronger than algebra-finite, since a linear combination is a very special type of polynomial expression. "
+  "body": " Instead of asking about how is generated as an algebra over , we can ask how it is generated as a module over . The notion of module-finite is much stronger than algebra-finite, since a linear combination is a very special type of polynomial expression.  "
 },
 {
   "id": "lem-subsets-of-generating-sets",
@@ -4741,7 +4750,7 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "9.28",
   "title": "Subsets of Generating Sets.",
-  "body": "Subsets of Generating Sets    If is a finitely generated -module, then any generating set for as an -module contains a finite subset that generates .  If the ring is algebra-finite over , then any generating set for as an -algebra contains a finite subset that also generates as an -algebra.     Let be a generating set for as an -module. If is a finitely generated -module, then we can find elements that generate as an -module. Since generates , for each we can find finitely many elements and -coefficients such The submodule of generated by all the contains the elements , but since , we conclude that is generated by those finitely many , and thus by a finite subset of .  The other proof is essentially the same, with the appropriate replacements: whenever we talk about a set that generates as an -module, we should instead consider a set that generates as an -algebra, and instead of taking linear combinations of elements we should consider polynomials in those elements with -coefficients.   "
+  "body": "Subsets of Generating Sets     If is a finitely generated -module, then any generating set for as an -module contains a finite subset that generates .  If the ring is algebra-finite over , then any generating set for as an -algebra contains a finite subset that also generates as an -algebra.      Let be a generating set for as an -module. If is a finitely generated -module, then we can find elements that generate as an -module. Since generates , for each we can find finitely many elements and -coefficients such The submodule of generated by all the contains the elements , but since , we conclude that is generated by those finitely many , and thus by a finite subset of .  The other proof is essentially the same, with the appropriate replacements: whenever we talk about a set that generates as an -module, we should instead consider a set that generates as an -algebra, and instead of taking linear combinations of elements we should consider polynomials in those elements with -coefficients.   "
 },
 {
   "id": "lem-mod-finite-and-algebra-finite-expressions",
@@ -4750,7 +4759,7 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "9.29",
   "title": "Mod Finite and Algebra Finite Expressions.",
-  "body": "Mod Finite and Algebra Finite Expressions   If is an -algebra,    is algebra-finite if and only if for some .   is module-finite if and only if for some .       Suppose is algebra-finite, i.e., is a finitely generated -algebra. Then, there exist such that . To see this, note that since is finitely generated over , we can write for some . Then, we can express each as a polynomial in with coefficients in , so . Conversely, if for some , then is generated over by , and so is algebra-finite.    Suppose is module-finite, i.e., is a finitely generated -module. Then, there exist such that . To see this, note that since is finitely generated over , we can write for some . Then, we can express each as a linear combination of with coefficients in , so . Conversely, if for some , then is generated over by , and so is module-finite.     "
+  "body": "Mod Finite and Algebra Finite Expressions   If is an -algebra,     is algebra-finite if and only if for some .   is module-finite if and only if for some .         Suppose is algebra-finite, i.e., is a finitely generated -algebra. Then, there exist such that . To see this, note that since is finitely generated over , we can write for some . Then, we can express each as a polynomial in with coefficients in , so . Conversely, if for some , then is generated over by , and so is algebra-finite.    Suppose is module-finite, i.e., is a finitely generated -module. Then, there exist such that . To see this, note that since is finitely generated over , we can write for some . Then, we can express each as a linear combination of with coefficients in , so . Conversely, if for some , then is generated over by , and so is module-finite.      "
 },
 {
   "id": "ex-qxxn-not-free-algebra",
@@ -4825,227 +4834,11 @@ var ptx_lunr_docs = [
   "body": " Any surjective ring homomorphism is both algebra-finite and module-finite, since must then be generated over by . Moreover, we can always factor as the surjection  followed by the inclusion , so to understand algebra-finiteness or module-finiteness it suffices to restrict our attention to injective homomorphisms.  "
 },
 {
-  "id": "sec-integral-extensions",
-  "level": "1",
-  "url": "sec-integral-extensions.html",
-  "type": "Section",
-  "number": "9.4",
-  "title": "Integral Extensions",
-  "body": "Integral Extensions    What you do not wish upon yourself, extend not to others.  Confucius   In field theory, there is a close relationship between (vector space-)finite field extensions and algebraic equations. The situation for rings is similar, but much more subtle.  Integral Element   Let be a ring, an -algebra, and an ideal. An element of is integral over if it satisfies an equation of the form An element of is integral over if In both cases, we say that and satisfy an equation of integral dependence over    FIX   Integral automatically implies algebraic, but the condition that there exists an equation of algebraic dependence that is monic is stronger in the setting of rings. This is very different to what happens over fields, where algebraic and integral are equivalent conditions.   Integral in   Consider the -algebra . The element is integral over     since it satisfies the equation of integral dependence .    in Not Integral in   Prove is not integral over     If are such that then multiplying by gives which is impossible for parity reasons (the left hand-side is odd!). Notice, in contrast, that is algebraic over , since it satisfies .    Integrally Closed   Consider an an inclusion of rings . The integral closure  integral closure of in is the set of elements in that are integral over . We say is integrally closed  integrally closed in if is its own integral closure in . The integral closure of a domain in its field of fractions is usually denoted by     Normal Domain   A normal domain is a domain that is integrally closed in its field of fractions, meaning     Integers are a Normal Domain   The ring of integers is a integrally closed, meaning its integral closure in its fraction field is itself. The key idea to show this is similar to the argument we used is not integral over .    In fact, this is a special case of the fact that every UFD is normal.  UFDs are Normal   Show that every UFD is normal.     We cannot talk about the integral closure of a ring without specifying in what extension; the integral closures of in different extension can be very different. In , we saw that the integral closure of in contains at least and , while says that the integral closure of in is .  When is a domain, if we ever refer to the integral closure of , it is understood that we mean the integral closure of in its field of fractions, .    An element is integral over if and only if is integral over the subring , so we might as well assume that is injective.   F.G.-by-Intl-Modfin   Consider a ring extension .   If is integral over , then is module-finite over .    If are integral over , then is module-finite over .         Let be integral over , with for some . We claim that . Since is generated by all the powers of as an -module, to show that any polynomial is in it is enough to show that for all .    Using induction on , the base cases follow from the fact that is contained in the -th component. For the induction step, we need to show that for all ; we can do this by induction because we can use the equation above to rewrite as which is a linear combination of powers of of degree up to .    Write Since is integral over , it is also integral over , via the same monic equation that satisfies over . By Part (a), we conclude that the each extension is module-finite. Thus the inclusion is a composition of module-finite maps, and thus by this [[Mathematics\/Commutative Algebra\/Results\/Lemma - Compositions Preserve Module Finite|Lemma]] it is also module-finite.      In what follows, we will need the following elementary linear algebra fact, which is actually very useful in various contexts within commutative algebra. In fact, later in this class we will use this useful fact again, perhaps when you least expect it. This is a nice example of an algebra fact that holds over any ring that we can actually reduce to the case of fields.  Classical Adjoint   The classical adjoint of an matrix is the matrix with entries where  is the matrix obtained from by deleting its th row and th column. classical adjoint    Determinantal Technique  determinantal technique   Let be a ring, , , and . (a) . (b) If , then .     When is a field, this is a basic linear algebra fact. We will deduce the case of a general ring from the field case. The ring is a -algebra, so we can write as a quotient of some polynomial ring . Let be a surjection, be such that and let . Note that since is a homomorphism, and the entries are the same polynomial functions of the entries of the matrices and , respectively. Thus, it suffices to establish in the case when , and we can do this entry by entry. Now, is an integral domain, hence a subring of a field (its fraction field). Since both sides of the equation live in and are equal in the fraction field (by linear algebra) they are equal in . This holds for all , and thus 1) holds.  By assumption, we have , so by part 1)      Module Finite Implies Integral   Let be module-finite. Then is integral over .    Given , we want to show that is integral over . The idea is to show that multiplication by , realized as a linear transformation over , satisfies the characteristic polynomial of that linear transformation.  Suppose that . We may assume that , perhaps by adding a module generator. Since every element in is an -linear combination of , this is in particular true for the elements . Thus we can find such that for each . Consider the matrix and the column vector . We can now write the equalities above more compactly as . By the Determinantal Technique, . Since we chose one of the entries of to be , we have in particular that . Expanding this determinant as a polynomial in , this is a monic equation with coefficients in .    We are now ready to show the following important characterization of module-finite extensions, which tells us exactly what we need besides algebra-finite to force an extension to be module-finite:  Mod Fin iff Integral and Alg Fin   An -algebra is module-finite over if and only if is integral and algebra-finite over .    ( ): Module-finite implies integral, and algebra-finite.  ( ): If is integral over , then each is integral over , and this implies is module-finite over .    Extensions Gen by Integral Elements are Integral   If is generated as an algebra over by integral elements, then is integral over .    Let , with integral over for all . Given , there is a finite subset such that . This is now a finitely-generated algebra generated by integral elements, and thus it must be module-finite over . Module-finite implies integral, and thus is an integral extension of . In particular, is integral over .    Integral Elements form Subring   Given any ring extension , the set of elements of that are integral over form a subring of .    By the -subalgebra of generated by all elements in that are integral over is integral over , so it is contained in the set of all elements that are integral over : this means that so equality holds throughout, and is a ring contained in by definition.    In other words, the integral closure of in is a subring of containing .   Integral Over      The ring , where is not a perfect square, is integral over . Indeed, satisfies the monic polynomial , and since the integral closure of is a ring containing and , and is the smallest such ring, we conclude that every element in is integral over .    Let . Then we claim that is module-finite over To see this we first need to realize as a subring of . To do that, consider the -algebra homomorphism The kernel of consists of the polynomials in and that are multiples of , but any nonzero multiple of in must have -degree at least , which implies it involves and thus it is not in . We conclude that is injective, and thus   Now is generated over as an algebra by one element, , and satisfies the monic equation , so is integral over .       Note, however, that not all integral extensions are module-finite.   Integral but Not Algebra or Module Finite   Let be a field, and consider the -algebra given by Note that satisfies the monic polynomial , and thus it is integral over . Since is generated by elements that are integral over , by it must be an integral extension of . However, is not algebra-finite, and thus it is also not module-finite.     Tower Integral iff Each Piece Integral   Given ring extensions , the extensions and are integral if and only if is integral.    Finally, here is a useful fact about integral extensions that we will use multiple times.   Int Ext Domains Field   If is an integral extension of domains, then is a field if and only if is a field.    Suppose that is a field, and let be a nonzero element, which is necessarily integral over . The ring is algebra-finite over by construction, and integral over . Since is integral and algebra-finite, it must also be module-finite. Since is a field, this means that is a finite-dimensional vector space over . Since is a domain, the map is injective. Notice that this is a map of finite-dimensional -vector spaces, and thus it must also be surjective. In particular, there exists an element such that and thus is invertible. We conclude that must be a field.  Now suppose that is a field, and let . Since , there exists an inverse for in , which must be integral over . Given any equation of integral dependence for over , say with , we can multiply by to obtain Therefore, is invertible in , and is a field.    Before we move on from algebra-finite and module-finite extensions, we should remark on what the situation looks like over fields. First, note that over a field, module-finite just means finite dimensional vector space. While over a general ring the notions of algebra-finite and module-finite are quite different, they are actually equivalent over a field. This is a very deep fact, and we will unfortunately skip its proof — since it is a key ingredient in proving a fundamental result in algebraic geometry, we will leave it for the algebraic geometry class next semester. This is a nice application of the Artin-Tate Lemma, which we are going to discuss shortly, together with some facts about transcendent elements.   Zariski's Lemma   A field extension is algebra-finite if and only if it is module-finite.    The following corollary follows immediately from what we proved in this section:   Alg-Fin Ext of Alg Closed Field   Let be an algebraically closed field. If the field extension is algebra-finite, then .    By Zariski's Lemma, must be module-finite, making the extension integral. When we are over a field, integral is the same as algebraic, but integrally closed fields have no nontrivial algebraic extensions.    "
-},
-{
-  "id": "defn-integral-element",
-  "level": "2",
-  "url": "sec-integral-extensions.html#defn-integral-element",
-  "type": "Definition",
-  "number": "9.38",
-  "title": "Integral Element.",
-  "body": "Integral Element   Let be a ring, an -algebra, and an ideal. An element of is integral over if it satisfies an equation of the form An element of is integral over if In both cases, we say that and satisfy an equation of integral dependence over   "
-},
-{
-  "id": "sec-integral-extensions-6",
-  "level": "2",
-  "url": "sec-integral-extensions.html#sec-integral-extensions-6",
-  "type": "Remark",
-  "number": "9.39",
-  "title": "",
-  "body": " Integral automatically implies algebraic, but the condition that there exists an equation of algebraic dependence that is monic is stronger in the setting of rings. This is very different to what happens over fields, where algebraic and integral are equivalent conditions.  "
-},
-{
-  "id": "ex-sqrt2-integral-in-z",
-  "level": "2",
-  "url": "sec-integral-extensions.html#ex-sqrt2-integral-in-z",
-  "type": "Example",
-  "number": "9.40",
-  "title": "<span class=\"process-math\">\\(\\sqrt{2}\\)<\/span> Integral in <span class=\"process-math\">\\(\\Z\\)<\/span>.",
-  "body": "Integral in   Consider the -algebra . The element is integral over     since it satisfies the equation of integral dependence .   "
-},
-{
-  "id": "ex-frac12-in-q-not-integral-in-z",
-  "level": "2",
-  "url": "sec-integral-extensions.html#ex-frac12-in-q-not-integral-in-z",
-  "type": "Example",
-  "number": "9.41",
-  "title": "<span class=\"process-math\">\\(\\frac{1}{2}\\)<\/span> in <span class=\"process-math\">\\(\\Q\\)<\/span> Not Integral in <span class=\"process-math\">\\(\\Z\\)<\/span>.",
-  "body": "in Not Integral in   Prove is not integral over     If are such that then multiplying by gives which is impossible for parity reasons (the left hand-side is odd!). Notice, in contrast, that is algebraic over , since it satisfies .   "
-},
-{
-  "id": "defn-integrally-closed",
-  "level": "2",
-  "url": "sec-integral-extensions.html#defn-integrally-closed",
-  "type": "Definition",
-  "number": "9.42",
-  "title": "Integrally Closed.",
-  "body": "Integrally Closed   Consider an an inclusion of rings . The integral closure  integral closure of in is the set of elements in that are integral over . We say is integrally closed  integrally closed in if is its own integral closure in . The integral closure of a domain in its field of fractions is usually denoted by    "
-},
-{
-  "id": "defn-normal-domain",
-  "level": "2",
-  "url": "sec-integral-extensions.html#defn-normal-domain",
-  "type": "Definition",
-  "number": "9.43",
-  "title": "Normal Domain.",
-  "body": "Normal Domain   A normal domain is a domain that is integrally closed in its field of fractions, meaning    "
-},
-{
-  "id": "ex-integers-are-a-normal-domain",
-  "level": "2",
-  "url": "sec-integral-extensions.html#ex-integers-are-a-normal-domain",
-  "type": "Example",
-  "number": "9.44",
-  "title": "Integers are a Normal Domain.",
-  "body": "Integers are a Normal Domain   The ring of integers is a integrally closed, meaning its integral closure in its fraction field is itself. The key idea to show this is similar to the argument we used is not integral over .   "
-},
-{
-  "id": "ex-ufds-are-normal",
-  "level": "2",
-  "url": "sec-integral-extensions.html#ex-ufds-are-normal",
-  "type": "Example",
-  "number": "9.45",
-  "title": "UFDs are Normal.",
-  "body": "UFDs are Normal   Show that every UFD is normal.   "
-},
-{
-  "id": "sec-integral-extensions-14",
-  "level": "2",
-  "url": "sec-integral-extensions.html#sec-integral-extensions-14",
-  "type": "Remark",
-  "number": "9.46",
-  "title": "",
-  "body": " We cannot talk about the integral closure of a ring without specifying in what extension; the integral closures of in different extension can be very different. In , we saw that the integral closure of in contains at least and , while says that the integral closure of in is .  When is a domain, if we ever refer to the integral closure of , it is understood that we mean the integral closure of in its field of fractions, .  "
-},
-{
-  "id": "sec-integral-extensions-15",
-  "level": "2",
-  "url": "sec-integral-extensions.html#sec-integral-extensions-15",
-  "type": "Remark",
-  "number": "9.47",
-  "title": "",
-  "body": " An element is integral over if and only if is integral over the subring , so we might as well assume that is injective.  "
-},
-{
-  "id": "prop-f.g.-by-intl-modfin",
-  "level": "2",
-  "url": "sec-integral-extensions.html#prop-f.g.-by-intl-modfin",
-  "type": "Proposition",
-  "number": "9.48",
-  "title": "F.G.-by-Intl-Modfin.",
-  "body": "F.G.-by-Intl-Modfin   Consider a ring extension .   If is integral over , then is module-finite over .    If are integral over , then is module-finite over .         Let be integral over , with for some . We claim that . Since is generated by all the powers of as an -module, to show that any polynomial is in it is enough to show that for all .    Using induction on , the base cases follow from the fact that is contained in the -th component. For the induction step, we need to show that for all ; we can do this by induction because we can use the equation above to rewrite as which is a linear combination of powers of of degree up to .    Write Since is integral over , it is also integral over , via the same monic equation that satisfies over . By Part (a), we conclude that the each extension is module-finite. Thus the inclusion is a composition of module-finite maps, and thus by this [[Mathematics\/Commutative Algebra\/Results\/Lemma - Compositions Preserve Module Finite|Lemma]] it is also module-finite.     "
-},
-{
-  "id": "defn-classical-adjoint",
-  "level": "2",
-  "url": "sec-integral-extensions.html#defn-classical-adjoint",
-  "type": "Definition",
-  "number": "9.49",
-  "title": "Classical Adjoint.",
-  "body": "Classical Adjoint   The classical adjoint of an matrix is the matrix with entries where  is the matrix obtained from by deleting its th row and th column. classical adjoint   "
-},
-{
-  "id": "lem-determinantal-technique",
-  "level": "2",
-  "url": "sec-integral-extensions.html#lem-determinantal-technique",
-  "type": "Lemma",
-  "number": "9.50",
-  "title": "Determinantal Technique.",
-  "body": "Determinantal Technique  determinantal technique   Let be a ring, , , and . (a) . (b) If , then .     When is a field, this is a basic linear algebra fact. We will deduce the case of a general ring from the field case. The ring is a -algebra, so we can write as a quotient of some polynomial ring . Let be a surjection, be such that and let . Note that since is a homomorphism, and the entries are the same polynomial functions of the entries of the matrices and , respectively. Thus, it suffices to establish in the case when , and we can do this entry by entry. Now, is an integral domain, hence a subring of a field (its fraction field). Since both sides of the equation live in and are equal in the fraction field (by linear algebra) they are equal in . This holds for all , and thus 1) holds.  By assumption, we have , so by part 1)     "
-},
-{
-  "id": "thm-module-finite-implies-integral",
-  "level": "2",
-  "url": "sec-integral-extensions.html#thm-module-finite-implies-integral",
-  "type": "Theorem",
-  "number": "9.51",
-  "title": "Module Finite Implies Integral.",
-  "body": "Module Finite Implies Integral   Let be module-finite. Then is integral over .    Given , we want to show that is integral over . The idea is to show that multiplication by , realized as a linear transformation over , satisfies the characteristic polynomial of that linear transformation.  Suppose that . We may assume that , perhaps by adding a module generator. Since every element in is an -linear combination of , this is in particular true for the elements . Thus we can find such that for each . Consider the matrix and the column vector . We can now write the equalities above more compactly as . By the Determinantal Technique, . Since we chose one of the entries of to be , we have in particular that . Expanding this determinant as a polynomial in , this is a monic equation with coefficients in .   "
-},
-{
-  "id": "cor-mod-fin-iff-integral-and-alg-fin",
-  "level": "2",
-  "url": "sec-integral-extensions.html#cor-mod-fin-iff-integral-and-alg-fin",
-  "type": "Corollary",
-  "number": "9.52",
-  "title": "Mod Fin iff Integral and Alg Fin.",
-  "body": "Mod Fin iff Integral and Alg Fin   An -algebra is module-finite over if and only if is integral and algebra-finite over .    ( ): Module-finite implies integral, and algebra-finite.  ( ): If is integral over , then each is integral over , and this implies is module-finite over .   "
-},
-{
-  "id": "cor-extensions-gen-by-integral-elements-are-integral",
-  "level": "2",
-  "url": "sec-integral-extensions.html#cor-extensions-gen-by-integral-elements-are-integral",
-  "type": "Corollary",
-  "number": "9.53",
-  "title": "Extensions Gen by Integral Elements are Integral.",
-  "body": "Extensions Gen by Integral Elements are Integral   If is generated as an algebra over by integral elements, then is integral over .    Let , with integral over for all . Given , there is a finite subset such that . This is now a finitely-generated algebra generated by integral elements, and thus it must be module-finite over . Module-finite implies integral, and thus is an integral extension of . In particular, is integral over .   "
-},
-{
-  "id": "cor-integral-elements-form-subring",
-  "level": "2",
-  "url": "sec-integral-extensions.html#cor-integral-elements-form-subring",
-  "type": "Corollary",
-  "number": "9.54",
-  "title": "Integral Elements form Subring.",
-  "body": "Integral Elements form Subring   Given any ring extension , the set of elements of that are integral over form a subring of .    By the -subalgebra of generated by all elements in that are integral over is integral over , so it is contained in the set of all elements that are integral over : this means that so equality holds throughout, and is a ring contained in by definition.   "
-},
-{
-  "id": "ex-integral-examples",
-  "level": "2",
-  "url": "sec-integral-extensions.html#ex-integral-examples",
-  "type": "Example",
-  "number": "9.55",
-  "title": "<span class=\"process-math\">\\(\\Z[\\sqrt{d}]\\)<\/span> Integral Over <span class=\"process-math\">\\(\\Z\\)<\/span>.",
-  "body": " Integral Over      The ring , where is not a perfect square, is integral over . Indeed, satisfies the monic polynomial , and since the integral closure of is a ring containing and , and is the smallest such ring, we conclude that every element in is integral over .    Let . Then we claim that is module-finite over To see this we first need to realize as a subring of . To do that, consider the -algebra homomorphism The kernel of consists of the polynomials in and that are multiples of , but any nonzero multiple of in must have -degree at least , which implies it involves and thus it is not in . We conclude that is injective, and thus   Now is generated over as an algebra by one element, , and satisfies the monic equation , so is integral over .      "
-},
-{
-  "id": "ex-integral-but-not-algebra-or-module-finite",
-  "level": "2",
-  "url": "sec-integral-extensions.html#ex-integral-but-not-algebra-or-module-finite",
-  "type": "Example",
-  "number": "9.56",
-  "title": "Integral but Not Algebra or Module Finite.",
-  "body": " Integral but Not Algebra or Module Finite   Let be a field, and consider the -algebra given by Note that satisfies the monic polynomial , and thus it is integral over . Since is generated by elements that are integral over , by it must be an integral extension of . However, is not algebra-finite, and thus it is also not module-finite.   "
-},
-{
-  "id": "ex-tower-integral-iff-each-piece-integral",
-  "level": "2",
-  "url": "sec-integral-extensions.html#ex-tower-integral-iff-each-piece-integral",
-  "type": "Example",
-  "number": "9.57",
-  "title": "Tower Integral iff Each Piece Integral.",
-  "body": " Tower Integral iff Each Piece Integral   Given ring extensions , the extensions and are integral if and only if is integral.   "
-},
-{
-  "id": "thm-int-ext-domains-field",
-  "level": "2",
-  "url": "sec-integral-extensions.html#thm-int-ext-domains-field",
-  "type": "Theorem",
-  "number": "9.58",
-  "title": "Int Ext Domains Field.",
-  "body": " Int Ext Domains Field   If is an integral extension of domains, then is a field if and only if is a field.    Suppose that is a field, and let be a nonzero element, which is necessarily integral over . The ring is algebra-finite over by construction, and integral over . Since is integral and algebra-finite, it must also be module-finite. Since is a field, this means that is a finite-dimensional vector space over . Since is a domain, the map is injective. Notice that this is a map of finite-dimensional -vector spaces, and thus it must also be surjective. In particular, there exists an element such that and thus is invertible. We conclude that must be a field.  Now suppose that is a field, and let . Since , there exists an inverse for in , which must be integral over . Given any equation of integral dependence for over , say with , we can multiply by to obtain Therefore, is invertible in , and is a field.   "
-},
-{
-  "id": "thm-zariskis-lemma",
-  "level": "2",
-  "url": "sec-integral-extensions.html#thm-zariskis-lemma",
-  "type": "Theorem",
-  "number": "9.59",
-  "title": "Zariski’s Lemma.",
-  "body": " Zariski's Lemma   A field extension is algebra-finite if and only if it is module-finite.   "
-},
-{
-  "id": "cor-alg-fin-ext-of-alg-closed-field",
-  "level": "2",
-  "url": "sec-integral-extensions.html#cor-alg-fin-ext-of-alg-closed-field",
-  "type": "Corollary",
-  "number": "9.60",
-  "title": "Alg-Fin Ext of Alg Closed Field.",
-  "body": " Alg-Fin Ext of Alg Closed Field   Let be an algebraically closed field. If the field extension is algebra-finite, then .    By Zariski's Lemma, must be module-finite, making the extension integral. When we are over a field, integral is the same as algebraic, but integrally closed fields have no nontrivial algebraic extensions.   "
-},
-{
   "id": "sec-sess",
   "level": "1",
   "url": "sec-sess.html",
   "type": "Section",
-  "number": "9.5",
+  "number": "9.4",
   "title": "Short Exact Sequences",
   "body": "Short Exact Sequences    Impressive claims are made far more impressive by making them exact.   Claude C. Hopkins   Homological techniques play a central role in commutative algebra. Ideally, our study of commutative algebra would start with a semester long course on homological algebra; but we are not assuming any homological algebra background, and thus we need to introduce some elementary homological algebra tools.   Exact Sequence   An exact sequence  exact sequence of modules of -modules] is a sequence of -modules] and -module homomorphisms such that for all .    Short Exact Sequence   An exact sequence of the form is called a short exact sequence . short exact sequence     Short Exaxt Sequence Example  Let , where is any field. The has image and kernel , so the following is an exact sequence:     The sequence is exact if and only if is injective. Similarly, is exact if and only if is surjective. As a consequence, we see that is exact if and only if is an isomorphism. Moreover, is a short exact sequence if and only if       So when this is indeed a short exact sequence, we can identify with its image , which makes . Moreover, since is surjective, by the we conclude that , so we might abuse notation and identify with . In particular, note that .  In summary, any short exact sequence encodes an inclusion and its cokernel, or equivalently a surjection an its kernel. To give a short exact sequence is the same as giving an inclusion of modules and the corresponding quotient module .   SES of -modules  The following is a short exact sequence of -modules: Indeed, multiplication by on is injective, and its cokernel is . Another way to look at this is to notice that the kernel of the canonical projection map is the ideal generated by , which is a free -module with generator. The map corresponds to the inclusion of that module in .    Suppose that is an exact sequence. This means that the image of the zero map to , which is the zero module, is the same as the kernel of the zero map from , which is all of . Thus saying that is exact is equivalent to saying that .   "
 },
@@ -5054,7 +4847,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sess.html#defn-exact-sequence",
   "type": "Definition",
-  "number": "9.61",
+  "number": "9.38",
   "title": "Exact Sequence.",
   "body": " Exact Sequence   An exact sequence  exact sequence of modules of -modules] is a sequence of -modules] and -module homomorphisms such that for all .   "
 },
@@ -5063,7 +4856,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sess.html#def-sess",
   "type": "Definition",
-  "number": "9.62",
+  "number": "9.39",
   "title": "Short Exact Sequence.",
   "body": "Short Exact Sequence   An exact sequence of the form is called a short exact sequence . short exact sequence    "
 },
@@ -5072,7 +4865,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sess.html#ex-ses",
   "type": "Example",
-  "number": "9.63",
+  "number": "9.40",
   "title": "Short Exaxt Sequence Example.",
   "body": "Short Exaxt Sequence Example  Let , where is any field. The has image and kernel , so the following is an exact sequence:   "
 },
@@ -5081,7 +4874,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sess.html#sec-sess-7",
   "type": "Remark",
-  "number": "9.64",
+  "number": "9.41",
   "title": "",
   "body": " The sequence is exact if and only if is injective. Similarly, is exact if and only if is surjective. As a consequence, we see that is exact if and only if is an isomorphism. Moreover, is a short exact sequence if and only if       So when this is indeed a short exact sequence, we can identify with its image , which makes . Moreover, since is surjective, by the we conclude that , so we might abuse notation and identify with . In particular, note that .  In summary, any short exact sequence encodes an inclusion and its cokernel, or equivalently a surjection an its kernel. To give a short exact sequence is the same as giving an inclusion of modules and the corresponding quotient module .  "
 },
@@ -5090,7 +4883,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sess.html#ex-ses-zmods",
   "type": "Example",
-  "number": "9.65",
+  "number": "9.42",
   "title": "SES of <span class=\"process-math\">\\(\\Z\\)<\/span>-modules.",
   "body": "SES of -modules  The following is a short exact sequence of -modules: Indeed, multiplication by on is injective, and its cokernel is . Another way to look at this is to notice that the kernel of the canonical projection map is the ideal generated by , which is a free -module with generator. The map corresponds to the inclusion of that module in .  "
 },
@@ -5099,7 +4892,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sess.html#sec-sess-9",
   "type": "Remark",
-  "number": "9.66",
+  "number": "9.43",
   "title": "",
   "body": " Suppose that is an exact sequence. This means that the image of the zero map to , which is the zero module, is the same as the kernel of the zero map from , which is all of . Thus saying that is exact is equivalent to saying that .  "
 },
@@ -5108,7 +4901,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-noetherian.html",
   "type": "Section",
-  "number": "9.6",
+  "number": "9.5",
   "title": "Noetherian Rings",
   "body": "Noetherian Rings     It is worth ascending unexiting heights if for nothing else than to see the big ones from nearer their own level.   Nan Shepherd     Noetherian Rings  Most rings that commutative algebraists naturally want to study are noetherian. Noetherian rings are named after Emmy Noether, who is in many ways the mother of modern commutative algebra.  Noetherian Ring  noetherian ring   Suppose is a commutative ring. Then is called a noetherian ring if satisfies the ascending chain condition on ideals - i.e., for every chain of ideals of  there exists a positive integer such that for all .     Equivalent Noetherian Ring Definitions   Let be a ring. The following are equivalent:    is a noetherian ring.  Every nonempty family of ideals has a maximal element (under ).  Every ascending chain of finitely generated ideals of stabilizes.  Given any generating set for an ideal , is generated by a finite subset of .  Every ideal of is finitely generated.     (1) (2): Suppose there is a nonempty family of ideals with no maximal element. This means that we can keep inductively choosing larger ideals from this family to obtain an infinite properly ascending chain, so is not noetherian.  (2) (1): An ascending chain of ideals is a family of ideals, and the maximal ideal in the family indicates where our chain stabilizes.  (1) (3): Contained within the definition of a noetherian ring.  (3) (4): Suppose that there is an ideal and a generating set for such that no finite subset of generates . So for any finite we have , so there is some Thus, . Inductively, we can continue this process to obtain an infinite proper chain of finitely generated ideals, so (c) does not hold.  (4) (5): This is the definition of being finitely generated.  (5) (1): Given an ascending chain of ideals let . In general, the union of two ideals might fail to be an ideal, but the union of a chain of ideals is an ideal (exercise). By assumption, the ideal is finitely generated, say . Now since each is in , it must be in some , by definition. Thus for any , we have . But then , and thus for all . Thus the original chain stabilizes, and is noetherian.     When we say that every non-empty family of ideals has a maximal element, that maximal element does not have to be unique in any way. An ideal is maximal in the family if for some implies . However, we might have many incomparable maximal elements in . For example, every element in the family of ideals in given by is maximal.    If is a noetherian ring and is a non-empty set of ideals in , not only does have a maximal element, but every element in must be contained in a maximal element of . Given an element , the subset of of ideals in that contain is nonempty, and must then contain a maximal element by . If for some , then , so , and thus by maximality of in , we must . This proves that is in fact a maximal element in , and by construction it contains .   Examples of Noetherian Domains      If is a field, the only ideals in are and , so is a noetherian ring.     is a noetherian ring, since all ideals are principal. More generally, if is a PID, then is noetherian. Indeed, every ideal is finitely generated!    As a special case of the previous example, consider the ring of germs of complex analytic functions near ,  This ring is a PID: every ideal is of the form , since any can be written as for some , and any such is a unit in .    A ring that is not noetherian is a polynomial ring in infinitely many variables over a field , : the ascending chain of ideals does not stabilize.    The ring is not noetherian. A nice ascending chain of ideals is     The ring of continuous real-valued functions  is not noetherian. The chain of ideals is increasing and proper. The same construction shows that the ring of infinitely differentiable real functions  is not noetherian: properness of the chain follows from, e.g., Urysohn's lemma (though it's not too hard to find functions distinguishing the ideals in the chain). Note that if we asked for analytic functions instead of infinitely-differentiable functions, every element of the chain would be the zero ideal!        Quotient Noetherian   Let be a ring and an ideal in . If is noetherian, then so is .    There is an order preserving bijection that sends the ideal to ; its inverse is the map that sends each ideal in to its preimage. Given this bijection, chains of ideals in come from chains of ideals in that contain . This implies that if is noetherian, then is noetherian as well.    This gives us many more examples of noetherian rings, by simply taking quotients of the examples above. We will soon show that any polynomial ring over a noetherian ring is also noetherian; as a consequence, we obtain that any quotient of a polynomial ring over a field is noetherian. This is the content of Hilbert's Basis Theorem.  But first, we need to talk about noetherian modules.    Noetherian Modules  Noetherian Module  noetherian module   An -module is noetherian if every ascending chain of submodules of eventually stabilizes.     Equivalent Definitions for Noetherian Module   Let be an -module. The following are equivalent:    is a noetherian module.    Every nonempty family of submodules has a maximal element.    Every ascending chain of finitely generated submodules of eventually stabilizes.    Given any generating set for a submodule , the submodule is generated by a finite subset of .    Every submodule of is finitely generated. In particular, a noetherian module must be finitely generated.        Noetherian Ring iff Noetherian Module over Itself   A ring is a noetherian ring if and only if is noetherian as a module over itself.     Noeth Ring Not Noeth Mod over Subring   A noetherian ring need not be a noetherian module over a subring.    For example, consider . These are both noetherian rings but is not a noetherian -module; for example, the following is an ascending chain of submodules which does not stabilize:      Noetherianity in Exact Sequences   In an exact sequence of modules is noetherian if and only if and are noetherian.    Assume is noetherian. Since is a submodule of , and its submodules are also submodules of , is noetherian. Moreover, any submodule of is of the form for some submodule of . Since every submodule of is finitely generated, every submodule of is also finitely generated. Therefore, is noetherian.  Conversely, assume that and are noetherian, and let be a chain of submodules of . First, note that is an ascending chain of submodules of , and thus it stabilizes. Moreover, is a chain of submodules of , and thus it also stabilizes. Pick a large enough index such that both of these chains stabilize. We claim that , so that the original chain stabilizes as well. To show that, take . Then so we can choose some such that . Then . Now note that , so , and thus Then , and since , we must have as well.     Direct Sums are Noetherian   If and are noetherian -modules, then is a noetherian -module.    Apply the previous to the short exact sequence      Module Powers are Noetherian   A module is noetherian if and only if is noetherian for some . In particular, if is a noetherian ring then is a noetherian module.    We will do induction on . The case is a tautology. For , consider the short exact sequence  and the inductive hypothesis give the desired conclusion.     Submodule of F.G. Module F.G   Let be a noetherian ring. Given an -module , is a noetherian -module if and only if is finitely generated. Consequently, any submodule of a finitely generated -module is also finitely generated.    If is noetherian, is finitely generated, and so are all of its submodules.  Now let be noetherian and be a finitely generated -module. Then is isomorphic to a quotient of for some , which is noetherian by [[Mathematics\/Commutative Algebra\/Results\/Corollary - Module Powers are Noetherian|Corollary]] and [[Mathematics\/Commutative Algebra\/Results\/Lemma - Quotient Noetherian|Lemma]].     Noetherian Required for Noetherian F.G   If is a non-noetherian ring and is a finitely generated -module, might not be noetherian.    For a dramatic example, note that itself is a finitely generated -module, but not noetherian.      Hilbert's Basis Theorem  Now we are ready to prove Hilbert's Basis Theorem. David Hilbert was a big influence in the early years of commutative algebra, in many different ways. Emmy Noether's early work in algebra was in part inspired by some of his work, and he later invited her to join the Göttingen Math Department — many of her amazing contributions to algebra happened during her time in Göttingen. Unfortunately, some of the faculty opposed a woman joining the department, and for her first two years in Göttingen, Noether did not have an official position nor was she paid. Hilbert's contributions also include three of the most fundamental results in commutative algebra — Hilbert's Basis Theorem, the Hilbert Syzygy Theorem, and Hilbert's Nullstellensatz.   Hilbert's Basis Theorem   If is a noetherian ring, then the polynomial rings and are noetherian for any .    We will give the proof for polynomial rings, and at the end we will indicate what the difference is in the argument for the power series ring case. First, note that by induction on , we can reduce to the case .  Given an ideal , consider the set of leading coefficients of all polynomials in , By the [[Mathematics\/Commutative Algebra\/Results\/Exercise - Hilbert Basis Lemma|Hilbert Basis Lemma]], we see that this is an ideal of . Since is noetherian, is finitely generated, so let . Pick such that the leading coefficient of is , and set .  Let . The leading coefficient of is an -linear combination of . If has degree greater than , then we can cancel off the leading term of by subtracting a suitable combination of the . Therefore, any can be written as for some and with degree at most . In particular, note that Since is a submodule of the finitely generated free -module , it must also be finitely generated as an -module. Given such a generating set, say , we can write any element as an -linear combination of these generators and the original . Therefore, is finitely generated as an ideal in , and is a noetherian ring.  In the power series case, take to be the set of coefficients of lowest degree terms.     We can rephrase in a way that can be better understood by those with high school algebra (as opposed to abstract algebra) knowledge:   Any system of polynomial equations in finitely many variables can be written in terms of finitely many equations.    Finally, note that a standard corollary of the Hilbert Basis Theorem is that finitely generated algebras over noetherian rings are also noetherian.   F.G. Algebras over Noeth Rings are Noeth   If is a noetherian ring, then any finitely generated -algebra is noetherian. In particular, any finitely generated algebra over a field is noetherian.    Any finitely generated -algebra is isomorphic to a quotient of a polynomial ring over in finitely many variables; polynomial rings over noetherian rings are noetherian by the , and quotients of noetherian rings are noetherian.     The converse to this statement is false: there are lots of noetherian rings that are not finitely generated algebras over a field. For example, is not algebra-finite over . We will see more examples of these when we talk about local rings.   Finally, we can now prove a technical sounding result that puts together all our finiteness conditions in a useful way.   Artin-Tate Lemma   Let be rings. Assume that    is noetherian,     is module-finite over , and     is algebra-finite over . Then, is algebra-finite over .       Let and . Then, for some . Let . This is a finitely generated -algebra; by this [[Mathematics\/Commutative Algebra\/Results\/Corollary - F.G. Algebras over Noeth Rings and Noeth|Corollary]], since is noetherian, so is .  We claim that . Given an element , write as a polynomial expression in . Since the are linear combinations of the with coefficients in the we have . Then using the equations for repeatedly, we can rewrite as a linear combination of the with coefficients in .  Since is noetherian and is a finitely generated -module, is a noetherian -module, by [[Mathematics\/Commutative Algebra\/Results\/Proposition - Submodule of F.G. Module F.G.|Proposition]]. Since , then is also a finitely generated -module. In particular, is algebra-finite. Since is algebra-finite, we conclude that is algebra-finite, as required.     "
 },
@@ -5117,7 +4910,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#defn-noetherian-ring",
   "type": "Definition",
-  "number": "9.67",
+  "number": "9.44",
   "title": "Noetherian Ring.",
   "body": "Noetherian Ring  noetherian ring   Suppose is a commutative ring. Then is called a noetherian ring if satisfies the ascending chain condition on ideals - i.e., for every chain of ideals of  there exists a positive integer such that for all .   "
 },
@@ -5126,7 +4919,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#prop-equivalent-noetherian-ring-definitions",
   "type": "Proposition",
-  "number": "9.68",
+  "number": "9.45",
   "title": "Equivalent Noetherian Ring Definitions.",
   "body": " Equivalent Noetherian Ring Definitions   Let be a ring. The following are equivalent:    is a noetherian ring.  Every nonempty family of ideals has a maximal element (under ).  Every ascending chain of finitely generated ideals of stabilizes.  Given any generating set for an ideal , is generated by a finite subset of .  Every ideal of is finitely generated.     (1) (2): Suppose there is a nonempty family of ideals with no maximal element. This means that we can keep inductively choosing larger ideals from this family to obtain an infinite properly ascending chain, so is not noetherian.  (2) (1): An ascending chain of ideals is a family of ideals, and the maximal ideal in the family indicates where our chain stabilizes.  (1) (3): Contained within the definition of a noetherian ring.  (3) (4): Suppose that there is an ideal and a generating set for such that no finite subset of generates . So for any finite we have , so there is some Thus, . Inductively, we can continue this process to obtain an infinite proper chain of finitely generated ideals, so (c) does not hold.  (4) (5): This is the definition of being finitely generated.  (5) (1): Given an ascending chain of ideals let . In general, the union of two ideals might fail to be an ideal, but the union of a chain of ideals is an ideal (exercise). By assumption, the ideal is finitely generated, say . Now since each is in , it must be in some , by definition. Thus for any , we have . But then , and thus for all . Thus the original chain stabilizes, and is noetherian.   "
 },
@@ -5135,7 +4928,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#subsec-noetherian-rings-5",
   "type": "Remark",
-  "number": "9.69",
+  "number": "9.46",
   "title": "",
   "body": " When we say that every non-empty family of ideals has a maximal element, that maximal element does not have to be unique in any way. An ideal is maximal in the family if for some implies . However, we might have many incomparable maximal elements in . For example, every element in the family of ideals in given by is maximal.  "
 },
@@ -5144,7 +4937,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#subsec-noetherian-rings-6",
   "type": "Remark",
-  "number": "9.70",
+  "number": "9.47",
   "title": "",
   "body": " If is a noetherian ring and is a non-empty set of ideals in , not only does have a maximal element, but every element in must be contained in a maximal element of . Given an element , the subset of of ideals in that contain is nonempty, and must then contain a maximal element by . If for some , then , so , and thus by maximality of in , we must . This proves that is in fact a maximal element in , and by construction it contains .  "
 },
@@ -5153,7 +4946,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#ex-noetherian-examples",
   "type": "Example",
-  "number": "9.71",
+  "number": "9.48",
   "title": "Examples of Noetherian Domains.",
   "body": "Examples of Noetherian Domains      If is a field, the only ideals in are and , so is a noetherian ring.     is a noetherian ring, since all ideals are principal. More generally, if is a PID, then is noetherian. Indeed, every ideal is finitely generated!    As a special case of the previous example, consider the ring of germs of complex analytic functions near ,  This ring is a PID: every ideal is of the form , since any can be written as for some , and any such is a unit in .    A ring that is not noetherian is a polynomial ring in infinitely many variables over a field , : the ascending chain of ideals does not stabilize.    The ring is not noetherian. A nice ascending chain of ideals is     The ring of continuous real-valued functions  is not noetherian. The chain of ideals is increasing and proper. The same construction shows that the ring of infinitely differentiable real functions  is not noetherian: properness of the chain follows from, e.g., Urysohn's lemma (though it's not too hard to find functions distinguishing the ideals in the chain). Note that if we asked for analytic functions instead of infinitely-differentiable functions, every element of the chain would be the zero ideal!      "
 },
@@ -5162,7 +4955,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#lem-quotient-noetherian",
   "type": "Lemma",
-  "number": "9.72",
+  "number": "9.49",
   "title": "Quotient Noetherian.",
   "body": " Quotient Noetherian   Let be a ring and an ideal in . If is noetherian, then so is .    There is an order preserving bijection that sends the ideal to ; its inverse is the map that sends each ideal in to its preimage. Given this bijection, chains of ideals in come from chains of ideals in that contain . This implies that if is noetherian, then is noetherian as well.   "
 },
@@ -5171,7 +4964,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#defn-noetherian-module",
   "type": "Definition",
-  "number": "9.73",
+  "number": "9.50",
   "title": "Noetherian Module.",
   "body": "Noetherian Module  noetherian module   An -module is noetherian if every ascending chain of submodules of eventually stabilizes.   "
 },
@@ -5180,7 +4973,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#prop-equivalent-definitions-for-noetherian-module",
   "type": "Proposition",
-  "number": "9.74",
+  "number": "9.51",
   "title": "Equivalent Definitions for Noetherian Module.",
   "body": " Equivalent Definitions for Noetherian Module   Let be an -module. The following are equivalent:    is a noetherian module.    Every nonempty family of submodules has a maximal element.    Every ascending chain of finitely generated submodules of eventually stabilizes.    Given any generating set for a submodule , the submodule is generated by a finite subset of .    Every submodule of is finitely generated. In particular, a noetherian module must be finitely generated.      "
 },
@@ -5189,7 +4982,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#ex-noetherian-ring-iff-noetherian-module-over-itself",
   "type": "Example",
-  "number": "9.75",
+  "number": "9.52",
   "title": "Noetherian Ring iff Noetherian Module over Itself.",
   "body": " Noetherian Ring iff Noetherian Module over Itself   A ring is a noetherian ring if and only if is noetherian as a module over itself.   "
 },
@@ -5198,7 +4991,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#ex-noeth-ring-not-noeth-mod-over-subring",
   "type": "Example",
-  "number": "9.76",
+  "number": "9.53",
   "title": "Noeth Ring Not Noeth Mod over Subring.",
   "body": " Noeth Ring Not Noeth Mod over Subring   A noetherian ring need not be a noetherian module over a subring.    For example, consider . These are both noetherian rings but is not a noetherian -module; for example, the following is an ascending chain of submodules which does not stabilize:    "
 },
@@ -5207,7 +5000,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#lem-noetherianity-in-exact-sequences",
   "type": "Lemma",
-  "number": "9.77",
+  "number": "9.54",
   "title": "Noetherianity in Exact Sequences.",
   "body": " Noetherianity in Exact Sequences   In an exact sequence of modules is noetherian if and only if and are noetherian.    Assume is noetherian. Since is a submodule of , and its submodules are also submodules of , is noetherian. Moreover, any submodule of is of the form for some submodule of . Since every submodule of is finitely generated, every submodule of is also finitely generated. Therefore, is noetherian.  Conversely, assume that and are noetherian, and let be a chain of submodules of . First, note that is an ascending chain of submodules of , and thus it stabilizes. Moreover, is a chain of submodules of , and thus it also stabilizes. Pick a large enough index such that both of these chains stabilize. We claim that , so that the original chain stabilizes as well. To show that, take . Then so we can choose some such that . Then . Now note that , so , and thus Then , and since , we must have as well.   "
 },
@@ -5216,7 +5009,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#cor-direct-sums-are-noetherian",
   "type": "Corollary",
-  "number": "9.78",
+  "number": "9.55",
   "title": "Direct Sums are Noetherian.",
   "body": " Direct Sums are Noetherian   If and are noetherian -modules, then is a noetherian -module.    Apply the previous to the short exact sequence    "
 },
@@ -5225,7 +5018,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#cor-module-powers-are-noetherian",
   "type": "Corollary",
-  "number": "9.79",
+  "number": "9.56",
   "title": "Module Powers are Noetherian.",
   "body": " Module Powers are Noetherian   A module is noetherian if and only if is noetherian for some . In particular, if is a noetherian ring then is a noetherian module.    We will do induction on . The case is a tautology. For , consider the short exact sequence  and the inductive hypothesis give the desired conclusion.   "
 },
@@ -5234,7 +5027,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#prop-submodule-of-f.g.-module-f.g.",
   "type": "Proposition",
-  "number": "9.80",
+  "number": "9.57",
   "title": "Submodule of F.G. Module F.G.",
   "body": " Submodule of F.G. Module F.G   Let be a noetherian ring. Given an -module , is a noetherian -module if and only if is finitely generated. Consequently, any submodule of a finitely generated -module is also finitely generated.    If is noetherian, is finitely generated, and so are all of its submodules.  Now let be noetherian and be a finitely generated -module. Then is isomorphic to a quotient of for some , which is noetherian by [[Mathematics\/Commutative Algebra\/Results\/Corollary - Module Powers are Noetherian|Corollary]] and [[Mathematics\/Commutative Algebra\/Results\/Lemma - Quotient Noetherian|Lemma]].   "
 },
@@ -5243,7 +5036,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#ex-noetherian-required-for-noetherian-f.g.",
   "type": "Example",
-  "number": "9.81",
+  "number": "9.58",
   "title": "Noetherian Required for Noetherian F.G.",
   "body": " Noetherian Required for Noetherian F.G   If is a non-noetherian ring and is a finitely generated -module, might not be noetherian.    For a dramatic example, note that itself is a finitely generated -module, but not noetherian.   "
 },
@@ -5252,7 +5045,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#hilbert-basis-theorem",
   "type": "Theorem",
-  "number": "9.82",
+  "number": "9.59",
   "title": "Hilbert’s Basis Theorem.",
   "body": " Hilbert's Basis Theorem   If is a noetherian ring, then the polynomial rings and are noetherian for any .    We will give the proof for polynomial rings, and at the end we will indicate what the difference is in the argument for the power series ring case. First, note that by induction on , we can reduce to the case .  Given an ideal , consider the set of leading coefficients of all polynomials in , By the [[Mathematics\/Commutative Algebra\/Results\/Exercise - Hilbert Basis Lemma|Hilbert Basis Lemma]], we see that this is an ideal of . Since is noetherian, is finitely generated, so let . Pick such that the leading coefficient of is , and set .  Let . The leading coefficient of is an -linear combination of . If has degree greater than , then we can cancel off the leading term of by subtracting a suitable combination of the . Therefore, any can be written as for some and with degree at most . In particular, note that Since is a submodule of the finitely generated free -module , it must also be finitely generated as an -module. Given such a generating set, say , we can write any element as an -linear combination of these generators and the original . Therefore, is finitely generated as an ideal in , and is a noetherian ring.  In the power series case, take to be the set of coefficients of lowest degree terms.   "
 },
@@ -5261,7 +5054,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#subsec-hilbert-4",
   "type": "Remark",
-  "number": "9.83",
+  "number": "9.60",
   "title": "",
   "body": " We can rephrase in a way that can be better understood by those with high school algebra (as opposed to abstract algebra) knowledge:   Any system of polynomial equations in finitely many variables can be written in terms of finitely many equations.   "
 },
@@ -5270,7 +5063,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#cor-f.g.-algebras-over-noeth-rings-are-noeth",
   "type": "Corollary",
-  "number": "9.84",
+  "number": "9.61",
   "title": "F.G. Algebras over Noeth Rings are Noeth.",
   "body": " F.G. Algebras over Noeth Rings are Noeth   If is a noetherian ring, then any finitely generated -algebra is noetherian. In particular, any finitely generated algebra over a field is noetherian.    Any finitely generated -algebra is isomorphic to a quotient of a polynomial ring over in finitely many variables; polynomial rings over noetherian rings are noetherian by the , and quotients of noetherian rings are noetherian.   "
 },
@@ -5279,7 +5072,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#subsec-hilbert-7",
   "type": "Remark",
-  "number": "9.85",
+  "number": "9.62",
   "title": "",
   "body": " The converse to this statement is false: there are lots of noetherian rings that are not finitely generated algebras over a field. For example, is not algebra-finite over . We will see more examples of these when we talk about local rings.  "
 },
@@ -5288,7 +5081,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noetherian.html#thm-artin-tate-lemma",
   "type": "Theorem",
-  "number": "9.86",
+  "number": "9.63",
   "title": "Artin-Tate Lemma.",
   "body": " Artin-Tate Lemma   Let be rings. Assume that    is noetherian,     is module-finite over , and     is algebra-finite over . Then, is algebra-finite over .       Let and . Then, for some . Let . This is a finitely generated -algebra; by this [[Mathematics\/Commutative Algebra\/Results\/Corollary - F.G. Algebras over Noeth Rings and Noeth|Corollary]], since is noetherian, so is .  We claim that . Given an element , write as a polynomial expression in . Since the are linear combinations of the with coefficients in the we have . Then using the equations for repeatedly, we can rewrite as a linear combination of the with coefficients in .  Since is noetherian and is a finitely generated -module, is a noetherian -module, by [[Mathematics\/Commutative Algebra\/Results\/Proposition - Submodule of F.G. Module F.G.|Proposition]]. Since , then is also a finitely generated -module. In particular, is algebra-finite. Since is algebra-finite, we conclude that is algebra-finite, as required.   "
 },
@@ -5297,7 +5090,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-inv-rings-1.html",
   "type": "Section",
-  "number": "9.7",
+  "number": "9.6",
   "title": "Invariant Rings: Application I",
   "body": "Invariant Rings: Application I    No taxation without representation!   James Otis   Historically, commutative algebra has roots in classical questions of algebraic and geometric flavors, including the following natural question:   Given a (finite) set of symmetries, consider the collection of polynomial functions that are fixed by all of those symmetries. Can we describe all the fixed polynomials in terms of finitely many of them?   To make this precise, let be a group acting on a ring . The main case we have in mind is when and is a field; we let act trivially on , and the action respects the sum and product in the ring: We are interested in the set of elements that are {\\bf invariant} invariant under the action, Note that is a subring of . Indeed, given , then since each is a homomorphism. Note also that if , then if and only if for The question above can now be rephrased as follows:   Given a finite group acting on , is a finitely generated -algebra?   Note that is a -subalgebra of . Even though is a finitely generated -algebra, this does not guarantee a priori that is a finitely generated -algebra --- recall \\Cref{inf gen subalg} , where we saw a subalgebra of a finitely generated algebra which is nevertheless not finitely generated.   Root of Unity Invariants  Consider the group with two elements . To define an action of on , we need only to define , since is the identity and acts linearly. Consider the action of on given by , so . Suppose that the characteristic of is not 2, so . Write . We have , so which differs from unless for each odd , . That is, [ R^G = { f R  |  }.] Any such is a polynomial in , so we have In particular, is a finitely generated -algebra.    Veronese Subring  Generalize the last example as follows: let be a field with a primitive th root of unity , and let act on via for all . Then This what is known as the Veronese subring of of degree .    Standard Representation of the Symmetric Group  Let  be the symmetric group on letters acting on via . For example, if , then is invariant, while is not, since swapping 1 with 3 gives a different polynomial.  You may recall the Fundamental Theorem of Symmetric Polynomials says that every element of can be written as polynomial expression in the elementary symmetric polynomials More precisely, . For example, above is . In fact, any symmetric polynomial can be written like so in a way, so is a free -algebra. So even though we have infinitely many invariant polynomials, we can understand them in terms of only finitely many of them, which are fundamental invariants.    Group Ring and Automorphisms Mod-Fin   Let be a field, be a finitely generated -algebra, and a finite group of automorphisms of that fix . Then is module-finite.    By , integral and algebra-finite implies module-finite, so we will show that is algebra-finite and integral over .  First, since and is generated finitely generated -algebra, it is generated by the same finite set as an -algebra as well. Thus is algebra-finite.  To show that is integral, let us first extend the action of on to trivially, meaning that we will let fix . Given , consider the polynomial Now fixes , since for each , Thus, . Notice that , since Therefore, . The leading term (with respect to ) of is , so is monic. On the other hand, one of the factors of is , so . Therefore, satisfies a monic polynomial with coefficients in , and thus is integral over .     Noether's Finiteness Theorem   Let be a field, be a polynomial ring over , and be a finite group acting -linearly on . Then is a finitely generated -algebra.    Observe that , that is noetherian, is algebra-finite, and is module-finite. The desired result is now a corollary of the [[Mathematics\/Commutative Algebra\/Results\/Theorem - Artin-Tate Lemma|Artin-Tate Lemma]].    "
 },
@@ -5306,7 +5099,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inv-rings-1.html#question",
   "type": "Question",
-  "number": "9.87",
+  "number": "9.64",
   "title": "",
   "body": " Given a (finite) set of symmetries, consider the collection of polynomial functions that are fixed by all of those symmetries. Can we describe all the fixed polynomials in terms of finitely many of them?  "
 },
@@ -5315,7 +5108,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inv-rings-1.html#question-1",
   "type": "Question",
-  "number": "9.88",
+  "number": "9.65",
   "title": "",
   "body": " Given a finite group acting on , is a finitely generated -algebra?  "
 },
@@ -5324,7 +5117,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inv-rings-1.html#ex-root-of-unity-invariants",
   "type": "Example",
-  "number": "9.89",
+  "number": "9.66",
   "title": "Root of Unity Invariants.",
   "body": " Root of Unity Invariants  Consider the group with two elements . To define an action of on , we need only to define , since is the identity and acts linearly. Consider the action of on given by , so . Suppose that the characteristic of is not 2, so . Write . We have , so which differs from unless for each odd , . That is, [ R^G = { f R  |  }.] Any such is a polynomial in , so we have In particular, is a finitely generated -algebra.  "
 },
@@ -5333,7 +5126,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inv-rings-1.html#ex-veronese-subring",
   "type": "Example",
-  "number": "9.90",
+  "number": "9.67",
   "title": "Veronese Subring.",
   "body": " Veronese Subring  Generalize the last example as follows: let be a field with a primitive th root of unity , and let act on via for all . Then This what is known as the Veronese subring of of degree .  "
 },
@@ -5342,7 +5135,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inv-rings-1.html#ex-standard-rep-of-sn",
   "type": "Example",
-  "number": "9.91",
+  "number": "9.68",
   "title": "Standard Representation of the Symmetric Group.",
   "body": " Standard Representation of the Symmetric Group  Let  be the symmetric group on letters acting on via . For example, if , then is invariant, while is not, since swapping 1 with 3 gives a different polynomial.  You may recall the Fundamental Theorem of Symmetric Polynomials says that every element of can be written as polynomial expression in the elementary symmetric polynomials More precisely, . For example, above is . In fact, any symmetric polynomial can be written like so in a way, so is a free -algebra. So even though we have infinitely many invariant polynomials, we can understand them in terms of only finitely many of them, which are fundamental invariants.  "
 },
@@ -5351,7 +5144,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inv-rings-1.html#prop-group-ring-and-automorphisms-mod-fin",
   "type": "Proposition",
-  "number": "9.92",
+  "number": "9.69",
   "title": "Group Ring and Automorphisms Mod-Fin.",
   "body": " Group Ring and Automorphisms Mod-Fin   Let be a field, be a finitely generated -algebra, and a finite group of automorphisms of that fix . Then is module-finite.    By , integral and algebra-finite implies module-finite, so we will show that is algebra-finite and integral over .  First, since and is generated finitely generated -algebra, it is generated by the same finite set as an -algebra as well. Thus is algebra-finite.  To show that is integral, let us first extend the action of on to trivially, meaning that we will let fix . Given , consider the polynomial Now fixes , since for each , Thus, . Notice that , since Therefore, . The leading term (with respect to ) of is , so is monic. On the other hand, one of the factors of is , so . Therefore, satisfies a monic polynomial with coefficients in , and thus is integral over .   "
 },
@@ -5360,7 +5153,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-inv-rings-1.html#thm-noethers-finiteness-theorem",
   "type": "Theorem",
-  "number": "9.93",
+  "number": "9.70",
   "title": "Noether’s Finiteness Theorem.",
   "body": " Noether's Finiteness Theorem   Let be a field, be a polynomial ring over , and be a finite group acting -linearly on . Then is a finitely generated -algebra.    Observe that , that is noetherian, is algebra-finite, and is module-finite. The desired result is now a corollary of the [[Mathematics\/Commutative Algebra\/Results\/Theorem - Artin-Tate Lemma|Artin-Tate Lemma]].   "
 },
@@ -5533,7 +5326,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "10.2",
   "title": "Finiteness Conditions for Graded Algebras",
-  "body": "Finiteness Conditions for Graded Algebras     Do not wait until the conditions are perfect to begin. Beginning makes the conditions perfect.   Alan Cohen    We observed earlier an important relationship between algebra-finiteness and noetherianity that followed from the Hilbert basis theorem: if is noetherian, then any algebra-finite extension of is also noetherian. There isn't a converse to this in general: there are lots of algebras over fields that are noetherian but not algebra-finite over . However, for graded rings, this converse relation holds.    Graded F.G. Algebra   Let be an -graded ring, and let be homogeneous elements of positive degree. Then generate the ideal if and only if generate as an -algebra.    Suppose . Any element can be written as a polynomial expression for some with no constant term. Each monomial of is a multiple of some , and thus each term in is a multiple of . Thus .  To show that implies , it suffices to show that any homogeneous element can be written as a polynomial expression in with coefficients in . We will use induction on the degree of , with degree as a trivial base case. For homogeneous of positive degree, we must have , so by assumption we can write . Moreover, since and are all homogeneous, we can choose each coefficient to be homogeneous of degree . By the induction hypothesis, each is a polynomial expression in , so we are done.     Characterization of Noetherian Graded Rings   An -graded ring is noetherian if and only if is noetherian and is algebra-finite over .    If is noetherian and is algebra-finite over , then is noetherian by the [[Mathematics\/Commutative Algebra\/Results\/Theorem - Hilbert's Basis Theorem|Hilbert Basis Theorem]]. On the other hand, if is noetherian then any quotient of is also noetherian, and in particular is noetherian. Moreover, is generated as an ideal by finitely many homogeneous elements by noetherianity; by [[Mathematics\/Commutative Algebra\/Results\/Proposition - Graded F.G. Algebra|Proposition]], we get a finite algebra generating set for over .     There are many interesting examples of -graded algebras with ; in that case, is the largest homogeneous ideal in . In fact, is the only maximal ideal of that is also homogeneous, so we can call it the  homogeneous maximal ideal ; it is sometimes also called the irrelevant maximal ideal of . This ideal plays a very important role: in many ways, and behave similarly to a local ring and its unique maximal ideal. We will discuss this further when we learn about local rings.   "
+  "body": "Finiteness Conditions for Graded Algebras    Do not wait until the conditions are perfect to begin. Beginning makes the conditions perfect.   Alan Cohen    We observed earlier an important relationship between algebra-finiteness and noetherianity that followed from the Hilbert basis theorem: if is noetherian, then any algebra-finite extension of is also noetherian. There isn't a converse to this in general: there are lots of algebras over fields that are noetherian but not algebra-finite over . However, for graded rings, this converse relation holds.    Graded F.G. Algebra   Let be an -graded ring, and let be homogeneous elements of positive degree. Then generate the ideal if and only if generate as an -algebra.    Suppose . Any element can be written as a polynomial expression for some with no constant term. Each monomial of is a multiple of some , and thus each term in is a multiple of . Thus .  To show that implies , it suffices to show that any homogeneous element can be written as a polynomial expression in with coefficients in . We will use induction on the degree of , with degree as a trivial base case. For homogeneous of positive degree, we must have , so by assumption we can write . Moreover, since and are all homogeneous, we can choose each coefficient to be homogeneous of degree . By the induction hypothesis, each is a polynomial expression in , so we are done.     Characterization of Noetherian Graded Rings   An -graded ring is noetherian if and only if is noetherian and is algebra-finite over .    If is noetherian and is algebra-finite over , then is noetherian by the [[Mathematics\/Commutative Algebra\/Results\/Theorem - Hilbert's Basis Theorem|Hilbert Basis Theorem]]. On the other hand, if is noetherian then any quotient of is also noetherian, and in particular is noetherian. Moreover, is generated as an ideal by finitely many homogeneous elements by noetherianity; by [[Mathematics\/Commutative Algebra\/Results\/Proposition - Graded F.G. Algebra|Proposition]], we get a finite algebra generating set for over .     There are many interesting examples of -graded algebras with ; in that case, is the largest homogeneous ideal in . In fact, is the only maximal ideal of that is also homogeneous, so we can call it the  homogeneous maximal ideal ; it is sometimes also called the irrelevant maximal ideal of . This ideal plays a very important role: in many ways, and behave similarly to a local ring and its unique maximal ideal. We will discuss this further when we learn about local rings.   "
 },
 {
   "id": "sec-finite-conditions-graded-algebras-3",
@@ -5578,7 +5371,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "10.3",
   "title": "Invariant Rings: Application II",
-  "body": "Invariant Rings: Application II     There is changeability in process bu invariance in outcome.   Paul Watzlawick    If is a graded ring, and is a group acting on by degree-preserving automorphisms, then is a graded subring of , meaning is graded with respect to the same grading monoid. In particular, if acts -linearly on a polynomial ring over , the invariant ring is -graded.  Using this perspective, we can now give a different proof of the finite generation of invariant rings that works under different hypotheses. The proof we will discuss now is essentially Hilbert's proof. To do that, we need another notion that is very useful in commutative algebra.    Direct Summand   Let be a ring homomorphism. We say that is a direct summand  direct summand of if the map  splits as a map of -modules], meaning there is an -module homomorphism such that is the identity on .     First, observe that the condition on implies that must be injective, so we can assume that , perhaps after renaming some elements. The condition on is that is the identity and for all and . We call the map the splitting  splitting of the inclusion . Note that given any -linear map , if then is a splitting: indeed, for all .    The subring of is a direct summand of if and only if there exists an -submodule of such that . In the language above, . Conversely, given a direct sum decomposition , the quotient map onto the first component is a splitting.    Expansion and Contraction   Let be a ring homomorphism. Given an ideal in , we write for the contraction   contracion of back into , meaning the preimage of via . In particular, if is a ring extension, then denotes the preimage of via the inclusion map . Given a ring map , and an ideal in , the expansion  expansion of an ideal  of in is the ideal of generated by the image of via the given ring map; we naturally denote this by .     Direct Summand of Ideals Contract   Let be a direct summand of . Then, for any ideal , we have .    Let be the corresponding splitting. Clearly, . Conversely, if , we can write for some , . Applying , we have      Direct Summand Noetherian   Let be a direct summand of . If is noetherian, then so is .    Let be a chain of ideals in . The chain of ideals in  stabilizes, so there exist , such that for . Contracting to , we get that for , so the original chain also stabilizes.    Notice in general a subring of a noetherian ring does not have to be noetherian.   Non-Noetherian Subgring of Noetherian Ring  If is a field, is noetherian by , but we claim that the subring of is not noetherian. Indeed, is an ascending chain of ideals of that does not stabilize. Notice that if we considered the same chain of ideals in , then it does stabilize, and in fact it is the constant chain .    -Linear Action and Direct Summand   Let be a field, and be a polynomial ring over . Let be a finite group acting -linearly on . Assume that the characteristic of does not divide . Then is a direct summand of .    We consider the map given by First, note that the image of this map lies in , since acting by just permutes the elements in the sum, so the sum itself remains the same. We claim that this map is a splitting for the inclusion . To see that, let and . We have so is -linear, and for ,      The condition that the characteristic of does not divide the order of is trivially satisfied if has characteristic zero.    Hilbert's Finiteness Theorem for Invariants   Let be a field, and be a polynomial ring over . Let be a group acting -linearly on . Assume that is finite and that the characteristic of does not divide , or more generally, that is a direct summand of . Then is a finitely generated -algebra.    Since acts linearly on , is an -graded subring of with . Since is a direct summand of , is noetherian by . By our characterization of noetherian graded rings in , is finitely generated over .     One important thing about this proof is that it applies to many infinite groups. In particular, for any linearly reductive group , linearly reductive group including , , and , we can construct a splitting map .   "
+  "body": "Invariant Rings: Application II    There is changeability in process bu invariance in outcome.   Paul Watzlawick    If is a graded ring, and is a group acting on by degree-preserving automorphisms, then is a graded subring of , meaning is graded with respect to the same grading monoid. In particular, if acts -linearly on a polynomial ring over , the invariant ring is -graded.  Using this perspective, we can now give a different proof of the finite generation of invariant rings that works under different hypotheses. The proof we will discuss now is essentially Hilbert's proof. To do that, we need another notion that is very useful in commutative algebra.    Direct Summand   Let be a ring homomorphism. We say that is a direct summand  direct summand of if the map  splits as a map of -modules], meaning there is an -module homomorphism such that is the identity on .     First, observe that the condition on implies that must be injective, so we can assume that , perhaps after renaming some elements. The condition on is that is the identity and for all and . We call the map the splitting  splitting of the inclusion . Note that given any -linear map , if then is a splitting: indeed, for all .    The subring of is a direct summand of if and only if there exists an -submodule of such that . In the language above, . Conversely, given a direct sum decomposition , the quotient map onto the first component is a splitting.    Expansion and Contraction   Let be a ring homomorphism. Given an ideal in , we write for the contraction   contracion of back into , meaning the preimage of via . In particular, if is a ring extension, then denotes the preimage of via the inclusion map . Given a ring map , and an ideal in , the expansion  expansion of an ideal  of in is the ideal of generated by the image of via the given ring map; we naturally denote this by .     Direct Summand of Ideals Contract   Let be a direct summand of . Then, for any ideal , we have .    Let be the corresponding splitting. Clearly, . Conversely, if , we can write for some , . Applying , we have      Direct Summand Noetherian   Let be a direct summand of . If is noetherian, then so is .    Let be a chain of ideals in . The chain of ideals in  stabilizes, so there exist , such that for . Contracting to , we get that for , so the original chain also stabilizes.    Notice in general a subring of a noetherian ring does not have to be noetherian.   Non-Noetherian Subgring of Noetherian Ring  If is a field, is noetherian by , but we claim that the subring of is not noetherian. Indeed, is an ascending chain of ideals of that does not stabilize. Notice that if we considered the same chain of ideals in , then it does stabilize, and in fact it is the constant chain .    -Linear Action and Direct Summand   Let be a field, and be a polynomial ring over . Let be a finite group acting -linearly on . Assume that the characteristic of does not divide . Then is a direct summand of .    We consider the map given by First, note that the image of this map lies in , since acting by just permutes the elements in the sum, so the sum itself remains the same. We claim that this map is a splitting for the inclusion . To see that, let and . We have so is -linear, and for ,      The condition that the characteristic of does not divide the order of is trivially satisfied if has characteristic zero.    Hilbert's Finiteness Theorem for Invariants   Let be a field, and be a polynomial ring over . Let be a group acting -linearly on . Assume that is finite and that the characteristic of does not divide , or more generally, that is a direct summand of . Then is a finitely generated -algebra.    Since acts linearly on , is an -graded subring of with . Since is a direct summand of , is noetherian by . By our characterization of noetherian graded rings in , is finitely generated over .     One important thing about this proof is that it applies to many infinite groups. In particular, for any linearly reductive group , linearly reductive group including , , and , we can construct a splitting map .   "
 },
 {
   "id": "sec-inv-rings-2-3",
@@ -5689,371 +5482,20 @@ var ptx_lunr_docs = [
   "body": " One important thing about this proof is that it applies to many infinite groups. In particular, for any linearly reductive group , linearly reductive group including , , and , we can construct a splitting map .  "
 },
 {
-  "id": "sec-prime-maximal-ideals",
-  "level": "1",
-  "url": "sec-prime-maximal-ideals.html",
-  "type": "Section",
-  "number": "11.1",
-  "title": "Prime and Maximal Ideals",
-  "body": "Prime and Maximal Ideals    Fate rarely calls upon us at a moment of our choosing.   Optimus Prime   Prime Ideal  prime ideal   A prime ideal of a commutative ring is a proper ideal such that whenever for , we have or .    Prime Ideals in   The prime ideals in are those of the form for a prime integer, and .    Prime Ideals in   When is a field, prime ideals in are easy to describe: is a principal ideal domain, and is prime if and only if is an irreducible polynomial. Moreover, is also a prime ideal, since is a domain.    in is Prime   Let be a field. The ideal in is prime: one can show that , which is a domain.    Primes, Presentations, and Macaulay2  The -algebra is a domain, so its defining ideal in is prime. This is the kernel of the presentation of sending to each of our 3 algebra generators, which we can compute with Macaulay2:   i1 : k = QQ o1 = QQ o1 : Ring i2 : f = map(k[t],k[x,y,z],{t^3,t^4,t^5}) 3 4 5 o2 = map (QQ[t], QQ[x..z], {t , t , t }) o2 : RingMap QQ[t] <--- QQ[x..z] i3 : P = ker f 2 2 2 3 o3 = ideal (y - x*z, x y - z , x - y*z) o3 : Ideal of QQ[x..z]   Maximal Ideal  maximal ideal   A maximal ideal of an arbitrary ring is a proper ideal such that the only ideals of containing are and .     Residue Field   Given a maximal ideal in , the residue field  residue field of is the field . A field is a residue field of if for some maximal ideal .     A ring may have many different residue fields. For example, the residue fields of are all the finite fields with a prime numbers of elements, .    Prime, Maximal, Domain, Field   Let be a commutative ring with , and let be an ideal of . 1. The ideal is maximal if and only if is a field. 2. The ideal is prime if and only if is an integral domain. 3. Every maximal ideal of is prime.    The first assertion follows immediately from the Lattice Isomorphism Theorem and the fact that is a field if and only if its only ideals are and .  Suppose is prime. If , then and hence either or , so that either or . This proves is a domain. Suppose is a domain and that . Then in and hence either or . It follows or , so that is prime.  If is maximal, then is a field, which in particular implies that is a domain, so is prime.     Every Ideal Contained in a Maximal Ideal      Fix a ring and a proper ideal . Let be the set of all proper ideals in such that , which is partially ordered with the inclusion order . We claim that [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma|Zorn's Lemma]] applies to . First, is nonempty, since it contains . Now consider a chain of proper ideals in , say , all of which contain . Notice that is an ideal as well (exercise!), and moreover since for all . Since each , we conclude that . Thus we have checked that . Now this ideal is an upper bound for our chain , and thus applies to . We conclude that has a maximal element.  There is a subtle point missing: we have shown that there is a maximal element in containing , but we have yet to show that this maximal element is a maximal ideal of . Finally, suppose that is an ideal in with . Since contains , so does . If , by the maximality of we must have . Since already satisfies , if then we must have .    Zorn's Lemma  Zorn's Lemma  Let be a non-empty family of sets. Suppose that for each chain in , the set is in . Then has a maximal element.   "
-},
-{
-  "id": "defn-prime-ideal",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#defn-prime-ideal",
-  "type": "Definition",
-  "number": "11.1",
-  "title": "Prime Ideal.",
-  "body": "Prime Ideal  prime ideal   A prime ideal of a commutative ring is a proper ideal such that whenever for , we have or .   "
-},
-{
-  "id": "ex-prime-ideals-in-z",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#ex-prime-ideals-in-z",
-  "type": "Example",
-  "number": "11.2",
-  "title": "Prime Ideals in <span class=\"process-math\">\\(\\Z\\)<\/span>.",
-  "body": "Prime Ideals in   The prime ideals in are those of the form for a prime integer, and .   "
-},
-{
-  "id": "ex-prime-ideals-in-kx",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#ex-prime-ideals-in-kx",
-  "type": "Example",
-  "number": "11.3",
-  "title": "Prime Ideals in <span class=\"process-math\">\\(k[x]\\)<\/span>.",
-  "body": "Prime Ideals in   When is a field, prime ideals in are easy to describe: is a principal ideal domain, and is prime if and only if is an irreducible polynomial. Moreover, is also a prime ideal, since is a domain.   "
-},
-{
-  "id": "ex-x3-y2-in-kxy-is-prime",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#ex-x3-y2-in-kxy-is-prime",
-  "type": "Example",
-  "number": "11.4",
-  "title": "<span class=\"process-math\">\\((x^3-y^2)\\)<\/span> in <span class=\"process-math\">\\(k[x,y]\\)<\/span> is Prime.",
-  "body": "in is Prime   Let be a field. The ideal in is prime: one can show that , which is a domain.   "
-},
-{
-  "id": "sec-prime-maximal-ideals-7",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#sec-prime-maximal-ideals-7",
-  "type": "Example",
-  "number": "11.5",
-  "title": "Primes, Presentations, and Macaulay2.",
-  "body": "Primes, Presentations, and Macaulay2  The -algebra is a domain, so its defining ideal in is prime. This is the kernel of the presentation of sending to each of our 3 algebra generators, which we can compute with Macaulay2:   i1 : k = QQ o1 = QQ o1 : Ring i2 : f = map(k[t],k[x,y,z],{t^3,t^4,t^5}) 3 4 5 o2 = map (QQ[t], QQ[x..z], {t , t , t }) o2 : RingMap QQ[t] <--- QQ[x..z] i3 : P = ker f 2 2 2 3 o3 = ideal (y - x*z, x y - z , x - y*z) o3 : Ideal of QQ[x..z]  "
-},
-{
-  "id": "defn-maximal-ideal",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#defn-maximal-ideal",
-  "type": "Definition",
-  "number": "11.6",
-  "title": "Maximal Ideal.",
-  "body": "Maximal Ideal  maximal ideal   A maximal ideal of an arbitrary ring is a proper ideal such that the only ideals of containing are and .   "
-},
-{
-  "id": "defn-residue-field",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#defn-residue-field",
-  "type": "Definition",
-  "number": "11.7",
-  "title": "Residue Field.",
-  "body": " Residue Field   Given a maximal ideal in , the residue field  residue field of is the field . A field is a residue field of if for some maximal ideal .   "
-},
-{
-  "id": "sec-prime-maximal-ideals-10",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#sec-prime-maximal-ideals-10",
-  "type": "Remark",
-  "number": "11.8",
-  "title": "",
-  "body": " A ring may have many different residue fields. For example, the residue fields of are all the finite fields with a prime numbers of elements, .  "
-},
-{
-  "id": "thm-prime-maximal-domain-field",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#thm-prime-maximal-domain-field",
-  "type": "Theorem",
-  "number": "11.9",
-  "title": "Prime, Maximal, Domain, Field.",
-  "body": " Prime, Maximal, Domain, Field   Let be a commutative ring with , and let be an ideal of . 1. The ideal is maximal if and only if is a field. 2. The ideal is prime if and only if is an integral domain. 3. Every maximal ideal of is prime.    The first assertion follows immediately from the Lattice Isomorphism Theorem and the fact that is a field if and only if its only ideals are and .  Suppose is prime. If , then and hence either or , so that either or . This proves is a domain. Suppose is a domain and that . Then in and hence either or . It follows or , so that is prime.  If is maximal, then is a field, which in particular implies that is a domain, so is prime.   "
-},
-{
-  "id": "thm-every-ideal-contained-in-a-maximal-ideal",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#thm-every-ideal-contained-in-a-maximal-ideal",
-  "type": "Theorem",
-  "number": "11.10",
-  "title": "Every Ideal Contained in a Maximal Ideal.",
-  "body": " Every Ideal Contained in a Maximal Ideal      Fix a ring and a proper ideal . Let be the set of all proper ideals in such that , which is partially ordered with the inclusion order . We claim that [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma|Zorn's Lemma]] applies to . First, is nonempty, since it contains . Now consider a chain of proper ideals in , say , all of which contain . Notice that is an ideal as well (exercise!), and moreover since for all . Since each , we conclude that . Thus we have checked that . Now this ideal is an upper bound for our chain , and thus applies to . We conclude that has a maximal element.  There is a subtle point missing: we have shown that there is a maximal element in containing , but we have yet to show that this maximal element is a maximal ideal of . Finally, suppose that is an ideal in with . Since contains , so does . If , by the maximality of we must have . Since already satisfies , if then we must have .   "
-},
-{
-  "id": "thm-zorns-lemma",
-  "level": "2",
-  "url": "sec-prime-maximal-ideals.html#thm-zorns-lemma",
-  "type": "Theorem",
-  "number": "11.11",
-  "title": "Zorn’s Lemma.",
-  "body": "Zorn's Lemma  Zorn's Lemma  Let be a non-empty family of sets. Suppose that for each chain in , the set is in . Then has a maximal element.  "
-},
-{
-  "id": "sec-spectrum",
-  "level": "1",
-  "url": "sec-spectrum.html",
-  "type": "Section",
-  "number": "11.2",
-  "title": "The Spectrum of a Ring",
-  "body": " The Spectrum of a Ring     What is life but a spectrum and what is music but life itself.   Billy Cobham   Prime Spectrum   Let be a ring. The prime spectrum  prime spectrum of , denoted , is the set of prime ideals of . The set of maximal ideals of is denoted  .      For a ring and an ideal , we set      Properties of V   Let be a ring, and be ideals, not necessarily proper. (a) and . (b) If , then . (c) . (d) .    Both and are straightforward, so we just prove .  To see , just observe that if or , then .  Since , we have . To show , if is a prime and , then . Thus we can find , and such that . Since is prime, , while also . Therefore, .  To show , since ideals are closed for sums, if for all , then . Moreover, if , then in particular .    Poset Structure of Spec   Note that is also a poset under inclusion. Show that the poset structure of can be recovered from the topology as follows:     Spectrum of Z   The spectrum of is, as a poset:    #empty  The closed sets are of the form , which are the whole space when , the empty set when , and any finite union of things in the top row. Any closed set that contains must be all of .    Radical Ideal   The radical  radical of an ideal of an ideal  in a ring is the ideal An ideal is a radical ideal  radical ideal if .    Radical Ideal is an Ideal   To see that is an ideal, note that if , then and .    Reduced Ring   A ring is reduced if it has no nonzero nilpotents.    Ideal Radical iff R\/I Reduced   An ideal in is radical if and only if is reduced.    and Radical Ideals   Let be a ring. For any ideal , .    The containment is immediate from the definition of radical, and thus we have . Now let be a prime ideal, and let . By definition, there exists some such that , but since is prime, we conclude that . Therefore, , and we are done.    Preimage of Prime is Prime   Let be a ring homomorphism and be prime. Then is also prime.    Let be a prime ideal in . Given elements such that , then , and since is prime, we conclude that or . Therefore, or .    Induced Map on   Each ring homomorphism induces a map on spectra  map on given by .    Induced Map on Spec Continuous   The induced map on spectra is not only an order-preserving map, but also it is continuous:    if is open, we have for some ideal ; then for a prime of , So is the complement of , and thus open    Minimal Prime   Let be an ideal in a ring . A prime is a minimal prime  minimal prime of an ideal of if is minimal in . A minimal prime  minimal prime of a ring of is a minimal element in .    Minimal Prime   Let be an ideal in a ring . A minimal prime of is a minimal element (with respect to containment) in . More precisely, is a minimal prime of if the following hold: - is a prime ideal, - , and - if is also a prime ideal and , then .  The set of minimal primes of is denoted  .    Every Prime Contains Minimal Prime   Let be a ring, and an ideal. Every prime that contains contains a minimal prime of .    Fix an ideal and a prime , and consider the set which is partially ordered with . On the one hand, , so is nonempty. On the other hand, given any chain in , is a prime ideal in ( #prove !). Moreover, contains , since every contain , and is contained in , since every . Therefore, , and Zorn's Lemma applies to . By [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma]], contains a maximal element for , say .  Notice that is equivalently a minimal element for . Now if is a prime ideal with , then , and thus . Therefore, we must have , by maximality of with respect to . We conclude that is a minimal prime of , and by definition is contained in .    Multiplicatively Closed Set   Suppose is a commutative ring and is a subset such that 1. , 2. is closed under multiplication (i.e., if , then ), and 3. does not contain nor any zerodivisors. Such a subset is called a multiplicatively closed subset of non zero divisors  multiplicatively closed subset of .    Spec Strong Nullstellensatz   Let be a ring, an ideal, and a multiplicatively closed subset. If , then there is a prime ideal with and .    Consider the family of ideals ordered with inclusion. This is nonempty, since it contains , and any chain has an upper bound . Therefore, has some maximal element by a basic application of [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma|Zorn's Lemma]]. We claim is prime. Suppose . By maximality, and both have nonempty intersection with , so there exist , , with . If , then     Spectrum Analogue of Strong Nullstellensatz   Let be a ring, and be an ideal. For , Moreover     First to justify the equivalence of the two statements we observe: Now we will show that :   : It suffices to show that implies , and indeed    : If , consider the multiplicatively closed set . We have by hypothesis. There is a prime in that does not intersect , and hence does not contain   Finally, , and since every prime in contains a minimal prime of , we conclude that     Radical of is   Let be a field, , and . On the one hand, it is immediate form the definition that , and thus . On the other hand, is a prime ideal that contains , and thus by [[Mathematics\/Commutative Algebra\/Results\/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]] we must have .    iff Radicals are Equal   Let a ring. There is an order-reversing bijection In particular, for two ideals and , we have if and only if .    The closed sets of are precisely the sets of the form for some ideal . As the closed sets of are given by where ranges over all radical ideals. We showed in [[Mathematics\/Commutative Algebra\/Results\/Proposition - Properties of V|Proposition]] that the map is order-reversing. Finally, suppose that and are ideals such that . By [[Mathematics\/Commutative Algebra\/Results\/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]], Conversely, suppose that . Given a prime , we also have , and thus so . Since the same argument applies to show that , we conclude that .    Properties of Radical Ideals   Let and be ideals in a ring . (a) Show that . (b) Show that if , then . (c) Show that . (d) Show that for all . (e) Show that if is a prime ideal, then for all .    "
-},
-{
-  "id": "defn-prime-spectrum",
-  "level": "2",
-  "url": "sec-spectrum.html#defn-prime-spectrum",
-  "type": "Definition",
-  "number": "11.12",
-  "title": "Prime Spectrum.",
-  "body": "Prime Spectrum   Let be a ring. The prime spectrum  prime spectrum of , denoted , is the set of prime ideals of . The set of maximal ideals of is denoted  .   "
-},
-{
-  "id": "defn-vi",
-  "level": "2",
-  "url": "sec-spectrum.html#defn-vi",
-  "type": "Definition",
-  "number": "11.13",
-  "title": "<span class=\"process-math\">\\(V(I)\\)<\/span>.",
-  "body": "  For a ring and an ideal , we set     "
-},
-{
-  "id": "prop-properties-of-v",
-  "level": "2",
-  "url": "sec-spectrum.html#prop-properties-of-v",
-  "type": "Proposition",
-  "number": "11.14",
-  "title": "Properties of V.",
-  "body": "Properties of V   Let be a ring, and be ideals, not necessarily proper. (a) and . (b) If , then . (c) . (d) .    Both and are straightforward, so we just prove .  To see , just observe that if or , then .  Since , we have . To show , if is a prime and , then . Thus we can find , and such that . Since is prime, , while also . Therefore, .  To show , since ideals are closed for sums, if for all , then . Moreover, if , then in particular .   "
-},
-{
-  "id": "ex-poset-structure-of-spec",
-  "level": "2",
-  "url": "sec-spectrum.html#ex-poset-structure-of-spec",
-  "type": "Example",
-  "number": "11.15",
-  "title": "Poset Structure of Spec.",
-  "body": "Poset Structure of Spec   Note that is also a poset under inclusion. Show that the poset structure of can be recovered from the topology as follows:    "
-},
-{
-  "id": "ex-spectrum-of-z",
-  "level": "2",
-  "url": "sec-spectrum.html#ex-spectrum-of-z",
-  "type": "Example",
-  "number": "11.16",
-  "title": "Spectrum of Z.",
-  "body": "Spectrum of Z   The spectrum of is, as a poset:    #empty  The closed sets are of the form , which are the whole space when , the empty set when , and any finite union of things in the top row. Any closed set that contains must be all of .   "
-},
-{
-  "id": "defn-radical-ideal",
-  "level": "2",
-  "url": "sec-spectrum.html#defn-radical-ideal",
-  "type": "Definition",
-  "number": "11.17",
-  "title": "Radical Ideal.",
-  "body": "Radical Ideal   The radical  radical of an ideal of an ideal  in a ring is the ideal An ideal is a radical ideal  radical ideal if .   "
-},
-{
-  "id": "prop-radical-ideal-is-an-ideal",
-  "level": "2",
-  "url": "sec-spectrum.html#prop-radical-ideal-is-an-ideal",
-  "type": "Proposition",
-  "number": "11.18",
-  "title": "Radical Ideal is an Ideal.",
-  "body": "Radical Ideal is an Ideal   To see that is an ideal, note that if , then and .   "
-},
-{
-  "id": "defn-reduced-ring",
-  "level": "2",
-  "url": "sec-spectrum.html#defn-reduced-ring",
-  "type": "Definition",
-  "number": "11.19",
-  "title": "Reduced Ring.",
-  "body": "Reduced Ring   A ring is reduced if it has no nonzero nilpotents.   "
-},
-{
-  "id": "ex-ideal-radical-iff-ri-reduced",
-  "level": "2",
-  "url": "sec-spectrum.html#ex-ideal-radical-iff-ri-reduced",
-  "type": "Example",
-  "number": "11.20",
-  "title": "Ideal Radical iff R\/I Reduced.",
-  "body": "Ideal Radical iff R\/I Reduced   An ideal in is radical if and only if is reduced.   "
-},
-{
-  "id": "lem-v-and-radical-ideals",
-  "level": "2",
-  "url": "sec-spectrum.html#lem-v-and-radical-ideals",
-  "type": "Lemma",
-  "number": "11.21",
-  "title": "<span class=\"process-math\">\\(V\\)<\/span> and Radical Ideals.",
-  "body": "and Radical Ideals   Let be a ring. For any ideal , .    The containment is immediate from the definition of radical, and thus we have . Now let be a prime ideal, and let . By definition, there exists some such that , but since is prime, we conclude that . Therefore, , and we are done.   "
-},
-{
-  "id": "lem-preimage-of-prime-is-prime",
-  "level": "2",
-  "url": "sec-spectrum.html#lem-preimage-of-prime-is-prime",
-  "type": "Lemma",
-  "number": "11.22",
-  "title": "Preimage of Prime is Prime.",
-  "body": "Preimage of Prime is Prime   Let be a ring homomorphism and be prime. Then is also prime.    Let be a prime ideal in . Given elements such that , then , and since is prime, we conclude that or . Therefore, or .   "
-},
-{
-  "id": "defn-induced-map-on-spec",
-  "level": "2",
-  "url": "sec-spectrum.html#defn-induced-map-on-spec",
-  "type": "Definition",
-  "number": "11.23",
-  "title": "Induced Map on <span class=\"process-math\">\\(\\Spec\\)<\/span>.",
-  "body": "Induced Map on   Each ring homomorphism induces a map on spectra  map on given by .   "
-},
-{
-  "id": "ex-induced-map-on-spec-continuous",
-  "level": "2",
-  "url": "sec-spectrum.html#ex-induced-map-on-spec-continuous",
-  "type": "Example",
-  "number": "11.24",
-  "title": "Induced Map on Spec Continuous.",
-  "body": "Induced Map on Spec Continuous   The induced map on spectra is not only an order-preserving map, but also it is continuous:    if is open, we have for some ideal ; then for a prime of , So is the complement of , and thus open   "
-},
-{
-  "id": "defn-minimal-prime-2",
-  "level": "2",
-  "url": "sec-spectrum.html#defn-minimal-prime-2",
-  "type": "Definition",
-  "number": "11.25",
-  "title": "Minimal Prime.",
-  "body": "Minimal Prime   Let be an ideal in a ring . A prime is a minimal prime  minimal prime of an ideal of if is minimal in . A minimal prime  minimal prime of a ring of is a minimal element in .   "
-},
-{
-  "id": "defn-minimal-prime-3",
-  "level": "2",
-  "url": "sec-spectrum.html#defn-minimal-prime-3",
-  "type": "Definition",
-  "number": "11.26",
-  "title": "Minimal Prime.",
-  "body": "Minimal Prime   Let be an ideal in a ring . A minimal prime of is a minimal element (with respect to containment) in . More precisely, is a minimal prime of if the following hold: - is a prime ideal, - , and - if is also a prime ideal and , then .  The set of minimal primes of is denoted  .   "
-},
-{
-  "id": "lem-every-prime-contains-minimal-prime",
-  "level": "2",
-  "url": "sec-spectrum.html#lem-every-prime-contains-minimal-prime",
-  "type": "Lemma",
-  "number": "11.27",
-  "title": "Every Prime Contains Minimal Prime.",
-  "body": "Every Prime Contains Minimal Prime   Let be a ring, and an ideal. Every prime that contains contains a minimal prime of .    Fix an ideal and a prime , and consider the set which is partially ordered with . On the one hand, , so is nonempty. On the other hand, given any chain in , is a prime ideal in ( #prove !). Moreover, contains , since every contain , and is contained in , since every . Therefore, , and Zorn's Lemma applies to . By [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma]], contains a maximal element for , say .  Notice that is equivalently a minimal element for . Now if is a prime ideal with , then , and thus . Therefore, we must have , by maximality of with respect to . We conclude that is a minimal prime of , and by definition is contained in .   "
-},
-{
-  "id": "defn-multiplicatively-closed-set",
-  "level": "2",
-  "url": "sec-spectrum.html#defn-multiplicatively-closed-set",
-  "type": "Definition",
-  "number": "11.28",
-  "title": "Multiplicatively Closed Set.",
-  "body": "Multiplicatively Closed Set   Suppose is a commutative ring and is a subset such that 1. , 2. is closed under multiplication (i.e., if , then ), and 3. does not contain nor any zerodivisors. Such a subset is called a multiplicatively closed subset of non zero divisors  multiplicatively closed subset of .   "
-},
-{
-  "id": "lem-spec-strong-nullstellensatz",
-  "level": "2",
-  "url": "sec-spectrum.html#lem-spec-strong-nullstellensatz",
-  "type": "Lemma",
-  "number": "11.29",
-  "title": "Spec Strong Nullstellensatz.",
-  "body": "Spec Strong Nullstellensatz   Let be a ring, an ideal, and a multiplicatively closed subset. If , then there is a prime ideal with and .    Consider the family of ideals ordered with inclusion. This is nonempty, since it contains , and any chain has an upper bound . Therefore, has some maximal element by a basic application of [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma|Zorn's Lemma]]. We claim is prime. Suppose . By maximality, and both have nonempty intersection with , so there exist , , with . If , then    "
-},
-{
-  "id": "thm-spectrum-analogue-of-strong-nullstellensatz",
-  "level": "2",
-  "url": "sec-spectrum.html#thm-spectrum-analogue-of-strong-nullstellensatz",
-  "type": "Theorem",
-  "number": "11.30",
-  "title": "Spectrum Analogue of Strong Nullstellensatz.",
-  "body": "Spectrum Analogue of Strong Nullstellensatz   Let be a ring, and be an ideal. For , Moreover     First to justify the equivalence of the two statements we observe: Now we will show that :   : It suffices to show that implies , and indeed    : If , consider the multiplicatively closed set . We have by hypothesis. There is a prime in that does not intersect , and hence does not contain   Finally, , and since every prime in contains a minimal prime of , we conclude that    "
-},
-{
-  "id": "ex-radical-of-x2-is-x",
-  "level": "2",
-  "url": "sec-spectrum.html#ex-radical-of-x2-is-x",
-  "type": "Example",
-  "number": "11.31",
-  "title": "Radical of <span class=\"process-math\">\\((x^2)\\)<\/span> is <span class=\"process-math\">\\((x)\\)<\/span>.",
-  "body": "Radical of is   Let be a field, , and . On the one hand, it is immediate form the definition that , and thus . On the other hand, is a prime ideal that contains , and thus by [[Mathematics\/Commutative Algebra\/Results\/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]] we must have .   "
-},
-{
-  "id": "cor-vivj-iff-radicals-are-equal",
-  "level": "2",
-  "url": "sec-spectrum.html#cor-vivj-iff-radicals-are-equal",
-  "type": "Corollary",
-  "number": "11.32",
-  "title": "<span class=\"process-math\">\\(V(I)=V(J)\\)<\/span> iff Radicals are Equal.",
-  "body": "iff Radicals are Equal   Let a ring. There is an order-reversing bijection In particular, for two ideals and , we have if and only if .    The closed sets of are precisely the sets of the form for some ideal . As the closed sets of are given by where ranges over all radical ideals. We showed in [[Mathematics\/Commutative Algebra\/Results\/Proposition - Properties of V|Proposition]] that the map is order-reversing. Finally, suppose that and are ideals such that . By [[Mathematics\/Commutative Algebra\/Results\/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]], Conversely, suppose that . Given a prime , we also have , and thus so . Since the same argument applies to show that , we conclude that .   "
-},
-{
-  "id": "ex-properties-of-radical-ideals",
-  "level": "2",
-  "url": "sec-spectrum.html#ex-properties-of-radical-ideals",
-  "type": "Example",
-  "number": "11.33",
-  "title": "Properties of Radical Ideals.",
-  "body": "Properties of Radical Ideals   Let and be ideals in a ring . (a) Show that . (b) Show that if , then . (c) Show that . (d) Show that for all . (e) Show that if is a prime ideal, then for all .   "
-},
-{
-  "id": "sec-prime-avoidance",
-  "level": "1",
-  "url": "sec-prime-avoidance.html",
-  "type": "Section",
-  "number": "11.3",
-  "title": "Prime Avoidance",
-  "body": "Prime Avoidance     Only by avoiding the beginning of things can we escape their end.   Cyril Connolly     We will now discuss an important lemma known as Prime Avoidance. This is an elementary fact, but it is very helpful. Prime Avoidance says that if an ideal is not contained in any of the primes , then cannot be contained in their union. Set-theoretically this is possible, of course; but if the ideals are all prime, then it is actually not possible for unless is contained in one of the . In fact, for this to work we can even allow two of the to be just any ideals, as long as the remaining are prime.   Prime Avoidance  Prime Avoidance   Let be a ring, be ideals, and suppose that is prime for . If for all , then . Equivalently, if , then for some .  Moreover, if is -graded, and all of the ideals are homogeneous, all are prime, and for all , then there is a homogeneous element in that is not in .    We proceed by induction on . If , there is nothing to show. When , we have two ideals and and an ideal such that and , and we want to show that . By assumption there exist elements with and . If or , then we have an element that is not in , and we are done. On the other hand, if and , then consider . Since but , then . Similarly, . Therefore, .  Now suppose that the statement holds for some , and consider ideals with prime for all such that for any . By induction hypothesis, for each we have so we can find elements such that If some , we are done, so let's assume that for each . Consider Notice that . If for , then we also have , a contradiction. If , then we also have , since . Since , our assumption is that is prime, so one of , which is a contradiction. So for all , and thus is the element we were searching for.  If all are homogeneous and prime, then we proceed as above but replacing and with suitable powers so that is homogeneous. For example, we could take The primeness assumption guarantees that noncontainments in ideals is preserved.    Stronger Prime Avoidance   Let be a ring, prime ideals, and be an ideal in . If for each , then there exists such that     We proceed by induction on . When , if every element of the form with is in , then multiplying by we conclude that every , meaning .  Now suppose and that we have shown the statement for primes. If for some , then we might as well exclude from our list of primes, and the statement follows by induction. So assume that all our primes are incomparable.  If for all , we are done, since we can take for the element we are searching for. So suppose is in some , which we assume without loss of generality to be . Our induction hypothesis says that we can find such that . If , we are done, so suppose . Since we assumed , we must have , or else we would have had . Now is a prime ideal that does not contain , nor , so Choose not in . Then , since but . Moreover, for all we have , since and .    "
-},
-{
-  "id": "sec-prime-avoidance-3",
-  "level": "2",
-  "url": "sec-prime-avoidance.html#sec-prime-avoidance-3",
-  "type": "Remark",
-  "number": "11.34",
-  "title": "",
-  "body": " We will now discuss an important lemma known as Prime Avoidance. This is an elementary fact, but it is very helpful. Prime Avoidance says that if an ideal is not contained in any of the primes , then cannot be contained in their union. Set-theoretically this is possible, of course; but if the ideals are all prime, then it is actually not possible for unless is contained in one of the . In fact, for this to work we can even allow two of the to be just any ideals, as long as the remaining are prime.  "
-},
-{
-  "id": "lem-prime-avoidance",
-  "level": "2",
-  "url": "sec-prime-avoidance.html#lem-prime-avoidance",
-  "type": "Lemma",
-  "number": "11.35",
-  "title": "Prime Avoidance.",
-  "body": "Prime Avoidance  Prime Avoidance   Let be a ring, be ideals, and suppose that is prime for . If for all , then . Equivalently, if , then for some .  Moreover, if is -graded, and all of the ideals are homogeneous, all are prime, and for all , then there is a homogeneous element in that is not in .    We proceed by induction on . If , there is nothing to show. When , we have two ideals and and an ideal such that and , and we want to show that . By assumption there exist elements with and . If or , then we have an element that is not in , and we are done. On the other hand, if and , then consider . Since but , then . Similarly, . Therefore, .  Now suppose that the statement holds for some , and consider ideals with prime for all such that for any . By induction hypothesis, for each we have so we can find elements such that If some , we are done, so let's assume that for each . Consider Notice that . If for , then we also have , a contradiction. If , then we also have , since . Since , our assumption is that is prime, so one of , which is a contradiction. So for all , and thus is the element we were searching for.  If all are homogeneous and prime, then we proceed as above but replacing and with suitable powers so that is homogeneous. For example, we could take The primeness assumption guarantees that noncontainments in ideals is preserved.   "
-},
-{
-  "id": "thm-stronger-prime-avoidance",
-  "level": "2",
-  "url": "sec-prime-avoidance.html#thm-stronger-prime-avoidance",
-  "type": "Theorem",
-  "number": "11.36",
-  "title": "Stronger Prime Avoidance.",
-  "body": "Stronger Prime Avoidance   Let be a ring, prime ideals, and be an ideal in . If for each , then there exists such that     We proceed by induction on . When , if every element of the form with is in , then multiplying by we conclude that every , meaning .  Now suppose and that we have shown the statement for primes. If for some , then we might as well exclude from our list of primes, and the statement follows by induction. So assume that all our primes are incomparable.  If for all , we are done, since we can take for the element we are searching for. So suppose is in some , which we assume without loss of generality to be . Our induction hypothesis says that we can find such that . If , we are done, so suppose . Since we assumed , we must have , or else we would have had . Now is a prime ideal that does not contain , nor , so Choose not in . Then , since but . Moreover, for all we have , since and .   "
-},
-{
   "id": "sec-local-rings",
   "level": "1",
   "url": "sec-local-rings.html",
   "type": "Section",
-  "number": "12.1",
+  "number": "11.1",
   "title": "Local Rings",
-  "body": " Local Rings     Virtue is too often merely local.   Samuel Johnson    The study of local rings is central to commutative algebra. As we will see, life is easier in a local ring, so much so that we often want to localize so we can be in a local ring. A lot of the things we will say in this chapter have graded analogues: in some ways, -graded -algebras and their homogeneous ideals behave like a local ring, where the homogenous maximal ideal plays the role of the maximal ideal.   Local Ring   A ring is a local ring  local ring if it has exactly one maximal ideal. We often use the notation  to denote and its maximal ideal, or to also specify the residue field .  Some people reserve the term local ring for a noetherian local ring, and call what we have defined a quasilocal ring quasilocal ring ; we will not follow this convention here.    Local if Nonunits Form an Ideal   A ring is local if and only if the set of non-units of forms an ideal.    If is a local with maximal ideal , then every nonunit must be in , and contains no nonunits, so must be the set of nonunits. Conversely, if the set of nonunits is an ideal, that must be the only maximal ideal, since any other element in is a unit.    is Local   The ring is local with maximal ideal .    Let for some prime and . We want to show that has a unique maximal ideal.  Recall that a proper ideal in is maximal if and only if is a field. Let be a proper ideal of . Since is a PID, it follows that for some .  Now, note that is an integral domain since is a prime ideal of . By the [[Mathematics\/Number Theory\/Results\/Theorem - Sunzi's Remainder Theorem|Chinese Remainder Theorem]], we have the following isomorphism of rings: where are positive integers such that , and is the number of distinct prime factors of .  Since is a product of fields, it follows that is maximal in . Hence, has a unique maximal ideal , since is the only proper ideal of that contains .[^5    Power Series Ring over Field is Local   The ring of power series over a field is local.    Indeed, one can show that a power series has an inverse if and only if its constant term is nonzero; this can be done explicitly, by writing down the conditions for a power series to be the inverse of another. The unique maximal ideal is . More generally, is local with maximal ideal .    Z_(p) is Local   The ring is a local ring with maximal ideal .    Polynomial Rings are not Local   A polynomial ring over a field is certainly not local; we have seen it has so many maximal ideals!    Ring Characteristic   Let R be a commutative ring. The characteristic  characteristic of a ring of , written , is the unique non-negative generator of the kernel of the unique ring homomorphism . (Recall .)  Equivalently, is the smallest positive integer such that , if such and integer exists, and otherwise.    Characteristic in Local Rings   Let be a local ring. Then one of the following holds: (a) . We say that has equal characteristic zero equal characteristic zero . (b) , for a prime , so has mixed characteristic  mixed characteristic (c) for a prime , so has equal characteristic  equal characteristic . (d) , for a prime and an integer . If is reduced, then one of the first three cases holds.    Since is a quotient of , the characteristic of must be a multiple of the characteristic of , since the map factors through . We must think of as a multiple of any integer for this to make sense. Now is a field, so its characteristic is or for a prime . If , then necessarily . If , we claim that must be either or a power of . Indeed, if we write with coprime to , note that , so if , we have , which is a contradiction. Since is local, this means that is a unit. But then, implies , so the characteristic must be .     If is an -graded -algebra with , and is the homogeneous maximal ideal, and behave a lot like a local ring and its maximal ideal, and we sometimes use the suggestive notation to refer to it. Many properties of local rings also apply to the graded setting, so given a statement about local rings, you might take it as a suggestion that there might be a corresponding statement about graded rings — a statement that, nevertheless, still needs to be proved. There are usually some changes one needs to make to the statement; for example, if a theorem makes assertions about the ideals in a local ring, the corresponding graded statement will likely only apply to homogeneous ideals, and a theorem about finitely generated modules over a local ring will probably translate into a theorem about graded modules in the graded setting.   "
+  "body": "Local Rings    Virtue is too often merely local.   Samuel Johnson    The study of local rings is central to commutative algebra. As we will see, life is easier in a local ring, so much so that we often want to localize so we can be in a local ring. A lot of the things we will say in this chapter have graded analogues: in some ways, -graded -algebras and their homogeneous ideals behave like a local ring, where the homogenous maximal ideal plays the role of the maximal ideal.   Local Ring   A ring is a local ring  local ring if it has exactly one maximal ideal. We often use the notation  to denote and its maximal ideal, or to also specify the residue field .  Some people reserve the term local ring for a noetherian local ring, and call what we have defined a quasilocal ring quasilocal ring ; we will not follow this convention here.    Local if Nonunits Form an Ideal   A ring is local if and only if the set of non-units of forms an ideal.    If is a local with maximal ideal , then every nonunit must be in , and contains no nonunits, so must be the set of nonunits. Conversely, if the set of nonunits is an ideal, that must be the only maximal ideal, since any other element in is a unit.    is Local   The ring is local with maximal ideal .    Let for some prime and . We want to show that has a unique maximal ideal.  Recall that a proper ideal in is maximal if and only if is a field. Let be a proper ideal of . Since is a PID, it follows that for some .  Now, note that is an integral domain since is a prime ideal of . By the [[Mathematics\/Number Theory\/Results\/Theorem - Sunzi's Remainder Theorem|Chinese Remainder Theorem]], we have the following isomorphism of rings: where are positive integers such that , and is the number of distinct prime factors of .  Since is a product of fields, it follows that is maximal in . Hence, has a unique maximal ideal , since is the only proper ideal of that contains .    Power Series Ring over Field is Local   The ring of power series over a field is local.    Indeed, one can show that a power series has an inverse if and only if its constant term is nonzero; this can be done explicitly, by writing down the conditions for a power series to be the inverse of another. The unique maximal ideal is . More generally, is local with maximal ideal .    Z_(p) is Local   The ring is a local ring with maximal ideal .    Polynomial Rings are not Local   A polynomial ring over a field is certainly not local; we have seen it has so many maximal ideals!    Ring Characteristic   Let R be a commutative ring. The characteristic  characteristic of a ring of , written , is the unique non-negative generator of the kernel of the unique ring homomorphism . (Recall .)  Equivalently, is the smallest positive integer such that , if such and integer exists, and otherwise.    Characteristic in Local Rings   Let be a local ring. Then one of the following holds: (a) . We say that has equal characteristic zero equal characteristic zero . (b) , for a prime , so has mixed characteristic  mixed characteristic (c) for a prime , so has equal characteristic  equal characteristic . (d) , for a prime and an integer . If is reduced, then one of the first three cases holds.    Since is a quotient of , the characteristic of must be a multiple of the characteristic of , since the map factors through . We must think of as a multiple of any integer for this to make sense. Now is a field, so its characteristic is or for a prime . If , then necessarily . If , we claim that must be either or a power of . Indeed, if we write with coprime to , note that , so if , we have , which is a contradiction. Since is local, this means that is a unit. But then, implies , so the characteristic must be .     If is an -graded -algebra with , and is the homogeneous maximal ideal, and behave a lot like a local ring and its maximal ideal, and we sometimes use the suggestive notation to refer to it. Many properties of local rings also apply to the graded setting, so given a statement about local rings, you might take it as a suggestion that there might be a corresponding statement about graded rings — a statement that, nevertheless, still needs to be proved. There are usually some changes one needs to make to the statement; for example, if a theorem makes assertions about the ideals in a local ring, the corresponding graded statement will likely only apply to homogeneous ideals, and a theorem about finitely generated modules over a local ring will probably translate into a theorem about graded modules in the graded setting.   "
 },
 {
   "id": "sec-local-rings-3",
   "level": "2",
   "url": "sec-local-rings.html#sec-local-rings-3",
   "type": "Remark",
-  "number": "12.1",
+  "number": "11.1",
   "title": "",
   "body": " The study of local rings is central to commutative algebra. As we will see, life is easier in a local ring, so much so that we often want to localize so we can be in a local ring. A lot of the things we will say in this chapter have graded analogues: in some ways, -graded -algebras and their homogeneous ideals behave like a local ring, where the homogenous maximal ideal plays the role of the maximal ideal.  "
 },
@@ -6062,7 +5504,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-rings.html#defn-local-ring",
   "type": "Definition",
-  "number": "12.2",
+  "number": "11.2",
   "title": "Local Ring.",
   "body": "Local Ring   A ring is a local ring  local ring if it has exactly one maximal ideal. We often use the notation  to denote and its maximal ideal, or to also specify the residue field .  Some people reserve the term local ring for a noetherian local ring, and call what we have defined a quasilocal ring quasilocal ring ; we will not follow this convention here.   "
 },
@@ -6071,7 +5513,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-rings.html#lem-local-if-nonunits-form-an-ideal",
   "type": "Lemma",
-  "number": "12.3",
+  "number": "11.3",
   "title": "Local if Nonunits Form an Ideal.",
   "body": "Local if Nonunits Form an Ideal   A ring is local if and only if the set of non-units of forms an ideal.    If is a local with maximal ideal , then every nonunit must be in , and contains no nonunits, so must be the set of nonunits. Conversely, if the set of nonunits is an ideal, that must be the only maximal ideal, since any other element in is a unit.   "
 },
@@ -6080,16 +5522,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-rings.html#ex-zpn-is-local",
   "type": "Example",
-  "number": "12.4",
+  "number": "11.4",
   "title": "<span class=\"process-math\">\\(\\Z\/(p^n)\\)<\/span> is Local.",
-  "body": "is Local   The ring is local with maximal ideal .    Let for some prime and . We want to show that has a unique maximal ideal.  Recall that a proper ideal in is maximal if and only if is a field. Let be a proper ideal of . Since is a PID, it follows that for some .  Now, note that is an integral domain since is a prime ideal of . By the [[Mathematics\/Number Theory\/Results\/Theorem - Sunzi's Remainder Theorem|Chinese Remainder Theorem]], we have the following isomorphism of rings: where are positive integers such that , and is the number of distinct prime factors of .  Since is a product of fields, it follows that is maximal in . Hence, has a unique maximal ideal , since is the only proper ideal of that contains .[^5   "
+  "body": "is Local   The ring is local with maximal ideal .    Let for some prime and . We want to show that has a unique maximal ideal.  Recall that a proper ideal in is maximal if and only if is a field. Let be a proper ideal of . Since is a PID, it follows that for some .  Now, note that is an integral domain since is a prime ideal of . By the [[Mathematics\/Number Theory\/Results\/Theorem - Sunzi's Remainder Theorem|Chinese Remainder Theorem]], we have the following isomorphism of rings: where are positive integers such that , and is the number of distinct prime factors of .  Since is a product of fields, it follows that is maximal in . Hence, has a unique maximal ideal , since is the only proper ideal of that contains .   "
 },
 {
   "id": "ex-power-series-ring-over-field-is-local",
   "level": "2",
   "url": "sec-local-rings.html#ex-power-series-ring-over-field-is-local",
   "type": "Example",
-  "number": "12.5",
+  "number": "11.5",
   "title": "Power Series Ring over Field is Local.",
   "body": "Power Series Ring over Field is Local   The ring of power series over a field is local.    Indeed, one can show that a power series has an inverse if and only if its constant term is nonzero; this can be done explicitly, by writing down the conditions for a power series to be the inverse of another. The unique maximal ideal is . More generally, is local with maximal ideal .   "
 },
@@ -6098,7 +5540,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-rings.html#ex-z_p-is-local",
   "type": "Example",
-  "number": "12.6",
+  "number": "11.6",
   "title": "Z_(p) is Local.",
   "body": "Z_(p) is Local   The ring is a local ring with maximal ideal .   "
 },
@@ -6107,7 +5549,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-rings.html#ex-polynomial-rings-are-not-local",
   "type": "Example",
-  "number": "12.7",
+  "number": "11.7",
   "title": "Polynomial Rings are not Local.",
   "body": "Polynomial Rings are not Local   A polynomial ring over a field is certainly not local; we have seen it has so many maximal ideals!   "
 },
@@ -6116,7 +5558,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-rings.html#defn-ring-characteristic",
   "type": "Definition",
-  "number": "12.8",
+  "number": "11.8",
   "title": "Ring Characteristic.",
   "body": "Ring Characteristic   Let R be a commutative ring. The characteristic  characteristic of a ring of , written , is the unique non-negative generator of the kernel of the unique ring homomorphism . (Recall .)  Equivalently, is the smallest positive integer such that , if such and integer exists, and otherwise.   "
 },
@@ -6125,7 +5567,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-rings.html#prop-characteristic-in-local-rings",
   "type": "Proposition",
-  "number": "12.9",
+  "number": "11.9",
   "title": "Characteristic in Local Rings.",
   "body": "Characteristic in Local Rings   Let be a local ring. Then one of the following holds: (a) . We say that has equal characteristic zero equal characteristic zero . (b) , for a prime , so has mixed characteristic  mixed characteristic (c) for a prime , so has equal characteristic  equal characteristic . (d) , for a prime and an integer . If is reduced, then one of the first three cases holds.    Since is a quotient of , the characteristic of must be a multiple of the characteristic of , since the map factors through . We must think of as a multiple of any integer for this to make sense. Now is a field, so its characteristic is or for a prime . If , then necessarily . If , we claim that must be either or a power of . Indeed, if we write with coprime to , note that , so if , we have , which is a contradiction. Since is local, this means that is a unit. But then, implies , so the characteristic must be .   "
 },
@@ -6134,7 +5576,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-rings.html#sec-local-rings-12",
   "type": "Remark",
-  "number": "12.10",
+  "number": "11.10",
   "title": "",
   "body": " If is an -graded -algebra with , and is the homogeneous maximal ideal, and behave a lot like a local ring and its maximal ideal, and we sometimes use the suggestive notation to refer to it. Many properties of local rings also apply to the graded setting, so given a statement about local rings, you might take it as a suggestion that there might be a corresponding statement about graded rings — a statement that, nevertheless, still needs to be proved. There are usually some changes one needs to make to the statement; for example, if a theorem makes assertions about the ideals in a local ring, the corresponding graded statement will likely only apply to homogeneous ideals, and a theorem about finitely generated modules over a local ring will probably translate into a theorem about graded modules in the graded setting.  "
 },
@@ -6143,16 +5585,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-localizations.html",
   "type": "Section",
-  "number": "12.2",
+  "number": "11.2",
   "title": "Localization",
-  "body": "Localization    The best way to be global is to be local.   Alex Atala   Powers of Element is Multiplicatively Closed   Let be a ring. For any , the set is a multiplicative set.    Complement of Prime Ideal is Multiplicative   Let be a ring. If is a prime ideal, the set is multiplicative    Regular Element   Let be a ring. An element that is not a zerodivisor is called a nonzerodivisor nonzerodivisor or a regular element regular element .    Regular Elements are Multiplicative   Let be a ring. The set of regular elements in forms a multiplicatively closed subset.    Intersection of Multiplicative Sets is Multiplicative   An arbitrary intersection of multiplicatively closed subsets is multiplicatively closed. In particular, for any family of primes , the complement of is multiplicatively closed.    Localization of a Ring   Let be a ring, and be a multiplicative set with . The localization localization of a ring of at is the ring where is the equivalence relation The operations are given by The zero in is and the identity is .  EMPTY      Note that we write elements in in the form even though they are equivalence classes of such expressions.   Field of Fractions is a Localization   Note that if is a domain, the equivalence relation simplifies to , so , and in particular is a domain too. In particular, is a localization of .     In the localization of at , every element of becomes a unit. The following universal property says roughly that is the smallest -algebra in which every element of is a unit.   UMP of Localizations   Let be a ring, and a multiplicative set with . Let be an -algebra in which every element of is a unit. Then there is a unique homomorphism such that the following diagram commutes: #fix where the vertical map is the structure homomorphism and the horizontal map is the canonical homomorphism.    Localization of Powers of Element   For and , we usually write for .    Total Ring of Fractions   When is the set of nonzerodivisors on , we call  the total ring of fractions total ring of fractions of . When is a domain, this is just the fraction field of , and in this case this coincides with the localization at the prime .    Localization at a Prime   For a prime ideal in , we generally write for , and call it the localization of at localization at a prime . Given an ideal in , we sometimes write to refer to , the image of via the canonical map . Notice that when we localize at a prime , the resulting ring is a local ring . We can think of the process of localization at as zooming in at the prime . Many properties of an ideal can be checked locally , by checking them for for each prime .    is Local   A local ring one often encounters is . We can consider this as the ring of rational functions that in lowest terms have a denominator with nonzero constant term. Note that we can talk about lowest terms since the polynomial ring is a UFD.    Local Ring of the Point   If is algebraically closed and is a radical ideal, then is the coordinate ring of some affine variety, and is the ideal defining the origin (as a point in ). Then we call the local ring of a point local ring of a point  ; some people write this as . The radical ideals of this ring consist of radical ideals of that are contained in , which by the Nullstellensatz correspond to subvarieties of that contain . Similarly, we can define the local ring at any point .    Localization Ideals   Let be multiplicatively closed in . (a) If is an ideal in , then . (b) If is an ideal in , then . (c) If is an ideal in , then . (d) If is prime and , then is prime. (e) The map is injective, with image       Note that while is the ideal generated by all the elements of the form Since we can rewrite and , we conclude that .    If for some , then Conversely, if , then that means that By definition of the equivalence relation defining , this means that there exists such that Since is multiplicatively closed, , and thus the element satisfies .    The containment holds for general reasons: given any map , and a subset of the target of , . On the other hand, if , then , since its a unit multiple of an element of , and thus , so .    First, since , and is prime, no element of kills in , so is nonzero in . Thus, is nonzero, and a localization of a domain, hence is a domain. Thus, is prime.    First, by part b), the map , for sends primes to primes. We claim that         #empty     are inverse maps.  We have already seen that for any ideal in .  If , then using part a) and the definition of prime, we have that     Map on Spec Localization Prime   Let be a ring and be a prime ideal in . The map on spectra induced by the canonical map corresponds to the inclusion     Module Localization   Let be a ring, be a multiplicative set, and an -module. The localization localization of a module of at is the -module where is the equivalence relation if for some . The operations are given by     We will use the notations and analagously to and .  If is not a domain, the canonical map is not necessarily injective.  has Non Injective Canonical Maps      Consider . The canonical maps and are not injective, since in both cases is invertible in the localization, and thus     Annihilator   The annihilator annihilator of a module is the ideal     Colon Ideal   Let and be ideals in a ring . The colon colon of and is the ideal More generally, if and are submodules of some -module , the colon of and is     Annihilators and Colons are Ideals   The annihilator of is an ideal in , and Moreover, any colon is an ideal in .      If is a cyclic -module, then for some ideal .    Notice that , and that given an element , we have if and only if . Therefore, .    Ideals Contained in Annihilator   Let be an -module. If is an ideal in such that , then , and thus is naturally an -module with the same structure it has as an -module, meaning for each .    Annihilator of Quotient is Colon   If are -modules, then .    Zero in Localization   Let be an -module, and a multiplicative set. Then the following are equivalent: - - - Note in particular that this holds for .    For the first equivalence, we use the equivalence relation defining to note that in if and only if there exists some such that . The second equivalence just comes from the definition of the annihilator.    Canonical Localization Map and Injectivity   As a consequence of , it follows that if is a domain, then the canonical map is always injective for any multiplicatively closed set , since every nonzero has .  Notice, however, that even when is a domain, the elements in a module may still have nontrivial annihilators, and thus may fail to be injective.    Induced Localization Module Homomorphism   If is an -module homomorphism, then there is a -module homomorphism given by the rule .    Proving this lemma actually requires some homological algebra that we do not have, so for now we will just believe it.    Hom and Localization   Let be a noetherian ring, be a multiplicative set, be a finitely generated -module, and an arbitrary -module. Then, In particular, if is prime,     Localization is Exact   Given a short exact sequence of -modules and a multiplicative set , the sequence is also exact.    Localization Preserves Inclusions   It follows from this [[Mathematics\/Commutative Algebra\/Results\/Lemma - Zero in Localization|Lemma]] that if is injective, then is also injective, since So this explains some of [[Mathematics\/Commutative Algebra\/Results\/Theorem - Localization is Exact|Theorem]], since it shows that localization preserves inclusions.    Localizations and Quotients Commute   Given a submodule of , we can apply the [[Mathematics\/Commutative Algebra\/Results\/Theorem - Localization is Exact|Theorem]] to the short exact sequence and conclude that that .    Localization Commutes with Finite Intersections   Let be a module, and be a finite collection of submodules. Let be a multiplicative set. Then,     The containment is clear. Elements of are of the form ; we can find a common denominator to realize this in .    "
+  "body": "Localization    The best way to be global is to be local.   Alex Atala   Powers of Element is Multiplicatively Closed   Let be a ring. For any , the set is a multiplicative set.    Complement of Prime Ideal is Multiplicative   Let be a ring. If is a prime ideal, the set is multiplicative.    Regular Element   Let be a ring. An element that is not a zerodivisor is called a nonzerodivisor nonzerodivisor or a regular element regular element .    Regular Elements are Multiplicative   Let be a ring. The set of regular elements in forms a multiplicatively closed subset.    Intersection of Multiplicative Sets is Multiplicative   An arbitrary intersection of multiplicatively closed subsets is multiplicatively closed. In particular, for any family of primes , the complement of is multiplicatively closed.    Localization of a Ring   Let be a ring, and be a multiplicative set with . The localization localization of a ring of at is the ring where is the equivalence relation The operations are given by The zero in is and the identity is .  EMPTY      Note that we write elements in in the form even though they are equivalence classes of such expressions.   Field of Fractions is a Localization   Note that if is a domain, the equivalence relation simplifies to , so , and in particular is a domain too. In particular, is a localization of .     In the localization of at , every element of becomes a unit. The following universal property says roughly that is the smallest -algebra in which every element of is a unit.   UMP of Localizations   Let be a ring, and a multiplicative set with . Let be an -algebra in which every element of is a unit. Then there is a unique homomorphism such that the following diagram commutes: #fix where the vertical map is the structure homomorphism and the horizontal map is the canonical homomorphism.    Localization of Powers of Element   For and , we usually write for .    Total Ring of Fractions   When is the set of nonzerodivisors on , we call  the total ring of fractions total ring of fractions of . When is a domain, this is just the fraction field of , and in this case this coincides with the localization at the prime .    Localization at a Prime   For a prime ideal in , we generally write for , and call it the localization of at localization at a prime . Given an ideal in , we sometimes write to refer to , the image of via the canonical map . Notice that when we localize at a prime , the resulting ring is a local ring . We can think of the process of localization at as zooming in at the prime . Many properties of an ideal can be checked locally , by checking them for for each prime .    is Local   A local ring one often encounters is . We can consider this as the ring of rational functions that in lowest terms have a denominator with nonzero constant term. Note that we can talk about lowest terms since the polynomial ring is a UFD.    Local Ring of the Point   If is algebraically closed and is a radical ideal, then is the coordinate ring of some affine variety, and is the ideal defining the origin (as a point in ). Then we call the local ring of a point local ring of a point  ; some people write this as . The radical ideals of this ring consist of radical ideals of that are contained in , which by the Nullstellensatz correspond to subvarieties of that contain . Similarly, we can define the local ring at any point .    Localization Ideals   Let be multiplicatively closed in . (a) If is an ideal in , then . (b) If is an ideal in , then . (c) If is an ideal in , then . (d) If is prime and , then is prime. (e) The map is injective, with image        Note that while is the ideal generated by all the elements of the form Since we can rewrite and , we conclude that .    If for some , then Conversely, if , then that means that By definition of the equivalence relation defining , this means that there exists such that Since is multiplicatively closed, , and thus the element satisfies .    The containment holds for general reasons: given any map , and a subset of the target of , . On the other hand, if , then , since its a unit multiple of an element of , and thus , so .    First, since , and is prime, no element of kills in , so is nonzero in . Thus, is nonzero, and a localization of a domain, hence is a domain. Thus, is prime.    First, by part b), the map , for sends primes to primes. We claim that          #empty     are inverse maps.  We have already seen that for any ideal in .  If , then using part a) and the definition of prime, we have that     Map on Spec Localization Prime   Let be a ring and be a prime ideal in . The map on spectra induced by the canonical map corresponds to the inclusion     Module Localization   Let be a ring, be a multiplicative set, and an -module. The localization localization of a module of at is the -module where is the equivalence relation if for some . The operations are given by     We will use the notations and analagously to and .  If is not a domain, the canonical map is not necessarily injective.  has Non Injective Canonical Maps      Consider . The canonical maps and are not injective, since in both cases is invertible in the localization, and thus     Annihilator   The annihilator annihilator of a module is the ideal     Colon Ideal   Let and be ideals in a ring . The colon colon of and is the ideal More generally, if and are submodules of some -module , the colon of and is     Annihilators and Colons are Ideals   The annihilator of is an ideal in , and Moreover, any colon is an ideal in .      If is a cyclic -module, then for some ideal .    Notice that , and that given an element , we have if and only if . Therefore, .    Ideals Contained in Annihilator   Let be an -module. If is an ideal in such that , then , and thus is naturally an -module with the same structure it has as an -module, meaning for each .    Annihilator of Quotient is Colon   If are -modules, then .    Zero in Localization   Let be an -module, and a multiplicative set. Then the following are equivalent: - - - Note in particular that this holds for .    For the first equivalence, we use the equivalence relation defining to note that in if and only if there exists some such that . The second equivalence just comes from the definition of the annihilator.    Canonical Localization Map and Injectivity   As a consequence of , it follows that if is a domain, then the canonical map is always injective for any multiplicatively closed set , since every nonzero has .  Notice, however, that even when is a domain, the elements in a module may still have nontrivial annihilators, and thus may fail to be injective.    Induced Localization Module Homomorphism   If is an -module homomorphism, then there is a -module homomorphism given by the rule .    Proving this lemma actually requires some homological algebra that we do not have, so for now we will just believe it.    Hom and Localization   Let be a noetherian ring, be a multiplicative set, be a finitely generated -module, and an arbitrary -module. Then, In particular, if is prime,     Localization is Exact   Given a short exact sequence of -modules and a multiplicative set , the sequence is also exact.    Localization Preserves Inclusions   It follows from this [[Mathematics\/Commutative Algebra\/Results\/Lemma - Zero in Localization|Lemma]] that if is injective, then is also injective, since So this explains some of [[Mathematics\/Commutative Algebra\/Results\/Theorem - Localization is Exact|Theorem]], since it shows that localization preserves inclusions.    Localizations and Quotients Commute   Given a submodule of , we can apply the [[Mathematics\/Commutative Algebra\/Results\/Theorem - Localization is Exact|Theorem]] to the short exact sequence and conclude that that .    Localization Commutes with Finite Intersections   Let be a module, and be a finite collection of submodules. Let be a multiplicative set. Then,     The containment is clear. Elements of are of the form ; we can find a common denominator to realize this in .    "
 },
 {
   "id": "ex-powers-of-element-is-multiplicatively-closed",
   "level": "2",
   "url": "sec-localizations.html#ex-powers-of-element-is-multiplicatively-closed",
   "type": "Example",
-  "number": "12.11",
+  "number": "11.11",
   "title": "Powers of Element is Multiplicatively Closed.",
   "body": "Powers of Element is Multiplicatively Closed   Let be a ring. For any , the set is a multiplicative set.   "
 },
@@ -6161,16 +5603,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-complement-of-prime-ideal-is-multiplicative",
   "type": "Example",
-  "number": "12.12",
+  "number": "11.12",
   "title": "Complement of Prime Ideal is Multiplicative.",
-  "body": "Complement of Prime Ideal is Multiplicative   Let be a ring. If is a prime ideal, the set is multiplicative   "
+  "body": "Complement of Prime Ideal is Multiplicative   Let be a ring. If is a prime ideal, the set is multiplicative.   "
 },
 {
   "id": "defn-regular-element",
   "level": "2",
   "url": "sec-localizations.html#defn-regular-element",
   "type": "Definition",
-  "number": "12.13",
+  "number": "11.13",
   "title": "Regular Element.",
   "body": "Regular Element   Let be a ring. An element that is not a zerodivisor is called a nonzerodivisor nonzerodivisor or a regular element regular element .   "
 },
@@ -6179,7 +5621,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-regular-elements-are-multiplicative",
   "type": "Example",
-  "number": "12.14",
+  "number": "11.14",
   "title": "Regular Elements are Multiplicative.",
   "body": "Regular Elements are Multiplicative   Let be a ring. The set of regular elements in forms a multiplicatively closed subset.   "
 },
@@ -6188,7 +5630,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-intersection-of-multiplicative-sets-is-multiplicative",
   "type": "Example",
-  "number": "12.15",
+  "number": "11.15",
   "title": "Intersection of Multiplicative Sets is Multiplicative.",
   "body": "Intersection of Multiplicative Sets is Multiplicative   An arbitrary intersection of multiplicatively closed subsets is multiplicatively closed. In particular, for any family of primes , the complement of is multiplicatively closed.   "
 },
@@ -6197,7 +5639,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#defn-localization",
   "type": "Definition",
-  "number": "12.16",
+  "number": "11.16",
   "title": "Localization of a Ring.",
   "body": "Localization of a Ring   Let be a ring, and be a multiplicative set with . The localization localization of a ring of at is the ring where is the equivalence relation The operations are given by The zero in is and the identity is .  EMPTY    "
 },
@@ -6206,7 +5648,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#sec-localizations-9",
   "type": "Remark",
-  "number": "12.17",
+  "number": "11.17",
   "title": "",
   "body": " Note that we write elements in in the form even though they are equivalence classes of such expressions.  "
 },
@@ -6215,7 +5657,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-field-of-fractions-is-a-localization",
   "type": "Example",
-  "number": "12.18",
+  "number": "11.18",
   "title": "Field of Fractions is a Localization.",
   "body": "Field of Fractions is a Localization   Note that if is a domain, the equivalence relation simplifies to , so , and in particular is a domain too. In particular, is a localization of .   "
 },
@@ -6224,7 +5666,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#sec-localizations-11",
   "type": "Remark",
-  "number": "12.19",
+  "number": "11.19",
   "title": "",
   "body": " In the localization of at , every element of becomes a unit. The following universal property says roughly that is the smallest -algebra in which every element of is a unit.  "
 },
@@ -6233,7 +5675,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#prop-ump-of-localizations",
   "type": "Proposition",
-  "number": "12.20",
+  "number": "11.20",
   "title": "UMP of Localizations.",
   "body": "UMP of Localizations   Let be a ring, and a multiplicative set with . Let be an -algebra in which every element of is a unit. Then there is a unique homomorphism such that the following diagram commutes: #fix where the vertical map is the structure homomorphism and the horizontal map is the canonical homomorphism.   "
 },
@@ -6242,7 +5684,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-localization-of-powers-of-element",
   "type": "Example",
-  "number": "12.21",
+  "number": "11.21",
   "title": "Localization of Powers of Element.",
   "body": "Localization of Powers of Element   For and , we usually write for .   "
 },
@@ -6251,7 +5693,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-total-ring-of-fractions",
   "type": "Example",
-  "number": "12.22",
+  "number": "11.22",
   "title": "Total Ring of Fractions.",
   "body": "Total Ring of Fractions   When is the set of nonzerodivisors on , we call  the total ring of fractions total ring of fractions of . When is a domain, this is just the fraction field of , and in this case this coincides with the localization at the prime .   "
 },
@@ -6260,7 +5702,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-localization-at-a-prime",
   "type": "Example",
-  "number": "12.23",
+  "number": "11.23",
   "title": "Localization at a Prime.",
   "body": "Localization at a Prime   For a prime ideal in , we generally write for , and call it the localization of at localization at a prime . Given an ideal in , we sometimes write to refer to , the image of via the canonical map . Notice that when we localize at a prime , the resulting ring is a local ring . We can think of the process of localization at as zooming in at the prime . Many properties of an ideal can be checked locally , by checking them for for each prime .   "
 },
@@ -6269,7 +5711,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-kx_1dotsx_d_x_1dotsx_d-is-local",
   "type": "Example",
-  "number": "12.24",
+  "number": "11.24",
   "title": "<span class=\"process-math\">\\(k[x_1,\\dots,x_d]_{(x_1,\\dots,x_d)}\\)<\/span> is Local.",
   "body": "is Local   A local ring one often encounters is . We can consider this as the ring of rational functions that in lowest terms have a denominator with nonzero constant term. Note that we can talk about lowest terms since the polynomial ring is a UFD.   "
 },
@@ -6278,7 +5720,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-local-ring-of-the-point",
   "type": "Example",
-  "number": "12.25",
+  "number": "11.25",
   "title": "Local Ring of the Point.",
   "body": "Local Ring of the Point   If is algebraically closed and is a radical ideal, then is the coordinate ring of some affine variety, and is the ideal defining the origin (as a point in ). Then we call the local ring of a point local ring of a point  ; some people write this as . The radical ideals of this ring consist of radical ideals of that are contained in , which by the Nullstellensatz correspond to subvarieties of that contain . Similarly, we can define the local ring at any point .   "
 },
@@ -6287,16 +5729,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#lem-localization-ideals",
   "type": "Lemma",
-  "number": "12.26",
+  "number": "11.26",
   "title": "Localization Ideals.",
-  "body": "Localization Ideals   Let be multiplicatively closed in . (a) If is an ideal in , then . (b) If is an ideal in , then . (c) If is an ideal in , then . (d) If is prime and , then is prime. (e) The map is injective, with image       Note that while is the ideal generated by all the elements of the form Since we can rewrite and , we conclude that .    If for some , then Conversely, if , then that means that By definition of the equivalence relation defining , this means that there exists such that Since is multiplicatively closed, , and thus the element satisfies .    The containment holds for general reasons: given any map , and a subset of the target of , . On the other hand, if , then , since its a unit multiple of an element of , and thus , so .    First, since , and is prime, no element of kills in , so is nonzero in . Thus, is nonzero, and a localization of a domain, hence is a domain. Thus, is prime.    First, by part b), the map , for sends primes to primes. We claim that         #empty     are inverse maps.  We have already seen that for any ideal in .  If , then using part a) and the definition of prime, we have that    "
+  "body": "Localization Ideals   Let be multiplicatively closed in . (a) If is an ideal in , then . (b) If is an ideal in , then . (c) If is an ideal in , then . (d) If is prime and , then is prime. (e) The map is injective, with image        Note that while is the ideal generated by all the elements of the form Since we can rewrite and , we conclude that .    If for some , then Conversely, if , then that means that By definition of the equivalence relation defining , this means that there exists such that Since is multiplicatively closed, , and thus the element satisfies .    The containment holds for general reasons: given any map , and a subset of the target of , . On the other hand, if , then , since its a unit multiple of an element of , and thus , so .    First, since , and is prime, no element of kills in , so is nonzero in . Thus, is nonzero, and a localization of a domain, hence is a domain. Thus, is prime.    First, by part b), the map , for sends primes to primes. We claim that          #empty     are inverse maps.  We have already seen that for any ideal in .  If , then using part a) and the definition of prime, we have that    "
 },
 {
   "id": "cor-map-on-spec-localization-prime",
   "level": "2",
   "url": "sec-localizations.html#cor-map-on-spec-localization-prime",
   "type": "Corollary",
-  "number": "12.27",
+  "number": "11.27",
   "title": "Map on Spec Localization Prime.",
   "body": "Map on Spec Localization Prime   Let be a ring and be a prime ideal in . The map on spectra induced by the canonical map corresponds to the inclusion    "
 },
@@ -6305,7 +5747,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#defn-module-localization",
   "type": "Definition",
-  "number": "12.28",
+  "number": "11.28",
   "title": "Module Localization.",
   "body": "Module Localization   Let be a ring, be a multiplicative set, and an -module. The localization localization of a module of at is the -module where is the equivalence relation if for some . The operations are given by    "
 },
@@ -6314,7 +5756,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-kxyxy-has-non-injective-canonical-maps",
   "type": "Example",
-  "number": "12.29",
+  "number": "11.29",
   "title": "<span class=\"process-math\">\\(k[x,y]\/(xy)\\)<\/span> has Non Injective Canonical Maps.",
   "body": "has Non Injective Canonical Maps      Consider . The canonical maps and are not injective, since in both cases is invertible in the localization, and thus    "
 },
@@ -6323,7 +5765,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#defn-annihilator",
   "type": "Definition",
-  "number": "12.30",
+  "number": "11.30",
   "title": "Annihilator.",
   "body": "Annihilator   The annihilator annihilator of a module is the ideal    "
 },
@@ -6332,7 +5774,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#defn-colon-ideal",
   "type": "Definition",
-  "number": "12.31",
+  "number": "11.31",
   "title": "Colon Ideal.",
   "body": "Colon Ideal   Let and be ideals in a ring . The colon colon of and is the ideal More generally, if and are submodules of some -module , the colon of and is    "
 },
@@ -6341,7 +5783,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-annihilators-and-colons-are-ideals",
   "type": "Example",
-  "number": "12.32",
+  "number": "11.32",
   "title": "Annihilators and Colons are Ideals.",
   "body": "Annihilators and Colons are Ideals   The annihilator of is an ideal in , and Moreover, any colon is an ideal in .   "
 },
@@ -6350,7 +5792,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-mcong-rannm",
   "type": "Example",
-  "number": "12.33",
+  "number": "11.33",
   "title": "<span class=\"process-math\">\\(M\\cong R\/\\ann(M)\\)<\/span>.",
   "body": "  If is a cyclic -module, then for some ideal .    Notice that , and that given an element , we have if and only if . Therefore, .   "
 },
@@ -6359,7 +5801,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-ideals-contained-in-annihilator",
   "type": "Example",
-  "number": "12.34",
+  "number": "11.34",
   "title": "Ideals Contained in Annihilator.",
   "body": "Ideals Contained in Annihilator   Let be an -module. If is an ideal in such that , then , and thus is naturally an -module with the same structure it has as an -module, meaning for each .   "
 },
@@ -6368,7 +5810,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-annihilator-of-quotient-is-colon",
   "type": "Example",
-  "number": "12.35",
+  "number": "11.35",
   "title": "Annihilator of Quotient is Colon.",
   "body": "Annihilator of Quotient is Colon   If are -modules, then .   "
 },
@@ -6377,7 +5819,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#lem-zero-in-localization",
   "type": "Lemma",
-  "number": "12.36",
+  "number": "11.36",
   "title": "Zero in Localization.",
   "body": "Zero in Localization   Let be an -module, and a multiplicative set. Then the following are equivalent: - - - Note in particular that this holds for .    For the first equivalence, we use the equivalence relation defining to note that in if and only if there exists some such that . The second equivalence just comes from the definition of the annihilator.   "
 },
@@ -6386,7 +5828,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-canonical-localization-map-and-injectivity",
   "type": "Example",
-  "number": "12.37",
+  "number": "11.37",
   "title": "Canonical Localization Map and Injectivity.",
   "body": "Canonical Localization Map and Injectivity   As a consequence of , it follows that if is a domain, then the canonical map is always injective for any multiplicatively closed set , since every nonzero has .  Notice, however, that even when is a domain, the elements in a module may still have nontrivial annihilators, and thus may fail to be injective.   "
 },
@@ -6395,7 +5837,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-induced-localization-module-homomorphism",
   "type": "Example",
-  "number": "12.38",
+  "number": "11.38",
   "title": "Induced Localization Module Homomorphism.",
   "body": "Induced Localization Module Homomorphism   If is an -module homomorphism, then there is a -module homomorphism given by the rule .    Proving this lemma actually requires some homological algebra that we do not have, so for now we will just believe it.   "
 },
@@ -6404,7 +5846,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#lem-hom-localization",
   "type": "Lemma",
-  "number": "12.39",
+  "number": "11.39",
   "title": "Hom and Localization.",
   "body": "Hom and Localization   Let be a noetherian ring, be a multiplicative set, be a finitely generated -module, and an arbitrary -module. Then, In particular, if is prime,    "
 },
@@ -6413,7 +5855,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#thm-localization-is-exact",
   "type": "Theorem",
-  "number": "12.40",
+  "number": "11.40",
   "title": "Localization is Exact.",
   "body": "Localization is Exact   Given a short exact sequence of -modules and a multiplicative set , the sequence is also exact.   "
 },
@@ -6422,7 +5864,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-localization-preserves-inclusions",
   "type": "Example",
-  "number": "12.41",
+  "number": "11.41",
   "title": "Localization Preserves Inclusions.",
   "body": "Localization Preserves Inclusions   It follows from this [[Mathematics\/Commutative Algebra\/Results\/Lemma - Zero in Localization|Lemma]] that if is injective, then is also injective, since So this explains some of [[Mathematics\/Commutative Algebra\/Results\/Theorem - Localization is Exact|Theorem]], since it shows that localization preserves inclusions.   "
 },
@@ -6431,7 +5873,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#ex-localizations-and-quotients-commute",
   "type": "Example",
-  "number": "12.42",
+  "number": "11.42",
   "title": "Localizations and Quotients Commute.",
   "body": "Localizations and Quotients Commute   Given a submodule of , we can apply the [[Mathematics\/Commutative Algebra\/Results\/Theorem - Localization is Exact|Theorem]] to the short exact sequence and conclude that that .   "
 },
@@ -6440,7 +5882,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-localizations.html#lem-localization-commutes-with-finite-intersections",
   "type": "Lemma",
-  "number": "12.43",
+  "number": "11.43",
   "title": "Localization Commutes with Finite Intersections.",
   "body": "Localization Commutes with Finite Intersections   Let be a module, and be a finite collection of submodules. Let be a multiplicative set. Then,     The containment is clear. Elements of are of the form ; we can find a common denominator to realize this in .   "
 },
@@ -6449,7 +5891,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-nak.html",
   "type": "Section",
-  "number": "12.3",
+  "number": "11.3",
   "title": "NAK",
   "body": "NAK    The fundamental result of commutative algebra, and its power and elegance are second to none.   Jürgen Herzog, on NAK    We will now show a very simple but extremely useful result known as Nakayama's Lemma. Nakayama himself claimed that this should be attributed to Krull and Azumaya, but it's not clear which of the three actually had the commutative ring statement first. So some authors (e.g., Matsumura) prefer to refer to it as NAK. There are actually a range of statements, rather than just one, that go under the banner of Nakayama's Lemma a.k.a. NAK.   NAK 1   Let be a ring, an ideal, and a finitely generated -module. If , then: (a) there is an element such that , and (b) there is an element such that for all .    Let . By assumption, we have equations with . Setting and , we have a matrix equation . By the [[Mathematics\/Commutative Algebra\/Results\/Lemma - Determinantal Technique|Determinantal Technique]], the element kills each , and hence it kills . Since , this determinant is the element we seek for the first statement. For the latter statement, set , which is in and satisfies for all .    NAK 2   Let be a local ring, and be a finitely generated module. If , then .    By [[Mathematics\/Commutative Algebra\/Results\/Proposition - NAK 1|NAK1]], there exists an element that annihilates . Notice that , so any such must be outside of , and thus a unit. Multiplying by its inverse, we conclude that annihilates , or equivalently, that .    NAK 3   Let be a local ring, and be a finitely generated module, and a submodule of . If , then .    By taking the quotient by , we see that By [[Mathematics\/Commutative Algebra\/Results\/Theorem - NAK 2|NAK2]], .    NAK 4   Let be a local ring, and be a finitely generated module. For , Thus, any generating set for consists of at least elements.    The implication is clear. If are such that generate , consider . Since is generated by the image of we have . By [[Mathematics\/Commutative Algebra\/Results\/Theorem - NAK 2|NAK2]], .     Since is a field, is a vector space over the field .   Minimal Generators   Let be a local ring, and a finitely generated module. A set of elements is a minimal generating set minimal generators minimal generating set of if the images of form a basis for the vector space .    Min Gen Sets have Same Cardinality   Let be a local ring and be a finitely generated module. Any generating set for contains a minimal generating set, and every minimal generating set has the same cardinality.    As a consequence of basic facts about basis for vector spaces    Minimal Number of Generators   Let be a local ring and an -module. The minimal number of generators minimal number of generators of is Equivalently, this is the number of elements in a minimal generating set for .    Minimal Number of Generators (Graded)   Let be an -graded ring with a field, and a finitely generated -graded -module. The minimal number of generators minimal number of generators of is     GNAK1   Let be an -graded ring, and a -graded module such that for some . If , then .    If , then has a nonzero homogeneous element. Suppose . On the one hand, the homogeneous elements in live in degrees at least , but lives in degrees strictly bigger than . Thus .     If is finitely generated, then it can be generated by finitely many homogeneous elements, the homogeneous components of some finite generating set. If is the smallest degree of a homogeneous element in a homogeneous generating set, since lives only in positive degrees we must have , so .   Graded Rings and Generators   Let be an -graded ring, with a field, and a -graded module such that for some degree . A set of elements of generates if and only if their images in span as a vector space over . Since and are graded, admits a basis of homogeneous elements.    Just as above, we obtain the following:    Macaulay2  In Macaulay2, the command mingens returns the a minimal generating set of the given module (as a list), while numgens returns the minimal number of generators. Notice that this computation is only reliable if the ring and module you are considering are defined to be graded.    Note that we can use [[Mathematics\/Commutative Algebra\/Results\/Proposition - GNAK1|NAK]] to prove that certain modules are finitely generated in the graded case; in the local case, we cannot.   "
 },
@@ -6458,7 +5900,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#sec-nak-3",
   "type": "Remark",
-  "number": "12.44",
+  "number": "11.44",
   "title": "",
   "body": " We will now show a very simple but extremely useful result known as Nakayama's Lemma. Nakayama himself claimed that this should be attributed to Krull and Azumaya, but it's not clear which of the three actually had the commutative ring statement first. So some authors (e.g., Matsumura) prefer to refer to it as NAK. There are actually a range of statements, rather than just one, that go under the banner of Nakayama's Lemma a.k.a. NAK.  "
 },
@@ -6467,7 +5909,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#prop-nak-1",
   "type": "Proposition",
-  "number": "12.45",
+  "number": "11.45",
   "title": "NAK 1.",
   "body": "NAK 1   Let be a ring, an ideal, and a finitely generated -module. If , then: (a) there is an element such that , and (b) there is an element such that for all .    Let . By assumption, we have equations with . Setting and , we have a matrix equation . By the [[Mathematics\/Commutative Algebra\/Results\/Lemma - Determinantal Technique|Determinantal Technique]], the element kills each , and hence it kills . Since , this determinant is the element we seek for the first statement. For the latter statement, set , which is in and satisfies for all .   "
 },
@@ -6476,7 +5918,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#thm-nak-2",
   "type": "Theorem",
-  "number": "12.46",
+  "number": "11.46",
   "title": "NAK 2.",
   "body": "NAK 2   Let be a local ring, and be a finitely generated module. If , then .    By [[Mathematics\/Commutative Algebra\/Results\/Proposition - NAK 1|NAK1]], there exists an element that annihilates . Notice that , so any such must be outside of , and thus a unit. Multiplying by its inverse, we conclude that annihilates , or equivalently, that .   "
 },
@@ -6485,7 +5927,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#thm-nak-3",
   "type": "Theorem",
-  "number": "12.47",
+  "number": "11.47",
   "title": "NAK 3.",
   "body": "NAK 3   Let be a local ring, and be a finitely generated module, and a submodule of . If , then .    By taking the quotient by , we see that By [[Mathematics\/Commutative Algebra\/Results\/Theorem - NAK 2|NAK2]], .   "
 },
@@ -6494,7 +5936,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#thm-nak-4",
   "type": "Theorem",
-  "number": "12.48",
+  "number": "11.48",
   "title": "NAK 4.",
   "body": "NAK 4   Let be a local ring, and be a finitely generated module. For , Thus, any generating set for consists of at least elements.    The implication is clear. If are such that generate , consider . Since is generated by the image of we have . By [[Mathematics\/Commutative Algebra\/Results\/Theorem - NAK 2|NAK2]], .   "
 },
@@ -6503,7 +5945,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#sec-nak-8",
   "type": "Remark",
-  "number": "12.49",
+  "number": "11.49",
   "title": "",
   "body": " Since is a field, is a vector space over the field .  "
 },
@@ -6512,7 +5954,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#defn-minimal-generators",
   "type": "Definition",
-  "number": "12.50",
+  "number": "11.50",
   "title": "Minimal Generators.",
   "body": "Minimal Generators   Let be a local ring, and a finitely generated module. A set of elements is a minimal generating set minimal generators minimal generating set of if the images of form a basis for the vector space .   "
 },
@@ -6521,7 +5963,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#lem-min-gen-sets-have-same-cardinality",
   "type": "Lemma",
-  "number": "12.51",
+  "number": "11.51",
   "title": "Min Gen Sets have Same Cardinality.",
   "body": "Min Gen Sets have Same Cardinality   Let be a local ring and be a finitely generated module. Any generating set for contains a minimal generating set, and every minimal generating set has the same cardinality.    As a consequence of basic facts about basis for vector spaces   "
 },
@@ -6530,7 +5972,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#defn-minimal-number-of-generators",
   "type": "Definition",
-  "number": "12.52",
+  "number": "11.52",
   "title": "Minimal Number of Generators.",
   "body": "Minimal Number of Generators   Let be a local ring and an -module. The minimal number of generators minimal number of generators of is Equivalently, this is the number of elements in a minimal generating set for .   "
 },
@@ -6539,7 +5981,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#defn-minimal-number-of-generators-graded",
   "type": "Definition",
-  "number": "12.53",
+  "number": "11.53",
   "title": "Minimal Number of Generators (Graded).",
   "body": "Minimal Number of Generators (Graded)   Let be an -graded ring with a field, and a finitely generated -graded -module. The minimal number of generators minimal number of generators of is    "
 },
@@ -6548,7 +5990,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#prop-gnak-1",
   "type": "Proposition",
-  "number": "12.54",
+  "number": "11.54",
   "title": "GNAK1.",
   "body": "GNAK1   Let be an -graded ring, and a -graded module such that for some . If , then .    If , then has a nonzero homogeneous element. Suppose . On the one hand, the homogeneous elements in live in degrees at least , but lives in degrees strictly bigger than . Thus .   "
 },
@@ -6557,7 +5999,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#sec-nak-14",
   "type": "Remark",
-  "number": "12.55",
+  "number": "11.55",
   "title": "",
   "body": " If is finitely generated, then it can be generated by finitely many homogeneous elements, the homogeneous components of some finite generating set. If is the smallest degree of a homogeneous element in a homogeneous generating set, since lives only in positive degrees we must have , so .  "
 },
@@ -6566,7 +6008,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#prop-graded-rings-and-generators",
   "type": "Proposition",
-  "number": "12.56",
+  "number": "11.56",
   "title": "Graded Rings and Generators.",
   "body": "Graded Rings and Generators   Let be an -graded ring, with a field, and a -graded module such that for some degree . A set of elements of generates if and only if their images in span as a vector space over . Since and are graded, admits a basis of homogeneous elements.    Just as above, we obtain the following:   "
 },
@@ -6575,9 +6017,360 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nak.html#sec-nak-17",
   "type": "Remark",
-  "number": "12.57",
+  "number": "11.57",
   "title": "",
   "body": " Note that we can use [[Mathematics\/Commutative Algebra\/Results\/Proposition - GNAK1|NAK]] to prove that certain modules are finitely generated in the graded case; in the local case, we cannot.  "
+},
+{
+  "id": "sec-prime-maximal-ideals",
+  "level": "1",
+  "url": "sec-prime-maximal-ideals.html",
+  "type": "Section",
+  "number": "12.1",
+  "title": "Prime and Maximal Ideals",
+  "body": "Prime and Maximal Ideals    Fate rarely calls upon us at a moment of our choosing.   Optimus Prime   Prime Ideal  prime ideal   A prime ideal of a commutative ring is a proper ideal such that whenever for , we have or .    Prime Ideals in   The prime ideals in are those of the form for a prime integer, and .    Prime Ideals in   When is a field, prime ideals in are easy to describe: is a principal ideal domain, and is prime if and only if is an irreducible polynomial. Moreover, is also a prime ideal, since is a domain.    in is Prime   Let be a field. The ideal in is prime: one can show that , which is a domain.    Primes, Presentations, and Macaulay2  The -algebra is a domain, so its defining ideal in is prime. This is the kernel of the presentation of sending to each of our 3 algebra generators, which we can compute with Macaulay2:   i1 : k = QQ o1 = QQ o1 : Ring i2 : f = map(k[t],k[x,y,z],{t^3,t^4,t^5}) 3 4 5 o2 = map (QQ[t], QQ[x..z], {t , t , t }) o2 : RingMap QQ[t] <--- QQ[x..z] i3 : P = ker f 2 2 2 3 o3 = ideal (y - x*z, x y - z , x - y*z) o3 : Ideal of QQ[x..z]   Maximal Ideal  maximal ideal   A maximal ideal of an arbitrary ring is a proper ideal such that the only ideals of containing are and .    Residue Field   Given a maximal ideal in , the residue field  residue field of is the field . A field is a residue field of if for some maximal ideal .     A ring may have many different residue fields. For example, the residue fields of are all the finite fields with a prime numbers of elements, .   Prime, Maximal, Domain, Field   Let be a commutative ring with , and let be an ideal of . 1. The ideal is maximal if and only if is a field. 2. The ideal is prime if and only if is an integral domain. 3. Every maximal ideal of is prime.    The first assertion follows immediately from the Lattice Isomorphism Theorem and the fact that is a field if and only if its only ideals are and .  Suppose is prime. If , then and hence either or , so that either or . This proves is a domain. Suppose is a domain and that . Then in and hence either or . It follows or , so that is prime.  If is maximal, then is a field, which in particular implies that is a domain, so is prime.    Every Ideal Contained in a Maximal Ideal      Fix a ring and a proper ideal . Let be the set of all proper ideals in such that , which is partially ordered with the inclusion order . We claim that [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma|Zorn's Lemma]] applies to . First, is nonempty, since it contains . Now consider a chain of proper ideals in , say , all of which contain . Notice that is an ideal as well (exercise!), and moreover since for all . Since each , we conclude that . Thus we have checked that . Now this ideal is an upper bound for our chain , and thus applies to . We conclude that has a maximal element.  There is a subtle point missing: we have shown that there is a maximal element in containing , but we have yet to show that this maximal element is a maximal ideal of . Finally, suppose that is an ideal in with . Since contains , so does . If , by the maximality of we must have . Since already satisfies , if then we must have .    Zorn's Lemma  Zorn's Lemma  Let be a non-empty family of sets. Suppose that for each chain in , the set is in . Then has a maximal element.   "
+},
+{
+  "id": "defn-prime-ideal",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#defn-prime-ideal",
+  "type": "Definition",
+  "number": "12.1",
+  "title": "Prime Ideal.",
+  "body": "Prime Ideal  prime ideal   A prime ideal of a commutative ring is a proper ideal such that whenever for , we have or .   "
+},
+{
+  "id": "ex-prime-ideals-in-z",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#ex-prime-ideals-in-z",
+  "type": "Example",
+  "number": "12.2",
+  "title": "Prime Ideals in <span class=\"process-math\">\\(\\Z\\)<\/span>.",
+  "body": "Prime Ideals in   The prime ideals in are those of the form for a prime integer, and .   "
+},
+{
+  "id": "ex-prime-ideals-in-kx",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#ex-prime-ideals-in-kx",
+  "type": "Example",
+  "number": "12.3",
+  "title": "Prime Ideals in <span class=\"process-math\">\\(k[x]\\)<\/span>.",
+  "body": "Prime Ideals in   When is a field, prime ideals in are easy to describe: is a principal ideal domain, and is prime if and only if is an irreducible polynomial. Moreover, is also a prime ideal, since is a domain.   "
+},
+{
+  "id": "ex-x3-y2-in-kxy-is-prime",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#ex-x3-y2-in-kxy-is-prime",
+  "type": "Example",
+  "number": "12.4",
+  "title": "<span class=\"process-math\">\\((x^3-y^2)\\)<\/span> in <span class=\"process-math\">\\(k[x,y]\\)<\/span> is Prime.",
+  "body": "in is Prime   Let be a field. The ideal in is prime: one can show that , which is a domain.   "
+},
+{
+  "id": "sec-prime-maximal-ideals-7",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#sec-prime-maximal-ideals-7",
+  "type": "Example",
+  "number": "12.5",
+  "title": "Primes, Presentations, and Macaulay2.",
+  "body": "Primes, Presentations, and Macaulay2  The -algebra is a domain, so its defining ideal in is prime. This is the kernel of the presentation of sending to each of our 3 algebra generators, which we can compute with Macaulay2:   i1 : k = QQ o1 = QQ o1 : Ring i2 : f = map(k[t],k[x,y,z],{t^3,t^4,t^5}) 3 4 5 o2 = map (QQ[t], QQ[x..z], {t , t , t }) o2 : RingMap QQ[t] <--- QQ[x..z] i3 : P = ker f 2 2 2 3 o3 = ideal (y - x*z, x y - z , x - y*z) o3 : Ideal of QQ[x..z]  "
+},
+{
+  "id": "defn-maximal-ideal",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#defn-maximal-ideal",
+  "type": "Definition",
+  "number": "12.6",
+  "title": "Maximal Ideal.",
+  "body": "Maximal Ideal  maximal ideal   A maximal ideal of an arbitrary ring is a proper ideal such that the only ideals of containing are and .   "
+},
+{
+  "id": "defn-residue-field",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#defn-residue-field",
+  "type": "Definition",
+  "number": "12.7",
+  "title": "Residue Field.",
+  "body": "Residue Field   Given a maximal ideal in , the residue field  residue field of is the field . A field is a residue field of if for some maximal ideal .   "
+},
+{
+  "id": "sec-prime-maximal-ideals-10",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#sec-prime-maximal-ideals-10",
+  "type": "Remark",
+  "number": "12.8",
+  "title": "",
+  "body": " A ring may have many different residue fields. For example, the residue fields of are all the finite fields with a prime numbers of elements, .  "
+},
+{
+  "id": "thm-prime-maximal-domain-field",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#thm-prime-maximal-domain-field",
+  "type": "Theorem",
+  "number": "12.9",
+  "title": "Prime, Maximal, Domain, Field.",
+  "body": "Prime, Maximal, Domain, Field   Let be a commutative ring with , and let be an ideal of . 1. The ideal is maximal if and only if is a field. 2. The ideal is prime if and only if is an integral domain. 3. Every maximal ideal of is prime.    The first assertion follows immediately from the Lattice Isomorphism Theorem and the fact that is a field if and only if its only ideals are and .  Suppose is prime. If , then and hence either or , so that either or . This proves is a domain. Suppose is a domain and that . Then in and hence either or . It follows or , so that is prime.  If is maximal, then is a field, which in particular implies that is a domain, so is prime.   "
+},
+{
+  "id": "thm-every-ideal-contained-in-a-maximal-ideal",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#thm-every-ideal-contained-in-a-maximal-ideal",
+  "type": "Theorem",
+  "number": "12.10",
+  "title": "Every Ideal Contained in a Maximal Ideal.",
+  "body": "Every Ideal Contained in a Maximal Ideal      Fix a ring and a proper ideal . Let be the set of all proper ideals in such that , which is partially ordered with the inclusion order . We claim that [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma|Zorn's Lemma]] applies to . First, is nonempty, since it contains . Now consider a chain of proper ideals in , say , all of which contain . Notice that is an ideal as well (exercise!), and moreover since for all . Since each , we conclude that . Thus we have checked that . Now this ideal is an upper bound for our chain , and thus applies to . We conclude that has a maximal element.  There is a subtle point missing: we have shown that there is a maximal element in containing , but we have yet to show that this maximal element is a maximal ideal of . Finally, suppose that is an ideal in with . Since contains , so does . If , by the maximality of we must have . Since already satisfies , if then we must have .   "
+},
+{
+  "id": "thm-zorns-lemma",
+  "level": "2",
+  "url": "sec-prime-maximal-ideals.html#thm-zorns-lemma",
+  "type": "Theorem",
+  "number": "12.11",
+  "title": "Zorn’s Lemma.",
+  "body": "Zorn's Lemma  Zorn's Lemma  Let be a non-empty family of sets. Suppose that for each chain in , the set is in . Then has a maximal element.  "
+},
+{
+  "id": "sec-spectrum",
+  "level": "1",
+  "url": "sec-spectrum.html",
+  "type": "Section",
+  "number": "12.2",
+  "title": "The Spectrum of a Ring",
+  "body": "The Spectrum of a Ring    What is life but a spectrum and what is music but life itself.   Billy Cobham   Prime Spectrum   Let be a ring. The prime spectrum of , denoted , is the set of prime ideals of . The set of maximal ideals of is denoted  prime spectrum   .      For a ring and an ideal , we set      Properties of V   Let be a ring, and be ideals, not necessarily proper.    and .    If , then .     .     .       Both and are straightforward, so we just prove .  To see , just observe that if or , then .  Since , we have . To show , if is a prime and , then . Thus we can find , and such that . Since is prime, , while also . Therefore, .  To show , since ideals are closed for sums, if for all , then . Moreover, if , then in particular .    Poset Structure of Spec   Note that is also a poset under inclusion. Show that the poset structure of can be recovered from the topology as follows:     Spectrum of Z   The spectrum of is, as a poset:    #empty  The closed sets are of the form , which are the whole space when , the empty set when , and any finite union of things in the top row. Any closed set that contains must be all of .    Radical Ideal   The radical  radical of an ideal of an ideal  in a ring is the ideal An ideal is a radical ideal  radical ideal if .    Radical Ideal is an Ideal   To see that is an ideal, note that if , then and .    Reduced Ring   A ring is reduced if it has no nonzero nilpotents.    Ideal Radical iff R\/I Reduced   An ideal in is radical if and only if is reduced.    and Radical Ideals   Let be a ring. For any ideal , .    The containment is immediate from the definition of radical, and thus we have . Now let be a prime ideal, and let . By definition, there exists some such that , but since is prime, we conclude that . Therefore, , and we are done.    Preimage of Prime is Prime   Let be a ring homomorphism and be prime. Then is also prime.    Let be a prime ideal in . Given elements such that , then , and since is prime, we conclude that or . Therefore, or .    Induced Map on   Each ring homomorphism induces a map on spectra given by . map on     Induced Map on Spec Continuous   The induced map on spectra is not only an order-preserving map, but also it is continuous: if is open, we have for some ideal ; then for a prime of , So is the complement of , and thus open.    Minimal Prime   Let be an ideal in a ring . A prime is a minimal prime of if is minimal in . A minimal prime of is a minimal element in . minimal prime of an ideal  minimal prime of a ring     Minimal Prime   Let be an ideal in a ring . A minimal prime of is a minimal element (with respect to containment) in . More precisely, is a minimal prime of if the following hold: - is a prime ideal, - , and - if is also a prime ideal and , then .  The set of minimal primes of is denoted  .    Every Prime Contains Minimal Prime   Let be a ring, and an ideal. Every prime that contains contains a minimal prime of .    Fix an ideal and a prime , and consider the set which is partially ordered with . On the one hand, , so is nonempty. On the other hand, given any chain in , is a prime ideal in ( #prove !). Moreover, contains , since every contain , and is contained in , since every . Therefore, , and Zorn's Lemma applies to . By [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma]], contains a maximal element for , say .  Notice that is equivalently a minimal element for . Now if is a prime ideal with , then , and thus . Therefore, we must have , by maximality of with respect to . We conclude that is a minimal prime of , and by definition is contained in .    Multiplicatively Closed Set   Suppose is a commutative ring and is a subset such that 1. , 2. is closed under multiplication (i.e., if , then ), and 3. does not contain nor any zerodivisors. Such a subset is called a multiplicatively closed subset of non zero divisors  multiplicatively closed subset of .    Spec Strong Nullstellensatz   Let be a ring, an ideal, and a multiplicatively closed subset. If , then there is a prime ideal with and .    Consider the family of ideals ordered with inclusion. This is nonempty, since it contains , and any chain has an upper bound . Therefore, has some maximal element by a basic application of [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma|Zorn's Lemma]]. We claim is prime. Suppose . By maximality, and both have nonempty intersection with , so there exist , , with . If , then     Spectrum Analogue of Strong Nullstellensatz   Let be a ring, and be an ideal. For , Moreover,     First to justify the equivalence of the two statements we observe: Now we will show that :   : It suffices to show that implies , and indeed    : If , consider the multiplicatively closed set . We have by hypothesis. There is a prime in that does not intersect , and hence does not contain   Finally, , and since every prime in contains a minimal prime of , we conclude that     Radical of is   Let be a field, , and . On the one hand, it is immediate form the definition that , and thus . On the other hand, is a prime ideal that contains , and thus by [[Mathematics\/Commutative Algebra\/Results\/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]] we must have .    iff Radicals are Equal   Let a ring. There is an order-reversing bijection In particular, for two ideals and , we have if and only if .    The closed sets of are precisely the sets of the form for some ideal . As the closed sets of are given by where ranges over all radical ideals. We showed in [[Mathematics\/Commutative Algebra\/Results\/Proposition - Properties of V|Proposition]] that the map is order-reversing. Finally, suppose that and are ideals such that . By [[Mathematics\/Commutative Algebra\/Results\/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]], Conversely, suppose that . Given a prime , we also have , and thus so . Since the same argument applies to show that , we conclude that .    Properties of Radical Ideals   Let and be ideals in a ring . (a) Show that . (b) Show that if , then . (c) Show that . (d) Show that for all . (e) Show that if is a prime ideal, then for all .    "
+},
+{
+  "id": "defn-prime-spectrum",
+  "level": "2",
+  "url": "sec-spectrum.html#defn-prime-spectrum",
+  "type": "Definition",
+  "number": "12.12",
+  "title": "Prime Spectrum.",
+  "body": "Prime Spectrum   Let be a ring. The prime spectrum of , denoted , is the set of prime ideals of . The set of maximal ideals of is denoted  prime spectrum   .   "
+},
+{
+  "id": "defn-vi",
+  "level": "2",
+  "url": "sec-spectrum.html#defn-vi",
+  "type": "Definition",
+  "number": "12.13",
+  "title": "<span class=\"process-math\">\\(V(I)\\)<\/span>.",
+  "body": "  For a ring and an ideal , we set     "
+},
+{
+  "id": "prop-properties-of-v",
+  "level": "2",
+  "url": "sec-spectrum.html#prop-properties-of-v",
+  "type": "Proposition",
+  "number": "12.14",
+  "title": "Properties of V.",
+  "body": "Properties of V   Let be a ring, and be ideals, not necessarily proper.    and .    If , then .     .     .       Both and are straightforward, so we just prove .  To see , just observe that if or , then .  Since , we have . To show , if is a prime and , then . Thus we can find , and such that . Since is prime, , while also . Therefore, .  To show , since ideals are closed for sums, if for all , then . Moreover, if , then in particular .   "
+},
+{
+  "id": "ex-poset-structure-of-spec",
+  "level": "2",
+  "url": "sec-spectrum.html#ex-poset-structure-of-spec",
+  "type": "Example",
+  "number": "12.15",
+  "title": "Poset Structure of Spec.",
+  "body": "Poset Structure of Spec   Note that is also a poset under inclusion. Show that the poset structure of can be recovered from the topology as follows:    "
+},
+{
+  "id": "ex-spectrum-of-z",
+  "level": "2",
+  "url": "sec-spectrum.html#ex-spectrum-of-z",
+  "type": "Example",
+  "number": "12.16",
+  "title": "Spectrum of Z.",
+  "body": "Spectrum of Z   The spectrum of is, as a poset:    #empty  The closed sets are of the form , which are the whole space when , the empty set when , and any finite union of things in the top row. Any closed set that contains must be all of .   "
+},
+{
+  "id": "defn-radical-ideal",
+  "level": "2",
+  "url": "sec-spectrum.html#defn-radical-ideal",
+  "type": "Definition",
+  "number": "12.17",
+  "title": "Radical Ideal.",
+  "body": "Radical Ideal   The radical  radical of an ideal of an ideal  in a ring is the ideal An ideal is a radical ideal  radical ideal if .   "
+},
+{
+  "id": "prop-radical-ideal-is-an-ideal",
+  "level": "2",
+  "url": "sec-spectrum.html#prop-radical-ideal-is-an-ideal",
+  "type": "Proposition",
+  "number": "12.18",
+  "title": "Radical Ideal is an Ideal.",
+  "body": "Radical Ideal is an Ideal   To see that is an ideal, note that if , then and .   "
+},
+{
+  "id": "defn-reduced-ring",
+  "level": "2",
+  "url": "sec-spectrum.html#defn-reduced-ring",
+  "type": "Definition",
+  "number": "12.19",
+  "title": "Reduced Ring.",
+  "body": "Reduced Ring   A ring is reduced if it has no nonzero nilpotents.   "
+},
+{
+  "id": "ex-ideal-radical-iff-ri-reduced",
+  "level": "2",
+  "url": "sec-spectrum.html#ex-ideal-radical-iff-ri-reduced",
+  "type": "Example",
+  "number": "12.20",
+  "title": "Ideal Radical iff R\/I Reduced.",
+  "body": "Ideal Radical iff R\/I Reduced   An ideal in is radical if and only if is reduced.   "
+},
+{
+  "id": "lem-v-and-radical-ideals",
+  "level": "2",
+  "url": "sec-spectrum.html#lem-v-and-radical-ideals",
+  "type": "Lemma",
+  "number": "12.21",
+  "title": "<span class=\"process-math\">\\(V\\)<\/span> and Radical Ideals.",
+  "body": "and Radical Ideals   Let be a ring. For any ideal , .    The containment is immediate from the definition of radical, and thus we have . Now let be a prime ideal, and let . By definition, there exists some such that , but since is prime, we conclude that . Therefore, , and we are done.   "
+},
+{
+  "id": "lem-preimage-of-prime-is-prime",
+  "level": "2",
+  "url": "sec-spectrum.html#lem-preimage-of-prime-is-prime",
+  "type": "Lemma",
+  "number": "12.22",
+  "title": "Preimage of Prime is Prime.",
+  "body": "Preimage of Prime is Prime   Let be a ring homomorphism and be prime. Then is also prime.    Let be a prime ideal in . Given elements such that , then , and since is prime, we conclude that or . Therefore, or .   "
+},
+{
+  "id": "defn-induced-map-on-spec",
+  "level": "2",
+  "url": "sec-spectrum.html#defn-induced-map-on-spec",
+  "type": "Definition",
+  "number": "12.23",
+  "title": "Induced Map on <span class=\"process-math\">\\(\\Spec\\)<\/span>.",
+  "body": "Induced Map on   Each ring homomorphism induces a map on spectra given by . map on    "
+},
+{
+  "id": "ex-induced-map-on-spec-continuous",
+  "level": "2",
+  "url": "sec-spectrum.html#ex-induced-map-on-spec-continuous",
+  "type": "Example",
+  "number": "12.24",
+  "title": "Induced Map on Spec Continuous.",
+  "body": "Induced Map on Spec Continuous   The induced map on spectra is not only an order-preserving map, but also it is continuous: if is open, we have for some ideal ; then for a prime of , So is the complement of , and thus open.   "
+},
+{
+  "id": "defn-minimal-prime-2",
+  "level": "2",
+  "url": "sec-spectrum.html#defn-minimal-prime-2",
+  "type": "Definition",
+  "number": "12.25",
+  "title": "Minimal Prime.",
+  "body": "Minimal Prime   Let be an ideal in a ring . A prime is a minimal prime of if is minimal in . A minimal prime of is a minimal element in . minimal prime of an ideal  minimal prime of a ring    "
+},
+{
+  "id": "defn-minimal-prime-3",
+  "level": "2",
+  "url": "sec-spectrum.html#defn-minimal-prime-3",
+  "type": "Definition",
+  "number": "12.26",
+  "title": "Minimal Prime.",
+  "body": "Minimal Prime   Let be an ideal in a ring . A minimal prime of is a minimal element (with respect to containment) in . More precisely, is a minimal prime of if the following hold: - is a prime ideal, - , and - if is also a prime ideal and , then .  The set of minimal primes of is denoted  .   "
+},
+{
+  "id": "lem-every-prime-contains-minimal-prime",
+  "level": "2",
+  "url": "sec-spectrum.html#lem-every-prime-contains-minimal-prime",
+  "type": "Lemma",
+  "number": "12.27",
+  "title": "Every Prime Contains Minimal Prime.",
+  "body": "Every Prime Contains Minimal Prime   Let be a ring, and an ideal. Every prime that contains contains a minimal prime of .    Fix an ideal and a prime , and consider the set which is partially ordered with . On the one hand, , so is nonempty. On the other hand, given any chain in , is a prime ideal in ( #prove !). Moreover, contains , since every contain , and is contained in , since every . Therefore, , and Zorn's Lemma applies to . By [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma]], contains a maximal element for , say .  Notice that is equivalently a minimal element for . Now if is a prime ideal with , then , and thus . Therefore, we must have , by maximality of with respect to . We conclude that is a minimal prime of , and by definition is contained in .   "
+},
+{
+  "id": "defn-multiplicatively-closed-set",
+  "level": "2",
+  "url": "sec-spectrum.html#defn-multiplicatively-closed-set",
+  "type": "Definition",
+  "number": "12.28",
+  "title": "Multiplicatively Closed Set.",
+  "body": "Multiplicatively Closed Set   Suppose is a commutative ring and is a subset such that 1. , 2. is closed under multiplication (i.e., if , then ), and 3. does not contain nor any zerodivisors. Such a subset is called a multiplicatively closed subset of non zero divisors  multiplicatively closed subset of .   "
+},
+{
+  "id": "lem-spec-strong-nullstellensatz",
+  "level": "2",
+  "url": "sec-spectrum.html#lem-spec-strong-nullstellensatz",
+  "type": "Lemma",
+  "number": "12.29",
+  "title": "Spec Strong Nullstellensatz.",
+  "body": "Spec Strong Nullstellensatz   Let be a ring, an ideal, and a multiplicatively closed subset. If , then there is a prime ideal with and .    Consider the family of ideals ordered with inclusion. This is nonempty, since it contains , and any chain has an upper bound . Therefore, has some maximal element by a basic application of [[Mathematics\/Foundations\/Results\/Theorem - Zorn's Lemma|Zorn's Lemma]]. We claim is prime. Suppose . By maximality, and both have nonempty intersection with , so there exist , , with . If , then    "
+},
+{
+  "id": "thm-spectrum-analogue-of-strong-nullstellensatz",
+  "level": "2",
+  "url": "sec-spectrum.html#thm-spectrum-analogue-of-strong-nullstellensatz",
+  "type": "Theorem",
+  "number": "12.30",
+  "title": "Spectrum Analogue of Strong Nullstellensatz.",
+  "body": "Spectrum Analogue of Strong Nullstellensatz   Let be a ring, and be an ideal. For , Moreover,     First to justify the equivalence of the two statements we observe: Now we will show that :   : It suffices to show that implies , and indeed    : If , consider the multiplicatively closed set . We have by hypothesis. There is a prime in that does not intersect , and hence does not contain   Finally, , and since every prime in contains a minimal prime of , we conclude that    "
+},
+{
+  "id": "ex-radical-of-x2-is-x",
+  "level": "2",
+  "url": "sec-spectrum.html#ex-radical-of-x2-is-x",
+  "type": "Example",
+  "number": "12.31",
+  "title": "Radical of <span class=\"process-math\">\\((x^2)\\)<\/span> is <span class=\"process-math\">\\((x)\\)<\/span>.",
+  "body": "Radical of is   Let be a field, , and . On the one hand, it is immediate form the definition that , and thus . On the other hand, is a prime ideal that contains , and thus by [[Mathematics\/Commutative Algebra\/Results\/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]] we must have .   "
+},
+{
+  "id": "cor-vivj-iff-radicals-are-equal",
+  "level": "2",
+  "url": "sec-spectrum.html#cor-vivj-iff-radicals-are-equal",
+  "type": "Corollary",
+  "number": "12.32",
+  "title": "<span class=\"process-math\">\\(V(I)=V(J)\\)<\/span> iff Radicals are Equal.",
+  "body": "iff Radicals are Equal   Let a ring. There is an order-reversing bijection In particular, for two ideals and , we have if and only if .    The closed sets of are precisely the sets of the form for some ideal . As the closed sets of are given by where ranges over all radical ideals. We showed in [[Mathematics\/Commutative Algebra\/Results\/Proposition - Properties of V|Proposition]] that the map is order-reversing. Finally, suppose that and are ideals such that . By [[Mathematics\/Commutative Algebra\/Results\/Theorem - Spectrum Analogue of Strong Nullstellensatz|Theorem]], Conversely, suppose that . Given a prime , we also have , and thus so . Since the same argument applies to show that , we conclude that .   "
+},
+{
+  "id": "ex-properties-of-radical-ideals",
+  "level": "2",
+  "url": "sec-spectrum.html#ex-properties-of-radical-ideals",
+  "type": "Example",
+  "number": "12.33",
+  "title": "Properties of Radical Ideals.",
+  "body": "Properties of Radical Ideals   Let and be ideals in a ring . (a) Show that . (b) Show that if , then . (c) Show that . (d) Show that for all . (e) Show that if is a prime ideal, then for all .   "
+},
+{
+  "id": "sec-ops",
+  "level": "1",
+  "url": "sec-ops.html",
+  "type": "Section",
+  "number": "12.3",
+  "title": "Operations",
+  "body": "Operations  Colons and Annihilators   Prime Avoidance    Only by avoiding the beginning of things can we escape their end.   Cyril Connolly     We will now discuss an important lemma known as Prime Avoidance. This is an elementary fact, but it is very helpful. Prime Avoidance says that if an ideal is not contained in any of the primes , then cannot be contained in their union. Set-theoretically this is possible, of course; but if the ideals are all prime, then it is actually not possible for unless is contained in one of the . In fact, for this to work we can even allow two of the to be just any ideals, as long as the remaining are prime.   Prime Avoidance  Prime Avoidance   Let be a ring, be ideals, and suppose that is prime for . If for all , then . Equivalently, if , then for some .  Moreover, if is -graded, and all of the ideals are homogeneous, all are prime, and for all , then there is a homogeneous element in that is not in .    We proceed by induction on . If , there is nothing to show. When , we have two ideals and and an ideal such that and , and we want to show that . By assumption there exist elements with and . If or , then we have an element that is not in , and we are done. On the other hand, if and , then consider . Since but , then . Similarly, . Therefore, .  Now suppose that the statement holds for some , and consider ideals with prime for all such that for any . By induction hypothesis, for each we have so we can find elements such that If some , we are done, so let's assume that for each . Consider Notice that . If for , then we also have , a contradiction. If , then we also have , since . Since , our assumption is that is prime, so one of , which is a contradiction. So for all , and thus is the element we were searching for.  If all are homogeneous and prime, then we proceed as above but replacing and with suitable powers so that is homogeneous. For example, we could take The primeness assumption guarantees that noncontainments in ideals is preserved.    Stronger Prime Avoidance   Let be a ring, prime ideals, and be an ideal in . If for each , then there exists such that     We proceed by induction on . When , if every element of the form with is in , then multiplying by we conclude that every , meaning .  Now suppose and that we have shown the statement for primes. If for some , then we might as well exclude from our list of primes, and the statement follows by induction. So assume that all our primes are incomparable.  If for all , we are done, since we can take for the element we are searching for. So suppose is in some , which we assume without loss of generality to be . Our induction hypothesis says that we can find such that . If , we are done, so suppose . Since we assumed , we must have , or else we would have had . Now is a prime ideal that does not contain , nor , so Choose not in . Then , since but . Moreover, for all we have , since and .     "
+},
+{
+  "id": "sec-prime-avoidance-3",
+  "level": "2",
+  "url": "sec-ops.html#sec-prime-avoidance-3",
+  "type": "Remark",
+  "number": "12.34",
+  "title": "",
+  "body": " We will now discuss an important lemma known as Prime Avoidance. This is an elementary fact, but it is very helpful. Prime Avoidance says that if an ideal is not contained in any of the primes , then cannot be contained in their union. Set-theoretically this is possible, of course; but if the ideals are all prime, then it is actually not possible for unless is contained in one of the . In fact, for this to work we can even allow two of the to be just any ideals, as long as the remaining are prime.  "
+},
+{
+  "id": "lem-prime-avoidance",
+  "level": "2",
+  "url": "sec-ops.html#lem-prime-avoidance",
+  "type": "Lemma",
+  "number": "12.35",
+  "title": "Prime Avoidance.",
+  "body": "Prime Avoidance  Prime Avoidance   Let be a ring, be ideals, and suppose that is prime for . If for all , then . Equivalently, if , then for some .  Moreover, if is -graded, and all of the ideals are homogeneous, all are prime, and for all , then there is a homogeneous element in that is not in .    We proceed by induction on . If , there is nothing to show. When , we have two ideals and and an ideal such that and , and we want to show that . By assumption there exist elements with and . If or , then we have an element that is not in , and we are done. On the other hand, if and , then consider . Since but , then . Similarly, . Therefore, .  Now suppose that the statement holds for some , and consider ideals with prime for all such that for any . By induction hypothesis, for each we have so we can find elements such that If some , we are done, so let's assume that for each . Consider Notice that . If for , then we also have , a contradiction. If , then we also have , since . Since , our assumption is that is prime, so one of , which is a contradiction. So for all , and thus is the element we were searching for.  If all are homogeneous and prime, then we proceed as above but replacing and with suitable powers so that is homogeneous. For example, we could take The primeness assumption guarantees that noncontainments in ideals is preserved.   "
+},
+{
+  "id": "thm-stronger-prime-avoidance",
+  "level": "2",
+  "url": "sec-ops.html#thm-stronger-prime-avoidance",
+  "type": "Theorem",
+  "number": "12.36",
+  "title": "Stronger Prime Avoidance.",
+  "body": "Stronger Prime Avoidance   Let be a ring, prime ideals, and be an ideal in . If for each , then there exists such that     We proceed by induction on . When , if every element of the form with is in , then multiplying by we conclude that every , meaning .  Now suppose and that we have shown the statement for primes. If for some , then we might as well exclude from our list of primes, and the statement follows by induction. So assume that all our primes are incomparable.  If for all , we are done, since we can take for the element we are searching for. So suppose is in some , which we assume without loss of generality to be . Our induction hypothesis says that we can find such that . If , we are done, so suppose . Since we assumed , we must have , or else we would have had . Now is a prime ideal that does not contain , nor , so Choose not in . Then , since but . Moreover, for all we have , since and .   "
 },
 {
   "id": "sec-min-support",
@@ -7318,175 +7111,220 @@ var ptx_lunr_docs = [
   "body": "The Krull Intersection Theorem    Life happens at intersections.   Jack Dorsey   Coming soon to an OER near you!  "
 },
 {
-  "id": "sec-dim-height",
+  "id": "sec-integral-extensions",
   "level": "1",
-  "url": "sec-dim-height.html",
+  "url": "sec-integral-extensions.html",
   "type": "Section",
   "number": "14.1",
-  "title": "Dimension and Height",
-  "body": "Dimension and Height    I don't like heights. This is why I stopped growing at fifth grade.   Billy Crystal    We will now spend a while discussing the notion of dimension of a ring and dimension of a variety. To motivate the definition, let's first think in terms of varieties.  We take our inspiration from the fundamental setting of dimension theory: vector spaces. The notion of basis doesn't make sense for varieties (What does it mean to span? Where is zero?), but one relevant thing we do have for both vector spaces and for varieties is subobjects.  One way to characterize the dimension of a vector space is the the largest number such that there is a proper chain of subspaces We can try something similar for varieties, but for a reducible variety, this is not a very good notion. For example, for a union of points, we can cook up a chain of proper subvarieties by adding one more point each time, but a point should be zero-dimensional by any reasonable measure. So, if we want this approach to work, we should stick to chains of irreducible subvarieties.   Dimension of Variety   The dimension dimension of a variety of an affine variety is defined as     Krull Dimension of a Ring   The Krull dimension Krull dimension dimension of a ring is We often call it simply the dimension of . Alternatively, is the supremum of the lengths of saturated chains of primes of .  FIX    Dimension of a Module   The dimension dimension of a module of an -module is defined as .    Dimension of Field is Zero  The dimension of any field is zero.   Equivalent Zero Dimensional Ring Definition  A ring is zero-dimensional if and only if every minimal prime of is a maximal ideal.   Dimension of PIDs not Fields is  The ring of integers has dimension , since there is one minimal prime and every other prime is maximal. Likewise, any PID that is not a field has dimension one.   UFD height 1   Let be a ring and be an ideal in . If is a UFD, is a prime of height one if and only if for a prime element .    If with irreducible, and , then contains some nonzero multiple of , say with and coprime. Since , , so we must have , so . Thus, has height one. On the other hand, if is a prime of height one, we claim contains an irreducible element. Indeed, is nonzero, so contains some , and primeness implies one of the prime factors of is contained in . Thus, any nonzero prime contains a prime ideal of the form , so a height one prime must be of this form.    Dim of is Zero  For a field , the ring is not noetherian, as is an infinite ascending chain, so is not noetherian. However, is a maximal ideal, and hence is the unique minimal prime of , which is also maximal. Therefore, .   Nagata  Let be a polynomial ring in infinitely many variables, which we are thinking of as arranged in an infinite triangle. is clearly infinite-dimensional and not noetherian. Let and . Note that is an intersection of multiplicatively closed subsets, so this is a valid localization of .  For any , we have a chain of primes in . As these primes are all contained in , none of these intersects , so the expansion to of the chain above yields a proper chain of primes in . It follows that for all , so is infinite-dimensional.  It turns out that is noetherian, which is not at all obvious and a bit technical, so we will not prove it.   Properties of Dimension and Height   Let be a ring. (a) A prime has height zero if and only if it is a minimal prime of . (b) An ideal has height zero if and only if it is contained in a minimal prime of . In particular, in a domain, every nonzero ideal has positive height. (c) . (d) . (e) If is an ideal, then . (f) If is prime, (g) If is an ideal, (h) If is a multiplicative set, then . (i) If is prime, then . (j) If are primes, then is the supremum of the lengths of saturated chains of primes in of the form .    We will prove some of these and leave the rest as an exercise.  A prime has height if and only if it contains no other prime, which is equivalent being a minimal prime of .  If is contained in a minimal prime of , then by (1), so by definition. Conversely, if , by definition, there is a minimal prime of of height , so some minimal prime of is a minimal prime of , so is contained in a minimal prime of .  It suffices to show that if and then . By definition, means that there is a chain of primes By (5), means that there is a chain of primes with . We can assume without loss of generality that , since if not, we can add it to the bottom of the chain. Putting these chains together, we get a chain of length in , so .  Let and . The inequality means that for every minimal prime of , . The inequality implies that there exists a minimal prime of of such that . For such a minimal prime as in the latter statement, using (5), we get the desired conclusion.     We know that in noetherian rings, there can be arbitrarily long chains of primes, since the dimension can be infinite as in Nagata's . On the other hand, any ascending proper chain of primes is finite, as a consequence of the definition. Does this imply that every prime has finite height? This does not prevent that possibility that there could be an infinite descending chain of primes, which would then give any of the primes in the chain infinite height. (This seems strange in conjunction with the fact that in any ring, any prime contains a minimal prime, but it does not contradict this.) Another possible problem is there being two primes such that for all there exists a chain of primes of length from to .  However, we will later show that the height of any ideal in a noetherian ring is finite.   Int Extension of Domains Nonzero Multiple  Let be an integral extension of domains. Show that every nonzero has a nonzero multiple in , meaning that there exists such that and .    Let be an infinite field and . We have shown that and that is the coordinate ring of the curve As is a curve (meaning it is parameterized by a single parameter), we should expect the dimension of the variety , and equivalently of the ring , to be . Let's prove this.  On the one hand, is a domain, so is the unique minimal prime. To show that , we need to show that any nonzero prime ideal is maximal.  Set . We note that does not satisfy any algebraic relation over , so is isomorphic to a polynomial ring in one variable, where that one variable corresponds to . Moreover, note that the inclusion is integral, since satisfies the monic polynomial and satisfies the monic polynomial . Polynomial rings in one variable have dimension , so .  Let be nonzero. Note first that , since if , then there is some nonzero multiple of in by . Since , is maximal. The inclusion is integral: a dependence relation for any representative yields a dependence relation. Since is a field, is a domain, and the inclusion is integral, by we can conclude that is a field, so is a maximal ideal. This shows that every nonzero prime in is maximal, and thus .   Catenary Ring   A ring is catenary caternary ring if for every pair of primes , every saturated chain of primes has the same length.    Equidimensional Ring   A ring is equidimensional equidimensional ring if every maximal ideal has the same finite height, and every minimal prime has the same dimension.     Consider the ring We can find the minimal primes of by computing in . The prime ideals and are incomparable, and , so . We claim that the height of is one: it contains the minimal prime , and any saturated chain from to corresponds to a saturated chain from to in , which must have length 1 since this is a PID. The height of is at least 2, as witnessed by the chain . So is not equidimensional.    The ring is a domain that is not equidimensional. On the one hand, the maximal ideal has height at least two, which we see from the chain Thus . On the other hand, we will show later that the prime ideal has height 1, and it is maximal since . Therefore, , and thus whereas . %In fact, , but I won't justify this.  The ring in this example is in fact a catenary domain, which we will not justify. Notice that there are maximal ideals of distinct heights in this ring, for example the ideal given above is a prime of height 1 whereas and the maximal ideal has height 2. Thus this ring is not equidimensional.   "
+  "title": "Integral Extensions",
+  "body": "Integral Extensions    What you do not wish upon yourself, extend not to others.  Confucius   In field theory, there is a close relationship between (vector space-)finite field extensions and algebraic equations. The situation for rings is similar, but much more subtle.  Integral Element   Let be a ring, an -algebra, and an ideal. An element of is integral over if it satisfies an equation of the form An element of is integral over if In both cases, we say that and satisfy an equation of integral dependence over     FIX   Integral automatically implies algebraic, but the condition that there exists an equation of algebraic dependence that is monic is stronger in the setting of rings. This is very different to what happens over fields, where algebraic and integral are equivalent conditions.   Integral in   Consider the -algebra . The element is integral over     since it satisfies the equation of integral dependence .    in Not Integral in   Prove is not integral over     If are such that then multiplying by gives which is impossible for parity reasons (the left hand-side is odd!). Notice, in contrast, that is algebraic over , since it satisfies .    Integrally Closed   Consider an an inclusion of rings . The integral closure  integral closure of in is the set of elements in that are integral over . We say is integrally closed  integrally closed in if is its own integral closure in . The integral closure of a domain in its field of fractions is usually denoted by     Normal Domain   A normal domain is a domain that is integrally closed in its field of fractions, meaning     Integers are a Normal Domain   The ring of integers is a integrally closed, meaning its integral closure in its fraction field is itself. The key idea to show this is similar to the argument we used is not integral over .    In fact, this is a special case of the fact that every UFD is normal.  UFDs are Normal   Show that every UFD is normal.     We cannot talk about the integral closure of a ring without specifying in what extension; the integral closures of in different extension can be very different. In , we saw that the integral closure of in contains at least and , while says that the integral closure of in is .  When is a domain, if we ever refer to the integral closure of , it is understood that we mean the integral closure of in its field of fractions, .    An element is integral over if and only if is integral over the subring , so we might as well assume that is injective.   F.G.-by-Intl-Modfin   Consider a ring extension .   If is integral over , then is module-finite over .    If are integral over , then is module-finite over .         Let be integral over , with for some . We claim that . Since is generated by all the powers of as an -module, to show that any polynomial is in it is enough to show that for all .    Using induction on , the base cases follow from the fact that is contained in the -th component. For the induction step, we need to show that for all ; we can do this by induction because we can use the equation above to rewrite as which is a linear combination of powers of of degree up to .    Write Since is integral over , it is also integral over , via the same monic equation that satisfies over . By Part (a), we conclude that the each extension is module-finite. Thus the inclusion is a composition of module-finite maps, and thus by this [[Mathematics\/Commutative Algebra\/Results\/Lemma - Compositions Preserve Module Finite|Lemma]] it is also module-finite.      In what follows, we will need the following elementary linear algebra fact, which is actually very useful in various contexts within commutative algebra. In fact, later in this class we will use this useful fact again, perhaps when you least expect it. This is a nice example of an algebra fact that holds over any ring that we can actually reduce to the case of fields.  Classical Adjoint   The classical adjoint of an matrix is the matrix with entries where  is the matrix obtained from by deleting its th row and th column. classical adjoint    Determinantal Technique  determinantal technique   Let be a ring, , , and . (a) . (b) If , then .     When is a field, this is a basic linear algebra fact. We will deduce the case of a general ring from the field case. The ring is a -algebra, so we can write as a quotient of some polynomial ring . Let be a surjection, be such that and let . Note that since is a homomorphism, and the entries are the same polynomial functions of the entries of the matrices and , respectively. Thus, it suffices to establish in the case when , and we can do this entry by entry. Now, is an integral domain, hence a subring of a field (its fraction field). Since both sides of the equation live in and are equal in the fraction field (by linear algebra) they are equal in . This holds for all , and thus 1) holds.  By assumption, we have , so by part 1)      Module Finite Implies Integral   Let be module-finite. Then is integral over .    Given , we want to show that is integral over . The idea is to show that multiplication by , realized as a linear transformation over , satisfies the characteristic polynomial of that linear transformation.  Suppose that . We may assume that , perhaps by adding a module generator. Since every element in is an -linear combination of , this is in particular true for the elements . Thus we can find such that for each . Consider the matrix and the column vector . We can now write the equalities above more compactly as . By the Determinantal Technique, . Since we chose one of the entries of to be , we have in particular that . Expanding this determinant as a polynomial in , this is a monic equation with coefficients in .    We are now ready to show the following important characterization of module-finite extensions, which tells us exactly what we need besides algebra-finite to force an extension to be module-finite:  Mod Fin iff Integral and Alg Fin   An -algebra is module-finite over if and only if is integral and algebra-finite over .    ( ): Module-finite implies integral, and algebra-finite.  ( ): If is integral over , then each is integral over , and this implies is module-finite over .    Extensions Gen by Integral Elements are Integral   If is generated as an algebra over by integral elements, then is integral over .    Let , with integral over for all . Given , there is a finite subset such that . This is now a finitely-generated algebra generated by integral elements, and thus it must be module-finite over . Module-finite implies integral, and thus is an integral extension of . In particular, is integral over .    Integral Elements form Subring   Given any ring extension , the set of elements of that are integral over form a subring of .    By the -subalgebra of generated by all elements in that are integral over is integral over , so it is contained in the set of all elements that are integral over : this means that so equality holds throughout, and is a ring contained in by definition.    In other words, the integral closure of in is a subring of containing .   Integral Over      The ring , where is not a perfect square, is integral over . Indeed, satisfies the monic polynomial , and since the integral closure of is a ring containing and , and is the smallest such ring, we conclude that every element in is integral over .    Let . Then we claim that is module-finite over To see this we first need to realize as a subring of . To do that, consider the -algebra homomorphism The kernel of consists of the polynomials in and that are multiples of , but any nonzero multiple of in must have -degree at least , which implies it involves and thus it is not in . We conclude that is injective, and thus   Now is generated over as an algebra by one element, , and satisfies the monic equation , so is integral over .       Note, however, that not all integral extensions are module-finite.   Integral but Not Algebra or Module Finite   Let be a field, and consider the -algebra given by Note that satisfies the monic polynomial , and thus it is integral over . Since is generated by elements that are integral over , by it must be an integral extension of . However, is not algebra-finite, and thus it is also not module-finite.     Tower Integral iff Each Piece Integral   Given ring extensions , the extensions and are integral if and only if is integral.    Finally, here is a useful fact about integral extensions that we will use multiple times.   Int Ext Domains Field   If is an integral extension of domains, then is a field if and only if is a field.    Suppose that is a field, and let be a nonzero element, which is necessarily integral over . The ring is algebra-finite over by construction, and integral over . Since is integral and algebra-finite, it must also be module-finite. Since is a field, this means that is a finite-dimensional vector space over . Since is a domain, the map is injective. Notice that this is a map of finite-dimensional -vector spaces, and thus it must also be surjective. In particular, there exists an element such that and thus is invertible. We conclude that must be a field.  Now suppose that is a field, and let . Since , there exists an inverse for in , which must be integral over . Given any equation of integral dependence for over , say with , we can multiply by to obtain Therefore, is invertible in , and is a field.    Before we move on from algebra-finite and module-finite extensions, we should remark on what the situation looks like over fields. First, note that over a field, module-finite just means finite dimensional vector space. While over a general ring the notions of algebra-finite and module-finite are quite different, they are actually equivalent over a field. This is a very deep fact, and we will unfortunately skip its proof — since it is a key ingredient in proving a fundamental result in algebraic geometry, we will leave it for the algebraic geometry class next semester. This is a nice application of the Artin-Tate Lemma, which we are going to discuss shortly, together with some facts about transcendent elements.   Zariski's Lemma   A field extension is algebra-finite if and only if it is module-finite.    The following corollary follows immediately from what we proved in this section:   Alg-Fin Ext of Alg Closed Field   Let be an algebraically closed field. If the field extension is algebra-finite, then .    By Zariski's Lemma, must be module-finite, making the extension integral. When we are over a field, integral is the same as algebraic, but integrally closed fields have no nontrivial algebraic extensions.    "
 },
 {
-  "id": "sec-dim-height-3",
+  "id": "defn-integral-element",
   "level": "2",
-  "url": "sec-dim-height.html#sec-dim-height-3",
-  "type": "Remark",
+  "url": "sec-integral-extensions.html#defn-integral-element",
+  "type": "Definition",
   "number": "14.1",
-  "title": "",
-  "body": " We will now spend a while discussing the notion of dimension of a ring and dimension of a variety. To motivate the definition, let's first think in terms of varieties.  We take our inspiration from the fundamental setting of dimension theory: vector spaces. The notion of basis doesn't make sense for varieties (What does it mean to span? Where is zero?), but one relevant thing we do have for both vector spaces and for varieties is subobjects.  One way to characterize the dimension of a vector space is the the largest number such that there is a proper chain of subspaces We can try something similar for varieties, but for a reducible variety, this is not a very good notion. For example, for a union of points, we can cook up a chain of proper subvarieties by adding one more point each time, but a point should be zero-dimensional by any reasonable measure. So, if we want this approach to work, we should stick to chains of irreducible subvarieties.  "
+  "title": "Integral Element.",
+  "body": "Integral Element   Let be a ring, an -algebra, and an ideal. An element of is integral over if it satisfies an equation of the form An element of is integral over if In both cases, we say that and satisfy an equation of integral dependence over    "
 },
 {
-  "id": "defn-dimension-of-variety",
+  "id": "sec-integral-extensions-6",
   "level": "2",
-  "url": "sec-dim-height.html#defn-dimension-of-variety",
-  "type": "Definition",
+  "url": "sec-integral-extensions.html#sec-integral-extensions-6",
+  "type": "Remark",
   "number": "14.2",
-  "title": "Dimension of Variety.",
-  "body": "Dimension of Variety   The dimension dimension of a variety of an affine variety is defined as    "
+  "title": "",
+  "body": " Integral automatically implies algebraic, but the condition that there exists an equation of algebraic dependence that is monic is stronger in the setting of rings. This is very different to what happens over fields, where algebraic and integral are equivalent conditions.  "
 },
 {
-  "id": "defn-krull-dimension-of-a-ring",
+  "id": "ex-sqrt2-integral-in-z",
   "level": "2",
-  "url": "sec-dim-height.html#defn-krull-dimension-of-a-ring",
-  "type": "Definition",
+  "url": "sec-integral-extensions.html#ex-sqrt2-integral-in-z",
+  "type": "Example",
   "number": "14.3",
-  "title": "Krull Dimension of a Ring.",
-  "body": "Krull Dimension of a Ring   The Krull dimension Krull dimension dimension of a ring is We often call it simply the dimension of . Alternatively, is the supremum of the lengths of saturated chains of primes of .  FIX   "
+  "title": "<span class=\"process-math\">\\(\\sqrt{2}\\)<\/span> Integral in <span class=\"process-math\">\\(\\Z\\)<\/span>.",
+  "body": "Integral in   Consider the -algebra . The element is integral over     since it satisfies the equation of integral dependence .   "
 },
 {
-  "id": "defn-dimension-of-a-module",
+  "id": "ex-frac12-in-q-not-integral-in-z",
   "level": "2",
-  "url": "sec-dim-height.html#defn-dimension-of-a-module",
-  "type": "Definition",
+  "url": "sec-integral-extensions.html#ex-frac12-in-q-not-integral-in-z",
+  "type": "Example",
   "number": "14.4",
-  "title": "Dimension of a Module.",
-  "body": "Dimension of a Module   The dimension dimension of a module of an -module is defined as .   "
+  "title": "<span class=\"process-math\">\\(\\frac{1}{2}\\)<\/span> in <span class=\"process-math\">\\(\\Q\\)<\/span> Not Integral in <span class=\"process-math\">\\(\\Z\\)<\/span>.",
+  "body": "in Not Integral in   Prove is not integral over     If are such that then multiplying by gives which is impossible for parity reasons (the left hand-side is odd!). Notice, in contrast, that is algebraic over , since it satisfies .   "
 },
 {
-  "id": "ex-dimension-of-field-is-zero",
+  "id": "defn-integrally-closed",
   "level": "2",
-  "url": "sec-dim-height.html#ex-dimension-of-field-is-zero",
-  "type": "Example",
+  "url": "sec-integral-extensions.html#defn-integrally-closed",
+  "type": "Definition",
   "number": "14.5",
-  "title": "Dimension of Field is Zero.",
-  "body": "Dimension of Field is Zero  The dimension of any field is zero.  "
+  "title": "Integrally Closed.",
+  "body": "Integrally Closed   Consider an an inclusion of rings . The integral closure  integral closure of in is the set of elements in that are integral over . We say is integrally closed  integrally closed in if is its own integral closure in . The integral closure of a domain in its field of fractions is usually denoted by    "
 },
 {
-  "id": "ex-equivalent-zero-dimensional-ring-definition",
+  "id": "defn-normal-domain",
   "level": "2",
-  "url": "sec-dim-height.html#ex-equivalent-zero-dimensional-ring-definition",
-  "type": "Example",
+  "url": "sec-integral-extensions.html#defn-normal-domain",
+  "type": "Definition",
   "number": "14.6",
-  "title": "Equivalent Zero Dimensional Ring Definition.",
-  "body": "Equivalent Zero Dimensional Ring Definition  A ring is zero-dimensional if and only if every minimal prime of is a maximal ideal.  "
+  "title": "Normal Domain.",
+  "body": "Normal Domain   A normal domain is a domain that is integrally closed in its field of fractions, meaning    "
 },
 {
-  "id": "ex-dimension-of-pids-not-fields-is-1",
+  "id": "ex-integers-are-a-normal-domain",
   "level": "2",
-  "url": "sec-dim-height.html#ex-dimension-of-pids-not-fields-is-1",
+  "url": "sec-integral-extensions.html#ex-integers-are-a-normal-domain",
   "type": "Example",
   "number": "14.7",
-  "title": "Dimension of PIDs not Fields is <span class=\"process-math\">\\(1\\)<\/span>.",
-  "body": "Dimension of PIDs not Fields is  The ring of integers has dimension , since there is one minimal prime and every other prime is maximal. Likewise, any PID that is not a field has dimension one.  "
+  "title": "Integers are a Normal Domain.",
+  "body": "Integers are a Normal Domain   The ring of integers is a integrally closed, meaning its integral closure in its fraction field is itself. The key idea to show this is similar to the argument we used is not integral over .   "
 },
 {
-  "id": "lem-ufd-height-1",
+  "id": "ex-ufds-are-normal",
   "level": "2",
-  "url": "sec-dim-height.html#lem-ufd-height-1",
-  "type": "Lemma",
+  "url": "sec-integral-extensions.html#ex-ufds-are-normal",
+  "type": "Example",
   "number": "14.8",
-  "title": "UFD height 1.",
-  "body": "UFD height 1   Let be a ring and be an ideal in . If is a UFD, is a prime of height one if and only if for a prime element .    If with irreducible, and , then contains some nonzero multiple of , say with and coprime. Since , , so we must have , so . Thus, has height one. On the other hand, if is a prime of height one, we claim contains an irreducible element. Indeed, is nonzero, so contains some , and primeness implies one of the prime factors of is contained in . Thus, any nonzero prime contains a prime ideal of the form , so a height one prime must be of this form.   "
+  "title": "UFDs are Normal.",
+  "body": "UFDs are Normal   Show that every UFD is normal.   "
 },
 {
-  "id": "ex-dim-of-kx_1x_2dotsx_12x_22dots-is-zero",
+  "id": "sec-integral-extensions-14",
   "level": "2",
-  "url": "sec-dim-height.html#ex-dim-of-kx_1x_2dotsx_12x_22dots-is-zero",
-  "type": "Example",
-  "number": "14.9",
-  "title": "Dim of <span class=\"process-math\">\\(k[x_1,x_2,\\dots]\/(x_1^2,x_2^2,\\dots)\\)<\/span> is Zero.",
-  "body": "Dim of is Zero  For a field , the ring is not noetherian, as is an infinite ascending chain, so is not noetherian. However, is a maximal ideal, and hence is the unique minimal prime of , which is also maximal. Therefore, .  "
-},
-{
-  "id": "nagata",
-  "level": "2",
-  "url": "sec-dim-height.html#nagata",
-  "type": "Example",
-  "number": "14.10",
-  "title": "Nagata.",
-  "body": "Nagata  Let be a polynomial ring in infinitely many variables, which we are thinking of as arranged in an infinite triangle. is clearly infinite-dimensional and not noetherian. Let and . Note that is an intersection of multiplicatively closed subsets, so this is a valid localization of .  For any , we have a chain of primes in . As these primes are all contained in , none of these intersects , so the expansion to of the chain above yields a proper chain of primes in . It follows that for all , so is infinite-dimensional.  It turns out that is noetherian, which is not at all obvious and a bit technical, so we will not prove it.  "
-},
-{
-  "id": "lem-properties-of-dimension-and-height",
-  "level": "2",
-  "url": "sec-dim-height.html#lem-properties-of-dimension-and-height",
-  "type": "Lemma",
-  "number": "14.11",
-  "title": "Properties of Dimension and Height.",
-  "body": "Properties of Dimension and Height   Let be a ring. (a) A prime has height zero if and only if it is a minimal prime of . (b) An ideal has height zero if and only if it is contained in a minimal prime of . In particular, in a domain, every nonzero ideal has positive height. (c) . (d) . (e) If is an ideal, then . (f) If is prime, (g) If is an ideal, (h) If is a multiplicative set, then . (i) If is prime, then . (j) If are primes, then is the supremum of the lengths of saturated chains of primes in of the form .    We will prove some of these and leave the rest as an exercise.  A prime has height if and only if it contains no other prime, which is equivalent being a minimal prime of .  If is contained in a minimal prime of , then by (1), so by definition. Conversely, if , by definition, there is a minimal prime of of height , so some minimal prime of is a minimal prime of , so is contained in a minimal prime of .  It suffices to show that if and then . By definition, means that there is a chain of primes By (5), means that there is a chain of primes with . We can assume without loss of generality that , since if not, we can add it to the bottom of the chain. Putting these chains together, we get a chain of length in , so .  Let and . The inequality means that for every minimal prime of , . The inequality implies that there exists a minimal prime of of such that . For such a minimal prime as in the latter statement, using (5), we get the desired conclusion.   "
-},
-{
-  "id": "sec-dim-height-14",
-  "level": "2",
-  "url": "sec-dim-height.html#sec-dim-height-14",
+  "url": "sec-integral-extensions.html#sec-integral-extensions-14",
   "type": "Remark",
-  "number": "14.12",
+  "number": "14.9",
   "title": "",
-  "body": " We know that in noetherian rings, there can be arbitrarily long chains of primes, since the dimension can be infinite as in Nagata's . On the other hand, any ascending proper chain of primes is finite, as a consequence of the definition. Does this imply that every prime has finite height? This does not prevent that possibility that there could be an infinite descending chain of primes, which would then give any of the primes in the chain infinite height. (This seems strange in conjunction with the fact that in any ring, any prime contains a minimal prime, but it does not contradict this.) Another possible problem is there being two primes such that for all there exists a chain of primes of length from to .  However, we will later show that the height of any ideal in a noetherian ring is finite.  "
+  "body": " We cannot talk about the integral closure of a ring without specifying in what extension; the integral closures of in different extension can be very different. In , we saw that the integral closure of in contains at least and , while says that the integral closure of in is .  When is a domain, if we ever refer to the integral closure of , it is understood that we mean the integral closure of in its field of fractions, .  "
 },
 {
-  "id": "ex-int-extension-of-domains-nonzero-multiple",
+  "id": "sec-integral-extensions-15",
   "level": "2",
-  "url": "sec-dim-height.html#ex-int-extension-of-domains-nonzero-multiple",
-  "type": "Example",
+  "url": "sec-integral-extensions.html#sec-integral-extensions-15",
+  "type": "Remark",
+  "number": "14.10",
+  "title": "",
+  "body": " An element is integral over if and only if is integral over the subring , so we might as well assume that is injective.  "
+},
+{
+  "id": "prop-f.g.-by-intl-modfin",
+  "level": "2",
+  "url": "sec-integral-extensions.html#prop-f.g.-by-intl-modfin",
+  "type": "Proposition",
+  "number": "14.11",
+  "title": "F.G.-by-Intl-Modfin.",
+  "body": "F.G.-by-Intl-Modfin   Consider a ring extension .   If is integral over , then is module-finite over .    If are integral over , then is module-finite over .         Let be integral over , with for some . We claim that . Since is generated by all the powers of as an -module, to show that any polynomial is in it is enough to show that for all .    Using induction on , the base cases follow from the fact that is contained in the -th component. For the induction step, we need to show that for all ; we can do this by induction because we can use the equation above to rewrite as which is a linear combination of powers of of degree up to .    Write Since is integral over , it is also integral over , via the same monic equation that satisfies over . By Part (a), we conclude that the each extension is module-finite. Thus the inclusion is a composition of module-finite maps, and thus by this [[Mathematics\/Commutative Algebra\/Results\/Lemma - Compositions Preserve Module Finite|Lemma]] it is also module-finite.     "
+},
+{
+  "id": "defn-classical-adjoint",
+  "level": "2",
+  "url": "sec-integral-extensions.html#defn-classical-adjoint",
+  "type": "Definition",
+  "number": "14.12",
+  "title": "Classical Adjoint.",
+  "body": "Classical Adjoint   The classical adjoint of an matrix is the matrix with entries where  is the matrix obtained from by deleting its th row and th column. classical adjoint   "
+},
+{
+  "id": "lem-determinantal-technique",
+  "level": "2",
+  "url": "sec-integral-extensions.html#lem-determinantal-technique",
+  "type": "Lemma",
   "number": "14.13",
-  "title": "Int Extension of Domains Nonzero Multiple.",
-  "body": "Int Extension of Domains Nonzero Multiple  Let be an integral extension of domains. Show that every nonzero has a nonzero multiple in , meaning that there exists such that and .  "
+  "title": "Determinantal Technique.",
+  "body": "Determinantal Technique  determinantal technique   Let be a ring, , , and . (a) . (b) If , then .     When is a field, this is a basic linear algebra fact. We will deduce the case of a general ring from the field case. The ring is a -algebra, so we can write as a quotient of some polynomial ring . Let be a surjection, be such that and let . Note that since is a homomorphism, and the entries are the same polynomial functions of the entries of the matrices and , respectively. Thus, it suffices to establish in the case when , and we can do this entry by entry. Now, is an integral domain, hence a subring of a field (its fraction field). Since both sides of the equation live in and are equal in the fraction field (by linear algebra) they are equal in . This holds for all , and thus 1) holds.  By assumption, we have , so by part 1)     "
 },
 {
-  "id": "sec-dim-height-16",
+  "id": "thm-module-finite-implies-integral",
   "level": "2",
-  "url": "sec-dim-height.html#sec-dim-height-16",
-  "type": "Example",
+  "url": "sec-integral-extensions.html#thm-module-finite-implies-integral",
+  "type": "Theorem",
   "number": "14.14",
-  "title": ".",
-  "body": " Let be an infinite field and . We have shown that and that is the coordinate ring of the curve As is a curve (meaning it is parameterized by a single parameter), we should expect the dimension of the variety , and equivalently of the ring , to be . Let's prove this.  On the one hand, is a domain, so is the unique minimal prime. To show that , we need to show that any nonzero prime ideal is maximal.  Set . We note that does not satisfy any algebraic relation over , so is isomorphic to a polynomial ring in one variable, where that one variable corresponds to . Moreover, note that the inclusion is integral, since satisfies the monic polynomial and satisfies the monic polynomial . Polynomial rings in one variable have dimension , so .  Let be nonzero. Note first that , since if , then there is some nonzero multiple of in by . Since , is maximal. The inclusion is integral: a dependence relation for any representative yields a dependence relation. Since is a field, is a domain, and the inclusion is integral, by we can conclude that is a field, so is a maximal ideal. This shows that every nonzero prime in is maximal, and thus .  "
+  "title": "Module Finite Implies Integral.",
+  "body": "Module Finite Implies Integral   Let be module-finite. Then is integral over .    Given , we want to show that is integral over . The idea is to show that multiplication by , realized as a linear transformation over , satisfies the characteristic polynomial of that linear transformation.  Suppose that . We may assume that , perhaps by adding a module generator. Since every element in is an -linear combination of , this is in particular true for the elements . Thus we can find such that for each . Consider the matrix and the column vector . We can now write the equalities above more compactly as . By the Determinantal Technique, . Since we chose one of the entries of to be , we have in particular that . Expanding this determinant as a polynomial in , this is a monic equation with coefficients in .   "
 },
 {
-  "id": "defn-catenary-ring",
+  "id": "cor-mod-fin-iff-integral-and-alg-fin",
   "level": "2",
-  "url": "sec-dim-height.html#defn-catenary-ring",
-  "type": "Definition",
+  "url": "sec-integral-extensions.html#cor-mod-fin-iff-integral-and-alg-fin",
+  "type": "Corollary",
   "number": "14.15",
-  "title": "Catenary Ring.",
-  "body": "Catenary Ring   A ring is catenary caternary ring if for every pair of primes , every saturated chain of primes has the same length.   "
+  "title": "Mod Fin iff Integral and Alg Fin.",
+  "body": "Mod Fin iff Integral and Alg Fin   An -algebra is module-finite over if and only if is integral and algebra-finite over .    ( ): Module-finite implies integral, and algebra-finite.  ( ): If is integral over , then each is integral over , and this implies is module-finite over .   "
 },
 {
-  "id": "defn-equidimensional-ring",
+  "id": "cor-extensions-gen-by-integral-elements-are-integral",
   "level": "2",
-  "url": "sec-dim-height.html#defn-equidimensional-ring",
-  "type": "Definition",
+  "url": "sec-integral-extensions.html#cor-extensions-gen-by-integral-elements-are-integral",
+  "type": "Corollary",
   "number": "14.16",
-  "title": "Equidimensional Ring.",
-  "body": "Equidimensional Ring   A ring is equidimensional equidimensional ring if every maximal ideal has the same finite height, and every minimal prime has the same dimension.   "
+  "title": "Extensions Gen by Integral Elements are Integral.",
+  "body": "Extensions Gen by Integral Elements are Integral   If is generated as an algebra over by integral elements, then is integral over .    Let , with integral over for all . Given , there is a finite subset such that . This is now a finitely-generated algebra generated by integral elements, and thus it must be module-finite over . Module-finite implies integral, and thus is an integral extension of . In particular, is integral over .   "
 },
 {
-  "id": "sec-dim-height-19",
+  "id": "cor-integral-elements-form-subring",
   "level": "2",
-  "url": "sec-dim-height.html#sec-dim-height-19",
-  "type": "Example",
+  "url": "sec-integral-extensions.html#cor-integral-elements-form-subring",
+  "type": "Corollary",
   "number": "14.17",
-  "title": ".",
-  "body": " Consider the ring We can find the minimal primes of by computing in . The prime ideals and are incomparable, and , so . We claim that the height of is one: it contains the minimal prime , and any saturated chain from to corresponds to a saturated chain from to in , which must have length 1 since this is a PID. The height of is at least 2, as witnessed by the chain . So is not equidimensional.  "
+  "title": "Integral Elements form Subring.",
+  "body": "Integral Elements form Subring   Given any ring extension , the set of elements of that are integral over form a subring of .    By the -subalgebra of generated by all elements in that are integral over is integral over , so it is contained in the set of all elements that are integral over : this means that so equality holds throughout, and is a ring contained in by definition.   "
 },
 {
-  "id": "sec-dim-height-20",
+  "id": "ex-integral-examples",
   "level": "2",
-  "url": "sec-dim-height.html#sec-dim-height-20",
+  "url": "sec-integral-extensions.html#ex-integral-examples",
   "type": "Example",
   "number": "14.18",
-  "title": ".",
-  "body": " The ring is a domain that is not equidimensional. On the one hand, the maximal ideal has height at least two, which we see from the chain Thus . On the other hand, we will show later that the prime ideal has height 1, and it is maximal since . Therefore, , and thus whereas . %In fact, , but I won't justify this.  The ring in this example is in fact a catenary domain, which we will not justify. Notice that there are maximal ideals of distinct heights in this ring, for example the ideal given above is a prime of height 1 whereas and the maximal ideal has height 2. Thus this ring is not equidimensional.  "
+  "title": "<span class=\"process-math\">\\(\\Z[\\sqrt{d}]\\)<\/span> Integral Over <span class=\"process-math\">\\(\\Z\\)<\/span>.",
+  "body": " Integral Over      The ring , where is not a perfect square, is integral over . Indeed, satisfies the monic polynomial , and since the integral closure of is a ring containing and , and is the smallest such ring, we conclude that every element in is integral over .    Let . Then we claim that is module-finite over To see this we first need to realize as a subring of . To do that, consider the -algebra homomorphism The kernel of consists of the polynomials in and that are multiples of , but any nonzero multiple of in must have -degree at least , which implies it involves and thus it is not in . We conclude that is injective, and thus   Now is generated over as an algebra by one element, , and satisfies the monic equation , so is integral over .      "
+},
+{
+  "id": "ex-integral-but-not-algebra-or-module-finite",
+  "level": "2",
+  "url": "sec-integral-extensions.html#ex-integral-but-not-algebra-or-module-finite",
+  "type": "Example",
+  "number": "14.19",
+  "title": "Integral but Not Algebra or Module Finite.",
+  "body": " Integral but Not Algebra or Module Finite   Let be a field, and consider the -algebra given by Note that satisfies the monic polynomial , and thus it is integral over . Since is generated by elements that are integral over , by it must be an integral extension of . However, is not algebra-finite, and thus it is also not module-finite.   "
+},
+{
+  "id": "ex-tower-integral-iff-each-piece-integral",
+  "level": "2",
+  "url": "sec-integral-extensions.html#ex-tower-integral-iff-each-piece-integral",
+  "type": "Example",
+  "number": "14.20",
+  "title": "Tower Integral iff Each Piece Integral.",
+  "body": " Tower Integral iff Each Piece Integral   Given ring extensions , the extensions and are integral if and only if is integral.   "
+},
+{
+  "id": "thm-int-ext-domains-field",
+  "level": "2",
+  "url": "sec-integral-extensions.html#thm-int-ext-domains-field",
+  "type": "Theorem",
+  "number": "14.21",
+  "title": "Int Ext Domains Field.",
+  "body": " Int Ext Domains Field   If is an integral extension of domains, then is a field if and only if is a field.    Suppose that is a field, and let be a nonzero element, which is necessarily integral over . The ring is algebra-finite over by construction, and integral over . Since is integral and algebra-finite, it must also be module-finite. Since is a field, this means that is a finite-dimensional vector space over . Since is a domain, the map is injective. Notice that this is a map of finite-dimensional -vector spaces, and thus it must also be surjective. In particular, there exists an element such that and thus is invertible. We conclude that must be a field.  Now suppose that is a field, and let . Since , there exists an inverse for in , which must be integral over . Given any equation of integral dependence for over , say with , we can multiply by to obtain Therefore, is invertible in , and is a field.   "
+},
+{
+  "id": "thm-zariskis-lemma",
+  "level": "2",
+  "url": "sec-integral-extensions.html#thm-zariskis-lemma",
+  "type": "Theorem",
+  "number": "14.22",
+  "title": "Zariski’s Lemma.",
+  "body": " Zariski's Lemma   A field extension is algebra-finite if and only if it is module-finite.   "
+},
+{
+  "id": "cor-alg-fin-ext-of-alg-closed-field",
+  "level": "2",
+  "url": "sec-integral-extensions.html#cor-alg-fin-ext-of-alg-closed-field",
+  "type": "Corollary",
+  "number": "14.23",
+  "title": "Alg-Fin Ext of Alg Closed Field.",
+  "body": " Alg-Fin Ext of Alg Closed Field   Let be an algebraically closed field. If the field extension is algebra-finite, then .    By Zariski's Lemma, must be module-finite, making the extension integral. When we are over a field, integral is the same as algebraic, but integrally closed fields have no nontrivial algebraic extensions.   "
 },
 {
   "id": "sec-over-up-down",
@@ -7495,14 +7333,14 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "14.2",
   "title": "Over, Up, and Down",
-  "body": "Over, Up, and Down    You're either down or you're up.   Shaun White    In this section, we will collect theorems about the spectrum of a ring: theorems that assert that the map on Spec is surjective, and theorems about lifting chains of primes. Given a ring homomorphism , we want to study the behavior of chains of primes: how chains in behave under expansion to and how chains in behave under contraction to .    Fiber   For a map of topological spaces and , the fiber fiber of a map over is the subspace     Fiber Ring   Let be a ring homomorphism and . The fiber ring fiber ring of over is where by abuse of notation we write for the image of in , and for .    EMPTY   Primes Contracting to p Fiber Ring   Let be a ring homomorphism and be a prime ideal. The natural map induces a homeomorphism (in particular, an order-preserving bijection) where the right-hand side has the subspace topology induced by the Zariski topology on     Consider the maps For any localization map or any quotient map, the induced map on Spec is a homeomorphism onto its image. The map on spectra induced by can be identified with the inclusion of into . For the second map, , we saw in that the map on spectra can be identified with the inclusion of the set of primes that do not intersect , i.e., those whose contraction is contained in . Therefore, is injective, since it is the composition of two injective maps.  On the one hand, if a prime contains , then . If moreover , we must have .  We have thus shown that the image of is the set of primes in that contract to . %So is in the image if and only if .    Image Criterion   Let be a ring homomorphism. For any , if and only if     If , then so localizing at , we get an inclusion . Since is nonzero, so is and thus its spectrum is nonempty. By , there is a prime mapping to .  If , then . If , then , so . So no prime contracts to .     Let . The ideal is prime, while is not even radical. Nevertheless, .   Inclusion Triangle  Consider the inclusion and the prime in . Notice that , but not in , so , and thus . We can check this more directly, by noting that any prime in contracting to would contain , so or . But and , so no prime in contracts to .   Direct Summand and Surj Spec Map   If is a direct summand, the map is surjective.    By , we know for all ideals in this case, so says the map on Spec is surjective.    Integral Element  Let be a ring, an -algebra, and an ideal. An element of is integral integral over an ideal over if it satisfies an equation of the form An element of is integral over if In both cases, we say that and satisfy an equation of integral dependence over   FIX integral closure of an ideal     Notice that is immediate from the definition.   Rees Algebra  Let , be an ideal of , and be an indeterminate. Consider the rings Here is the subalgebra of generated by elements of the form for all . Notice that we can give this a structure of a graded ring by setting all elements in to have degree and to have degree , so This is usually called the Rees algebra Rees algebra of . - . - is an ideal of .   Extension-Contraction Lemma for Int. Ext.   Let be integral, and be an ideal of . Then , and hence .    Let . We can write for some . Moreover, taking , we also have . We will show that , so follows as a corollary. So we might as well replace with , so that is also integral and module-finite. By , the extension is also module-finite.  Let . We can write with . We can write these equations in the form , where , and . By the determinantal trick, , we have . Since we can assume , we have . The fact that this is the type of equation we want follows from the monomial expansion of the determinant: any monomial is a product of terms where some of them are copies of , and the rest are elements of . Since this is a product of terms, a term in has a coefficient coming from a product of elements of .  So this shows that . Now notice that is immediate from the definition, as noted in .    Lying Over  Lying Over Theorem   If is an integral extension, then for every , and the induced map is surjective.    Let be any ideal in . Given any , we have for some and some for all , so Thus . Therefore, if is a prime in , by we have , and Then , and by we conclude that is in the image of the map on Spec.     Both assumptions that the extension is integral and that it is an inclusion are needed in [[Mathematics\/Commutative Algebra\/Results\/Theorem - Lying Over|Lying Over]]; we cannot reduce to the case of an integral inclusion. The point is that being an inclusion does not translate into a property of the induced map on Spec.    We saw in that the map induced on Spec by the inclusion is not surjective. So does not apply — indeed, this inclusion is not module-finite, and thus by it is not integral. For example, the infinite set is a minimal generating set for over .    Suppose is a regular element on , but not a unit. Since is regular, the map is an inclusion, but we claim it is not integral. If is integral over , there would be such that After multiplying by all terms are of the form , and thus in , since the localization map is injective. So and must be a unit. So whenever is a regular element but not a unit, is an example of an inclusion that is not integral. Note that the image of the map on Spec is the complement of , so in particular the map is not surjective.  In contrast, the map is integral, since it is module-finite, but it is not an inclusion. The map on Spec is again not surjective: its image is .    Let be an ideal in . Suppose is an integral extension. There is an induced map , and that map is integral: an equation of integral dependance for over gives an equation for integral dependance of its class in over .   Integral Extension Maximal Contracts to Maximal   If is integral, is maximal if and only if is maximal in .    By , the induced map is an integral extension of domains, and (respectively, ) is maximal if and only if (respectively, ) is a field. So this follows by .    Integral Preserved by Localization   Let be integral, and let be a multiplicatively closed subset of . Then is integral.    Since is a multiplicatively closed subset of , its image in is also multiplicatively closed. Given and , then we have equations of the form Thus is integral over , and is integral over .    Incomparability  Incomparability   If is integral and are primes in that satisfy , then .    In this case we can reduce to the case of an inclusion: factors through , and the map induced on Spec factors as Since the map on spectra induced by is injective, we can replace by the quotient and assume is an integral inclusion.  So suppose is integral, and let . By , localizing at preserves integrality. %We claim that localizing at preserves integrality: if and , then we have equations of the form  By localizing at , the image of is a maximal ideal. So we can reduce to the situation where is a maximal ideal. By , are both maximal ideals. Therefore, .    Finite Contractions in Int Noeth Alg   Let be an integral -algebra. If is noetherian, then only finitely many primes contract to each .    If contracts to , then , so in particular contains some prime minimal over . Then so . By , . So all the primes contracting to are in , which is a finite set since is noetherian, by .    Integral Dim Inequality   If is integral, then for any we have In particular, .    Given a chain of primes in , we can contract to , and by we get a chain of distinct primes in .    Going Up  Going Up Theorem   If is integral, then for every in and with , there is some with and .    Consider the map . This is integral, as we observed in . It is also injective, so applies. Thus, there is a prime of that contracts to the prime in . We can write for some , and we must have that contracts to .    Integral Dim Equality   If is integral, then .    We have already shown that in , so we just need to show that . Fix a chain of primes in . By Lying Over, , there is a prime contracting to . Then by Going up, , we have with . Continuing, we can build a chain of distinct primes in of length . So , and equality follows.    Lemma Minimal Polynomial   Let be a integrally closed and let be an element in some larger domain that is integral over . Let be the fraction field of , and be the minimal polynomial of over . (a) If is integral over , then . (b) If is integral over a prime , then has all of its nonleading coefficients in .    Let be integral over . Fix an algebraic closure of containing , and let , be the roots of . Since divides any polynomial with coefficients in that satisfies, it also divides a monic equation of integral dependance for over . Therefore, each is a solution to such an equation of integral dependence, and thus must be integral over .  Let . This is a module-finite extension of , so all of its elements are integral over . The leading coefficient of is 1, and the remaining coefficients of are polynomials in the , hence they lie in . On the other hand, is normal, so . We conclude that all the coefficients of are in , and .  Now let be integral over . By the same argument as above, all of the are integral over . Since each , any polynomial in the lies in . So the nonleading coefficients of lie in , by [[Mathematics\/Commutative Algebra\/Results\/Theorem - Lying Over|Lying Over]].    Going Down  Going Down Theorem   Suppose that is a integrally closed, is a domain, and is integral. Then, for every in and in with , there is some with and .    Let be the multiplicative set in consisting of products of elements in and . Note that each of the sets and contains , so and are both contained in . We will show that is empty. Once we do that, it will follow from that there is a prime ideal in containing such that is empty. Since , our new prime must necessarily be contained in .  Moreover, , so is empty, or equivalently, . Since and , we conclude that .  So our goal is to show that is empty. We proceed by contradiction, and assume there is some . We can write for some and . Moreover, since , is integral over , by .  Consider the minimal polynomial of over , say By , each . Then substituting in and dividing by yields We claim that this is the minimal polynomial of . If satisfied a monic polynomial of degree , multiplying by would give us a polynomial of degree that satisfies, which is impossible. So indeed, this is the minimal polynomial of .  Since , and thus integral over , says that each . Since and , we must have . The equation then shows that . Since contains and hence , we have . This is the desired contradiction, since by construction.    Height in Normal Domains   If is a integrally closed, is a domain, and is integral, then for any .    We already know from that . To show that , given a saturated chain up to , we can apply to get a chain just as long that goes up to .    "
+  "body": "Over, Up, and Down    You're either down or you're up.   Shaun White    In this section, we will collect theorems about the spectrum of a ring: theorems that assert that the map on Spec is surjective, and theorems about lifting chains of primes. Given a ring homomorphism , we want to study the behavior of chains of primes: how chains in behave under expansion to and how chains in behave under contraction to .   Fiber   For a map of topological spaces and , the fiber fiber of a map over is the subspace     Fiber Ring   Let be a ring homomorphism and . The fiber ring fiber ring of over is where by abuse of notation we write for the image of in , and for .    EMPTY  Primes Contracting to p Fiber Ring   Let be a ring homomorphism and be a prime ideal. The natural map induces a homeomorphism (in particular, an order-preserving bijection) where the right-hand side has the subspace topology induced by the Zariski topology on     Consider the maps For any localization map or any quotient map, the induced map on Spec is a homeomorphism onto its image. The map on spectra induced by can be identified with the inclusion of into . For the second map, , we saw in that the map on spectra can be identified with the inclusion of the set of primes that do not intersect , i.e., those whose contraction is contained in . Therefore, is injective, since it is the composition of two injective maps.  On the one hand, if a prime contains , then . If moreover , we must have .  We have thus shown that the image of is the set of primes in that contract to . %So is in the image if and only if .    Image Criterion   Let be a ring homomorphism. For any , if and only if     If , then so localizing at , we get an inclusion . Since is nonzero, so is and thus its spectrum is nonempty. By , there is a prime mapping to .  If , then . If , then , so . So no prime contracts to .     Let . The ideal is prime, while is not even radical. Nevertheless, .   Inclusion Triangle  Consider the inclusion and the prime in . Notice that , but not in , so , and thus . We can check this more directly, by noting that any prime in contracting to would contain , so or . But and , so no prime in contracts to .   Direct Summand and Surj Spec Map   If is a direct summand, the map is surjective.    By , we know for all ideals in this case, so says the map on Spec is surjective.    Integral Element  Let be a ring, an -algebra, and an ideal. An element of is integral integral over an ideal over if it satisfies an equation of the form An element of is integral over if In both cases, we say that and satisfy an equation of integral dependence over   FIX integral closure of an ideal     Notice that is immediate from the definition.   Rees Algebra  Let , be an ideal of , and be an indeterminate. Consider the rings Here is the subalgebra of generated by elements of the form for all . Notice that we can give this a structure of a graded ring by setting all elements in to have degree and to have degree , so This is usually called the Rees algebra Rees algebra of . - . - is an ideal of .   Extension-Contraction Lemma for Int. Ext.   Let be integral, and be an ideal of . Then , and hence .    Let . We can write for some . Moreover, taking , we also have . We will show that , so follows as a corollary. So we might as well replace with , so that is also integral and module-finite. By , the extension is also module-finite.  Let . We can write with . We can write these equations in the form , where , and . By the determinantal trick, , we have . Since we can assume , we have . The fact that this is the type of equation we want follows from the monomial expansion of the determinant: any monomial is a product of terms where some of them are copies of , and the rest are elements of . Since this is a product of terms, a term in has a coefficient coming from a product of elements of .  So this shows that . Now notice that is immediate from the definition, as noted in .    Lying Over  Lying Over Theorem   If is an integral extension, then for every , and the induced map is surjective.    Let be any ideal in . Given any , we have for some and some for all , so Thus . Therefore, if is a prime in , by we have , and Then , and by we conclude that is in the image of the map on Spec.     Both assumptions that the extension is integral and that it is an inclusion are needed in [[Mathematics\/Commutative Algebra\/Results\/Theorem - Lying Over|Lying Over]]; we cannot reduce to the case of an integral inclusion. The point is that being an inclusion does not translate into a property of the induced map on Spec.    We saw in that the map induced on Spec by the inclusion is not surjective. So does not apply — indeed, this inclusion is not module-finite, and thus by it is not integral. For example, the infinite set is a minimal generating set for over .    Suppose is a regular element on , but not a unit. Since is regular, the map is an inclusion, but we claim it is not integral. If is integral over , there would be such that After multiplying by all terms are of the form , and thus in , since the localization map is injective. So and must be a unit. So whenever is a regular element but not a unit, is an example of an inclusion that is not integral. Note that the image of the map on Spec is the complement of , so in particular the map is not surjective.  In contrast, the map is integral, since it is module-finite, but it is not an inclusion. The map on Spec is again not surjective: its image is .    Let be an ideal in . Suppose is an integral extension. There is an induced map , and that map is integral: an equation of integral dependance for over gives an equation for integral dependance of its class in over .   Integral Extension Maximal Contracts to Maximal   If is integral, is maximal if and only if is maximal in .    By , the induced map is an integral extension of domains, and (respectively, ) is maximal if and only if (respectively, ) is a field. So this follows by .    Integral Preserved by Localization   Let be integral, and let be a multiplicatively closed subset of . Then is integral.    Since is a multiplicatively closed subset of , its image in is also multiplicatively closed. Given and , then we have equations of the form Thus is integral over , and is integral over .    Incomparability  Incomparability   If is integral and are primes in that satisfy , then .    In this case we can reduce to the case of an inclusion: factors through , and the map induced on Spec factors as Since the map on spectra induced by is injective, we can replace by the quotient and assume is an integral inclusion.  So suppose is integral, and let . By , localizing at preserves integrality.  By localizing at , the image of is a maximal ideal. So we can reduce to the situation where is a maximal ideal. By , are both maximal ideals. Therefore, .    Finite Contractions in Int Noeth Alg   Let be an integral -algebra. If is noetherian, then only finitely many primes contract to each .    If contracts to , then , so in particular contains some prime minimal over . Then so . By , . So all the primes contracting to are in , which is a finite set since is noetherian, by .    Integral Dim Inequality   If is integral, then for any we have In particular, .    Given a chain of primes in , we can contract to , and by we get a chain of distinct primes in .    Going Up  Going Up Theorem   If is integral, then for every in and with , there is some with and .    Consider the map . This is integral, as we observed in . It is also injective, so applies. Thus, there is a prime of that contracts to the prime in . We can write for some , and we must have that contracts to .    Integral Dim Equality   If is integral, then .    We have already shown that in , so we just need to show that . Fix a chain of primes in . By Lying Over, , there is a prime contracting to . Then by Going up, , we have with . Continuing, we can build a chain of distinct primes in of length . So , and equality follows.    Lemma Minimal Polynomial   Let be a integrally closed and let be an element in some larger domain that is integral over . Let be the fraction field of , and be the minimal polynomial of over . (a) If is integral over , then . (b) If is integral over a prime , then has all of its nonleading coefficients in .    Let be integral over . Fix an algebraic closure of containing , and let , be the roots of . Since divides any polynomial with coefficients in that satisfies, it also divides a monic equation of integral dependance for over . Therefore, each is a solution to such an equation of integral dependence, and thus must be integral over .  Let . This is a module-finite extension of , so all of its elements are integral over . The leading coefficient of is 1, and the remaining coefficients of are polynomials in the , hence they lie in . On the other hand, is normal, so . We conclude that all the coefficients of are in , and .  Now let be integral over . By the same argument as above, all of the are integral over . Since each , any polynomial in the lies in . So the nonleading coefficients of lie in , by [[Mathematics\/Commutative Algebra\/Results\/Theorem - Lying Over|Lying Over]].    Going Down  Going Down Theorem   Suppose that is a integrally closed, is a domain, and is integral. Then, for every in and in with , there is some with and .    Let be the multiplicative set in consisting of products of elements in and . Note that each of the sets and contains , so and are both contained in . We will show that is empty. Once we do that, it will follow from that there is a prime ideal in containing such that is empty. Since , our new prime must necessarily be contained in .  Moreover, , so is empty, or equivalently, . Since and , we conclude that .  So our goal is to show that is empty. We proceed by contradiction, and assume there is some . We can write for some and . Moreover, since , is integral over , by .  Consider the minimal polynomial of over , say By , each . Then substituting in and dividing by yields We claim that this is the minimal polynomial of . If satisfied a monic polynomial of degree , multiplying by would give us a polynomial of degree that satisfies, which is impossible. So indeed, this is the minimal polynomial of .  Since , and thus integral over , says that each . Since and , we must have . The equation then shows that . Since contains and hence , we have . This is the desired contradiction, since by construction.    Height in Normal Domains   If is a integrally closed, is a domain, and is integral, then for any .    We already know from that . To show that , given a saturated chain up to , we can apply to get a chain just as long that goes up to .    "
 },
 {
   "id": "sec-over-up-down-3",
   "level": "2",
   "url": "sec-over-up-down.html#sec-over-up-down-3",
   "type": "Remark",
-  "number": "14.19",
+  "number": "14.24",
   "title": "",
   "body": " In this section, we will collect theorems about the spectrum of a ring: theorems that assert that the map on Spec is surjective, and theorems about lifting chains of primes. Given a ring homomorphism , we want to study the behavior of chains of primes: how chains in behave under expansion to and how chains in behave under contraction to .  "
 },
@@ -7511,16 +7349,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#defn-fiber",
   "type": "Definition",
-  "number": "14.20",
+  "number": "14.25",
   "title": "Fiber.",
-  "body": " Fiber   For a map of topological spaces and , the fiber fiber of a map over is the subspace    "
+  "body": "Fiber   For a map of topological spaces and , the fiber fiber of a map over is the subspace    "
 },
 {
   "id": "defn-fiber-ring",
   "level": "2",
   "url": "sec-over-up-down.html#defn-fiber-ring",
   "type": "Definition",
-  "number": "14.21",
+  "number": "14.26",
   "title": "Fiber Ring.",
   "body": "Fiber Ring   Let be a ring homomorphism and . The fiber ring fiber ring of over is where by abuse of notation we write for the image of in , and for .   "
 },
@@ -7529,16 +7367,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#lem-primes-contracting-to-p-fiber-ring",
   "type": "Lemma",
-  "number": "14.22",
+  "number": "14.27",
   "title": "Primes Contracting to p Fiber Ring.",
-  "body": " Primes Contracting to p Fiber Ring   Let be a ring homomorphism and be a prime ideal. The natural map induces a homeomorphism (in particular, an order-preserving bijection) where the right-hand side has the subspace topology induced by the Zariski topology on     Consider the maps For any localization map or any quotient map, the induced map on Spec is a homeomorphism onto its image. The map on spectra induced by can be identified with the inclusion of into . For the second map, , we saw in that the map on spectra can be identified with the inclusion of the set of primes that do not intersect , i.e., those whose contraction is contained in . Therefore, is injective, since it is the composition of two injective maps.  On the one hand, if a prime contains , then . If moreover , we must have .  We have thus shown that the image of is the set of primes in that contract to . %So is in the image if and only if .   "
+  "body": "Primes Contracting to p Fiber Ring   Let be a ring homomorphism and be a prime ideal. The natural map induces a homeomorphism (in particular, an order-preserving bijection) where the right-hand side has the subspace topology induced by the Zariski topology on     Consider the maps For any localization map or any quotient map, the induced map on Spec is a homeomorphism onto its image. The map on spectra induced by can be identified with the inclusion of into . For the second map, , we saw in that the map on spectra can be identified with the inclusion of the set of primes that do not intersect , i.e., those whose contraction is contained in . Therefore, is injective, since it is the composition of two injective maps.  On the one hand, if a prime contains , then . If moreover , we must have .  We have thus shown that the image of is the set of primes in that contract to . %So is in the image if and only if .   "
 },
 {
   "id": "lem-image-criterion",
   "level": "2",
   "url": "sec-over-up-down.html#lem-image-criterion",
   "type": "Lemma",
-  "number": "14.23",
+  "number": "14.28",
   "title": "Image Criterion.",
   "body": "Image Criterion   Let be a ring homomorphism. For any , if and only if     If , then so localizing at , we get an inclusion . Since is nonzero, so is and thus its spectrum is nonempty. By , there is a prime mapping to .  If , then . If , then , so . So no prime contracts to .   "
 },
@@ -7547,7 +7385,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#sec-over-up-down-9",
   "type": "Example",
-  "number": "14.24",
+  "number": "14.29",
   "title": ".",
   "body": " Let . The ideal is prime, while is not even radical. Nevertheless, .  "
 },
@@ -7556,7 +7394,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#inclusion-triangle",
   "type": "Example",
-  "number": "14.25",
+  "number": "14.30",
   "title": "Inclusion Triangle.",
   "body": "Inclusion Triangle  Consider the inclusion and the prime in . Notice that , but not in , so , and thus . We can check this more directly, by noting that any prime in contracting to would contain , so or . But and , so no prime in contracts to .  "
 },
@@ -7565,7 +7403,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#cor-direct-summand-and-surj-spec-map",
   "type": "Corollary",
-  "number": "14.26",
+  "number": "14.31",
   "title": "Direct Summand and Surj Spec Map.",
   "body": "Direct Summand and Surj Spec Map   If is a direct summand, the map is surjective.    By , we know for all ideals in this case, so says the map on Spec is surjective.   "
 },
@@ -7574,7 +7412,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#defn-integral-element-1",
   "type": "Definition",
-  "number": "14.27",
+  "number": "14.32",
   "title": "Integral Element.",
   "body": "Integral Element  Let be a ring, an -algebra, and an ideal. An element of is integral integral over an ideal over if it satisfies an equation of the form An element of is integral over if In both cases, we say that and satisfy an equation of integral dependence over   FIX integral closure of an ideal   "
 },
@@ -7583,7 +7421,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#sec-over-up-down-13",
   "type": "Remark",
-  "number": "14.28",
+  "number": "14.33",
   "title": "",
   "body": " Notice that is immediate from the definition.  "
 },
@@ -7592,7 +7430,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#ex-rees-algebra",
   "type": "Example",
-  "number": "14.29",
+  "number": "14.34",
   "title": "Rees Algebra.",
   "body": "Rees Algebra  Let , be an ideal of , and be an indeterminate. Consider the rings Here is the subalgebra of generated by elements of the form for all . Notice that we can give this a structure of a graded ring by setting all elements in to have degree and to have degree , so This is usually called the Rees algebra Rees algebra of . - . - is an ideal of .  "
 },
@@ -7601,7 +7439,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#lem-extension-contraction-lemma-for-int.-ext.",
   "type": "Lemma",
-  "number": "14.30",
+  "number": "14.35",
   "title": "Extension-Contraction Lemma for Int. Ext..",
   "body": "Extension-Contraction Lemma for Int. Ext.   Let be integral, and be an ideal of . Then , and hence .    Let . We can write for some . Moreover, taking , we also have . We will show that , so follows as a corollary. So we might as well replace with , so that is also integral and module-finite. By , the extension is also module-finite.  Let . We can write with . We can write these equations in the form , where , and . By the determinantal trick, , we have . Since we can assume , we have . The fact that this is the type of equation we want follows from the monomial expansion of the determinant: any monomial is a product of terms where some of them are copies of , and the rest are elements of . Since this is a product of terms, a term in has a coefficient coming from a product of elements of .  So this shows that . Now notice that is immediate from the definition, as noted in .   "
 },
@@ -7610,7 +7448,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#thm-lying-over",
   "type": "Theorem",
-  "number": "14.31",
+  "number": "14.36",
   "title": "Lying Over.",
   "body": "Lying Over  Lying Over Theorem   If is an integral extension, then for every , and the induced map is surjective.    Let be any ideal in . Given any , we have for some and some for all , so Thus . Therefore, if is a prime in , by we have , and Then , and by we conclude that is in the image of the map on Spec.   "
 },
@@ -7619,7 +7457,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#sec-over-up-down-17",
   "type": "Remark",
-  "number": "14.32",
+  "number": "14.37",
   "title": "",
   "body": " Both assumptions that the extension is integral and that it is an inclusion are needed in [[Mathematics\/Commutative Algebra\/Results\/Theorem - Lying Over|Lying Over]]; we cannot reduce to the case of an integral inclusion. The point is that being an inclusion does not translate into a property of the induced map on Spec.  "
 },
@@ -7628,7 +7466,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#sec-over-up-down-18",
   "type": "Example",
-  "number": "14.33",
+  "number": "14.38",
   "title": ".",
   "body": " We saw in that the map induced on Spec by the inclusion is not surjective. So does not apply — indeed, this inclusion is not module-finite, and thus by it is not integral. For example, the infinite set is a minimal generating set for over .  "
 },
@@ -7637,7 +7475,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#sec-over-up-down-19",
   "type": "Example",
-  "number": "14.34",
+  "number": "14.39",
   "title": ".",
   "body": " Suppose is a regular element on , but not a unit. Since is regular, the map is an inclusion, but we claim it is not integral. If is integral over , there would be such that After multiplying by all terms are of the form , and thus in , since the localization map is injective. So and must be a unit. So whenever is a regular element but not a unit, is an example of an inclusion that is not integral. Note that the image of the map on Spec is the complement of , so in particular the map is not surjective.  In contrast, the map is integral, since it is module-finite, but it is not an inclusion. The map on Spec is again not surjective: its image is .  "
 },
@@ -7646,7 +7484,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#sec-over-up-down-20",
   "type": "Remark",
-  "number": "14.35",
+  "number": "14.40",
   "title": "",
   "body": " Let be an ideal in . Suppose is an integral extension. There is an induced map , and that map is integral: an equation of integral dependance for over gives an equation for integral dependance of its class in over .  "
 },
@@ -7655,7 +7493,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#lem-integral-extension-maximal-contracts-to-maximal",
   "type": "Lemma",
-  "number": "14.36",
+  "number": "14.41",
   "title": "Integral Extension Maximal Contracts to Maximal.",
   "body": "Integral Extension Maximal Contracts to Maximal   If is integral, is maximal if and only if is maximal in .    By , the induced map is an integral extension of domains, and (respectively, ) is maximal if and only if (respectively, ) is a field. So this follows by .   "
 },
@@ -7664,7 +7502,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#lem-integral-preserved-by-localization",
   "type": "Lemma",
-  "number": "14.37",
+  "number": "14.42",
   "title": "Integral Preserved by Localization.",
   "body": "Integral Preserved by Localization   Let be integral, and let be a multiplicatively closed subset of . Then is integral.    Since is a multiplicatively closed subset of , its image in is also multiplicatively closed. Given and , then we have equations of the form Thus is integral over , and is integral over .   "
 },
@@ -7673,16 +7511,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#thm-incomparability",
   "type": "Theorem",
-  "number": "14.38",
+  "number": "14.43",
   "title": "Incomparability.",
-  "body": "Incomparability  Incomparability   If is integral and are primes in that satisfy , then .    In this case we can reduce to the case of an inclusion: factors through , and the map induced on Spec factors as Since the map on spectra induced by is injective, we can replace by the quotient and assume is an integral inclusion.  So suppose is integral, and let . By , localizing at preserves integrality. %We claim that localizing at preserves integrality: if and , then we have equations of the form  By localizing at , the image of is a maximal ideal. So we can reduce to the situation where is a maximal ideal. By , are both maximal ideals. Therefore, .   "
+  "body": "Incomparability  Incomparability   If is integral and are primes in that satisfy , then .    In this case we can reduce to the case of an inclusion: factors through , and the map induced on Spec factors as Since the map on spectra induced by is injective, we can replace by the quotient and assume is an integral inclusion.  So suppose is integral, and let . By , localizing at preserves integrality.  By localizing at , the image of is a maximal ideal. So we can reduce to the situation where is a maximal ideal. By , are both maximal ideals. Therefore, .   "
 },
 {
   "id": "cor-finite-contractions-in-int-noeth-alg",
   "level": "2",
   "url": "sec-over-up-down.html#cor-finite-contractions-in-int-noeth-alg",
   "type": "Corollary",
-  "number": "14.39",
+  "number": "14.44",
   "title": "Finite Contractions in Int Noeth Alg.",
   "body": "Finite Contractions in Int Noeth Alg   Let be an integral -algebra. If is noetherian, then only finitely many primes contract to each .    If contracts to , then , so in particular contains some prime minimal over . Then so . By , . So all the primes contracting to are in , which is a finite set since is noetherian, by .   "
 },
@@ -7691,7 +7529,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#cor-integral-dim-inequality",
   "type": "Corollary",
-  "number": "14.40",
+  "number": "14.45",
   "title": "Integral Dim Inequality.",
   "body": "Integral Dim Inequality   If is integral, then for any we have In particular, .    Given a chain of primes in , we can contract to , and by we get a chain of distinct primes in .   "
 },
@@ -7700,7 +7538,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#thm-going-up",
   "type": "Theorem",
-  "number": "14.41",
+  "number": "14.46",
   "title": "Going Up.",
   "body": "Going Up  Going Up Theorem   If is integral, then for every in and with , there is some with and .    Consider the map . This is integral, as we observed in . It is also injective, so applies. Thus, there is a prime of that contracts to the prime in . We can write for some , and we must have that contracts to .   "
 },
@@ -7709,7 +7547,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#cor-integral-dim-equality",
   "type": "Corollary",
-  "number": "14.42",
+  "number": "14.47",
   "title": "Integral Dim Equality.",
   "body": "Integral Dim Equality   If is integral, then .    We have already shown that in , so we just need to show that . Fix a chain of primes in . By Lying Over, , there is a prime contracting to . Then by Going up, , we have with . Continuing, we can build a chain of distinct primes in of length . So , and equality follows.   "
 },
@@ -7718,7 +7556,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#lem-lemma-minimal-polynomial",
   "type": "Lemma",
-  "number": "14.43",
+  "number": "14.48",
   "title": "Lemma Minimal Polynomial.",
   "body": "Lemma Minimal Polynomial   Let be a integrally closed and let be an element in some larger domain that is integral over . Let be the fraction field of , and be the minimal polynomial of over . (a) If is integral over , then . (b) If is integral over a prime , then has all of its nonleading coefficients in .    Let be integral over . Fix an algebraic closure of containing , and let , be the roots of . Since divides any polynomial with coefficients in that satisfies, it also divides a monic equation of integral dependance for over . Therefore, each is a solution to such an equation of integral dependence, and thus must be integral over .  Let . This is a module-finite extension of , so all of its elements are integral over . The leading coefficient of is 1, and the remaining coefficients of are polynomials in the , hence they lie in . On the other hand, is normal, so . We conclude that all the coefficients of are in , and .  Now let be integral over . By the same argument as above, all of the are integral over . Since each , any polynomial in the lies in . So the nonleading coefficients of lie in , by [[Mathematics\/Commutative Algebra\/Results\/Theorem - Lying Over|Lying Over]].   "
 },
@@ -7727,7 +7565,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#thm-going-down",
   "type": "Theorem",
-  "number": "14.44",
+  "number": "14.49",
   "title": "Going Down.",
   "body": "Going Down  Going Down Theorem   Suppose that is a integrally closed, is a domain, and is integral. Then, for every in and in with , there is some with and .    Let be the multiplicative set in consisting of products of elements in and . Note that each of the sets and contains , so and are both contained in . We will show that is empty. Once we do that, it will follow from that there is a prime ideal in containing such that is empty. Since , our new prime must necessarily be contained in .  Moreover, , so is empty, or equivalently, . Since and , we conclude that .  So our goal is to show that is empty. We proceed by contradiction, and assume there is some . We can write for some and . Moreover, since , is integral over , by .  Consider the minimal polynomial of over , say By , each . Then substituting in and dividing by yields We claim that this is the minimal polynomial of . If satisfied a monic polynomial of degree , multiplying by would give us a polynomial of degree that satisfies, which is impossible. So indeed, this is the minimal polynomial of .  Since , and thus integral over , says that each . Since and , we must have . The equation then shows that . Since contains and hence , we have . This is the desired contradiction, since by construction.   "
 },
@@ -7736,16 +7574,169 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-over-up-down.html#cor-height-in-normal-domains",
   "type": "Corollary",
-  "number": "14.45",
+  "number": "14.50",
   "title": "Height in Normal Domains.",
   "body": "Height in Normal Domains   If is a integrally closed, is a domain, and is integral, then for any .    We already know from that . To show that , given a saturated chain up to , we can apply to get a chain just as long that goes up to .   "
+},
+{
+  "id": "sec-dim-height",
+  "level": "1",
+  "url": "sec-dim-height.html",
+  "type": "Section",
+  "number": "15.1",
+  "title": "Dimension and Height",
+  "body": "Dimension and Height    I don't like heights. This is why I stopped growing at fifth grade.   Billy Crystal    We will now spend a while discussing the notion of dimension of a ring and dimension of a variety. To motivate the definition, let's first think in terms of varieties.  We take our inspiration from the fundamental setting of dimension theory: vector spaces. The notion of basis doesn't make sense for varieties (What does it mean to span? Where is zero?), but one relevant thing we do have for both vector spaces and for varieties is subobjects.  One way to characterize the dimension of a vector space is the the largest number such that there is a proper chain of subspaces We can try something similar for varieties, but for a reducible variety, this is not a very good notion. For example, for a union of points, we can cook up a chain of proper subvarieties by adding one more point each time, but a point should be zero-dimensional by any reasonable measure. So, if we want this approach to work, we should stick to chains of irreducible subvarieties.   Dimension of Variety   The dimension dimension of a variety of an affine variety is defined as     Krull Dimension of a Ring   The Krull dimension Krull dimension dimension of a ring is We often call it simply the dimension of . Alternatively, is the supremum of the lengths of saturated chains of primes of .    Dimension of a Module   The dimension dimension of a module of an -module is defined as .         The dimension of any field is zero.    A ring is zero-dimensional if and only if every minimal prime of is a maximal ideal.    The ring of integers has dimension , since there is one minimal prime and every other prime is maximal. Likewise, any PID that is not a field has dimension one.       UFD height 1   Let be a ring and be an ideal in . If is a UFD, is a prime of height one if and only if for a prime element .    If with irreducible, and , then contains some nonzero multiple of , say with and coprime. Since , , so we must have , so . Thus, has height one. On the other hand, if is a prime of height one, we claim contains an irreducible element. Indeed, is nonzero, so contains some , and primeness implies one of the prime factors of is contained in . Thus, any nonzero prime contains a prime ideal of the form , so a height one prime must be of this form.    Dim of is Zero  For a field , the ring is not noetherian, as is an infinite ascending chain, so is not noetherian. However, is a maximal ideal, and hence is the unique minimal prime of , which is also maximal. Therefore, .   Nagata  Let be a polynomial ring in infinitely many variables, which we are thinking of as arranged in an infinite triangle. The ring is clearly infinite-dimensional and not noetherian. Let and . Note that is an intersection of multiplicatively closed subsets, so this is a valid localization of .  For any , we have a chain of primes in . As these primes are all contained in , none of these intersects , so the expansion to of the chain above yields a proper chain of primes in . It follows that for all , so is infinite-dimensional.  It turns out that is noetherian, which is not at all obvious and a bit technical, so we will not prove it.   Properties of Dimension and Height   Let be a ring.   A prime has height zero if and only if it is a minimal prime of .    An ideal has height zero if and only if it is contained in a minimal prime of . In particular, in a domain, every nonzero ideal has positive height.     .     .    If is an ideal, then .    If is prime,     If is an ideal,     If is a multiplicative set, then .    If is prime, then .    If are primes, then is the supremum of the lengths of saturated chains of primes in of the form .       We will prove some of these and leave the rest as an exercise.  A prime has height if and only if it contains no other prime, which is equivalent being a minimal prime of .  If is contained in a minimal prime of , then by (1), so by definition. Conversely, if , by definition, there is a minimal prime of of height , so some minimal prime of is a minimal prime of , so is contained in a minimal prime of .  It suffices to show that if and then . By definition, means that there is a chain of primes By (5), means that there is a chain of primes with . We can assume without loss of generality that , since if not, we can add it to the bottom of the chain. Putting these chains together, we get a chain of length in , so .  Let and . The inequality means that for every minimal prime of , . The inequality implies that there exists a minimal prime of of such that . For such a minimal prime as in the latter statement, using (5), we get the desired conclusion.     We know that in noetherian rings, there can be arbitrarily long chains of primes, since the dimension can be infinite as in Nagata's. On the other hand, any ascending proper chain of primes is finite, as a consequence of the definition. Does this imply that every prime has finite height? This does not prevent that possibility that there could be an infinite descending chain of primes, which would then give any of the primes in the chain infinite height. (This seems strange in conjunction with the fact that in any ring, any prime contains a minimal prime, but it does not contradict this.) Another possible problem is there being two primes such that for all there exists a chain of primes of length from to .  However, we will later show that the height of any ideal in a noetherian ring is finite.   Int Extension of Domains Nonzero Multiple  Let be an integral extension of domains. Show that every nonzero has a nonzero multiple in , meaning that there exists such that and .    Let be an infinite field and . We have shown that and that is the coordinate ring of the curve As is a curve (meaning it is parameterized by a single parameter), we should expect the dimension of the variety , and equivalently of the ring , to be . Let's prove this.  On the one hand, is a domain, so is the unique minimal prime. To show that , we need to show that any nonzero prime ideal is maximal.  Set . We note that does not satisfy any algebraic relation over , so is isomorphic to a polynomial ring in one variable, where that one variable corresponds to . Moreover, note that the inclusion is integral, since satisfies the monic polynomial and satisfies the monic polynomial . Polynomial rings in one variable have dimension , so .  Let be nonzero. Note first that , since if , then there is some nonzero multiple of in by . Since , is maximal. The inclusion is integral: a dependence relation for any representative yields a dependence relation. Since is a field, is a domain, and the inclusion is integral, by we can conclude that is a field, so is a maximal ideal. This shows that every nonzero prime in is maximal, and thus .   Catenary Ring   A ring is catenary caternary ring if for every pair of primes , every saturated chain of primes has the same length.    Equidimensional Ring   A ring is equidimensional equidimensional ring if every maximal ideal has the same finite height, and every minimal prime has the same dimension.     Consider the ring We can find the minimal primes of by computing in . The prime ideals and are incomparable, and , so . We claim that the height of is one: it contains the minimal prime , and any saturated chain from to corresponds to a saturated chain from to in , which must have length 1 since this is a PID. The height of is at least 2, as witnessed by the chain . So is not equidimensional.    The ring is a domain that is not equidimensional. On the one hand, the maximal ideal has height at least two, which we see from the chain Thus . On the other hand, we will show later that the prime ideal has height 1, and it is maximal since . Therefore, , and thus whereas . In fact, , but I won't justify this.  The ring in this example is in fact a catenary domain, which we will not justify. Notice that there are maximal ideals of distinct heights in this ring, for example the ideal given above is a prime of height 1 whereas and the maximal ideal has height 2. Thus this ring is not equidimensional.   "
+},
+{
+  "id": "sec-dim-height-3",
+  "level": "2",
+  "url": "sec-dim-height.html#sec-dim-height-3",
+  "type": "Remark",
+  "number": "15.1",
+  "title": "",
+  "body": " We will now spend a while discussing the notion of dimension of a ring and dimension of a variety. To motivate the definition, let's first think in terms of varieties.  We take our inspiration from the fundamental setting of dimension theory: vector spaces. The notion of basis doesn't make sense for varieties (What does it mean to span? Where is zero?), but one relevant thing we do have for both vector spaces and for varieties is subobjects.  One way to characterize the dimension of a vector space is the the largest number such that there is a proper chain of subspaces We can try something similar for varieties, but for a reducible variety, this is not a very good notion. For example, for a union of points, we can cook up a chain of proper subvarieties by adding one more point each time, but a point should be zero-dimensional by any reasonable measure. So, if we want this approach to work, we should stick to chains of irreducible subvarieties.  "
+},
+{
+  "id": "defn-dimension-of-variety",
+  "level": "2",
+  "url": "sec-dim-height.html#defn-dimension-of-variety",
+  "type": "Definition",
+  "number": "15.2",
+  "title": "Dimension of Variety.",
+  "body": "Dimension of Variety   The dimension dimension of a variety of an affine variety is defined as    "
+},
+{
+  "id": "defn-krull-dimension-of-a-ring",
+  "level": "2",
+  "url": "sec-dim-height.html#defn-krull-dimension-of-a-ring",
+  "type": "Definition",
+  "number": "15.3",
+  "title": "Krull Dimension of a Ring.",
+  "body": "Krull Dimension of a Ring   The Krull dimension Krull dimension dimension of a ring is We often call it simply the dimension of . Alternatively, is the supremum of the lengths of saturated chains of primes of .   "
+},
+{
+  "id": "defn-dimension-of-a-module",
+  "level": "2",
+  "url": "sec-dim-height.html#defn-dimension-of-a-module",
+  "type": "Definition",
+  "number": "15.4",
+  "title": "Dimension of a Module.",
+  "body": "Dimension of a Module   The dimension dimension of a module of an -module is defined as .   "
+},
+{
+  "id": "sec-dim-height-7",
+  "level": "2",
+  "url": "sec-dim-height.html#sec-dim-height-7",
+  "type": "Example",
+  "number": "15.5",
+  "title": "",
+  "body": "     The dimension of any field is zero.    A ring is zero-dimensional if and only if every minimal prime of is a maximal ideal.    The ring of integers has dimension , since there is one minimal prime and every other prime is maximal. Likewise, any PID that is not a field has dimension one.      "
+},
+{
+  "id": "lem-ufd-height-1",
+  "level": "2",
+  "url": "sec-dim-height.html#lem-ufd-height-1",
+  "type": "Lemma",
+  "number": "15.6",
+  "title": "UFD height 1.",
+  "body": "UFD height 1   Let be a ring and be an ideal in . If is a UFD, is a prime of height one if and only if for a prime element .    If with irreducible, and , then contains some nonzero multiple of , say with and coprime. Since , , so we must have , so . Thus, has height one. On the other hand, if is a prime of height one, we claim contains an irreducible element. Indeed, is nonzero, so contains some , and primeness implies one of the prime factors of is contained in . Thus, any nonzero prime contains a prime ideal of the form , so a height one prime must be of this form.   "
+},
+{
+  "id": "ex-dim-of-kx_1x_2dotsx_12x_22dots-is-zero",
+  "level": "2",
+  "url": "sec-dim-height.html#ex-dim-of-kx_1x_2dotsx_12x_22dots-is-zero",
+  "type": "Example",
+  "number": "15.7",
+  "title": "Dim of <span class=\"process-math\">\\(k[x_1,x_2,\\dots]\/(x_1^2,x_2^2,\\dots)\\)<\/span> is Zero.",
+  "body": "Dim of is Zero  For a field , the ring is not noetherian, as is an infinite ascending chain, so is not noetherian. However, is a maximal ideal, and hence is the unique minimal prime of , which is also maximal. Therefore, .  "
+},
+{
+  "id": "nagata",
+  "level": "2",
+  "url": "sec-dim-height.html#nagata",
+  "type": "Example",
+  "number": "15.8",
+  "title": "Nagata.",
+  "body": "Nagata  Let be a polynomial ring in infinitely many variables, which we are thinking of as arranged in an infinite triangle. The ring is clearly infinite-dimensional and not noetherian. Let and . Note that is an intersection of multiplicatively closed subsets, so this is a valid localization of .  For any , we have a chain of primes in . As these primes are all contained in , none of these intersects , so the expansion to of the chain above yields a proper chain of primes in . It follows that for all , so is infinite-dimensional.  It turns out that is noetherian, which is not at all obvious and a bit technical, so we will not prove it.  "
+},
+{
+  "id": "lem-properties-of-dimension-and-height",
+  "level": "2",
+  "url": "sec-dim-height.html#lem-properties-of-dimension-and-height",
+  "type": "Lemma",
+  "number": "15.9",
+  "title": "Properties of Dimension and Height.",
+  "body": "Properties of Dimension and Height   Let be a ring.   A prime has height zero if and only if it is a minimal prime of .    An ideal has height zero if and only if it is contained in a minimal prime of . In particular, in a domain, every nonzero ideal has positive height.     .     .    If is an ideal, then .    If is prime,     If is an ideal,     If is a multiplicative set, then .    If is prime, then .    If are primes, then is the supremum of the lengths of saturated chains of primes in of the form .       We will prove some of these and leave the rest as an exercise.  A prime has height if and only if it contains no other prime, which is equivalent being a minimal prime of .  If is contained in a minimal prime of , then by (1), so by definition. Conversely, if , by definition, there is a minimal prime of of height , so some minimal prime of is a minimal prime of , so is contained in a minimal prime of .  It suffices to show that if and then . By definition, means that there is a chain of primes By (5), means that there is a chain of primes with . We can assume without loss of generality that , since if not, we can add it to the bottom of the chain. Putting these chains together, we get a chain of length in , so .  Let and . The inequality means that for every minimal prime of , . The inequality implies that there exists a minimal prime of of such that . For such a minimal prime as in the latter statement, using (5), we get the desired conclusion.   "
+},
+{
+  "id": "sec-dim-height-12",
+  "level": "2",
+  "url": "sec-dim-height.html#sec-dim-height-12",
+  "type": "Remark",
+  "number": "15.10",
+  "title": "",
+  "body": " We know that in noetherian rings, there can be arbitrarily long chains of primes, since the dimension can be infinite as in Nagata's. On the other hand, any ascending proper chain of primes is finite, as a consequence of the definition. Does this imply that every prime has finite height? This does not prevent that possibility that there could be an infinite descending chain of primes, which would then give any of the primes in the chain infinite height. (This seems strange in conjunction with the fact that in any ring, any prime contains a minimal prime, but it does not contradict this.) Another possible problem is there being two primes such that for all there exists a chain of primes of length from to .  However, we will later show that the height of any ideal in a noetherian ring is finite.  "
+},
+{
+  "id": "ex-int-extension-of-domains-nonzero-multiple",
+  "level": "2",
+  "url": "sec-dim-height.html#ex-int-extension-of-domains-nonzero-multiple",
+  "type": "Example",
+  "number": "15.11",
+  "title": "Int Extension of Domains Nonzero Multiple.",
+  "body": "Int Extension of Domains Nonzero Multiple  Let be an integral extension of domains. Show that every nonzero has a nonzero multiple in , meaning that there exists such that and .  "
+},
+{
+  "id": "sec-dim-height-14",
+  "level": "2",
+  "url": "sec-dim-height.html#sec-dim-height-14",
+  "type": "Example",
+  "number": "15.12",
+  "title": ".",
+  "body": " Let be an infinite field and . We have shown that and that is the coordinate ring of the curve As is a curve (meaning it is parameterized by a single parameter), we should expect the dimension of the variety , and equivalently of the ring , to be . Let's prove this.  On the one hand, is a domain, so is the unique minimal prime. To show that , we need to show that any nonzero prime ideal is maximal.  Set . We note that does not satisfy any algebraic relation over , so is isomorphic to a polynomial ring in one variable, where that one variable corresponds to . Moreover, note that the inclusion is integral, since satisfies the monic polynomial and satisfies the monic polynomial . Polynomial rings in one variable have dimension , so .  Let be nonzero. Note first that , since if , then there is some nonzero multiple of in by . Since , is maximal. The inclusion is integral: a dependence relation for any representative yields a dependence relation. Since is a field, is a domain, and the inclusion is integral, by we can conclude that is a field, so is a maximal ideal. This shows that every nonzero prime in is maximal, and thus .  "
+},
+{
+  "id": "defn-catenary-ring",
+  "level": "2",
+  "url": "sec-dim-height.html#defn-catenary-ring",
+  "type": "Definition",
+  "number": "15.13",
+  "title": "Catenary Ring.",
+  "body": "Catenary Ring   A ring is catenary caternary ring if for every pair of primes , every saturated chain of primes has the same length.   "
+},
+{
+  "id": "defn-equidimensional-ring",
+  "level": "2",
+  "url": "sec-dim-height.html#defn-equidimensional-ring",
+  "type": "Definition",
+  "number": "15.14",
+  "title": "Equidimensional Ring.",
+  "body": "Equidimensional Ring   A ring is equidimensional equidimensional ring if every maximal ideal has the same finite height, and every minimal prime has the same dimension.   "
+},
+{
+  "id": "sec-dim-height-17",
+  "level": "2",
+  "url": "sec-dim-height.html#sec-dim-height-17",
+  "type": "Example",
+  "number": "15.15",
+  "title": ".",
+  "body": " Consider the ring We can find the minimal primes of by computing in . The prime ideals and are incomparable, and , so . We claim that the height of is one: it contains the minimal prime , and any saturated chain from to corresponds to a saturated chain from to in , which must have length 1 since this is a PID. The height of is at least 2, as witnessed by the chain . So is not equidimensional.  "
+},
+{
+  "id": "sec-dim-height-18",
+  "level": "2",
+  "url": "sec-dim-height.html#sec-dim-height-18",
+  "type": "Example",
+  "number": "15.16",
+  "title": ".",
+  "body": " The ring is a domain that is not equidimensional. On the one hand, the maximal ideal has height at least two, which we see from the chain Thus . On the other hand, we will show later that the prime ideal has height 1, and it is maximal since . Therefore, , and thus whereas . In fact, , but I won't justify this.  The ring in this example is in fact a catenary domain, which we will not justify. Notice that there are maximal ideals of distinct heights in this ring, for example the ideal given above is a prime of height 1 whereas and the maximal ideal has height 2. Thus this ring is not equidimensional.  "
 },
 {
   "id": "sec-noether-normalizations",
   "level": "1",
   "url": "sec-noether-normalizations.html",
   "type": "Section",
-  "number": "14.3",
+  "number": "15.2",
   "title": "Noether Normalizations",
   "body": "Noether Normalizations    I think normalization is a good thing.   Jamie Dimon   Making a Pure-Power Leading Term   Let be a domain, , and let be a polynomial of degree at most . The -algebra automorphism of given by maps to a polynomial that, viewed as a polynomial in with coefficients in , has leading term for some and .    The map sends a monomial term to a polynomial with unique highest degree term . For each of the monomials in with nonzero coefficient , we must have each , so the map is injective when restricted to the set of exponent tuples of . Therefore, none of the terms can cancel. We find that the leading term is of the promised form.    Making a Pure-Power Leading Term (Graded Version)   Let be an infinite field, and let be standard graded, meaning . Let be a homogeneous polynomial of degree . There is a degree-preserving -algebra automorphism of given by for and that maps to a polynomial that viewed as a polynomial in with coefficients in , has leading term for some (nonzero) .    Given , we just need to show that the coefficient of is nonzero for some choice of . One can check that the coefficient of the term is . But , when thought of as a polynomial in the , is identically zero, then must be the zero polynomial.    Noether Normalization  Noether normalization   Let be a domain, and be a finitely generated -algebra. There is some nonzero and algebraically independent over such that is module-finite over .  In particular, if is a field and is a finitely generated -algebra, then there exist algebraically independent over such that is module-finite.    We proceed by induction on the number of algebra generators of over . There is nothing to prove in the case when .  Now suppose that we know the result holds for -algebras generated by at most elements, and let . If are algebraically independent over , we are done: is module-finite over . If not, there is some algebraic relation among the generators , meaning there exists such that . After possibly applying to change our choice of algebra generators, we can assume that has leading term for some . Then is monic in after inverting , so is integral over , and thus is module-finite over by . By hypothesis, is module-finite over for some and that are algebraically independent over . Since is module-finite over , then by must also be module-finite over , and we are done.    Noether Normalization   Let be a finitely generated algebra for some field . Then a noether normalization Noether normalization of is a polynomial ring such that are algebraically independent over and is module-finite over .    Graded Noether Normalization   Let be an infinite field, and be a finitely generated -graded -algebra with and . There are homogeneous elements algebraically independent over such that is module-finite over .    We repeat the proof of but use in place of .     There also exist Noether normalizations for quotients of power series rings over fields: the key change is that after a change of coordinates, one can rewrite any nonzero power series in as a series of the form for a unit and . This is called . The rest of the proof of the Noether normalization theorem proceeds in essentially the same way. Thus, given , we have some module-finite inclusion of another power series ring .   Noether Normalization Height and Dimension   Let be a domain that is a finitely generated algebra over a field , or a quotient of a power series ring over a field. Let be any noether normalization for . For any maximal ideal of , the length of any saturated chain of primes from to is . In particular, .    We will show the proof in the case when is a finitely generated domain over a field ; the power series case is similar, and left as an exercise. We will prove by induction on~ that for any finitely generated domain with a Noether normalization with algebraically independent elements, any saturated chain of primes ending in a maximal ideal has length~ .  When , is a domain that is integral over a field, hence is a field by . Now suppose the statement holds for , and let be a finitely generated domain over some field with Noether normalization . Consider a maximal ideal of and a saturated chain By , its contraction to is a chain of distinct primes in : Our assumption that the original chain is saturated implies that has height 1. Suppose that had height or more. By , we would be able to construct a chain up to $Q_1 $ of length or more, but has height . Thus has height . Since is a UFD, for some prime element , by . After a change of variables, as in , we can assume that is monic in with coefficients in . So are module-finite extensions, and the induction hypothesis applies to . Now is a saturated chain in the domain going up to the maximal ideal . The induction hypothesis then says that this chain has length , so , and .    Dimension of Polynomial Ring   The dimension of the polynomial ring is .    The polynomial ring is a Noether normalization of itself, so says that it must have dimension .    Dimension of Algebra   If is a -algebra, the dimension of is less than or equal to the minimal size of an algebra generating set for over . If and , then is isomorphic to a polynomial ring over , and the generators are algebraically independent.    The first statement is trivial unless is finitely generated, in which case we can write for some ideal , so Suppose we chose to be minimal. If , then , since the zero ideal is not contained in .    F.G. Algebra Catenary Domain   Let be a finitely generated algebra or a quotient of a power series ring over a field. (a) is catenary. If additionally is a domain, then (b) is equidimensional, and (c) for all ideals .    Let be primes in . After quotient out by , we can assume that is a domain and . Fix a saturated chain from to a maximal ideal . Given two saturated chains , from to , the concatenations and are saturated chains from to , so by they must have the same length. It follows that and have the same length.  Equidimensionality is immediate from .  We have and Therefore, it suffices to show the equality for prime ideals, since if attains , which is the minimal value of for , then it also attains the maximal value of for . Now, take a saturated chain of primes from to , and a saturated chain from to a maximal ideal . Since is catenary, has length . Moreover, has length by , and has length by .    Transcendence Basis   Let be an extension of fields. A transcendence basis transcendence basis for over is a maximal algebraically independent subset of over .    Transcendence Basis Well-Defined 1   Let and be two transcendence bases for over . Then, there is some such that is a transcendence basis.    Since is algebraic over , for each there is some such that . We can clear denominators to assume without loss of generality that .  We claim that there is some such that . If not, then for all , and thus that each is algebraic over . Thus, is algebraic over , and since is algebraic over , is algebraic over , which contradicts that is a transcendence basis. This shows the claim.  Now, we claim that for such , is a transcendence basis. Thinking of the equation as a polynomial expression in , is algebraic over , hence is algebraic over , and as well.  If were algebraically dependent, then there is some polynomial equation . This equation must involve , since are algebraically independent. We would then have is algebraic over . But since is algebraic over , we would have that is algebraic over , which would contradict that is a transcendence basis.    Transcendence Basis Well-Defined 2   If and are two transcendence bases for over , then .    Say that . If the intersection has elements, then without loss of generality . Then, for some , is a transcendence basis, and has elements. Replacing with and repeating this process, we obtain a transcendence basis with elements such that . But we must then have that these two transcendence bases are equal, so .    EMPTY transcendence degree  Dimension in F.G. Domain   If is a finitely generated domain over a field , then     If is module-finite, then by is integral, or equivalently algebraic. Hence and have the same transcendence degree over~ . In particular, if is a Noether normalization for ,      Let , where is an algebraically closed field and are indeterminates. Then and these last three are algebraically independent over . Thus, .    Let us use our dimension theorems to give two different proofs that over any field , has dimension 2.  First, we claim that is a Noether normalization of . First, note that and are algebraically independent over . Moreover, and satisfies the monic polynomial , so is integral, and thus module-finite by . Therefore, .  Alternatively, one can show that is irreducible, e.g., by thinking of it as a polynomial in and applying Eisenstein's criterion. Then is a prime of height one, so by the dimension of is     Let us compute the dimension of the ring , where We claim that is a Noether normalization. The inclusion is integral, since so satisfies . Similarly, one can show that satisfies . so satisfies .  We also need to show that are algebraically independent over , or equivalently that the map from the polynomial ring with , is injective.  First assume that is algebraically closed. Observe that the map #empty  is surjective: given , write , and note that is an element of that maps to . Thus, the kernel of the induced map on coordinate rings is ; i.e, the map is injective. By the Nullstellensatz, , and our induced map on coordinate rings is the map #empty Since this map is injective, and this factors as #empty the first map is injective.   "
 },
@@ -7754,7 +7745,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#lem-making-a-pure-power-leading-term",
   "type": "Lemma",
-  "number": "14.46",
+  "number": "15.17",
   "title": "Making a Pure-Power Leading Term.",
   "body": "Making a Pure-Power Leading Term   Let be a domain, , and let be a polynomial of degree at most . The -algebra automorphism of given by maps to a polynomial that, viewed as a polynomial in with coefficients in , has leading term for some and .    The map sends a monomial term to a polynomial with unique highest degree term . For each of the monomials in with nonzero coefficient , we must have each , so the map is injective when restricted to the set of exponent tuples of . Therefore, none of the terms can cancel. We find that the leading term is of the promised form.   "
 },
@@ -7763,7 +7754,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#lem-making-a-pure-power-leading-term-graded-version",
   "type": "Lemma",
-  "number": "14.47",
+  "number": "15.18",
   "title": "Making a Pure-Power Leading Term (Graded Version).",
   "body": "Making a Pure-Power Leading Term (Graded Version)   Let be an infinite field, and let be standard graded, meaning . Let be a homogeneous polynomial of degree . There is a degree-preserving -algebra automorphism of given by for and that maps to a polynomial that viewed as a polynomial in with coefficients in , has leading term for some (nonzero) .    Given , we just need to show that the coefficient of is nonzero for some choice of . One can check that the coefficient of the term is . But , when thought of as a polynomial in the , is identically zero, then must be the zero polynomial.   "
 },
@@ -7772,7 +7763,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#thm-noether-normalization",
   "type": "Theorem",
-  "number": "14.48",
+  "number": "15.19",
   "title": "Noether Normalization.",
   "body": "Noether Normalization  Noether normalization   Let be a domain, and be a finitely generated -algebra. There is some nonzero and algebraically independent over such that is module-finite over .  In particular, if is a field and is a finitely generated -algebra, then there exist algebraically independent over such that is module-finite.    We proceed by induction on the number of algebra generators of over . There is nothing to prove in the case when .  Now suppose that we know the result holds for -algebras generated by at most elements, and let . If are algebraically independent over , we are done: is module-finite over . If not, there is some algebraic relation among the generators , meaning there exists such that . After possibly applying to change our choice of algebra generators, we can assume that has leading term for some . Then is monic in after inverting , so is integral over , and thus is module-finite over by . By hypothesis, is module-finite over for some and that are algebraically independent over . Since is module-finite over , then by must also be module-finite over , and we are done.   "
 },
@@ -7781,7 +7772,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#defn-noether-normalization",
   "type": "Definition",
-  "number": "14.49",
+  "number": "15.20",
   "title": "Noether Normalization.",
   "body": "Noether Normalization   Let be a finitely generated algebra for some field . Then a noether normalization Noether normalization of is a polynomial ring such that are algebraically independent over and is module-finite over .   "
 },
@@ -7790,7 +7781,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#thm-graded-noether-normalization",
   "type": "Theorem",
-  "number": "14.50",
+  "number": "15.21",
   "title": "Graded Noether Normalization.",
   "body": "Graded Noether Normalization   Let be an infinite field, and be a finitely generated -graded -algebra with and . There are homogeneous elements algebraically independent over such that is module-finite over .    We repeat the proof of but use in place of .   "
 },
@@ -7799,7 +7790,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#sec-noether-normalizations-8",
   "type": "Remark",
-  "number": "14.51",
+  "number": "15.22",
   "title": "",
   "body": " There also exist Noether normalizations for quotients of power series rings over fields: the key change is that after a change of coordinates, one can rewrite any nonzero power series in as a series of the form for a unit and . This is called . The rest of the proof of the Noether normalization theorem proceeds in essentially the same way. Thus, given , we have some module-finite inclusion of another power series ring .  "
 },
@@ -7808,7 +7799,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#thm-noether-normalization-height-and-dimension",
   "type": "Theorem",
-  "number": "14.52",
+  "number": "15.23",
   "title": "Noether Normalization Height and Dimension.",
   "body": "Noether Normalization Height and Dimension   Let be a domain that is a finitely generated algebra over a field , or a quotient of a power series ring over a field. Let be any noether normalization for . For any maximal ideal of , the length of any saturated chain of primes from to is . In particular, .    We will show the proof in the case when is a finitely generated domain over a field ; the power series case is similar, and left as an exercise. We will prove by induction on~ that for any finitely generated domain with a Noether normalization with algebraically independent elements, any saturated chain of primes ending in a maximal ideal has length~ .  When , is a domain that is integral over a field, hence is a field by . Now suppose the statement holds for , and let be a finitely generated domain over some field with Noether normalization . Consider a maximal ideal of and a saturated chain By , its contraction to is a chain of distinct primes in : Our assumption that the original chain is saturated implies that has height 1. Suppose that had height or more. By , we would be able to construct a chain up to $Q_1 $ of length or more, but has height . Thus has height . Since is a UFD, for some prime element , by . After a change of variables, as in , we can assume that is monic in with coefficients in . So are module-finite extensions, and the induction hypothesis applies to . Now is a saturated chain in the domain going up to the maximal ideal . The induction hypothesis then says that this chain has length , so , and .   "
 },
@@ -7817,7 +7808,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#cor-dimension-of-polynomial-ring",
   "type": "Corollary",
-  "number": "14.53",
+  "number": "15.24",
   "title": "Dimension of Polynomial Ring.",
   "body": "Dimension of Polynomial Ring   The dimension of the polynomial ring is .    The polynomial ring is a Noether normalization of itself, so says that it must have dimension .   "
 },
@@ -7826,7 +7817,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#cor-dimension-of-algebra",
   "type": "Corollary",
-  "number": "14.54",
+  "number": "15.25",
   "title": "Dimension of Algebra.",
   "body": "Dimension of Algebra   If is a -algebra, the dimension of is less than or equal to the minimal size of an algebra generating set for over . If and , then is isomorphic to a polynomial ring over , and the generators are algebraically independent.    The first statement is trivial unless is finitely generated, in which case we can write for some ideal , so Suppose we chose to be minimal. If , then , since the zero ideal is not contained in .   "
 },
@@ -7835,7 +7826,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#cor-f.g.-algebra-catenary-domain",
   "type": "Corollary",
-  "number": "14.55",
+  "number": "15.26",
   "title": "F.G. Algebra Catenary Domain.",
   "body": "F.G. Algebra Catenary Domain   Let be a finitely generated algebra or a quotient of a power series ring over a field. (a) is catenary. If additionally is a domain, then (b) is equidimensional, and (c) for all ideals .    Let be primes in . After quotient out by , we can assume that is a domain and . Fix a saturated chain from to a maximal ideal . Given two saturated chains , from to , the concatenations and are saturated chains from to , so by they must have the same length. It follows that and have the same length.  Equidimensionality is immediate from .  We have and Therefore, it suffices to show the equality for prime ideals, since if attains , which is the minimal value of for , then it also attains the maximal value of for . Now, take a saturated chain of primes from to , and a saturated chain from to a maximal ideal . Since is catenary, has length . Moreover, has length by , and has length by .   "
 },
@@ -7844,7 +7835,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#defn-transcendence-basis",
   "type": "Definition",
-  "number": "14.56",
+  "number": "15.27",
   "title": "Transcendence Basis.",
   "body": "Transcendence Basis   Let be an extension of fields. A transcendence basis transcendence basis for over is a maximal algebraically independent subset of over .   "
 },
@@ -7853,7 +7844,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#lem-transcendence-basis-well-defined-1",
   "type": "Lemma",
-  "number": "14.57",
+  "number": "15.28",
   "title": "Transcendence Basis Well-Defined 1.",
   "body": "Transcendence Basis Well-Defined 1   Let and be two transcendence bases for over . Then, there is some such that is a transcendence basis.    Since is algebraic over , for each there is some such that . We can clear denominators to assume without loss of generality that .  We claim that there is some such that . If not, then for all , and thus that each is algebraic over . Thus, is algebraic over , and since is algebraic over , is algebraic over , which contradicts that is a transcendence basis. This shows the claim.  Now, we claim that for such , is a transcendence basis. Thinking of the equation as a polynomial expression in , is algebraic over , hence is algebraic over , and as well.  If were algebraically dependent, then there is some polynomial equation . This equation must involve , since are algebraically independent. We would then have is algebraic over . But since is algebraic over , we would have that is algebraic over , which would contradict that is a transcendence basis.   "
 },
@@ -7862,7 +7853,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#lem-transcendence-basis-well-defined-2",
   "type": "Lemma",
-  "number": "14.58",
+  "number": "15.29",
   "title": "Transcendence Basis Well-Defined 2.",
   "body": "Transcendence Basis Well-Defined 2   If and are two transcendence bases for over , then .    Say that . If the intersection has elements, then without loss of generality . Then, for some , is a transcendence basis, and has elements. Replacing with and repeating this process, we obtain a transcendence basis with elements such that . But we must then have that these two transcendence bases are equal, so .   "
 },
@@ -7871,7 +7862,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#cor-dimension-in-f.g.-domain",
   "type": "Corollary",
-  "number": "14.59",
+  "number": "15.30",
   "title": "Dimension in F.G. Domain.",
   "body": "Dimension in F.G. Domain   If is a finitely generated domain over a field , then     If is module-finite, then by is integral, or equivalently algebraic. Hence and have the same transcendence degree over~ . In particular, if is a Noether normalization for ,    "
 },
@@ -7880,7 +7871,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#sec-noether-normalizations-18",
   "type": "Example",
-  "number": "14.60",
+  "number": "15.31",
   "title": ".",
   "body": " Let , where is an algebraically closed field and are indeterminates. Then and these last three are algebraically independent over . Thus, .  "
 },
@@ -7889,7 +7880,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#sec-noether-normalizations-19",
   "type": "Example",
-  "number": "14.61",
+  "number": "15.32",
   "title": ".",
   "body": " Let us use our dimension theorems to give two different proofs that over any field , has dimension 2.  First, we claim that is a Noether normalization of . First, note that and are algebraically independent over . Moreover, and satisfies the monic polynomial , so is integral, and thus module-finite by . Therefore, .  Alternatively, one can show that is irreducible, e.g., by thinking of it as a polynomial in and applying Eisenstein's criterion. Then is a prime of height one, so by the dimension of is   "
 },
@@ -7898,7 +7889,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-noether-normalizations.html#sec-noether-normalizations-20",
   "type": "Example",
-  "number": "14.62",
+  "number": "15.33",
   "title": ".",
   "body": " Let us compute the dimension of the ring , where We claim that is a Noether normalization. The inclusion is integral, since so satisfies . Similarly, one can show that satisfies . so satisfies .  We also need to show that are algebraically independent over , or equivalently that the map from the polynomial ring with , is injective.  First assume that is algebraically closed. Observe that the map #empty  is surjective: given , write , and note that is an element of that maps to . Thus, the kernel of the induced map on coordinate rings is ; i.e, the map is injective. By the Nullstellensatz, , and our induced map on coordinate rings is the map #empty Since this map is injective, and this factors as #empty the first map is injective.  "
 },
@@ -7907,7 +7898,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-height-generators.html",
   "type": "Section",
-  "number": "14.4",
+  "number": "15.3",
   "title": "Height and Number of Generators",
   "body": "Height and Number of Generators    You are not judged by the height you have risen, but from the deoth you have climbed.   Fredrick Douglass   Krull's Principal Ideal Theorem  Krull's Principal Ideal Theorem   Let be a noetherian ring, and . Then, every minimal prime of has height at most one.    Suppose the theorem is false, so that there is some ring , a prime , and an element such that is minimal over and . If we localize at and then mod out by an appropriate minimal prime, we obtain a noetherian local domain of dimension at least two in which is the unique minimal prime of . Let's work over that noetherian local domain . Note that is zero-dimensional, since is the only minimal prime over . Back in , let be a prime strictly in between and , and notice that we necessarily have .  Consider the symbolic powers of . We will show that these stabilize in . Since is Artinian, the descending chain of ideals stabilizes. We then have some such that for all , and in particular, . Pulling back to , we get . Then any element can be written as , where and . Notice that this implies that . Since , we must have . This yields . Thus, , so . By , in . Similarly, we obtain for all .  Now, if is nonzero, we have for all , so Notice that because is a domain, and so is also nonzero. So On the other hand, for all , and by . Since is a domain, the contraction of in back in is . This is the contradiction we seek. So no such exists, so that has dimension , and in the original ring, all the minimal primes over must have height at most .    Note that this is stronger than the statement that the height of is at most one: that would only mean that some minimal prime of has height at most one.  Noetherianity is necessary, as the next example shows.  Noetherianity is Necessary   . Note that is not prime: for , , since , but . Thus, , and since is a maximal ideal, we have equality, so . However, the ideal is prime, and the chain shows that .   Proper Containment of Ideals in Noetherian Ring   Let be noetherian, be primes, and . Then there is some with and .    If , there is nothing to prove, since we can simply take . Suppose . After we quotient out by and localize at , we may assume that is the unique maximal ideal and that our ring is a domain. Thus all we need is to find a nonzero prime which is not maximal. Note that by assumption . Our assumption implies that , and then by the principal ideal theorem [[Mathematics\/Commutative Algebra\/Results\/Theorem - Krull's Principal Ideal Theorem|Krull's Principal Ideal Theorem]], minimal primes of have height one, hence are not maximal nor . We can take to be one of the minimal primes of .    Krull's Height Theorem  Krull's Height Theorem   Let be a noetherian ring. If is an ideal generated by elements, then every minimal prime of has height at most .    By induction on . The case is .  Let be an ideal, a minimal prime of , and be a saturated chain of length ending at . If , then we can apply the induction hypothesis to the ring and the ideal . Then by induction hypothesis, the chain has length at most , so and has height at most  If , we use the previous lemma to replace our given chain with a chain of the same length but such that . To do this, note that for some ; after all, . So in the given chain, suppose that but . If , apply the previous lemma with , , and to find such that . Replace the chain with Repeat until .     If is a field and , the ideal generated by variables has height~ . There are many other ideals that attain the bound given by . For example, . An ideal of height generated by elements is called a complete intersection complete intersection .    The ideal in has minimal primes of heights 1 and 2.    In , the ideal generated by zero elements (the zero ideal) has an associated prime of height two, namely . The same phenomenon can happen even in a nice polynomial ring. For example, consider the ideal . Note that , so has an associated prime of height 5.    Let . For all , , since , but . Then is not prime in , and moreover . Since is a maximal ideal, we have equality, so . However, is prime, and the chain shows that .   Ideals in Noeth Rings have Finite Height   If is a noetherian ring, then any ideal has finite height. If is also local, then .    If is noetherian, then every ideal is finitely generated, by , and thus by every ideal has finite height.  Now suppose that is a noetherian local ring. By , is generated by elements, so    Embedding Dimension   The embedding dimension embedding dimension of a local ring is the minimal number of generators of , . We write for the embedding dimension of .    Regular Local Ring   A noetherian local ring is regular regular local ring if .    Power series rings are regular local rings. In general, a ring is regular if all its localizations are regular local rings. In order for this definition to make sense, we need to first make sure that regularity localizes, meaning that if is a regular local ring, then is also regular for all primes . But to do that, we need some homological algebra. However (spoiler alert!), things do work out alright, and as you might expect, polynomial rings over fields are also regular.  "
 },
@@ -7916,7 +7907,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#thm-krulls-principal-ideal-theorem",
   "type": "Theorem",
-  "number": "14.63",
+  "number": "15.34",
   "title": "Krull’s Principal Ideal Theorem.",
   "body": "Krull's Principal Ideal Theorem  Krull's Principal Ideal Theorem   Let be a noetherian ring, and . Then, every minimal prime of has height at most one.    Suppose the theorem is false, so that there is some ring , a prime , and an element such that is minimal over and . If we localize at and then mod out by an appropriate minimal prime, we obtain a noetherian local domain of dimension at least two in which is the unique minimal prime of . Let's work over that noetherian local domain . Note that is zero-dimensional, since is the only minimal prime over . Back in , let be a prime strictly in between and , and notice that we necessarily have .  Consider the symbolic powers of . We will show that these stabilize in . Since is Artinian, the descending chain of ideals stabilizes. We then have some such that for all , and in particular, . Pulling back to , we get . Then any element can be written as , where and . Notice that this implies that . Since , we must have . This yields . Thus, , so . By , in . Similarly, we obtain for all .  Now, if is nonzero, we have for all , so Notice that because is a domain, and so is also nonzero. So On the other hand, for all , and by . Since is a domain, the contraction of in back in is . This is the contradiction we seek. So no such exists, so that has dimension , and in the original ring, all the minimal primes over must have height at most .   "
 },
@@ -7925,7 +7916,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#sec-height-generators-4",
   "type": "Remark",
-  "number": "14.64",
+  "number": "15.35",
   "title": "",
   "body": "Note that this is stronger than the statement that the height of is at most one: that would only mean that some minimal prime of has height at most one. "
 },
@@ -7934,7 +7925,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#sec-height-generators-6",
   "type": "Example",
-  "number": "14.65",
+  "number": "15.36",
   "title": "Noetherianity is Necessary.",
   "body": "Noetherianity is Necessary   . Note that is not prime: for , , since , but . Thus, , and since is a maximal ideal, we have equality, so . However, the ideal is prime, and the chain shows that .  "
 },
@@ -7943,7 +7934,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#lem-proper-containment-of-ideals-in-noetherian-ring",
   "type": "Lemma",
-  "number": "14.66",
+  "number": "15.37",
   "title": "Proper Containment of Ideals in Noetherian Ring.",
   "body": "Proper Containment of Ideals in Noetherian Ring   Let be noetherian, be primes, and . Then there is some with and .    If , there is nothing to prove, since we can simply take . Suppose . After we quotient out by and localize at , we may assume that is the unique maximal ideal and that our ring is a domain. Thus all we need is to find a nonzero prime which is not maximal. Note that by assumption . Our assumption implies that , and then by the principal ideal theorem [[Mathematics\/Commutative Algebra\/Results\/Theorem - Krull's Principal Ideal Theorem|Krull's Principal Ideal Theorem]], minimal primes of have height one, hence are not maximal nor . We can take to be one of the minimal primes of .   "
 },
@@ -7952,7 +7943,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#thm-krulls-height-theorem",
   "type": "Theorem",
-  "number": "14.67",
+  "number": "15.38",
   "title": "Krull’s Height Theorem.",
   "body": "Krull's Height Theorem  Krull's Height Theorem   Let be a noetherian ring. If is an ideal generated by elements, then every minimal prime of has height at most .    By induction on . The case is .  Let be an ideal, a minimal prime of , and be a saturated chain of length ending at . If , then we can apply the induction hypothesis to the ring and the ideal . Then by induction hypothesis, the chain has length at most , so and has height at most  If , we use the previous lemma to replace our given chain with a chain of the same length but such that . To do this, note that for some ; after all, . So in the given chain, suppose that but . If , apply the previous lemma with , , and to find such that . Replace the chain with Repeat until .   "
 },
@@ -7961,7 +7952,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#sec-height-generators-9",
   "type": "Example",
-  "number": "14.68",
+  "number": "15.39",
   "title": ".",
   "body": " If is a field and , the ideal generated by variables has height~ . There are many other ideals that attain the bound given by . For example, . An ideal of height generated by elements is called a complete intersection complete intersection .  "
 },
@@ -7970,7 +7961,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#sec-height-generators-10",
   "type": "Example",
-  "number": "14.69",
+  "number": "15.40",
   "title": ".",
   "body": " The ideal in has minimal primes of heights 1 and 2.  "
 },
@@ -7979,7 +7970,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#sec-height-generators-11",
   "type": "Example",
-  "number": "14.70",
+  "number": "15.41",
   "title": ".",
   "body": " In , the ideal generated by zero elements (the zero ideal) has an associated prime of height two, namely . The same phenomenon can happen even in a nice polynomial ring. For example, consider the ideal . Note that , so has an associated prime of height 5.  "
 },
@@ -7988,7 +7979,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#sec-height-generators-12",
   "type": "Example",
-  "number": "14.71",
+  "number": "15.42",
   "title": ".",
   "body": " Let . For all , , since , but . Then is not prime in , and moreover . Since is a maximal ideal, we have equality, so . However, is prime, and the chain shows that .  "
 },
@@ -7997,7 +7988,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#cor-ideals-in-noeth-rings-have-finite-height",
   "type": "Corollary",
-  "number": "14.72",
+  "number": "15.43",
   "title": "Ideals in Noeth Rings have Finite Height.",
   "body": "Ideals in Noeth Rings have Finite Height   If is a noetherian ring, then any ideal has finite height. If is also local, then .    If is noetherian, then every ideal is finitely generated, by , and thus by every ideal has finite height.  Now suppose that is a noetherian local ring. By , is generated by elements, so   "
 },
@@ -8006,7 +7997,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#defn-embedding-dimension",
   "type": "Definition",
-  "number": "14.73",
+  "number": "15.44",
   "title": "Embedding Dimension.",
   "body": "Embedding Dimension   The embedding dimension embedding dimension of a local ring is the minimal number of generators of , . We write for the embedding dimension of .   "
 },
@@ -8015,7 +8006,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#defn-regular-local-ring",
   "type": "Definition",
-  "number": "14.74",
+  "number": "15.45",
   "title": "Regular Local Ring.",
   "body": "Regular Local Ring   A noetherian local ring is regular regular local ring if .   "
 },
@@ -8024,7 +8015,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-height-generators.html#sec-height-generators-16",
   "type": "Remark",
-  "number": "14.75",
+  "number": "15.46",
   "title": "",
   "body": "Power series rings are regular local rings. In general, a ring is regular if all its localizations are regular local rings. In order for this definition to make sense, we need to first make sure that regularity localizes, meaning that if is a regular local ring, then is also regular for all primes . But to do that, we need some homological algebra. However (spoiler alert!), things do work out alright, and as you might expect, polynomial rings over fields are also regular. "
 },
@@ -8033,7 +8024,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-sops.html",
   "type": "Section",
-  "number": "14.5",
+  "number": "15.4",
   "title": "Systems of Parameters",
   "body": "Systems of Parameters        Existence of SOPs   Let be a noetherian local ring of dimension . There there exist such that .    Let . If , then , so the statement holds.  In general, we will show that we can choose inductively such that every minimal prime of has height . The case is clear from the comment above. Say that we have chosen the first elements. If , note that is not a minimal prime of , as this would contradict. Note that is noetherian and thus has finitely many minimal primes, by . Thus, by , we can choose not in any minimal prime of . Then by every minimal prime of has height at most . On the other hand, every contains some , and in fact we must have , since . Since has height and , then must have height at least . Therefore, must have height exactly , completing the induction.  Since every minimal prime of has height , its unique minimal prime must be . It follows that .    Dim = EmbDim   Let be a noetherian local ring. Then In particular, a noetherian local ring has finite dimension.    Suppose that . Then is a minimal prime of , and thus has height at most by. The dimension of a local ring is the height of its maximal ideal, so , and thus is bounded above by the minimum in the middle. On the other hand, if then by there exist such that , which gives the other inequality, showing Finally, since is generated by elements, there are in particular elements whose radical is .    System of Parameters   A sequence of elements in a -dimensional noetherian local ring is a system of parameters system of parameters or SOP sop if . If is a field, a sequence of homogeneous elements in a -dimensional -graded finitely generated -algebra , with , is a homogeneous system of parameters homogeneous system of parameters if .  We say that elements are parameters parameters if they are part of a system of parameters; this is a property of the set, not just the elements.    Absolutely Minimal Prime   Let be a noetherian ring. A prime of is an absolutely minimal prime absolutely minimal prime of if .    SOP Stuff Theorem   Let be a noetherian local ring, and . (a) (b) are parameters if and only if . (c) are parameters if and only if is not in any absolutely minimal prime of and is not contained in any absolutely minimal prime of for each .    If , then take a system of parameters for , and pull back to to get in such that the quotient of modulo the ideal generated by these elements has dimension zero. By Krull height, we get that .  Let . Suppose first that . Then, there is a SOP for ; lift back to to get a sequence of elements that generate an -primary ideal. This is a SOP, so are parameters.  On the other hand, if , are parameters, extend to a SOP . If is the image of in , we have is zero-dimensional, hence has finite length, so , and is -primary in . Thus, is equal to the height of , which is then by Krull height. That is, , and using the first statement, we have equality.  This follows from the previous statement and the observation that if and only if is not in any absolutely minimal prime of .  Let . This ring has dimension at least two, but has dimension zero.  For an example that is a finitely generated algebra over a field, consider with and . This ring has dimension two: is a noether normalization, as makes integral over , and no nonzero polynomial in in can belong to the ideal . However, has dimension zero.    "
 },
@@ -8042,7 +8033,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sops.html#thm-existence-of-sops",
   "type": "Theorem",
-  "number": "14.76",
+  "number": "15.47",
   "title": "Existence of SOPs.",
   "body": "Existence of SOPs   Let be a noetherian local ring of dimension . There there exist such that .    Let . If , then , so the statement holds.  In general, we will show that we can choose inductively such that every minimal prime of has height . The case is clear from the comment above. Say that we have chosen the first elements. If , note that is not a minimal prime of , as this would contradict. Note that is noetherian and thus has finitely many minimal primes, by . Thus, by , we can choose not in any minimal prime of . Then by every minimal prime of has height at most . On the other hand, every contains some , and in fact we must have , since . Since has height and , then must have height at least . Therefore, must have height exactly , completing the induction.  Since every minimal prime of has height , its unique minimal prime must be . It follows that .   "
 },
@@ -8051,7 +8042,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sops.html#cor-dim-embdim",
   "type": "Corollary",
-  "number": "14.77",
+  "number": "15.48",
   "title": "Dim <span class=\"process-math\">\\(<\\)<\/span>= EmbDim.",
   "body": "Dim = EmbDim   Let be a noetherian local ring. Then In particular, a noetherian local ring has finite dimension.    Suppose that . Then is a minimal prime of , and thus has height at most by. The dimension of a local ring is the height of its maximal ideal, so , and thus is bounded above by the minimum in the middle. On the other hand, if then by there exist such that , which gives the other inequality, showing Finally, since is generated by elements, there are in particular elements whose radical is .   "
 },
@@ -8060,7 +8051,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sops.html#defn-system-of-parameters",
   "type": "Definition",
-  "number": "14.78",
+  "number": "15.49",
   "title": "System of Parameters.",
   "body": "System of Parameters   A sequence of elements in a -dimensional noetherian local ring is a system of parameters system of parameters or SOP sop if . If is a field, a sequence of homogeneous elements in a -dimensional -graded finitely generated -algebra , with , is a homogeneous system of parameters homogeneous system of parameters if .  We say that elements are parameters parameters if they are part of a system of parameters; this is a property of the set, not just the elements.   "
 },
@@ -8069,7 +8060,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sops.html#defn-absolutely-minimal-prime",
   "type": "Definition",
-  "number": "14.79",
+  "number": "15.50",
   "title": "Absolutely Minimal Prime.",
   "body": "Absolutely Minimal Prime   Let be a noetherian ring. A prime of is an absolutely minimal prime absolutely minimal prime of if .   "
 },
@@ -8078,7 +8069,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-sops.html#thm-sop-stuff-theorem",
   "type": "Theorem",
-  "number": "14.80",
+  "number": "15.51",
   "title": "SOP Stuff Theorem.",
   "body": "SOP Stuff Theorem   Let be a noetherian local ring, and . (a) (b) are parameters if and only if . (c) are parameters if and only if is not in any absolutely minimal prime of and is not contained in any absolutely minimal prime of for each .    If , then take a system of parameters for , and pull back to to get in such that the quotient of modulo the ideal generated by these elements has dimension zero. By Krull height, we get that .  Let . Suppose first that . Then, there is a SOP for ; lift back to to get a sequence of elements that generate an -primary ideal. This is a SOP, so are parameters.  On the other hand, if , are parameters, extend to a SOP . If is the image of in , we have is zero-dimensional, hence has finite length, so , and is -primary in . Thus, is equal to the height of , which is then by Krull height. That is, , and using the first statement, we have equality.  This follows from the previous statement and the observation that if and only if is not in any absolutely minimal prime of .  Let . This ring has dimension at least two, but has dimension zero.  For an example that is a finitely generated algebra over a field, consider with and . This ring has dimension two: is a noether normalization, as makes integral over , and no nonzero polynomial in in can belong to the ideal . However, has dimension zero.   "
 },
@@ -8087,7 +8078,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-art.html",
   "type": "Section",
-  "number": "15.1",
+  "number": "16.1",
   "title": "Artinian Rings",
   "body": "Artinian Rings  An Artin ring is one which satisfies the d.c.c. (or equivalently the minimal condition) on ideals.  The apparent symmetry with Noetherian rings is however misleading. In fact we will show that an Artin ring is necessarily Noetherian and of a very special kind. In a sense an Artin ring is the simplest kind of ring after a field, and we study them not because of their generality but because of their simplicity.    In an artinian ring every prime ideal is maximal.    Let be a prime ideal of . Then is an artinian integral domain. Let . By the d.c.c. we have for some , hence for some . Since is an integral domain and , it follows that we may cancel , hence . Hence has an inverse in , and therefore is a field, so that is a maximal ideal.      In an artinian ring the nilradical is equal to the Jacobson radical.      An artinian ring has only a finite number of maximal ideals.    Consider the set of all finite intersections , where the are maximal ideals. This set has a minimal element, say ; hence for any maximal ideal we have , and therefore . By (1.11) for some , hence since is maximal.      In an artinian ring the nilradical is nilpotent.    By d.c.c. we have say, for some . Suppose , and let denote the set of all ideals such that . Then is not empty, since . Let be a minimal element of ; then there exists such that ; we have , hence by the minimality of . But , and , hence (again by minimality). Hence for some , and therefore . But , hence is nilpotent and therefore . This contradicts the choice of , therefore .    By a chain of prime ideals of a ring we mean a finite strictly increasing sequence ; the length of the chain is . We define the dimension of to be the supremum of the lengths of all chains of prime ideals in : it is an integer , or (assuming ). A field has dimension 0 ; the ring has dimension 1 .    A ring is artinian is noetherian and .     : By (8.1) we have . Let be the distinct maximal ideals of . Then . Hence by (6.11) is Noetherian.   : Since the zero ideal has a primary decomposition (7.13), has only a finite number of minimal prime ideals, and these are all maximal since . Hence say; we have by (7.15), hence as in the previous part of the proof. Hence by (6.11) is an Artin ring.    If is an Artin local ring with maximal ideal , then is the only prime ideal of and therefore is the nilradical of . Hence every element of is nilpotent, and itself is nilpotent. Every element of is either a unit or is nilpotent. An example of such a ring is , where is prime and .    Let be a Noetherian local ring, its maximal ideal. Then exactly one of the following two statements is true: i) for all ; ii) for some , in which case is an Artin local ring.    Suppose for some . By Nakayama’s lemma (2.6) we have . Let be any prime ideal of . Then , hence (taking radicals) . Hence is the only prime ideal of and therefore is Artinian.    Structure Theorem for Artinian Rings   An Artin ring is uniquely (up to isomorphism) a finite direct product of Artin local rings.    Let be the distinct maximal ideals of . From the proof of (8.5) we have for some . By (1.16) the ideals are coprime in pairs, hence by (1.10). Consequently by (1.10) again the natural mapping is an isomorphism. Each is an Artin local ring, hence is a direct product of Artin local rings.  Conversely, suppose , where the are Artin local rings. Then for each we have a natural surjective homomorphism (projection on the th factor) . Let . By (1.10) the are pairwise coprime, and . Let be the unique prime ideal of , and let be its contraction . The ideal is prime and therefore maximal by (8.1). Since is nilpotent it follows that is -primary, and hence is a primary decomposition of the zero ideal in . Since the are pairwise coprime, so are the , and they are therefore isolated prime ideals of (0). Hence all the primary components are isolated, and therefore uniquely determined by , by the 2nd uniqueness theorem (4.11). Hence the rings are uniquely determined by .     A ring with only one prime ideal need not be Noetherian (and hence not an Artin ring). Let be the polynomial ring in a countably infinite set of indeterminates over a field , and let a be the ideal , ). The ring has only one prime ideal (namely the image of ), hence is a local ring of dimension 0 . But is not Noetherian, for it is not difficult to see that its prime ideal is not finitely generated.   If is a local ring, its maximal ideal, its residue field, the -module is annihilated by and therefore has the structure of a -vector space. If is finitely generated (e.g., if is Noetherian), the images in of a set of generators of will span as a vector space, and therefore is finite. (See (2.8).)    Let be an Artin local ring. Then the following are equivalent:  Every ideal in is principal;  The maximal ideal is principal;   .        i) ii) iii) is clear.  iii) i): If , then , hence by Nakayama’s lemma (2.6), and therefore is a field and there is nothing to prove. If , then is a principal ideal by (2.8) (take there), say . Let be an ideal of , other than (0) or (1). We have , hence is nilpotent by (8.4) and therefore there exists an integer such that ; hence there exists such that , ; consequently and is a unit in . Hence , therefore and hence . Hence is principal.       The rings ( prime), irreducible) satisfy the conditions of (8.7). On the other hand, the Artin local ring does not: here is generated by and , so that and .   "
 },
@@ -8096,7 +8087,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#prop-8.1-at",
   "type": "Proposition",
-  "number": "15.1",
+  "number": "16.1",
   "title": "",
   "body": "  In an artinian ring every prime ideal is maximal.    Let be a prime ideal of . Then is an artinian integral domain. Let . By the d.c.c. we have for some , hence for some . Since is an integral domain and , it follows that we may cancel , hence . Hence has an inverse in , and therefore is a field, so that is a maximal ideal.   "
 },
@@ -8105,7 +8096,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#cor-8.2-at",
   "type": "Corollary",
-  "number": "15.2",
+  "number": "16.2",
   "title": "",
   "body": "  In an artinian ring the nilradical is equal to the Jacobson radical.   "
 },
@@ -8114,7 +8105,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#prop-8.3-at",
   "type": "Proposition",
-  "number": "15.3",
+  "number": "16.3",
   "title": "",
   "body": "  An artinian ring has only a finite number of maximal ideals.    Consider the set of all finite intersections , where the are maximal ideals. This set has a minimal element, say ; hence for any maximal ideal we have , and therefore . By (1.11) for some , hence since is maximal.   "
 },
@@ -8123,7 +8114,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#prop-8.4-at",
   "type": "Proposition",
-  "number": "15.4",
+  "number": "16.4",
   "title": "",
   "body": "  In an artinian ring the nilradical is nilpotent.    By d.c.c. we have say, for some . Suppose , and let denote the set of all ideals such that . Then is not empty, since . Let be a minimal element of ; then there exists such that ; we have , hence by the minimality of . But , and , hence (again by minimality). Hence for some , and therefore . But , hence is nilpotent and therefore . This contradicts the choice of , therefore .   "
 },
@@ -8132,7 +8123,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#thm-8.5-at",
   "type": "Theorem",
-  "number": "15.5",
+  "number": "16.5",
   "title": "",
   "body": "  A ring is artinian is noetherian and .     : By (8.1) we have . Let be the distinct maximal ideals of . Then . Hence by (6.11) is Noetherian.   : Since the zero ideal has a primary decomposition (7.13), has only a finite number of minimal prime ideals, and these are all maximal since . Hence say; we have by (7.15), hence as in the previous part of the proof. Hence by (6.11) is an Artin ring.   "
 },
@@ -8141,7 +8132,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#prop-8.6-at",
   "type": "Proposition",
-  "number": "15.6",
+  "number": "16.6",
   "title": "",
   "body": "  Let be a Noetherian local ring, its maximal ideal. Then exactly one of the following two statements is true: i) for all ; ii) for some , in which case is an Artin local ring.    Suppose for some . By Nakayama’s lemma (2.6) we have . Let be any prime ideal of . Then , hence (taking radicals) . Hence is the only prime ideal of and therefore is Artinian.   "
 },
@@ -8150,7 +8141,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#thm-8.7-at",
   "type": "Theorem",
-  "number": "15.7",
+  "number": "16.7",
   "title": "Structure Theorem for Artinian Rings.",
   "body": "Structure Theorem for Artinian Rings   An Artin ring is uniquely (up to isomorphism) a finite direct product of Artin local rings.    Let be the distinct maximal ideals of . From the proof of (8.5) we have for some . By (1.16) the ideals are coprime in pairs, hence by (1.10). Consequently by (1.10) again the natural mapping is an isomorphism. Each is an Artin local ring, hence is a direct product of Artin local rings.  Conversely, suppose , where the are Artin local rings. Then for each we have a natural surjective homomorphism (projection on the th factor) . Let . By (1.10) the are pairwise coprime, and . Let be the unique prime ideal of , and let be its contraction . The ideal is prime and therefore maximal by (8.1). Since is nilpotent it follows that is -primary, and hence is a primary decomposition of the zero ideal in . Since the are pairwise coprime, so are the , and they are therefore isolated prime ideals of (0). Hence all the primary components are isolated, and therefore uniquely determined by , by the 2nd uniqueness theorem (4.11). Hence the rings are uniquely determined by .   "
 },
@@ -8159,7 +8150,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#sec-art-13",
   "type": "Example",
-  "number": "15.8",
+  "number": "16.8",
   "title": "",
   "body": " A ring with only one prime ideal need not be Noetherian (and hence not an Artin ring). Let be the polynomial ring in a countably infinite set of indeterminates over a field , and let a be the ideal , ). The ring has only one prime ideal (namely the image of ), hence is a local ring of dimension 0 . But is not Noetherian, for it is not difficult to see that its prime ideal is not finitely generated.  "
 },
@@ -8168,7 +8159,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#prop-8.8-at",
   "type": "Proposition",
-  "number": "15.9",
+  "number": "16.9",
   "title": "",
   "body": "  Let be an Artin local ring. Then the following are equivalent:  Every ideal in is principal;  The maximal ideal is principal;   .        i) ii) iii) is clear.  iii) i): If , then , hence by Nakayama’s lemma (2.6), and therefore is a field and there is nothing to prove. If , then is a principal ideal by (2.8) (take there), say . Let be an ideal of , other than (0) or (1). We have , hence is nilpotent by (8.4) and therefore there exists an integer such that ; hence there exists such that , ; consequently and is a unit in . Hence , therefore and hence . Hence is principal.     "
 },
@@ -8177,7 +8168,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-art.html#sec-art-16",
   "type": "Example",
-  "number": "15.10",
+  "number": "16.10",
   "title": "",
   "body": " The rings ( prime), irreducible) satisfy the conditions of (8.7). On the other hand, the Artin local ring does not: here is generated by and , so that and .  "
 },
@@ -8186,7 +8177,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-dvrs.html",
   "type": "Section",
-  "number": "15.2",
+  "number": "16.2",
   "title": "Discrete Valuation Rings and Dedekind Domains",
   "body": "Discrete Valuation Rings and Dedekind Domains  Discrete Valuation Rings  As we have indicated before, algebraic number theory is one of the historical sources of commutative algebra. In this chapter we specialize down to the case of interest in number theory, namely to Dedekind domains. We deduce the unique factorization of ideals in Dedekind domains from the general primary decomposition theorems. Although a direct approach is of course possible one obtains more insight our way into the precise context of number theory in commutative algebra. Another important class of Dedekind domains occurs in connection with non-singular algebraic curves. In fact the geometrical picture of the Dedekind condition is: non-singular of dimension one.  The last chapter dealt with Noetherian rings of dimension 0 . Here we start by considering the next simplest case, namely Noetherian integral domains of dimension one: i.e., Noetherian domains in which every non-zero prime ideal is maximal. The first result is that in such a ring we have a unique factorization theorem for ideals:    Let be a Noetherian domain of dimension 1. Then every non-zero ideal a in can be uniquely expressed as a product of primary ideals whose radicals are all distinct.    Since is Noetherian, a has a minimal primary decomposition by (7.13), where each is say -primary. Since and is an integral domain, each non-zero prime ideal of is maximal, hence the are distinct maximal ideals (since ), and are therefore pairwise coprime. Hence by (1.16) the are pairwise coprime and therefore by (1.10) we have . Hence .    Conversely, if , the same argument shows that ; this is a minimal primary decomposition of , in which each is an isolated primary component, and is therefore unique by (4.11).  Let be a Noetherian domain of dimension one in which every primary ideal is a prime power. By (9.1), in such a ring we shall have unique factorization of non-zero ideals into products of prime ideals. If we localize with respect to a non-zero prime ideal we get a local ring satisfying the same conditions as , and therefore in every non-zero ideal is a power of the maximal ideal. Such local rings can be characterized in other ways.  Let be a field. A discrete valuation on is a mapping of onto (where is the multiplicative group of ) such that      , i.e., is a homomorphism;     .     The set consisting of 0 and all such that is a ring, called the valuation ring of . It is a valuation ring of the field . It is sometimes convenient to extend to the whole of by putting .  Examples. The two standard examples are:      . Take a fixed prime , then any non zero can be written uniquely in the form , where and both numerator and denominator of are prime to . Define to be . The valuation ring of is the local ring      , where is a field and an indeterminate. Take a fixed irreducible polynomial and define just as in 1 ). The valuation ring of is then the local ring of with respect to the prime ideal .     An integral domain is a discrete valuation ring if there is a discrete valuation of its field of fractions such that is the valuation ring of . By (5.18), is a local ring, anci its maximal ideal is the set of all such that .  If two elements of have the same value, that is if , then and therefore is a unit in . Hence .  If is an ideal in , there is a least integer such that for some . It follows that contains every with , and therefore the only ideals in are the ideals . These form a single chain , and therefore is Noetherian.  Moreover, since is surjective, there exists such that , and then , and . Hence is the only non-zero prime ideal of , and is thus a Noetherian local domain of dimension one in which every non-zero ideal is a power of the maximal ideal. In fact many of these properties are characteristic of discrete valuation rings.    Let be a Noetherian local domain of dimension one, its maximal ideal, its residue field. Then the following are equivalent: i) is a discrete valuation ring; ii) is integrally closed; iii) is a principal ideal; iv) ; v) Every non-zero ideal is a power of ; vi) There exists such that every non-zero ideal is of the form , .    Before we start going the rounds, we make two remarks: (A) If is an ideal , (1), then is -primary and for some . For , since is the only non-zero prime ideal; now use (7.16). (B) for all . This follows from (8.6). i) ii) by (5.18). ii) iii). Let and . By remark (A) there exists an integer such that . Choose and , and let  , the field of fractions of . We have (since ), hence is not integral over , and therefore by (5.1) we have (for if , m would be a faithful -module, finitely generated as an -module). But by construction of , hence and therefore . iii) iv). By (2.8) we have , and by remark (B) . iv) ). Let be an ideal , (1). By remark (A) we have for some ; from (8.8) (applied to ) it follows that is a power of . v) vi). By remark (B), , hence there exists . But by hypothesis, hence . vi) i). Clearly , hence by remark (B). Hence if is any non-zero element of , we have for exactly one value of . Define and extend to by defining . Check that is well-defined and is a discrete valuation, and that is the valuation ring of .     Dedekind Domains    Let be a Noetherian domain of dimension one. Then the following are equivalent: i) is integrally closed; ii) Every primary ideal in is a prime power; iii) Every local ring is a discrete valuation ring.    i) iii) by (9.2) and (5.13). ii) iii). Use (9.2) and the fact that primary ideals and powers of ideals behave well under localization: (4.8), (3.11).    A ring satisfying the conditions of (9.3) is called a Dedekind domain.    In a Dedekind domain every non-zero ideal has a unique factorization as a product of prime ideals.    (9.1) and (9.3).    Examples.     1) Any principal ideal domain A. For is Noetherian (since every ideal is finitely generated) and of dimension one (Example 3 after (1.6)). Also every local ring is a principal ideal domain, hence by a discrete valuation ring; hence is a Dedekind domain by (9.3).    Let be an algebraic number field (a finite algebraic extension of ). Its ring of integers is the integral closure of in . (For example, if , then , the ring of Gaussian integers.) Then is a Dedekind domain:       The ring of integers in an algebraic number field is a Dedekind domain.     is a separable extension of (because the characteristic is zero), hence by (5.17) there is a basis of over such that , Hence is finitely generated as a -module and therefore Noetherian. Also is integrally closed by (5.5). To complete the proof we must show that every nonzero prime ideal of is maximal, and this follows from (5.8) and (5.9): (5.9) shows that , hence is a maximal ideal of and therefore is maximal in by (5.8).    Remark. The unique factorization theorem (9.4) was originally proved for rings of integers in algebraic number fields. The uniqueness theorems of Chapter 4 may be regarded as generalizations of this result: prime powers have to be replaced by primary ideals, and products by intersections.   Fractional Ideals  Let be an integral domain, its field of fractions. An -submodule of is a fractional ideal of if for some in . In particular, the \"ordinary\" ideals (now called integral ideals) are fractional ideals (take ). Any element generates a fractional ideal, denoted by or , and called principal. If is a fractional ideal, the set of all such that is denoted by .  Every finitely generated -submodule of is a fractional ideal. For if is generated by , we can write where and are in , and then . Conversely, if is Noetherian, every fractional ideal is finitely generated, for it is of the form for some integral ideal .  An -submodule of is an invertible ideal if there exists a submodule of such that . The module is then unique and equal to , for we have . It follows that is finitely generated, and therefore a fractional ideal: for since there exist and such that , and hence for any we have : each , so that is generated by .  Clearly every non-zero principal fractional ideal is invertible, its inverse being . The invertible ideals form a group with respect to multiplication, whose identity element is (1).  Invertibility is a local property:    For a fractional ideal , the following are equivalent: i) is invertible; ii) is finitely generated and, for each prime ideal is invertible: iii) is finitely generated and, for each maximal ideal is invertible.    i) ii): by (3.11) and (3.15) (for is finitely generated, because invertible). ii) iii) as usual. iii : Let , which is an integral ideal. For each maximal ideal we have (by (3.11) and (3.15)) because is invertible. Hence . Consequently and therefore is invertible.      Let be a local domain. Then is a discrete valuation ring every non-zero fractional ideal of is invertible.     . Let be a generator of the maximal ideal of , and let be a fractional ideal. Then there exists such that : thus is an integral ideal, say , and therefore where .   : Every non-zero integral ideal is invertible and therefore finitely generated; so that is Noetherian. It is therefore enough to prove that every nonzero integral ideal is a power of . Suppose this is false; let be the set of nonzero ideals which are not powers of , and let be a maximal element of . Then , hence ; hence is a proper (integral) ideal, and . If , then and therefore by Nakayama’s lemma (2.6); hence and hence is a power of (by the maximality of ). Hence is a power of : contradiction.    The \"global\" counterpart of (9.7) is    Let be an integral domain. Then is a Dedekind domain every non-zero fractional ideal of is invertible.     : Let be a fractional ideal. Since is Noetherian, is finitely generated. For each prime ideal is a fractional ideal of the discrete valuation ring , hence is invertible by (9.7). Hence is invertible, by (9.6).   : Every non-zero integral ideal is invertible, hence finitely generated, hence is Noetherian. We shall show that each is a discrete valuation ring. For this it is enough to show that each integral ideal in is invertible, and then use (9.7). Let be an (integral) ideal in , and let . Then is invertible, hence is invertible by (9.7).      If is a Dedekind domain, the non-zero fractional ideals of form a group with respect to multiplication.        This group is called the group of ideals of ; we denote it by . In this terminology (9.4) says that is a free (abelian) group, generated by the non-zero prime ideals of .  Let denote the multiplicative group of the field of fractions of . Each defines a fractional ideal , and the mapping is a homomorphism . The image of is the group of principal fractional ideals: the quotient group is called the ideal class group of . The kernel of is the set of all such that , so that it is the group of units of . We have an exact sequence     Remark. For the Dedekind domains that arise in number theory, there are classical theorems relating to the groups and . Let be an algebraic number field and let be its ring of integers, which is a Dedekind domain by (9.5). In this case:      is a finite group. Its order is the class number of the field . The following are equivalent: (i) ; (ii) ; (iii) is a principal ideal domain; (iv) is a unique factorization domain.     is a finitely-generated abelian group. More precisely, we can specify the number of generators of . First, the elements of finite order in are just the roots of unity which lie in , and they form a finite cyclic group is torsion-free. The number of generators of is given as follows: if there are distinct embeddings (the field of complex numbers). Of these, say map into , and the rest pair off (if is one, then is a nother, where is the automorphism of defined by into say pairs: thus . The number of generators of is then .     The proofs of these results belong to algebraic number theory and not to commutative algebra: they require techniques of a different nature from those used in this book.  Examples. 1) ; . The only units in are the four roots of unity . 2) , and is infinite cyclic. In fact the units in are , where is any rational integer.   "
 },
@@ -8195,7 +8186,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dvrs.html#prop-9.1-at",
   "type": "Proposition",
-  "number": "15.11",
+  "number": "16.11",
   "title": "",
   "body": "  Let be a Noetherian domain of dimension 1. Then every non-zero ideal a in can be uniquely expressed as a product of primary ideals whose radicals are all distinct.    Since is Noetherian, a has a minimal primary decomposition by (7.13), where each is say -primary. Since and is an integral domain, each non-zero prime ideal of is maximal, hence the are distinct maximal ideals (since ), and are therefore pairwise coprime. Hence by (1.16) the are pairwise coprime and therefore by (1.10) we have . Hence .   "
 },
@@ -8204,7 +8195,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dvrs.html#prop-9.2-at",
   "type": "Proposition",
-  "number": "15.12",
+  "number": "16.12",
   "title": "",
   "body": "  Let be a Noetherian local domain of dimension one, its maximal ideal, its residue field. Then the following are equivalent: i) is a discrete valuation ring; ii) is integrally closed; iii) is a principal ideal; iv) ; v) Every non-zero ideal is a power of ; vi) There exists such that every non-zero ideal is of the form , .    Before we start going the rounds, we make two remarks: (A) If is an ideal , (1), then is -primary and for some . For , since is the only non-zero prime ideal; now use (7.16). (B) for all . This follows from (8.6). i) ii) by (5.18). ii) iii). Let and . By remark (A) there exists an integer such that . Choose and , and let  , the field of fractions of . We have (since ), hence is not integral over , and therefore by (5.1) we have (for if , m would be a faithful -module, finitely generated as an -module). But by construction of , hence and therefore . iii) iv). By (2.8) we have , and by remark (B) . iv) ). Let be an ideal , (1). By remark (A) we have for some ; from (8.8) (applied to ) it follows that is a power of . v) vi). By remark (B), , hence there exists . But by hypothesis, hence . vi) i). Clearly , hence by remark (B). Hence if is any non-zero element of , we have for exactly one value of . Define and extend to by defining . Check that is well-defined and is a discrete valuation, and that is the valuation ring of .   "
 },
@@ -8213,7 +8204,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dvrs.html#thm-9.3-at",
   "type": "Theorem",
-  "number": "15.13",
+  "number": "16.13",
   "title": "",
   "body": "  Let be a Noetherian domain of dimension one. Then the following are equivalent: i) is integrally closed; ii) Every primary ideal in is a prime power; iii) Every local ring is a discrete valuation ring.    i) iii) by (9.2) and (5.13). ii) iii). Use (9.2) and the fact that primary ideals and powers of ideals behave well under localization: (4.8), (3.11).   "
 },
@@ -8222,7 +8213,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dvrs.html#cor-9.4-at",
   "type": "Corollary",
-  "number": "15.14",
+  "number": "16.14",
   "title": "",
   "body": "  In a Dedekind domain every non-zero ideal has a unique factorization as a product of prime ideals.    (9.1) and (9.3).   "
 },
@@ -8231,7 +8222,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dvrs.html#thm-9.5-at",
   "type": "Theorem",
-  "number": "15.15",
+  "number": "16.15",
   "title": "",
   "body": "  The ring of integers in an algebraic number field is a Dedekind domain.     is a separable extension of (because the characteristic is zero), hence by (5.17) there is a basis of over such that , Hence is finitely generated as a -module and therefore Noetherian. Also is integrally closed by (5.5). To complete the proof we must show that every nonzero prime ideal of is maximal, and this follows from (5.8) and (5.9): (5.9) shows that , hence is a maximal ideal of and therefore is maximal in by (5.8).   "
 },
@@ -8240,7 +8231,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dvrs.html#prop-9.6-at",
   "type": "Proposition",
-  "number": "15.16",
+  "number": "16.16",
   "title": "",
   "body": "  For a fractional ideal , the following are equivalent: i) is invertible; ii) is finitely generated and, for each prime ideal is invertible: iii) is finitely generated and, for each maximal ideal is invertible.    i) ii): by (3.11) and (3.15) (for is finitely generated, because invertible). ii) iii) as usual. iii : Let , which is an integral ideal. For each maximal ideal we have (by (3.11) and (3.15)) because is invertible. Hence . Consequently and therefore is invertible.   "
 },
@@ -8249,7 +8240,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dvrs.html#prop-9.7-at",
   "type": "Proposition",
-  "number": "15.17",
+  "number": "16.17",
   "title": "",
   "body": "  Let be a local domain. Then is a discrete valuation ring every non-zero fractional ideal of is invertible.     . Let be a generator of the maximal ideal of , and let be a fractional ideal. Then there exists such that : thus is an integral ideal, say , and therefore where .   : Every non-zero integral ideal is invertible and therefore finitely generated; so that is Noetherian. It is therefore enough to prove that every nonzero integral ideal is a power of . Suppose this is false; let be the set of nonzero ideals which are not powers of , and let be a maximal element of . Then , hence ; hence is a proper (integral) ideal, and . If , then and therefore by Nakayama’s lemma (2.6); hence and hence is a power of (by the maximality of ). Hence is a power of : contradiction.   "
 },
@@ -8258,7 +8249,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dvrs.html#thm-9.8-at",
   "type": "Theorem",
-  "number": "15.18",
+  "number": "16.18",
   "title": "",
   "body": "  Let be an integral domain. Then is a Dedekind domain every non-zero fractional ideal of is invertible.     : Let be a fractional ideal. Since is Noetherian, is finitely generated. For each prime ideal is a fractional ideal of the discrete valuation ring , hence is invertible by (9.7). Hence is invertible, by (9.6).   : Every non-zero integral ideal is invertible, hence finitely generated, hence is Noetherian. We shall show that each is a discrete valuation ring. For this it is enough to show that each integral ideal in is invertible, and then use (9.7). Let be an (integral) ideal in , and let . Then is invertible, hence is invertible by (9.7).   "
 },
@@ -8267,7 +8258,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-dvrs.html#cor-9.9-at",
   "type": "Corollary",
-  "number": "15.19",
+  "number": "16.19",
   "title": "",
   "body": "  If is a Dedekind domain, the non-zero fractional ideals of form a group with respect to multiplication.       "
 },
@@ -8276,7 +8267,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-depth-grade.html",
   "type": "Section",
-  "number": "16.1",
+  "number": "17.1",
   "title": "Depth and Grade",
   "body": "Depth and Grade    Let be a ring, an -module, and . We say is a regular sequence on , or simply an -sequence , if and is regular (i.e., a non-zero-divisor) on for each . An -sequence is called maximal if cannot be extended to a longer -sequence.      Example 49 . Let be a polynomial ring over the field . Then is a maximal -sequence.     Let be Noetherian and a finitely generated -module. Then   The length of every -sequence is finite.    Every -sequence can be extended to a maximal -sequence.       For part (a), note that if is an -sequence then is a strictly ascending chain of submodule of . For if for some , then . As , then is a zero-divisor on , a contradiction. Consequently, as is Noetherian, this chain must terminate. Hence, there are no -sequences of infinite length. The same argument (using ACC) proves (b) as well.      Let . Then is a maximal -sequence.    Let and . Then is a maximal -sequence. To see this, note that is a irredundant primary decomposition of . Thus, and are the associated primes of . Since is not in either associated prime, it is a non-zero-divisor on . Also, , so is -regular. Note that . Since in , consists of zero-divisors on . Thus, is a maximal -sequence.   Here we summarize some essential facts about primary decompositions for modules, and then use them to prove Krull’s Intersection Theorem.    Let be an -module. A submodule of is called primary if and for every multiplication by on is either injective or nilpotent; i.e., is either a non-zero-divisor on or for some .     Let be a primary submodule of . Then is a prime ideal of . We say that is a -primary submodule of .    Let be a Noetherian ring, a finitely generated -module and a submodule. Then there exists primary submodules such that     ;     for ;     are distinct prime ideals, where .    The decomposition is called an irredundant primary decomposition for . The prime ideals are uniquely determined by and are called the associated primes of (or more commonly, of ). We denote the set of associated primes of by . Moreover, a prime ideal if and only if for some . Additionally, if is a minimal associated prime of , the where is the natural localization map.    See Atiyah-Macdonald. ◻    Krull’s Intersection Theorem   Let be a Noetherian ring, an ideal, and a finitely generated -module. Then there exist an such that      Proof. Let . We claim that . If , there is nothing to prove. Suppose and let be a primary decomposition of . Then for each , . If then consists of zero-divisors on . As is a primary submodule of , we must have for some . But , so , a contradiction. Thus, . Consequently, . By a homework exercise, this implies there exists such that . ◻      Let be a ring. The Jacobson radical of , denoted , is the intersection of all maximal ideals of . It is easily seen that if then is a unit.      Let be a Noetherian ring, an ideal, and a finitely generated -module. Then     Apply Krull’s Intersection Theorem and use that is a unit for every .      Let be Noetherian, a finitely generated -module, and an -sequence. Then any permutation of is an -sequence.    It suffices to show that if is an -sequence then so is . First note that . We next show that is regular on : suppose for some . Then so . Write where . Then , so . Repeating the argument above, we get and hence . Continuing in this way, we obtain that . As we have and thus . This shows is regular on . Now assume for some . Then for some . Since is regular on , we obtain that for some . Consequently, . As is regular on , we then have . Hence, is regular on .      Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . Then the grade of on , denote or , is defined to be the supremum of the lengths of all -sequences contained in .     Note that it is not clear from the definition that . Although every maximal -sequence is finite, the supremum of the lengths of such sequences might be infinite.    Let be a ring and and  -modules. Define Note that for all -modules and . (Recall .)     Let be a ring, and  -modules, and such that and is regular on . Then . Furthermore, if then .    Let be a homomorphism. Then . As is regular on , we see that . Hence, and so . Now applying to the s.e.s. we get the long exact sequence Since we have for all (cf. Grifo’s 915 notes, Exercise 73(c).) Thus, for each we have an exact sequence Both conclusions follow easily from this sequence.      Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . Let be a maximal -sequence contained in . Then Consequently, all maximal -sequences contained in have the same length and In particular, .    Notice that the right-hand-side is . Suppose . Since , it must be that consists of zero-divisors on . Thus, is contained in the union of the associated primes of (Grifo 905, Theorem 6.27). By the prime avoidance lemma (Grifo 905, Theorem 3.29), for some associated prime of . Then the composition is nonzero. Hence, and . Proceeding by induction on , we may assume and that the result holds for all finitely generated -modules with and having a maximal -sequence of length at most . Let . Then and is a maximal -sequence contained in . Hence, by Proposition . Thus, , which completes the proof.      Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . If is a regular element on , then     For the first equality, observe that any sequence in is an -sequence if and only if its image in is an -sequence. For the second equality, we have by Theorem and Proposition ,       Let be a local ring and a finitely generated -module. Then the depth of , denoted , is defined to be ; i.e., the length of the longest -sequence from .     Let be a local ring and a finitely generated -module. By Theorem , we have     Note: By convention, the depth of the zero module is infinity, since .  Ischebeck’s Theorem   Let be a local ring and and finitely generated -modules. Then for .    First, if either module is zero the result trivially holds. So assume and are nonzero and let . If then has finite length. Since for all by Remark , we have for all by Lemma . Hence, the result holds for the case .  Suppose and assume the result holds for all finitely generated modules of dimension less than . Consider a filtration of : where for some primes of . (See Grifo 905 :Theorem 6.33.) Note that each contains , so for all . Hence, if we show for all and all , then we’ll have for all and all . Using the long exact sequences on arising from the short exact sequences we can conclude for all . Since , we’ll be done.  Thus, assume for some prime with . Since , let and consider the short exact sequence Since , we have for all by the induction hypothesis. Rewriting this, we have for all . From the long exact sequence on , we have By Nakayama’s Lemma, we see that for all . This completes the proof.     Let be a local ring and a nonzero finitely generated -module. Then for all . In particular, .    Let . Then . By Theorem , . ◻     Let be a field and . Let . Then has depth zero and dimension . To see , note that in , so consists of zero-divisors. For , note that is a -dimensional domain, so for any nonzero ideal . On the other hand, , which has dimension . Thus, .   "
 },
@@ -8285,7 +8276,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#def-48",
   "type": "Definition",
-  "number": "16.1",
+  "number": "17.1",
   "title": "",
   "body": "  Let be a ring, an -module, and . We say is a regular sequence on , or simply an -sequence , if and is regular (i.e., a non-zero-divisor) on for each . An -sequence is called maximal if cannot be extended to a longer -sequence.   "
 },
@@ -8294,7 +8285,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#sec-depth-grade-3",
   "type": "Example",
-  "number": "16.2",
+  "number": "17.2",
   "title": "",
   "body": "  Example 49 . Let be a polynomial ring over the field . Then is a maximal -sequence.  "
 },
@@ -8303,7 +8294,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#lem-50",
   "type": "Lemma",
-  "number": "16.3",
+  "number": "17.3",
   "title": "",
   "body": "  Let be Noetherian and a finitely generated -module. Then   The length of every -sequence is finite.    Every -sequence can be extended to a maximal -sequence.       For part (a), note that if is an -sequence then is a strictly ascending chain of submodule of . For if for some , then . As , then is a zero-divisor on , a contradiction. Consequently, as is Noetherian, this chain must terminate. Hence, there are no -sequences of infinite length. The same argument (using ACC) proves (b) as well.    "
 },
@@ -8312,7 +8303,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#ex-51",
   "type": "Example",
-  "number": "16.4",
+  "number": "17.4",
   "title": "",
   "body": " Let . Then is a maximal -sequence.  "
 },
@@ -8321,7 +8312,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#ex-52",
   "type": "Example",
-  "number": "16.5",
+  "number": "17.5",
   "title": "",
   "body": " Let and . Then is a maximal -sequence. To see this, note that is a irredundant primary decomposition of . Thus, and are the associated primes of . Since is not in either associated prime, it is a non-zero-divisor on . Also, , so is -regular. Note that . Since in , consists of zero-divisors on . Thus, is a maximal -sequence.  "
 },
@@ -8330,7 +8321,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#def-53",
   "type": "Definition",
-  "number": "16.6",
+  "number": "17.6",
   "title": "",
   "body": "  Let be an -module. A submodule of is called primary if and for every multiplication by on is either injective or nilpotent; i.e., is either a non-zero-divisor on or for some .   "
 },
@@ -8339,7 +8330,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#sec-depth-grade-9",
   "type": "Remark",
-  "number": "16.7",
+  "number": "17.7",
   "title": "",
   "body": " Let be a primary submodule of . Then is a prime ideal of . We say that is a -primary submodule of . "
 },
@@ -8348,7 +8339,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#thm-55",
   "type": "Theorem",
-  "number": "16.8",
+  "number": "17.8",
   "title": "",
   "body": "  Let be a Noetherian ring, a finitely generated -module and a submodule. Then there exists primary submodules such that     ;     for ;     are distinct prime ideals, where .    The decomposition is called an irredundant primary decomposition for . The prime ideals are uniquely determined by and are called the associated primes of (or more commonly, of ). We denote the set of associated primes of by . Moreover, a prime ideal if and only if for some . Additionally, if is a minimal associated prime of , the where is the natural localization map.    See Atiyah-Macdonald. ◻   "
 },
@@ -8357,7 +8348,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#thm-56",
   "type": "Theorem",
-  "number": "16.9",
+  "number": "17.9",
   "title": "Krull’s Intersection Theorem.",
   "body": "Krull’s Intersection Theorem   Let be a Noetherian ring, an ideal, and a finitely generated -module. Then there exist an such that      Proof. Let . We claim that . If , there is nothing to prove. Suppose and let be a primary decomposition of . Then for each , . If then consists of zero-divisors on . As is a primary submodule of , we must have for some . But , so , a contradiction. Thus, . Consequently, . By a homework exercise, this implies there exists such that . ◻   "
 },
@@ -8366,7 +8357,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#def-57",
   "type": "Definition",
-  "number": "16.10",
+  "number": "17.10",
   "title": "",
   "body": "  Let be a ring. The Jacobson radical of , denoted , is the intersection of all maximal ideals of . It is easily seen that if then is a unit.   "
 },
@@ -8375,7 +8366,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#cor-58",
   "type": "Corollary",
-  "number": "16.11",
+  "number": "17.11",
   "title": "",
   "body": "  Let be a Noetherian ring, an ideal, and a finitely generated -module. Then     Apply Krull’s Intersection Theorem and use that is a unit for every .   "
 },
@@ -8384,7 +8375,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#prop-59",
   "type": "Proposition",
-  "number": "16.12",
+  "number": "17.12",
   "title": "",
   "body": "  Let be Noetherian, a finitely generated -module, and an -sequence. Then any permutation of is an -sequence.    It suffices to show that if is an -sequence then so is . First note that . We next show that is regular on : suppose for some . Then so . Write where . Then , so . Repeating the argument above, we get and hence . Continuing in this way, we obtain that . As we have and thus . This shows is regular on . Now assume for some . Then for some . Since is regular on , we obtain that for some . Consequently, . As is regular on , we then have . Hence, is regular on .   "
 },
@@ -8393,7 +8384,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#def-60",
   "type": "Definition",
-  "number": "16.13",
+  "number": "17.13",
   "title": "",
   "body": "  Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . Then the grade of on , denote or , is defined to be the supremum of the lengths of all -sequences contained in .   "
 },
@@ -8402,7 +8393,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#sec-depth-grade-16",
   "type": "Remark",
-  "number": "16.14",
+  "number": "17.14",
   "title": "",
   "body": " Note that it is not clear from the definition that . Although every maximal -sequence is finite, the supremum of the lengths of such sequences might be infinite.  "
 },
@@ -8411,7 +8402,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#sec-depth-grade-17",
   "type": "Convention",
-  "number": "16.15",
+  "number": "17.15",
   "title": "",
   "body": " Let be a ring and and  -modules. Define Note that for all -modules and . (Recall .)  "
 },
@@ -8420,7 +8411,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#prop-62",
   "type": "Proposition",
-  "number": "16.16",
+  "number": "17.16",
   "title": "",
   "body": "  Let be a ring, and  -modules, and such that and is regular on . Then . Furthermore, if then .    Let be a homomorphism. Then . As is regular on , we see that . Hence, and so . Now applying to the s.e.s. we get the long exact sequence Since we have for all (cf. Grifo’s 915 notes, Exercise 73(c).) Thus, for each we have an exact sequence Both conclusions follow easily from this sequence.   "
 },
@@ -8429,7 +8420,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#thm-63",
   "type": "Theorem",
-  "number": "16.17",
+  "number": "17.17",
   "title": "",
   "body": "  Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . Let be a maximal -sequence contained in . Then Consequently, all maximal -sequences contained in have the same length and In particular, .    Notice that the right-hand-side is . Suppose . Since , it must be that consists of zero-divisors on . Thus, is contained in the union of the associated primes of (Grifo 905, Theorem 6.27). By the prime avoidance lemma (Grifo 905, Theorem 3.29), for some associated prime of . Then the composition is nonzero. Hence, and . Proceeding by induction on , we may assume and that the result holds for all finitely generated -modules with and having a maximal -sequence of length at most . Let . Then and is a maximal -sequence contained in . Hence, by Proposition . Thus, , which completes the proof.   "
 },
@@ -8438,7 +8429,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#cor-64",
   "type": "Corollary",
-  "number": "16.18",
+  "number": "17.18",
   "title": "",
   "body": "  Let be a Noetherian ring, an ideal of , and a finitely generated -module such that . If is a regular element on , then     For the first equality, observe that any sequence in is an -sequence if and only if its image in is an -sequence. For the second equality, we have by Theorem and Proposition ,    "
 },
@@ -8447,7 +8438,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#def-65",
   "type": "Definition",
-  "number": "16.19",
+  "number": "17.19",
   "title": "",
   "body": "  Let be a local ring and a finitely generated -module. Then the depth of , denoted , is defined to be ; i.e., the length of the longest -sequence from .   "
 },
@@ -8456,7 +8447,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#rem-66",
   "type": "Remark",
-  "number": "16.20",
+  "number": "17.20",
   "title": "",
   "body": " Let be a local ring and a finitely generated -module. By Theorem , we have   "
 },
@@ -8474,7 +8465,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#thm-67",
   "type": "Theorem",
-  "number": "16.21",
+  "number": "17.21",
   "title": "Ischebeck’s Theorem.",
   "body": "Ischebeck’s Theorem   Let be a local ring and and finitely generated -modules. Then for .    First, if either module is zero the result trivially holds. So assume and are nonzero and let . If then has finite length. Since for all by Remark , we have for all by Lemma . Hence, the result holds for the case .  Suppose and assume the result holds for all finitely generated modules of dimension less than . Consider a filtration of : where for some primes of . (See Grifo 905 :Theorem 6.33.) Note that each contains , so for all . Hence, if we show for all and all , then we’ll have for all and all . Using the long exact sequences on arising from the short exact sequences we can conclude for all . Since , we’ll be done.  Thus, assume for some prime with . Since , let and consider the short exact sequence Since , we have for all by the induction hypothesis. Rewriting this, we have for all . From the long exact sequence on , we have By Nakayama’s Lemma, we see that for all . This completes the proof.  "
 },
@@ -8483,7 +8474,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#thm-68",
   "type": "Corollary",
-  "number": "16.22",
+  "number": "17.22",
   "title": "",
   "body": "  Let be a local ring and a nonzero finitely generated -module. Then for all . In particular, .    Let . Then . By Theorem , . ◻   "
 },
@@ -8492,16 +8483,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-depth-grade.html#sec-depth-grade-26",
   "type": "Example",
-  "number": "16.23",
+  "number": "17.23",
   "title": "",
   "body": " Let be a field and . Let . Then has depth zero and dimension . To see , note that in , so consists of zero-divisors. For , note that is a -dimensional domain, so for any nonzero ideal . On the other hand, , which has dimension . Thus, .  "
+},
+{
+  "id": "sec-depth-m2",
+  "level": "1",
+  "url": "sec-depth-m2.html",
+  "type": "Section",
+  "number": "17.2",
+  "title": "Macaulay2",
+  "body": "Macaulay2   "
 },
 {
   "id": "sec-3",
   "level": "1",
   "url": "sec-3.html",
   "type": "Section",
-  "number": "17.1",
+  "number": "18.1",
   "title": "",
   "body": "   "
 },
@@ -8510,7 +8510,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-hulls.html",
   "type": "Section",
-  "number": "18.1",
+  "number": "19.1",
   "title": "Essential Extensions and Injective Hulls",
   "body": "Essential Extensions and Injective Hulls    Let be a one-to-one map of -modules. The following are equivalent:   For any map is one-to-one is one-to-one. In particular, if , then is one-to-one is one-to-one.    Every nonzero submodule of has a nonzero intersection with .    Every nonzero element of has a nonzero multiple in .       (1) (2): If is nonzero, then is not one-to-one, hence  is not either, so .   : This is the special case of a cyclic submodule.   : Given a nonzero element in has a nonzero multiple in , and any multiple of is still in the kernel of .    Essential Extension   A map that satisfies the equivalent conditions above is called an essential extension . We will often say that one module is an essential extension of another, meaning that the latter is a submodule, and the inclusion map is essential.    Roughly, one can think of is an essential extension as being something like a dual property to being a generating set for (even though generating sets aren’t modules). If is essential, then anything in can get multiplied back into , whereas if is a generating set for , anything in can be obtained by multiplying from elements in (and adding).   Example 2.13. If is a multiplicative set consisting of nonzerodivisors on , then is an essential extension of . In particular, the fraction field of a domain is an essential extension of it.    Example 2.14. If is a (nonzero) -torsion module, that is, every element of is killed by a power of , then is an essential extension.     In particular, if is local and is -torsion, is called the socle of        is an essential extension of its socle.    Given , we have that . For a not-necessarily-finitely-generated module is the set of primes such that embeds into . Any nonzero module has an associated prime: this reduces to the finitely generated case by considering a nonzero finitely generated submodule. Since is -torsion, . Let , and such that . Then is a nonzero multiple of that is killed by .      Let be -modules.    is essential if and only if and are essential.    If and , then is essential if and only if each is essential.    There is a unique such that that is maximal with respect to the property that is essential.         A module as in (3) above is called a maximal essential extension of in . If is essential, and has no proper essential extensions, then we say that is a maximal essential extension of . For a not-necessarily-finitely-generated module is the set of primes such that embeds into . Any nonzero module has an associated prime: this reduces to the finitely generated case by considering a nonzero finitely generated submodule.    Beware that there are two notions of maximal essential extension above: a relative version that takes place inside another module, and an absolute version.    Let be an -module. The following are equivalent:    is an injective module    every one-to-one map splits     has no proper essential extensions       (1) : The identity map extends to a map by the definition of injective.   : It suffices to note that is not essential: has no nonzero multiple in (the image of) .   : Embed in an injective module, . By Zorn’s lemma, there is a maximal submodule of such that . Then, is essential, and by hypothesis, an isomorphism. Then, . Since is a direct summand of an injective module, is injective.    In particular, any maximal essential extension in the absolute sense is an injective module.    Let be an -module. If is an injective module with , then the maximal essential extension of in is an injective module. All maximal essential extensions of are isomorphic.    Let be a maximal essential extension of in , and be an essential extension of (possibly not in ). Since is injective, the inclusion of extends to a map from . Since was one-to-one, and essential, to is one-to-one. By definition of , we have . Thus, is an absolute maximal essential extension of , hence an injective module.  Let and be two maximal essential extensions of . The map from extends to a map . Since is an essential extension of and is one-to-one, is one-to-one. Since is injective, for some . Since is essential, .      An injective hull or injective envelope of an -module is a maximal essential extension of . By the previous proposition, this is well-defined up to isomorphism. We write for an injective hull of .      A minimal injective resolution of an -module is an injective resolution of in which , and for each .     Example 2.21.   is a minimal injective resolution of as a -module.   "
 },
@@ -8519,7 +8519,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#prop-2.11-2",
   "type": "Proposition",
-  "number": "18.1",
+  "number": "19.1",
   "title": "",
   "body": "  Let be a one-to-one map of -modules. The following are equivalent:   For any map is one-to-one is one-to-one. In particular, if , then is one-to-one is one-to-one.    Every nonzero submodule of has a nonzero intersection with .    Every nonzero element of has a nonzero multiple in .       (1) (2): If is nonzero, then is not one-to-one, hence  is not either, so .   : This is the special case of a cyclic submodule.   : Given a nonzero element in has a nonzero multiple in , and any multiple of is still in the kernel of .   "
 },
@@ -8528,7 +8528,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#def-2.12-2",
   "type": "Definition",
-  "number": "18.2",
+  "number": "19.2",
   "title": "Essential Extension.",
   "body": "Essential Extension   A map that satisfies the equivalent conditions above is called an essential extension . We will often say that one module is an essential extension of another, meaning that the latter is a submodule, and the inclusion map is essential.   "
 },
@@ -8537,7 +8537,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#sec-hulls-5",
   "type": "Example",
-  "number": "18.3",
+  "number": "19.3",
   "title": "",
   "body": " Example 2.13. If is a multiplicative set consisting of nonzerodivisors on , then is an essential extension of . In particular, the fraction field of a domain is an essential extension of it.  "
 },
@@ -8546,7 +8546,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#sec-hulls-6",
   "type": "Example",
-  "number": "18.4",
+  "number": "19.4",
   "title": "",
   "body": " Example 2.14. If is a (nonzero) -torsion module, that is, every element of is killed by a power of , then is an essential extension.  "
 },
@@ -8555,7 +8555,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#def-scole",
   "type": "Definition",
-  "number": "18.5",
+  "number": "19.5",
   "title": "",
   "body": "  In particular, if is local and is -torsion, is called the socle of    "
 },
@@ -8564,7 +8564,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#prop-scole",
   "type": "Proposition",
-  "number": "18.6",
+  "number": "19.6",
   "title": "",
   "body": "   is an essential extension of its socle.    Given , we have that . For a not-necessarily-finitely-generated module is the set of primes such that embeds into . Any nonzero module has an associated prime: this reduces to the finitely generated case by considering a nonzero finitely generated submodule. Since is -torsion, . Let , and such that . Then is a nonzero multiple of that is killed by .   "
 },
@@ -8573,7 +8573,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#prop-2.15-2",
   "type": "Proposition",
-  "number": "18.7",
+  "number": "19.7",
   "title": "",
   "body": "  Let be -modules.    is essential if and only if and are essential.    If and , then is essential if and only if each is essential.    There is a unique such that that is maximal with respect to the property that is essential.      "
 },
@@ -8582,7 +8582,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#def-2.16-2",
   "type": "Definition",
-  "number": "18.8",
+  "number": "19.8",
   "title": "",
   "body": "  A module as in (3) above is called a maximal essential extension of in . If is essential, and has no proper essential extensions, then we say that is a maximal essential extension of . For a not-necessarily-finitely-generated module is the set of primes such that embeds into . Any nonzero module has an associated prime: this reduces to the finitely generated case by considering a nonzero finitely generated submodule.   "
 },
@@ -8591,7 +8591,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#prop-2.17-2",
   "type": "Proposition",
-  "number": "18.9",
+  "number": "19.9",
   "title": "",
   "body": "  Let be an -module. The following are equivalent:    is an injective module    every one-to-one map splits     has no proper essential extensions       (1) : The identity map extends to a map by the definition of injective.   : It suffices to note that is not essential: has no nonzero multiple in (the image of) .   : Embed in an injective module, . By Zorn’s lemma, there is a maximal submodule of such that . Then, is essential, and by hypothesis, an isomorphism. Then, . Since is a direct summand of an injective module, is injective.   "
 },
@@ -8600,7 +8600,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#prop-2.18-2",
   "type": "Proposition",
-  "number": "18.10",
+  "number": "19.10",
   "title": "",
   "body": "  Let be an -module. If is an injective module with , then the maximal essential extension of in is an injective module. All maximal essential extensions of are isomorphic.    Let be a maximal essential extension of in , and be an essential extension of (possibly not in ). Since is injective, the inclusion of extends to a map from . Since was one-to-one, and essential, to is one-to-one. By definition of , we have . Thus, is an absolute maximal essential extension of , hence an injective module.  Let and be two maximal essential extensions of . The map from extends to a map . Since is an essential extension of and is one-to-one, is one-to-one. Since is injective, for some . Since is essential, .   "
 },
@@ -8609,7 +8609,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#def-2.19-2",
   "type": "Definition",
-  "number": "18.11",
+  "number": "19.11",
   "title": "",
   "body": "  An injective hull or injective envelope of an -module is a maximal essential extension of . By the previous proposition, this is well-defined up to isomorphism. We write for an injective hull of .   "
 },
@@ -8618,7 +8618,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#def-2.20-2",
   "type": "Definition",
-  "number": "18.12",
+  "number": "19.12",
   "title": "",
   "body": "  A minimal injective resolution of an -module is an injective resolution of in which , and for each .   "
 },
@@ -8627,7 +8627,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-hulls.html#sec-hulls-17",
   "type": "Example",
-  "number": "18.13",
+  "number": "19.13",
   "title": "",
   "body": " Example 2.21.   is a minimal injective resolution of as a -module.  "
 },
@@ -8636,7 +8636,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-injective-noetherian.html",
   "type": "Section",
-  "number": "18.2",
+  "number": "19.2",
   "title": "Injective Modules in Noetherian Rings",
   "body": "Injective Modules in Noetherian Rings  So far, our observations on injectives are very general. For noetherian rings, there is a beautiful structure theory of injective modules due to Bass. To prepare for the first step, we note:    If is a finitely generated -module, and is an arbitrary family of modules, then   If , then         If is noetherian, then every direct sum of injective -modules is injective.    Let be a family of injective modules. For an ideal and any  is surjective. Applying the previous lemma and the hypothesis that is finitely generated, the composition is surjective. By Baer’s criterion, is injective.    Associated Primes  Evidently, the injective hulls of prime cyclic modules, , are injective modules. They will be the building blocks in the structure theory. Both to that end and for our purposes later, we will want to understand their structure. We collect some of their key properties here.  Before we do this, we recall some facts about modules that are not necessarily finitely generated.  Recall that is an associated prime of a module if there is an embedding ; we write for the set of associated primes of . For a general module,    need not be finite, and     does not necessarily agree with .     However, implies , and if is noetherian,     if , then , and     for some .     Proof. For the first, take some nonzero . For the second, we note that if , which yields \" ,\" and if in , then must contain an associated prime of , which is an associated prime of .   -torsion  A module is -torsion if for every such that . This does not necessarily imply that there is some such that . If is noetherian and then the following are equivalent:      is -torsion;     , there is an such that for all ;     .     Proof. For the equivalence of the first two, we note that , so a large power of kills an element iff large powers of each do. This uses finite generation in a crucial way. The first implies the third since contains a nonzerodivisor on the domain , and any power of this element does not kill the generator of . The third implies the first, since, for each , the associated primes of the cyclic module all are contained in , so  .     If is an essential extension, then .    We only need to see that an associated prime of is also associated to . If generates a cyclic submodule of isomorphic to , then any nonzero multiple of does as well; since has a nonzero multiple in , we are done.      Let be a prime in a noetherian ring . Let be the fraction field of (equivalently, the residue field of .) Let be an injective hull for .     If , then is an isomorphism, hence .     .     is an essential extension of -modules and is an injective hull of as an -module.     is -torsion, and .     and for another prime .        Proof. 4. This is immediate from the previous lemma and the discussion above it.     By Example ??, is an essential extension, so must contain a copy of ; we identify with its isomorphic copy in are all essential. Since multiplication by is one-to-one on , it must be one-to-one on its essential extension . Then, the submodule is injective, so a direct summand of . But, since is essential, cannot decompose as a nontrivial direct sum, so .    By part (1), is a -vector space, and contains the copy of we found earlier, so splits. Since the extensions are essential, cannot decompose as a nontrivial direct sum of -vector spaces.    Since is essential as -modules, it is clearly essential as -modules. (Any nonzero element has a nonzero -multiple, hence a nonzero -multiple in the submodule.) To see that is a maximal essential extension of as an -module, let be an essential extension of -modules. For any nonzero , there is some nonzero multiple in , with . Then is a nonzero multiple of in , so is an essential extension as -modules, so .    We recall that can be identified with the submodule of consisting of elements killed by .     Then, the first isomorphism follows from part (2) applied in .  Set . By (4), only if . By , which by (4) has as its only associated prime; in particular, no element is killed by , so the hom is zero.   We can now prove the structure theorem for injective modules.    Let be a noetherian ring and an injective -module. There is a direct sum decomposition and the multiplicities are uniquely determined by the formula , where .    By Zorn’s lemma, there is a submodule (not a priori nonzero) of that is   isomorphic to a direct sum of injective hulls of prime cyclic modules: ,    and no other submodule of contains and admits a decomposition of this form.     By Proposition ??, is injective, so we can write for some . If , take . The inclusion map extends along the inclusion to a map since is injective; since the inclusion is essential, embeds into . Since is injective, it splits from , and we contradict the maximality of . Thus, a decomposition as promised exists. Given such a decomposition, the formulas for follow from part (5) of the previous theorem.    Thus, injective modules are uniquely determined by a multiplicity for each prime. This structural data, for the modules appearing in a minimal injective resolution of a module, are called Bass numbers.    (Bass numbers). Let be a noetherian ring, and an -module. Given a minimal injective resolution and decompositions we call the -th Bass number of with respect to .      Let be a noetherian ring, and an -module. The Bass numbers of can be computed as     Given a minimal injective resolution we leave it as an exercise to check that is a minimal injective resolution of as an -module, and that the number of copies of in is the same as the number of copies of in . We compute the Ext modules in the statement from the latter injective resolution:   Claim. The differentials in the complex above are zero.  We need to show that for any -linear , the composition is the zero map. Let , and suppose that in . The minimality of the injective resolution implies that has a nonzero multiple in the image of . Since is a field, this implies that is in the image of , and hence in the kernel of , establishing the claim.  The proof of the theorem is now immediate, since the homology of the complex in the i-th spot is , which, by the previous theorem, is a -vector space of rank .      If is noetherian, and is a finitely generated -module, all of the Bass numbers of are finite.    We can compute by taking a minimal free resolution of , applying , and computing homology. The complex we obtain consists of finitely generated modules, so its homology modules are finitely generated modules.     Example 2.30. Let’s compute the Bass numbers of as a -module. We claim that   To see the first isomorphism, consider an element with in lowest terms. We want to see that has a unique expression as a sum of elements of . We can discard any terms with denominators not dividing , since . Write . Then, by the Chinese remainder theorem   In each of these congruence equations, the product of prime powers on the RHS is a unit, so we can solve uniquely for each ; that is, each is uniquely determined. This establishes the first isomorphism.  For the second, it suffices to note that is divisible (check it!), that it is -torsion (clear), and that the annihilator of in this module is isomorphic to . From these observations, we see that the module is injective by Proposition ??, and that it is an essential extension of by Example ??.  We conclude that the Bass numbers of are   Each Bass number here is either 0 or 1 . We caution that the \"total first Bass number,\" the sum of the first Bass numbers, is infinite.   We note also that this 116 esque game of writing a fraction as a sum of fractions with pure-power denominators is very closely related to the calculation of local cohomology.  We now know that the indecomposable injectives of a noetherian ring are all of the form , that every injective is (in a unique way) a direct sum of these, and finitely generated modules all have injective resolutions in which each injective has a finite number of copies of in its direct sum decomposition. We also know many of the key structural properties of , as collected in Theorem ??.  We will want to have a better understanding of for the residue field of a local ring in order to the develop the duality theory hinted at on the first day of class. We note that this encompasses any indecomposable injective : by part (3) of Theorem ??, for and the residue field of . We will pursue this with a little bit of redundancy. First, we will discuss a model for when has a coefficient field (e.g., when is complete) and the Matlis duality functor in that setting. Then, we will develop the duality theory in full generality.  "
 },
@@ -8645,7 +8645,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#lem-2.22-2",
   "type": "Lemma",
-  "number": "18.14",
+  "number": "19.14",
   "title": "",
   "body": "  If is a finitely generated -module, and is an arbitrary family of modules, then   If , then      "
 },
@@ -8654,7 +8654,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#prop-2.23-2",
   "type": "Proposition",
-  "number": "18.15",
+  "number": "19.15",
   "title": "",
   "body": "  If is noetherian, then every direct sum of injective -modules is injective.    Let be a family of injective modules. For an ideal and any  is surjective. Applying the previous lemma and the hypothesis that is finitely generated, the composition is surjective. By Baer’s criterion, is injective.   "
 },
@@ -8663,7 +8663,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#lem-2.24-2",
   "type": "Lemma",
-  "number": "18.16",
+  "number": "19.16",
   "title": "",
   "body": "  If is an essential extension, then .    We only need to see that an associated prime of is also associated to . If generates a cyclic submodule of isomorphic to , then any nonzero multiple of does as well; since has a nonzero multiple in , we are done.   "
 },
@@ -8672,7 +8672,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#thm-2.25-2",
   "type": "Theorem",
-  "number": "18.17",
+  "number": "19.17",
   "title": "",
   "body": "  Let be a prime in a noetherian ring . Let be the fraction field of (equivalently, the residue field of .) Let be an injective hull for .     If , then is an isomorphism, hence .     .     is an essential extension of -modules and is an injective hull of as an -module.     is -torsion, and .     and for another prime .      "
 },
@@ -8681,7 +8681,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#sec-injective-noetherian-9",
   "type": "Proof",
-  "number": "18.2.1",
+  "number": "19.2.1",
   "title": "",
   "body": " Proof. 4. This is immediate from the previous lemma and the discussion above it.     By Example ??, is an essential extension, so must contain a copy of ; we identify with its isomorphic copy in are all essential. Since multiplication by is one-to-one on , it must be one-to-one on its essential extension . Then, the submodule is injective, so a direct summand of . But, since is essential, cannot decompose as a nontrivial direct sum, so .    By part (1), is a -vector space, and contains the copy of we found earlier, so splits. Since the extensions are essential, cannot decompose as a nontrivial direct sum of -vector spaces.    Since is essential as -modules, it is clearly essential as -modules. (Any nonzero element has a nonzero -multiple, hence a nonzero -multiple in the submodule.) To see that is a maximal essential extension of as an -module, let be an essential extension of -modules. For any nonzero , there is some nonzero multiple in , with . Then is a nonzero multiple of in , so is an essential extension as -modules, so .    We recall that can be identified with the submodule of consisting of elements killed by .     Then, the first isomorphism follows from part (2) applied in .  Set . By (4), only if . By , which by (4) has as its only associated prime; in particular, no element is killed by , so the hom is zero.  "
 },
@@ -8690,7 +8690,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#thm-2.26-2",
   "type": "Theorem",
-  "number": "18.18",
+  "number": "19.18",
   "title": "",
   "body": "  Let be a noetherian ring and an injective -module. There is a direct sum decomposition and the multiplicities are uniquely determined by the formula , where .    By Zorn’s lemma, there is a submodule (not a priori nonzero) of that is   isomorphic to a direct sum of injective hulls of prime cyclic modules: ,    and no other submodule of contains and admits a decomposition of this form.     By Proposition ??, is injective, so we can write for some . If , take . The inclusion map extends along the inclusion to a map since is injective; since the inclusion is essential, embeds into . Since is injective, it splits from , and we contradict the maximality of . Thus, a decomposition as promised exists. Given such a decomposition, the formulas for follow from part (5) of the previous theorem.   "
 },
@@ -8699,7 +8699,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#def-2.27-2",
   "type": "Definition",
-  "number": "18.19",
+  "number": "19.19",
   "title": "",
   "body": "  (Bass numbers). Let be a noetherian ring, and an -module. Given a minimal injective resolution and decompositions we call the -th Bass number of with respect to .   "
 },
@@ -8708,7 +8708,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#thm-2.28-2",
   "type": "Theorem",
-  "number": "18.20",
+  "number": "19.20",
   "title": "",
   "body": "  Let be a noetherian ring, and an -module. The Bass numbers of can be computed as     Given a minimal injective resolution we leave it as an exercise to check that is a minimal injective resolution of as an -module, and that the number of copies of in is the same as the number of copies of in . We compute the Ext modules in the statement from the latter injective resolution:   Claim. The differentials in the complex above are zero.  We need to show that for any -linear , the composition is the zero map. Let , and suppose that in . The minimality of the injective resolution implies that has a nonzero multiple in the image of . Since is a field, this implies that is in the image of , and hence in the kernel of , establishing the claim.  The proof of the theorem is now immediate, since the homology of the complex in the i-th spot is , which, by the previous theorem, is a -vector space of rank .   "
 },
@@ -8717,7 +8717,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#cor-2.29-2",
   "type": "Corollary",
-  "number": "18.21",
+  "number": "19.21",
   "title": "",
   "body": "  If is noetherian, and is a finitely generated -module, all of the Bass numbers of are finite.    We can compute by taking a minimal free resolution of , applying , and computing homology. The complex we obtain consists of finitely generated modules, so its homology modules are finitely generated modules.   "
 },
@@ -8726,7 +8726,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-injective-noetherian.html#sec-injective-noetherian-16",
   "type": "Example",
-  "number": "18.22",
+  "number": "19.22",
   "title": "",
   "body": " Example 2.30. Let’s compute the Bass numbers of as a -module. We claim that   To see the first isomorphism, consider an element with in lowest terms. We want to see that has a unique expression as a sum of elements of . We can discard any terms with denominators not dividing , since . Write . Then, by the Chinese remainder theorem   In each of these congruence equations, the product of prime powers on the RHS is a unit, so we can solve uniquely for each ; that is, each is uniquely determined. This establishes the first isomorphism.  For the second, it suffices to note that is divisible (check it!), that it is -torsion (clear), and that the annihilator of in this module is isomorphic to . From these observations, we see that the module is injective by Proposition ??, and that it is an essential extension of by Example ??.  We conclude that the Bass numbers of are   Each Bass number here is either 0 or 1 . We caution that the \"total first Bass number,\" the sum of the first Bass numbers, is infinite.  "
 },
@@ -8735,7 +8735,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-mathis.html",
   "type": "Section",
-  "number": "18.3",
+  "number": "19.3",
   "title": "Mathis Duality",
   "body": "Mathis Duality   "
 },
@@ -8744,7 +8744,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-def-loco.html",
   "type": "Section",
-  "number": "19.1",
+  "number": "20.1",
   "title": "Definitions of Local Cohomology",
   "body": "Definitions of Local Cohomology  Recall that we defined . Now, with the theory of injectives we have so far, we can prove some properties about these functors. But first we want to collect some other definitions of local cohomology. Some of our descriptions involve direct limits. We recall a couple of facts about direct limits.    Given a directed system of modules its direct limit is the module , equipped with maps for all , satisfying the property that, if there are maps that commute with the maps in the system, then there is a unique map such that for all .  This notion is functorial: given two directed systems of complexes, and maps of complexes for each that commute with the maps in the systems, there is an induced map on the direct limits.  Direct limits can be realized explicitly as follows: every element is represented by a class with . Two classes are the same if and only if for some , the images of and under the composed transition maps agree in . In particular, an element represents the zero class if and only if it is in the kernel of a large composition of the transition map.  Similar considerations hold for systems indexed by an arbitrary poset ; this consists of a collection of modules for , and commuting maps for all .     Remark 3.2. We defined the tensor product of complexes in terms of homological notation before. The same definition works with cohomological indexing.     (1) If     is a directed system of complexes, then     (2) Given two directed systems of complexes, and , we have     The same considerations hold for arbitrary direct limits.      Let be a noetherian ring and an ideal in . For all , there is an isomorphism of functors   Moreover, if is a sequence of ideals such that for all there exist such that and , then      Proof. It is enough to show the later statement. Note that     Then, if is an injective resolution, then     It is easy to see that these isomorphisms are functorial.     image     Remark 3.5. Earlier, we saw that Koszul cohomology and measure similar things, and are equal when , is generated by a regular sequence. Since form an -sequence as well in this case, we obtain isomorphisms though we should take care that we have the right maps in the directed system.  In general, Koszul cohomology and are not the same; we have seen examples in the homework. However, we will soon see that they agree in the direct limit; the isomorphism above holds for all ideals in a noetherian ring!   Let be an -module and . To compute the limit of the system we can replace by , where are the elements killed by some composition of the maps .   so the direct limit is . Note that we have a commutative square    image    so we can identify with .  Now consider a directed system of (cohomological) Koszul complexes. that is,   The limit of this system of Koszul complexes is the Čech complex of on :   Given a sequence of elements , the maps given by 1 on on , induce maps   Note that     Definition 3.6 (Čech complex). We define the Čech complex of on as This is also sometimes denoted as .     Example 3.7.    image    As with the Koszul complex, easy inductions show that        The maps between components corresponding to subsets are zero if , and if .     Note that    We will now study these cohomology modules.    Proposition 3.8. Let and .   (1) Given a short exact sequence of R-modules     there is a long exact sequence       (2) For an arbitrary direct limit system, .    (3) For any family of modules .    (4) (invariance of base) If is a ring map, an -module, then          Proof.  (1) Since consists of flat modules,    image    is a short exact sequence of complexes, so this induces a long exact sequence in cohomology.     (3) This is easy to see, since the Cech complex is compatible with the direct sum decomposition.  (4) Follows from the same property noted for Koszul complexes.      Theorem 3.9 (Fundamental Theorem of Local Cohomology). Let be a noetherian ring and an ideal. Then, for all -modules ,   These isomorphisms are functorial in and extend to isomorphisms of long exact sequences given a short exact sequence     We have seen that and . To show that , we proceed in the following steps:  Step 1: Show and are canonically isomorphic.  Step 2: Show that for any injective module .  Step 3: Use the previous steps to conclude the proof.  Proof of Step 1:     We note that the last equality uses finite generation of in a crucial way; only the containment \" \" holds in general without this.  Proof of Step 2: By the structure theorem for injectives over noetherian rings, , where   By the direct sum property, we may replace by . By the invariance of base property, we may replace by . Now, is an injective hull of the residue field, so it is artinian, and we write where the are modules of finite length. It suffices to show that the vanishing holds for modules of finite length.  We claim that if the desired vanishing holds for , then it holds for all modules of finite length (which would complete Step 2). We induce on the length of . If , then write , with . The long exact sequence gives and by the induction hypothesis, for , establishing the claim.  Applying the invariance of base property again, we may assume without loss of generality that .  There are multiple ways to deal with this case. We note that if , then , and if , then . It is then an easy exercise, which we leave to you, to show that for and 0 for if all ’s are zero, and that for all otherwise.  Of course, this step relied crucially on the structure theorem for injectives over noetherian rings.  Proof of Step 3: This follows in complete generality from the previous steps.  We proceed by induction on , with the base case being Step 1 . Now, let .  We assume that we have a canonical isomorphism between and for all and all . Embed into an injective to get a short exact sequence   Then, there is a commutative diagram    image    where bottom zero on the right comes from Step 2. This induces an isomorphism . We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.    These four different descriptions of local cohomology all have different advantages for attacking problems.  The descriptions (1) and (1’) are computed from injective resolutions, as opposed to (2) and ’), which are computed from generators. We might think of the former as being more natural, and the latter as being more flexible.  We note that the descriptions (1) and (2) are made entirely from \"big\" modules that are somehow nice, whereas the descriptions (1’) and (2’) realize local cohomology as limits of finitely generated modules (if is). Some natural questions to ask already are whether we can realize the limits in (1’) and (2’) as filtered limits \/ unions, and whether the resulting limits are determined in some sense by finite stages in the limit system. We will see a few results of this form, but it’s worth noting that questions of this form are an active topic of research.  "
 },
@@ -8753,7 +8753,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#def-3.1-2",
   "type": "Definition",
-  "number": "19.1",
+  "number": "20.1",
   "title": "",
   "body": "  Given a directed system of modules its direct limit is the module , equipped with maps for all , satisfying the property that, if there are maps that commute with the maps in the system, then there is a unique map such that for all .  This notion is functorial: given two directed systems of complexes, and maps of complexes for each that commute with the maps in the systems, there is an induced map on the direct limits.  Direct limits can be realized explicitly as follows: every element is represented by a class with . Two classes are the same if and only if for some , the images of and under the composed transition maps agree in . In particular, an element represents the zero class if and only if it is in the kernel of a large composition of the transition map.  Similar considerations hold for systems indexed by an arbitrary poset ; this consists of a collection of modules for , and commuting maps for all .   "
 },
@@ -8762,7 +8762,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#sec-def-loco-4",
   "type": "Remark",
-  "number": "19.2",
+  "number": "20.2",
   "title": "",
   "body": " Remark 3.2. We defined the tensor product of complexes in terms of homological notation before. The same definition works with cohomological indexing.  "
 },
@@ -8771,7 +8771,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#lem-3.3-2",
   "type": "Lemma",
-  "number": "19.3",
+  "number": "20.3",
   "title": "",
   "body": "  (1) If     is a directed system of complexes, then     (2) Given two directed systems of complexes, and , we have     The same considerations hold for arbitrary direct limits.   "
 },
@@ -8780,7 +8780,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#prop-3.4-2",
   "type": "Proposition",
-  "number": "19.4",
+  "number": "20.4",
   "title": "",
   "body": "  Let be a noetherian ring and an ideal in . For all , there is an isomorphism of functors   Moreover, if is a sequence of ideals such that for all there exist such that and , then    "
 },
@@ -8789,7 +8789,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#sec-def-loco-7",
   "type": "Proof",
-  "number": "19.1.1",
+  "number": "20.1.1",
   "title": "",
   "body": " Proof. It is enough to show the later statement. Note that     Then, if is an injective resolution, then     It is easy to see that these isomorphisms are functorial.  "
 },
@@ -8798,7 +8798,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#sec-def-loco-8",
   "type": "Figure",
-  "number": "19.5",
+  "number": "20.5",
   "title": "",
   "body": " image   "
 },
@@ -8807,7 +8807,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#sec-def-loco-9",
   "type": "Remark",
-  "number": "19.6",
+  "number": "20.6",
   "title": "",
   "body": " Remark 3.5. Earlier, we saw that Koszul cohomology and measure similar things, and are equal when , is generated by a regular sequence. Since form an -sequence as well in this case, we obtain isomorphisms though we should take care that we have the right maps in the directed system.  In general, Koszul cohomology and are not the same; we have seen examples in the homework. However, we will soon see that they agree in the direct limit; the isomorphism above holds for all ideals in a noetherian ring!  "
 },
@@ -8816,7 +8816,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#sec-def-loco-12",
   "type": "Figure",
-  "number": "19.7",
+  "number": "20.7",
   "title": "",
   "body": " image   "
 },
@@ -8825,7 +8825,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#def-3.6-2",
   "type": "Definition",
-  "number": "19.8",
+  "number": "20.8",
   "title": "",
   "body": "  Definition 3.6 (Čech complex). We define the Čech complex of on as This is also sometimes denoted as .   "
 },
@@ -8834,7 +8834,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#sec-def-loco-20",
   "type": "Example",
-  "number": "19.9",
+  "number": "20.9",
   "title": "",
   "body": " Example 3.7.    image    As with the Koszul complex, easy inductions show that        The maps between components corresponding to subsets are zero if , and if .     Note that   "
 },
@@ -8843,7 +8843,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#prop-3.8-2",
   "type": "Proposition",
-  "number": "19.11",
+  "number": "20.11",
   "title": "",
   "body": "  Proposition 3.8. Let and .   (1) Given a short exact sequence of R-modules     there is a long exact sequence       (2) For an arbitrary direct limit system, .    (3) For any family of modules .    (4) (invariance of base) If is a ring map, an -module, then          Proof.  (1) Since consists of flat modules,    image    is a short exact sequence of complexes, so this induces a long exact sequence in cohomology.     (3) This is easy to see, since the Cech complex is compatible with the direct sum decomposition.  (4) Follows from the same property noted for Koszul complexes.   "
 },
@@ -8852,7 +8852,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#thm-3.9-2",
   "type": "Theorem",
-  "number": "19.13",
+  "number": "20.13",
   "title": "",
   "body": "  Theorem 3.9 (Fundamental Theorem of Local Cohomology). Let be a noetherian ring and an ideal. Then, for all -modules ,   These isomorphisms are functorial in and extend to isomorphisms of long exact sequences given a short exact sequence     We have seen that and . To show that , we proceed in the following steps:  Step 1: Show and are canonically isomorphic.  Step 2: Show that for any injective module .  Step 3: Use the previous steps to conclude the proof.  Proof of Step 1:     We note that the last equality uses finite generation of in a crucial way; only the containment \" \" holds in general without this.  Proof of Step 2: By the structure theorem for injectives over noetherian rings, , where   By the direct sum property, we may replace by . By the invariance of base property, we may replace by . Now, is an injective hull of the residue field, so it is artinian, and we write where the are modules of finite length. It suffices to show that the vanishing holds for modules of finite length.  We claim that if the desired vanishing holds for , then it holds for all modules of finite length (which would complete Step 2). We induce on the length of . If , then write , with . The long exact sequence gives and by the induction hypothesis, for , establishing the claim.  Applying the invariance of base property again, we may assume without loss of generality that .  There are multiple ways to deal with this case. We note that if , then , and if , then . It is then an easy exercise, which we leave to you, to show that for and 0 for if all ’s are zero, and that for all otherwise.  Of course, this step relied crucially on the structure theorem for injectives over noetherian rings.  Proof of Step 3: This follows in complete generality from the previous steps.  We proceed by induction on , with the base case being Step 1 . Now, let .  We assume that we have a canonical isomorphism between and for all and all . Embed into an injective to get a short exact sequence   Then, there is a commutative diagram    image    where bottom zero on the right comes from Step 2. This induces an isomorphism . We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.   "
 },
@@ -8861,7 +8861,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-cech-complex.html",
   "type": "Section",
-  "number": "19.2",
+  "number": "20.2",
   "title": "The Čech Complex",
   "body": "The Čech Complex    "
 },
@@ -8870,7 +8870,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-properties-vanishing.html",
   "type": "Section",
-  "number": "19.3",
+  "number": "20.3",
   "title": "Properties and Vanishing Theorems",
   "body": "Properties and Vanishing Theorems  Let’s collect some basic properties of local cohomology. We note that many (but not all) of the following facts can be proven quickly from more than one characterization of local cohomology.  Let be a noetherian ring, an ideal, and an -module. Let be a ring homomorphism, and an -module.      is -torsion for every .    If , then for every .    (Invariance of base) has a natural -module structure, and as -modules. We often write to abbreviate this when the map is implicit.    For any arbitrary direct limit system, .    (Flat base change) If is flat, then .    If , then .     Proof. 1. Any submodule or quotient module of an -torsion module is -torsion. Thus, the cohomology of a complex of -torsion modules, e.g., for some injective resolution , is also -torsion.     The functors and are the same, so they yield the same thing when applied to an injective resolution.    For any , the -linear map is the same as the -linear map ; this gives a by functoriality; it follows from functoriality that the map agrees with the composition of maps and , so this is an -module action.     The noted isomorphism follows from the Čech cohomology isomorphism .     This again follows from the Čech cohomology statement.     . By flatness of , cohomology commutes with taking the tensor product.    Special case of flat base change.     We will find that we have the best understanding of local cohomology modules in two situations: when is a maximal ideal, or when is a regular ring. Apropos the first of these settings:  Proposition 3.11. Let be a noetherian ring, an ideal, and an -module. Let be a maximal ideal of .    If is finitely generated, then is artinian for all .     .    If is local, then . In particular, if is finitely generated, then .    If is a local homomorphism, and is module-finite over the image of , then .    Proof. 1. By Problem #6 of HW #1, if is an injective resolution,     The Bass number is finite, so the complex above is a complex of artinian modules. Thus, is a quotient of a submodule of a finite direct sum of copies of , hence, artinian.    If is -torsion, then any element outside of acts on invertibly (check!). Then the second is a special case of 6 above.    By flat base change, . Since is -torsion, it is already the same as .     , since .    Remark 3.12. Both and of the previous proposition fail for the module from worksheet , with replaced by .  We want to note now that if is a graded ring, a graded module, and a homogeneous ideal (i.e., an ideal generated by homogeneous elements ) then the local cohomology modules are graded as well. This can be seen from the Čech complex:     which is evidently a complex of graded modules in this case.  We could also see the grading from the other descriptions of local cohomology. This clear for the Koszul description, and is easily seen to give the same grading. There is also a classification of which graded modules are injective as objects in the category of graded modules. This endows the other two descriptions of local cohomology with a grading, and the Fundamental Theorem is compatible with this extra structure. We won’t develop this approach (unless I change my mind!), but note that it is carried out throughly in Bruns & Herzog as well as Brodmann & Sharp.  Our goal now is to understand, for an ideal in a noetherian , and an -module , what are the least and greatest , respectively, for which .  There is an obvious guess (and obvious lower bound) for the least nonvanishing index: the depth of on . This guess turns out to be correct.  Theorem 3.13. Let be a noetherian ring, an ideal, and a finitely generated -module. Then,     Our convention is that if . In particular, if is prime and is Cohen-Macaulay, then     Proof. If , then there is some that acts as the identity on , so  for all . On the other hand, is -torsion, so it must be the zero module.  We now assume that and argue by induction on the depth.  If , then every element of is a zerodivisor on , so is contained in the union of the associated primes of , and hence in some associated prime of by prime avoidance. Then, the copy of in is killed by , hence nonzero in .  Now, if the depth is , take a regular element on . The SES     yields the LES     For , we obtain that is a nzd on , but this module is -torsion (hence -torsion), so it must be zero. Then, the LES shows that injects into , so the latter is nonzero.  We turn our attention to the top nonvanishing local cohomology module. This will be of recurring interest, so we give it some nomenclature.  Definition 3.14. Let be a ring, an ideal, and an -module. The cohomological dimension of on is     This is closely related to another invariant of independent interest.  Definition 3.15. Let be a ring, an ideal. The arithmetic rank of is     The following fact, now easy to prove, is one of the key points to many applications of local cohomology.  Theorem 3.16. Let be a noetherian ring, an ideal. Then for all modules .  Proof. Let . Then , and the latter vanishes for , since the Čech complex on elements lives only in cohomological degrees less than or equal to .  This Theorem is useful both for understanding rank and for understanding cohomological dimension. We will employ it for the latter purpose first.  Example 3.17. Let be a field, and . Let . We saw in worksheet #3 that . We claim that the support of is , so . If is a prime that does not contain or , then is the unit ideal, so . If does not contain , then in , so . Thus, . Similarly, if does not contain , the same vanishing occurs.  Proposition 3.18. Let be a noetherian ring, an ideal. For any -module, .  Proof. Let . Since local cohomology commutes with direct sums, we have that for any free module and any . Now, given an arbitrary module , take a short exact sequence     with free. The LES of local cohomology gives isomorphisms for all . Repeating this, we find for all , that there is some module such that . But, since is finitely generated, is finite, and is less than this number for all modules. Hence, we must have that .  Following the last proposition, we write for . When is a maximal ideal, we can say a bit more about cohomological dimension. Recall that, by the dimension of a module, we mean simply the dimension of . We note that, if is finitely generated, this agrees with the dimension of the support of as a subset of , but this is not true if is arbitrary (e.g. take for of positive dimension).  Proposition 3.19. Let be local, and an -module. Then .  Proof. By the invariance of base property, we may replace by , and by its image there, thus we can assume that . The maximal ideal of is generated by elements up to radical, so , as required.  Corollary 3.20. Let be local. The ring is Cohen-Macaulay if and only if for all .  We want to now extend our cohomological dimension bounds to all ideals.  Theorem 3.21. If is a proper ideal in a local ring of dimension , then .  Proof. If , this is standard, so we assume that the height of is less than .  Let and . We will inductively find     Once we have done this for , we have elements such that , and we are done.  To choose , we only need to avoid a subset of the minimal primes of , which is finite, so we can do this by prime avoidance.  Suppose that we have elements satisfying the specified condition for all . The set of minimal primes of of height not containing , is finite (and is clearly not any such ), so we can choose an element in not in any of these.  Now, suppose that is contained in some in . Then, as well. If is not minimal over , then take some in between. The height of is less than , so contradicts the induction hypothesis. If is minimal over , then , and contradicts the choice of .  Corollary 3.22. If is an ideal in a noetherian ring, and an -module, then  .  Proof. Given a counterexample, we can localize at an associated prime of , and since for all , and , it suffices to assume that is local. Moreover, by invariance of base, we can replace by , and assume that . Then, applying the previous theorem, .  "
 },
@@ -8879,7 +8879,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-local-duality.html",
   "type": "Section",
-  "number": "20.1",
+  "number": "21.1",
   "title": "Local Duality",
   "body": "Local Duality  Let be the maximal ideal of . We know that:   If is a finitely generated -module, then is an artinian module;    If is a polyonomial ring over a field , then .     The Matlis duals of are evidently finitely generated modules (if is complete), and we might hope that they can be realized by formulas in terms of finitely generated elements.  We will see that this turns out to be true. We will establish formulas of this form for an increasingly general class of rings. Along the way, to understand the new class of rings we will meet, we will pursue a more refined study of injective resolutions.  We will give two proofs of this fact.    If is a regular local ring of dimension , then .    First, we note that both and stay the same if is replaced by its completion, so we may assume that is complete. By Cohen’s Structure Theorem, , or where is a field and a DVR.  We have seen this by explicit computation for (worksheet) or , where is a DVR (#2 on HW #2). Also, if , then, from the SES , we get the LES where the last terms is zero since . Consequently,   Thus, this holds for all complete regular rings.    When is regular, the following is an injective resolution of (by #6 HW #2):   By applying to this resolution, we are only left with in the -th spot.    If you don’t believe in homework, don’t worry; we will generalize this soon.  Exercise 4.2.    If is a flat -module, then for all and all -modules .    If is exact and each is flat (we say this is a flat resolution of ), then  for all .       If is Cohen-Macaulay, and is an R-module, then for all . This isomorphism is functorial in .    Let be an SOP for . The augmented Čech complex      flat resolution    0           is exact, since the lower local cohomologies vanish. Thus, is a flat resolution of . Then,       We note that there is a switch from cohomological indexing of Čech complex and homological indexing of a flat resolution.    (Ext-Tor dualities). If be a local ring of dimension , and let denote the Matlis duality functor.      If is a finitely generated -module, then .    These isomorphisms are functorial in .    Let be a projective resolution of .  1.     Given a map , we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.     By taking a minimal resolution, we may assume that is a complex of finitely generated free -modules. In this case, there is a natural isomorphism (exercise!)      Taking homology gives the isomorphism.    To help remember which hypothesis goes with which situation in the following, one might keep in mind that Matlis duals of artinian modules are complete.    Theorem 4.5 (Local Duality). Let be a regular local ring of dimension . Then     If is a finitely generated -module, then .    If is complete and is arbitrary, then .     These isomorphisms are functorial in .    Proof. 1.        Since is complete, . Then,          One often finds the just the first statement as local duality, but the second \"opposite of local duality\" is quite useful as well.  Remark 4.6. By the exact same proof, if is Cohen-Macaulay and is some finitely generated module such that , then    If is a finitely generated -module, then .    If is complete, then by the same proof.    We will return to this later.  Local duality is a powerful tool to study local cohomology modules. Part of its power comes from its flexibility: there are many different rings, modules, and indices to plug in. Here are some special cases:  Example 4.7. Let be a local ring, and another local ring such that is regular, and is a quotient of . (Such an exists whenever is complete, or essentially of finite type over a field or .) Then, since is a finitely generated -module, for all .  Example 4.8. Let be a map of complete local rings, and suppose that is regular, e.g., a power series ring over a field . Then, .  Here is an important application of Local Duality. Note that we are not assuming that is regular in the statement.    Theorem 4.9 (Grothendieck nonvanishing). Let be a local ring and a finitely generated -module. Then .    We already know . Without loss of generality, we can assume that is a faithful module, by invariance of base. Complete; is -faithful, , and . Therefore, we may assume without loss of generality that and are complete.  Now is a quotient of a power series ring, so by invariance of base we may assume without loss of generality that is a regular ring. Note, however, that is not necessarily faithful anymore.  We claim that if the depth of on an -module is , then . This is essentially the same as Rees’s Theorem, but we include the argument anyway. Indeed, by induction on the depth (if positive), we can assume that for an -regular element in . From the usual LES, we see that, for acts injectively on , but annihilates this module as well, so it must be the zero module. This establishes the claim.  Now, by Local Duality, . Since Matlis Duality is faithful, the indicated Ext is nonzero if and only if its dual is. Thus,     Since , equality holds throughout.    Remark 4.10. A consequence of this argument, by taking , is that if is a regular local ring (or any ring for which Local Duality holds!) there are equalities for any ideal :     Of course, these can be obtained more directly (for Cohen-Macaulay rings).  Following Remark ??, we should be able to generalize local duality, so that we can compute local cohomology as duals of Ext modules over rings that are more relevant. The best generalization would be in the case of a Cohen-Macaulay local ring such that . Failing that, we would like to understand when a f.g. module such that exists over a CM local ring, and how else we might recognize such a .  "
 },
@@ -8888,7 +8888,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-duality.html#lem-4.1",
   "type": "Lemma",
-  "number": "20.1",
+  "number": "21.1",
   "title": "",
   "body": "  If is a regular local ring of dimension , then .    First, we note that both and stay the same if is replaced by its completion, so we may assume that is complete. By Cohen’s Structure Theorem, , or where is a field and a DVR.  We have seen this by explicit computation for (worksheet) or , where is a DVR (#2 on HW #2). Also, if , then, from the SES , we get the LES where the last terms is zero since . Consequently,   Thus, this holds for all complete regular rings.    When is regular, the following is an injective resolution of (by #6 HW #2):   By applying to this resolution, we are only left with in the -th spot.   "
 },
@@ -8897,7 +8897,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-duality.html#sec-local-duality-8",
   "type": "Exercise",
-  "number": "20.2",
+  "number": "21.2",
   "title": "Exercise 4.2..",
   "body": "Exercise 4.2.    If is a flat -module, then for all and all -modules .    If is exact and each is flat (we say this is a flat resolution of ), then  for all .    "
 },
@@ -8906,7 +8906,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-duality.html#prop-4.3",
   "type": "Proposition",
-  "number": "20.3",
+  "number": "21.3",
   "title": "",
   "body": "  If is Cohen-Macaulay, and is an R-module, then for all . This isomorphism is functorial in .    Let be an SOP for . The augmented Čech complex      flat resolution    0           is exact, since the lower local cohomologies vanish. Thus, is a flat resolution of . Then,      "
 },
@@ -8915,7 +8915,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-duality.html#prop-4.4",
   "type": "Proposition",
-  "number": "20.5",
+  "number": "21.5",
   "title": "",
   "body": "  (Ext-Tor dualities). If be a local ring of dimension , and let denote the Matlis duality functor.      If is a finitely generated -module, then .    These isomorphisms are functorial in .    Let be a projective resolution of .  1.     Given a map , we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.     By taking a minimal resolution, we may assume that is a complex of finitely generated free -modules. In this case, there is a natural isomorphism (exercise!)      Taking homology gives the isomorphism.   "
 },
@@ -8924,7 +8924,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-duality.html#thm-4.5",
   "type": "Theorem",
-  "number": "20.6",
+  "number": "21.6",
   "title": "",
   "body": "  Theorem 4.5 (Local Duality). Let be a regular local ring of dimension . Then     If is a finitely generated -module, then .    If is complete and is arbitrary, then .     These isomorphisms are functorial in .    Proof. 1.        Since is complete, . Then,         "
 },
@@ -8933,7 +8933,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-local-duality.html#thm-4.9-2",
   "type": "Theorem",
-  "number": "20.7",
+  "number": "21.7",
   "title": "",
   "body": "  Theorem 4.9 (Grothendieck nonvanishing). Let be a local ring and a finitely generated -module. Then .    We already know . Without loss of generality, we can assume that is a faithful module, by invariance of base. Complete; is -faithful, , and . Therefore, we may assume without loss of generality that and are complete.  Now is a quotient of a power series ring, so by invariance of base we may assume without loss of generality that is a regular ring. Note, however, that is not necessarily faithful anymore.  We claim that if the depth of on an -module is , then . This is essentially the same as Rees’s Theorem, but we include the argument anyway. Indeed, by induction on the depth (if positive), we can assume that for an -regular element in . From the usual LES, we see that, for acts injectively on , but annihilates this module as well, so it must be the zero module. This establishes the claim.  Now, by Local Duality, . Since Matlis Duality is faithful, the indicated Ext is nonzero if and only if its dual is. Thus,     Since , equality holds throughout.   "
 },
@@ -8942,7 +8942,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-gorenstein.html",
   "type": "Section",
-  "number": "20.2",
+  "number": "21.2",
   "title": "Gorenstein Rings",
   "body": "Gorenstein Rings    "
 },
@@ -8951,7 +8951,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-canonical-mod.html",
   "type": "Section",
-  "number": "20.3",
+  "number": "21.3",
   "title": "Canonical Modules",
   "body": "Canonical Modules    "
 },
@@ -8960,7 +8960,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-graded-local-duality.html",
   "type": "Section",
-  "number": "20.4",
+  "number": "21.4",
   "title": "Graded Local Duality and Regularity",
   "body": "Graded Local Duality and Regularity    "
 },
@@ -8970,8 +8970,8 @@ var ptx_lunr_docs = [
   "url": "sec-rings.html",
   "type": "Section",
   "number": "A.1",
-  "title": "Rings",
-  "body": "Rings  In this class, all rings have a multiplicative identity, written as 1 or is we want to emphasize that we are referring to the ring . This is what some authors call unital rings; since for us all rings are unital, we will omit the adjective. Moreover, we will think of 1 as part of the structure of the ring, and thus require it be preserved by all natural constructions. As such, a subring of must share the same multiplicative identity with , meaning . Moreover, any ring homomorphism must preserve the multiplicative identity. To clear any possible confusion, we include below the relevant definitions.  Ring   A ring is a set equipped with two binary operations, + and , satisfying:    is an abelian group with identity element denoted or .    The operation is associative, so that is a semigroup.    For all , we have     there is a multiplicative identity, written as 1 or , such that and for all .       To simplify notation, we will often drop the when writing the multiplication of two elements, so that will mean .  Note that the requirement that makes it so that the zero ring is not a ring.    A ring is a commutative ring if for all we have .      A ring is a division ring if and is a group under , so every nonzero has a multiplicative inverse. A field is a commutative division ring.      A commutative ring is a domain , sometimes called an integral domain , if it has no zerodivisors: or . Note that in particular we reserve the word domain for commutative rings.    For some familiar examples, (the set of matrices) is a ring with the usual addition and multiplication of matrices, and are commutative rings, and are fields, and the real Hamiltonian quaternion ring is a division ring.    A ring homomorphism is a function satisfying the following:     for all .     for all .     .      Under this definition, the map sending preserves addition and multiplication but not the multiplicative identities, and thus it is not a ring homomorphism.   For any ring , there exists a unique homomorphism .     A subset of a ring is a subring of if it is a ring under the same addition and multiplication operations and .    So under this definition, , the set of even integers, is not a subring of ; in fact, it is not even a ring, since it does not have a multiplicative identity!    Let be a ring. A subset of is an ideal if:      is nonempty.     is a subgroup of .    For every and every , we have and .       The final property is often called absorption. A left ideal satisfies only absorption on the left, meaning that we require only that for all and . Similarly, a right ideal satisfies only absorption on the right, meaning that for all and .  When is a commutative ring, the left ideals, right ideals, and ideals over are all the same. However, if is not commutative, then these can be very different classes.  One key distinction between unital rings and nonunital rings is that if one requires every ring to have a 1 , as we do, then the ideals and subrings of a ring are very different creatures. In fact, the only subring of that is also an ideal is itself. The change lies in what constitutes a subring; notice that nothing has changed in the definition of ideal.   Every ring has two trivial ideals: itself and the zero ideal .   A nontrivial ideal of is an ideal that and . An ideal of is a proper ideal if .  "
+  "title": "Ring Theory",
+  "body": "Ring Theory  In this class, all rings have a multiplicative identity, written as 1 or is we want to emphasize that we are referring to the ring . This is what some authors call unital rings; since for us all rings are unital, we will omit the adjective. Moreover, we will think of 1 as part of the structure of the ring, and thus require it be preserved by all natural constructions. As such, a subring of must share the same multiplicative identity with , meaning . Moreover, any ring homomorphism must preserve the multiplicative identity. To clear any possible confusion, we include below the relevant definitions.  Ring   A ring is a set equipped with two binary operations, + and , satisfying:    is an abelian group with identity element denoted or .    The operation is associative, so that is a semigroup.    For all , we have     there is a multiplicative identity, written as 1 or , such that and for all .       To simplify notation, we will often drop the when writing the multiplication of two elements, so that will mean .  Note that the requirement that makes it so that the zero ring is not a ring.  Commutative Ring   A ring is a commutative ring if for all we have .    Division Ring   A ring is a division ring if and is a group under , so every nonzero has a multiplicative inverse. A field is a commutative division ring.    Integral Domain   A commutative ring is a domain , sometimes called an integral domain , if it has no zerodivisors: or . Note that in particular we reserve the word domain for commutative rings.    For some familiar examples, (the set of matrices) is a ring with the usual addition and multiplication of matrices, and are commutative rings, and are fields, and the real Hamiltonian quaternion ring is a division ring.  Ring Homomorphism   A ring homomorphism is a function satisfying the following:     for all .     for all .     .      Under this definition, the map sending preserves addition and multiplication but not the multiplicative identities, and thus it is not a ring homomorphism.   For any ring , there exists a unique homomorphism .   Subring   A subset of a ring is a subring of if it is a ring under the same addition and multiplication operations and .    So under this definition, , the set of even integers, is not a subring of ; in fact, it is not even a ring, since it does not have a multiplicative identity!  Ideal   Let be a ring. A subset of is an ideal if:      is nonempty.     is a subgroup of .    For every and every , we have and .       The final property is often called absorption. A left ideal satisfies only absorption on the left, meaning that we require only that for all and . Similarly, a right ideal satisfies only absorption on the right, meaning that for all and .  When is a commutative ring, the left ideals, right ideals, and ideals over are all the same. However, if is not commutative, then these can be very different classes.  One key distinction between unital rings and nonunital rings is that if one requires every ring to have a 1 , as we do, then the ideals and subrings of a ring are very different creatures. In fact, the only subring of that is also an ideal is itself. The change lies in what constitutes a subring; notice that nothing has changed in the definition of ideal.   Every ring has two trivial ideals: itself and the zero ideal .   A nontrivial ideal of is an ideal that and . An ideal of is a proper ideal if .  "
 },
 {
   "id": "def-A1",
@@ -8988,8 +8988,8 @@ var ptx_lunr_docs = [
   "url": "sec-rings.html#def-A2",
   "type": "Definition",
   "number": "A.2",
-  "title": "",
-  "body": "  A ring is a commutative ring if for all we have .   "
+  "title": "Commutative Ring.",
+  "body": "Commutative Ring   A ring is a commutative ring if for all we have .   "
 },
 {
   "id": "def-A3",
@@ -8997,8 +8997,8 @@ var ptx_lunr_docs = [
   "url": "sec-rings.html#def-A3",
   "type": "Definition",
   "number": "A.3",
-  "title": "",
-  "body": "  A ring is a division ring if and is a group under , so every nonzero has a multiplicative inverse. A field is a commutative division ring.   "
+  "title": "Division Ring.",
+  "body": "Division Ring   A ring is a division ring if and is a group under , so every nonzero has a multiplicative inverse. A field is a commutative division ring.   "
 },
 {
   "id": "def-A4",
@@ -9006,8 +9006,8 @@ var ptx_lunr_docs = [
   "url": "sec-rings.html#def-A4",
   "type": "Definition",
   "number": "A.4",
-  "title": "",
-  "body": "  A commutative ring is a domain , sometimes called an integral domain , if it has no zerodivisors: or . Note that in particular we reserve the word domain for commutative rings.   "
+  "title": "Integral Domain.",
+  "body": "Integral Domain   A commutative ring is a domain , sometimes called an integral domain , if it has no zerodivisors: or . Note that in particular we reserve the word domain for commutative rings.   "
 },
 {
   "id": "def-A5",
@@ -9015,8 +9015,8 @@ var ptx_lunr_docs = [
   "url": "sec-rings.html#def-A5",
   "type": "Definition",
   "number": "A.5",
-  "title": "",
-  "body": "  A ring homomorphism is a function satisfying the following:     for all .     for all .     .     "
+  "title": "Ring Homomorphism.",
+  "body": "Ring Homomorphism   A ring homomorphism is a function satisfying the following:     for all .     for all .     .     "
 },
 {
   "id": "exe-65",
@@ -9033,8 +9033,8 @@ var ptx_lunr_docs = [
   "url": "sec-rings.html#def-A6",
   "type": "Definition",
   "number": "A.7",
-  "title": "",
-  "body": "  A subset of a ring is a subring of if it is a ring under the same addition and multiplication operations and .   "
+  "title": "Subring.",
+  "body": "Subring   A subset of a ring is a subring of if it is a ring under the same addition and multiplication operations and .   "
 },
 {
   "id": "def-A7",
@@ -9042,8 +9042,8 @@ var ptx_lunr_docs = [
   "url": "sec-rings.html#def-A7",
   "type": "Definition",
   "number": "A.8",
-  "title": "",
-  "body": "  Let be a ring. A subset of is an ideal if:      is nonempty.     is a subgroup of .    For every and every , we have and .      "
+  "title": "Ideal.",
+  "body": "Ideal   Let be a ring. A subset of is an ideal if:      is nonempty.     is a subgroup of .    For every and every , we have and .      "
 },
 {
   "id": "rem-a8",
@@ -9060,8 +9060,8 @@ var ptx_lunr_docs = [
   "url": "sec-modules.html",
   "type": "Section",
   "number": "A.2",
-  "title": "Modules",
-  "body": "Modules  You can learn more about the basic theory of (commutative) rings and -modules in any introductory algebra book, such as [DF04].    Definition A.9. Let be a ring with . A left -module is an abelian group together with an action of on , written as , such that for all and we have the following:     ,     ,     , and     .    A right -module is an abelian group together with an action of on , written as , such that for all and we have     ,     ,     , and     .      By default, we will be studying left -modules. To make the writing less heavy, we will sometimes say -module rather than left -module whenever there is no ambiguity.   Remark A.10. If is a commutative ring, then any left -module may be regarded as a right -module by setting . Likewise, any right -module may be regarded as a left -module. Thus for commutative rings, we just refer to modules, and not left or right modules.   The definitions of submodule, quotient of modules, and homomorphism of modules are very natural and easy to guess, but here they are.    If are -modules with compatible structures, we say that is a submodule of .  A map between -modules is a homomorphism of -modules if it is a homomorphism of abelian groups that preserves the -action, meaning for all and all . We sometimes refer to -module homomorphisms as -module maps, or maps of -modules. An isomorphism of -modules is a bijective homomorphism, which we really should think about as a relabeling of the elements in our module. If two modules and are isomorphic, we write .  Given an -module and a submodule , the quotient is an -module whose elements are the equivalence classes determined by the relation on given by  . One can check that this set naturally inherits an -module structure from the -module structure on , and it comes equipped with a natural canonical map induced by sending to its equivalence class.     Example A.12. The modules over a field are precisely all the -vector spaces. Linear transformations are precisely all the -module maps.   While vector spaces make for a great first example, be warned that many of the basic facts we are used to from linear algebra are often a little more subtle in commutative algebra. These differences are features, not bugs.   Example A.13. The -modules are precisely all the abelian groups.    Example A.14. When we think of the ring as a module over itself, the submodules of are precisely the ideals of .   First Isomorphism Theorem   Any -module homomorphism satisfies .    The first big noticeable difference between vector spaces and more general -modules is that while every vector space has a basis, most -modules do not.    A subset of an -module is a generating set, or a set of generators, if every element in can be written as a finite linear combination of elements in with coefficients in . A basis for an -module is a generating set for such that implies for all . An -module is free if it has a basis.     Remark A.17. Every vector space is a free module.    Remark A.18. Every free -module is isomorphic to a direct sum of copies of . Indeed, let's construct such an isomorphism for a given free -module . Given a basis for , let   The condition that is a basis for can be restated into the statement that is an isomorphism of -modules.   One of the key things that makes commutative algebra so rich and beautiful is that most modules are in fact not free. In general, every -module has a generating set - for example, itself. Given some generating set for , we can always repeat the idea above and write a presentation for , but in general the resulting map will have a nontrivial kernel. A nonzero kernel element corresponds to a relation between the generators of .   Remark A.19. Given a set of generators for an -module , any homomorphism of modules is determined by the images of the generators.   We say that a module is finitely generated if we can find a finite generating set for . The simplest finitely generated modules are the cyclic modules.   Example A.20. An -module is cyclic if it can be generated by one element. Equivalently, we can write as a quotient of by some ideal . Indeed, given a generator for , the kernel of the map induced by is some ideal . Since we assumed that generates is automatically surjective, and thus induces an isomorphism .   Similarly, if an -module has generators, we can naturally think about it as a quotient of by the submodule of relations among those generators.  "
+  "title": "Module Theory",
+  "body": "Module Theory  You can learn more about the basic theory of (commutative) rings and -modules in any introductory algebra book, such as [DF04].  Module   Definition A.9. Let be a ring with . A left -module is an abelian group together with an action of on , written as , such that for all and we have the following:     ,     ,     , and     .    A right -module is an abelian group together with an action of on , written as , such that for all and we have     ,     ,     , and     .      By default, we will be studying left -modules. To make the writing less heavy, we will sometimes say -module rather than left -module whenever there is no ambiguity.   Remark A.10. If is a commutative ring, then any left -module may be regarded as a right -module by setting . Likewise, any right -module may be regarded as a left -module. Thus for commutative rings, we just refer to modules, and not left or right modules.   The definitions of submodule, quotient of modules, and homomorphism of modules are very natural and easy to guess, but here they are.  Submodule   If are -modules with compatible structures, we say that is a submodule of .  A map between -modules is a homomorphism of -modules if it is a homomorphism of abelian groups that preserves the -action, meaning for all and all . We sometimes refer to -module homomorphisms as -module maps, or maps of -modules. An isomorphism of -modules is a bijective homomorphism, which we really should think about as a relabeling of the elements in our module. If two modules and are isomorphic, we write .  Given an -module and a submodule , the quotient is an -module whose elements are the equivalence classes determined by the relation on given by  . One can check that this set naturally inherits an -module structure from the -module structure on , and it comes equipped with a natural canonical map induced by sending to its equivalence class.     Example A.12. The modules over a field are precisely all the -vector spaces. Linear transformations are precisely all the -module maps.   While vector spaces make for a great first example, be warned that many of the basic facts we are used to from linear algebra are often a little more subtle in commutative algebra. These differences are features, not bugs.   Example A.13. The -modules are precisely all the abelian groups.    Example A.14. When we think of the ring as a module over itself, the submodules of are precisely the ideals of .   First Isomorphism Theorem   Any -module homomorphism satisfies .    The first big noticeable difference between vector spaces and more general -modules is that while every vector space has a basis, most -modules do not.  Generated Modules   A subset of an -module is a generating set, or a set of generators, if every element in can be written as a finite linear combination of elements in with coefficients in . A basis for an -module is a generating set for such that implies for all . An -module is free if it has a basis.     Remark A.17. Every vector space is a free module.    Remark A.18. Every free -module is isomorphic to a direct sum of copies of . Indeed, let's construct such an isomorphism for a given free -module . Given a basis for , let   The condition that is a basis for can be restated into the statement that is an isomorphism of -modules.   One of the key things that makes commutative algebra so rich and beautiful is that most modules are in fact not free. In general, every -module has a generating set - for example, itself. Given some generating set for , we can always repeat the idea above and write a presentation for , but in general the resulting map will have a nontrivial kernel. A nonzero kernel element corresponds to a relation between the generators of .   Remark A.19. Given a set of generators for an -module , any homomorphism of modules is determined by the images of the generators.   We say that a module is finitely generated if we can find a finite generating set for . The simplest finitely generated modules are the cyclic modules.   Example A.20. An -module is cyclic if it can be generated by one element. Equivalently, we can write as a quotient of by some ideal . Indeed, given a generator for , the kernel of the map induced by is some ideal . Since we assumed that generates is automatically surjective, and thus induces an isomorphism .   Similarly, if an -module has generators, we can naturally think about it as a quotient of by the submodule of relations among those generators.  "
 },
 {
   "id": "def-A9",
@@ -9069,8 +9069,8 @@ var ptx_lunr_docs = [
   "url": "sec-modules.html#def-A9",
   "type": "Definition",
   "number": "A.10",
-  "title": "",
-  "body": "  Definition A.9. Let be a ring with . A left -module is an abelian group together with an action of on , written as , such that for all and we have the following:     ,     ,     , and     .    A right -module is an abelian group together with an action of on , written as , such that for all and we have     ,     ,     , and     .     "
+  "title": "Module.",
+  "body": "Module   Definition A.9. Let be a ring with . A left -module is an abelian group together with an action of on , written as , such that for all and we have the following:     ,     ,     , and     .    A right -module is an abelian group together with an action of on , written as , such that for all and we have     ,     ,     , and     .     "
 },
 {
   "id": "sec-modules-5",
@@ -9087,8 +9087,8 @@ var ptx_lunr_docs = [
   "url": "sec-modules.html#def-A11",
   "type": "Definition",
   "number": "A.12",
-  "title": "",
-  "body": "  If are -modules with compatible structures, we say that is a submodule of .  A map between -modules is a homomorphism of -modules if it is a homomorphism of abelian groups that preserves the -action, meaning for all and all . We sometimes refer to -module homomorphisms as -module maps, or maps of -modules. An isomorphism of -modules is a bijective homomorphism, which we really should think about as a relabeling of the elements in our module. If two modules and are isomorphic, we write .  Given an -module and a submodule , the quotient is an -module whose elements are the equivalence classes determined by the relation on given by  . One can check that this set naturally inherits an -module structure from the -module structure on , and it comes equipped with a natural canonical map induced by sending to its equivalence class.   "
+  "title": "Submodule.",
+  "body": "Submodule   If are -modules with compatible structures, we say that is a submodule of .  A map between -modules is a homomorphism of -modules if it is a homomorphism of abelian groups that preserves the -action, meaning for all and all . We sometimes refer to -module homomorphisms as -module maps, or maps of -modules. An isomorphism of -modules is a bijective homomorphism, which we really should think about as a relabeling of the elements in our module. If two modules and are isomorphic, we write .  Given an -module and a submodule , the quotient is an -module whose elements are the equivalence classes determined by the relation on given by  . One can check that this set naturally inherits an -module structure from the -module structure on , and it comes equipped with a natural canonical map induced by sending to its equivalence class.   "
 },
 {
   "id": "sec-modules-8",
@@ -9132,8 +9132,8 @@ var ptx_lunr_docs = [
   "url": "sec-modules.html#def-A16",
   "type": "Definition",
   "number": "A.17",
-  "title": "",
-  "body": "  A subset of an -module is a generating set, or a set of generators, if every element in can be written as a finite linear combination of elements in with coefficients in . A basis for an -module is a generating set for such that implies for all . An -module is free if it has a basis.   "
+  "title": "Generated Modules.",
+  "body": "Generated Modules   A subset of an -module is a generating set, or a set of generators, if every element in can be written as a finite linear combination of elements in with coefficients in . A basis for an -module is a generating set for such that implies for all . An -module is free if it has a basis.   "
 },
 {
   "id": "sec-modules-15",
@@ -9172,236 +9172,20 @@ var ptx_lunr_docs = [
   "body": " Example A.20. An -module is cyclic if it can be generated by one element. Equivalently, we can write as a quotient of by some ideal . Indeed, given a generator for , the kernel of the map induced by is some ideal . Since we assumed that generates is automatically surjective, and thus induces an isomorphism .  "
 },
 {
-  "id": "sec-rings-ideals",
+  "id": "sec-topology",
   "level": "1",
-  "url": "sec-rings-ideals.html",
+  "url": "sec-topology.html",
   "type": "Section",
-  "number": "B.1",
-  "title": "Rings and Ideals",
-  "body": "Rings and Ideals  Commutative Algebra is the branch of algebra that studies commutative rings and modules over such rings. For a commutative algebraist, every ring is commutative and has a .  Ring   A ring is a set equipped with two binary operations and satisfying the following properties:     is an abelian group under the addition operation , with additive identity , or if we need to specify which ring we are talking about. Explicitly, this means that     for all ,     for all ,    there is an element such that for all , and    for each there exists an element such that .       is a commutative monoid under the multiplication operation , with multiplicative identity or simply . Explicitly, this means that     for all ,     for all , and    there exists an element such that for all .    We typically write for .    multiplication is distributive with respect to addition, meaning that for all we have      .      In this text, all rings are commutative . In other branches of algebra rings might fail to be commutative, but we will explicitly say noncommutative ring if that is the case. There also branches of algebra where rings are allowed to not have a multiplicative identity; we recommend for an excellent read on the topic of Why rings should have a 1 .  Ring Examples  Here are some examples of the kinds of rings we will be talking about.    The integers , or any quotient of , which we write compactly as .    A polynomial ring, by which we typically mean , a polynomial ring in finitely many variables over a field .    A quotient of a polynomial ring by an ideal , say .    Rings of polynomials in infinitely many variables, .    Power series rings over a field . The elements are (formal) power series .    While any field is a ring, we will see that fields on their own are not very exciting from the perspective of the kinds of things we will be discussing in this class.     Ring Homomorphism   Given rings and , a function is a ring homomorphism if preserves the operations and the multiplicative identity, meaning     for all ,     for all , and     .    A bijective ring homomorphism is an isomorphism . We should think about a ring isomorphism as a relabelling of the elements in our ring.    Subring   A subset of a ring is a subring if is also a ring with the structure induced by , meaning that the each operation on is the restrictions of the corresponding operation on to , and the and in are the and in , respectively.    Often, we care about the ideals in a ring more than we care about individual elements.  Ideal   A nonempty subset of a ring is an ideal if it is closed for the addition and for multiplication by any element in : for any and , we must have and . The ideal generated by  , denoted , is the smallest ideal containing , or equivalently,     Ideal Examples  Every ring has always at least two ideals, the zero ideal  and the unit ideal  .   We will follow the convention that when we say ideal we actually mean an ideal .  First Isomorphism Theorem   If is a ring homomorphism, then .    Ideals in The ideals in are the sets of multiples of a fixed integer, meaning every ideal has the form . In particular, every ideal in can be generated by one element.  This makes the canonical example of a principal ideal domain .  Domain, PID   A domain is a ring with no zerodivisors, meaning that implies that or . A principal ideal is an ideal generated by one element. A principal ideal domain or PID is a domain where every ideal is principal .    Polynomian Rings over Fields are PIDs Given a field , is a principal ideal domain, so every ideal in is of the form .  not a PID While is a domain, it is not a PID. We will see later that every ideal in is finitely generated, and yet we can construct ideals in with arbitrarily many generators!  not a PID  The ring is a domain but not a PID. For example, is not principal.   Sunzi's Remainder Theorem   Let be a ring and be pairwise coprime ideals in , meaning for all . Then , and there is an isomorphism of rings     This theorem frequently goes by the name of The Chinese Remainder Theorem, but it has been remarked that this is somewhat like referencing the Pythagorean Theorem as The Greek Triangle Theorem or Fermat's Little Theorem as The French Power Postulate. In the interest of giving credit where credit is due, we include it here with the name of the 3rd-century Chinese mathematician, Sunzi, to whom the result is often attributed.  "
-},
-{
-  "id": "def-ring",
-  "level": "2",
-  "url": "sec-rings-ideals.html#def-ring",
-  "type": "Definition",
-  "number": "B.1",
-  "title": "Ring.",
-  "body": "Ring   A ring is a set equipped with two binary operations and satisfying the following properties:     is an abelian group under the addition operation , with additive identity , or if we need to specify which ring we are talking about. Explicitly, this means that     for all ,     for all ,    there is an element such that for all , and    for each there exists an element such that .       is a commutative monoid under the multiplication operation , with multiplicative identity or simply . Explicitly, this means that     for all ,     for all , and    there exists an element such that for all .    We typically write for .    multiplication is distributive with respect to addition, meaning that for all we have      .     "
-},
-{
-  "id": "sec-rings-ideals-4",
-  "level": "2",
-  "url": "sec-rings-ideals.html#sec-rings-ideals-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "all rings are commutative "
-},
-{
-  "id": "sec-rings-ideals-5",
-  "level": "2",
-  "url": "sec-rings-ideals.html#sec-rings-ideals-5",
-  "type": "Example",
-  "number": "B.2",
-  "title": "Ring Examples.",
-  "body": "Ring Examples  Here are some examples of the kinds of rings we will be talking about.    The integers , or any quotient of , which we write compactly as .    A polynomial ring, by which we typically mean , a polynomial ring in finitely many variables over a field .    A quotient of a polynomial ring by an ideal , say .    Rings of polynomials in infinitely many variables, .    Power series rings over a field . The elements are (formal) power series .    While any field is a ring, we will see that fields on their own are not very exciting from the perspective of the kinds of things we will be discussing in this class.    "
-},
-{
-  "id": "def-ring-map",
-  "level": "2",
-  "url": "sec-rings-ideals.html#def-ring-map",
-  "type": "Definition",
-  "number": "B.3",
-  "title": "Ring Homomorphism.",
-  "body": "Ring Homomorphism   Given rings and , a function is a ring homomorphism if preserves the operations and the multiplicative identity, meaning     for all ,     for all , and     .    A bijective ring homomorphism is an isomorphism . We should think about a ring isomorphism as a relabelling of the elements in our ring.   "
-},
-{
-  "id": "def-subring",
-  "level": "2",
-  "url": "sec-rings-ideals.html#def-subring",
-  "type": "Definition",
-  "number": "B.4",
-  "title": "Subring.",
-  "body": "Subring   A subset of a ring is a subring if is also a ring with the structure induced by , meaning that the each operation on is the restrictions of the corresponding operation on to , and the and in are the and in , respectively.   "
-},
-{
-  "id": "def-ideal",
-  "level": "2",
-  "url": "sec-rings-ideals.html#def-ideal",
-  "type": "Definition",
-  "number": "B.5",
-  "title": "Ideal.",
-  "body": "Ideal   A nonempty subset of a ring is an ideal if it is closed for the addition and for multiplication by any element in : for any and , we must have and . The ideal generated by  , denoted , is the smallest ideal containing , or equivalently,    "
-},
-{
-  "id": "sec-rings-ideals-10",
-  "level": "2",
-  "url": "sec-rings-ideals.html#sec-rings-ideals-10",
-  "type": "Example",
-  "number": "B.6",
-  "title": "Ideal Examples.",
-  "body": "Ideal Examples  Every ring has always at least two ideals, the zero ideal  and the unit ideal  .  "
-},
-{
-  "id": "thm-fit",
-  "level": "2",
-  "url": "sec-rings-ideals.html#thm-fit",
-  "type": "Theorem",
-  "number": "B.7",
-  "title": "First Isomorphism Theorem.",
-  "body": "First Isomorphism Theorem   If is a ring homomorphism, then .   "
-},
-{
-  "id": "sec-rings-ideals-13",
-  "level": "2",
-  "url": "sec-rings-ideals.html#sec-rings-ideals-13",
-  "type": "Exercise",
-  "number": "B.8",
-  "title": "Ideals in <span class=\"process-math\">\\(\\Z\\)<\/span>.",
-  "body": "Ideals in The ideals in are the sets of multiples of a fixed integer, meaning every ideal has the form . In particular, every ideal in can be generated by one element. "
-},
-{
-  "id": "sec-rings-ideals-14",
-  "level": "2",
-  "url": "sec-rings-ideals.html#sec-rings-ideals-14",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "principal ideal domain "
-},
-{
-  "id": "def-domain",
-  "level": "2",
-  "url": "sec-rings-ideals.html#def-domain",
-  "type": "Definition",
-  "number": "B.9",
-  "title": "Domain, PID.",
-  "body": "Domain, PID   A domain is a ring with no zerodivisors, meaning that implies that or . A principal ideal is an ideal generated by one element. A principal ideal domain or PID is a domain where every ideal is principal .   "
-},
-{
-  "id": "sec-rings-ideals-16",
-  "level": "2",
-  "url": "sec-rings-ideals.html#sec-rings-ideals-16",
-  "type": "Exercise",
-  "number": "B.10",
-  "title": "Polynomian Rings over Fields are PIDs.",
-  "body": "Polynomian Rings over Fields are PIDs Given a field , is a principal ideal domain, so every ideal in is of the form . "
-},
-{
-  "id": "sec-rings-ideals-17",
-  "level": "2",
-  "url": "sec-rings-ideals.html#sec-rings-ideals-17",
-  "type": "Exercise",
-  "number": "B.11",
-  "title": "<span class=\"process-math\">\\(k[x,y]\\)<\/span> not a PID.",
-  "body": "not a PID While is a domain, it is not a PID. We will see later that every ideal in is finitely generated, and yet we can construct ideals in with arbitrarily many generators! "
-},
-{
-  "id": "sec-rings-ideals-18",
-  "level": "2",
-  "url": "sec-rings-ideals.html#sec-rings-ideals-18",
-  "type": "Example",
-  "number": "B.12",
-  "title": "<span class=\"process-math\">\\(\\Z[x]\\)<\/span> not a PID.",
-  "body": "not a PID  The ring is a domain but not a PID. For example, is not principal.  "
-},
-{
-  "id": "thm-sunzi",
-  "level": "2",
-  "url": "sec-rings-ideals.html#thm-sunzi",
-  "type": "Theorem",
-  "number": "B.13",
-  "title": "Sunzi’s Remainder Theorem.",
-  "body": "Sunzi's Remainder Theorem   Let be a ring and be pairwise coprime ideals in , meaning for all . Then , and there is an isomorphism of rings    "
-},
-{
-  "id": "sec-rings-ideals-20",
-  "level": "2",
-  "url": "sec-rings-ideals.html#sec-rings-ideals-20",
-  "type": "Remark",
-  "number": "B.14",
-  "title": "",
-  "body": "This theorem frequently goes by the name of The Chinese Remainder Theorem, but it has been remarked that this is somewhat like referencing the Pythagorean Theorem as The Greek Triangle Theorem or Fermat's Little Theorem as The French Power Postulate. In the interest of giving credit where credit is due, we include it here with the name of the 3rd-century Chinese mathematician, Sunzi, to whom the result is often attributed. "
-},
-{
-  "id": "sec-module",
-  "level": "1",
-  "url": "sec-module.html",
-  "type": "Section",
-  "number": "B.2",
-  "title": "Modules",
-  "body": "Modules  Just like linear algebra is the study of vector spaces over fields, commutative algebra often focuses on the structure of modules over commutative rings. While in other branches of algebra modules might be left- or right-modules, our modules are usually two sided, and we refer to them simply as modules.  Modules   Given a ring , an -module  is an abelian group equipped with an -action that is compatible with the group structure. More precisely, there is an operation such that     for all and ,     for all and ,     for all and , and     for all .    We typically write for , and denote the additive identity in by , or if we need to distinguish it from .    The definitions of submodule, quotient of modules, and homomorphism of modules are very natural and easy to guess, but here they are.  Submodule, Homomorphism, Quotient Modules   If are -modules with compatible structures, we say that is a submodule of .  A map between -modules is a homomorphism of -modules if it is a homomorphism of abelian groups that preserves the -action, meaning for all and all . We sometimes refer to -module homomorphisms as -module maps , or maps of -modules . An isomorphism of -modules is a bijective homomorphism, which we really should think about as a relabeling of the elements in our module. If two modules and are isomorphic, we write .  Given an -module and a submodule , the quotient module  is an -module whose elements are the equivalence classes under the relation on given by . One can check that this set naturally inherits an -module structure from the -module structure on , and it comes equipped with a natural canonical map  induced by sending to its equivalence class.     The modules over a field are precisely all the -vector spaces. Linear transformations are precisely all the -module maps.    The -modules are precisely all the abelian groups.    When we think of the ring as a module over itself, the submodules of are precisely the ideals of .   The kernel and image of an -module homomorphism are submodules of and , respectively.  First Isomorphism Theorem   If is a homomorphism of -modules, then .    "
-},
-{
-  "id": "def-module",
-  "level": "2",
-  "url": "sec-module.html#def-module",
-  "type": "Definition",
-  "number": "B.15",
-  "title": "Modules.",
-  "body": "Modules   Given a ring , an -module  is an abelian group equipped with an -action that is compatible with the group structure. More precisely, there is an operation such that     for all and ,     for all and ,     for all and , and     for all .    We typically write for , and denote the additive identity in by , or if we need to distinguish it from .   "
-},
-{
-  "id": "def-submodule",
-  "level": "2",
-  "url": "sec-module.html#def-submodule",
-  "type": "Definition",
-  "number": "B.16",
-  "title": "Submodule, Homomorphism, Quotient Modules.",
-  "body": "Submodule, Homomorphism, Quotient Modules   If are -modules with compatible structures, we say that is a submodule of .  A map between -modules is a homomorphism of -modules if it is a homomorphism of abelian groups that preserves the -action, meaning for all and all . We sometimes refer to -module homomorphisms as -module maps , or maps of -modules . An isomorphism of -modules is a bijective homomorphism, which we really should think about as a relabeling of the elements in our module. If two modules and are isomorphic, we write .  Given an -module and a submodule , the quotient module  is an -module whose elements are the equivalence classes under the relation on given by . One can check that this set naturally inherits an -module structure from the -module structure on , and it comes equipped with a natural canonical map  induced by sending to its equivalence class.   "
-},
-{
-  "id": "sec-module-6",
-  "level": "2",
-  "url": "sec-module.html#sec-module-6",
-  "type": "Example",
-  "number": "B.17",
-  "title": "",
-  "body": " The modules over a field are precisely all the -vector spaces. Linear transformations are precisely all the -module maps.  "
-},
-{
-  "id": "sec-module-7",
-  "level": "2",
-  "url": "sec-module.html#sec-module-7",
-  "type": "Example",
-  "number": "B.18",
-  "title": "",
-  "body": " The -modules are precisely all the abelian groups.  "
-},
-{
-  "id": "sec-module-8",
-  "level": "2",
-  "url": "sec-module.html#sec-module-8",
-  "type": "Example",
-  "number": "B.19",
-  "title": "",
-  "body": " When we think of the ring as a module over itself, the submodules of are precisely the ideals of .  "
-},
-{
-  "id": "sec-module-9",
-  "level": "2",
-  "url": "sec-module.html#sec-module-9",
-  "type": "Exercise",
-  "number": "B.20",
-  "title": "",
-  "body": "The kernel and image of an -module homomorphism are submodules of and , respectively. "
-},
-{
-  "id": "thm-fit-mod",
-  "level": "2",
-  "url": "sec-module.html#thm-fit-mod",
-  "type": "Theorem",
-  "number": "B.21",
-  "title": "First Isomorphism Theorem.",
-  "body": "First Isomorphism Theorem   If is a homomorphism of -modules, then .   "
+  "number": "A.3",
+  "title": "Topology",
+  "body": "Topology    "
 },
 {
   "id": "sec-getting-started",
   "level": "1",
   "url": "sec-getting-started.html",
   "type": "Section",
-  "number": "C.1",
+  "number": "B.1",
   "title": "Getting Started",
   "body": "Getting Started  A Macaulay2 session often starts with defining some ambient ring we will be doing computations over. Common rings such as the rationals and the integers can be defined using the commands QQ and ZZ ; one can easily take quotients or build polynomial rings (in finitely many variables) over these. For example,  i1 : R = ZZ\/101[x,y] o1 = R o1 : PolynomialRing and i1 : k = ZZ\/101; i2 : R = k[x,y];  both store the ring as , with the small difference that in the second example Macaulay2 has named the coefficient field . One quirk that might make a difference later is that if we use the first option and later set to be the field , our ring is not a polynomial ring over . Also, in the second example we ended each line with a ; , which tells Macaulay2 to run the command but not display the result of the computation — which is in this case was simply an assignment, so the result is not relevant.  We can now do all sorts of computations over our ring . For example, we can define an ideal in as follows:  i3 : I = ideal(x^2,y^2,x*y) 2 2 o3 = ideal (x , y , x*y) o3 : Ideal of R  Above we have set to be the ideal in that is generated by . The notation ideal( ) requires the usage of ^ for powers and * for products; alternatively, we can define the exact same ideal with the notation ideal\" \" , as follows:  i3 : I = ideal\"x2,y2,xy\" 2 2 o3 = ideal (x , y , x*y) o3 : Ideal of R  Now we can use this ideal to either define a quotient ring or the -module , as follows:  i4 : M = R^1\/I o4 = cokernel | x2 y2 xy | 1 o4 : R-module, quotient of R i5 : S = R\/I o5 = S o5 : QuotientRing  It's important to note that while is a ring, is the -module — this is a very important difference for Macaulay2, since these two objects have different types. So defined above is a ring, while is a module. Notice that Macaulay2 stored the module as the cokernel of the map   When you make a new definition in Macaulay2, you might want to pay attention to what ring your new object is defined over. For example, now that we defined this ring , Macaulay2 has automatically taken to be our current ambient ring, and any calculation or definition we run next will be considered over and not . If you want to return to the original ring , you must first run the command use R   If you want to work over a finitely generated algebra over one of the basic rings you can define in Macaulay2, and your ring is not a quotient of a polynomial ring, you want to rewrite this algebra as a quotient of a polynomial ring. For example, suppose you want to work over the second Veronese in variables over our field from before, meaning the algebra . We need algebra generators, which we will call corresponding to and :  o6 = U o6 : PolynomialRing i7 : f = map(R,U,{x^2,x*y,y^2}) 2 2 o7 = map(R,U,{x , x*y, y }) o7 : RingMap R <--- U i8 : J = ker f 2 o8 = ideal(b - a*c) o8 : Ideal of U i9 : T = U\/J o9 = T o9 : QuotientRing  Our ring at the end is isomorphic to the 2nd Veronese of , which is the ring we wanted. Note the syntax order in map : first target, then source, then a list with the images of each algebra generator.  "
 },
@@ -9410,7 +9194,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-asking-for-help.html",
   "type": "Section",
-  "number": "C.2",
+  "number": "B.2",
   "title": "Asking Macaulay2 for Help",
   "body": "Asking Macaulay2 for Help  As you're learning how to use Macaulay2, you will often find yourself needing some help. Luckily, Macaulay2 can help you directly! For example, suppose you know the name of a command, but do not remember the syntax to use it. You can ask ?command , and Macaulay2 will show you the different usages of the command you want to know about.  i10 : ?primaryDecomposition primaryDecomposition -- irredundant primary decomposition of an ideal * Usage: primaryDecomposition I * Inputs: * I, an ideal, in a (quotient of a) polynomial ring R * Optional inputs: * MinimalGenerators => a Boolean value, default value true, if false, the components will not be minimalized * Strategy => ..., default value null, * Outputs: * a list, containing a minimal list of primary ideals whose intersection is I Ways to use primaryDecomposition : ================================== * \"primaryDecomposition(Ideal)\" -- see \"primaryDecomposition\" -- irredundant primary decomposition of an ideal * \"primaryDecomposition(Module)\" -- irredundant primary decomposition of a module * \"primaryDecomposition(Ring)\" -- see \"primaryDecomposition(Module)\" -- irredundant primary decomposition of a module For the programmer ================== The object \"primaryDecomposition\" is a method function with options  If instead you'd rather read the complete Macaulay2 documentation on the command you are interested in, you can use the viewHelp command, which will open an html page with the documentation you asked for. So running  i11 : viewHelp \"primaryDecomposition\"  will open an html page dedicate to the method primaryDecomposition, which includes examples and links to related methods.  "
 },
@@ -9419,14 +9203,14 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-basic-commands.html",
   "type": "Section",
-  "number": "C.3",
+  "number": "B.3",
   "title": "Basic Commands",
   "body": "Basic Commands  Many Macaulay2 commands are easy to guess, and named exactly what you would expect them to be named. Often, googling “Macaulay2” followed by a few descriptive words will easily land you on the documentation for whatever you are trying to do.  Here are some basic commands you will likely use:    ideal (f_1, \\dots , f_n) will return the ideal generated by . Here products should be indicated by * , and powers with ^ . If you'd rather not use ^ (this might be nice if you have lots of powers), you can write ideal (f_1, \\dots , f_n) instead.     map S, R, (f_1, \\dots , f_n) gives a ring map if and are rings, and is a quotient of . The resulting ring map will send . There are many variations of map — for example, you can use it to define -module homomorphisms — but you should carefully input the information in the required format. Try viewHelp map in Macaulay2 for more details.     ker returns the kernel of the map .     I + J and I*J return the sum and product of the ideals and , respectively.     A = matrix\\{\\{a_1,1, \\dots , a_1,n}, \\dots , {a_m,1, \\dots , a_m,n\\}\\} returns the matrix      As in most programming languages, Macaulay2 follows the convention that the first position in a list is the th position.  The method primaryDecomposition returns a list of primary ideals whose intersection is the input ideal, and associatedPrimes returns the list of associated primes of the given ideal or module. Operations on lists are often intuitive. For example, let's say we want to find the primary component of an ideal with a particular radical.  i1 : R = QQ[x,y]; i2 : I = ideal\"x2,xy\"; o2 : Ideal of R i3 : prim = primaryDecomposition I 2 o3 = {ideal x, ideal (y, x )} o3 : List i4 : L = select(prim, Q -> radical(Q) == ideal\"x,y\") 2 o4 = {ideal (y, x )} o4 : List  The method select returns a list of all the elements in our list with the required properties. In this case, if we actually want the primary ideal we just selected, as opposed to a list containing it, we need to extract the first component of our list .  i5 : L_0 2 o5 = ideal (y, x ) o5 : Ideal of R  "
 },
 {
-  "id": "backmatter-5",
+  "id": "backmatter-4",
   "level": "1",
-  "url": "backmatter-5.html",
+  "url": "backmatter-4.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
