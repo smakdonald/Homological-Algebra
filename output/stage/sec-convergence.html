@@ -8,11 +8,11 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Convergence of Spectral Sequences</title>
+<title>Convergence</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Homological Algebra">
+<meta property="book:title" content="Postmodern Algebra">
 <meta property="book:author" content="Sam Macdonald">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
@@ -109,7 +109,7 @@ window.MathJax = {
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<h1 class="heading"><a href="book-homological.html"><span class="title">Postmodern Algebra</span></a></h1>
 <p class="byline">Sam Macdonald</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -404,7 +404,13 @@ window.MathJax = {
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
 <ul class="structural toc-item-list contains-active">
@@ -614,9 +620,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Filtered Complexes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Double Complexes</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -783,117 +789,148 @@ window.MathJax = {
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-convergence"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.4</span><span class="space"> </span><span class="title">Convergence of Spectral Sequences</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.4</span><span class="space"> </span><span class="title">Convergence</span>
 </h2>
 <div class="para" id="sec-convergence-2">But back to spectral sequences. For now, let us stick to cohomological spectral sequences; any general statement we make about these can easily be translate into a statement about homological spectral sequences.</div>
-<div class="para" id="sec-convergence-3">Definition 8.30. We say that a spectral sequence <span class="process-math">\(E=\left(E^{r}\right)\)</span> is bounded if for every <span class="process-math">\(n\)</span> there are only finitely many nonzero terms of total degree <span class="process-math">\(n\text{,}\)</span> meaning that there are only finitely many pairs <span class="process-math">\((p, q)\)</span> with <span class="process-math">\(n=p+q\)</span> such that <span class="process-math">\(E_{p, q}^{r} \neq 0\)</span> for all <span class="process-math">\(r\text{.}\)</span>
-</div>
-<div class="para" id="sec-convergence-4">Remark 8.31. Notice that if a spectral sequence is bounded, then for every <span class="process-math">\((p, q)\)</span> there exists an <span class="process-math">\(r\)</span> such that all the differentials in and out of <span class="process-math">\(E_{p, q}^{r}\)</span> are zero, and thus <span class="process-math">\(E_{p, q}^{r}=E_{p, q}^{r+1}\text{.}\)</span>
-</div>
-<div class="para" id="sec-convergence-5">Most spectral sequences one deals with end up being bounded, so we will focus only on the case of bounded spectral sequences. This guarantees that what we are about to do makes sense.</div>
+<article class="definition definition-like" id="def-8.30"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.31</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-8.30-1-1">Definition 8.30. We say that a spectral sequence <span class="process-math">\(E=\left(E^{r}\right)\)</span> is bounded if for every <span class="process-math">\(n\)</span> there are only finitely many nonzero terms of total degree <span class="process-math">\(n\text{,}\)</span> meaning that there are only finitely many pairs <span class="process-math">\((p, q)\)</span> with <span class="process-math">\(n=p+q\)</span> such that <span class="process-math">\(E_{p, q}^{r} \neq 0\)</span> for all <span class="process-math">\(r\text{.}\)</span>
+</div></article><article class="remark remark-like" id="sec-convergence-4"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.32</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-convergence-4-1">Remark 8.31. Notice that if a spectral sequence is bounded, then for every <span class="process-math">\((p, q)\)</span> there exists an <span class="process-math">\(r\)</span> such that all the differentials in and out of <span class="process-math">\(E_{p, q}^{r}\)</span> are zero, and thus <span class="process-math">\(E_{p, q}^{r}=E_{p, q}^{r+1}\text{.}\)</span>
+</div></article><div class="para" id="sec-convergence-5">Most spectral sequences one deals with end up being bounded, so we will focus only on the case of bounded spectral sequences. This guarantees that what we are about to do makes sense.</div>
 <div class="para" id="sec-convergence-6">From the data in a spectral sequence <span class="process-math">\(E\)</span> we define a limiting page <span class="process-math">\(E_{\infty}\text{,}\)</span> which can often be identified with some interesting object (for example, the homology of a complex we care about). These <span class="process-math">\(E_{\infty}\)</span> pages are sort of the whole point of the spectral sequence business, as they contain (pieces of) the information we want to compute.</div>
-<div class="para" id="sec-convergence-7">Construction 8.32 ( <span class="process-math">\(E_{\infty}\)</span> page). Set</div>
-<div class="para logical" id="sec-convergence-8"><div class="displaymath process-math">
+<div class="para logical" id="sec-convergence-7">
+<div class="para">Construction 8.32 ( <span class="process-math">\(E_{\infty}\)</span> page). Set</div>
+<div class="displaymath process-math">
 \begin{equation*}
 B_{0}:=0 \quad \text { and } \quad Z_{0}=E_{0}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-9">so that <span class="process-math">\(E_{0}=Z_{0} / B_{0}\text{.}\)</span> At each stage <span class="process-math">\(r\text{,}\)</span> given <span class="process-math">\(B_{r} \subseteq Z_{r}\)</span> such that <span class="process-math">\(E_{r} \cong Z_{r} / B_{r}\text{,}\)</span> we define</div>
-<div class="para logical" id="sec-convergence-10"><div class="displaymath process-math">
+</div>
+<div class="para">so that <span class="process-math">\(E_{0}=Z_{0} / B_{0}\text{.}\)</span> At each stage <span class="process-math">\(r\text{,}\)</span> given <span class="process-math">\(B_{r} \subseteq Z_{r}\)</span> such that <span class="process-math">\(E_{r} \cong Z_{r} / B_{r}\text{,}\)</span> we define</div>
+<div class="displaymath process-math">
 \begin{equation*}
 Z_{r+1}:=\operatorname{ker}\left(Z_{r} \longrightarrow Z_{r} / B_{r}=E_{r} \stackrel{d_{r}}{\longrightarrow} E_{r}=Z_{r} / B_{r}\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-11">and <span class="process-math">\(B_{r+1}\)</span> such that <span class="process-math">\(B_{r} \subseteq B_{r+1} \subseteq Z_{r}\)</span> and</div>
-<div class="para logical" id="sec-convergence-12"><div class="displaymath process-math">
+</div>
+<div class="para">and <span class="process-math">\(B_{r+1}\)</span> such that <span class="process-math">\(B_{r} \subseteq B_{r+1} \subseteq Z_{r}\)</span> and</div>
+<div class="displaymath process-math">
 \begin{equation*}
 B_{r+1} / B_{r}:=\operatorname{im}\left(Z_{r} \longrightarrow Z_{r} / B_{r}=E_{r} \stackrel{d_{r}}{\longrightarrow} E_{r}=Z_{r} / B_{r}\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-13">At each stage,</div>
-<div class="para logical" id="sec-convergence-14"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-convergence-8">
+<div class="para">At each stage,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 B_{r} \subseteq B_{r+1} \subseteq Z_{r+1} \subseteq Z_{r}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-15">and</div>
-<div class="para logical" id="sec-convergence-16"><div class="displaymath process-math">
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{r+1}=H\left(E_{r}\right)=\cong Z_{r+1} / B_{r+1}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-17">Thus we get chains</div>
-<div class="para logical" id="sec-convergence-18"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-convergence-9">
+<div class="para">Thus we get chains</div>
+<div class="displaymath process-math">
 \begin{equation*}
 0=B_{0} \subseteq B_{1} \subseteq B_{2} \subseteq \cdots \subseteq Z_{r} \subseteq Z_{r-1} \subseteq \cdots \subseteq Z_{1} \subseteq Z_{0}=E_{0}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-19">We say that <span class="process-math">\(Z_{r}\)</span> consists of the elements that survive until stage <span class="process-math">\(r\text{,}\)</span> while <span class="process-math">\(B_{r}\)</span> consists of the elements that are in the image of the differentials by stage <span class="process-math">\(r\text{.}\)</span> We define</div>
-<div class="para logical" id="sec-convergence-20"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-convergence-10">
+<div class="para">We say that <span class="process-math">\(Z_{r}\)</span> consists of the elements that survive until stage <span class="process-math">\(r\text{,}\)</span> while <span class="process-math">\(B_{r}\)</span> consists of the elements that are in the image of the differentials by stage <span class="process-math">\(r\text{.}\)</span> We define</div>
+<div class="displaymath process-math">
 \begin{equation*}
 B_{\infty}:=\bigcup_{i} B_{i} \quad \text { and } \quad B_{\infty}:=\bigcap_{i} Z_{i}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-21">The elements in <span class="process-math">\(B_{\infty}^{p, q}\)</span> are the (classes of) those elements in <span class="process-math">\(E_{0}^{p, q}\)</span> that are in the image of the differential at some stage; we say these are the elements that are eventually bound. The elements in <span class="process-math">\(Z_{\infty}^{p, q}\)</span> are the (classes of) those elements in <span class="process-math">\(E_{0}^{p, q}\)</span> that are in the kernel of all the differentials at all stages, so they survive forever or live forever.</div>
-<div class="para" id="sec-convergence-22">Definition 8.33. Given a homological spectral sequence <span class="process-math">\(E=\left(E_{r}\right)\text{,}\)</span> the <span class="process-math">\(E_{\infty}\)</span> page is the bigraded module given by</div>
-<div class="para logical" id="sec-convergence-23"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para" id="sec-convergence-11">The elements in <span class="process-math">\(B_{\infty}^{p, q}\)</span> are the (classes of) those elements in <span class="process-math">\(E_{0}^{p, q}\)</span> that are in the image of the differential at some stage; we say these are the elements that are eventually bound. The elements in <span class="process-math">\(Z_{\infty}^{p, q}\)</span> are the (classes of) those elements in <span class="process-math">\(E_{0}^{p, q}\)</span> that are in the kernel of all the differentials at all stages, so they survive forever or live forever.</div>
+<article class="definition definition-like" id="def-8.33"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.33</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.33-1-1">
+<div class="para">Definition 8.33. Given a homological spectral sequence <span class="process-math">\(E=\left(E_{r}\right)\text{,}\)</span> the <span class="process-math">\(E_{\infty}\)</span> page is the bigraded module given by</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{\infty}^{p, q}:=Z_{\infty}^{p, q} / B_{\infty}^{p, q}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-24">Similarly, given a cohomological spectral sequence <span class="process-math">\(\left(E^{r}\right)\)</span> one can define <span class="process-math">\(Z^{r}\)</span> and <span class="process-math">\(B^{r}, Z^{\infty}\)</span> and <span class="process-math">\(B^{\infty}\text{,}\)</span> and the <span class="process-math">\(E^{\infty}\)</span> page</div>
-<div class="para logical" id="sec-convergence-25"><div class="displaymath process-math">
+</div>
+</div> <div class="para logical" id="def-8.33-1-2">
+<div class="para">Similarly, given a cohomological spectral sequence <span class="process-math">\(\left(E^{r}\right)\)</span> one can define <span class="process-math">\(Z^{r}\)</span> and <span class="process-math">\(B^{r}, Z^{\infty}\)</span> and <span class="process-math">\(B^{\infty}\text{,}\)</span> and the <span class="process-math">\(E^{\infty}\)</span> page</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{\infty}:=Z_{p, q}^{\infty} / B_{p, q}^{\infty}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-26">Lemma 8.34. Let <span class="process-math">\(E=\left(E_{r}\right)\)</span> be a spectral sequence. We have</div>
-<div class="para logical" id="sec-convergence-27"><div class="displaymath process-math">
+</div>
+</div></article><article class="lemma theorem-like" id="lem-8.34"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">8.34</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="lem-8.34-1-1">
+<div class="para">Lemma 8.34. Let <span class="process-math">\(E=\left(E_{r}\right)\)</span> be a spectral sequence. We have</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{r+1}=E_{r} \Longleftrightarrow Z_{r+1}=Z_{r} \text { and } B_{r+1}=B_{r} \text {. }
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-28">Proof. In general, if <span class="process-math">\(X / Y\)</span> is a subquotient of <span class="process-math">\(Z\text{,}\)</span> we have <span class="process-math">\(Y \subseteq X \subseteq Z\text{,}\)</span> so <span class="process-math">\(X / Y=Z\)</span> if and only if <span class="process-math">\(Y=0\)</span> and <span class="process-math">\(X=Z\text{.}\)</span> If <span class="process-math">\(E_{r+1}=E_{r}\text{,}\)</span> then</div>
-<div class="para logical" id="sec-convergence-29"><div class="displaymath process-math">
+</div>
+</div></article><details id="lem-8.34-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="lem-8.34-2-1">
+<div class="para">Proof. In general, if <span class="process-math">\(X / Y\)</span> is a subquotient of <span class="process-math">\(Z\text{,}\)</span> we have <span class="process-math">\(Y \subseteq X \subseteq Z\text{,}\)</span> so <span class="process-math">\(X / Y=Z\)</span> if and only if <span class="process-math">\(Y=0\)</span> and <span class="process-math">\(X=Z\text{.}\)</span> If <span class="process-math">\(E_{r+1}=E_{r}\text{,}\)</span> then</div>
+<div class="displaymath process-math">
 \begin{equation*}
 Z_{r+1} / B_{r+1}=E_{r+1}=E_{r}=Z_{r} / B_{r},
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-30">so <span class="process-math">\(B_{r+1}=0\)</span> in <span class="process-math">\(Z_{r} / B_{r}\text{,}\)</span> so we must have <span class="process-math">\(B_{r+1}=B_{r}\text{.}\)</span> But then</div>
-<div class="para logical" id="sec-convergence-31"><div class="displaymath process-math">
+</div>
+<div class="para">so <span class="process-math">\(B_{r+1}=0\)</span> in <span class="process-math">\(Z_{r} / B_{r}\text{,}\)</span> so we must have <span class="process-math">\(B_{r+1}=B_{r}\text{.}\)</span> But then</div>
+<div class="displaymath process-math">
 \begin{equation*}
 Z_{r+1} / B_{r}=Z_{r} / B_{r}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-32">so <span class="process-math">\(Z_{r+1}=Z_{r}\text{.}\)</span>
 </div>
-<div class="para" id="sec-convergence-33">Conversely, if <span class="process-math">\(Z_{r+1}=Z_{r}\)</span> and <span class="process-math">\(B_{r+1}=B_{r}\text{,}\)</span> then</div>
-<div class="para logical" id="sec-convergence-34"><div class="displaymath process-math">
+<div class="para">so <span class="process-math">\(Z_{r+1}=Z_{r}\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="lem-8.34-2-2">
+<div class="para">Conversely, if <span class="process-math">\(Z_{r+1}=Z_{r}\)</span> and <span class="process-math">\(B_{r+1}=B_{r}\text{,}\)</span> then</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{r+1}=Z_{r+1} / B_{r+1}=Z_{r} / B_{r}=E_{r} .
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-35">This <span class="process-math">\(E^{\infty}\)</span> is easier to compute in the following special cases.</div>
-<div class="para" id="sec-convergence-36">Definition 8.35. We say that a spectral sequence <span class="process-math">\(E=\left(E_{r}\right)\)</span> degenerates at the <span class="process-math">\(n\)</span>th page if <span class="process-math">\(d_{r}=0\)</span> for all <span class="process-math">\(r \geqslant n\text{.}\)</span>
 </div>
-<div class="para" id="sec-convergence-37">Remark 8.36. If a spectral sequence degenerates at the <span class="process-math">\(r\)</span> th page, then <span class="process-math">\(E_{r}\)</span> is a limit term for the spectral sequence, in the sense that <span class="process-math">\(E_{s}=E_{r}\)</span> for all <span class="process-math">\(s \geqslant r\text{,}\)</span> and <span class="process-math">\(E_{\infty}=E_{r}\text{.}\)</span>
-</div>
-<div class="para" id="sec-convergence-38">Example 8.37. Let <span class="process-math">\(E\)</span> be a spectral sequence. If the <span class="process-math">\(r\)</span> th page is concentrated in one row or one columnn, we say that the spectral sequence collapses at the <span class="process-math">\(r\)</span> th page. Notice that in such situations the spectral sequence will automatically degenerate at the <span class="process-math">\(r\)</span> th page.</div>
-<div class="para" id="sec-convergence-39">Definition 8.38. Le <span class="process-math">\(H\)</span> be a graded <span class="process-math">\(R\)</span>-module. We say that a spectral sequence <span class="process-math">\(E=\left(E^{r}\right)\)</span> converges to the graded <span class="process-math">\(R\)</span>-module <span class="process-math">\(H=\left(H_{n}\right)\text{,}\)</span> and denote it by</div>
-<div class="para logical" id="sec-convergence-40"><div class="displaymath process-math">
+</div></article></details><div class="para" id="sec-convergence-14">This <span class="process-math">\(E^{\infty}\)</span> is easier to compute in the following special cases.</div>
+<article class="definition definition-like" id="def-8.35"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.35</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-8.35-1-1">Definition 8.35. We say that a spectral sequence <span class="process-math">\(E=\left(E_{r}\right)\)</span> degenerates at the <span class="process-math">\(n\)</span>th page if <span class="process-math">\(d_{r}=0\)</span> for all <span class="process-math">\(r \geqslant n\text{.}\)</span>
+</div></article><article class="remark remark-like" id="sec-convergence-16"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.36</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-convergence-16-1">Remark 8.36. If a spectral sequence degenerates at the <span class="process-math">\(r\)</span> th page, then <span class="process-math">\(E_{r}\)</span> is a limit term for the spectral sequence, in the sense that <span class="process-math">\(E_{s}=E_{r}\)</span> for all <span class="process-math">\(s \geqslant r\text{,}\)</span> and <span class="process-math">\(E_{\infty}=E_{r}\text{.}\)</span>
+</div></article><article class="example example-like" id="sec-convergence-17"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.37</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-convergence-17-1">Example 8.37. Let <span class="process-math">\(E\)</span> be a spectral sequence. If the <span class="process-math">\(r\)</span> th page is concentrated in one row or one columnn, we say that the spectral sequence collapses at the <span class="process-math">\(r\)</span> th page. Notice that in such situations the spectral sequence will automatically degenerate at the <span class="process-math">\(r\)</span> th page.</div></article><article class="definition definition-like" id="def-8.36"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.38</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.36-1-1">
+<div class="para">Definition 8.38. Le <span class="process-math">\(H\)</span> be a graded <span class="process-math">\(R\)</span>-module. We say that a spectral sequence <span class="process-math">\(E=\left(E^{r}\right)\)</span> converges to the graded <span class="process-math">\(R\)</span>-module <span class="process-math">\(H=\left(H_{n}\right)\text{,}\)</span> and denote it by</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{2}^{p, q} \Longrightarrow H_{p+q}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-41">if there exists a bounded filtration <span class="process-math">\(F^{\bullet}\)</span> for <span class="process-math">\(H\)</span> such that</div>
-<div class="para logical" id="sec-convergence-42"><div class="displaymath process-math">
+</div>
+<div class="para">if there exists a bounded filtration <span class="process-math">\(F^{\bullet}\)</span> for <span class="process-math">\(H\)</span> such that</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{\infty}^{p, q} \cong F^{p} H_{p+q} / F^{p-1} H_{p+q} \quad \text { for all } p, q
 \end{equation*}
-</div></div>
-<div class="para" id="sec-convergence-43">Alternatively, we may write <span class="process-math">\(E_{r}^{p, q} \Longrightarrow H_{p+q}\)</span> for some other fixed choice of <span class="process-math">\(r\)</span> besides <span class="process-math">\(r=2\text{.}\)</span>
 </div>
-<div class="para" id="sec-convergence-44">We have the basic definitions but we haven’t yet seen any examples. This is by design; to give a good example of a spectral sequence we need to do a bit more work than to give a starting example for a run of the mill definition. In the next few sections we will discuss some of the ways in which spectral sequences arise. There are, however, many interesting spectral sequences one would discuss in a first course that we do not have the time to cover. We strongly encourage the reader to seek out better sources, such as those we listed in the beginning of the chapter.</div></section></div>
+</div></article><div class="para" id="sec-convergence-19">Alternatively, we may write <span class="process-math">\(E_{r}^{p, q} \Longrightarrow H_{p+q}\)</span> for some other fixed choice of <span class="process-math">\(r\)</span> besides <span class="process-math">\(r=2\text{.}\)</span> We have the basic definitions but we haven’t yet seen any examples. This is by design; to give a good example of a spectral sequence we need to do a bit more work than to give a starting example for a run of the mill definition. In the next few sections we will discuss some of the ways in which spectral sequences arise. There are, however, many interesting spectral sequences one would discuss in a first course that we do not have the time to cover. We strongly encourage the reader to seek out better sources, such as those we listed in the beginning of the chapter.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-filtrations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-spec-filt.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

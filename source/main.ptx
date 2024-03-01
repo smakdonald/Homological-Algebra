@@ -14879,81 +14879,40 @@
     
           <p>
             Inspired by this, we define
-          </p>
-    
-          <p>
             <me>E_{p, q}^{r}:=\frac{\left\{x \in F^{p} C_{p+q} \mid \partial(x) \in F^{p-r} C_{p+q-1}\right\}}{F^{p-1} C_{p+q}+\partial\left(F^{p+r-1} C_{p+q+1}\right)}</me>
           </p>
     
           <p>
             Now given <m>x \in F^{p} C_{p+q}</m> representing a class <m>[x] \in E_{p, q}^{r}</m>, by definition
-          </p>
-    
-          <p>
             <me>\partial(x) \in F^{p-r} C_{p+q-1}</me>
-          </p>
-    
-          <p>
             so we define
-          </p>
-    
-          <p>
             <me>d_{r}([x])=[\partial(x)] \in E_{p-r, q+r-1}^{r}=\frac{\left\{y \in F^{p-r} C_{p+q-1} \mid \partial(y) \in F^{p-2 r} C_{p+q-2}\right\}}{F^{p-r-1} C_{p+q-1}+\partial\left(F^{p-1} C_{p+q}\right)}</me>
           </p>
     
           <p>
-            We claim that this is well-defined, and leave the details as an exercise. Moreover, <m>d_{r}^{2}=0</m> since <m>\partial^{2}=0</m>. Finally, each class in the kernel of <m>d_{r}</m> is represented by some <m>x \in F^{p} C_{p+q}</m> such that <m>\partial(x) \in F^{p-r-1} C_{p+q-1}</m>, while the image of <m>d_{r}: E_{p+r, q-r+1}^{r} \rightarrow E_{p, q}^{r}</m> consists of the image of <m>\partial\left(F^{p+r} C_{p+q+1}\right)</m>. Ultimately, this gives us an isomorphism
-          </p>
-    
-          <p>
+            We claim that this is well-defined, and leave the details as an exercise. 
+            Moreover, <m>d_{r}^{2}=0</m> since <m>\partial^{2}=0</m>. 
+            Finally, each class in the kernel of <m>d_{r}</m> is represented by some <m>x \in F^{p} C_{p+q}</m> such that <m>\partial(x) \in F^{p-r-1} C_{p+q-1}</m>, while the image of <m>d_{r}: E_{p+r, q-r+1}^{r} \rightarrow E_{p, q}^{r}</m> consists of the image of <m>\partial\left(F^{p+r} C_{p+q+1}\right)</m>. 
+            Ultimately, this gives us an isomorphism
             <me>E_{p, q}^{r+1} \cong \mathrm{H}_{p, q}\left(E^{r}\right)</me>
           </p>
     
           <p>
-            Theorem 8.39. Let <m>(C, \partial)</m> be a filtered complex with filtration <m>F^{\bullet} C</m>, and let
-          </p>
-    
-          <p>
+            Theorem 8.39. 
+            Let <m>(C, \partial)</m> be a filtered complex with filtration <m>F^{\bullet} C</m>, and let
             <me>E_{p, q}^{r}:=\frac{\left\{x \in F^{p} C_{p+q} \mid \partial(x) \in F^{p-r} C_{p+q-1}\right\}}{F^{p-1} C_{p+q}+\partial\left(F^{p+r-1} C_{p+q+1}\right)}</me>
           </p>
     
           <p>
             Then <m>\partial</m> induces a well-defined map
-          </p>
-    
-          <p>
             <me>d_{r}: E_{p, q}^{r} \rightarrow E_{p-r, q+r-1}^{r}</me>
-          </p>
-    
-          <p>
             such that <m>d_{r} d_{r}=0</m>, and
-          </p>
-    
-          <p>
             <me>E_{p, q}^{r+1} \cong \mathrm{H}_{p, q}\left(E^{r}\right)</me>
-          </p>
-    
-          <p>
             Thus this gives us a spectral sequence with
-          </p>
-    
-          <p>
             <me>E_{p, q}^{1}=\mathrm{H}_{p+q}\left(G_{p} C_{\bullet}^{\bullet}\right)</me>
-          </p>
-    
-          <p>
             Moreover, if for all <m>n</m> the filtration <m>F^{\bullet} C_{n}</m> of <m>C_{n}</m> stabilizes, then the spectral sequence converges to
-          </p>
-    
-          <p>
             <me>E_{p, q}^{\infty}=G_{p} \mathrm{H}_{p+q}\left(C_{\bullet}\right)=F^{p} \mathrm{H}_{p+q}\left(C_{\bullet}\right) / F^{p-1} \mathrm{H}_{p+q}\left(C_{\bullet}\right)</me>
-          </p>
-    
-          <p>
             Thus
-          </p>
-    
-          <p>
             <me>E_{p, q}^{\infty} \Rightarrow \mathrm{H}_{p+q}(C)</me>
           </p>
     
@@ -14962,39 +14921,24 @@
           </p>
     
           <p>
-            Example 8.40. Consider any short exact sequence of complexes, which we can always write as the inclusion of a subcomplex <m>A</m> into a complex <m>B</m> followed by the quotient map:
-          </p>
-    
-          <p>
+            Example 8.40. 
+            Consider any short exact sequence of complexes, which we can always write as the inclusion of a subcomplex <m>A</m> into a complex <m>B</m> followed by the quotient map:
             <me>0 \longrightarrow A \xrightarrow{i} B \stackrel{\pi}{\longrightarrow} A / B \longrightarrow 0</me>
-          </p>
-    
-          <p>
             It turns out that we can recover the long exact sequence in homology given by the Snake Lemma via a spectral sequence.
-          </p>
-    
-          <p>
+
             To do that, we can think of the inclusion <m>A \subseteq B</m> as a filtration on <m>C=B</m> : we set
-          </p>
-    
-          <p>
             <me>F^{n} C= \begin{cases}0 &amp; \text { if } n&lt;0 \\ A &amp; \text { if } n=0 \\ B &amp; \text { if } n \geqslant 1\end{cases}</me>
           </p>
     
           <p>
-            Let us compute the spectral sequence of this filtered complex. First, note that In <m>E^{0}</m> page, we have
-          </p>
-    
-          <p>
+            Let us compute the spectral sequence of this filtered complex. 
+            First, note that In <m>E^{0}</m> page, we have
             <me>E_{0, q}^{0}=F^{0} C_{q} / F^{-1} C_{q}=A_{q} \quad \text { and } \quad E_{1, q}^{0}=F^{1} C_{q+1} / F^{0} C_{q+1}=B_{q+1} / A_{q+1} \text {. }</me>
+            The differential <m>d^{0}</m> on the <m>E^{0}</m> page is induced by the differential <m>\partial</m> on <m>A</m> and <m>B</m>. 
+            Note that we denote the differential on both complexes <m>A</m> and <m>B</m> by the same letter since the differential on <m>A</m> is just the restriction of the differential on <m>B</m>. So the <m>E^{0}</m> page looks like
           </p>
     
-          <p>
-            The differential <m>d^{0}</m> on the <m>E^{0}</m> page is induced by the differential <m>\partial</m> on <m>A</m> and <m>B</m>. Note that we denote the differential on both complexes <m>A</m> and <m>B</m> by the same letter since the differential on <m>A</m> is just the restriction of the differential on <m>B</m>. So the <m>E^{0}</m> page looks like
-          </p>
-    
-  
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-40"/>
+          <image source="2024_01_10_e73c1aec4ffc24ca9984g-40"/>
             
           <p>
             where only the 0th and first columns are nonzero.
@@ -15002,186 +14946,117 @@
     
           <p>
             The <m>E^{1}</m> page is obtained by taking homology, so it looks like
-          </p>
-    
-          <p>
-            <me>\begin{aligned}
-    &amp; \mathrm{H}_{q+1}(A) \stackrel{\partial}{\longleftarrow} \mathrm{H}_{q+2}(B / A) \\
-    &amp; E^{1} \mathrm{H}_{q}(A) \stackrel{\partial}{\longleftarrow} \mathrm{H}_{q+1}(B / A) \\
-    &amp; \mathrm{H}_{q-1}(A) \stackrel{\partial}{\longleftarrow} \mathrm{H}_{q}(B / A)
-    \end{aligned}</me>
-          </p>
-    
-          <p>
-            and the differentials <m>d^{1}</m>, which are now horizontal, are induced by <m>\partial</m>. More precisely, we can rewrite the terms on the right column as
-          </p>
-    
-          <p>
+            <me>
+              \begin{aligned}
+              &amp; \mathrm{H}_{q+1}(A) \stackrel{\partial}{\longleftarrow} \mathrm{H}_{q+2}(B / A) \\
+              &amp; E^{1} \mathrm{H}_{q}(A) \stackrel{\partial}{\longleftarrow} \mathrm{H}_{q+1}(B / A) \\
+              &amp; \mathrm{H}_{q-1}(A) \stackrel{\partial}{\longleftarrow} \mathrm{H}_{q}(B / A)
+              \end{aligned}
+            </me>
+            and the differentials <m>d^{1}</m>, which are now horizontal, are induced by <m>\partial</m>. 
+            More precisely, we can rewrite the terms on the right column as
             <me>E_{1, q}^{1}=\mathrm{H}_{q+1}(B / A)=\frac{\left\{x \in B_{q+1} \mid \partial(x) \in A_{q}\right\}}{A_{q+1}+\partial\left(B_{q+2}\right)}</me>
-          </p>
-    
-          <p>
-            and so by definition any class <m>[x] \in E_{q, 1}^{1}</m> is represented by some <m>x \in B_{q+1}</m> such that <m>\partial(x) \in A_{q}</m>. Since <m>\partial^{2}=0</m>, then <m>\partial(x) \in Z_{q}(A)</m>, and so we can ask about the class of <m>\partial(x)</m> in <m>\mathrm{H}_{q}(Z)</m>. So the differential <m>d^{1}</m> on <m>E^{1}</m> is given by
-          </p>
-    
-          <p>
-            <me>\begin{aligned}
-    &amp; E_{1, q}^{1}=\frac{\left\{x \in B_{q+1} \mid \partial(x) \in A_{q}\right\}}{A_{q+1}+\partial\left(B_{q+2}\right)} \longrightarrow \mathrm{H}_{q}(A) \\
-    &amp; {[x] \longmapsto[\partial(x)] . }
-    \end{aligned}</me>
+            and so by definition any class <m>[x] \in E_{q, 1}^{1}</m> is represented by some <m>x \in B_{q+1}</m> such that <m>\partial(x) \in A_{q}</m>. 
+            Since <m>\partial^{2}=0</m>, then <m>\partial(x) \in Z_{q}(A)</m>, and so we can ask about the class of <m>\partial(x)</m> in <m>\mathrm{H}_{q}(Z)</m>. 
+            So the differential <m>d^{1}</m> on <m>E^{1}</m> is given by
+            <me>
+              \begin{aligned}
+              &amp; E_{1, q}^{1}=\frac{\left\{x \in B_{q+1} \mid \partial(x) \in A_{q}\right\}}{A_{q+1}+\partial\left(B_{q+2}\right)} \longrightarrow \mathrm{H}_{q}(A) \\
+              &amp; {[x] \longmapsto[\partial(x)] . }
+              \end{aligned}
+            </me>
           </p>
     
           <p>
             Now onto the <m>E^{2}</m> page, where
-          </p>
-    
-          <p>
             <me>E_{1, q}^{2}=\mathrm{H}_{1, q}\left(E^{1}\right)=\operatorname{ker}\left(E_{1, q}^{1} \stackrel{d^{1}}{\longrightarrow} E_{0, q}^{1}\right)</me>
-          </p>
-    
-          <p>
             and
-          </p>
-    
-          <p>
             <me>E_{0, q}^{2}=\mathrm{H}_{0, q}\left(E^{1}\right)=\mathrm{H}_{q}(A) / \operatorname{im}\left(d^{1}\right)</me>
           </p>
     
           <p>
-            Note now that <m>d^{2}</m> is a map of degree <m>(-2,1)</m>, and thus <m>d^{2}=2</m>, since we always have zero as the source or target (or both) of <m>d^{2}</m>. Thus <m>E_{p, q}^{n}=E_{p, q}^{2}</m> for all <m>n \geqslant 2</m>, and so by Theorem 8.39 this spectral sequence converges, with
-          </p>
-    
-          <p>
+            Note now that <m>d^{2}</m> is a map of degree <m>(-2,1)</m>, and thus <m>d^{2}=2</m>, since we always have zero as the source or target (or both) of <m>d^{2}</m>. 
+            Thus <m>E_{p, q}^{n}=E_{p, q}^{2}</m> for all <m>n \geqslant 2</m>, and so by Theorem 8.39 this spectral sequence converges, with
             <me>E_{p, q}^{\infty} \cong F^{p} \mathrm{H}_{p+q}(C) / F^{p-1} \mathrm{H}_{p+q}(C)</me>
           </p>
     
           <p>
             Now <m>F^{1} \mathrm{H}_{n}(C)=\mathrm{H}_{n}(B)</m>, while
-          </p>
-    
-          <p>
             <me>F^{0} \mathrm{H}_{n}(C)=\operatorname{im}\left(\mathrm{H}_{n}(A) \rightarrow \mathrm{H}_{n}(B)\right) \text {. }</me>
           </p>
     
           <p>
-            Here the map <m>\mathrm{H}(A) \rightarrow \mathrm{H}(B)</m> is the map induced by the original inclusion of <m>A</m> into <m>B</m>. Moreover, <m>F^{n} \mathrm{H}(C)=0</m> for all <m>n&lt;0</m> and <m>F^{n} \mathrm{H}(C)=\mathrm{H}(B)</m> for all <m>n \geqslant 1</m>. So for all <m>n</m> we get isomorphisms
-          </p>
-    
-          <p>
+            Here the map <m>\mathrm{H}(A) \rightarrow \mathrm{H}(B)</m> is the map induced by the original inclusion of <m>A</m> into <m>B</m>. 
+            Moreover, <m>F^{n} \mathrm{H}(C)=0</m> for all <m>n&lt;0</m> and <m>F^{n} \mathrm{H}(C)=\mathrm{H}(B)</m> for all <m>n \geqslant 1</m>. 
+            So for all <m>n</m> we get isomorphisms
             <me>\operatorname{ker}\left(E_{1, n-1}^{1} \stackrel{d^{1}}{\longrightarrow} E_{0, n-1}^{1}\right) \cong \mathrm{H}_{n}(B) / \operatorname{im}\left(\mathrm{H}_{n}(A) \rightarrow \mathrm{H}_{n}(B)\right)=\mathrm{H}_{n}(B) / \operatorname{im~}_{n}(i)</me>
-          </p>
-    
-          <p>
             and
-          </p>
-    
-          <p>
             <me>\mathrm{H}_{n}(A) / \operatorname{im}\left(d^{1}\right) \cong \operatorname{im}\left(\mathrm{H}_{n}(A) \rightarrow \mathrm{H}_{n}(B)\right)=\operatorname{im}\left(\mathrm{H}_{n}(i)\right)</me>
           </p>
     
           <p>
-            So we now have all the tools we need to construct the long exact sequence in homology from this spectral sequence. First, we construct a complex. Our map <m>d^{1}</m> from the spectral sequence gives us homomorphisms
-          </p>
-    
-          <p>
+            So we now have all the tools we need to construct the long exact sequence in homology from this spectral sequence. 
+            First, we construct a complex. 
+            Our map <m>d^{1}</m> from the spectral sequence gives us homomorphisms
             <me>\mathrm{H}_{n+1}(B / A) \stackrel{d^{1}}{\longrightarrow} \mathrm{H}_{n}(A) .</me>
           </p>
     
           <p>
-            By definition, <m>d^{1}([x])=[\partial(x)]</m>; composing this with the map <m>\mathrm{H}_{n}(i): \mathrm{H}_{n}(A) \rightarrow \mathrm{H}(B)</m> consists of viewing <m>\partial(x) \in Z_{n}(B / A)</m> and asking for its class in <m>\mathrm{H}_{n}(B)</m>. But <m>\partial(x) \in A_{n} \subseteq Z_{n}(B / A)</m>, so the composition
-          </p>
-    
-          <p>
+            By definition, <m>d^{1}([x])=[\partial(x)]</m>; composing this with the map <m>\mathrm{H}_{n}(i): \mathrm{H}_{n}(A) \rightarrow \mathrm{H}(B)</m> consists of viewing <m>\partial(x) \in Z_{n}(B / A)</m> and asking for its class in <m>\mathrm{H}_{n}(B)</m>. 
+            But <m>\partial(x) \in A_{n} \subseteq Z_{n}(B / A)</m>, so the composition
             <me>\mathrm{H}_{n+1}(B / A) \stackrel{d^{1}}{\longrightarrow} \mathrm{H}_{n}(A) \stackrel{\mathrm{H}_{n}(i)}{\longrightarrow} \mathrm{H}_{n}(B)</me>
-          </p>
-    
-          <p>
             is zero.
           </p>
     
           <p>
-            Similarly, the map <m>\mathrm{H}_{n+1}(B) \rightarrow \mathrm{H}_{n+1}(A)</m> takes a class <m>[y] \in \mathrm{H}_{n}(B)</m>, represented by <m>y \in</m> <m>Z_{n}(B)</m>, and identifies <m>y</m> with its image in <m>Z_{n}(B) \subseteq Z_{n}(B / A)</m>. But <m>\partial(y)=0</m> by definition, so <m>[\partial(y)]=0</m> and the composition
-          </p>
-    
-          <p>
-            <me>\begin{array}{r}
-    \mathrm{H}_{n+1}(B) \longrightarrow \mathrm{H}_{n+1}(B / A) \stackrel{d^{1}}{\longrightarrow} \mathrm{H}_{n}(A) \\
-    \quad[y] \longmapsto[y] \longmapsto[\partial(y)]
-    \end{array}</me>
-          </p>
-    
-          <p>
-            is the zero map. Moreover, <m>\mathrm{H}_{n}</m> is an additive functor, and thus it takes <m>A \rightarrow B \rightarrow B / A</m> to a complex, so putting it all together we get a complex
-          </p>
-    
-          <p>
+            Similarly, the map <m>\mathrm{H}_{n+1}(B) \rightarrow \mathrm{H}_{n+1}(A)</m> takes a class <m>[y] \in \mathrm{H}_{n}(B)</m>, represented by <m>y \in</m> <m>Z_{n}(B)</m>, and identifies <m>y</m> with its image in <m>Z_{n}(B) \subseteq Z_{n}(B / A)</m>. 
+            But <m>\partial(y)=0</m> by definition, so <m>[\partial(y)]=0</m> and the composition
+            <me>
+              \begin{array}{r}
+              \mathrm{H}_{n+1}(B) \longrightarrow \mathrm{H}_{n+1}(B / A) \stackrel{d^{1}}{\longrightarrow} \mathrm{H}_{n}(A) \\
+              \quad[y] \longmapsto[y] \longmapsto[\partial(y)]
+              \end{array}
+            </me>
+            is the zero map. 
+            Moreover, <m>\mathrm{H}_{n}</m> is an additive functor, and thus it takes <m>A \rightarrow B \rightarrow B / A</m> to a complex, so putting it all together we get a complex
             <me>\mathrm{H}_{n+1}(B / A) \stackrel{d^{1}}{\longrightarrow} \mathrm{H}_{n}(A) \stackrel{\mathrm{H}_{n}(i)}{\longrightarrow} \mathrm{H}_{n}(B) \stackrel{\mathrm{H}_{n}(\pi)}{\longrightarrow} \mathrm{H}_{n}(B / A) \xrightarrow{d^{1}} \mathrm{H}_{n-1}(A)</me>
           </p>
     
           <p>
-            All that is left is for us to check that exactness follows from our spectral sequence. On the one hand, the fact that this is a complex says that
-          </p>
-    
-          <p>
+            All that is left is for us to check that exactness follows from our spectral sequence. 
+            On the one hand, the fact that this is a complex says that
             <me>\operatorname{im}\left(d^{1}\right) \subseteq \operatorname{ker}\left(\mathrm{H}_{n}(i)\right)</me>
-          </p>
-    
-          <p>
             but our spectral sequence gave us the isomorphism
-          </p>
-    
-          <p>
             <me>\mathrm{H}_{n}(A) / \operatorname{im}\left(d^{1}\right) \cong \operatorname{im}\left(\mathrm{H}_{n}(i)\right)</me>
-          </p>
-    
-          <p>
             so by the First Isomorphism Theorem we get
-          </p>
-    
-          <p>
             <me>\mathrm{H}_{n}(A) / \operatorname{ker}\left(\mathrm{H}_{n}(i)\right) \cong \operatorname{im}\left(\mathrm{H}_{n}(i)\right) \cong \mathrm{H}_{n}(A) / \operatorname{im}\left(d^{1}\right)</me>
           </p>
     
           <p>
-            We can now conclude that <m>\operatorname{im}\left(d^{1}\right)=\operatorname{ker} \mathrm{H}_{n}(i)</m>. This gives us exactness at <m>\mathrm{H}_{n}(A)</m>. Similarly, we claim that the fact that we have a complex gives us a map
+            We can now conclude that <m>\operatorname{im}\left(d^{1}\right)=\operatorname{ker} \mathrm{H}_{n}(i)</m>. 
+            This gives us exactness at <m>\mathrm{H}_{n}(A)</m>. 
+            Similarly, we claim that the fact that we have a complex gives us a map
+            <me>
+              \begin{gathered}
+              \operatorname{coker}\left(\mathrm{H}_{n}(i)\right) \stackrel{\psi}{\longrightarrow} \operatorname{ker}\left(d^{1}\right) \\
+              x+\operatorname{im}\left(\mathrm{H}_{n}(i)\right) \longmapsto \mathrm{H}_{n}(\pi)(x) .
+              \end{gathered}
+            </me>
           </p>
     
           <p>
-            <me>\begin{gathered}
-    \operatorname{coker}\left(\mathrm{H}_{n}(i)\right) \stackrel{\psi}{\longrightarrow} \operatorname{ker}\left(d^{1}\right) \\
-    x+\operatorname{im}\left(\mathrm{H}_{n}(i)\right) \longmapsto \mathrm{H}_{n}(\pi)(x) .
-    \end{gathered}</me>
-          </p>
-    
-          <p>
-            Indeed, for any <m>x \in \mathrm{H}_{n}(B)</m> we get <m>\mathrm{H}_{n}(\pi)(x) \in \operatorname{ker} d^{1}</m>, and the map is well-defined since if <m>x \in \operatorname{im}\left(\mathrm{H}_{n}(i)\right) \subseteq \operatorname{ker}\left(\mathrm{H}_{n}(\pi)\right)</m> then by definition <m>\mathrm{H}_{n}(\pi)(x)=0</m>, so that we get a well-defined map from <m>\operatorname{coker}\left(\mathrm{H}_{n}(i)\right)</m>. But our spectral sequence gave us an isomorphism
-          </p>
-    
-          <p>
+            Indeed, for any <m>x \in \mathrm{H}_{n}(B)</m> we get <m>\mathrm{H}_{n}(\pi)(x) \in \operatorname{ker} d^{1}</m>, and the map is well-defined since if <m>x \in \operatorname{im}\left(\mathrm{H}_{n}(i)\right) \subseteq \operatorname{ker}\left(\mathrm{H}_{n}(\pi)\right)</m> then by definition <m>\mathrm{H}_{n}(\pi)(x)=0</m>, so that we get a well-defined map from <m>\operatorname{coker}\left(\mathrm{H}_{n}(i)\right)</m>. 
+            But our spectral sequence gave us an isomorphism
             <me>\operatorname{ker}\left(d^{1}\right) \cong \mathrm{H}_{n}(B) / \operatorname{im}\left(\mathrm{H}_{n}(i)\right)=\operatorname{coker}\left(\mathrm{H}_{n}(i)\right)</me>
-          </p>
-    
-          <p>
             so that the map <m>\psi</m> we defined above is an isomorphism, and thus we must have
-          </p>
-    
-          <p>
             <me>\operatorname{ker}\left(\mathrm{H}_{n}(\pi)\right)=\operatorname{im}\left(\mathrm{H}_{n}(i)\right)</me>
+            proving exactness at <m>\mathrm{H}_{n}(B)</m>. 
           </p>
     
           <p>
-            proving exactness at <m>\mathrm{H}_{n}(B)</m>. Finally, this also says that we can rewrite our previous isomorphism as
-          </p>
-    
-          <p>
+            Finally, this also says that we can rewrite our previous isomorphism as
             <me>\operatorname{ker}\left(d^{1}\right) \cong \mathrm{H}_{n}(B) / \operatorname{im}\left(\mathrm{H}_{n}(i)\right)=\mathrm{H}_{n}(B) / \operatorname{ker}\left(\mathrm{H}_{n}(\pi)\right)</me>
-          </p>
-    
-          <p>
             but by the First Isomorphism Theorem we get
-          </p>
-    
-          <p>
             <me>\operatorname{ker}\left(d^{1}\right) \cong \operatorname{im}\left(\mathrm{H}_{n}(\pi)\right)</me>
           </p>
     
