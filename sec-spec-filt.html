@@ -617,12 +617,17 @@ window.MathJax = {
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Filtered Complexes</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Intro to Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-what-is-spectral.html#subsec-" class="internal"><span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-what-is-spectral.html#subsec-bigrad" class="internal"><span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-what-is-spectral.html#subsec-filtrations" class="internal"><span class="title">Filtrations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Convergence</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtered Complexes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Double Complexes</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -789,7 +794,7 @@ window.MathJax = {
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-spec-filt"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.5</span><span class="space"> </span><span class="title">Filtered Complexes</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.3</span><span class="space"> </span><span class="title">Filtered Complexes</span>
 </h2>
 <div class="para logical" id="sec-spec-filt-2">
 <div class="para">We will now describe how every filtered complex gives rise to a spectral sequence. We will be writing a homological spectral sequence, but by setting slightly different conventions one could also write a cohomological spectral sequence; this part is up to your personal taste. Given a filtered complex <span class="process-math">\((C, \partial, F)\text{,}\)</span> we first, define</div>
@@ -800,7 +805,7 @@ E_{p, q}^{0}:=F^{p} C_{p+q} / F^{p-1} C_{p+q}
 </div>
 <div class="para">and let <span class="process-math">\(d_{0}: E_{p, q}^{0} \longrightarrow E_{p, q-1}^{0}\)</span> be the differential induced on the associated graded <span class="process-math">\(\operatorname{gr}_{F} C\text{.}\)</span> Each column of the <span class="process-math">\(E^{0}\)</span> page contains a complex, one of the levels of the filtration.</div>
 </div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-38.svg" role="img" class="contained"></div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-38.jpg" class="contained"></div>
 <div class="para logical" id="sec-spec-filt-4">
 <div class="para">Next, let</div>
 <div class="displaymath process-math">
@@ -815,100 +820,116 @@ E_{p, q}^{1}=\mathrm{H}_{p+q}\left(G_{p} C\right)
 \end{equation*}
 </div>
 </div>
-<div class="para" id="sec-spec-filt-5">Thus <span class="process-math">\(E_{\bullet . \bullet}^{0}\)</span> and <span class="process-math">\(E_{\bullet \bullet}^{1}\)</span> are consistent with being the zeroeth and first pages of a spectral sequence. Before we move on, note that we can also rewrite the <span class="process-math">\(E^{1}\)</span> page as follows:</div>
-<div class="para logical" id="sec-spec-filt-6"><div class="displaymath process-math">
+<div class="para logical" id="sec-spec-filt-5">
+<div class="para">Thus <span class="process-math">\(E_{\bullet . \bullet}^{0}\)</span> and <span class="process-math">\(E_{\bullet \bullet}^{1}\)</span> are consistent with being the zeroeth and first pages of a spectral sequence. Before we move on, note that we can also rewrite the <span class="process-math">\(E^{1}\)</span> page as follows:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{1}=\frac{\left\{x \in F^{p} C_{p+q} \mid \partial(x) \in F^{p-1} C_{p+q-1}\right\}}{F^{p-1} C_{p+q}+\partial\left(F^{p} C_{p+q+1}\right)}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-7">One way to interpret this is that if we take an element <span class="process-math">\(x \in F^{p} C_{p+q}\)</span> representing the class <span class="process-math">\([x] \in G_{p} C_{p+q}\)</span> such that <span class="process-math">\(\partial([x])=0\text{,}\)</span> then the element <span class="process-math">\(\partial(x) \in F^{p} C_{p+q-1}\)</span> is really in <span class="process-math">\(F^{p-1} C_{p+q-1}\text{,}\)</span> so we really should move it to the column on our left (the one indexed by <span class="process-math">\(p-1\)</span> ).</div>
-<div class="para" id="sec-spec-filt-8">Thus the differential on <span class="process-math">\(E_{p, q}^{1}\)</span> is the map <span class="process-math">\(d_{1}: E_{p, q}^{1} \rightarrow E_{p-1, q}^{1}\)</span> defined as follows: since each class <span class="process-math">\([x] \in E_{p, q}^{1}\)</span> corresponds to an element <span class="process-math">\(x \in F^{p} C_{p+q}\)</span> such that <span class="process-math">\(\partial(x) \in F^{p-1} C_{p+q-1}\text{,}\)</span> we recast <span class="process-math">\(\partial(x)\)</span> by asking about its class in <span class="process-math">\(E_{p-1, q}^{1}=F^{p-1} C_{p+q-1} / F^{p-2} C_{p+q-1}\text{.}\)</span> If <span class="process-math">\([x] \in \operatorname{ker} d_{1}\text{,}\)</span> that means <span class="process-math">\(\partial(x) \in F^{p-2} C_{p+q-1}\text{,}\)</span> and so on. Ultimately, we will gather information about how deep into our filtration we can go to still find <span class="process-math">\(\partial(x)\text{.}\)</span>
 </div>
-<div class="para" id="sec-spec-filt-9">Inspired by this, we define</div>
-<div class="para logical" id="sec-spec-filt-10"><div class="displaymath process-math">
+<div class="para">One way to interpret this is that if we take an element <span class="process-math">\(x \in F^{p} C_{p+q}\)</span> representing the class <span class="process-math">\([x] \in G_{p} C_{p+q}\)</span> such that <span class="process-math">\(\partial([x])=0\text{,}\)</span> then the element <span class="process-math">\(\partial(x) \in F^{p} C_{p+q-1}\)</span> is really in <span class="process-math">\(F^{p-1} C_{p+q-1}\text{,}\)</span> so we really should move it to the column on our left (the one indexed by <span class="process-math">\(p-1\)</span> ).</div>
+</div>
+<div class="para" id="sec-spec-filt-6">Thus the differential on <span class="process-math">\(E_{p, q}^{1}\)</span> is the map <span class="process-math">\(d_{1}: E_{p, q}^{1} \rightarrow E_{p-1, q}^{1}\)</span> defined as follows: since each class <span class="process-math">\([x] \in E_{p, q}^{1}\)</span> corresponds to an element <span class="process-math">\(x \in F^{p} C_{p+q}\)</span> such that <span class="process-math">\(\partial(x) \in F^{p-1} C_{p+q-1}\text{,}\)</span> we recast <span class="process-math">\(\partial(x)\)</span> by asking about its class in <span class="process-math">\(E_{p-1, q}^{1}=F^{p-1} C_{p+q-1} / F^{p-2} C_{p+q-1}\text{.}\)</span> If <span class="process-math">\([x] \in \operatorname{ker} d_{1}\text{,}\)</span> that means <span class="process-math">\(\partial(x) \in F^{p-2} C_{p+q-1}\text{,}\)</span> and so on. Ultimately, we will gather information about how deep into our filtration we can go to still find <span class="process-math">\(\partial(x)\text{.}\)</span>
+</div>
+<div class="para logical" id="sec-spec-filt-7">
+<div class="para">Inspired by this, we define</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{r}:=\frac{\left\{x \in F^{p} C_{p+q} \mid \partial(x) \in F^{p-r} C_{p+q-1}\right\}}{F^{p-1} C_{p+q}+\partial\left(F^{p+r-1} C_{p+q+1}\right)}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-11">Now given <span class="process-math">\(x \in F^{p} C_{p+q}\)</span> representing a class <span class="process-math">\([x] \in E_{p, q}^{r}\text{,}\)</span> by definition</div>
-<div class="para logical" id="sec-spec-filt-12"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-8">
+<div class="para">Now given <span class="process-math">\(x \in F^{p} C_{p+q}\)</span> representing a class <span class="process-math">\([x] \in E_{p, q}^{r}\text{,}\)</span> by definition</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \partial(x) \in F^{p-r} C_{p+q-1}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-13">so we define</div>
-<div class="para logical" id="sec-spec-filt-14"><div class="displaymath process-math">
+</div>
+<div class="para">so we define</div>
+<div class="displaymath process-math">
 \begin{equation*}
 d_{r}([x])=[\partial(x)] \in E_{p-r, q+r-1}^{r}=\frac{\left\{y \in F^{p-r} C_{p+q-1} \mid \partial(y) \in F^{p-2 r} C_{p+q-2}\right\}}{F^{p-r-1} C_{p+q-1}+\partial\left(F^{p-1} C_{p+q}\right)}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-15">We claim that this is well-defined, and leave the details as an exercise. Moreover, <span class="process-math">\(d_{r}^{2}=0\)</span> since <span class="process-math">\(\partial^{2}=0\text{.}\)</span> Finally, each class in the kernel of <span class="process-math">\(d_{r}\)</span> is represented by some <span class="process-math">\(x \in F^{p} C_{p+q}\)</span> such that <span class="process-math">\(\partial(x) \in F^{p-r-1} C_{p+q-1}\text{,}\)</span> while the image of <span class="process-math">\(d_{r}: E_{p+r, q-r+1}^{r} \rightarrow E_{p, q}^{r}\)</span> consists of the image of <span class="process-math">\(\partial\left(F^{p+r} C_{p+q+1}\right)\text{.}\)</span> Ultimately, this gives us an isomorphism</div>
-<div class="para logical" id="sec-spec-filt-16"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-9">
+<div class="para">We claim that this is well-defined, and leave the details as an exercise. Moreover, <span class="process-math">\(d_{r}^{2}=0\)</span> since <span class="process-math">\(\partial^{2}=0\text{.}\)</span> Finally, each class in the kernel of <span class="process-math">\(d_{r}\)</span> is represented by some <span class="process-math">\(x \in F^{p} C_{p+q}\)</span> such that <span class="process-math">\(\partial(x) \in F^{p-r-1} C_{p+q-1}\text{,}\)</span> while the image of <span class="process-math">\(d_{r}: E_{p+r, q-r+1}^{r} \rightarrow E_{p, q}^{r}\)</span> consists of the image of <span class="process-math">\(\partial\left(F^{p+r} C_{p+q+1}\right)\text{.}\)</span> Ultimately, this gives us an isomorphism</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{r+1} \cong \mathrm{H}_{p, q}\left(E^{r}\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-17">Theorem 8.39. Let <span class="process-math">\((C, \partial)\)</span> be a filtered complex with filtration <span class="process-math">\(F^{\bullet} C\text{,}\)</span> and let</div>
-<div class="para logical" id="sec-spec-filt-18"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-10">
+<div class="para">Theorem 8.39. Let <span class="process-math">\((C, \partial)\)</span> be a filtered complex with filtration <span class="process-math">\(F^{\bullet} C\text{,}\)</span> and let</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{r}:=\frac{\left\{x \in F^{p} C_{p+q} \mid \partial(x) \in F^{p-r} C_{p+q-1}\right\}}{F^{p-1} C_{p+q}+\partial\left(F^{p+r-1} C_{p+q+1}\right)}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-19">Then <span class="process-math">\(\partial\)</span> induces a well-defined map</div>
-<div class="para logical" id="sec-spec-filt-20"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-11">
+<div class="para">Then <span class="process-math">\(\partial\)</span> induces a well-defined map</div>
+<div class="displaymath process-math">
 \begin{equation*}
 d_{r}: E_{p, q}^{r} \rightarrow E_{p-r, q+r-1}^{r}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-21">such that <span class="process-math">\(d_{r} d_{r}=0\text{,}\)</span> and</div>
-<div class="para logical" id="sec-spec-filt-22"><div class="displaymath process-math">
+</div>
+<div class="para">such that <span class="process-math">\(d_{r} d_{r}=0\text{,}\)</span> and</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{r+1} \cong \mathrm{H}_{p, q}\left(E^{r}\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-23">Thus this gives us a spectral sequence with</div>
-<div class="para logical" id="sec-spec-filt-24"><div class="displaymath process-math">
+</div>
+<div class="para">Thus this gives us a spectral sequence with</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{1}=\mathrm{H}_{p+q}\left(G_{p} C_{\bullet}^{\bullet}\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-25">Moreover, if for all <span class="process-math">\(n\)</span> the filtration <span class="process-math">\(F^{\bullet} C_{n}\)</span> of <span class="process-math">\(C_{n}\)</span> stabilizes, then the spectral sequence converges to</div>
-<div class="para logical" id="sec-spec-filt-26"><div class="displaymath process-math">
+</div>
+<div class="para">Moreover, if for all <span class="process-math">\(n\)</span> the filtration <span class="process-math">\(F^{\bullet} C_{n}\)</span> of <span class="process-math">\(C_{n}\)</span> stabilizes, then the spectral sequence converges to</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{\infty}=G_{p} \mathrm{H}_{p+q}\left(C_{\bullet}\right)=F^{p} \mathrm{H}_{p+q}\left(C_{\bullet}\right) / F^{p-1} \mathrm{H}_{p+q}\left(C_{\bullet}\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-27">Thus</div>
-<div class="para logical" id="sec-spec-filt-28"><div class="displaymath process-math">
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{\infty} \Rightarrow \mathrm{H}_{p+q}(C)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-29">This provides a comparison between taking the homology of the associated graded module, or taking the associated graded module of the homology.</div>
-<div class="para" id="sec-spec-filt-30">Example 8.40. Consider any short exact sequence of complexes, which we can always write as the inclusion of a subcomplex <span class="process-math">\(A\)</span> into a complex <span class="process-math">\(B\)</span> followed by the quotient map:</div>
-<div class="para logical" id="sec-spec-filt-31"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para" id="sec-spec-filt-12">This provides a comparison between taking the homology of the associated graded module, or taking the associated graded module of the homology.</div>
+<div class="para logical" id="sec-spec-filt-13">
+<div class="para">Example 8.40. Consider any short exact sequence of complexes, which we can always write as the inclusion of a subcomplex <span class="process-math">\(A\)</span> into a complex <span class="process-math">\(B\)</span> followed by the quotient map:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 0 \longrightarrow A \xrightarrow{i} B \stackrel{\pi}{\longrightarrow} A / B \longrightarrow 0
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-32">It turns out that we can recover the long exact sequence in homology given by the Snake Lemma via a spectral sequence.</div>
-<div class="para" id="sec-spec-filt-33">To do that, we can think of the inclusion <span class="process-math">\(A \subseteq B\)</span> as a filtration on <span class="process-math">\(C=B\)</span> : we set</div>
-<div class="para logical" id="sec-spec-filt-34"><div class="displaymath process-math">
+</div>
+<div class="para">It turns out that we can recover the long exact sequence in homology given by the Snake Lemma via a spectral sequence. To do that, we can think of the inclusion <span class="process-math">\(A \subseteq B\)</span> as a filtration on <span class="process-math">\(C=B\)</span> : we set</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{n} C= \begin{cases}0 &amp; \text { if } n&lt;0 \\ A &amp; \text { if } n=0 \\ B &amp; \text { if } n \geqslant 1\end{cases}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-35">Let us compute the spectral sequence of this filtered complex. First, note that In <span class="process-math">\(E^{0}\)</span> page, we have</div>
-<div class="para logical" id="sec-spec-filt-36"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-14">
+<div class="para">Let us compute the spectral sequence of this filtered complex. First, note that In <span class="process-math">\(E^{0}\)</span> page, we have</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{0, q}^{0}=F^{0} C_{q} / F^{-1} C_{q}=A_{q} \quad \text { and } \quad E_{1, q}^{0}=F^{1} C_{q+1} / F^{0} C_{q+1}=B_{q+1} / A_{q+1} \text {. }
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-37">The differential <span class="process-math">\(d^{0}\)</span> on the <span class="process-math">\(E^{0}\)</span> page is induced by the differential <span class="process-math">\(\partial\)</span> on <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Note that we denote the differential on both complexes <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> by the same letter since the differential on <span class="process-math">\(A\)</span> is just the restriction of the differential on <span class="process-math">\(B\text{.}\)</span> So the <span class="process-math">\(E^{0}\)</span> page looks like</div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-40.svg" role="img" class="contained"></div>
-<div class="para" id="sec-spec-filt-39">where only the 0th and first columns are nonzero.</div>
-<div class="para" id="sec-spec-filt-40">The <span class="process-math">\(E^{1}\)</span> page is obtained by taking homology, so it looks like</div>
-<div class="para logical" id="sec-spec-filt-41"><div class="displaymath process-math">
+</div>
+<div class="para">The differential <span class="process-math">\(d^{0}\)</span> on the <span class="process-math">\(E^{0}\)</span> page is induced by the differential <span class="process-math">\(\partial\)</span> on <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Note that we denote the differential on both complexes <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> by the same letter since the differential on <span class="process-math">\(A\)</span> is just the restriction of the differential on <span class="process-math">\(B\text{.}\)</span> So the <span class="process-math">\(E^{0}\)</span> page looks like</div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-40.jpg" class="contained"></div>
+<div class="para" id="sec-spec-filt-16">where only the 0th and first columns are nonzero.</div>
+<div class="para logical" id="sec-spec-filt-17">
+<div class="para">The <span class="process-math">\(E^{1}\)</span> page is obtained by taking homology, so it looks like</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp; \mathrm{H}_{q+1}(A) \stackrel{\partial}{\longleftarrow} \mathrm{H}_{q+2}(B / A) \\
@@ -916,140 +937,165 @@ E_{0, q}^{0}=F^{0} C_{q} / F^{-1} C_{q}=A_{q} \quad \text { and } \quad E_{1, q}
 &amp; \mathrm{H}_{q-1}(A) \stackrel{\partial}{\longleftarrow} \mathrm{H}_{q}(B / A)
 \end{aligned}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-42">and the differentials <span class="process-math">\(d^{1}\text{,}\)</span> which are now horizontal, are induced by <span class="process-math">\(\partial\text{.}\)</span> More precisely, we can rewrite the terms on the right column as</div>
-<div class="para logical" id="sec-spec-filt-43"><div class="displaymath process-math">
+</div>
+<div class="para">and the differentials <span class="process-math">\(d^{1}\text{,}\)</span> which are now horizontal, are induced by <span class="process-math">\(\partial\text{.}\)</span> More precisely, we can rewrite the terms on the right column as</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{1, q}^{1}=\mathrm{H}_{q+1}(B / A)=\frac{\left\{x \in B_{q+1} \mid \partial(x) \in A_{q}\right\}}{A_{q+1}+\partial\left(B_{q+2}\right)}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-44">and so by definition any class <span class="process-math">\([x] \in E_{q, 1}^{1}\)</span> is represented by some <span class="process-math">\(x \in B_{q+1}\)</span> such that <span class="process-math">\(\partial(x) \in A_{q}\text{.}\)</span> Since <span class="process-math">\(\partial^{2}=0\text{,}\)</span> then <span class="process-math">\(\partial(x) \in Z_{q}(A)\text{,}\)</span> and so we can ask about the class of <span class="process-math">\(\partial(x)\)</span> in <span class="process-math">\(\mathrm{H}_{q}(Z)\text{.}\)</span> So the differential <span class="process-math">\(d^{1}\)</span> on <span class="process-math">\(E^{1}\)</span> is given by</div>
-<div class="para logical" id="sec-spec-filt-45"><div class="displaymath process-math">
+</div>
+<div class="para">and so by definition any class <span class="process-math">\([x] \in E_{q, 1}^{1}\)</span> is represented by some <span class="process-math">\(x \in B_{q+1}\)</span> such that <span class="process-math">\(\partial(x) \in A_{q}\text{.}\)</span> Since <span class="process-math">\(\partial^{2}=0\text{,}\)</span> then <span class="process-math">\(\partial(x) \in Z_{q}(A)\text{,}\)</span> and so we can ask about the class of <span class="process-math">\(\partial(x)\)</span> in <span class="process-math">\(\mathrm{H}_{q}(Z)\text{.}\)</span> So the differential <span class="process-math">\(d^{1}\)</span> on <span class="process-math">\(E^{1}\)</span> is given by</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp; E_{1, q}^{1}=\frac{\left\{x \in B_{q+1} \mid \partial(x) \in A_{q}\right\}}{A_{q+1}+\partial\left(B_{q+2}\right)} \longrightarrow \mathrm{H}_{q}(A) \\
 &amp; {[x] \longmapsto[\partial(x)] . }
 \end{aligned}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-46">Now onto the <span class="process-math">\(E^{2}\)</span> page, where</div>
-<div class="para logical" id="sec-spec-filt-47"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-18">
+<div class="para">Now onto the <span class="process-math">\(E^{2}\)</span> page, where</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{1, q}^{2}=\mathrm{H}_{1, q}\left(E^{1}\right)=\operatorname{ker}\left(E_{1, q}^{1} \stackrel{d^{1}}{\longrightarrow} E_{0, q}^{1}\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-48">and</div>
-<div class="para logical" id="sec-spec-filt-49"><div class="displaymath process-math">
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{0, q}^{2}=\mathrm{H}_{0, q}\left(E^{1}\right)=\mathrm{H}_{q}(A) / \operatorname{im}\left(d^{1}\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-50">Note now that <span class="process-math">\(d^{2}\)</span> is a map of degree <span class="process-math">\((-2,1)\text{,}\)</span> and thus <span class="process-math">\(d^{2}=2\text{,}\)</span> since we always have zero as the source or target (or both) of <span class="process-math">\(d^{2}\text{.}\)</span> Thus <span class="process-math">\(E_{p, q}^{n}=E_{p, q}^{2}\)</span> for all <span class="process-math">\(n \geqslant 2\text{,}\)</span> and so by Theorem 8.39 this spectral sequence converges, with</div>
-<div class="para logical" id="sec-spec-filt-51"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-19">
+<div class="para">Note now that <span class="process-math">\(d^{2}\)</span> is a map of degree <span class="process-math">\((-2,1)\text{,}\)</span> and thus <span class="process-math">\(d^{2}=2\text{,}\)</span> since we always have zero as the source or target (or both) of <span class="process-math">\(d^{2}\text{.}\)</span> Thus <span class="process-math">\(E_{p, q}^{n}=E_{p, q}^{2}\)</span> for all <span class="process-math">\(n \geqslant 2\text{,}\)</span> and so by Theorem 8.39 this spectral sequence converges, with</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E_{p, q}^{\infty} \cong F^{p} \mathrm{H}_{p+q}(C) / F^{p-1} \mathrm{H}_{p+q}(C)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-52">Now <span class="process-math">\(F^{1} \mathrm{H}_{n}(C)=\mathrm{H}_{n}(B)\text{,}\)</span> while</div>
-<div class="para logical" id="sec-spec-filt-53"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-20">
+<div class="para">Now <span class="process-math">\(F^{1} \mathrm{H}_{n}(C)=\mathrm{H}_{n}(B)\text{,}\)</span> while</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{0} \mathrm{H}_{n}(C)=\operatorname{im}\left(\mathrm{H}_{n}(A) \rightarrow \mathrm{H}_{n}(B)\right) \text {. }
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-54">Here the map <span class="process-math">\(\mathrm{H}(A) \rightarrow \mathrm{H}(B)\)</span> is the map induced by the original inclusion of <span class="process-math">\(A\)</span> into <span class="process-math">\(B\text{.}\)</span> Moreover, <span class="process-math">\(F^{n} \mathrm{H}(C)=0\)</span> for all <span class="process-math">\(n&lt;0\)</span> and <span class="process-math">\(F^{n} \mathrm{H}(C)=\mathrm{H}(B)\)</span> for all <span class="process-math">\(n \geqslant 1\text{.}\)</span> So for all <span class="process-math">\(n\)</span> we get isomorphisms</div>
-<div class="para logical" id="sec-spec-filt-55"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-21">
+<div class="para">Here the map <span class="process-math">\(\mathrm{H}(A) \rightarrow \mathrm{H}(B)\)</span> is the map induced by the original inclusion of <span class="process-math">\(A\)</span> into <span class="process-math">\(B\text{.}\)</span> Moreover, <span class="process-math">\(F^{n} \mathrm{H}(C)=0\)</span> for all <span class="process-math">\(n&lt;0\)</span> and <span class="process-math">\(F^{n} \mathrm{H}(C)=\mathrm{H}(B)\)</span> for all <span class="process-math">\(n \geqslant 1\text{.}\)</span> So for all <span class="process-math">\(n\)</span> we get isomorphisms</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{ker}\left(E_{1, n-1}^{1} \stackrel{d^{1}}{\longrightarrow} E_{0, n-1}^{1}\right) \cong \mathrm{H}_{n}(B) / \operatorname{im}\left(\mathrm{H}_{n}(A) \rightarrow \mathrm{H}_{n}(B)\right)=\mathrm{H}_{n}(B) / \operatorname{im~}_{n}(i)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-56">and</div>
-<div class="para logical" id="sec-spec-filt-57"><div class="displaymath process-math">
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \mathrm{H}_{n}(A) / \operatorname{im}\left(d^{1}\right) \cong \operatorname{im}\left(\mathrm{H}_{n}(A) \rightarrow \mathrm{H}_{n}(B)\right)=\operatorname{im}\left(\mathrm{H}_{n}(i)\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-58">So we now have all the tools we need to construct the long exact sequence in homology from this spectral sequence. First, we construct a complex. Our map <span class="process-math">\(d^{1}\)</span> from the spectral sequence gives us homomorphisms</div>
-<div class="para logical" id="sec-spec-filt-59"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-22">
+<div class="para">So we now have all the tools we need to construct the long exact sequence in homology from this spectral sequence. First, we construct a complex. Our map <span class="process-math">\(d^{1}\)</span> from the spectral sequence gives us homomorphisms</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \mathrm{H}_{n+1}(B / A) \stackrel{d^{1}}{\longrightarrow} \mathrm{H}_{n}(A) .
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-60">By definition, <span class="process-math">\(d^{1}([x])=[\partial(x)]\text{;}\)</span> composing this with the map <span class="process-math">\(\mathrm{H}_{n}(i): \mathrm{H}_{n}(A) \rightarrow \mathrm{H}(B)\)</span> consists of viewing <span class="process-math">\(\partial(x) \in Z_{n}(B / A)\)</span> and asking for its class in <span class="process-math">\(\mathrm{H}_{n}(B)\text{.}\)</span> But <span class="process-math">\(\partial(x) \in A_{n} \subseteq Z_{n}(B / A)\text{,}\)</span> so the composition</div>
-<div class="para logical" id="sec-spec-filt-61"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-23">
+<div class="para">By definition, <span class="process-math">\(d^{1}([x])=[\partial(x)]\text{;}\)</span> composing this with the map <span class="process-math">\(\mathrm{H}_{n}(i): \mathrm{H}_{n}(A) \rightarrow \mathrm{H}(B)\)</span> consists of viewing <span class="process-math">\(\partial(x) \in Z_{n}(B / A)\)</span> and asking for its class in <span class="process-math">\(\mathrm{H}_{n}(B)\text{.}\)</span> But <span class="process-math">\(\partial(x) \in A_{n} \subseteq Z_{n}(B / A)\text{,}\)</span> so the composition</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \mathrm{H}_{n+1}(B / A) \stackrel{d^{1}}{\longrightarrow} \mathrm{H}_{n}(A) \stackrel{\mathrm{H}_{n}(i)}{\longrightarrow} \mathrm{H}_{n}(B)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-62">is zero.</div>
-<div class="para" id="sec-spec-filt-63">Similarly, the map <span class="process-math">\(\mathrm{H}_{n+1}(B) \rightarrow \mathrm{H}_{n+1}(A)\)</span> takes a class <span class="process-math">\([y] \in \mathrm{H}_{n}(B)\text{,}\)</span> represented by <span class="process-math">\(y \in\)</span> <span class="process-math">\(Z_{n}(B)\text{,}\)</span> and identifies <span class="process-math">\(y\)</span> with its image in <span class="process-math">\(Z_{n}(B) \subseteq Z_{n}(B / A)\text{.}\)</span> But <span class="process-math">\(\partial(y)=0\)</span> by definition, so <span class="process-math">\([\partial(y)]=0\)</span> and the composition</div>
-<div class="para logical" id="sec-spec-filt-64"><div class="displaymath process-math">
+</div>
+<div class="para">is zero.</div>
+</div>
+<div class="para logical" id="sec-spec-filt-24">
+<div class="para">Similarly, the map <span class="process-math">\(\mathrm{H}_{n+1}(B) \rightarrow \mathrm{H}_{n+1}(A)\)</span> takes a class <span class="process-math">\([y] \in \mathrm{H}_{n}(B)\text{,}\)</span> represented by <span class="process-math">\(y \in\)</span> <span class="process-math">\(Z_{n}(B)\text{,}\)</span> and identifies <span class="process-math">\(y\)</span> with its image in <span class="process-math">\(Z_{n}(B) \subseteq Z_{n}(B / A)\text{.}\)</span> But <span class="process-math">\(\partial(y)=0\)</span> by definition, so <span class="process-math">\([\partial(y)]=0\)</span> and the composition</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{r}
 \mathrm{H}_{n+1}(B) \longrightarrow \mathrm{H}_{n+1}(B / A) \stackrel{d^{1}}{\longrightarrow} \mathrm{H}_{n}(A) \\
 \quad[y] \longmapsto[y] \longmapsto[\partial(y)]
 \end{array}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-65">is the zero map. Moreover, <span class="process-math">\(\mathrm{H}_{n}\)</span> is an additive functor, and thus it takes <span class="process-math">\(A \rightarrow B \rightarrow B / A\)</span> to a complex, so putting it all together we get a complex</div>
-<div class="para logical" id="sec-spec-filt-66"><div class="displaymath process-math">
+</div>
+<div class="para">is the zero map. Moreover, <span class="process-math">\(\mathrm{H}_{n}\)</span> is an additive functor, and thus it takes <span class="process-math">\(A \rightarrow B \rightarrow B / A\)</span> to a complex, so putting it all together we get a complex</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \mathrm{H}_{n+1}(B / A) \stackrel{d^{1}}{\longrightarrow} \mathrm{H}_{n}(A) \stackrel{\mathrm{H}_{n}(i)}{\longrightarrow} \mathrm{H}_{n}(B) \stackrel{\mathrm{H}_{n}(\pi)}{\longrightarrow} \mathrm{H}_{n}(B / A) \xrightarrow{d^{1}} \mathrm{H}_{n-1}(A)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-67">All that is left is for us to check that exactness follows from our spectral sequence. On the one hand, the fact that this is a complex says that</div>
-<div class="para logical" id="sec-spec-filt-68"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-25">
+<div class="para">All that is left is for us to check that exactness follows from our spectral sequence. On the one hand, the fact that this is a complex says that</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{im}\left(d^{1}\right) \subseteq \operatorname{ker}\left(\mathrm{H}_{n}(i)\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-69">but our spectral sequence gave us the isomorphism</div>
-<div class="para logical" id="sec-spec-filt-70"><div class="displaymath process-math">
+</div>
+<div class="para">but our spectral sequence gave us the isomorphism</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \mathrm{H}_{n}(A) / \operatorname{im}\left(d^{1}\right) \cong \operatorname{im}\left(\mathrm{H}_{n}(i)\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-71">so by the First Isomorphism Theorem we get</div>
-<div class="para logical" id="sec-spec-filt-72"><div class="displaymath process-math">
+</div>
+<div class="para">so by the First Isomorphism Theorem we get</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \mathrm{H}_{n}(A) / \operatorname{ker}\left(\mathrm{H}_{n}(i)\right) \cong \operatorname{im}\left(\mathrm{H}_{n}(i)\right) \cong \mathrm{H}_{n}(A) / \operatorname{im}\left(d^{1}\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-73">We can now conclude that <span class="process-math">\(\operatorname{im}\left(d^{1}\right)=\operatorname{ker} \mathrm{H}_{n}(i)\text{.}\)</span> This gives us exactness at <span class="process-math">\(\mathrm{H}_{n}(A)\text{.}\)</span> Similarly, we claim that the fact that we have a complex gives us a map</div>
-<div class="para logical" id="sec-spec-filt-74"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-26">
+<div class="para">We can now conclude that <span class="process-math">\(\operatorname{im}\left(d^{1}\right)=\operatorname{ker} \mathrm{H}_{n}(i)\text{.}\)</span> This gives us exactness at <span class="process-math">\(\mathrm{H}_{n}(A)\text{.}\)</span> Similarly, we claim that the fact that we have a complex gives us a map</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{gathered}
 \operatorname{coker}\left(\mathrm{H}_{n}(i)\right) \stackrel{\psi}{\longrightarrow} \operatorname{ker}\left(d^{1}\right) \\
 x+\operatorname{im}\left(\mathrm{H}_{n}(i)\right) \longmapsto \mathrm{H}_{n}(\pi)(x) .
 \end{gathered}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-75">Indeed, for any <span class="process-math">\(x \in \mathrm{H}_{n}(B)\)</span> we get <span class="process-math">\(\mathrm{H}_{n}(\pi)(x) \in \operatorname{ker} d^{1}\text{,}\)</span> and the map is well-defined since if <span class="process-math">\(x \in \operatorname{im}\left(\mathrm{H}_{n}(i)\right) \subseteq \operatorname{ker}\left(\mathrm{H}_{n}(\pi)\right)\)</span> then by definition <span class="process-math">\(\mathrm{H}_{n}(\pi)(x)=0\text{,}\)</span> so that we get a well-defined map from <span class="process-math">\(\operatorname{coker}\left(\mathrm{H}_{n}(i)\right)\text{.}\)</span> But our spectral sequence gave us an isomorphism</div>
-<div class="para logical" id="sec-spec-filt-76"><div class="displaymath process-math">
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-27">
+<div class="para">Indeed, for any <span class="process-math">\(x \in \mathrm{H}_{n}(B)\)</span> we get <span class="process-math">\(\mathrm{H}_{n}(\pi)(x) \in \operatorname{ker} d^{1}\text{,}\)</span> and the map is well-defined since if <span class="process-math">\(x \in \operatorname{im}\left(\mathrm{H}_{n}(i)\right) \subseteq \operatorname{ker}\left(\mathrm{H}_{n}(\pi)\right)\)</span> then by definition <span class="process-math">\(\mathrm{H}_{n}(\pi)(x)=0\text{,}\)</span> so that we get a well-defined map from <span class="process-math">\(\operatorname{coker}\left(\mathrm{H}_{n}(i)\right)\text{.}\)</span> But our spectral sequence gave us an isomorphism</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{ker}\left(d^{1}\right) \cong \mathrm{H}_{n}(B) / \operatorname{im}\left(\mathrm{H}_{n}(i)\right)=\operatorname{coker}\left(\mathrm{H}_{n}(i)\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-77">so that the map <span class="process-math">\(\psi\)</span> we defined above is an isomorphism, and thus we must have</div>
-<div class="para logical" id="sec-spec-filt-78"><div class="displaymath process-math">
+</div>
+<div class="para">so that the map <span class="process-math">\(\psi\)</span> we defined above is an isomorphism, and thus we must have</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{ker}\left(\mathrm{H}_{n}(\pi)\right)=\operatorname{im}\left(\mathrm{H}_{n}(i)\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-79">proving exactness at <span class="process-math">\(\mathrm{H}_{n}(B)\text{.}\)</span> Finally, this also says that we can rewrite our previous isomorphism as</div>
-<div class="para logical" id="sec-spec-filt-80"><div class="displaymath process-math">
+</div>
+<div class="para">proving exactness at <span class="process-math">\(\mathrm{H}_{n}(B)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="sec-spec-filt-28">
+<div class="para">Finally, this also says that we can rewrite our previous isomorphism as</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{ker}\left(d^{1}\right) \cong \mathrm{H}_{n}(B) / \operatorname{im}\left(\mathrm{H}_{n}(i)\right)=\mathrm{H}_{n}(B) / \operatorname{ker}\left(\mathrm{H}_{n}(\pi)\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-81">but by the First Isomorphism Theorem we get</div>
-<div class="para logical" id="sec-spec-filt-82"><div class="displaymath process-math">
+</div>
+<div class="para">but by the First Isomorphism Theorem we get</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{ker}\left(d^{1}\right) \cong \operatorname{im}\left(\mathrm{H}_{n}(\pi)\right)
 \end{equation*}
-</div></div>
-<div class="para" id="sec-spec-filt-83">We already knew that <span class="process-math">\(\operatorname{im}\left(\mathrm{H}_{n}(\pi)\right) \subseteq \operatorname{ker}\left(d^{1}\right)\)</span> from the fact that we had a complex, so we conclude that we must have exactness at <span class="process-math">\(\mathrm{H}_{n}(B / A)\text{.}\)</span>
 </div>
-<div class="para" id="sec-spec-filt-84">Thus we have recovered the connecting homomorphism from the Snake Lemma and the long exact sequence in homology, all via this spectral sequence.</div></section></div>
+</div>
+<div class="para" id="sec-spec-filt-29">We already knew that <span class="process-math">\(\operatorname{im}\left(\mathrm{H}_{n}(\pi)\right) \subseteq \operatorname{ker}\left(d^{1}\right)\)</span> from the fact that we had a complex, so we conclude that we must have exactness at <span class="process-math">\(\mathrm{H}_{n}(B / A)\text{.}\)</span>
+</div>
+<div class="para" id="sec-spec-filt-30">Thus we have recovered the connecting homomorphism from the Snake Lemma and the long exact sequence in homology, all via this spectral sequence.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-convergence.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-spec-double.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
