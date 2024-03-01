@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>What is a Spectral Sequence?</title>
+<title>Intro to Spectral Sequences</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -123,7 +123,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-spectral-sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-spectral-sequences.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-bigrad.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-spectral-sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-spectral-sequences.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-convergence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
 \newcommand{\Ass}{\operatorname{Ass}}
 \def\Aut{\operatorname{Aut}}
 \def\can{{\mathrm {can}}}
@@ -617,12 +617,17 @@ window.MathJax = {
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-spectral-sequences.html" class="internal"><span class="codenumber">8</span> <span class="title">Spectral Sequences</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Filtered Complexes</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Double Complexes</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Intro to Spectral Sequences</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-what-is-spectral.html#subsec-" class="internal"><span class="title">What is a Spectral Sequence?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-what-is-spectral.html#subsec-bigrad" class="internal"><span class="title">Graded and Bigraded Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-what-is-spectral.html#subsec-filtrations" class="internal"><span class="title">Filtrations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtered Complexes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Double Complexes</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -789,34 +794,37 @@ window.MathJax = {
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-what-is-spectral"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.1</span><span class="space"> </span><span class="title">What is a Spectral Sequence?</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">8.1</span><span class="space"> </span><span class="title">Intro to Spectral Sequences</span>
 </h2>
-<blockquote class="blockquote" id="sec-what-is-spectral-2">
-<div class="para" id="sec-what-is-spectral-2-1">It has been suggested that the name "spectral" was given because, like spectres, spectral sequences are terrifying, evil, and dangerous. I have heard no one disagree with this interpretation, which is perhaps not surprising since I just made it up.</div> <cite class="attribution">―Ravi Vakil, in Spectral Sequences: friend or foe?</cite>
-</blockquote>
-<div class="para" id="sec-what-is-spectral-3">Spectral sequences are useful bookkeeping tools for computing, among other things, the homology and cohomology of complicated complexes. Unfortunately, spectral sequences have a bad reputation for being difficult and scary; but continuing Vakil’s quote above, "you can use spectral sequences without hesitation or fear, and [...] you shouldn’t be frightened when they come up in a seminar". Rotman wisely says that "Of course, the reader must digest these new ideas in order to apply them, but it is worth the effort" [Rot09, page 608].</div>
-<div class="para" id="sec-what-is-spectral-4">Spectral sequences were introduced independently by Leray and Lyndon in the 1940s. Leray came up with the idea while he was a prisoner of the nazis during WWII. The primary usages of spectral sequences are in homotopy theory and topology more generally, but there are also applications in commutative algebra and other fields. Due to its topological roots, the subject is best learned with a topological backdrop - which provides many motivating examples - but since we are not assuming any particular topological background, we will give only a very brief introduction to the subject, and from a more algebraic perspective.</div>
-<div class="para" id="sec-what-is-spectral-5">Here are some recommended sources to learn more about spectral sequences:</div>
-<div class="para logical" id="sec-what-is-spectral-6"><ul class="disc">
-<li id="sec-what-is-spectral-6-1-1"><div class="para" id="sec-what-is-spectral-6-1-1-1">Rotman’s book An introduction to Homological Algebra (second edition) [Rot09].</div></li>
-<li id="sec-what-is-spectral-6-1-2"><div class="para" id="sec-what-is-spectral-6-1-2-1">John McCleary’s A user’s guide to spectral sequences [McC01].</div></li>
-<li id="sec-what-is-spectral-6-1-3"><div class="para" id="sec-what-is-spectral-6-1-3-1">Ravi Vakil’s notes Spectral Sequences: friend or foe?</div></li>
-<li id="sec-what-is-spectral-6-1-4"><div class="para" id="sec-what-is-spectral-6-1-4-1">Hatcher’s additional chapter on spectral sequences, an addition to his Algebraic Topology book [Hat02].</div></li>
-<li id="sec-what-is-spectral-6-1-5"><div class="para" id="sec-what-is-spectral-6-1-5-1">Weibel’s book An introduction to homological algebra [Wei94].</div></li>
-<li id="sec-what-is-spectral-6-1-6"><div class="para" id="sec-what-is-spectral-6-1-6-1">Eisenbud’s Appendix A3.13 to his book Commutative algebra with a view towards algebraic geometry [Eis95].</div></li>
-<li id="sec-what-is-spectral-6-1-7"><div class="para" id="sec-what-is-spectral-6-1-7-1">Mel Hochster’s notes.</div></li>
-<li id="sec-what-is-spectral-6-1-8"><div class="para" id="sec-what-is-spectral-6-1-8-1">Michael Hutchings notes.</div></li>
-</ul></div>
-<div class="para" id="sec-what-is-spectral-7">Roughly speaking, a spectral sequence is a book where each page is a plane with a module (or more general, an object in an abelian category) sitting in each point with integer coordinates. To pass the pages, we take the (co)homology of a differential, and attach to the next page a new differential with a different shape.</div>
-<article class="definition definition-like" id="def-8.1"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.1</span><span class="period">.</span>
+<section class="subsection" id="subsec-"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">What is a Spectral Sequence?</span>
 </h3>
+<blockquote class="blockquote" id="subsec--2">
+<div class="para" id="subsec--2-1">It has been suggested that the name "spectral" was given because, like spectres, spectral sequences are terrifying, evil, and dangerous. I have heard no one disagree with this interpretation, which is perhaps not surprising since I just made it up.</div> <cite class="attribution">―Ravi Vakil, in Spectral Sequences: friend or foe?</cite>
+</blockquote>
+<div class="para" id="subsec--3">Spectral sequences are useful bookkeeping tools for computing, among other things, the homology and cohomology of complicated complexes. Unfortunately, spectral sequences have a bad reputation for being difficult and scary; but continuing Vakil’s quote above, "you can use spectral sequences without hesitation or fear, and [...] you shouldn’t be frightened when they come up in a seminar". Rotman wisely says that "Of course, the reader must digest these new ideas in order to apply them, but it is worth the effort" [Rot09, page 608].</div>
+<div class="para" id="subsec--4">Spectral sequences were introduced independently by Leray and Lyndon in the 1940s. Leray came up with the idea while he was a prisoner of the nazis during WWII. The primary usages of spectral sequences are in homotopy theory and topology more generally, but there are also applications in commutative algebra and other fields. Due to its topological roots, the subject is best learned with a topological backdrop - which provides many motivating examples - but since we are not assuming any particular topological background, we will give only a very brief introduction to the subject, and from a more algebraic perspective.</div>
+<div class="para" id="subsec--5">Here are some recommended sources to learn more about spectral sequences:</div>
+<div class="para logical" id="subsec--6"><ul class="disc">
+<li id="subsec--6-1-1"><div class="para" id="subsec--6-1-1-1">Rotman’s book An introduction to Homological Algebra (second edition) [Rot09].</div></li>
+<li id="subsec--6-1-2"><div class="para" id="subsec--6-1-2-1">John McCleary’s A user’s guide to spectral sequences [McC01].</div></li>
+<li id="subsec--6-1-3"><div class="para" id="subsec--6-1-3-1">Ravi Vakil’s notes Spectral Sequences: friend or foe?</div></li>
+<li id="subsec--6-1-4"><div class="para" id="subsec--6-1-4-1">Hatcher’s additional chapter on spectral sequences, an addition to his Algebraic Topology book [Hat02].</div></li>
+<li id="subsec--6-1-5"><div class="para" id="subsec--6-1-5-1">Weibel’s book An introduction to homological algebra [Wei94].</div></li>
+<li id="subsec--6-1-6"><div class="para" id="subsec--6-1-6-1">Eisenbud’s Appendix A3.13 to his book Commutative algebra with a view towards algebraic geometry [Eis95].</div></li>
+<li id="subsec--6-1-7"><div class="para" id="subsec--6-1-7-1">Mel Hochster’s notes.</div></li>
+<li id="subsec--6-1-8"><div class="para" id="subsec--6-1-8-1">Michael Hutchings notes.</div></li>
+</ul></div>
+<div class="para" id="subsec--7">Roughly speaking, a spectral sequence is a book where each page is a plane with a module (or more general, an object in an abelian category) sitting in each point with integer coordinates. To pass the pages, we take the (co)homology of a differential, and attach to the next page a new differential with a different shape.</div>
+<article class="definition definition-like" id="def-8.1"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.1</span><span class="period">.</span>
+</h4>
 <div class="para logical" id="def-8.1-1-1">
 <div class="para">A cohomological spectral sequence <span class="process-math">\(E\)</span> consists of the following data:</div>
 <ul class="disc">
 <li id="def-8.1-1-1-2-1">
 <div class="para" id="def-8.1-1-1-2-1-1">A family <span class="process-math">\(E=\left(E_{r}^{p, q}\right)\)</span> of <span class="process-math">\(R\)</span>-modules ranging over all integers <span class="process-math">\(p, q, r\)</span> with <span class="process-math">\(r \geqslant 0\text{.}\)</span> For a fixed <span class="process-math">\(r\text{,}\)</span> the collection of modules <span class="process-math">\(E_{r}=E_{r}^{p, q}\)</span> is called the <span class="process-math">\(r\)</span> th page or sheet of the spectral sequence. We think of each page as living in <span class="process-math">\(\mathbb{Z}^{2}\text{,}\)</span> and depict the <span class="process-math">\(r\)</span> th page by putting <span class="process-math">\(E_{r}^{p, q}\)</span> in the point with coordinates <span class="process-math">\((p, q)\)</span> :</div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-29(3).svg" role="img" class="contained"></div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-29(3).jpg" class="contained"></div>
 </li>
 <li id="def-8.1-1-1-2-2"><div class="para logical" id="def-8.1-1-1-2-2-1">
 <div class="para">Differentials</div>
@@ -849,19 +857,19 @@ E_{r+1}^{p, q}=\frac{\operatorname{ker}\left(E_{r}^{p, q} \stackrel{d_{r}}{\long
 </div>
 </div></li>
 </ul>
-</div></article><article class="remark remark-like" id="sec-what-is-spectral-9"><h3 class="heading">
+</div></article><article class="remark remark-like" id="subsec--9"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.2</span><span class="period">.</span>
-</h3>
-<div class="para" id="sec-what-is-spectral-9-1">Remark 8.2. The differential in the <span class="process-math">\(r\)</span> th page is a map of degree <span class="process-math">\((r,-r+1)\text{.}\)</span> Here are some examples:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-29.svg" role="img" class="contained"></div> <div class="para" id="sec-what-is-spectral-9-3">0th page</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-29(1).svg" role="img" class="contained"></div> <div class="para" id="sec-what-is-spectral-9-5">1st page</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-29(2).svg" role="img" class="contained"></div> <div class="para" id="sec-what-is-spectral-9-7">2nd page</div></article><div class="para" id="sec-what-is-spectral-10">We can define spectral sequences more generally over any abelian category. However, most spectral sequences the typical mathematician ever computes are over <span class="process-math">\(R\)</span>-modules (or even just vector spaces!), so we will keep things friendly by sticking to <span class="process-math">\(R\)</span>-modules.</div>
-<article class="definition definition-like" id="def-8.3"><h3 class="heading">
+</h4>
+<div class="para" id="subsec--9-1">Remark 8.2. The differential in the <span class="process-math">\(r\)</span> th page is a map of degree <span class="process-math">\((r,-r+1)\text{.}\)</span> Here are some examples:</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-29.jpg" class="contained"></div> <div class="para" id="subsec--9-3">0th page</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-29(1).jpg" class="contained"></div> <div class="para" id="subsec--9-5">1st page</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-29(2).jpg" class="contained"></div> <div class="para" id="subsec--9-7">2nd page</div></article><div class="para" id="subsec--10">We can define spectral sequences more generally over any abelian category. However, most spectral sequences the typical mathematician ever computes are over <span class="process-math">\(R\)</span>-modules (or even just vector spaces!), so we will keep things friendly by sticking to <span class="process-math">\(R\)</span>-modules.</div>
+<article class="definition definition-like" id="def-8.3"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.3</span><span class="period">.</span>
-</h3>
+</h4>
 <div class="para logical" id="def-8.3-1-1">
 <div class="para">A homological spectral sequence <span class="process-math">\(E\)</span> is a sequence consists of the following data:</div>
 <ul class="disc">
 <li id="def-8.3-1-1-2-1">
 <div class="para" id="def-8.3-1-1-2-1-1">A family <span class="process-math">\(E=\left(E_{p, q}^{r}\right)\)</span> of <span class="process-math">\(R\)</span>-modules ranging over all integers <span class="process-math">\(p, q, r\)</span> with <span class="process-math">\(r \geqslant 0\text{.}\)</span> For a fixed <span class="process-math">\(r\text{,}\)</span> the collection of objects <span class="process-math">\(E_{r}=E_{r}^{p, q}\)</span> is called the <span class="process-math">\(r\)</span> th page or sheet of the spectral sequence. We think of each page as living in <span class="process-math">\(\mathbb{Z}^{2}\text{,}\)</span> and depict the <span class="process-math">\(r\)</span> th page by putting <span class="process-math">\(E_{r}^{p, q}\)</span> in the point with coordinates <span class="process-math">\((p, q)\)</span> :</div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-30(1).svg" role="img" class="contained"></div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-30(1).jpg" class="contained"></div>
 </li>
 <li id="def-8.3-1-1-2-2"><div class="para logical" id="def-8.3-1-1-2-2-1">
 <div class="para">Differentials</div>
@@ -896,13 +904,358 @@ E_{p, q}^{r+1} \cong \frac{\operatorname{ker}\left(E_{p, q}^{r} \stackrel{d_{r}}
 </div>
 </div></li>
 </ul>
-</div></article><article class="remark remark-like" id="sec-what-is-spectral-12"><h3 class="heading">
+</div></article><article class="remark remark-like" id="subsec--12"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec--12-1">Remark 8.4. The differential in the <span class="process-math">\(r\)</span> th page is a map of degree <span class="process-math">\((-r, r-1)\text{.}\)</span>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-30(2).jpg" class="contained"></div> <div class="para" id="subsec--12-3">0th page</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-30.jpg" class="contained"></div> <div class="para" id="subsec--12-5">1st page</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-30(3).jpg" class="contained"></div> <div class="para" id="subsec--12-7">2nd page</div></article></section><section class="subsection" id="subsec-bigrad"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Graded and Bigraded Modules</span>
 </h3>
-<div class="para" id="sec-what-is-spectral-12-1">Remark 8.4. The differential in the <span class="process-math">\(r\)</span> th page is a map of degree <span class="process-math">\((-r, r-1)\text{.}\)</span>
-</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-30(2).svg" role="img" class="contained"></div> <div class="para" id="sec-what-is-spectral-12-3">0th page</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-30.svg" role="img" class="contained"></div> <div class="para" id="sec-what-is-spectral-12-5">1st page</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-30(3).svg" role="img" class="contained"></div> <div class="para" id="sec-what-is-spectral-12-7">2nd page</div></article></section></div>
+<div class="para" id="subsec-bigrad-2">We can be a bit more formal and say that a page in a spectral sequence is a differential bigraded module. The goal of this section is to set up some background on the topic of differential bigraded modules.</div>
+<article class="definition definition-like" id="def-8.5"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-8.5-1-1">Definition 8.5. Let <span class="process-math">\(R\)</span> be a ring. A graded module over <span class="process-math">\(R\)</span> is a family <span class="process-math">\(M=\left(M_{n}\right)_{n \in \mathbb{Z}}\)</span> of <span class="process-math">\(R\)</span>-modules indexed by <span class="process-math">\(\mathbb{Z}\text{.}\)</span> We sometimes denote <span class="process-math">\(M\)</span> by <span class="process-math">\(M_{\bullet}\text{.}\)</span>
+</div></article><div class="para" id="subsec-bigrad-4">More precisely, these are <span class="process-math">\(\mathbb{Z}\)</span>-graded modules. More generally, we have discussed <span class="process-math">\(\mathbb{Z}\)</span>-graded modules over any graded ring; in that case, the action of <span class="process-math">\(R\)</span> on <span class="process-math">\(M\)</span> must respect the grading. But here we are not assuming any grading on <span class="process-math">\(R\text{,}\)</span> so we have no such conditions. One may reinterpret our definition of graded module as assuming that <span class="process-math">\(R\)</span> is given the trivial grading concentrated in degree 0, so that <span class="process-math">\(R_{0}=R\)</span> and <span class="process-math">\(R_{i}=0\)</span> otherwise, and thus the condition on the action of <span class="process-math">\(R\)</span> becomes trivial.</div>
+<article class="example example-like" id="subsec-bigrad-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-bigrad-5-1">Example 8.6. If <span class="process-math">\(C\)</span> is a complex of <span class="process-math">\(R\)</span>-modules, then <span class="process-math">\(\left(C_{n}\right)_{n \in \mathbb{Z}}\)</span> is a graded module. Moreover, its homology <span class="process-math">\(H=\left(H_{n}(C)\right)\)</span> also forms a graded module.</div></article><article class="definition definition-like" id="def-8.7"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.7</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.7-1-1">
+<div class="para">Definition 8.7. Given graded modules <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{,}\)</span> a graded map of degree <span class="process-math">\(d\)</span> is a family</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f=\left(f_{n}: M_{n} \rightarrow N_{n+d}\right)_{n \in \mathbb{Z}}
+\end{equation*}
+</div>
+<div class="para">of homomorphisms of <span class="process-math">\(R\)</span>-modules, which we denote by <span class="process-math">\(f: M \rightarrow N\text{.}\)</span> We write <span class="process-math">\(\operatorname{deg}(f)=d\)</span> to denote that the degree <span class="process-math">\(f\)</span> is <span class="process-math">\(d\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="subsec-bigrad-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Example 8.8..</span>
+</h4> <div class="para logical" id="subsec-bigrad-7-2"><ol class="decimal">
+<li id="subsec-bigrad-7-2-1-1"><div class="para" id="subsec-bigrad-7-2-1-1-1">If <span class="process-math">\(C\)</span> is a complex of <span class="process-math">\(R\)</span>-modules, the differential <span class="process-math">\(d\)</span> is a graded map <span class="process-math">\(d: C \rightarrow C\)</span> of degree -1 . If <span class="process-math">\(C\)</span> is a cochain complex, the differential is a graded map of degree 1 .</div></li>
+<li id="subsec-bigrad-7-2-1-2"><div class="para" id="subsec-bigrad-7-2-1-2-1">Any map of complexes <span class="process-math">\(f: C \rightarrow D\)</span> is a graded map of degree 0 .</div></li>
+<li id="subsec-bigrad-7-2-1-3"><div class="para" id="subsec-bigrad-7-2-1-3-1">A homotopy is a map of degree 1 .</div></li>
+</ol></div></article><article class="definition definition-like" id="def-8.9"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-8.9-1-1">Definition 8.9. Let <span class="process-math">\(R\)</span> be a ring. The category of graded modules over <span class="process-math">\(R\)</span> has objects all graded modules and arrows all graded maps of graded modules over <span class="process-math">\(R\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-8.10"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.10</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.10-1-1">
+<div class="para">Definition 8.10. Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be graded modules over a <span class="process-math">\(\operatorname{ring} R\text{.}\)</span> We say <span class="process-math">\(N\)</span> is a submodule of <span class="process-math">\(M\text{,}\)</span> and write <span class="process-math">\(N \subseteq M\text{,}\)</span> if <span class="process-math">\(N_{n} \subseteq M_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span> The quotient of <span class="process-math">\(M\)</span> by <span class="process-math">\(N\)</span> is the graded module</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M / N:=\left(M_{n} / N_{n}\right)_{n}
+\end{equation*}
+</div>
+</div></article><article class="definition definition-like" id="def-8.11"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.11-1-1">
+<div class="para">Definition 8.11. Let <span class="process-math">\(f: M \rightarrow N\)</span> be a graded map of degree <span class="process-math">\(d\)</span> between graded modules. The kernel of <span class="process-math">\(f\)</span> is the graded module</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{ker} f:=\left(\operatorname{ker} f_{n}\right)_{n \in \mathbb{Z}}
+\end{equation*}
+</div>
+<div class="para">and the image of <span class="process-math">\(f\)</span> is the graded module</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{im} f:=\left(\operatorname{im} f_{n-d}\right)_{n \in \mathbb{Z}}
+\end{equation*}
+</div>
+</div></article><article class="definition definition-like" id="def-8.12"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.12</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.12-1-1">
+<div class="para">Definition 8.12. Consider graded maps of graded modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C
+\end{equation*}
+</div>
+<div class="para">We say this is an exact sequence if <span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\text{.}\)</span>
+</div>
+</div></article><article class="remark remark-like" id="subsec-bigrad-12"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-bigrad-12-1">Remark 8.13. By our definition of kernel and image, <span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\)</span> says that <span class="process-math">\(\operatorname{im} f_{n-d}=\operatorname{ker} g_{n}\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-8.14"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.14</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-8.14-1-1">Definition 8.14. Let <span class="process-math">\(R\)</span> be a ring. A bigraded module over <span class="process-math">\(R\)</span> is a family <span class="process-math">\(M=\left(M_{p, q}\right)_{p, q \in \mathbb{Z}}\)</span> of <span class="process-math">\(R\)</span>-modules indexed by <span class="process-math">\(\mathbb{Z} \times \mathbb{Z}\text{.}\)</span> We sometimes denote <span class="process-math">\(M\)</span> by <span class="process-math">\(M_{\bullet, \bullet}\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-8.15"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.15</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.15-1-1">
+<div class="para">Definition 8.15. Let <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> be bigraded modules over a ring <span class="process-math">\(R\text{.}\)</span> A bigraded map <span class="process-math">\(f: M \rightarrow N\)</span> of degree <span class="process-math">\((a, b)\)</span> is a family of homomorphisms of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f=\left(f_{p, q}: M_{p, q} \rightarrow N_{p+a, q+b}\right)_{p, q \in \mathbb{Z}}
+\end{equation*}
+</div>
+</div> <div class="para" id="def-8.15-1-2">We denote the degree of <span class="process-math">\(f\)</span> by <span class="process-math">\(\operatorname{deg}(f)=(a, b)\text{.}\)</span>
+</div> <div class="para logical" id="def-8.15-1-3">
+<div class="para">The kernel of <span class="process-math">\(f\)</span> is the bigraded module</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{ker} f:=\left(\operatorname{ker} f_{p, q}\right)_{p, q \in \mathbb{Z}}
+\end{equation*}
+</div>
+<div class="para">and the image of <span class="process-math">\(f\)</span> is the bigraded module</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{im} f:=\left(\operatorname{im} f_{p-a, q-b}\right)_{p, q \in \mathbb{Z}}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-8.15-1-4">
+<div class="para">We say a sequence of graded maps</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \stackrel{f}{\longrightarrow} B \xrightarrow{g} C
+\end{equation*}
+</div>
+<div class="para">is exact if <span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="def-8.16"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.16</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-8.16-1-1">Definition 8.16. A differential (bi)graded module <span class="process-math">\((M, d)\)</span> over a ring <span class="process-math">\(R\)</span> consists of a (bi)graded module <span class="process-math">\(M\)</span> and a graded map <span class="process-math">\(d: M \rightarrow M\text{,}\)</span> which we call the differential, such that <span class="process-math">\(d d=0\text{.}\)</span>
+</div></article><div class="para" id="subsec-bigrad-16">We can think of (bi)graded modules as differential (bi)graded modules with zero differential.</div>
+<article class="example example-like" id="subsec-bigrad-17"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.17</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-bigrad-17-1">Example 8.17. A double complex <span class="process-math">\(C\)</span> with differentials <span class="process-math">\(d^{h}\)</span> and <span class="process-math">\(d^{v}\)</span> gives rise to two differential bigraded complexes: <span class="process-math">\(\left(C, d^{h}\right)\)</span> and <span class="process-math">\(\left(C, d^{v}\right)\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-8.18"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.18</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.18-1-1">
+<div class="para">Definition 8.18. Let <span class="process-math">\((M, d)\)</span> be a differential (bi)graded module. The homology of <span class="process-math">\(M\)</span> is the (bi)graded module</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}(M, d)=\operatorname{ker} d / \operatorname{im} d
+\end{equation*}
+</div>
+<div class="para">We sometimes shorten this to <span class="process-math">\(\mathrm{H}(M)\text{.}\)</span>
+</div>
+</div></article><div class="para" id="subsec-bigrad-19">A spectral sequence can now be recast as a sequence <span class="process-math">\(\left(E^{r}, d^{r}\right)\)</span> of differential bigraded modules such that <span class="process-math">\(E^{r+1}=\mathrm{H}\left(E^{r}, d^{r}\right)\text{.}\)</span>
+</div></section><section class="subsection" id="subsec-filtrations"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Filtrations</span>
+</h3>
+<article class="definition definition-like" id="def-8.19"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.19</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.19-1-1">
+<div class="para">Definition 8.19. Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module. A filtration <span class="process-math">\(F^{\bullet} M\)</span> on <span class="process-math">\(M\)</span> is a family <span class="process-math">\(\left(F^{p} M\right)_{p \in \mathbb{Z}}\)</span> of submodules of <span class="process-math">\(M\)</span> such that either</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{p} M \subseteq F^{p+1} M
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(p\text{,}\)</span> in which case we say the filtration is increasing, or</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{p} M \subseteq F^{p-1} M
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(p\text{,}\)</span> in which case we say the filtration is decreasing. When we do not specify if a filtration is ascending or descending, we will assume by default that it is ascending, though we accept both kinds as filtrations in their own right. The factors of <span class="process-math">\(F^{\bullet}\)</span> are the quotient modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{p} M / F^{p-1} M
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-filtrations-3">One can in fact define filtrations on any abelian category; that requires the notion of a subobject, which we have not yet defined, but it is easy to guess: a suboject of an object <span class="process-math">\(x\)</span> in an abelian category <span class="process-math">\(\mathcal{A}\)</span> is a mono with target <span class="process-math">\(x\text{.}\)</span> In particular, we can define a filtration on a complex, or more generally on a (differential) (bi)graded module:</div>
+<article class="definition definition-like" id="def-8.20"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.20</span><span class="period">.</span>
+</h4>
+<div class="para" id="def-8.20-1-1">Definition 8.20. An ascending filtration on a (bi)graded module <span class="process-math">\(M\)</span> is a sequence <span class="process-math">\(F^{p} M\)</span> of submodules of <span class="process-math">\(M\)</span> such that <span class="process-math">\(F^{p} M \subseteq F^{p+1} M\text{.}\)</span> If <span class="process-math">\(M\)</span> is a differential (bi)graded module, we require additionally that the filtration respects the differential, that is, that <span class="process-math">\(d\left(F^{p} M\right) \subseteq F^{p} M\text{.}\)</span>
+</div></article><div class="para" id="subsec-filtrations-5">So in particular when <span class="process-math">\(C\)</span> is a complex, we get the following definition:</div>
+<article class="definition definition-like" id="def-8.21"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.21</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.21-1-1">
+<div class="para">Definition 8.21. Let <span class="process-math">\(C\)</span> be a complex. An ascending filtration <span class="process-math">\(F^{\bullet} C\)</span> of <span class="process-math">\(C\)</span> is an ascending chain of subcomplexes <span class="process-math">\(F^{p} C\)</span> of <span class="process-math">\(C\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \subseteq F^{p-1} C \subseteq F^{p} C \subseteq F^{p+1} C \subseteq \cdots
+\end{equation*}
+</div>
+</div> <div class="para" id="def-8.21-1-2">We call a complex <span class="process-math">\((C, \partial)\)</span> with a filtration <span class="process-math">\(F\)</span> a filtered complex, and denote it by <span class="process-math">\((C, \partial, F)\text{.}\)</span>
+</div></article><div class="para" id="subsec-filtrations-7">As above, one can define a descending filtration; if we do not indicate whether a filtration is ascending or descending, we will always by default assume it is ascending.</div>
+<article class="remark remark-like" id="subsec-filtrations-8"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.22</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-filtrations-8-1">
+<div class="para">Remark 8.22. Let <span class="process-math">\(C\)</span> be a complex and consider an ascending filtration <span class="process-math">\(F_{\bullet} C\)</span> of <span class="process-math">\(C\text{.}\)</span> For each fixed homological degree <span class="process-math">\(n\text{,}\)</span> we get an ascending filtration</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \subseteq F^{p-1} C_{n} \subseteq F^{p} C_{n} \subseteq F^{p+1} C_{n} \subseteq \cdots
+\end{equation*}
+</div>
+<div class="para">of submodules of <span class="process-math">\(C_{n}\text{.}\)</span> A filtration of <span class="process-math">\(C\)</span> gives us commutative diagrams</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-33.jpg" class="contained"></div> <div class="para" id="subsec-filtrations-8-3">where the rows are given by the differential on <span class="process-math">\(C\)</span> and its restrictions to the appropriate modules.</div></article><article class="definition definition-like" id="def-8.23"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.23</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.23-1-1">
+<div class="para">Definition 8.23. Let <span class="process-math">\(C\)</span> be a complex with a filtration <span class="process-math">\(F^{\bullet} C\text{,}\)</span> and consider the inclusions <span class="process-math">\(i_{p}: F^{p} C \rightarrow C\text{.}\)</span> We get an induced filtration in homology, as follows: for each <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{p} \mathrm{H}_{n}(C):=\operatorname{im}\left(\mathrm{H}_{n}\left(F^{p} C\right) \rightarrow \mathrm{H}_{n}(C)\right),
+\end{equation*}
+</div>
+<div class="para">giving us a filtration <span class="process-math">\(F^{\bullet} \mathrm{H}(C)\)</span> on the graded module <span class="process-math">\(\mathrm{H}(C)\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="def-8.24"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.24</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.24-1-1">
+<div class="para">Definition 8.24. A filtration <span class="process-math">\(F^{\bullet} M\)</span> of a graded module <span class="process-math">\(M\)</span> is bounded if for each <span class="process-math">\(n\)</span> there exists integers <span class="process-math">\(s=s(n)\)</span> and <span class="process-math">\(t=t(n)\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{s} M_{n}=0 \quad \text { and } \quad F^{t} M_{n}=M_{n}
+\end{equation*}
+</div>
+<div class="para">so that the filtration on <span class="process-math">\(M_{n}\)</span> can be described by finitely many terms</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{s} M_{n}=0 \subseteq F^{s+1} M_{n} \subseteq \cdots F^{t-1} M_{n} \subseteq F^{t} M_{n}=M_{n}
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-filtrations-11">In particular, <span class="process-math">\(F^{i} M_{n}=0\)</span> for all <span class="process-math">\(i&lt;s\)</span> and <span class="process-math">\(F^{i} M_{n}=M_{n}\)</span> for all <span class="process-math">\(i&gt;t\text{.}\)</span>
+</div>
+<div class="para logical" id="subsec-filtrations-12">
+<div class="para">Notice, however, that the bounds <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> may depend on <span class="process-math">\(n\text{,}\)</span> and in particular there is not necessarily global integers <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{s} M_{n}=0 \quad \text { and } \quad F^{t} M_{n}=M_{n}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(n\text{.}\)</span>
+</div>
+</div>
+<article class="remark remark-like" id="subsec-filtrations-13"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.25</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-filtrations-13-1">
+<div class="para">Remark 8.25. Suppose that <span class="process-math">\(F^{\bullet} M\)</span> is a bounded filtration on a complex <span class="process-math">\(C\text{.}\)</span> Then the induced filtration in homology is also bounded, with the same bounds (or better), so that for all <span class="process-math">\(n\)</span> there exist <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0=F^{s} \mathrm{H}_{n}(C)=0 \quad \text { and } \quad F^{t} \mathrm{H}_{n}(C)=\mathrm{H}_{n}(C) .
+\end{equation*}
+</div>
+</div></article><article class="definition definition-like" id="def-8.26"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.26</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.26-1-1">
+<div class="para">Definition 8.26. Let <span class="process-math">\(M\)</span> be a module or a graded module. Given an increasing filtration <span class="process-math">\(F\)</span> of <span class="process-math">\(M\text{,}\)</span> its associated graded module is the graded module <span class="process-math">\(\operatorname{gr}_{F}(M)\)</span> given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{gr}_{F}(M):=\left(F^{n} M / F^{n-1} M\right)_{n \in \mathbb{Z}}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-8.26-1-2">
+<div class="para">Given a decreasing filtration <span class="process-math">\(F\)</span> of an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> its associated graded module is the graded module <span class="process-math">\(\operatorname{gr}_{F}(M)\)</span> given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{gr}_{F}(M):=\left(F^{n} M / F^{n+1} M\right)_{n \in \mathbb{Z}}
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-filtrations-15">Note that the associated graded module depends on the choice of filtration.</div>
+<article class="remark remark-like" id="subsec-filtrations-16"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.27</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-filtrations-16-1">
+<div class="para">Remark 8.27. Let <span class="process-math">\((C, d, F)\)</span> be a filtered complex. The differential <span class="process-math">\(d\)</span> induces a differential on the associated graded:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+F^{p} C_{n} / F^{p-1} C_{n} &amp; \longrightarrow F^{p} C_{n-1} / F^{p-1} C_{n-1} \\
+a+F^{p-1} C_{n} &amp; \longmapsto d(a)+F^{p-1} C_{n-1}
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">This is well-defined, since our definition of filtered complex requires that the filtration respects the differential: if <span class="process-math">\(a \in F_{p-1} C_{n}\text{,}\)</span> then <span class="process-math">\(d(a) \in F^{p-1} C_{n-1}\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="def-8.28"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.28</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="def-8.28-1-1">
+<div class="para">Definition 8.28. We can filter the integers <span class="process-math">\(\mathbb{Z}\)</span> as a <span class="process-math">\(\mathbb{Z}\)</span>-module as follows: we set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{n} \mathbb{Z}=\mathbb{Z} \quad \text { whenever } n \leqslant 0
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{n} \mathbb{Z}=\left(2^{n}\right) \quad \text { whenever } n \geqslant 0
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-8.28-1-2">
+<div class="para">This give us the decreasing filtration</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbb{Z} \supseteq \mathbb{Z} \supseteq \mathbb{Z} \supseteq(2) \supseteq(4) \supseteq(8) \supseteq \cdots
+\end{equation*}
+</div>
+</div> <div class="para logical" id="def-8.28-1-3">
+<div class="para">The corresponding associated graded module has</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{gr}_{F}(\mathbb{Z})_{n}=0 \quad \text { whenever } n \leqslant 0
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{gr}_{F}(\mathbb{Z})_{n}=\left(2^{n}\right) /\left(2^{n+1}\right) \cong \mathbb{Z} / 2 \quad \text { whenever } n \geqslant 0
+\end{equation*}
+</div>
+</div></article><article class="remark remark-like" id="subsec-filtrations-18"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.29</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-filtrations-18-1">
+<div class="para">Remark 8.29 (the associated graded versus the actual module). Suppose someone has filtered the <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> by <span class="process-math">\(F^{\bullet} M\text{,}\)</span> but that we only have access to the associated graded module of this filtration. While the pieces of the associated graded give us information about <span class="process-math">\(M\text{,}\)</span> they may not be sufficient to fully compute <span class="process-math">\(M\text{.}\)</span> For a simple example, consider an <span class="process-math">\(R\)</span>-module <span class="process-math">\(B\)</span> and a submodule <span class="process-math">\(A \subseteq B\text{,}\)</span> and the filtration</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^{p} M= \begin{cases}0 &amp; \text { if } p&lt;0 \\ A &amp; \text { if } p=0 \\ B &amp; \text { if } p \geqslant 1\end{cases}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-filtrations-18-2">
+<div class="para">The associated graded is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{gr}_{n}= \begin{cases}0 &amp; \text { if } p&lt;0 \\ A &amp; \text { if } p=0 \\ B / A &amp; \text { if } p=1 \\ 0 &amp; \text { if } p \geqslant 1\end{cases}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-filtrations-18-3">
+<div class="para">So if we are only given the associated graded, meaning, if all we have access to is <span class="process-math">\(A\)</span> and <span class="process-math">\(B / A\text{,}\)</span> then all we know about <span class="process-math">\(B\)</span> is that fits into a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow B \longrightarrow B / A \longrightarrow 0
+\end{equation*}
+</div>
+</div> <div class="para logical" id="subsec-filtrations-18-4">
+<div class="para">However, if <span class="process-math">\(\operatorname{Ext}_{R}^{1}(B / A, A) \neq 0\text{,}\)</span> then this does not uniquely determine <span class="process-math">\(B\text{.}\)</span> Indeed, it turns out that the isomorphism classes of extensions of <span class="process-math">\(A\)</span> by <span class="process-math">\(B / A\text{,}\)</span> meaning modules <span class="process-math">\(M\)</span> that fit into short exact sequences of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow M \longrightarrow B / A \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">are in bijection with the elements of <span class="process-math">\(\operatorname{Ext}_{R}^{1}(B / A, A)\text{;}\)</span> this is a topic we previously skipped.</div>
+</div></article><article class="example example-like" id="subsec-filtrations-19"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.30</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-filtrations-19-1">For a concrete example, take the case where <span class="process-math">\(A=\mathbb{Z} / 2\)</span> and <span class="process-math">\(B / A=\mathbb{Z} / 2\text{.}\)</span> Then <span class="process-math">\(B\)</span> is not uniquely determined: <span class="process-math">\(\operatorname{Ext}_{R}^{1}(\mathbb{Z} / 2, \mathbb{Z} / 2) \cong \mathbb{Z} / 2\text{,}\)</span> and <span class="process-math">\(B\)</span> can be either <span class="process-math">\(\mathbb{Z} / 4\)</span> or <span class="process-math">\(\mathbb{Z} / 2 \oplus \mathbb{Z} / 2\text{,}\)</span> which are not isomorphic.</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-spectral-sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-bigrad.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-spectral-sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-convergence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

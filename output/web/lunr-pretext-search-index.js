@@ -4371,8 +4371,8 @@ var ptx_lunr_docs = [
   "url": "sec-what-is-spectral.html",
   "type": "Section",
   "number": "8.1",
-  "title": "What is a Spectral Sequence?",
-  "body": "What is a Spectral Sequence?   It has been suggested that the name \"spectral\" was given because, like spectres, spectral sequences are terrifying, evil, and dangerous. I have heard no one disagree with this interpretation, which is perhaps not surprising since I just made it up.  Ravi Vakil, in Spectral Sequences: friend or foe?   Spectral sequences are useful bookkeeping tools for computing, among other things, the homology and cohomology of complicated complexes. Unfortunately, spectral sequences have a bad reputation for being difficult and scary; but continuing Vakil's quote above, \"you can use spectral sequences without hesitation or fear, and [...] you shouldn't be frightened when they come up in a seminar\". Rotman wisely says that \"Of course, the reader must digest these new ideas in order to apply them, but it is worth the effort\" [Rot09, page 608].  Spectral sequences were introduced independently by Leray and Lyndon in the 1940s. Leray came up with the idea while he was a prisoner of the nazis during WWII. The primary usages of spectral sequences are in homotopy theory and topology more generally, but there are also applications in commutative algebra and other fields. Due to its topological roots, the subject is best learned with a topological backdrop - which provides many motivating examples - but since we are not assuming any particular topological background, we will give only a very brief introduction to the subject, and from a more algebraic perspective.  Here are some recommended sources to learn more about spectral sequences:     Rotman's book An introduction to Homological Algebra (second edition) [Rot09].    John McCleary's A user's guide to spectral sequences [McC01].    Ravi Vakil's notes Spectral Sequences: friend or foe?    Hatcher's additional chapter on spectral sequences, an addition to his Algebraic Topology book [Hat02].    Weibel's book An introduction to homological algebra [Wei94].    Eisenbud's Appendix A3.13 to his book Commutative algebra with a view towards algebraic geometry [Eis95].    Mel Hochster's notes.    Michael Hutchings notes.     Roughly speaking, a spectral sequence is a book where each page is a plane with a module (or more general, an object in an abelian category) sitting in each point with integer coordinates. To pass the pages, we take the (co)homology of a differential, and attach to the next page a new differential with a different shape.    A cohomological spectral sequence consists of the following data:   A family of -modules ranging over all integers with . For a fixed , the collection of modules is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :     Differentials so -module homomorphisms such that , or more precisely,     Isomorphisms meaning for every .        Remark 8.2. The differential in the th page is a map of degree . Here are some examples:   0th page   1st page   2nd page   We can define spectral sequences more generally over any abelian category. However, most spectral sequences the typical mathematician ever computes are over -modules (or even just vector spaces!), so we will keep things friendly by sticking to -modules.    A homological spectral sequence is a sequence consists of the following data:   A family of -modules ranging over all integers with . For a fixed , the collection of objects is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :     Differentials and for each isomorphisms , meaning for every .    Isomorphisms meaning for every .        Remark 8.4. The differential in the th page is a map of degree .   0th page   1st page   2nd page   "
+  "title": "Intro to Spectral Sequences",
+  "body": "Intro to Spectral Sequences  What is a Spectral Sequence?   It has been suggested that the name \"spectral\" was given because, like spectres, spectral sequences are terrifying, evil, and dangerous. I have heard no one disagree with this interpretation, which is perhaps not surprising since I just made it up.  Ravi Vakil, in Spectral Sequences: friend or foe?   Spectral sequences are useful bookkeeping tools for computing, among other things, the homology and cohomology of complicated complexes. Unfortunately, spectral sequences have a bad reputation for being difficult and scary; but continuing Vakil's quote above, \"you can use spectral sequences without hesitation or fear, and [...] you shouldn't be frightened when they come up in a seminar\". Rotman wisely says that \"Of course, the reader must digest these new ideas in order to apply them, but it is worth the effort\" [Rot09, page 608].  Spectral sequences were introduced independently by Leray and Lyndon in the 1940s. Leray came up with the idea while he was a prisoner of the nazis during WWII. The primary usages of spectral sequences are in homotopy theory and topology more generally, but there are also applications in commutative algebra and other fields. Due to its topological roots, the subject is best learned with a topological backdrop - which provides many motivating examples - but since we are not assuming any particular topological background, we will give only a very brief introduction to the subject, and from a more algebraic perspective.  Here are some recommended sources to learn more about spectral sequences:     Rotman's book An introduction to Homological Algebra (second edition) [Rot09].    John McCleary's A user's guide to spectral sequences [McC01].    Ravi Vakil's notes Spectral Sequences: friend or foe?    Hatcher's additional chapter on spectral sequences, an addition to his Algebraic Topology book [Hat02].    Weibel's book An introduction to homological algebra [Wei94].    Eisenbud's Appendix A3.13 to his book Commutative algebra with a view towards algebraic geometry [Eis95].    Mel Hochster's notes.    Michael Hutchings notes.     Roughly speaking, a spectral sequence is a book where each page is a plane with a module (or more general, an object in an abelian category) sitting in each point with integer coordinates. To pass the pages, we take the (co)homology of a differential, and attach to the next page a new differential with a different shape.    A cohomological spectral sequence consists of the following data:   A family of -modules ranging over all integers with . For a fixed , the collection of modules is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :     Differentials so -module homomorphisms such that , or more precisely,     Isomorphisms meaning for every .        Remark 8.2. The differential in the th page is a map of degree . Here are some examples:   0th page   1st page   2nd page   We can define spectral sequences more generally over any abelian category. However, most spectral sequences the typical mathematician ever computes are over -modules (or even just vector spaces!), so we will keep things friendly by sticking to -modules.    A homological spectral sequence is a sequence consists of the following data:   A family of -modules ranging over all integers with . For a fixed , the collection of objects is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :     Differentials and for each isomorphisms , meaning for every .    Isomorphisms meaning for every .        Remark 8.4. The differential in the th page is a map of degree .   0th page   1st page   2nd page    Graded and Bigraded Modules  We can be a bit more formal and say that a page in a spectral sequence is a differential bigraded module. The goal of this section is to set up some background on the topic of differential bigraded modules.    Definition 8.5. Let be a ring. A graded module over is a family of -modules indexed by . We sometimes denote by .    More precisely, these are -graded modules. More generally, we have discussed -graded modules over any graded ring; in that case, the action of on must respect the grading. But here we are not assuming any grading on , so we have no such conditions. One may reinterpret our definition of graded module as assuming that is given the trivial grading concentrated in degree 0, so that and otherwise, and thus the condition on the action of becomes trivial.   Example 8.6. If is a complex of -modules, then is a graded module. Moreover, its homology also forms a graded module.     Definition 8.7. Given graded modules and , a graded map of degree is a family of homomorphisms of -modules, which we denote by . We write to denote that the degree is .    Example 8.8.     If is a complex of -modules, the differential is a graded map of degree -1 . If is a cochain complex, the differential is a graded map of degree 1 .    Any map of complexes is a graded map of degree 0 .    A homotopy is a map of degree 1 .        Definition 8.9. Let be a ring. The category of graded modules over has objects all graded modules and arrows all graded maps of graded modules over .      Definition 8.10. Let and be graded modules over a . We say is a submodule of , and write , if for all . The quotient of by is the graded module       Definition 8.11. Let be a graded map of degree between graded modules. The kernel of is the graded module and the image of is the graded module       Definition 8.12. Consider graded maps of graded modules We say this is an exact sequence if .     Remark 8.13. By our definition of kernel and image, says that for all .     Definition 8.14. Let be a ring. A bigraded module over is a family of -modules indexed by . We sometimes denote by .      Definition 8.15. Let and be bigraded modules over a ring . A bigraded map of degree is a family of homomorphisms of -modules   We denote the degree of by .  The kernel of is the bigraded module and the image of is the bigraded module   We say a sequence of graded maps is exact if .      Definition 8.16. A differential (bi)graded module over a ring consists of a (bi)graded module and a graded map , which we call the differential, such that .    We can think of (bi)graded modules as differential (bi)graded modules with zero differential.   Example 8.17. A double complex with differentials and gives rise to two differential bigraded complexes: and .     Definition 8.18. Let be a differential (bi)graded module. The homology of is the (bi)graded module We sometimes shorten this to .    A spectral sequence can now be recast as a sequence of differential bigraded modules such that .   Filtrations    Definition 8.19. Let be an -module. A filtration on is a family of submodules of such that either for all , in which case we say the filtration is increasing, or for all , in which case we say the filtration is decreasing. When we do not specify if a filtration is ascending or descending, we will assume by default that it is ascending, though we accept both kinds as filtrations in their own right. The factors of are the quotient modules     One can in fact define filtrations on any abelian category; that requires the notion of a subobject, which we have not yet defined, but it is easy to guess: a suboject of an object in an abelian category is a mono with target . In particular, we can define a filtration on a complex, or more generally on a (differential) (bi)graded module:    Definition 8.20. An ascending filtration on a (bi)graded module is a sequence of submodules of such that . If is a differential (bi)graded module, we require additionally that the filtration respects the differential, that is, that .    So in particular when is a complex, we get the following definition:    Definition 8.21. Let be a complex. An ascending filtration of is an ascending chain of subcomplexes of    We call a complex with a filtration a filtered complex, and denote it by .    As above, one can define a descending filtration; if we do not indicate whether a filtration is ascending or descending, we will always by default assume it is ascending.   Remark 8.22. Let be a complex and consider an ascending filtration of . For each fixed homological degree , we get an ascending filtration of submodules of . A filtration of gives us commutative diagrams   where the rows are given by the differential on and its restrictions to the appropriate modules.     Definition 8.23. Let be a complex with a filtration , and consider the inclusions . We get an induced filtration in homology, as follows: for each , giving us a filtration on the graded module .      Definition 8.24. A filtration of a graded module is bounded if for each there exists integers and such that so that the filtration on can be described by finitely many terms     In particular, for all and for all .  Notice, however, that the bounds and may depend on , and in particular there is not necessarily global integers and such that for all .   Remark 8.25. Suppose that is a bounded filtration on a complex . Then the induced filtration in homology is also bounded, with the same bounds (or better), so that for all there exist and such that      Definition 8.26. Let be a module or a graded module. Given an increasing filtration of , its associated graded module is the graded module given by   Given a decreasing filtration of an -module , its associated graded module is the graded module given by     Note that the associated graded module depends on the choice of filtration.   Remark 8.27. Let be a filtered complex. The differential induces a differential on the associated graded: This is well-defined, since our definition of filtered complex requires that the filtration respects the differential: if , then .     Definition 8.28. We can filter the integers as a -module as follows: we set and   This give us the decreasing filtration   The corresponding associated graded module has and      Remark 8.29 (the associated graded versus the actual module). Suppose someone has filtered the -module by , but that we only have access to the associated graded module of this filtration. While the pieces of the associated graded give us information about , they may not be sufficient to fully compute . For a simple example, consider an -module and a submodule , and the filtration   The associated graded is given by   So if we are only given the associated graded, meaning, if all we have access to is and , then all we know about is that fits into a short exact sequence   However, if , then this does not uniquely determine . Indeed, it turns out that the isomorphism classes of extensions of by , meaning modules that fit into short exact sequences of the form are in bijection with the elements of ; this is a topic we previously skipped.    For a concrete example, take the case where and . Then is not uniquely determined: , and can be either or , which are not isomorphic.    "
 },
 {
   "id": "def-8.1",
@@ -4384,9 +4384,9 @@ var ptx_lunr_docs = [
   "body": "  A cohomological spectral sequence consists of the following data:   A family of -modules ranging over all integers with . For a fixed , the collection of modules is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :     Differentials so -module homomorphisms such that , or more precisely,     Isomorphisms meaning for every .      "
 },
 {
-  "id": "sec-what-is-spectral-9",
+  "id": "subsec--9",
   "level": "2",
-  "url": "sec-what-is-spectral.html#sec-what-is-spectral-9",
+  "url": "sec-what-is-spectral.html#subsec--9",
   "type": "Remark",
   "number": "8.2",
   "title": "",
@@ -4402,36 +4402,27 @@ var ptx_lunr_docs = [
   "body": "  A homological spectral sequence is a sequence consists of the following data:   A family of -modules ranging over all integers with . For a fixed , the collection of objects is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :     Differentials and for each isomorphisms , meaning for every .    Isomorphisms meaning for every .      "
 },
 {
-  "id": "sec-what-is-spectral-12",
+  "id": "subsec--12",
   "level": "2",
-  "url": "sec-what-is-spectral.html#sec-what-is-spectral-12",
+  "url": "sec-what-is-spectral.html#subsec--12",
   "type": "Remark",
   "number": "8.4",
   "title": "",
   "body": " Remark 8.4. The differential in the th page is a map of degree .   0th page   1st page   2nd page  "
 },
 {
-  "id": "sec-bigrad",
-  "level": "1",
-  "url": "sec-bigrad.html",
-  "type": "Section",
-  "number": "8.2",
-  "title": "Graded and Bigraded Modules",
-  "body": "Graded and Bigraded Modules  We can be a bit more formal and say that a page in a spectral sequence is a differential bigraded module. The goal of this section is to set up some background on the topic of differential bigraded modules.    Definition 8.5. Let be a ring. A graded module over is a family of -modules indexed by . We sometimes denote by .    More precisely, these are -graded modules. More generally, we have discussed -graded modules over any graded ring; in that case, the action of on must respect the grading. But here we are not assuming any grading on , so we have no such conditions. One may reinterpret our definition of graded module as assuming that is given the trivial grading concentrated in degree 0, so that and otherwise, and thus the condition on the action of becomes trivial.   Example 8.6. If is a complex of -modules, then is a graded module. Moreover, its homology also forms a graded module.     Definition 8.7. Given graded modules and , a graded map of degree is a family of homomorphisms of -modules, which we denote by . We write to denote that the degree is .    Example 8.8.     If is a complex of -modules, the differential is a graded map of degree -1 . If is a cochain complex, the differential is a graded map of degree 1 .    Any map of complexes is a graded map of degree 0 .    A homotopy is a map of degree 1 .        Definition 8.9. Let be a ring. The category of graded modules over has objects all graded modules and arrows all graded maps of graded modules over .      Definition 8.10. Let and be graded modules over a . We say is a submodule of , and write , if for all . The quotient of by is the graded module       Definition 8.11. Let be a graded map of degree between graded modules. The kernel of is the graded module and the image of is the graded module       Definition 8.12. Consider graded maps of graded modules We say this is an exact sequence if .     Remark 8.13. By our definition of kernel and image, says that for all .     Definition 8.14. Let be a ring. A bigraded module over is a family of -modules indexed by . We sometimes denote by .      Definition 8.15. Let and be bigraded modules over a ring . A bigraded map of degree is a family of homomorphisms of -modules   We denote the degree of by .  The kernel of is the bigraded module and the image of is the bigraded module   We say a sequence of graded maps is exact if .      Definition 8.16. A differential (bi)graded module over a ring consists of a (bi)graded module and a graded map , which we call the differential, such that .    We can think of (bi)graded modules as differential (bi)graded modules with zero differential.   Example 8.17. A double complex with differentials and gives rise to two differential bigraded complexes: and .     Definition 8.18. Let be a differential (bi)graded module. The homology of is the (bi)graded module We sometimes shorten this to .    A spectral sequence can now be recast as a sequence of differential bigraded modules such that .  "
-},
-{
   "id": "def-8.5",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.5",
+  "url": "sec-what-is-spectral.html#def-8.5",
   "type": "Definition",
   "number": "8.5",
   "title": "",
   "body": "  Definition 8.5. Let be a ring. A graded module over is a family of -modules indexed by . We sometimes denote by .   "
 },
 {
-  "id": "sec-bigrad-5",
+  "id": "subsec-bigrad-5",
   "level": "2",
-  "url": "sec-bigrad.html#sec-bigrad-5",
+  "url": "sec-what-is-spectral.html#subsec-bigrad-5",
   "type": "Example",
   "number": "8.6",
   "title": "",
@@ -4440,16 +4431,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.7",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.7",
+  "url": "sec-what-is-spectral.html#def-8.7",
   "type": "Definition",
   "number": "8.7",
   "title": "",
   "body": "  Definition 8.7. Given graded modules and , a graded map of degree is a family of homomorphisms of -modules, which we denote by . We write to denote that the degree is .   "
 },
 {
-  "id": "sec-bigrad-7",
+  "id": "subsec-bigrad-7",
   "level": "2",
-  "url": "sec-bigrad.html#sec-bigrad-7",
+  "url": "sec-what-is-spectral.html#subsec-bigrad-7",
   "type": "Example",
   "number": "8.8",
   "title": "Example 8.8..",
@@ -4458,7 +4449,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.9",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.9",
+  "url": "sec-what-is-spectral.html#def-8.9",
   "type": "Definition",
   "number": "8.9",
   "title": "",
@@ -4467,7 +4458,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.10",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.10",
+  "url": "sec-what-is-spectral.html#def-8.10",
   "type": "Definition",
   "number": "8.10",
   "title": "",
@@ -4476,7 +4467,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.11",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.11",
+  "url": "sec-what-is-spectral.html#def-8.11",
   "type": "Definition",
   "number": "8.11",
   "title": "",
@@ -4485,16 +4476,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.12",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.12",
+  "url": "sec-what-is-spectral.html#def-8.12",
   "type": "Definition",
   "number": "8.12",
   "title": "",
   "body": "  Definition 8.12. Consider graded maps of graded modules We say this is an exact sequence if .   "
 },
 {
-  "id": "sec-bigrad-12",
+  "id": "subsec-bigrad-12",
   "level": "2",
-  "url": "sec-bigrad.html#sec-bigrad-12",
+  "url": "sec-what-is-spectral.html#subsec-bigrad-12",
   "type": "Remark",
   "number": "8.13",
   "title": "",
@@ -4503,7 +4494,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.14",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.14",
+  "url": "sec-what-is-spectral.html#def-8.14",
   "type": "Definition",
   "number": "8.14",
   "title": "",
@@ -4512,7 +4503,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.15",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.15",
+  "url": "sec-what-is-spectral.html#def-8.15",
   "type": "Definition",
   "number": "8.15",
   "title": "",
@@ -4521,16 +4512,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.16",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.16",
+  "url": "sec-what-is-spectral.html#def-8.16",
   "type": "Definition",
   "number": "8.16",
   "title": "",
   "body": "  Definition 8.16. A differential (bi)graded module over a ring consists of a (bi)graded module and a graded map , which we call the differential, such that .   "
 },
 {
-  "id": "sec-bigrad-17",
+  "id": "subsec-bigrad-17",
   "level": "2",
-  "url": "sec-bigrad.html#sec-bigrad-17",
+  "url": "sec-what-is-spectral.html#subsec-bigrad-17",
   "type": "Example",
   "number": "8.17",
   "title": "",
@@ -4539,25 +4530,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.18",
   "level": "2",
-  "url": "sec-bigrad.html#def-8.18",
+  "url": "sec-what-is-spectral.html#def-8.18",
   "type": "Definition",
   "number": "8.18",
   "title": "",
   "body": "  Definition 8.18. Let be a differential (bi)graded module. The homology of is the (bi)graded module We sometimes shorten this to .   "
 },
 {
-  "id": "sec-filtrations",
-  "level": "1",
-  "url": "sec-filtrations.html",
-  "type": "Section",
-  "number": "8.3",
-  "title": "Filtrations",
-  "body": "Filtrations    Definition 8.19. Let be an -module. A filtration on is a family of submodules of such that either for all , in which case we say the filtration is increasing, or for all , in which case we say the filtration is decreasing. When we do not specify if a filtration is ascending or descending, we will assume by default that it is ascending, though we accept both kinds as filtrations in their own right. The factors of are the quotient modules     One can in fact define filtrations on any abelian category; that requires the notion of a subobject, which we have not yet defined, but it is easy to guess: a suboject of an object in an abelian category is a mono with target . In particular, we can define a filtration on a complex, or more generally on a (differential) (bi)graded module:    Definition 8.20. An ascending filtration on a (bi)graded module is a sequence of submodules of such that . If is a differential (bi)graded module, we require additionally that the filtration respects the differential, that is, that .    So in particular when is a complex, we get the following definition:    Definition 8.21. Let be a complex. An ascending filtration of is an ascending chain of subcomplexes of    We call a complex with a filtration a filtered complex, and denote it by .    As above, one can define a descending filtration; if we do not indicate whether a filtration is ascending or descending, we will always by default assume it is ascending.   Remark 8.22. Let be a complex and consider an ascending filtration of . For each fixed homological degree , we get an ascending filtration of submodules of . A filtration of gives us commutative diagrams   where the rows are given by the differential on and its restrictions to the appropriate modules.     Definition 8.23. Let be a complex with a filtration , and consider the inclusions . We get an induced filtration in homology, as follows: for each , giving us a filtration on the graded module .      Definition 8.24. A filtration of a graded module is bounded if for each there exists integers and such that so that the filtration on can be described by finitely many terms     In particular, for all and for all .  Notice, however, that the bounds and may depend on , and in particular there is not necessarily global integers and such that for all .   Remark 8.25. Suppose that is a bounded filtration on a complex . Then the induced filtration in homology is also bounded, with the same bounds (or better), so that for all there exist and such that      Definition 8.26. Let be a module or a graded module. Given an increasing filtration of , its associated graded module is the graded module given by   Given a decreasing filtration of an -module , its associated graded module is the graded module given by     Note that the associated graded module depends on the choice of filtration.   Remark 8.27. Let be a filtered complex. The differential induces a differential on the associated graded: This is well-defined, since our definition of filtered complex requires that the filtration respects the differential: if , then .     Definition 8.28. We can filter the integers as a -module as follows: we set and   This give us the decreasing filtration   The corresponding associated graded module has and      Remark 8.29 (the associated graded versus the actual module). Suppose someone has filtered the -module by , but that we only have access to the associated graded module of this filtration. While the pieces of the associated graded give us information about , they may not be sufficient to fully compute . For a simple example, consider an -module and a submodule , and the filtration   The associated graded is given by   So if we are only given the associated graded, meaning, if all we have access to is and , then all we know about is that fits into a short exact sequence   However, if , then this does not uniquely determine . Indeed, it turns out that the isomorphism classes of extensions of by , meaning modules that fit into short exact sequences of the form are in bijection with the elements of ; this is a topic we previously skipped.    For a concrete example, take the case where and . Then is not uniquely determined: , and can be either or , which are not isomorphic.   "
-},
-{
   "id": "def-8.19",
   "level": "2",
-  "url": "sec-filtrations.html#def-8.19",
+  "url": "sec-what-is-spectral.html#def-8.19",
   "type": "Definition",
   "number": "8.19",
   "title": "",
@@ -4566,7 +4548,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.20",
   "level": "2",
-  "url": "sec-filtrations.html#def-8.20",
+  "url": "sec-what-is-spectral.html#def-8.20",
   "type": "Definition",
   "number": "8.20",
   "title": "",
@@ -4575,16 +4557,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.21",
   "level": "2",
-  "url": "sec-filtrations.html#def-8.21",
+  "url": "sec-what-is-spectral.html#def-8.21",
   "type": "Definition",
   "number": "8.21",
   "title": "",
   "body": "  Definition 8.21. Let be a complex. An ascending filtration of is an ascending chain of subcomplexes of    We call a complex with a filtration a filtered complex, and denote it by .   "
 },
 {
-  "id": "sec-filtrations-8",
+  "id": "subsec-filtrations-8",
   "level": "2",
-  "url": "sec-filtrations.html#sec-filtrations-8",
+  "url": "sec-what-is-spectral.html#subsec-filtrations-8",
   "type": "Remark",
   "number": "8.22",
   "title": "",
@@ -4593,7 +4575,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.23",
   "level": "2",
-  "url": "sec-filtrations.html#def-8.23",
+  "url": "sec-what-is-spectral.html#def-8.23",
   "type": "Definition",
   "number": "8.23",
   "title": "",
@@ -4602,16 +4584,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.24",
   "level": "2",
-  "url": "sec-filtrations.html#def-8.24",
+  "url": "sec-what-is-spectral.html#def-8.24",
   "type": "Definition",
   "number": "8.24",
   "title": "",
   "body": "  Definition 8.24. A filtration of a graded module is bounded if for each there exists integers and such that so that the filtration on can be described by finitely many terms    "
 },
 {
-  "id": "sec-filtrations-13",
+  "id": "subsec-filtrations-13",
   "level": "2",
-  "url": "sec-filtrations.html#sec-filtrations-13",
+  "url": "sec-what-is-spectral.html#subsec-filtrations-13",
   "type": "Remark",
   "number": "8.25",
   "title": "",
@@ -4620,16 +4602,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.26",
   "level": "2",
-  "url": "sec-filtrations.html#def-8.26",
+  "url": "sec-what-is-spectral.html#def-8.26",
   "type": "Definition",
   "number": "8.26",
   "title": "",
   "body": "  Definition 8.26. Let be a module or a graded module. Given an increasing filtration of , its associated graded module is the graded module given by   Given a decreasing filtration of an -module , its associated graded module is the graded module given by    "
 },
 {
-  "id": "sec-filtrations-16",
+  "id": "subsec-filtrations-16",
   "level": "2",
-  "url": "sec-filtrations.html#sec-filtrations-16",
+  "url": "sec-what-is-spectral.html#subsec-filtrations-16",
   "type": "Remark",
   "number": "8.27",
   "title": "",
@@ -4638,25 +4620,25 @@ var ptx_lunr_docs = [
 {
   "id": "def-8.28",
   "level": "2",
-  "url": "sec-filtrations.html#def-8.28",
+  "url": "sec-what-is-spectral.html#def-8.28",
   "type": "Definition",
   "number": "8.28",
   "title": "",
   "body": "  Definition 8.28. We can filter the integers as a -module as follows: we set and   This give us the decreasing filtration   The corresponding associated graded module has and    "
 },
 {
-  "id": "sec-filtrations-18",
+  "id": "subsec-filtrations-18",
   "level": "2",
-  "url": "sec-filtrations.html#sec-filtrations-18",
+  "url": "sec-what-is-spectral.html#subsec-filtrations-18",
   "type": "Remark",
   "number": "8.29",
   "title": "",
   "body": " Remark 8.29 (the associated graded versus the actual module). Suppose someone has filtered the -module by , but that we only have access to the associated graded module of this filtration. While the pieces of the associated graded give us information about , they may not be sufficient to fully compute . For a simple example, consider an -module and a submodule , and the filtration   The associated graded is given by   So if we are only given the associated graded, meaning, if all we have access to is and , then all we know about is that fits into a short exact sequence   However, if , then this does not uniquely determine . Indeed, it turns out that the isomorphism classes of extensions of by , meaning modules that fit into short exact sequences of the form are in bijection with the elements of ; this is a topic we previously skipped.  "
 },
 {
-  "id": "sec-filtrations-19",
+  "id": "subsec-filtrations-19",
   "level": "2",
-  "url": "sec-filtrations.html#sec-filtrations-19",
+  "url": "sec-what-is-spectral.html#subsec-filtrations-19",
   "type": "Example",
   "number": "8.30",
   "title": "",
@@ -4667,7 +4649,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-convergence.html",
   "type": "Section",
-  "number": "8.4",
+  "number": "8.2",
   "title": "Convergence",
   "body": "Convergence  But back to spectral sequences. For now, let us stick to cohomological spectral sequences; any general statement we make about these can easily be translate into a statement about homological spectral sequences.    Definition 8.30. We say that a spectral sequence is bounded if for every there are only finitely many nonzero terms of total degree , meaning that there are only finitely many pairs with such that for all .     Remark 8.31. Notice that if a spectral sequence is bounded, then for every there exists an such that all the differentials in and out of are zero, and thus .   Most spectral sequences one deals with end up being bounded, so we will focus only on the case of bounded spectral sequences. This guarantees that what we are about to do makes sense.  From the data in a spectral sequence we define a limiting page , which can often be identified with some interesting object (for example, the homology of a complex we care about). These pages are sort of the whole point of the spectral sequence business, as they contain (pieces of) the information we want to compute.  Construction 8.32 ( page). Set so that . At each stage , given such that , we define and such that and   At each stage, and   Thus we get chains   We say that consists of the elements that survive until stage , while consists of the elements that are in the image of the differentials by stage . We define   The elements in are the (classes of) those elements in that are in the image of the differential at some stage; we say these are the elements that are eventually bound. The elements in are the (classes of) those elements in that are in the kernel of all the differentials at all stages, so they survive forever or live forever.    Definition 8.33. Given a homological spectral sequence , the page is the bigraded module given by   Similarly, given a cohomological spectral sequence one can define and and , and the page       Lemma 8.34. Let be a spectral sequence. We have     Proof. In general, if is a subquotient of , we have , so if and only if and . If , then so in , so we must have . But then so .  Conversely, if and , then     This is easier to compute in the following special cases.    Definition 8.35. We say that a spectral sequence degenerates at the th page if for all .     Remark 8.36. If a spectral sequence degenerates at the th page, then is a limit term for the spectral sequence, in the sense that for all , and .    Example 8.37. Let be a spectral sequence. If the th page is concentrated in one row or one columnn, we say that the spectral sequence collapses at the th page. Notice that in such situations the spectral sequence will automatically degenerate at the th page.     Definition 8.38. Le be a graded -module. We say that a spectral sequence converges to the graded -module , and denote it by if there exists a bounded filtration for such that     Alternatively, we may write for some other fixed choice of besides . We have the basic definitions but we haven't yet seen any examples. This is by design; to give a good example of a spectral sequence we need to do a bit more work than to give a starting example for a run of the mill definition. In the next few sections we will discuss some of the ways in which spectral sequences arise. There are, however, many interesting spectral sequences one would discuss in a first course that we do not have the time to cover. We strongly encourage the reader to seek out better sources, such as those we listed in the beginning of the chapter.  "
 },
@@ -4748,16 +4730,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-spec-filt.html",
   "type": "Section",
-  "number": "8.5",
+  "number": "8.3",
   "title": "Filtered Complexes",
-  "body": "Filtered Complexes  We will now describe how every filtered complex gives rise to a spectral sequence. We will be writing a homological spectral sequence, but by setting slightly different conventions one could also write a cohomological spectral sequence; this part is up to your personal taste. Given a filtered complex , we first, define and let be the differential induced on the associated graded . Each column of the page contains a complex, one of the levels of the filtration.   Next, let and note that   Thus and are consistent with being the zeroeth and first pages of a spectral sequence. Before we move on, note that we can also rewrite the page as follows:     One way to interpret this is that if we take an element representing the class such that , then the element is really in , so we really should move it to the column on our left (the one indexed by ).  Thus the differential on is the map defined as follows: since each class corresponds to an element such that , we recast by asking about its class in . If , that means , and so on. Ultimately, we will gather information about how deep into our filtration we can go to still find .  Inspired by this, we define     Now given representing a class , by definition     so we define     We claim that this is well-defined, and leave the details as an exercise. Moreover, since . Finally, each class in the kernel of is represented by some such that , while the image of consists of the image of . Ultimately, this gives us an isomorphism     Theorem 8.39. Let be a filtered complex with filtration , and let     Then induces a well-defined map     such that , and     Thus this gives us a spectral sequence with     Moreover, if for all the filtration of stabilizes, then the spectral sequence converges to     Thus     This provides a comparison between taking the homology of the associated graded module, or taking the associated graded module of the homology.  Example 8.40. Consider any short exact sequence of complexes, which we can always write as the inclusion of a subcomplex into a complex followed by the quotient map:     It turns out that we can recover the long exact sequence in homology given by the Snake Lemma via a spectral sequence.  To do that, we can think of the inclusion as a filtration on : we set     Let us compute the spectral sequence of this filtered complex. First, note that In page, we have     The differential on the page is induced by the differential on and . Note that we denote the differential on both complexes and by the same letter since the differential on is just the restriction of the differential on . So the page looks like   where only the 0th and first columns are nonzero.  The page is obtained by taking homology, so it looks like     and the differentials , which are now horizontal, are induced by . More precisely, we can rewrite the terms on the right column as     and so by definition any class is represented by some such that . Since , then , and so we can ask about the class of in . So the differential on is given by     Now onto the page, where     and     Note now that is a map of degree , and thus , since we always have zero as the source or target (or both) of . Thus for all , and so by Theorem 8.39 this spectral sequence converges, with     Now , while     Here the map is the map induced by the original inclusion of into . Moreover, for all and for all . So for all we get isomorphisms     and     So we now have all the tools we need to construct the long exact sequence in homology from this spectral sequence. First, we construct a complex. Our map from the spectral sequence gives us homomorphisms     By definition, ; composing this with the map consists of viewing and asking for its class in . But , so the composition     is zero.  Similarly, the map takes a class , represented by  , and identifies with its image in . But by definition, so and the composition     is the zero map. Moreover, is an additive functor, and thus it takes to a complex, so putting it all together we get a complex     All that is left is for us to check that exactness follows from our spectral sequence. On the one hand, the fact that this is a complex says that     but our spectral sequence gave us the isomorphism     so by the First Isomorphism Theorem we get     We can now conclude that . This gives us exactness at . Similarly, we claim that the fact that we have a complex gives us a map     Indeed, for any we get , and the map is well-defined since if then by definition , so that we get a well-defined map from . But our spectral sequence gave us an isomorphism     so that the map we defined above is an isomorphism, and thus we must have     proving exactness at . Finally, this also says that we can rewrite our previous isomorphism as     but by the First Isomorphism Theorem we get     We already knew that from the fact that we had a complex, so we conclude that we must have exactness at .  Thus we have recovered the connecting homomorphism from the Snake Lemma and the long exact sequence in homology, all via this spectral sequence.  "
+  "body": "Filtered Complexes  We will now describe how every filtered complex gives rise to a spectral sequence. We will be writing a homological spectral sequence, but by setting slightly different conventions one could also write a cohomological spectral sequence; this part is up to your personal taste. Given a filtered complex , we first, define and let be the differential induced on the associated graded . Each column of the page contains a complex, one of the levels of the filtration.   Next, let and note that   Thus and are consistent with being the zeroeth and first pages of a spectral sequence. Before we move on, note that we can also rewrite the page as follows: One way to interpret this is that if we take an element representing the class such that , then the element is really in , so we really should move it to the column on our left (the one indexed by ).  Thus the differential on is the map defined as follows: since each class corresponds to an element such that , we recast by asking about its class in . If , that means , and so on. Ultimately, we will gather information about how deep into our filtration we can go to still find .  Inspired by this, we define   Now given representing a class , by definition so we define   We claim that this is well-defined, and leave the details as an exercise. Moreover, since . Finally, each class in the kernel of is represented by some such that , while the image of consists of the image of . Ultimately, this gives us an isomorphism   Theorem 8.39. Let be a filtered complex with filtration , and let   Then induces a well-defined map such that , and Thus this gives us a spectral sequence with Moreover, if for all the filtration of stabilizes, then the spectral sequence converges to Thus   This provides a comparison between taking the homology of the associated graded module, or taking the associated graded module of the homology.  Example 8.40. Consider any short exact sequence of complexes, which we can always write as the inclusion of a subcomplex into a complex followed by the quotient map: It turns out that we can recover the long exact sequence in homology given by the Snake Lemma via a spectral sequence. To do that, we can think of the inclusion as a filtration on : we set   Let us compute the spectral sequence of this filtered complex. First, note that In page, we have The differential on the page is induced by the differential on and . Note that we denote the differential on both complexes and by the same letter since the differential on is just the restriction of the differential on . So the page looks like   where only the 0th and first columns are nonzero.  The page is obtained by taking homology, so it looks like and the differentials , which are now horizontal, are induced by . More precisely, we can rewrite the terms on the right column as and so by definition any class is represented by some such that . Since , then , and so we can ask about the class of in . So the differential on is given by   Now onto the page, where and   Note now that is a map of degree , and thus , since we always have zero as the source or target (or both) of . Thus for all , and so by Theorem 8.39 this spectral sequence converges, with   Now , while   Here the map is the map induced by the original inclusion of into . Moreover, for all and for all . So for all we get isomorphisms and   So we now have all the tools we need to construct the long exact sequence in homology from this spectral sequence. First, we construct a complex. Our map from the spectral sequence gives us homomorphisms   By definition, ; composing this with the map consists of viewing and asking for its class in . But , so the composition is zero.  Similarly, the map takes a class , represented by  , and identifies with its image in . But by definition, so and the composition is the zero map. Moreover, is an additive functor, and thus it takes to a complex, so putting it all together we get a complex   All that is left is for us to check that exactness follows from our spectral sequence. On the one hand, the fact that this is a complex says that but our spectral sequence gave us the isomorphism so by the First Isomorphism Theorem we get   We can now conclude that . This gives us exactness at . Similarly, we claim that the fact that we have a complex gives us a map   Indeed, for any we get , and the map is well-defined since if then by definition , so that we get a well-defined map from . But our spectral sequence gave us an isomorphism so that the map we defined above is an isomorphism, and thus we must have proving exactness at .  Finally, this also says that we can rewrite our previous isomorphism as but by the First Isomorphism Theorem we get   We already knew that from the fact that we had a complex, so we conclude that we must have exactness at .  Thus we have recovered the connecting homomorphism from the Snake Lemma and the long exact sequence in homology, all via this spectral sequence.  "
 },
 {
   "id": "sec-spec-double",
   "level": "1",
   "url": "sec-spec-double.html",
   "type": "Section",
-  "number": "8.6",
+  "number": "8.4",
   "title": "Double Complexes",
   "body": "Double Complexes  One important example of a spectral sequence induced by a filtered complex is the case of the spectral sequence of a double complex.  Definition 8.41. Let be a double complex. There are two canonical filtrations on the total complex of :  (I) The First Filtration of is the filtration given by     For each is the subcomplex of obtained by first truncating at :   The First Filtration  II The Second Filtration of is the filtration given by     For each is the subcomplex of obtained by truncating at :   The Second Filtration  Each of these filtered complexes gives rise to a spectral sequence.  Discussion 8.42 (First Spectral Sequence). Let us examine the spectral sequence induced by the First Filtration, which we write as . To make the notation less heavy, we will write     Our spectral sequence starts with     so that     Moreover,     is the map induced by the differential on this filtration. Since     we conclude that is precisely the vertical differential of the original double complex . Thus the page looks like    Then , and     is the map induced by . This is the horizontal differential . We conclude that     We automatically get a convergence theorem from Theorem 8.39.  Theorem 8.43. If is a bounded double complex, then     Discussion 8.44 (Second Spectral Sequence). Let us examine the spectral sequence induced by the Second Filtration, which we write as . To make the notation less heavy, we will write  Our spectral sequence starts with        so that     Moreover,     is the map induced by the differential on this filtration. Since     we conclude that is precisely the horizontal differential of the original double complex . Thus the page looks like   Then , and     is the map induced by . Thus is the vertical differential . We conclude that     We now get a convergence theorem automatically from Theorem 8.39.  Theorem 8.45. If is a bounded double complex, then     Remark 8.46. We know exactly how each spectral sequence converges to : via the filtration on induced by the given filtration on . More precisely,     Remark 8.47. If is a first quadrant double complex, so that whenever or , then for all we have     Thus     Moreover, for each fixed if we take or then     so     Thus each fixed diagonal of and contains the factors of a finite filtration on :     In the special case when or collapses, meaning that is concentrated in one row or column, then the filtration on has a unique term in each degree, so that we can read exactly from the page.  Remark 8.48. The fact that can lead to a lot of confusion. To make things easier, one often breaks the rules a little and instead takes the page to be with horizontal differentials, the page to have vertical differentials induced by the vertical differentials on , and then the page to have a differential of degree . This gives us a gadget that isn't quite a spectral sequence under our formal definition, but should be a spectral sequence. In fact, this new convention makes everything much easier to read.  Under this reasonable convention, the differentials look as follows:   0th page   1st page   2nd page  Also, note that now     and that while     we now should carefully read the filtration backwards:     Example 8.49. Let us give a new proof of the Snake Lemma using spectral sequences. More precisely, we will show that given any commutative diagram with exact rows   then there exists an exact sequence     To do that, we start by viewing our commutative diagram as a double complex , as follows: we set , and so on, resulting in   Now notice that is a first quadrant double complex with exact rows, so by the Acyclic Assembly Lemma, is exact. We can also prove that is exact by computing the spectral sequence arising from the Second Filtration on , which under our new and improved notation from Remark 8.48 has     and since the rows are all exact, we see that in the next step we will end up with , and thus . Therefore, .  Now consider the spectral sequence induced by the First Filtration on , which has   Now whatever is, since is a degree map, the only possible nonzero differential on is . Moreover, all the differentials on all the higher pages vanish, simply because there are not enough nonzero modules already, so . But we know that is exact, so in fact since our filtrations are finite we must necessarily have . In particular, the only potentially nonzero objects in are and , so this proves the exactness of   Moreover, the fact that and are the only possible nonzero objects in together with the fact that and imply that must be an isomorphism. More precisely, we get an isomorphism     Thus we get an exact sequence   where the map obtained by composition is the connecting homomorphism we dreamed of.   Exercise 96. Show that if is a first quadrant double complex with exact rows or exact columns, then is exact.       Exercise 97. Let and be -modules and fix projective resolutions for and for . Consider the double complex .  a) Compute the spectral sequence associated to the First Filtration (I) on up to the page.  b) Compute the spectral sequence associated to the Second Filtration II on up to the page.  c) Give a new proof that Tor is balanced:          Exercise 98. Consider the following first quadrant double complex :   a) Compute the spectral sequence associated to the First Filtration (I) until it stabilizes.  b) Compute the spectral sequence associated to the Second Filtration II until it stabilizes.  c) How are the two resulting pages even possible considering they both converge to the same thing?  d) Compute explicitly using only the two spectral sequences you calculated.  e) Check your work by computing explicitly from the definition of .      "
 },
