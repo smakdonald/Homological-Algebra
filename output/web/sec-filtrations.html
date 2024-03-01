@@ -12,7 +12,7 @@
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Homological Algebra">
+<meta property="book:title" content="Postmodern Algebra">
 <meta property="book:author" content="Sam Macdonald">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
@@ -109,7 +109,7 @@ window.MathJax = {
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-homological.html"><span class="title">Homological Algebra</span></a></h1>
+<h1 class="heading"><a href="book-homological.html"><span class="title">Postmodern Algebra</span></a></h1>
 <p class="byline">Sam Macdonald</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -404,7 +404,13 @@ window.MathJax = {
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
 <ul class="structural toc-item-list contains-active">
@@ -614,9 +620,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-what-is-spectral.html" class="internal"><span class="codenumber">8.1</span> <span class="title">What is a Spectral Sequence?</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bigrad.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Graded and Bigraded Modules</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-filtrations.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Filtrations</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence of Spectral Sequences</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">The Spectral Sequence of a Filtered Complex</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">The Spectral Sequence of a Double Complex</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-convergence.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Convergence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-filt.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Filtered Complexes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-spec-double.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Double Complexes</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -785,164 +791,214 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-filtrations"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">8.3</span><span class="space"> </span><span class="title">Filtrations</span>
 </h2>
-<div class="para" id="sec-filtrations-2">Definition 8.19. Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module. A filtration <span class="process-math">\(F^{\bullet} M\)</span> on <span class="process-math">\(M\)</span> is a family <span class="process-math">\(\left(F^{p} M\right)_{p \in \mathbb{Z}}\)</span> of submodules of <span class="process-math">\(M\)</span> such that either</div>
-<div class="para logical" id="sec-filtrations-3"><div class="displaymath process-math">
+<article class="definition definition-like" id="def-8.19"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.19</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.19-1-1">
+<div class="para">Definition 8.19. Let <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module. A filtration <span class="process-math">\(F^{\bullet} M\)</span> on <span class="process-math">\(M\)</span> is a family <span class="process-math">\(\left(F^{p} M\right)_{p \in \mathbb{Z}}\)</span> of submodules of <span class="process-math">\(M\)</span> such that either</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{p} M \subseteq F^{p+1} M
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-4">for all <span class="process-math">\(p\text{,}\)</span> in which case we say the filtration is increasing, or</div>
-<div class="para logical" id="sec-filtrations-5"><div class="displaymath process-math">
+</div>
+<div class="para">for all <span class="process-math">\(p\text{,}\)</span> in which case we say the filtration is increasing, or</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{p} M \subseteq F^{p-1} M
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-6">for all <span class="process-math">\(p\text{,}\)</span> in which case we say the filtration is decreasing. When we do not specify if a filtration is ascending or descending, we will assume by default that it is ascending, though we accept both kinds as filtrations in their own right. The factors of <span class="process-math">\(F^{\bullet}\)</span> are the quotient modules</div>
-<div class="para logical" id="sec-filtrations-7"><div class="displaymath process-math">
+</div>
+<div class="para">for all <span class="process-math">\(p\text{,}\)</span> in which case we say the filtration is decreasing. When we do not specify if a filtration is ascending or descending, we will assume by default that it is ascending, though we accept both kinds as filtrations in their own right. The factors of <span class="process-math">\(F^{\bullet}\)</span> are the quotient modules</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{p} M / F^{p-1} M
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-8">One can in fact define filtrations on any abelian category; that requires the notion of a subobject, which we have not yet defined, but it is easy to guess: a suboject of an object <span class="process-math">\(x\)</span> in an abelian category <span class="process-math">\(\mathcal{A}\)</span> is a mono with target <span class="process-math">\(x\text{.}\)</span> In particular, we can define a filtration on a complex, or more generally on a (differential) (bi)graded module:</div>
-<div class="para" id="sec-filtrations-9">Definition 8.20. An ascending filtration on a (bi)graded module <span class="process-math">\(M\)</span> is a sequence <span class="process-math">\(F^{p} M\)</span> of submodules of <span class="process-math">\(M\)</span> such that <span class="process-math">\(F^{p} M \subseteq F^{p+1} M\text{.}\)</span> If <span class="process-math">\(M\)</span> is a differential (bi)graded module, we require additionally that the filtration respects the differential, that is, that <span class="process-math">\(d\left(F^{p} M\right) \subseteq F^{p} M\text{.}\)</span>
 </div>
-<div class="para" id="sec-filtrations-10">So in particular when <span class="process-math">\(C\)</span> is a complex, we get the following definition:</div>
-<div class="para" id="sec-filtrations-11">Definition 8.21. Let <span class="process-math">\(C\)</span> be a complex. An ascending filtration <span class="process-math">\(F^{\bullet} C\)</span> of <span class="process-math">\(C\)</span> is an ascending chain of subcomplexes <span class="process-math">\(F^{p} C\)</span> of <span class="process-math">\(C\)</span>
+</div></article><div class="para" id="sec-filtrations-3">One can in fact define filtrations on any abelian category; that requires the notion of a subobject, which we have not yet defined, but it is easy to guess: a suboject of an object <span class="process-math">\(x\)</span> in an abelian category <span class="process-math">\(\mathcal{A}\)</span> is a mono with target <span class="process-math">\(x\text{.}\)</span> In particular, we can define a filtration on a complex, or more generally on a (differential) (bi)graded module:</div>
+<article class="definition definition-like" id="def-8.20"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.20</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-8.20-1-1">Definition 8.20. An ascending filtration on a (bi)graded module <span class="process-math">\(M\)</span> is a sequence <span class="process-math">\(F^{p} M\)</span> of submodules of <span class="process-math">\(M\)</span> such that <span class="process-math">\(F^{p} M \subseteq F^{p+1} M\text{.}\)</span> If <span class="process-math">\(M\)</span> is a differential (bi)graded module, we require additionally that the filtration respects the differential, that is, that <span class="process-math">\(d\left(F^{p} M\right) \subseteq F^{p} M\text{.}\)</span>
+</div></article><div class="para" id="sec-filtrations-5">So in particular when <span class="process-math">\(C\)</span> is a complex, we get the following definition:</div>
+<article class="definition definition-like" id="def-8.21"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.21</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.21-1-1">
+<div class="para">Definition 8.21. Let <span class="process-math">\(C\)</span> be a complex. An ascending filtration <span class="process-math">\(F^{\bullet} C\)</span> of <span class="process-math">\(C\)</span> is an ascending chain of subcomplexes <span class="process-math">\(F^{p} C\)</span> of <span class="process-math">\(C\)</span>
 </div>
-<div class="para logical" id="sec-filtrations-12"><div class="displaymath process-math">
+<div class="displaymath process-math">
 \begin{equation*}
 \cdots \subseteq F^{p-1} C \subseteq F^{p} C \subseteq F^{p+1} C \subseteq \cdots
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-13">We call a complex <span class="process-math">\((C, \partial)\)</span> with a filtration <span class="process-math">\(F\)</span> a filtered complex, and denote it by <span class="process-math">\((C, \partial, F)\text{.}\)</span>
 </div>
-<div class="para" id="sec-filtrations-14">As above, one can define a descending filtration; if we do not indicate whether a filtration is ascending or descending, we will always by default assume it is ascending.</div>
-<div class="para" id="sec-filtrations-15">Remark 8.22. Let <span class="process-math">\(C\)</span> be a complex and consider an ascending filtration <span class="process-math">\(F_{\bullet} C\)</span> of <span class="process-math">\(C\text{.}\)</span> For each fixed homological degree <span class="process-math">\(n\text{,}\)</span> we get an ascending filtration</div>
-<div class="para logical" id="sec-filtrations-16"><div class="displaymath process-math">
+</div> <div class="para" id="def-8.21-1-2">We call a complex <span class="process-math">\((C, \partial)\)</span> with a filtration <span class="process-math">\(F\)</span> a filtered complex, and denote it by <span class="process-math">\((C, \partial, F)\text{.}\)</span>
+</div></article><div class="para" id="sec-filtrations-7">As above, one can define a descending filtration; if we do not indicate whether a filtration is ascending or descending, we will always by default assume it is ascending.</div>
+<article class="remark remark-like" id="sec-filtrations-8"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.22</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec-filtrations-8-1">
+<div class="para">Remark 8.22. Let <span class="process-math">\(C\)</span> be a complex and consider an ascending filtration <span class="process-math">\(F_{\bullet} C\)</span> of <span class="process-math">\(C\text{.}\)</span> For each fixed homological degree <span class="process-math">\(n\text{,}\)</span> we get an ascending filtration</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \cdots \subseteq F^{p-1} C_{n} \subseteq F^{p} C_{n} \subseteq F^{p+1} C_{n} \subseteq \cdots
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-17">of submodules of <span class="process-math">\(C_{n}\text{.}\)</span> A filtration of <span class="process-math">\(C\)</span> gives us commutative diagrams</div>
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-33.svg" role="img" class="contained"></div>
-<div class="para" id="sec-filtrations-19">where the rows are given by the differential on <span class="process-math">\(C\)</span> and its restrictions to the appropriate modules.</div>
-<div class="para" id="sec-filtrations-20">Definition 8.23. Let <span class="process-math">\(C\)</span> be a complex with a filtration <span class="process-math">\(F^{\bullet} C\text{,}\)</span> and consider the inclusions <span class="process-math">\(i_{p}: F^{p} C \rightarrow C\text{.}\)</span> We get an induced filtration in homology, as follows: for each <span class="process-math">\(n\text{,}\)</span>
 </div>
-<div class="para logical" id="sec-filtrations-21"><div class="displaymath process-math">
+<div class="para">of submodules of <span class="process-math">\(C_{n}\text{.}\)</span> A filtration of <span class="process-math">\(C\)</span> gives us commutative diagrams</div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2024_01_10_e73c1aec4ffc24ca9984g-33.svg" role="img" class="contained"></div> <div class="para" id="sec-filtrations-8-3">where the rows are given by the differential on <span class="process-math">\(C\)</span> and its restrictions to the appropriate modules.</div></article><article class="definition definition-like" id="def-8.23"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.23</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.23-1-1">
+<div class="para">Definition 8.23. Let <span class="process-math">\(C\)</span> be a complex with a filtration <span class="process-math">\(F^{\bullet} C\text{,}\)</span> and consider the inclusions <span class="process-math">\(i_{p}: F^{p} C \rightarrow C\text{.}\)</span> We get an induced filtration in homology, as follows: for each <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{p} \mathrm{H}_{n}(C):=\operatorname{im}\left(\mathrm{H}_{n}\left(F^{p} C\right) \rightarrow \mathrm{H}_{n}(C)\right),
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-22">giving us a filtration <span class="process-math">\(F^{\bullet} \mathrm{H}(C)\)</span> on the graded module <span class="process-math">\(\mathrm{H}(C)\text{.}\)</span>
 </div>
-<div class="para" id="sec-filtrations-23">Definition 8.24. A filtration <span class="process-math">\(F^{\bullet} M\)</span> of a graded module <span class="process-math">\(M\)</span> is bounded if for each <span class="process-math">\(n\)</span> there exists integers <span class="process-math">\(s=s(n)\)</span> and <span class="process-math">\(t=t(n)\)</span> such that</div>
-<div class="para logical" id="sec-filtrations-24"><div class="displaymath process-math">
+<div class="para">giving us a filtration <span class="process-math">\(F^{\bullet} \mathrm{H}(C)\)</span> on the graded module <span class="process-math">\(\mathrm{H}(C)\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="def-8.24"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.24</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.24-1-1">
+<div class="para">Definition 8.24. A filtration <span class="process-math">\(F^{\bullet} M\)</span> of a graded module <span class="process-math">\(M\)</span> is bounded if for each <span class="process-math">\(n\)</span> there exists integers <span class="process-math">\(s=s(n)\)</span> and <span class="process-math">\(t=t(n)\)</span> such that</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{s} M_{n}=0 \quad \text { and } \quad F^{t} M_{n}=M_{n}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-25">so that the filtration on <span class="process-math">\(M_{n}\)</span> can be described by finitely many terms</div>
-<div class="para logical" id="sec-filtrations-26"><div class="displaymath process-math">
+</div>
+<div class="para">so that the filtration on <span class="process-math">\(M_{n}\)</span> can be described by finitely many terms</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{s} M_{n}=0 \subseteq F^{s+1} M_{n} \subseteq \cdots F^{t-1} M_{n} \subseteq F^{t} M_{n}=M_{n}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-27">In particular, <span class="process-math">\(F^{i} M_{n}=0\)</span> for all <span class="process-math">\(i&lt;s\)</span> and <span class="process-math">\(F^{i} M_{n}=M_{n}\)</span> for all <span class="process-math">\(i&gt;t\text{.}\)</span>
 </div>
-<div class="para" id="sec-filtrations-28">Notice, however, that the bounds <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> may depend on <span class="process-math">\(n\text{,}\)</span> and in particular there is not necessarily global integers <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> such that</div>
-<div class="para logical" id="sec-filtrations-29"><div class="displaymath process-math">
+</div></article><div class="para" id="sec-filtrations-11">In particular, <span class="process-math">\(F^{i} M_{n}=0\)</span> for all <span class="process-math">\(i&lt;s\)</span> and <span class="process-math">\(F^{i} M_{n}=M_{n}\)</span> for all <span class="process-math">\(i&gt;t\text{.}\)</span>
+</div>
+<div class="para logical" id="sec-filtrations-12">
+<div class="para">Notice, however, that the bounds <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> may depend on <span class="process-math">\(n\text{,}\)</span> and in particular there is not necessarily global integers <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> such that</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{s} M_{n}=0 \quad \text { and } \quad F^{t} M_{n}=M_{n}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-30">for all <span class="process-math">\(n\text{.}\)</span>
 </div>
-<div class="para" id="sec-filtrations-31">Remark 8.25. Suppose that <span class="process-math">\(F^{\bullet} M\)</span> is a bounded filtration on a complex <span class="process-math">\(C\text{.}\)</span> Then the induced filtration in homology is also bounded, with the same bounds (or better), so that for all <span class="process-math">\(n\)</span> there exist <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> such that</div>
-<div class="para logical" id="sec-filtrations-32"><div class="displaymath process-math">
+<div class="para">for all <span class="process-math">\(n\text{.}\)</span>
+</div>
+</div>
+<article class="remark remark-like" id="sec-filtrations-13"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.25</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec-filtrations-13-1">
+<div class="para">Remark 8.25. Suppose that <span class="process-math">\(F^{\bullet} M\)</span> is a bounded filtration on a complex <span class="process-math">\(C\text{.}\)</span> Then the induced filtration in homology is also bounded, with the same bounds (or better), so that for all <span class="process-math">\(n\)</span> there exist <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> such that</div>
+<div class="displaymath process-math">
 \begin{equation*}
 0=F^{s} \mathrm{H}_{n}(C)=0 \quad \text { and } \quad F^{t} \mathrm{H}_{n}(C)=\mathrm{H}_{n}(C) .
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-33">Definition 8.26. Let <span class="process-math">\(M\)</span> be a module or a graded module. Given an increasing filtration <span class="process-math">\(F\)</span> of <span class="process-math">\(M\text{,}\)</span> its associated graded module is the graded module <span class="process-math">\(\operatorname{gr}_{F}(M)\)</span> given by</div>
-<div class="para logical" id="sec-filtrations-34"><div class="displaymath process-math">
+</div>
+</div></article><article class="definition definition-like" id="def-8.26"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.26</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.26-1-1">
+<div class="para">Definition 8.26. Let <span class="process-math">\(M\)</span> be a module or a graded module. Given an increasing filtration <span class="process-math">\(F\)</span> of <span class="process-math">\(M\text{,}\)</span> its associated graded module is the graded module <span class="process-math">\(\operatorname{gr}_{F}(M)\)</span> given by</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{gr}_{F}(M):=\left(F^{n} M / F^{n-1} M\right)_{n \in \mathbb{Z}}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-35">Given a decreasing filtration <span class="process-math">\(F\)</span> of an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> its associated graded module is the graded module <span class="process-math">\(\operatorname{gr}_{F}(M)\)</span> given by</div>
-<div class="para logical" id="sec-filtrations-36"><div class="displaymath process-math">
+</div>
+</div> <div class="para logical" id="def-8.26-1-2">
+<div class="para">Given a decreasing filtration <span class="process-math">\(F\)</span> of an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\text{,}\)</span> its associated graded module is the graded module <span class="process-math">\(\operatorname{gr}_{F}(M)\)</span> given by</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{gr}_{F}(M):=\left(F^{n} M / F^{n+1} M\right)_{n \in \mathbb{Z}}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-37">Note that the associated graded module depends on the choice of filtration.</div>
-<div class="para" id="sec-filtrations-38">Remark 8.27. Let <span class="process-math">\((C, d, F)\)</span> be a filtered complex. The differential <span class="process-math">\(d\)</span> induces a differential on the associated graded:</div>
-<div class="para logical" id="sec-filtrations-39"><div class="displaymath process-math">
+</div>
+</div></article><div class="para" id="sec-filtrations-15">Note that the associated graded module depends on the choice of filtration.</div>
+<article class="remark remark-like" id="sec-filtrations-16"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.27</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec-filtrations-16-1">
+<div class="para">Remark 8.27. Let <span class="process-math">\((C, d, F)\)</span> be a filtered complex. The differential <span class="process-math">\(d\)</span> induces a differential on the associated graded:</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 F^{p} C_{n} / F^{p-1} C_{n} &amp; \longrightarrow F^{p} C_{n-1} / F^{p-1} C_{n-1} \\
 a+F^{p-1} C_{n} &amp; \longmapsto d(a)+F^{p-1} C_{n-1}
 \end{aligned}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-40">This is well-defined, since our definition of filtered complex requires that the filtration respects the differential: if <span class="process-math">\(a \in F_{p-1} C_{n}\text{,}\)</span> then <span class="process-math">\(d(a) \in F^{p-1} C_{n-1}\text{.}\)</span>
 </div>
-<div class="para" id="sec-filtrations-41">Definition 8.28. We can filter the integers <span class="process-math">\(\mathbb{Z}\)</span> as a <span class="process-math">\(\mathbb{Z}\)</span>-module as follows: we set</div>
-<div class="para logical" id="sec-filtrations-42"><div class="displaymath process-math">
+<div class="para">This is well-defined, since our definition of filtered complex requires that the filtration respects the differential: if <span class="process-math">\(a \in F_{p-1} C_{n}\text{,}\)</span> then <span class="process-math">\(d(a) \in F^{p-1} C_{n-1}\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="def-8.28"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.28</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-8.28-1-1">
+<div class="para">Definition 8.28. We can filter the integers <span class="process-math">\(\mathbb{Z}\)</span> as a <span class="process-math">\(\mathbb{Z}\)</span>-module as follows: we set</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{n} \mathbb{Z}=\mathbb{Z} \quad \text { whenever } n \leqslant 0
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-43">and</div>
-<div class="para logical" id="sec-filtrations-44"><div class="displaymath process-math">
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{n} \mathbb{Z}=\left(2^{n}\right) \quad \text { whenever } n \geqslant 0
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-45">This give us the decreasing filtration</div>
-<div class="para logical" id="sec-filtrations-46"><div class="displaymath process-math">
+</div>
+</div> <div class="para logical" id="def-8.28-1-2">
+<div class="para">This give us the decreasing filtration</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \mathbb{Z} \supseteq \mathbb{Z} \supseteq \mathbb{Z} \supseteq(2) \supseteq(4) \supseteq(8) \supseteq \cdots
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-47">The corresponding associated graded module has</div>
-<div class="para logical" id="sec-filtrations-48"><div class="displaymath process-math">
+</div>
+</div> <div class="para logical" id="def-8.28-1-3">
+<div class="para">The corresponding associated graded module has</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{gr}_{F}(\mathbb{Z})_{n}=0 \quad \text { whenever } n \leqslant 0
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-49">and</div>
-<div class="para logical" id="sec-filtrations-50"><div class="displaymath process-math">
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{gr}_{F}(\mathbb{Z})_{n}=\left(2^{n}\right) /\left(2^{n+1}\right) \cong \mathbb{Z} / 2 \quad \text { whenever } n \geqslant 0
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-51">Remark 8.29 (the associated graded versus the actual module). Suppose someone has filtered the <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> by <span class="process-math">\(F^{\bullet} M\text{,}\)</span> but that we only have access to the associated graded module of this filtration. While the pieces of the associated graded give us information about <span class="process-math">\(M\text{,}\)</span> they may not be sufficient to fully compute <span class="process-math">\(M\text{.}\)</span> For a simple example, consider an <span class="process-math">\(R\)</span>-module <span class="process-math">\(B\)</span> and a submodule <span class="process-math">\(A \subseteq B\text{,}\)</span> and the filtration</div>
-<div class="para logical" id="sec-filtrations-52"><div class="displaymath process-math">
+</div>
+</div></article><article class="remark remark-like" id="sec-filtrations-18"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">8.29</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec-filtrations-18-1">
+<div class="para">Remark 8.29 (the associated graded versus the actual module). Suppose someone has filtered the <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> by <span class="process-math">\(F^{\bullet} M\text{,}\)</span> but that we only have access to the associated graded module of this filtration. While the pieces of the associated graded give us information about <span class="process-math">\(M\text{,}\)</span> they may not be sufficient to fully compute <span class="process-math">\(M\text{.}\)</span> For a simple example, consider an <span class="process-math">\(R\)</span>-module <span class="process-math">\(B\)</span> and a submodule <span class="process-math">\(A \subseteq B\text{,}\)</span> and the filtration</div>
+<div class="displaymath process-math">
 \begin{equation*}
 F^{p} M= \begin{cases}0 &amp; \text { if } p&lt;0 \\ A &amp; \text { if } p=0 \\ B &amp; \text { if } p \geqslant 1\end{cases}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-53">The associated graded is given by</div>
-<div class="para logical" id="sec-filtrations-54"><div class="displaymath process-math">
+</div>
+</div> <div class="para logical" id="sec-filtrations-18-2">
+<div class="para">The associated graded is given by</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \operatorname{gr}_{n}= \begin{cases}0 &amp; \text { if } p&lt;0 \\ A &amp; \text { if } p=0 \\ B / A &amp; \text { if } p=1 \\ 0 &amp; \text { if } p \geqslant 1\end{cases}
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-55">So if we are only given the associated graded, meaning, if all we have access to is <span class="process-math">\(A\)</span> and <span class="process-math">\(B / A\text{,}\)</span> then all we know about <span class="process-math">\(B\)</span> is that fits into a short exact sequence</div>
-<div class="para logical" id="sec-filtrations-56"><div class="displaymath process-math">
+</div>
+</div> <div class="para logical" id="sec-filtrations-18-3">
+<div class="para">So if we are only given the associated graded, meaning, if all we have access to is <span class="process-math">\(A\)</span> and <span class="process-math">\(B / A\text{,}\)</span> then all we know about <span class="process-math">\(B\)</span> is that fits into a short exact sequence</div>
+<div class="displaymath process-math">
 \begin{equation*}
 0 \longrightarrow A \longrightarrow B \longrightarrow B / A \longrightarrow 0
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-57">However, if <span class="process-math">\(\operatorname{Ext}_{R}^{1}(B / A, A) \neq 0\text{,}\)</span> then this does not uniquely determine <span class="process-math">\(B\text{.}\)</span> Indeed, it turns out that the isomorphism classes of extensions of <span class="process-math">\(A\)</span> by <span class="process-math">\(B / A\text{,}\)</span> meaning modules <span class="process-math">\(M\)</span> that fit into short exact sequences of the form</div>
-<div class="para logical" id="sec-filtrations-58"><div class="displaymath process-math">
+</div>
+</div> <div class="para logical" id="sec-filtrations-18-4">
+<div class="para">However, if <span class="process-math">\(\operatorname{Ext}_{R}^{1}(B / A, A) \neq 0\text{,}\)</span> then this does not uniquely determine <span class="process-math">\(B\text{.}\)</span> Indeed, it turns out that the isomorphism classes of extensions of <span class="process-math">\(A\)</span> by <span class="process-math">\(B / A\text{,}\)</span> meaning modules <span class="process-math">\(M\)</span> that fit into short exact sequences of the form</div>
+<div class="displaymath process-math">
 \begin{equation*}
 0 \longrightarrow A \longrightarrow M \longrightarrow B / A \longrightarrow 0
 \end{equation*}
-</div></div>
-<div class="para" id="sec-filtrations-59">are in bijection with the elements of <span class="process-math">\(\operatorname{Ext}_{R}^{1}(B / A, A)\text{;}\)</span> this is a topic we previously skipped.</div>
-<div class="para" id="sec-filtrations-60">For a concrete example, take the case where <span class="process-math">\(A=\mathbb{Z} / 2\)</span> and <span class="process-math">\(B / A=\mathbb{Z} / 2\text{.}\)</span> Then <span class="process-math">\(B\)</span> is not uniquely determined: <span class="process-math">\(\operatorname{Ext}_{R}^{1}(\mathbb{Z} / 2, \mathbb{Z} / 2) \cong \mathbb{Z} / 2\text{,}\)</span> and <span class="process-math">\(B\)</span> can be either <span class="process-math">\(\mathbb{Z} / 4\)</span> or <span class="process-math">\(\mathbb{Z} / 2 \oplus \mathbb{Z} / 2\text{,}\)</span> which are not isomorphic.</div></section></div>
+</div>
+<div class="para">are in bijection with the elements of <span class="process-math">\(\operatorname{Ext}_{R}^{1}(B / A, A)\text{;}\)</span> this is a topic we previously skipped.</div>
+</div></article><article class="example example-like" id="sec-filtrations-19"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.30</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-filtrations-19-1">For a concrete example, take the case where <span class="process-math">\(A=\mathbb{Z} / 2\)</span> and <span class="process-math">\(B / A=\mathbb{Z} / 2\text{.}\)</span> Then <span class="process-math">\(B\)</span> is not uniquely determined: <span class="process-math">\(\operatorname{Ext}_{R}^{1}(\mathbb{Z} / 2, \mathbb{Z} / 2) \cong \mathbb{Z} / 2\text{,}\)</span> and <span class="process-math">\(B\)</span> can be either <span class="process-math">\(\mathbb{Z} / 4\)</span> or <span class="process-math">\(\mathbb{Z} / 2 \oplus \mathbb{Z} / 2\text{,}\)</span> which are not isomorphic.</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-bigrad.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-convergence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
