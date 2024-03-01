@@ -8494,7 +8494,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "17.2",
   "title": "Macaulay2",
-  "body": "Macaulay2   "
+  "body": "Macaulay2     "
 },
 {
   "id": "sec-3",

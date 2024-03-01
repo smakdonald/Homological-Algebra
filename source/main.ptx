@@ -24045,6 +24045,20 @@
               isCM Q3
             </input>
           </sage>
+
+          <sage language="macaulay2">
+            <input>
+              loadPackage "Depth"
+              Q1 = QQ[x,y,z] / ideal(x^3-y*z, z^3)
+              isCM Q1
+
+              Q2 = QQ[x,y,z] / ideal(x*z,y*z);
+              isCM Q2
+
+              Q3 = QQ[x, y, z, w] / (ideal(x, y) + ideal(z, w));
+              isCM Q5
+            </input>
+          </sage>
           
         </section>
         
