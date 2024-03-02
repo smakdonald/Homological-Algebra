@@ -16424,140 +16424,6 @@
       
         </section>
 
-        <section xml:id="sec-sess"><title>Short Exact Sequences</title>
-          
-          <blockquote>
-            <p>
-              <q>Impressive claims are made far more impressive by making them exact.</q>
-            </p>
-            <attribution>Claude C. Hopkins</attribution>
-          </blockquote>
-
-          <p>
-            Homological techniques play a central role in commutative algebra. Ideally, our study of commutative algebra would start with a semester long course on homological algebra; but we are not assuming any homological algebra background, and thus we need to introduce some elementary homological algebra tools.
-          </p>
-      
-          <definition xml:id="defn-exact-sequence">
-            <title>Exact Sequence</title>
-  
-          <statement>
-            <p>
-              An <em>exact sequence</em> <idx><h>exact sequence of modules</h></idx>of <m>R</m>-modules] is a sequence <me>\begin{CD}
-  \dots@&gt;f_{n-1}&gt;&gt;M_{n}@&gt;f_{n}&gt;&gt;M_{n+1}@&gt;f_{n+1}&gt;&gt;\dots
-  \end{CD}</me> of <m>R</m>-modules] and <m>R</m>-module homomorphisms such that <m>\im f_n = \ker f_{n+1}</m> for all <m>n</m>.
-            </p>
-          </statement>
-  
-          </definition>
-
-          <definition xml:id="def-sess"><title>Short Exact Sequence</title>
-            <statement>
-              <p>
-                An exact sequence of the form 
-                <me>
-                  0\to A\to B\to C\to 0
-                </me>
-                is called a <em>short exact sequence</em>. <idx><h>short exact sequence</h></idx>
-              </p>
-            </statement>
-          </definition>
-  
-          <example xml:id="ex-ses"><title>Short Exaxt Sequence Example</title>
-  
-            <p>
-              Let <m>R = k[x]/(x^2)</m>, where <m>k</m> is any field. The <m>R \xrightarrow{\, x\,} R</m> has image and kernel <m>(x)</m>, so the following is an exact sequence: 
-              <me>
-                \begin{CD}
-                 \dots@&gt;&gt;&gt;R@&gt;x&gt;&gt;R@&gt;x&gt;&gt;R@&gt;&gt;&gt;\dots
-                \end{CD}
-              </me>
-            </p>
-  
-          </example>
-
-          <remark>
-            <p>
-              The sequence 
-              <me>
-                \begin{CD}
-                0@&gt;&gt;&gt;M@&gt;f&gt;&gt;N
-                \end{CD}
-              </me>
-              is exact if and only if <m>f</m> is injective. Similarly, 
-              <me>
-                \begin{CD}
-                  M@&gt;f&gt;&gt;N@&gt;&gt;&gt;0
-                \end{CD}
-              </me>
-              is exact if and only if <m>f</m> is surjective. As a consequence, we see that 
-              <me>
-                \begin{CD}
-                  0@&gt;&gt;&gt;M@&gt;f&gt;&gt;N@&gt;&gt;&gt;0
-                \end{CD}
-              </me>
-              is exact if and only if <m>f</m> is an isomorphism. Moreover,
-              <me>
-                \begin{CD}
-                  0@&gt;&gt;&gt;A@&gt;f&gt;&gt;B@&gt;g&gt;&gt;C@&gt;&gt;&gt;0
-                \end{CD}
-              </me>
-              is a short exact sequence if and only if 
-              <ol>
-                <li>
-                  <p>
-                    <m>f \text{is injective} \amp g \text{is surjective} \amp \im f=\ker g</m>
-                  </p>
-                </li>
-              </ol>
-                
-              So when this is indeed a short exact sequence, we can identify <m>A</m> with its image <m>f(A)</m>, which makes <m>A = \ker g</m>. Moreover, since <m>g</m> is surjective, by the <xref text="title" ref="thm-fit-mod"/> we conclude that <m>C \cong B/A</m>, so we might abuse notation and identify <m>C</m> with <m>B/A</m>. In particular, note that <m>C = \coker f</m>.
-            </p>
-  
-            <p>
-              In summary, any short exact sequence encodes an inclusion and its cokernel, or equivalently a surjection an its kernel. To give a short exact sequence 
-              <me>
-                \begin{CD}
-                  0@&gt;&gt;&gt;A@&gt;&gt;&gt;B@&gt;&gt;&gt;C@&gt;&gt;&gt;0
-                \end{CD}
-              </me> 
-              is the same as giving an inclusion of modules <m>A \subseteq B</m> and the corresponding quotient module <m>B/A</m>.
-            </p>
-          </remark>
-  
-          <example xml:id="ex-ses-zmods"><title>SES of <m>\Z</m>-modules</title>
-  
-            <p>
-              The following is a short exact sequence of <m>\Z</m>-modules: 
-              <me>
-                \begin{CD}
-                  0@&gt;&gt;&gt;\Z@&gt;2&gt;&gt;\Z@&gt;&gt;&gt;\Zm 2@&gt;&gt;&gt;0
-                \end{CD}
-              </me>
-              Indeed, multiplication by <m>2</m> on <m>\Z</m> is injective, and its cokernel is <m>\Zm 2</m>. Another way to look at this is to notice that the kernel of the canonical projection map <m>\Z \to \Zm 2</m> is the ideal generated by <m>2</m>, which is a free <m>\Z</m>-module with <m>1</m> generator. The map <m>\Z \xrightarrow{\, 2 \,} \Z</m> corresponds to the inclusion of that module in <m>\Z</m>.
-            </p>
-  
-          </example>
-
-          <remark>
-            <p>
-              Suppose that
-              <me>
-                \begin{CD}
-                  0@&gt;&gt;&gt;M@&gt;&gt;&gt;0
-                \end{CD}
-              </me>
-              is an exact sequence. This means that the image of the zero map to <m>M</m>, which is the zero module, is the same as the kernel of the zero map from <m>M</m>, which is all of <m>M</m>. Thus saying that
-              <me>
-                \begin{CD}
-                  0@&gt;&gt;&gt;M@&gt;&gt;&gt;0
-                \end{CD}
-              </me>
-              is exact is equivalent to saying that <m>M = 0</m>.
-            </p>
-          </remark>
-      
-        </section>
-
         <section xml:id="sec-noetherian"><title>Noetherian Rings</title>
 
           <introduction>
@@ -16569,8 +16435,7 @@
             </blockquote>
           </introduction>
 
-          <subsection xml:id="subsec-noetherian-rings">
-            <title>Noetherian Rings</title>
+          <subsection xml:id="subsec-noetherian-rings"><title>Noetherian Rings</title>
 
             <p>
               Most rings that commutative algebraists naturally want to study are noetherian. Noetherian rings are named after Emmy Noether, who is in many ways the mother of modern commutative algebra.
@@ -16586,92 +16451,103 @@
 
             </definition>
 
-            <proposition xml:id="prop-equivalent-noetherian-ring-definitions">
-              <title>Equivalent Noetherian Ring Definitions</title>
-
-
+            <proposition xml:id="prop-equivalent-noetherian-ring-definitions"><title>Equivalent Noetherian Ring Definitions</title>
               <statement>
-                
-
                 <p>
                   Let <m>R</m> be a ring. The following are equivalent:
                 </p>
 
-                <p><ol>
-                  <li>
-                  <m>R</m> is a noetherian ring.
-                  </li>
+                <p>
+                  <ol>
+                    <li>
+                      <m>R</m> is a noetherian ring.
+                    </li>
 
-                  <li>
-                  Every nonempty family of ideals has a maximal element (under <m>\subseteq</m>).
-                  </li>
+                    <li>
+                      Every nonempty family of ideals has a maximal element (under <m>\subseteq</m>).
+                    </li>
 
-                  <li>
-                  Every ascending chain of finitely generated ideals of <m>R</m> stabilizes.
-                  </li>
+                    <li>
+                      Every ascending chain of finitely generated ideals of <m>R</m> stabilizes.
+                    </li>
 
-                  <li>
-                  Given any generating set <m>S</m> for an ideal <m>I</m>, <m>I</m> is generated by a finite subset of <m>S</m>.
-                  </li>
+                    <li>
+                      Given any generating set <m>S</m> for an ideal <m>I</m>, <m>I</m> is generated by a finite subset of <m>S</m>.
+                    </li>
 
-                  <li>
-                  Every ideal of <m>R</m> is finitely generated.
-                  </li>
-
-                </ol></p>
-
+                    <li>
+                      Every ideal of <m>R</m> is finitely generated.
+                    </li>
+                  </ol>
+                </p>
               </statement>
 
               <proof>
-
-
                 <p>
-                  (1)<m>\Rightarrow</m>(2): Suppose there is a nonempty family of ideals with no maximal element. This means that we can keep inductively choosing larger ideals from this family to obtain an infinite properly ascending chain, so <m>R</m> is not noetherian.
+                  (1)<m>\Rightarrow</m>(2): 
+                  Suppose there is a nonempty family of ideals with no maximal element. 
+                  This means that we can keep inductively choosing larger ideals from this family to obtain an infinite properly ascending chain, so <m>R</m> is not noetherian.
                 </p>
 
                 <p>
-                  (2)<m>\Rightarrow</m>(1): An ascending chain of ideals is a family of ideals, and the maximal ideal in the family indicates where our chain stabilizes.
+                  (2)<m>\Rightarrow</m>(1): 
+                  An ascending chain of ideals is a family of ideals, and the maximal ideal in the family indicates where our chain stabilizes.
                 </p>
 
                 <p>
-                  (1)<m>\Rightarrow</m>(3): Contained within the definition of a noetherian ring.
+                  (1)<m>\Rightarrow</m>(3): 
+                  Contained within the definition of a noetherian ring.
                 </p>
 
                 <p>
-                  (3)<m>\Rightarrow</m>(4): Suppose that there is an ideal <m>I</m> and a generating set <m>S</m> for <m>I</m> such that no finite subset of <m>S</m> generates <m>I</m>. So for any finite <m>S'\subseteq S</m> we have <m>(S') \subsetneq (S) =I</m>, so there is some <m>s \in S \setminus (S').</m> Thus, <m>(S') \subsetneq (S' \cup \{s\})</m>. Inductively, we can continue this process to obtain an infinite proper chain of finitely generated ideals, so (c) does not hold.
+                  (3)<m>\Rightarrow</m>(4): 
+                  Suppose that there is an ideal <m>I</m> and a generating set <m>S</m> for <m>I</m> such that no finite subset of <m>S</m> generates <m>I</m>. 
+                  So for any finite <m>S'\subseteq S</m> we have <m>(S') \subsetneq (S) =I</m>, so there is some <m>s \in S \setminus (S').</m> 
+                  Thus, <m>(S') \subsetneq (S' \cup \{s\})</m>. 
+                  Inductively, we can continue this process to obtain an infinite proper chain of finitely generated ideals, so (c) does not hold.
                 </p>
 
                 <p>
-                  (4)<m>\Rightarrow</m>(5): This is the definition of being finitely generated.
+                  (4)<m>\Rightarrow</m>(5): 
+                  This is the definition of being finitely generated.
                 </p>
 
                 <p>
-                  (5)<m>\Rightarrow</m>(1): Given an ascending chain of ideals 
-                  <me>
-                    I_1 \subseteq I_2 \subseteq I_3 \subseteq \cdots
-                  </me> 
-                  let <m>I=\bigcup_{n\in \N} I_n</m>. In general, the union of two ideals might fail to be an ideal, but the union of a chain of ideals is an ideal (exercise). By assumption, the ideal <m>I</m> is finitely generated, say <m>I=(a_1,\dots,a_t)</m>. Now since each <m>a_i</m> is in <m>I</m>, it must be in some <m>I_{n_i}</m>, by definition. Thus for any <m>N \geqslant \max n_i</m>, we have <m>a_1, \ldots, a_t \in I_N</m>. But then <m>I_N=I</m>, and thus <m>I_n = I_{n+1}</m> for all <m>n \geqslant N</m>. Thus the original chain stabilizes, and <m>R</m> is noetherian.
+                  (5)<m>\Rightarrow</m>(1): 
+                  Given an ascending chain of ideals 
+                  <me>I_1 \subseteq I_2 \subseteq I_3 \subseteq \cdots</me> 
+                  let <m>I=\bigcup_{n\in \N} I_n</m>. In general, the union of two ideals might fail to be an ideal, but the union of a chain of ideals is an ideal (exercise). 
+                  By assumption, the ideal <m>I</m> is finitely generated, say <m>I=(a_1,\dots,a_t)</m>.
+                  Now since each <m>a_i</m> is in <m>I</m>, it must be in some <m>I_{n_i}</m>, by definition. 
+                  Thus for any <m>N \geqslant \max n_i</m>, we have <m>a_1, \ldots, a_t \in I_N</m>. 
+                  But then <m>I_N=I</m>, and thus <m>I_n = I_{n+1}</m> for all <m>n \geqslant N</m>. 
+                  Thus the original chain stabilizes, and <m>R</m> is noetherian.
                 </p>
-
               </proof>
             </proposition>
             
             <remark>
               <p>
-                When we say that every non-empty family of ideals has a maximal element, that maximal element does not have to be unique in any way. An ideal <m>I</m> is maximal in the family <m>\mathcal{F}</m> if <m>I \subseteq J</m> for some <m>J \in \mathcal{F}</m> implies <m>I = J</m>. However, we might have many incomparable maximal elements in <m>\mathcal{F}</m>. For example, every element in the family of ideals in <m>\mathbb{Z}</m> given by <me>\mathcal{F} = \lbrace (p) \mid p \textrm{ is a prime integer} \rbrace</me>is maximal.
+                When we say that every non-empty family of ideals has a maximal element, that maximal element does not have to be unique in any way. 
+                An ideal <m>I</m> is maximal in the family <m>\mathcal{F}</m> if <m>I \subseteq J</m> for some <m>J \in \mathcal{F}</m> implies <m>I = J</m>. 
+                However, we might have many incomparable maximal elements in <m>\mathcal{F}</m>. 
+                For example, every element in the family of ideals in <m>\mathbb{Z}</m> given by 
+                <me>\mathcal{F} = \lbrace (p) \mid p \textrm{ is a prime integer} \rbrace</me>
+                is maximal.
               </p>
             </remark>
 
             <remark>
               <p>
-                If <m>R</m> is a noetherian ring and <m>S</m> is a non-empty set of ideals in <m>R</m>, not only does <m>S</m> have a maximal element, but every element in <m>S</m> must be contained in a maximal element of <m>S</m>. Given an element <m>I \in S</m>, the subset <m>T</m> of <m>S</m> of ideals in <m>S</m> that contain <m>I</m> is nonempty, and must then contain a maximal element <m>J</m> by . If <m>J \subseteq L</m> for some <m>L \in S</m>, then <m>I \subseteq L</m>, so <m>L \in T</m>, and thus by maximality of <m>J</m> in <m>T</m>, we must <m>J = L</m>. This proves that <m>J</m> is in fact a maximal element in <m>S</m>, and by construction it contains <m>I</m>.
+                If <m>R</m> is a noetherian ring and <m>S</m> is a non-empty set of ideals in <m>R</m>, not only does <m>S</m> have a maximal element, but every element in <m>S</m> must be contained in a maximal element of <m>S</m>. 
+                Given an element <m>I \in S</m>, the subset <m>T</m> of <m>S</m> of ideals in <m>S</m> that contain <m>I</m> is nonempty, and must then contain a maximal element <m>J</m> by . 
+                If <m>J \subseteq L</m> for some <m>L \in S</m>, then <m>I \subseteq L</m>, so <m>L \in T</m>, and thus by maximality of <m>J</m> in <m>T</m>, we must <m>J = L</m>. 
+                This proves that <m>J</m> is in fact a maximal element in <m>S</m>, and by construction it contains <m>I</m>.
               </p>
             </remark>
 
-            <example xml:id="ex-noetherian-examples"><title>Examples of Noetherian Domains</title>
-
+            <example xml:id="ex-noetherian-examples"><title>Noetherian Rings</title>
               <statement>
-                
                 <p>
                   <ol>
                     <li>
@@ -16682,67 +16558,79 @@
 
                     <li>
                       <p>
-                        <m>\mathbb{Z}</m> is a noetherian ring, since all ideals are principal. More generally, if <m>R</m> is a PID, then <m>R</m> is noetherian. Indeed, every ideal is finitely generated!
+                        <m>\mathbb{Z}</m> is a noetherian ring, since all ideals are principal. 
+                        More generally, if <m>R</m> is a PID, then <m>R</m> is noetherian. 
+                        Indeed, every ideal is finitely generated!
                       </p>
                     </li>
 
                     <li>
                       <p>
                         As a special case of the previous example, consider the ring of germs of complex analytic functions near <m>0</m>, <idx><h><m>\C\{z\}</m></h></idx>
-                        <me>
-                          \C\{z\} := \{ f(z) \in \CC[[z]] \ | \ f \text{ is analytic on a neighborhood of }z=0\}.
-                        </me>
+                        <me>\C\{z\} := \{ f(z) \in \CC[[z]] \ | \ f \text{ is analytic on a neighborhood of }z=0\}.</me>
                         This ring is a PID: every ideal is of the form <m>(z^n)</m>, since any <m>f\in \CC\{z\}</m> can be written as <m>z^n g(z)</m> for some <m>g(z)\neq 0</m>, and any such <m>g(z)</m> is a unit in <m>\C\{z\}</m>.
                       </p>
                     </li>
 
                     <li>
                       <p>
-                        A ring that is not noetherian is a polynomial ring in infinitely many variables over a field <m>k</m>, <m>R = k[x_1, x_2, \ldots]</m>: the ascending chain of ideals <me>(x_1)\subseteq (x_1,x_2) \subseteq (x_1,x_2,x_3) \subseteq \cdots</me>does not stabilize.
+                        A ring that is not noetherian is a polynomial ring in infinitely many variables over a field <m>k</m>, <m>R = k[x_1, x_2, \ldots]</m>: the ascending chain of ideals 
+                        <me>(x_1)\subseteq (x_1,x_2) \subseteq (x_1,x_2,x_3) \subseteq \cdots</me>
+                        does not stabilize.
                       </p>
                     </li>
 
                     <li>
                       <p>
-                        The ring <m>R=k[x,x^{1/2},x^{1/3},x^{1/4},x^{1/5},\dots]</m> is not noetherian. A nice ascending chain of ideals is <me>(x) \subsetneq (x^{1/2}) \subsetneq (x^{1/3})\subsetneq (x^{1/4}) \subsetneq \cdots.</me>
+                        The ring <m>R=k[x,x^{1/2},x^{1/3},x^{1/4},x^{1/5},\dots]</m> is not noetherian. 
+                        A nice ascending chain of ideals is 
+                        <me>(x) \subsetneq (x^{1/2}) \subsetneq (x^{1/3})\subsetneq (x^{1/4}) \subsetneq \cdots.</me>
                       </p>
                     </li>
 
                     <li>
                       <p>
-                        The ring of continuous real-valued functions <m>\mathcal{C}(\R,\R)</m> <idx><h><m>\mathcal{C}(\R,\R)</m></h></idx>is not noetherian. The chain of ideals <me>I_{n}=\{ f(x) \in \mathcal{C}(\R,\R) \ | \ f|_{[-1/n,1/n]}\equiv 0 \}</me> is increasing and proper. The same construction shows that the ring of infinitely differentiable real functions <m>\mathcal{C}^{\infty}(\R,\R)</m> <idx><h><m>\mathcal{C}^{\infty}(\R,\R)</m></h></idx> is not noetherian: properness of the chain follows from, e.g., Urysohn's lemma (though it's not too hard to find functions distinguishing the ideals in the chain). Note that if we asked for analytic functions instead of infinitely-differentiable functions, every element of the chain would be the zero ideal!
+                        The ring of continuous real-valued functions <m>\mathcal{C}(\R,\R)</m> is not noetherian. 
+                        The chain of ideals 
+                        <me>I_{n}=\{ f(x) \in \mathcal{C}(\R,\R) \ | \ f|_{[-1/n,1/n]}\equiv 0 \}</me> 
+                        is increasing and proper. 
+                        The same construction shows that the ring of infinitely differentiable real functions <m>\mathcal{C}^{\infty}(\R,\R)</m> is not noetherian: properness of the chain follows from, e.g., Urysohn's lemma 
+                        (though it's not too hard to find functions distinguishing the ideals in the chain). 
+                        Note that if we asked for analytic functions instead of infinitely-differentiable functions, every element of the chain would be the zero ideal!
+                        <idx><h><m>\mathcal{C}(\R,\R)</m></h></idx>
+                        <idx><h><m>\mathcal{C}^{\infty}(\R,\R)</m></h></idx>
                       </p>
                     </li>
                   </ol>
                 </p>
-
               </statement>
             </example>
 
-            <lemma xml:id="lem-quotient-noetherian">
-              <title>Quotient Noetherian</title>
-
-
+            <lemma xml:id="lem-quotient-noetherian"><title>Quotient Noetherian</title>
               <statement>
-                
-
                 <p>
-                  Let <m>R</m> be a ring and <m>I</m> an ideal in <m>R</m>. If <m>R</m> is noetherian, then so is <m>R/I</m>.
+                  Let <m>R</m> be a ring and <m>I</m> an ideal in <m>R</m>. 
+                  If <m>R</m> is noetherian, then so is <m>R/I</m>.
                 </p>
-
               </statement>
 
               <proof>
-
                 <p>
-                  There is an order preserving bijection <me>\{ \text{ideals of } R \text{ that contain } I \} \longleftrightarrow \{\text{ideals of }R/I\}</me> that sends the ideal <m>J \supseteq I</m> to <m>J/I</m>; its inverse is the map that sends each ideal in <m>R/I</m> to its preimage. Given this bijection, chains of ideals in <m>R/I</m> come from chains of ideals in <m>R</m> that contain <m>J</m>. This implies that if <m>R</m> is noetherian, then <m>R/I</m> is noetherian as well.
+                  There is an order preserving bijection 
+                  <me>\{ \text{ideals of } R \text{ that contain } I \} \longleftrightarrow \{\text{ideals of }R/I\}</me> 
+                  that sends the ideal <m>J \supseteq I</m> to <m>J/I</m>; 
+                  its inverse is the map that sends each ideal in <m>R/I</m> to its preimage. 
+                  Given this bijection, chains of ideals in <m>R/I</m> come from chains of ideals in <m>R</m> that contain <m>J</m>. 
+                  This implies that if <m>R</m> is noetherian, then <m>R/I</m> is noetherian as well.
                 </p>
-
               </proof>
             </lemma>
 
             <p>
-              This gives us many more examples of noetherian rings, by simply taking quotients of the examples above. We will soon show that any polynomial ring over a noetherian ring is also noetherian; as a consequence, we obtain that any quotient of a polynomial ring over a field is noetherian. This is the content of Hilbert's Basis Theorem.
+              This gives us many more examples of noetherian rings, by simply taking quotients of the examples above. 
+              We will soon show that any polynomial ring over a noetherian ring is also noetherian; 
+              as a consequence, we obtain that any quotient of a polynomial ring over a field is noetherian. 
+              This is the content of Hilbert's Basis Theorem.
             </p>
 
             <p>
@@ -16751,27 +16639,22 @@
 
           </subsection>
 
-          <subsection xml:id="subsec-noetherian-modules">
-            <title>Noetherian Modules</title>
+          <subsection xml:id="subsec-noetherian-modules"><title>Noetherian Modules</title>
             
             <definition xml:id="defn-noetherian-module"><title>Noetherian Module</title>
-            <idx><h>noetherian module</h></idx>
-    
-            <statement>
-              <p>
-                An <m>R</m>-module <m>M</m> is <em>noetherian</em> if every ascending chain of submodules of <m>M</m> eventually stabilizes.
-              </p>
-            </statement>
-    
-            </definition>
-    
-            <proposition xml:id="prop-equivalent-definitions-for-noetherian-module">
-              <title>Equivalent Definitions for Noetherian Module</title>
-    
               <statement>
                 <p>
-                  Let <m>M</m> be an <m>R</m>-module. The following are equivalent: 
-
+                  An <m>R</m>-module <m>M</m> is <em>noetherian</em> if every ascending chain of submodules of <m>M</m> eventually stabilizes.
+                  <idx><h>noetherian module</h></idx>
+                </p>
+              </statement>
+            </definition>
+    
+            <proposition xml:id="prop-equivalent-definitions-for-noetherian-module"><title>Equivalent Definitions for Noetherian Module</title>
+              <statement>
+                <p>
+                  Let <m>M</m> be an <m>R</m>-module. 
+                  The following are equivalent: 
                   <ol>
                     <li>
                       <p>
@@ -16799,7 +16682,8 @@
 
                     <li>
                       <p>
-                        Every submodule of <m>M</m> is finitely generated. In particular, a noetherian module must be finitely generated.
+                        Every submodule of <m>M</m> is finitely generated. 
+                        In particular, a noetherian module must be finitely generated.
                       </p>
                     </li>
                   </ol>
@@ -16807,209 +16691,195 @@
               </statement>
             </proposition>
     
-            <example xml:id="ex-noetherian-ring-iff-noetherian-module-over-itself">
-              <title>Noetherian Ring iff Noetherian Module over Itself</title>
-    
-    
+            <example xml:id="ex-noetherian-ring-iff-noetherian-module-over-itself"><title>Noetherian Ring iff Noetherian Module over Itself</title>
               <statement>
-                
-    
                 <p>
                   A ring <m>R</m> is a noetherian ring if and only if <m>R</m> is noetherian as a module over itself.
                 </p>
-    
               </statement>
             </example>
     
-            <example xml:id="ex-noeth-ring-not-noeth-mod-over-subring">
-              <title>Noeth Ring Not Noeth Mod over Subring</title>
-    
-    
+            <example xml:id="ex-noeth-ring-not-noeth-mod-over-subring"><title>Noeth Ring Not Noeth Mod over Subring</title>
               <statement>
-                
-    
                 <p>
                   A noetherian ring need not be a noetherian module over a subring.
                 </p>
-    
-              </statement>
-    
-              <solution>
-    
+
                 <p>
-                  For example, consider <m>\Z\subseteq \Q</m>. These are both noetherian rings but <m>\Q</m> is not a noetherian <m>\Z</m>-module; for example, the following is an ascending chain of submodules which does not stabilize: <me>0 \subsetneq \frac{1}{2} \Z \subsetneq \frac{1}{2} \Z + \frac{1}{3} \Z \subsetneq \frac{1}{2} \Z + \frac{1}{3} \Z + \frac{1}{5} \Z \subsetneq \cdots .</me>
+                  For example, consider <m>\Z\subseteq \Q</m>. 
+                  These are both noetherian rings but <m>\Q</m> is not a noetherian <m>\Z</m>-module; 
+                  for example, the following is an ascending chain of submodules which does not stabilize: 
+                  <me>0 \subsetneq \frac{1}{2} \Z \subsetneq \frac{1}{2} \Z + \frac{1}{3} \Z \subsetneq \frac{1}{2} \Z + \frac{1}{3} \Z + \frac{1}{5} \Z \subsetneq \cdots .</me>
                 </p>
-    
-              </solution>
+              </statement>
             </example>
     
-            <lemma xml:id="lem-noetherianity-in-exact-sequences">
-              <title>Noetherianity in Exact Sequences</title>
-    
-    
+            <lemma xml:id="lem-noetherianity-in-exact-sequences"><title>Noetherianity in Exact Sequences</title>
               <statement>
-                
-    
                 <p>
-                  In an exact sequence of modules <me>\begin{CD}
+                  In an exact sequence of modules 
+                  <me>\begin{CD}
                   0@&gt;&gt;&gt;A@&gt;f&gt;&gt;B@&gt;g&gt;&gt;C@&gt;&gt;&gt;0
-                  \end{CD}</me><m>B</m> is noetherian if and only if <m>A</m> and <m>C</m> are noetherian.
+                  \end{CD}</me>
+                  <m>B</m> is noetherian if and only if <m>A</m> and <m>C</m> are noetherian.
                 </p>
-    
               </statement>
     
               <proof>
-    
                 <p>
-                  Assume <m>B</m> is noetherian. Since <m>A</m> is a submodule of <m>B</m>, and its submodules are also submodules of <m>B</m>, <m>A</m> is noetherian. Moreover, any submodule of <m>B/A</m> is of the form <m>D/A</m> for some submodule <m>D \supseteq A</m> of <m>B</m>. Since every submodule of <m>B</m> is finitely generated, every submodule of <m>C</m> is also finitely generated. Therefore, <m>C</m> is noetherian.
+                  Assume <m>B</m> is noetherian. 
+                  Since <m>A</m> is a submodule of <m>B</m>, and its submodules are also submodules of <m>B</m>, <m>A</m> is noetherian. 
+                  Moreover, any submodule of <m>B/A</m> is of the form <m>D/A</m> for some submodule <m>D \supseteq A</m> of <m>B</m>. 
+                  Since every submodule of <m>B</m> is finitely generated, every submodule of <m>C</m> is also finitely generated. 
+                  Therefore, <m>C</m> is noetherian.
                 </p>
     
                 <p>
-                  Conversely, assume that <m>A</m> and <m>C</m> are noetherian, and let <me>M_1 \subseteq M_2 \subseteq M_3 \subseteq \cdots</me> be a chain of submodules of <m>B</m>. First, note that <me>M_1 \cap A \subseteq M_2 \cap A \subseteq \cdots</me> is an ascending chain of submodules of <m>A</m>, and thus it stabilizes. Moreover, <me>g(M_1) \subseteq g(M_2) \subseteq g(M_3) \subseteq \cdots</me> is a chain of submodules of <m>C</m>, and thus it also stabilizes. Pick a large enough index <m>n</m> such that both of these chains stabilize. We claim that <m>M_n = M_{n+1}</m>, so that the original chain stabilizes as well. To show that, take <m>x \in M_{n+1}</m>. Then <me>g(x) \in g(M_{n+1}) = g(M_n)</me> so we can choose some <m>y \in M_n</m> such that <m>g(x) = g(y)</m>. Then <m>x-y \in \ker g = \im f = A</m>. Now note that <m>y \in M_n \subseteq M_{n+1}</m>, so <m>x-y \in M_{n+1}</m>, and thus <me>x-y \in M_{n+1} \cap A = M_n \cap A.</me> Then <m>x-y \in M_n</m>, and since <m>y \in M_n</m>, we must have <m>x \in M_n</m> as well.
+                  Conversely, assume that <m>A</m> and <m>C</m> are noetherian, and let 
+                  <me>M_1 \subseteq M_2 \subseteq M_3 \subseteq \cdots</me> 
+                  be a chain of submodules of <m>B</m>. 
+                  First, note that 
+                  <me>M_1 \cap A \subseteq M_2 \cap A \subseteq \cdots</me> 
+                  is an ascending chain of submodules of <m>A</m>, and thus it stabilizes. 
+                  Moreover, 
+                  <me>g(M_1) \subseteq g(M_2) \subseteq g(M_3) \subseteq \cdots</me> 
+                  is a chain of submodules of <m>C</m>, and thus it also stabilizes. 
+                  Pick a large enough index <m>n</m> such that both of these chains stabilize. 
+                  We claim that <m>M_n = M_{n+1}</m>, so that the original chain stabilizes as well. 
+                  To show that, take <m>x \in M_{n+1}</m>. 
+                  Then <me>g(x) \in g(M_{n+1}) = g(M_n)</me> so we can choose some <m>y \in M_n</m> such that <m>g(x) = g(y)</m>. 
+                  Then <m>x-y \in \ker g = \im f = A</m>. 
+                  Now note that <m>y \in M_n \subseteq M_{n+1}</m>, so <m>x-y \in M_{n+1}</m>, and thus 
+                  <me>x-y \in M_{n+1} \cap A = M_n \cap A.</me> 
+                  Then <m>x-y \in M_n</m>, and since <m>y \in M_n</m>, we must have <m>x \in M_n</m> as well.
                 </p>
-    
               </proof>
             </lemma>
     
-            <corollary xml:id="cor-direct-sums-are-noetherian">
-              <title>Direct Sums are Noetherian</title>
-    
-    
+            <corollary xml:id="cor-direct-sums-are-noetherian"><title>Direct Sums are Noetherian</title>
               <statement>
-                
-    
                 <p>
                   If <m>A</m> and <m>B</m> are noetherian <m>R</m>-modules, then <m>A \oplus B</m> is a noetherian <m>R</m>-module.
                 </p>
-    
               </statement>
     
               <proof>
-    
                 <p>
-                  Apply the previous <xref ref="lem-noetherianity-in-exact-sequences"/> to the short exact sequence 
+                  Apply <xref ref="lem-noetherianity-in-exact-sequences"/> to the short exact sequence 
                   <me>
                     \begin{CD}
                     0@&gt;&gt;&gt;A@&gt;&gt;&gt;A\oplus B@&gt;&gt;&gt;B@&gt;&gt;&gt;0
                     \end{CD}
                   </me>
                 </p>
-    
               </proof>
             </corollary>
     
-            <corollary xml:id="cor-module-powers-are-noetherian">
-              <title>Module Powers are Noetherian</title>
-    
-    
+            <corollary xml:id="cor-module-powers-are-noetherian"><title>Module Powers are Noetherian</title>
               <statement>
-                
-    
                 <p>
-                  A module <m>M</m> is noetherian if and only if <m>M^n</m> is noetherian for some <m>n</m>. In particular, if <m>R</m> is a noetherian ring then <m>R^n</m> is a noetherian module.
+                  A module <m>M</m> is noetherian if and only if <m>M^n</m> is noetherian for some <m>n</m>. 
+                  In particular, if <m>R</m> is a noetherian ring then <m>R^n</m> is a noetherian module.
                 </p>
-    
               </statement>
     
               <proof>
-    
                 <p>
-                  We will do induction on <m>n</m>. The case <m>n=1</m> is a tautology. For <m>n&gt;1</m>, consider the short exact sequence <me>\begin{CD}
-                  0@&gt;&gt;&gt;M^{n-1}@&gt;&gt;&gt;M^{n}@&gt;g&gt;&gt;M@&gt;&gt;&gt;0
-                  \end{CD}</me> 
+                  We will do induction on <m>n</m>. 
+                  The case <m>n=1</m> is a tautology. 
+                  For <m>n&gt;1</m>, consider the short exact sequence 
+                  <me>
+                    \begin{CD}
+                    0@&gt;&gt;&gt;M^{n-1}@&gt;&gt;&gt;M^{n}@&gt;g&gt;&gt;M@&gt;&gt;&gt;0
+                    \end{CD}
+                  </me> 
                   <xref ref="lem-noetherianity-in-exact-sequences"/> and the inductive hypothesis give the desired conclusion.
                 </p>
     
               </proof>
             </corollary>
     
-            <proposition xml:id="prop-submodule-of-f.g.-module-f.g.">
-              <title>Submodule of F.G. Module F.G</title>
-    
-    
+            <proposition xml:id="prop-submodule-of-f.g.-module-f.g."><title>Submodule of F.G. Module F.G</title>
               <statement>
-                
-    
                 <p>
-                  Let <m>R</m> be a noetherian ring. Given an <m>R</m>-module <m>M</m>, <m>M</m> is a noetherian <m>R</m>-module if and only if <m>M</m> is finitely generated. Consequently, any submodule of a finitely generated <m>R</m>-module is also finitely generated.
+                  Let <m>R</m> be a noetherian ring. 
+                  Given an <m>R</m>-module <m>M</m>, <m>M</m> is a noetherian <m>R</m>-module if and only if <m>M</m> is finitely generated. 
+                  Consequently, any submodule of a finitely generated <m>R</m>-module is also finitely generated.
                 </p>
-    
               </statement>
     
               <proof>
-    
                 <p>
                   If <m>M</m> is noetherian, <m>M</m> is finitely generated, and so are all of its submodules.
                 </p>
     
                 <p>
-                  Now let <m>R</m> be noetherian and <m>M</m> be a finitely generated <m>R</m>-module. Then <m>M</m> is isomorphic to a quotient of <m>R^n</m> for some <m>n</m>, which is noetherian by <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Corollary - Module Powers are Noetherian|Corollary]] and <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Lemma - Quotient Noetherian|Lemma]].
+                  Now let <m>R</m> be noetherian and <m>M</m> be a finitely generated <m>R</m>-module. 
+                  Then <m>M</m> is isomorphic to a quotient of <m>R^n</m> for some <m>n</m>, which is noetherian by <xref ref="cor-module-powers-are-noetherian"/>  and <xref ref="lem-quotient-noetherian"/>.
                 </p>
-    
               </proof>
             </proposition>
     
-            <example xml:id="ex-noetherian-required-for-noetherian-f.g.">
-              <title>Noetherian Required for Noetherian F.G</title>
-    
-    
+            <example xml:id="ex-noetherian-required-for-noetherian-f.g."><title>Noetherian Required for Noetherian F.G</title>
               <statement>
-                
-    
                 <p>
                   If <m>R</m> is a non-noetherian ring and <m>M</m> is a finitely generated <m>R</m>-module, <m>M</m> might not be noetherian.
                 </p>
-    
               </statement>
     
               <solution>
-    
                 <p>
                   For a dramatic example, note that <m>R</m> itself is a finitely generated <m>R</m>-module, but not noetherian.
                 </p>
-    
               </solution>
             </example>
-
           </subsection>
 
-          <subsection xml:id="subsec-hilbert">
-            <title>Hilbert's Basis Theorem</title>
+          <subsection xml:id="subsec-hilbert"><title>Hilbert's Basis Theorem</title>
 
             <p>
-              Now we are ready to prove Hilbert's Basis Theorem. David Hilbert was a big influence in the early years of commutative algebra, in many different ways. Emmy Noether's early work in algebra was in part inspired by some of his work, and he later invited her to join the Göttingen Math Department — many of her amazing contributions to algebra happened during her time in Göttingen. Unfortunately, some of the faculty opposed a woman joining the department, and for her first two years in Göttingen, Noether did not have an official position nor was she paid. Hilbert's contributions also include three of the most fundamental results in commutative algebra — Hilbert's Basis Theorem, the Hilbert Syzygy Theorem, and Hilbert's Nullstellensatz.
+              Now we are ready to prove Hilbert's Basis Theorem. 
+              David Hilbert was a big influence in the early years of commutative algebra, in many different ways. 
+              Emmy Noether's early work in algebra was in part inspired by some of his work, and he later invited her to join the Göttingen Math Department — many of her amazing contributions to algebra happened during her time in Göttingen. 
+              Unfortunately, some of the faculty opposed a woman joining the department, and for her first two years in Göttingen, Noether did not have an official position nor was she paid. 
+              Hilbert's contributions also include three of the most fundamental results in commutative algebra — Hilbert's Basis Theorem, the Hilbert Syzygy Theorem, and Hilbert's Nullstellensatz.
             </p>
         
-            <theorem xml:id="hilbert-basis-theorem">
-              <title>Hilbert's Basis Theorem</title>
-    
-    
-              <statement>
-                
+            <theorem xml:id="hilbert-basis-theorem"><title>Hilbert's Basis Theorem</title>
+              <statement>   
                 <p>
                   If <m>R</m> is a noetherian ring, then the polynomial rings <m>R[x_1,\dots,x_d]</m> and <m>R[[ x_1,\dots,x_d]]</m> are noetherian for any <m>d \geqslant 1</m>.
                 </p>
-    
               </statement>
     
               <proof>
-    
                 <p>
-                  We will give the proof for polynomial rings, and at the end we will indicate what the difference is in the argument for the power series ring case. First, note that by induction on <m>d</m>, we can reduce to the case <m>d=1</m>.
+                  We will give the proof for polynomial rings, and at the end we will indicate what the difference is in the argument for the power series ring case. 
+                  First, note that by induction on <m>d</m>, we can reduce to the case <m>d=1</m>.
                 </p>
     
                 <p>
-                  Given an ideal <m>I\subseteq R[x]</m>, consider the set of leading coefficients of all polynomials in <m>I</m>, <me>J :=  \{ a \in R \ \mid  \ \textrm{there is some } a x^n + \text{lower order terms (with respect to }x) \in I\}.</me> By the <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Exercise - Hilbert Basis Lemma|Hilbert Basis Lemma]], we see that this is an ideal of <m>R</m>. Since <m>R</m> is noetherian, <m>J</m> is finitely generated, so let <m>J = (a_1,\dots,a_t)</m>. Pick <m>f_1,\dots,f_t\in R[x]</m> such that the leading coefficient of <m>f_i</m> is <m>a_i</m>, and set <m>N=\displaystyle\max_i \{\deg{f_i} \}</m>.
+                  Given an ideal <m>I\subseteq R[x]</m>, consider the set of leading coefficients of all polynomials in <m>I</m>, 
+                  <me>J :=  \{ a \in R \ \mid  \ \textrm{there is some } a x^n + \text{lower order terms (with respect to }x) \in I\}.</me> 
+                  By the <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Exercise - Hilbert Basis Lemma|Hilbert Basis Lemma]], we see that this is an ideal of <m>R</m>. 
+                  Since <m>R</m> is noetherian, <m>J</m> is finitely generated, so let <m>J = (a_1,\dots,a_t)</m>. Pick <m>f_1,\dots,f_t\in R[x]</m> such that the leading coefficient of <m>f_i</m> is <m>a_i</m>, and set <m>N=\displaystyle\max_i \{\deg{f_i} \}</m>.
                 </p>
     
                 <p>
-                  Let <m>f \in I</m>. The leading coefficient of <m>f</m> is an <m>R</m>-linear combination of <m>a_1, \ldots, a_t</m>. If <m>f</m> has degree greater than <m>N</m>, then we can cancel off the leading term of <m>f</m> by subtracting a suitable combination of the <m>f_i</m>. Therefore, any <m>f \in I</m> can be written as <m>f = g+ h</m> for some <m>h \in (f_1, \ldots, f_t)</m> and <m>g \in I</m> with degree at most <m>N</m>. In particular, note that <me>g \in I \cap \frac{R + Rx + \cdots + R x^N}.</me>Since <m>I \cap (R + Rx + \cdots + R x^N)</m> is a submodule of the finitely generated free <m>R</m>-module <m>R + Rx + \cdots + R x^N</m>, it must also be finitely generated as an <m>R</m>-module. Given such a generating set, say <m>I \cap (R + Rx + \cdots + Rx^N) = (f_{t+1}, \ldots, f_s)</m>, we can write any element <m>f \in I</m> as an <m>R[x]</m>-linear combination of these generators <m>f_{t+1}, \ldots, f_s</m> and the original <m>f_{1}, \ldots, f_t</m>. Therefore, <m>I = (f_1, \ldots, f_t, f_{t+1}, \ldots, f_s)</m> is finitely generated as an ideal in <m>R[x]</m>, and <m>R[x]</m> is a noetherian ring.
+                  Let <m>f \in I</m>. 
+                  The leading coefficient of <m>f</m> is an <m>R</m>-linear combination of <m>a_1, \ldots, a_t</m>. 
+                  If <m>f</m> has degree greater than <m>N</m>, then we can cancel off the leading term of <m>f</m> by subtracting a suitable combination of the <m>f_i</m>. 
+                  Therefore, any <m>f \in I</m> can be written as <m>f = g+ h</m> for some <m>h \in (f_1, \ldots, f_t)</m> and <m>g \in I</m> with degree at most <m>N</m>. 
+                  In particular, note that 
+                  <me>g \in I \cap \frac{R + Rx + \cdots + R x^N}.</me>
+                  Since <m>I \cap (R + Rx + \cdots + R x^N)</m> is a submodule of the finitely generated free <m>R</m>-module <m>R + Rx + \cdots + R x^N</m>, it must also be finitely generated as an <m>R</m>-module. 
+                  Given such a generating set, say <m>I \cap (R + Rx + \cdots + Rx^N) = (f_{t+1}, \ldots, f_s)</m>, we can write any element <m>f \in I</m> as an <m>R[x]</m>-linear combination of these generators <m>f_{t+1}, \ldots, f_s</m> and the original <m>f_{1}, \ldots, f_t</m>. 
+                  Therefore, <m>I = (f_1, \ldots, f_t, f_{t+1}, \ldots, f_s)</m> is finitely generated as an ideal in <m>R[x]</m>, and <m>R[x]</m> is a noetherian ring.
                 </p>
     
                 <p>
                   In the power series case, take <m>J</m> to be the set of coefficients of lowest degree terms.
                 </p>
-    
               </proof>
             </theorem>
 
@@ -17019,35 +16889,37 @@
               </p>
     
               <blockquote>
-                          <p>
-                Any system of polynomial equations in finitely many variables can be written in terms of finitely many equations.
-              </p>
+                <p>
+                  Any system of polynomial equations in finitely many variables can be written in terms of finitely many equations.
+                </p>
               </blockquote>
             </remark>
 
             <p>
-              Finally, note that a standard corollary of the Hilbert Basis Theorem is that finitely generated algebras over noetherian rings are also noetherian.
+              Finally, note that a standard corollary of <xref text="title" ref="hilbert-basis-theorem"/> is that finitely generated algebras over noetherian rings are also noetherian.
             </p>
     
-            <corollary xml:id="cor-f.g.-algebras-over-noeth-rings-are-noeth">
-              <title>F.G. Algebras over Noeth Rings are Noeth</title>
-    
+            <corollary xml:id="cor-f.g.-algebras-over-noeth-rings-are-noeth"><title>F.G. Algebras over Noeth Rings are Noeth</title>
               <statement>
                 <p>
-                  If <m>R</m> is a noetherian ring, then any finitely generated <m>R</m>-algebra is noetherian. In particular, any finitely generated algebra over a field is noetherian.
+                  If <m>R</m> is a noetherian ring, then any finitely generated <m>R</m>-algebra is noetherian. 
+                  In particular, any finitely generated algebra over a field is noetherian.
                 </p>
               </statement>
     
               <proof>
                 <p>
-                  Any finitely generated <m>R</m>-algebra is isomorphic to a quotient of a polynomial ring over <m>R</m> in finitely many variables; polynomial rings over noetherian rings are noetherian by the <xref text="title" ref="hilbert-basis-theorem"/>, and quotients of noetherian rings are noetherian.
+                  Any finitely generated <m>R</m>-algebra is isomorphic to a quotient of a polynomial ring over <m>R</m> in finitely many variables; 
+                  polynomial rings over noetherian rings are noetherian by the <xref text="title" ref="hilbert-basis-theorem"/>, and quotients of noetherian rings are noetherian.
                 </p>
               </proof>
             </corollary>
 
             <remark>
               <p>
-                The converse to this statement is false: there are lots of noetherian rings that are not finitely generated algebras over a field. For example, <m>\C\{z\}</m> is not algebra-finite over <m>\C</m>. We will see more examples of these when we talk about local rings.
+                The converse to this statement is false: there are lots of noetherian rings that are not finitely generated algebras over a field. 
+                For example, <m>\C\{z\}</m> is not algebra-finite over <m>\C</m>. 
+                We will see more examples of these when we talk about local rings.
               </p>
             </remark>
 
@@ -17055,12 +16927,11 @@
               Finally, we can now prove a technical sounding result that puts together all our finiteness conditions in a useful way.
             </p>
     
-            <theorem xml:id="thm-artin-tate-lemma">
-              <title>Artin-Tate Lemma</title>   
-    
+            <theorem xml:id="thm-artin-tate-lemma"><title>Artin-Tate Lemma</title>   
               <statement>               
                 <p>
-                  Let <m>A\subseteq B \subseteq C</m> be rings. Assume that 
+                  Let <m>A\subseteq B \subseteq C</m> be rings. 
+                  Assume that 
                   <ul>
                     <li>
                       <p>
@@ -17085,15 +16956,26 @@
     
               <proof>
                 <p>
-                  Let <m>C=A[f_1,\dots,f_r]</m> and <m>C=B g_1 + \cdots + B g_s</m>. Then, <me>f_i = \sum_j b_{ij} g_j \quad \text{and} \quad g_i g_j = \sum_k b_{ijk} g_k</me> for some <m>b_{ij}, b_{ijk}\in B</m>. Let <m>B_0 = A[\{b_{ij}, b_{ijk}\}] \subseteq B</m>. This is a finitely generated <m>A</m>-algebra; by this <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Corollary - F.G. Algebras over Noeth Rings and Noeth|Corollary]], since <m>A</m> is noetherian, so is <m>B_0</m>.
+                  Let <m>C=A[f_1,\dots,f_r]</m> and <m>C=B g_1 + \cdots + B g_s</m>. 
+                  Then, 
+                  <me>f_i = \sum_j b_{ij} g_j \quad \text{and} \quad g_i g_j = \sum_k b_{ijk} g_k</me> 
+                  for some <m>b_{ij}, b_{ijk}\in B</m>. 
+                  Let <m>B_0 = A[\{b_{ij}, b_{ijk}\}] \subseteq B</m>. 
+                  This is a finitely generated <m>A</m>-algebra; by this <xref ref="cor-f.g.-algebras-over-noeth-rings-are-noeth"/>, since <m>A</m> is noetherian, so is <m>B_0</m>.
                 </p>
     
                 <p>
-                  We claim that <m>C=B_0 \, g_1 + \cdots + B_0 g_s</m>. Given an element <m>c\in C</m>, write <m>c</m> as a polynomial expression in <m>f_1, \ldots, f_r</m>. Since the <m>f_i</m> are linear combinations of the <m>g_i</m> with coefficients in the <m>b_{ij},</m> we have <m>c\in A[\{b_{ij}\}][g_1,\dots,g_s]</m>. Then using the equations for <m>g_i g_j</m> repeatedly, we can rewrite <m>c</m> as a linear combination of the <m>g_i</m> with coefficients in <m>B_0</m>.
+                  We claim that <m>C=B_0 \, g_1 + \cdots + B_0 g_s</m>. 
+                  Given an element <m>c\in C</m>, write <m>c</m> as a polynomial expression in <m>f_1, \ldots, f_r</m>. 
+                  Since the <m>f_i</m> are linear combinations of the <m>g_i</m> with coefficients in the <m>b_{ij},</m> we have <m>c\in A[\{b_{ij}\}][g_1,\dots,g_s]</m>. 
+                  Then using the equations for <m>g_i g_j</m> repeatedly, we can rewrite <m>c</m> as a linear combination of the <m>g_i</m> with coefficients in <m>B_0</m>.
                 </p>
     
                 <p>
-                  Since <m>B_0</m> is noetherian and <m>C</m> is a finitely generated <m>B_0</m>-module, <m>C</m> is a noetherian <m>B_0</m>-module, by <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Proposition - Submodule of F.G. Module F.G.|Proposition]]. Since <m>B\subseteq C</m>, then <m>B</m> is also a finitely generated <m>B_0</m>-module. In particular, <m>B_0 \subseteq B</m> is algebra-finite. Since <m>A \subseteq B_0</m> is algebra-finite, we conclude that <m>A \subseteq B</m> is algebra-finite, as required.
+                  Since <m>B_0</m> is noetherian and <m>C</m> is a finitely generated <m>B_0</m>-module, <m>C</m> is a noetherian <m>B_0</m>-module, by <xref ref="prop-submodule-of-f.g.-module-f.g."/>. 
+                  Since <m>B\subseteq C</m>, then <m>B</m> is also a finitely generated <m>B_0</m>-module. 
+                  In particular, <m>B_0 \subseteq B</m> is algebra-finite. 
+                  Since <m>A \subseteq B_0</m> is algebra-finite, we conclude that <m>A \subseteq B</m> is algebra-finite, as required.
                 </p>    
               </proof>
             </theorem>
@@ -17117,60 +16999,66 @@
 
           <question xml:id="question">
             <p>
-              Given a (finite) set of symmetries, consider the collection of polynomial functions that are fixed by all of those symmetries. Can we describe all the fixed polynomials in terms of finitely many of them?
+              Given a (finite) set of symmetries, consider the collection of polynomial functions that are fixed by all of those symmetries. 
+              Can we describe all the fixed polynomials in terms of finitely many of them?
             </p>
           </question>
 
           <p>
-            To make this precise, let <m>G</m> be a group acting on a ring <m>R</m>. The main case we have in mind is when <m>R=k[x_1,\dots,x_d]</m> and <m>k</m> is a field; we let <m>G</m> act trivially on <m>k</m>, and the action respects the sum and product in the ring:
-            <me>
-              g \cdot \left( \sum_{a} c_{a} x_1^{a_1} \cdots x_d^{a_d} \right) = \sum_{a} c_{a} (g \cdot x_1)^{a_1} \cdots (g \cdot x_d)^{a_d}.
-            </me>
-            We are interested in the set of elements that are {\bf invariant}<idx><h>invariant</h></idx><idx><h><m>R^G</m></h></idx> under the action,
-            <me>
-              R^G : = \{ r \in R \ | \ g(r) = r \ \text{for all} \ g\in G\}.
-            </me>
+            To make this precise, let <m>G</m> be a group acting on a ring <m>R</m>. 
+            The main case we have in mind is when <m>R=k[x_1,\dots,x_d]</m> and <m>k</m> is a field; 
+            we let <m>G</m> act trivially on <m>k</m>, and the action respects the sum and product in the ring:
+            <me>g \cdot \left( \sum_{a} c_{a} x_1^{a_1} \cdots x_d^{a_d} \right) = \sum_{a} c_{a} (g \cdot x_1)^{a_1} \cdots (g \cdot x_d)^{a_d}.</me>
+            We are interested in the set of elements that are {\bf invariant} under the action,
+            <me>R^G : = \{ r \in R \ | \ g(r) = r \ \text{for all} \ g\in G\}.</me>
             Note that <m>R^G</m> is a subring of <m>R</m>. Indeed, given <m>r,s\in R^G</m>, then
-            <me>
-              r+s=g \cdot r + g \cdot s = g \cdot (r+s) \quad \text{and}\quad r s = (g \cdot r) (g \cdot s) = g \cdot (rs) \qquad \text{for all} \ g\in G,
-            </me>
-            since each <m>g</m> is a homomorphism. Note also that if <m>G=\langle g_1,\dots,g_t\rangle</m>, then <m>r\in R^G</m> if and only if <m>g_i(r)=r</m> for <m>i=1,\dots,t.</m> The question above can now be rephrased as follows:
+            <me>r+s=g \cdot r + g \cdot s = g \cdot (r+s) \quad \text{and}\quad r s = (g \cdot r) (g \cdot s) = g \cdot (rs) \qquad \text{for all} \ g\in G,</me>
+            since each <m>g</m> is a homomorphism. 
+            Note also that if <m>G=\langle g_1,\dots,g_t\rangle</m>, then <m>r\in R^G</m> if and only if <m>g_i(r)=r</m> for <m>i=1,\dots,t</m>.
+            The question above can now be rephrased as follows:
+            <idx><h>invariant</h></idx>
+            <idx><h><m>R^G</m></h></idx>
           </p>
             
           <question xml:id="question-1">
-  
             <p>
               Given a finite group <m>G</m> acting on <m>R=k[x_1,\dots,x_d]</m>, is <m>R^G</m> a finitely generated <m>k</m>-algebra?
             </p>
-  
           </question>
 
           <p>
             Note that <m>R^G</m> is a <m>k</m>-subalgebra of <m>R</m>. Even though <m>R</m> is a finitely generated <m>k</m>-algebra, this does not guarantee a priori that <m>R^G</m> is a finitely generated <m>k</m>-algebra --- recall \Cref{inf gen subalg} <xref provisional="cite"/>, where we saw a subalgebra of a finitely generated algebra which is nevertheless not finitely generated.
           </p>
   
-          <example xml:id="ex-root-of-unity-invariants">
-            <title>Root of Unity Invariants</title>
-  
+          <example xml:id="ex-root-of-unity-invariants"><title>Root of Unity Invariants</title>
             <p>
-              Consider the group with two elements <m>G=\{e,g\}</m>. To define an action of <m>G</m> on <m>R=k[x]</m>, we need only to define <m>g \cdot x</m>, since <m>e</m> is the identity and <m>g</m> acts linearly. Consider the action of <m>G</m> on <m>R=k[x]</m> given by <m>g \cdot x = -x</m>, so <m>g \cdot f(x) = f(-x)</m>. Suppose that the characteristic of <m>k</m> is not 2, so <m>-1 \neq 1</m>. Write <m>f= a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0</m>. We have <m>g \cdot x^i=(-x)^i = (-1)^i x^i</m>, so <me> g\cdot f = (-1)^n a_n x^n+ (-1)^{n-1} a_{n-1} x^{n-1} +  \cdots  + a_0,</me>which differs from <m>f</m> unless for each odd <m>i</m>, <m>a_i=0</m>. That is, [ R^G = { f R  |  }.] Any such <m>f</m> is a polynomial in <m>x^2</m>, so we have <me>R^G = k[x^2].</me>In particular, <m>R^G</m> is a finitely generated <m>k</m>-algebra.
+              Consider the group with two elements <m>G=\{e,g\}</m>. 
+              To define an action of <m>G</m> on <m>R=k[x]</m>, we need only to define <m>g \cdot x</m>, since <m>e</m> is the identity and <m>g</m> acts linearly. 
+              Consider the action of <m>G</m> on <m>R=k[x]</m> given by <m>g \cdot x = -x</m>, so <m>g \cdot f(x) = f(-x)</m>. 
+              Suppose that the characteristic of <m>k</m> is not 2, so <m>-1 \neq 1</m>. 
+              Write <m>f= a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0</m>. 
+              We have <m>g \cdot x^i=(-x)^i = (-1)^i x^i</m>, so 
+              <me> g\cdot f = (-1)^n a_n x^n+ (-1)^{n-1} a_{n-1} x^{n-1} +  \cdots  + a_0,</me>
+              which differs from <m>f</m> unless for each odd <m>i</m>, <m>a_i=0</m>. 
+              That is, [ R^G = { f R  |  }.] Any such <m>f</m> is a polynomial in <m>x^2</m>, so we have 
+              <me>R^G = k[x^2].</me>
+              In particular, <m>R^G</m> is a finitely generated <m>k</m>-algebra.
             </p>
-  
           </example>
   
-          <example xml:id="ex-veronese-subring">
-            <title>Veronese Subring</title>
+          <example xml:id="ex-veronese-subring"><title>Veronese Subring</title>
             <p>
-              Generalize the last example as follows: let <m>k</m> be a field with a primitive <m>d</m>th root of unity <m>\zeta</m>, and let <m>G= \langle g \rangle \cong C_d</m> act on <m>R = k[x_1,\dots,x_n]</m> via <m>g \cdot x_i = \zeta x_i</m> for all <m>i</m>. Then <me>R^G = \{ f \in R \ | \ \text{every term of $f$ has degree a multiple of $d$}\} = k[\{ \text{monomials of degree d}\}].</me> This what is known as the Veronese subring of <m>R</m> of degree <m>d</m>.
+              Generalize the last example as follows: let <m>k</m> be a field with a primitive <m>d</m>th root of unity <m>\zeta</m>, and let <m>G= \langle g \rangle \cong C_d</m> act on <m>R = k[x_1,\dots,x_n]</m> via <m>g \cdot x_i = \zeta x_i</m> for all <m>i</m>. 
+              Then 
+              <me>R^G = \{ f \in R \ | \ \text{every term of $f$ has degree a multiple of $d$}\} = k[\{ \text{monomials of degree d}\}].</me> 
+              This what is known as the Veronese subring of <m>R</m> of degree <m>d</m>.
             </p>
-  
           </example>
   
-          <example xml:id="ex-standard-rep-of-sn">
-            <title>Standard Representation of the Symmetric Group</title>
-  
+          <example xml:id="ex-standard-rep-of-sn"><title>Standard Representation of the Symmetric Group</title>
             <p>
-              Let <m>S_n</m> <idx><h><m>S_n</m></h></idx>be the symmetric group on <m>n</m> letters acting on <m>R=k[x_1,\dots,x_n]</m> via <m>\sigma(x_i)=x_{\sigma(i)}</m>. For example, if <m>n=3</m>, then <m>f=x_1^2+x_2^2+x_3^2</m> is invariant, while <m>g=x_1^2+x_1x_2+x_2^2+x_3^2</m> is not, since swapping 1 with 3 gives a different polynomial.
+              Let <m>S_n</m> <idx><h><m>S_n</m></h></idx>be the symmetric group on <m>n</m> letters acting on <m>R=k[x_1,\dots,x_n]</m> via <m>\sigma(x_i)=x_{\sigma(i)}</m>. 
+              For example, if <m>n=3</m>, then <m>f=x_1^2+x_2^2+x_3^2</m> is invariant, while <m>g=x_1^2+x_1x_2+x_2^2+x_3^2</m> is not, since swapping 1 with 3 gives a different polynomial.
             </p>
   
             <p>
@@ -17181,60 +17069,61 @@
                 <mrow>\vdots</mrow>
                 <mrow>e_n \amp =x_1x_2\cdots x_n.</mrow>
               </md>
-              More precisely, <m>R^{S_n} = k[e_1, \ldots, e_n]</m>. For example, <m>f</m> above is <m>e_1^2-2 e_2</m>. In fact, any symmetric polynomial can be written like so in a  way, so <m>R^{S_n}</m> is a free <m>k</m>-algebra. So even though we have infinitely many invariant polynomials, we can understand them in terms of only finitely many of them, which are <em>fundamental</em> invariants.
+              More precisely, <m>R^{S_n} = k[e_1, \ldots, e_n]</m>. 
+              For example, <m>f</m> above is <m>e_1^2-2 e_2</m>. 
+              In fact, any symmetric polynomial can be written like so in a  way, so <m>R^{S_n}</m> is a free <m>k</m>-algebra.
+              So even though we have infinitely many invariant polynomials, we can understand them in terms of only finitely many of them, which are <em>fundamental</em> invariants.
             </p>
-
           </example>
   
-          <proposition xml:id="prop-group-ring-and-automorphisms-mod-fin">
-            <title>Group Ring and Automorphisms Mod-Fin</title>
-  
-  
+          <proposition xml:id="prop-group-ring-and-automorphisms-mod-fin"><title>Group Ring and Automorphisms Mod-Fin</title>
             <statement>
-              
-  
               <p>
-                Let <m>k</m> be a field, <m>R</m> be a finitely generated <m>k</m>-algebra, and <m>G</m> a finite group of automorphisms of <m>R</m> that fix <m>k</m>. Then <m>R^G \subseteq R</m> is module-finite.
+                Let <m>k</m> be a field, <m>R</m> be a finitely generated <m>k</m>-algebra, and <m>G</m> a finite group of automorphisms of <m>R</m> that fix <m>k</m>. 
+                Then <m>R^G \subseteq R</m> is module-finite.
               </p>
-  
             </statement>
   
             <proof>
-  
               <p>
                 By , integral and algebra-finite implies module-finite, so we will show that <m>R</m> is algebra-finite and integral over <m>R^G</m>.
               </p>
   
               <p>
-                First, since <m>k\subseteq R^G</m> and <m>R</m> is generated finitely generated <m>k</m>-algebra, it is generated by the same finite set as an <m>R^G</m>-algebra as well. Thus <m>R^G \subseteq R</m> is algebra-finite.
+                First, since <m>k\subseteq R^G</m> and <m>R</m> is generated finitely generated <m>k</m>-algebra, it is generated by the same finite set as an <m>R^G</m>-algebra as well. 
+                Thus <m>R^G \subseteq R</m> is algebra-finite.
               </p>
   
               <p>
-                To show that <m>R^G \subseteq R</m> is integral, let us first extend the action of <m>G</m> on <m>R</m> to <m>R[t]</m> trivially, meaning that we will let <m>G</m> fix <m>t</m>. Given <m>r\in R</m>, consider the polynomial <me>F_r(t) :=  \prod_{g\in G} (t-g \cdot r) \in R[t].</me> Now <m>G</m> fixes <m>F_r(t)</m>, since for each <m>h \in G</m>, <me>h \cdot F_r(t) = h \prod_{g\in G} (t-g \cdot r) = \prod_{g\in G} (h \cdot t-(hg) \cdot r) = F_r(t)</me> Thus, <m>F_r(t)\in (R[t])^{G}</m>. Notice that <m>(R[t])^G = R^G[t]</m>, since <me>g (a_nt^n + \cdots + a_0) = a_nt^n + \cdots + a_0 \implies (g \cdot a_n)t^n + \cdots + (g \cdot a_0) = a_nt^n + \cdots + a_0.</me> Therefore, <m>F_r(t) \in R^G[t]</m>. The leading term (with respect to <m>t</m>) of <m>F_r(t)</m> is <m>t^{|G|}</m>, so <m>F_r(t)</m> is monic. On the other hand, one of the factors of <m>F_r(t)</m> is <m>(t-r)</m>, so <m>F_r(r) = 0</m>. Therefore, <m>r</m> satisfies a monic polynomial with coefficients in <m>R^G</m>, and thus <m>R</m> is integral over <m>R^G</m>.
+                To show that <m>R^G \subseteq R</m> is integral, let us first extend the action of <m>G</m> on <m>R</m> to <m>R[t]</m> trivially, meaning that we will let <m>G</m> fix <m>t</m>. 
+                Given <m>r\in R</m>, consider the polynomial 
+                <me>F_r(t) :=  \prod_{g\in G} (t-g \cdot r) \in R[t].</me> 
+                Now <m>G</m> fixes <m>F_r(t)</m>, since for each <m>h \in G</m>, 
+                <me>h \cdot F_r(t) = h \prod_{g\in G} (t-g \cdot r) = \prod_{g\in G} (h \cdot t-(hg) \cdot r) = F_r(t)</me> 
+                Thus, <m>F_r(t)\in (R[t])^{G}</m>. 
+                Notice that <m>(R[t])^G = R^G[t]</m>, since 
+                <me>g (a_nt^n + \cdots + a_0) = a_nt^n + \cdots + a_0 \implies (g \cdot a_n)t^n + \cdots + (g \cdot a_0) = a_nt^n + \cdots + a_0.</me> 
+                Therefore, <m>F_r(t) \in R^G[t]</m>. 
+                The leading term (with respect to <m>t</m>) of <m>F_r(t)</m> is <m>t^{|G|}</m>, so <m>F_r(t)</m> is monic. 
+                On the other hand, one of the factors of <m>F_r(t)</m> is <m>(t-r)</m>, so <m>F_r(r) = 0</m>. 
+                Therefore, <m>r</m> satisfies a monic polynomial with coefficients in <m>R^G</m>, and thus <m>R</m> is integral over <m>R^G</m>.
               </p>
-  
             </proof>
           </proposition>
   
-          <theorem xml:id="thm-noethers-finiteness-theorem">
-            <title>Noether's Finiteness Theorem</title>
-  
-  
-            <statement>
-              
-  
+          <theorem xml:id="thm-noethers-finiteness-theorem"><title>Noether's Finiteness Theorem</title>
+            <statement>      
               <p>
-                Let <m>k</m> be a field, <m>R</m> be a polynomial ring over <m>k</m>, and <m>G</m> be a finite group acting <m>k</m>-linearly on <m>R</m>. Then <m>R^G</m> is a finitely generated <m>k</m>-algebra.
+                Let <m>k</m> be a field, <m>R</m> be a polynomial ring over <m>k</m>, and <m>G</m> be a finite group acting <m>k</m>-linearly on <m>R</m>. 
+                Then <m>R^G</m> is a finitely generated <m>k</m>-algebra.
               </p>
-  
             </statement>
   
             <proof>
-  
               <p>
-                Observe that <m>k \subseteq R^G \subseteq R</m>, that <m>k</m> is noetherian, <m>k\subseteq R</m> is algebra-finite, and <m>R^G\subseteq R</m> is module-finite. The desired result is now a corollary of the <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Theorem - Artin-Tate Lemma|Artin-Tate Lemma]].
+                Observe that <m>k \subseteq R^G \subseteq R</m>, that <m>k</m> is noetherian, <m>k\subseteq R</m> is algebra-finite, and <m>R^G\subseteq R</m> is module-finite.
+                The desired result is now a corollary of the <xref text="title" ref="thm-artin-tate-lemma"/>.
               </p>
-  
             </proof>
           </theorem>
 
@@ -17251,379 +17140,440 @@
         </introduction>
   
         <section xml:id="sec-graded-rings"><title>Graded Rings</title>
-          
-          <blockquote>
-            <p>
-              <q></q>
-            </p>
-            <attribution></attribution>
-          </blockquote>
 
-          <p>
-            When we think of a polynomial ring <m>R</m>, we often think of <m>R</m> with its graded structure, even if we have never formalized what that means. Other rings we have seen also have a graded structure, and this structure is actually very powerful.
-          </p>
+          <subsection xml:id="subsec-graded-ring"><title>Graded Rings</title>
+            
+            <blockquote>
+              <p>
+                <q></q>
+              </p>
+              <attribution></attribution>
+            </blockquote>
+
+            <p>
+              When we think of a polynomial ring <m>R</m>, we often think of <m>R</m> with its graded structure, even if we have never formalized what that means. 
+              Other rings we have seen also have a graded structure, and this structure is actually very powerful.
+            </p>
+        
+            <definition xml:id="defn-graded-ring"><title>Graded Ring</title>
+              <statement>
+                <p>
+                  Let <m>T</m> be a monoid; 
+                  in many examples we will take <m>T = \N</m>, which is a monoid since we follow the convention that <m>0</m> is a natural number. 
+                  A ring <m>R</m> is <m>T</m>-<em>graded</em> if we can write a direct sum decomposition of <m>R</m> as an abelian group indexed by <m>T</m>,
+                  <me>R=\bigoplus_{a \geqslant 0} R_a,</me>
+                  such that 
+                  <me>R_a R_b \subseteq R_{a+b} \quad \textrm{for every } a,b \in T.</me>
+                  This means that for all <m>r \in R_a</m> and <m>s \in R_b</m>, we have <m>rs\in R_{a+b}</m>.
+                  <idx><h><m>T</m>-graded</h></idx>
+                  <idx><h><m>\N</m>-graded</h></idx>
+                  <idx><h>graded ring</h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <definition xml:id="def-homogeneous-element"><title>Homogeneous Element</title>
+              <statement>
+                <p>
+                  An element in one of the summands of <m>R_a</m> is said to be <em>homogeneous</em> of <em>degree</em> <m>a</m>; 
+                  we write <m>|r|</m> or <m>\deg(r)</m> to denote the degree of a homogeneous element <m>r</m>.
+                  <idx><h>homogeneous element</h></idx>
+                  <idx><h>degree of homogeneous element</h></idx>
+                  <idx><h><m>\mid r\mid</m></h></idx>
+                  <idx><h><m>\deg(r)</m></h></idx> 
+                </p>
+              </statement>
+            </definition>
+
+            <definition xml:id="def-homogeneous-component"><title>Homogeneous Component</title>
+              <statement>
+                <p>
+                  By definition, an element in a graded ring is a unique sum of homogeneous elements, which we call its <em>homogeneous</em> or <em>graded components</em>. 
+                  One nice thing about graded rings is that many properties can usually be checked on homogeneous elements, and these are often easier to deal with.
+                  <idx><h>homogeneous components</h></idx>
+                  <idx><h>graded components</h></idx>
+                </p>
+              </statement>
+            </definition>
+    
+            <lemma xml:id="lem-graded-ring-properties"><title>Graded Ring Properties</title>
+              <statement>
+                <p>
+                  Let <m>R</m> be a <m>T</m>-graded ring.
+                  <ol>
+                    <li>
+                      <m>1</m> is homogeneous of degree <m>0 \in T</m> (the identity of <m>T</m>).
+                    </li>
+    
+                    <li>
+                      <m>R_0</m> is a subring of <m>R</m>.
+                    </li>
+    
+                    <li>
+                      Each <m>R_a</m> is an <m>R_0</m>-module.
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+    
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Write <m>1=\sum_a r_a</m> with <m>r_a</m> homogeneous of degree <m>a</m>. 
+                        Then <m>r_0 = r_0 (\sum_a r_a) = \sum_a r_0 r_a</m> implies <m>r_0 r_a = 0</m> for <m>a\neq 0</m>. 
+                        Similarly, for any other <m>a</m> we have <m>r_a = r_a (\sum_b r_b)</m>, and thus <m>r_a = r_a r_0</m> (here is where we use the cancellative assumption). 
+                        Thus <m>r_a =0</m> for <m>a\neq 0</m>, so <m>1\in R_0.</m>
+                      </p>
+                    </li>
+    
+                    <li>
+                      <p>
+                        We have shown that <m>1 \in R_0</m>. 
+                        Moreover, <m>R_0</m> is a subgroup under addition, and <m>r,s\in R_0</m> implies <m>rs\in R_0</m>.
+                      </p>
+                    </li>
       
-          <definition xml:id="defn-graded-ring"><title>Graded Ring</title>
-            <statement>
-              <p>
-                Let <m>T</m> be a monoid; in many examples we will take <m>T = \N</m>, which is a monoid since we follow the convention that <m>0</m> is a natural number. A ring <m>R</m> is <m>T</m>-<em>graded</em> <idx><h><m>T</m>-graded</h></idx><idx><h><m>\N</m>-graded</h></idx><idx><h>graded ring</h></idx>if we can write a direct sum decomposition of <m>R</m> as an abelian group indexed by <m>T</m>,<me>R=\bigoplus_{a \geqslant 0} R_a,</me>such that 
-                <me>
-                  R_a R_b \subseteq R_{a+b} \quad \textrm{for every } a,b \in T.
-                </me>
-                This means that for all <m>r \in R_a</m> and <m>s \in R_b</m>, we have <m>rs\in R_{a+b}</m>.
-              </p>
-            </statement>
-          </definition>
+                    <li>
+                      <p>
+                        By assumption, <m>R_a</m> is a subgroup under addition. 
+                        Given <m>r\in R_0</m> and <m>s\in R_a</m> we must have <m>rs\in R_a</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </lemma>
 
-          <definition xml:id="def-homogeneous-element"><title>Homogeneous Element</title>
-            <statement>
-              <p>
-                An element in one of the summands of <m>R_a</m> is said to be <em>homogeneous</em> <idx><h>homogeneous element</h></idx> of <em>degree</em> <idx><h>degree of homogeneous element</h></idx> <m>a</m>; we write <m>|r|</m> <idx><h><m>\mid r\mid</m></h></idx> or <m>\deg(r)</m> <idx><h><m>\deg(r)</m></h></idx> to denote the degree of a homogeneous element <m>r</m>.
-              </p>
-            </statement>
-          </definition>
-
-          <definition xml:id="def-homogeneous-component"><title>Homogeneous Component</title>
-            <statement>
-              <p>
-                By definition, an element in a graded ring is a unique sum of homogeneous elements, which we call its <em>homogeneous</em> <idx><h>homogeneous components</h></idx> <idx><h>graded components</h></idx> or <em>graded components</em>. One nice thing about graded rings is that many properties can usually be checked on homogeneous elements, and these are often easier to deal with.
-              </p>
-            </statement>
-          </definition>
-  
-          <lemma xml:id="lem-graded-ring-properties"><title>Graded Ring Properties</title>
-            <statement>
-              <p>
-                Let <m>R</m> be a <m>T</m>-graded ring.
-              </p>
-  
+            <example xml:id="ex-graded-ring-examples"><title>Graded Ring Examples</title>
               <p>
                 <ol>
                   <li>
-                    <m>1</m> is homogeneous of degree <m>0 \in T</m> (the identity of <m>T</m>).
-                  </li>
-  
-                <li>
-                  <m>R_0</m> is a subring of <m>R</m>.
-                </li>
-  
-                <li>
-                  Each <m>R_a</m> is an <m>R_0</m>-module.
-                </li>
-              </ol>
-            </p>
-            </statement>
-  
-            <proof>
-  
-              <p><ol>
-                <li>
-                            <p>
-                Write <m>1=\sum_a r_a</m> with <m>r_a</m> homogeneous of degree <m>a</m>. Then <m>r_0 = r_0 (\sum_a r_a) = \sum_a r_0 r_a</m> implies <m>r_0 r_a = 0</m> for <m>a\neq 0</m>. Similarly, for any other <m>a</m> we have <m>r_a = r_a (\sum_b r_b)</m>, and thus <m>r_a = r_a r_0</m> (here is where we use the cancellative assumption). Thus <m>r_a =0</m> for <m>a\neq 0</m>, so <m>1\in R_0.</m>
-              </p>
-                </li>
-  
-                <li>
-                            <p>
-                We have shown that <m>1 \in R_0</m>. Moreover, <m>R_0</m> is a subgroup under addition, and <m>r,s\in R_0</m> implies <m>rs\in R_0</m>.
-              </p>
-                </li>
-  
-                <li>
-                            <p>
-                By assumption, <m>R_a</m> is a subgroup under addition. Given <m>r\in R_0</m> and <m>s\in R_a</m> we must have <m>rs\in R_a</m>.
-              </p>
-                </li>
-  
-              </ol></p>
-  
-            </proof>
-          </lemma>
-
-          <example xml:id="ex-graded-ring-examples"><title>Graded Ring Examples</title>
-
-            <p>
-              <ol>
-                <li>
-                  <p>
-                    Any ring <m>R</m> is trivially an <m>\N</m>-graded ring, by setting <m>R_0 = R</m> and <m>R_n = 0</m> for <m>n \neq 0</m>.
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    If <m>k</m> is a field and <m>R=k[x_1,\dots,x_n]</m> is a polynomial ring, there is an <m>\N</m>-grading on <m>R</m> called the <em>standard grading</em> <idx><h>standard grading</h></idx> where <m>R_d</m> is the <m>k</m>-vector space with basis given by the monomials of total degree <m>d</m>, meaning those of the form <m>x_1^{\alpha_1}\cdots x_n^{\alpha_n}</m> with <m>\sum_i \alpha_i =d</m>. For example, <m>x_1^2+x_2x_3</m> is homogeneous in the standard grading, while <m>x_1^2+x_2</m> is not.
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    If <m>k</m> is a field, and <m>R=k[x_1,\dots,x_n]</m> is a polynomial ring, we can give different <m>\N</m>-gradings on <m>R</m> by fixing some tuple <m>(\beta_1,\dots,\beta_n)\in \N^n</m> and letting <m>x_i</m> be a homogeneous element of degree <m>\beta_i</m>; we call this a grading with <em>weights</em> <idx><h>weights</h></idx> <m>(\beta_1,\dots,\beta_n)</m>. For example, in <m>k[x_1,x_2]</m>, <m>x_1^2+x_2^3</m> is not homogeneous in the standard grading, but it is homogeneous of degree <m>6</m> under the <m>\mathbb{N}</m>-grading with weights <m>(3,2)</m>.
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    A polynomial ring <m>R = k[x_1, \ldots, x_n]</m> also admits a natural <m>\N^n</m>-grading: the grading with <m>R_{(d_1,\dots,d_n)}= k \cdot x_1^{d_1}\cdots x_n^{d_n}</m>. This is called the <em>fine grading</em> <idx><h>fine grading</h></idx>
-                  </p>
-                </li>
-
-                <li>
-                  <p>
-                    Let <m>\Gamma \subseteq \mathbb{N}^n</m> be a subsemigroup of <m>\mathbb{N}^n</m>. Then 
-                    <me>
-                      \bigoplus_{\gamma \in \Gamma} k \cdot \underline x ^ {\gamma} \subseteq k[\underline x] = k[x_1, \ldots, x_n]
-                    </me>
-                    is an <m>\mathbb{N}^n</m>-graded subring of <m>k[x_1,\dots,x_n]</m> with the fine grading. Moreover, every <m>\N^n</m>-graded subring of <m>k[x_1,\dots,x_n]</m> is of this form.
-                  </p>
-                </li>
-              </ol>
-            </p>
-          </example>
-
-          <paragraphs><title>Macaulay2</title>
-
-            <p>
-              Polynomial rings in Macaulay2 are graded with the standard grading by default. To define a different grading, we give Macaulay2 a list with the grading of each of the variables:
-            </p>
-
-            <pre>
-              i1 : R = ZZ/101[a,b,c,Degrees=>{{1,2},{2,1},{1,0}}];
-            </pre>
-
-            <p>
-              We can check whether an element of <m>R</m> <c>isHomogeneous</c>, and the function <c>degree</c> applied to an element of <m>R</m> returns the least upper bound of the degrees of its monomials:
-            </p>
-
-            <pre>
-              i2 : degree (a+b)
-              o2 = {2, 2}
-              o2 : List
-              
-              i3 : isHomogeneous(a+b)
-              o3 = false
-            </pre>
-
-          </paragraphs>
-
-          <remark>
-            <p>
-              You may have seen the term <em>homogeneous polynomial</em> used to refer to a polynomial <m>f(x_1, \ldots, x_n) \in k[x_1, \ldots, x_n]</m> that satisfies 
-              <me>
-                f(\lambda x_1, \ldots, \lambda x_n) = \lambda^d f(x_1, \ldots, x_n)
-              </me>
-              for all <m>\lambda \in k</m> and some fixed <m>d</m>. This is equivalent to saying that all the terms in <m>f</m> have the same total degree <m>d</m>, or that <m>f</m> is homogeneous with respect to the standard grading.
-            </p>
-  
-            <p>
-              Similarly, a polynomial is <em>quasi-homogeneous</em>, <idx><h>quasi-homogenous polynomial</h></idx>or <em>weighted homogeneous</em> or , if there exist integers <m>w_1, \ldots, w_n</m> such that the sum <m>d = a_1 w_1 + \cdots + a_n w_n</m> is the same for all monomials <m>x_1^{a_1} \cdots x_n^{a_n}</m> appearing in <m>f</m>. So <m>f</m> satisfies <me>f(\lambda^{w_1} x_1, \ldots, \lambda^{w_n} x_n) = \lambda^{d} f(x_1, \ldots, x_n),</me>for all <m>\lambda \in k</m> and <m>f(x_1^{w_1}, \ldots, x_n^{w_n})</m> is homogeneous (in the previous sense, so with respect to the standard grading).
-            </p>
-  
-            <p>
-              This condition is equivalent to asking that <m>f</m> be homogeneous with respect to some weighted grading on <m>k[x_1, \ldots, x_n]</m>.
-            </p>
-          </remark>
-  
-          <example xml:id="ex-quasi-homogeneous">
-            <title>Quasi-Homogeneous</title>
-  
-            <p>
-              In <m>k[x,y,z]</m>, the element <m>x^2+y^3+z^5</m> is not homogeneous in the standard grading, but it is homogeneous (of degree 30) if we set <m>\deg(x) = 15</m>, <m>\deg(y)=10</m>, and <m>\deg(z)=6</m>. This tells us that <m>x^2+y^3+z^5</m> is quasi-homogeneous; it is homogeneous with respect to the weights <m>(15,10,6)</m>. Indeed, <me>(\lambda^{15}x)^2+(\lambda^{10}y)^3+(\lambda^6z)^5 = \lambda^{30}(x^2+y^3+z^5).</me>
-            </p>
-  
-          </example>
-  
-          <definition xml:id="defn-homogeneous-ideal">
-            <title>Homogeneous Ideal</title>
-
-          <statement>
-            <p>
-              An ideal <m>I</m> in a graded ring <m>R</m> is called <em>homogeneous</em> <idx><h>homogenous ideal</h></idx>if it can be generated by homogeneous elements.
-            </p>
-          </statement>
-  
-          </definition>
-  
-          <lemma xml:id="lem-equivalent-homogeneous-ideal-definitions">
-            <title>Equivalent Homogeneous Ideal Definitions</title>
-  
-
-            <statement>
-              
-  
-              <p>
-                Let <m>I</m> be an ideal in a graded ring <m>R</m>. The following are equivalent: 
-                <ol>
-                  <li>
                     <p>
-                      <m>I</m> is homogeneous. 
-                    </p>
-                  </li>
-                  
-                  <li>
-                    <p>
-                      For any element <m>f\in R</m> we have <m>f\in I</m> if and only if every homogeneous component of <m>f</m> lies in <m>I</m>. 
+                      Any ring <m>R</m> is trivially an <m>\N</m>-graded ring, by setting <m>R_0 = R</m> and <m>R_n = 0</m> for <m>n \neq 0</m>.
                     </p>
                   </li>
 
                   <li>
                     <p>
-                      <m>I = \bigoplus_{a \in T} I_a</m>, where <m>I_a = I \cap R_a</m>.
+                      If <m>k</m> is a field and <m>R=k[x_1,\dots,x_n]</m> is a polynomial ring, there is an <m>\N</m>-grading on <m>R</m> called the <em>standard grading</em> where <m>R_d</m> is the <m>k</m>-vector space with basis given by the monomials of total degree <m>d</m>, meaning those of the form <m>x_1^{\alpha_1}\cdots x_n^{\alpha_n}</m> with <m>\sum_i \alpha_i =d</m>. 
+                      For example, <m>x_1^2+x_2x_3</m> is homogeneous in the standard grading, while <m>x_1^2+x_2</m> is not.
+                      <idx><h>standard grading</h></idx> 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      If <m>k</m> is a field, and <m>R=k[x_1,\dots,x_n]</m> is a polynomial ring, we can give different <m>\N</m>-gradings on <m>R</m> by fixing some tuple <m>(\beta_1,\dots,\beta_n)\in \N^n</m> and letting <m>x_i</m> be a homogeneous element of degree <m>\beta_i</m>; 
+                      we call this a grading with <em>weights</em> <m>(\beta_1,\dots,\beta_n)</m>. 
+                      For example, in <m>k[x_1,x_2]</m>, <m>x_1^2+x_2^3</m> is not homogeneous in the standard grading, but it is homogeneous of degree <m>6</m> under the <m>\mathbb{N}</m>-grading with weights <m>(3,2)</m>.
+                      <idx><h>weights</h></idx> 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      A polynomial ring <m>R = k[x_1, \ldots, x_n]</m> also admits a natural <m>\N^n</m>-grading: 
+                      the grading with <m>R_{(d_1,\dots,d_n)}= k \cdot x_1^{d_1}\cdots x_n^{d_n}</m>. 
+                      This is called the <em>fine grading</em> 
+                      <idx><h>fine grading</h></idx>
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Let <m>\Gamma \subseteq \mathbb{N}^n</m> be a subsemigroup of <m>\mathbb{N}^n</m>. 
+                      Then 
+                      <me>\bigoplus_{\gamma \in \Gamma} k \cdot \underline x ^ {\gamma} \subseteq k[\underline x] = k[x_1, \ldots, x_n]</me>
+                      is an <m>\mathbb{N}^n</m>-graded subring of <m>k[x_1,\dots,x_n]</m> with the fine grading. 
+                      Moreover, every <m>\N^n</m>-graded subring of <m>k[x_1,\dots,x_n]</m> is of this form.
                     </p>
                   </li>
                 </ol>
               </p>
-  
-            </statement>
-  
-            <proof>
-  
-              <p><ol>
-                <li>
-                            <p>
-                (1) <m>\Rightarrow</m> (2): Let <m>f_1, \ldots, f_n</m> be homogeneous generators for <m>I</m>. If <m>f\in I</m>, we can write <m>f</m> as<me>f = r_1 f_1 + \cdots + r_n f_n.</me>We can also write each <m>r_i</m> as a sum of its components, say <m>r_i = [r_i]_{d_{i,1}} + \cdots + [r_i]_{d_{i,m_i}}</m>. Then, after substituting and collecting, <me>f= \sum_{d} ( [r_1]_{d-|f_1|} f_1 + \cdots +   [r_n]_{d-|f_n|} f_n)</me> expresses <m>f</m> as a sum of homogeneous elements of different degrees, so <me>f_d =  [r_1]_{d-|f_1|} f_1 + \cdots +   [r_n]_{d-|f_n|} f_n \in I.</me>
-              </p>
-                </li>
-  
-                <li>
-                            <p>
-                (2) <m>\Rightarrow</m> (1): Any element of <m>I</m> is a sum of its homogeneous components. Thus, in this case, the set of homogeneous elements in <m>I</m> is a generating set for <m>I</m>.
-              </p>
-                </li>
-  
-                <li>
-                            <p>
-                (1) <m>\Rightarrow</m> (3): As above, <m>I</m> is generated by the collection of additive subgroups <m>\{I_a\}</m> in this case; the sum is direct as there is no nontrivial <m>\Z</m>-linear combination of elements of different degrees.
-              </p>
-                </li>
-  
-                <li>
-                            <p>
-                (3) <m>\Rightarrow</m> (2): We can take generators for each abelian group <m>I \cap R_a</m>, and the collection of all of them is a generating set for <m>I</m>.
-              </p>
-                </li>
-  
-              </ol></p>
-  
-            </proof>
-          </lemma>
-  
-          <example>
-            <title></title>
-  
-            <p>
-              Given an <m>\N</m>-graded ring <m>R</m>, then <m>R_+=\bigoplus_{d&gt;0} R_d</m> is a homogeneous ideal.
-            </p>
-  
-          </example>
+            </example>
 
-          <p>
-            We now observe the following:
-          </p>
-  
-          <lemma xml:id="lem-quotients-of-graded-rings">
-            <title>Quotients of Graded Rings</title>
-  
-  
-            <statement>
-              
-  
+            <paragraphs><title>Macaulay2</title>
               <p>
-                Let <m>R</m> be an <m>T</m>-graded ring, and <m>I</m> be a homogeneous ideal. Then <m>R/I</m> has a natural <m>T</m>-graded structure induced by the <m>T</m>-graded structure on <m>R</m>.
+                Polynomial rings in Macaulay2 are graded with the standard grading by default. 
+                To define a different grading, we give Macaulay2 a list with the grading of each of the variables:
               </p>
-  
-            </statement>
-  
-            <proof>
-  
+
+              <sage language="macaulay2">
+                <input>
+                  R = ZZ/101[a,b,c,Degrees=>{{1,2},{2,1},{1,0}}]
+                </input>
+              </sage>
+
+              <pre>
+                i1 : R = ZZ/101[a,b,c,Degrees=>{{1,2},{2,1},{1,0}}];
+              </pre>
+
               <p>
-                The ideal <m>I</m> decomposes as the direct sum of its graded components, so we can write <me>R/I = \frac{\oplus R_a}{\oplus I_a} \cong \oplus \frac{R_a}{I_a}.</me>It's elementary to check that this direct sum decomposition satisfies the desired properties.
+                We can check whether an element of <m>R</m> <c>isHomogeneous</c>, and the function <c>degree</c> applied to an element of <m>R</m> returns the least upper bound of the degrees of its monomials:
               </p>
-  
-            </proof>
-          </lemma>
-  
-          <example xml:id="ex-homogeneous-ideals">
-            <title>Homogeneous Ideals</title>
-  
-            <p>
-              <ol>
-                <li>
-                The ideal <m>I = (w^2x+wyz+z^3,x^2+3xy+5xz+7yz+11z^2)</m> in <m>R=k[w,x,y,z]</m> is homogeneous with respect to the standard grading on <m>R</m>, and thus the ring <m>R/I</m> admits an <m>\N</m>-grading with <m>|w|=|x|=|y|=|z|=1</m>.
-                </li>
+
+              <sage language="macaulay2">
+                <input>
+                  R = ZZ/101[a,b,c,Degrees=>{{1,2},{2,1},{1,0}}];
+                  degree (a+b)
+                  i3 : isHomogeneous(a+b)
+                </input>
+              </sage>
+
+              <pre>
+                i2 : degree (a+b)
+                o2 = {2, 2}
+                o2 : List
+                
+                i3 : isHomogeneous(a+b)
+                o3 = false
+              </pre>
+            </paragraphs>
+
+            <remark>
+              <p>
+                You may have seen the term <em>homogeneous polynomial</em> used to refer to a polynomial <m>f(x_1, \ldots, x_n) \in k[x_1, \ldots, x_n]</m> that satisfies 
+                <me>f(\lambda x_1, \ldots, \lambda x_n) = \lambda^d f(x_1, \ldots, x_n)</me>
+                for all <m>\lambda \in k</m> and some fixed <m>d</m>. 
+                This is equivalent to saying that all the terms in <m>f</m> have the same total degree <m>d</m>, or that <m>f</m> is homogeneous with respect to the standard grading.
+              </p>
     
-                <li>
-                The ring <m>R=k[x,y,z]/(x^2+y^3+z^5)</m> does not admit a grading with <m>|x|=|y|=|z|=1</m>, but by <xref ref="ex-quasi-homogeneous"/> it does admit a grading with <m>|x|=15,|y|=10,|z|=6</m>.
-                </li>
-              </ol>
-            </p>
-          </example>
-  
-          <definition xml:id="defn-graded-module">
-            <title>Graded Module</title>
-
-            <statement>
               <p>
-                Let <m>R</m> be a <m>T</m>-graded ring and <m>M</m> an <m>R</m>-module. An <m>R</m>-module <m>M</m> is <m>T</m>-<em>graded</em> <idx><h><m>T</m>-graded module</h></idx><idx><h>graded module</h></idx> if there exists a direct sum decomposition of <m>M</m> as an abelian group indexed by <m>T</m>:<me>M=\bigoplus_{a\in T} M_a \textrm{ such that } R_a M_b \subseteq M_{a+b}</me>for all <m>a,b\in T</m>.
+                Similarly, a polynomial is <em>quasi-homogeneous</em>, or <em>weighted homogeneous</em> if there exist integers <m>w_1, \ldots, w_n</m> such that the sum <m>d = a_1 w_1 + \cdots + a_n w_n</m> is the same for all monomials <m>x_1^{a_1} \cdots x_n^{a_n}</m> appearing in <m>f</m>. 
+                So <m>f</m> satisfies 
+                <me>f(\lambda^{w_1} x_1, \ldots, \lambda^{w_n} x_n) = \lambda^{d} f(x_1, \ldots, x_n),</me>
+                for all <m>\lambda \in k</m> and <m>f(x_1^{w_1}, \ldots, x_n^{w_n})</m> is homogeneous (in the previous sense, so with respect to the standard grading).
+                <idx><h>quasi-homogenous polynomial</h></idx>
               </p>
-            </statement>
     
-          </definition>
-        
-          <p>
-            The notions of homogeneous element of a module and degree of a homogeneous element of a module take the obvious meanings. A notable abuse of notation: we will often talk about <m>\Z</m>-graded modules over <m>\N</m>-graded rings, and likewise.
-          </p>
-    
-          <definition xml:id="defn-graded-ring-homomorphism">
-              <title>Graded Ring Homomorphism</title>
-            <statement>
               <p>
-                Let <m>R</m> and <m>S</m> be <m>T</m>-graded rings with the same grading monoid <m>T</m>. A ring homomorphism <m>\varphi:R\to S</m> is <em>graded</em> or <em>degree-preserving</em> <idx><h>graded ring homomorphism</h></idx> <idx><h>degree preserving homomorphism</h></idx> if <m>\varphi(R_a) \subseteq S_{a}</m> for all <m>a \in T</m>.
+                This condition is equivalent to asking that <m>f</m> be homogeneous with respect to some weighted grading on <m>k[x_1, \ldots, x_n]</m>.
               </p>
-            </statement>
-          </definition>
+            </remark>
+    
+            <example xml:id="ex-quasi-homogeneous"><title>Quasi-Homogeneous</title>
+              <p>
+                In <m>k[x,y,z]</m>, the element <m>x^2+y^3+z^5</m> is not homogeneous in the standard grading, but it is homogeneous (of degree 30) if we set <m>\deg(x) = 15</m>, <m>\deg(y)=10</m>, and <m>\deg(z)=6</m>.
+                This tells us that <m>x^2+y^3+z^5</m> is quasi-homogeneous; 
+                it is homogeneous with respect to the weights <m>(15,10,6)</m>. 
+                Indeed, 
+                <me>(\lambda^{15}x)^2+(\lambda^{10}y)^3+(\lambda^6z)^5 = \lambda^{30}(x^2+y^3+z^5).</me>
+              </p>
+            </example>
+    
+            <definition xml:id="defn-homogeneous-ideal"><title>Homogeneous Ideal</title>
+              <statement>
+                <p>
+                  An ideal <m>I</m> in a graded ring <m>R</m> is called <em>homogeneous</em> if it can be generated by homogeneous elements.
+                  <idx><h>homogenous ideal</h></idx>
+                </p>
+              </statement>
+    
+            </definition>
+    
+            <lemma xml:id="lem-equivalent-homogeneous-ideal-definitions"><title>Equivalent Homogeneous Ideal Definitions</title>
+              <statement>
+                <p>
+                  Let <m>I</m> be an ideal in a graded ring <m>R</m>. The following are equivalent: 
+                  <ol>
+                    <li>
+                      <p>
+                        <m>I</m> is homogeneous. 
+                      </p>
+                    </li>
+                    
+                    <li>
+                      <p>
+                        For any element <m>f\in R</m> we have <m>f\in I</m> if and only if every homogeneous component of <m>f</m> lies in <m>I</m>. 
+                      </p>
+                    </li>
 
-          <remark>
-            <p>
-              Note that our definition of ring homomorphism requires <m>1_R \mapsto 1_S</m>, and thus it does not make sense to talk about graded ring homomorphisms of degree <m>d \neq 0</m>. But we can have graded module homomorphisms of any degree.
-            </p>
-          </remark>
-  
-          <definition xml:id="defn-graded-module-homomorphism">
-            <title>Graded Module Homomorphism</title>
-          <statement>
-            <p>
-              Let <m>M</m> and <m>N</m> be <m>T</m>-graded modules over the <m>T</m>-graded ring <m>R</m>. A homomorphism of <m>R</m>-modules] <m>\varphi\!: M \to N</m> is <em>graded</em> <idx><h>graded homomorphism</h></idx> of <em>degree</em> <idx><h>degree of a graded module homomorphism</h></idx> <m>d</m> if <m>\varphi(M_a) \subseteq N_{a+d}</m> for all <m>a \in T</m>. A graded homomorphism of degree <m>0</m> is also called <em>degree-preserving</em> <idx><h>degree-preserving homomorphism</h></idx>.
-            </p>
-          </statement>
-          </definition>
-  
-          <example xml:id="shift">
-            <title>Shift</title>
-  
-            <p>
-              <ol>
-                <li>
-                  Consider the ring map <m>k[x,y,z]\to k[s,t]</m> given by <m>x\mapsto s^2, y\mapsto st, z\mapsto t^2</m>. If <m>k[s,t]</m> has the fine grading, meaning <m>|s|=(1,0)</m> and <m>|t|=(0,1)</m>, then the given map is degree preserving if and only if <m>k[x,y,z]</m> is graded by <me>|x|=(2,0), |y|=(1,1), |z|=(0,2).</me>
-                </li>
-  
-                <li>
-                  Let <m>k</m> be a field, and let <m>R=k[x_1,\dots,x_n]</m> be a polynomial ring with the standard grading. Given <m>c\in k=R_0</m>, the homomorphism of <m>R</m>-modules <m>R\to R</m> given by <m>f\mapsto cf</m> is degree preserving. However, if instead we take <m>g\in R_d</m> for some <m>d&gt;0</m>, then the map 
-                  <me>
-                    \begin{CD}
-                      R@&gt;&gt;&gt; R\\\\
-                      f@&gt;&gt;&gt; gf
-                      \end{CD}</me> is not degree preserving, although it is a graded map of degree <m>d</m>. We can make this a degree-preserving map if we shift the grading on <m>R</m> by defining <m>R(-d)</m> to be the <m>R</m>-module <m>R</m> but with the <m>\Z</m>-grading given by <m>R(-d)_t=R_{t-d}</m>. With this grading, the component of degree <m>d</m> of <m>R(-d)</m> is <m>R(-d)_d=R_0=k</m>. Now the map <me>\begin{CD}
-                      R(-d)@&gt;&gt;&gt; R\\\\
-                      f@&gt;&gt;&gt; gf
-                    \end{CD}
-                  </me> 
-                  is degree preserving.
-                </li>
-              </ol>
-           </p>
-          </example>
+                    <li>
+                      <p>
+                        <m>I = \bigoplus_{a \in T} I_a</m>, where <m>I_a = I \cap R_a</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+    
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        (1) <m>\Rightarrow</m> (2): 
+                        Let <m>f_1, \ldots, f_n</m> be homogeneous generators for <m>I</m>. 
+                        If <m>f\in I</m>, we can write <m>f</m> as
+                        <me>f = r_1 f_1 + \cdots + r_n f_n.</me>
+                        We can also write each <m>r_i</m> as a sum of its components, say <m>r_i = [r_i]_{d_{i,1}} + \cdots + [r_i]_{d_{i,m_i}}</m>. 
+                        Then, after substituting and collecting, 
+                        <me>f= \sum_{d} ( [r_1]_{d-|f_1|} f_1 + \cdots + [r_n]_{d-|f_n|} f_n)</me> 
+                        expresses <m>f</m> as a sum of homogeneous elements of different degrees, so 
+                        <me>f_d =  [r_1]_{d-|f_1|} f_1 + \cdots + [r_n]_{d-|f_n|} f_n \in I.</me>
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        (2) <m>\Rightarrow</m> (1): 
+                        Any element of <m>I</m> is a sum of its homogeneous components. 
+                        Thus, in this case, the set of homogeneous elements in <m>I</m> is a generating set for <m>I</m>.
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        (1) <m>\Rightarrow</m> (3): 
+                        As above, <m>I</m> is generated by the collection of additive subgroups <m>\{I_a\}</m> in this case; 
+                        the sum is direct as there is no nontrivial <m>\Z</m>-linear combination of elements of different degrees.
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        (3) <m>\Rightarrow</m> (2): 
+                        We can take generators for each abelian group <m>I \cap R_a</m>, and the collection of all of them is a generating set for <m>I</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </lemma>
+    
+            <example><title></title>
+              <p>
+                Given an <m>\N</m>-graded ring <m>R</m>, then <m>R_+=\bigoplus_{d&gt;0} R_d</m> is a homogeneous ideal.
+              </p>
+            </example>
 
+            <p>
+              We now observe the following:
+            </p>
+    
+            <lemma xml:id="lem-quotients-of-graded-rings"><title>Quotients of Graded Rings</title>
+              <statement>
+                <p>
+                  Let <m>R</m> be an <m>T</m>-graded ring, and <m>I</m> be a homogeneous ideal. 
+                  Then <m>R/I</m> has a natural <m>T</m>-graded structure induced by the <m>T</m>-graded structure on <m>R</m>.
+                </p>
+              </statement>
+    
+              <proof>
+                <p>
+                  The ideal <m>I</m> decomposes as the direct sum of its graded components, so we can write 
+                  <me>R/I = \frac{\oplus R_a}{\oplus I_a} \cong \oplus \frac{R_a}{I_a}.</me>
+                  It's elementary to check that this direct sum decomposition satisfies the desired properties.
+                </p>
+              </proof>
+            </lemma>
+    
+            <example xml:id="ex-homogeneous-ideals"><title>Homogeneous Ideals</title>
+              <p>
+                <ol>
+                  <li>
+                    The ideal <m>I = (w^2x+wyz+z^3,x^2+3xy+5xz+7yz+11z^2)</m> in <m>R=k[w,x,y,z]</m> is homogeneous with respect to the standard grading on <m>R</m>, and thus the ring <m>R/I</m> admits an <m>\N</m>-grading with <m>|w|=|x|=|y|=|z|=1</m>.
+                  </li>
+      
+                  <li>
+                    The ring <m>R=k[x,y,z]/(x^2+y^3+z^5)</m> does not admit a grading with <m>|x|=|y|=|z|=1</m>, but by <xref ref="ex-quasi-homogeneous"/> it does admit a grading with <m>|x|=15,|y|=10,|z|=6</m>.
+                  </li>
+                </ol>
+              </p>
+            </example>
+
+          </subsection>
+
+          <subsection xml:id="subsec-graded-mod"><title>Graded Modules and Homomorphisms</title>
+
+            <definition xml:id="defn-graded-module"><title>Graded Module</title>
+              <statement>
+                <p>
+                  Let <m>R</m> be a <m>T</m>-graded ring and <m>M</m> an <m>R</m>-module. 
+                  An <m>R</m>-module <m>M</m> is <m>T</m>-<em>graded</em> if there exists a direct sum decomposition of <m>M</m> as an abelian group indexed by <m>T</m>:
+                  <me>M=\bigoplus_{a\in T} M_a \textrm{ such that } R_a M_b \subseteq M_{a+b}</me>
+                  for all <m>a,b\in T</m>.
+                  <idx><h><m>T</m>-graded module</h></idx>
+                  <idx><h>graded module</h></idx>
+                </p>
+              </statement>
+            </definition>
+          
+            <p>
+              The notions of homogeneous element of a module and degree of a homogeneous element of a module take the obvious meanings. 
+              A notable abuse of notation: we will often talk about <m>\Z</m>-graded modules over <m>\N</m>-graded rings, and likewise.
+            </p>
+      
+            <definition xml:id="defn-graded-ring-homomorphism"><title>Graded Ring Homomorphism</title>
+              <statement>
+                <p>
+                  Let <m>R</m> and <m>S</m> be <m>T</m>-graded rings with the same grading monoid <m>T</m>. 
+                  A ring homomorphism <m>\varphi:R\to S</m> is <em>graded</em> or <em>degree-preserving</em> if <m>\varphi(R_a) \subseteq S_{a}</m> for all <m>a \in T</m>.
+                  <idx><h>graded ring homomorphism</h></idx>
+                  <idx><h>degree preserving homomorphism</h></idx> 
+                </p>
+              </statement>
+            </definition>
+  
+            <remark>
+              <p>
+                Note that our definition of ring homomorphism requires <m>1_R \mapsto 1_S</m>, and thus it does not make sense to talk about graded ring homomorphisms of degree <m>d \neq 0</m>. 
+                But we can have graded module homomorphisms of any degree.
+              </p>
+            </remark>
+    
+            <definition xml:id="defn-graded-module-homomorphism"><title>Graded Module Homomorphism</title>
+              <statement>
+                <p>
+                  Let <m>M</m> and <m>N</m> be <m>T</m>-graded modules over the <m>T</m>-graded ring <m>R</m>. 
+                  A homomorphism of <m>R</m>-modules] <m>\varphi\!: M \to N</m> is <em>graded</em>  of <em>degree</em> <m>d</m> if <m>\varphi(M_a) \subseteq N_{a+d}</m> for all <m>a \in T</m>. 
+                  A graded homomorphism of degree <m>0</m> is also called <em>degree-preserving</em>.
+                  <idx><h>graded homomorphism</h></idx>
+                  <idx><h>degree of a graded module homomorphism</h></idx>
+                  <idx><h>degree-preserving homomorphism</h></idx>
+                </p>
+              </statement>
+            </definition>
+    
+            <example xml:id="shift"><title>Shift</title>
+              <p>
+                <ol>
+                  <li>
+                    Consider the ring map <m>k[x,y,z]\to k[s,t]</m> given by <m>x\mapsto s^2, y\mapsto st, z\mapsto t^2</m>. 
+                    If <m>k[s,t]</m> has the fine grading, meaning <m>|s|=(1,0)</m> and <m>|t|=(0,1)</m>, then the given map is degree preserving if and only if <m>k[x,y,z]</m> is graded by 
+                    <me>|x|=(2,0), |y|=(1,1), |z|=(0,2).</me>
+                  </li>
+    
+                  <li>
+                    Let <m>k</m> be a field, and let <m>R=k[x_1,\dots,x_n]</m> be a polynomial ring with the standard grading. 
+                    Given <m>c\in k=R_0</m>, the homomorphism of <m>R</m>-modules <m>R\to R</m> given by <m>f\mapsto cf</m> is degree preserving. 
+                    However, if instead we take <m>g\in R_d</m> for some <m>d&gt;0</m>, then the map 
+                    <me>
+                      \begin{CD}
+                        R@&gt;&gt;&gt; R\\\\
+                        f@&gt;&gt;&gt; gf
+                      \end{CD}
+                    </me> 
+                    is not degree preserving, although it is a graded map of degree <m>d</m>. 
+                    We can make this a degree-preserving map if we shift the grading on <m>R</m> by defining <m>R(-d)</m> to be the <m>R</m>-module <m>R</m> but with the <m>\Z</m>-grading given by <m>R(-d)_t=R_{t-d}</m>. 
+                    With this grading, the component of degree <m>d</m> of <m>R(-d)</m> is <m>R(-d)_d=R_0=k</m>. 
+                    Now the map 
+                    <me>
+                      \begin{CD}
+                        R(-d)@&gt;&gt;&gt; R\\\\
+                        f@&gt;&gt;&gt; gf
+                      \end{CD}
+                    </me> 
+                    is degree preserving.
+                  </li>
+                </ol>
+             </p>
+            </example>
+            
+          </subsection>
+  
         </section>
 
         <section xml:id="sec-finite-conditions-graded-algebras"><title>Finiteness Conditions for Graded Algebras</title>
@@ -17637,62 +17587,64 @@
 
           <remark>
             <p>
-              We observed earlier an important relationship between algebra-finiteness and noetherianity that followed from the Hilbert basis theorem: if <m>R</m> is noetherian, then any algebra-finite extension of <m>R</m> is also noetherian. There isn't a converse to this in general: there are lots of algebras over fields <m>k</m> that are noetherian but not algebra-finite over <m>k</m>. However, for graded rings, this converse relation holds.
+              We observed earlier an important relationship between algebra-finiteness and noetherianity that followed from the Hilbert basis theorem: 
+              if <m>R</m> is noetherian, then any algebra-finite extension of <m>R</m> is also noetherian. 
+              There isn't a converse to this in general: there are lots of algebras over fields <m>k</m> that are noetherian but not algebra-finite over <m>k</m>. 
+              However, for graded rings, this converse relation holds.
             </p>
-    
           </remark>
 
-          <proposition xml:id="prop-graded-f.g.-algebra">
-            <title>Graded F.G. Algebra</title>
-  
-  
+          <proposition xml:id="prop-graded-f.g.-algebra"><title>Graded F.G. Algebra</title>
             <statement>
-              
-  
               <p>
-                Let <m>R</m> be an <m>\N</m>-graded ring, and let <m>f_1,\dots,f_n \in R</m> be homogeneous elements of positive degree. Then <m>f_1,\dots,f_n</m> generate the ideal <m>R_+ := \bigoplus_{d&gt;0} R_d</m> if and only if <m>f_1,\dots,f_n</m> generate <m>R</m> as an <m>R_0</m>-algebra.
+                Let <m>R</m> be an <m>\N</m>-graded ring, and let <m>f_1,\dots,f_n \in R</m> be homogeneous elements of positive degree. 
+                Then <m>f_1,\dots,f_n</m> generate the ideal <m>R_+ := \bigoplus_{d&gt;0} R_d</m> if and only if <m>f_1,\dots,f_n</m> generate <m>R</m> as an <m>R_0</m>-algebra.
               </p>
-  
             </statement>
   
             <proof>
-  
               <p>
-                Suppose <m>R=R_0[f_1,\dots,f_n]</m>. Any element <m>r\in R_+</m> can be written as a polynomial expression <m>r=P(f_1,\dots,f_n)</m> for some <m>P\in R_0[x_1,\dots,x_n]</m> with no constant term. Each monomial of <m>P</m> is a multiple of some <m>x_i</m>, and thus each term in <m>r=P(f_1,\dots,f_n)</m> is a multiple of <m>f_i</m>. Thus <m>r \in R f_1 + \cdots + R f_n = (f_1,\dots,f_n)</m>.
+                Suppose <m>R=R_0[f_1,\dots,f_n]</m>. 
+                Any element <m>r\in R_+</m> can be written as a polynomial expression <m>r=P(f_1,\dots,f_n)</m> for some <m>P\in R_0[x_1,\dots,x_n]</m> with no constant term. 
+                Each monomial of <m>P</m> is a multiple of some <m>x_i</m>, and thus each term in <m>r=P(f_1,\dots,f_n)</m> is a multiple of <m>f_i</m>. 
+                Thus <m>r \in R f_1 + \cdots + R f_n = (f_1,\dots,f_n)</m>.
               </p>
   
               <p>
-                To show that <m>R_+= (f_1,\dots,f_n)</m> implies <m>R=R_0[f_1,\dots,f_n]</m>, it suffices to show that any homogeneous element <m>r\in R</m> can be written as a polynomial expression in <m>f_1, \ldots, f_n</m> with coefficients in <m>R_0</m>. We will use induction on the degree of <m>r</m>, with degree <m>0</m> as a trivial base case. For <m>r</m> homogeneous of positive degree, we must have <m>r\in R_+</m>, so by assumption we can write <m>r= a_1 f_1 + \dots + a_n f_n</m>. Moreover, since <m>r</m> and <m>f_1, \ldots, f_n</m> are all homogeneous, we can choose each coefficient <m>a_i</m> to be homogeneous of degree <m>|r|-|f_i|</m>. By the induction hypothesis, each <m>a_i</m> is a polynomial expression in <m>f_1, \ldots, f_n</m>, so we are done.
+                To show that <m>R_+= (f_1,\dots,f_n)</m> implies <m>R=R_0[f_1,\dots,f_n]</m>, it suffices to show that any homogeneous element <m>r\in R</m> can be written as a polynomial expression in <m>f_1, \ldots, f_n</m> with coefficients in <m>R_0</m>. 
+                We will use induction on the degree of <m>r</m>, with degree <m>0</m> as a trivial base case. 
+                For <m>r</m> homogeneous of positive degree, we must have <m>r\in R_+</m>, so by assumption we can write <m>r= a_1 f_1 + \dots + a_n f_n</m>. 
+                Moreover, since <m>r</m> and <m>f_1, \ldots, f_n</m> are all homogeneous, we can choose each coefficient <m>a_i</m> to be homogeneous of degree <m>|r|-|f_i|</m>. 
+                By the induction hypothesis, each <m>a_i</m> is a polynomial expression in <m>f_1, \ldots, f_n</m>, so we are done.
               </p>
-  
             </proof>
           </proposition>
   
-          <corollary xml:id="cor-characterization-of-noetherian-graded-rings">
-            <title>Characterization of Noetherian Graded Rings</title>
-  
-  
+          <corollary xml:id="cor-characterization-of-noetherian-graded-rings"><title>Characterization of Noetherian Graded Rings</title>
             <statement>
-              
-  
               <p>
                 An <m>\N</m>-graded ring <m>R</m> is noetherian if and only if <m>R_0</m> is noetherian and <m>R</m> is algebra-finite over <m>R_0</m>.
               </p>
-  
             </statement>
   
             <proof>
-  
               <p>
-                If <m>R_0</m> is noetherian and <m>R</m> is algebra-finite over <m>R_0</m>, then <m>R</m> is noetherian by the <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Theorem - Hilbert's Basis Theorem|Hilbert Basis Theorem]]. On the other hand, if <m>R</m> is noetherian then any quotient of <m>R</m> is also noetherian, and in particular <m>R_0 \cong R/R_+</m> is noetherian. Moreover, <m>R_+</m> is generated as an ideal by finitely many homogeneous elements by noetherianity; by <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Proposition - Graded F.G. Algebra|Proposition]], we get a finite algebra generating set for <m>R</m> over <m>R_0</m>.
+                If <m>R_0</m> is noetherian and <m>R</m> is algebra-finite over <m>R_0</m>, then <m>R</m> is noetherian by the <xref text="title" ref="hilbert-basis-theorem"/>. 
+                On the other hand, if <m>R</m> is noetherian then any quotient of <m>R</m> is also noetherian, and in particular <m>R_0 \cong R/R_+</m> is noetherian. 
+                Moreover, <m>R_+</m> is generated as an ideal by finitely many homogeneous elements by noetherianity; 
+                by <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Proposition - Graded F.G. Algebra|Proposition]], we get a finite algebra generating set for <m>R</m> over <m>R_0</m>.
               </p>
-  
             </proof>
           </corollary>
 
           <remark>
             <p>
-              There are many interesting examples of <m>\N</m>-graded algebras with <m>R_0 = k</m>; in that case, <m>R_+</m> is the largest homogeneous ideal in <m>R</m>. In fact, <m>R_0</m> is the only maximal ideal of <m>R</m> that is also homogeneous, so we can call it <em>the</em> <term>homogeneous maximal ideal</term>; it is sometimes also called the <term>irrelevant maximal ideal</term> of <m>R</m>. This ideal plays a very important role: in many ways, <m>R</m> and <m>R_+</m> behave similarly to a local ring <m>R</m> and its unique maximal ideal. We will discuss this further when we learn about local rings.
+              There are many interesting examples of <m>\N</m>-graded algebras with <m>R_0 = k</m>; 
+              in that case, <m>R_+</m> is the largest homogeneous ideal in <m>R</m>. 
+              In fact, <m>R_0</m> is the only maximal ideal of <m>R</m> that is also homogeneous, so we can call it <em>the</em> <term>homogeneous maximal ideal</term>; 
+              it is sometimes also called the <term>irrelevant maximal ideal</term> of <m>R</m>. 
+              This ideal plays a very important role: in many ways, <m>R</m> and <m>R_+</m> behave similarly to a local ring <m>R</m> and its unique maximal ideal. 
+              We will discuss this further when we learn about local rings.
             </p>
           </remark>
       
@@ -17709,66 +17661,88 @@
 
           <remark>
             <p>
-              If <m>R</m> is a graded ring, and <m>G</m> is a group acting on <m>R</m> by degree-preserving automorphisms, then <m>R^G</m> is a graded subring of <m>R</m>, meaning <m>R^G</m> is graded with respect to the same grading monoid. In particular, if <m>G</m> acts <m>k</m>-linearly on a polynomial ring over <m>k</m>, the invariant ring is <m>\N</m>-graded.
+              If <m>R</m> is a graded ring, and <m>G</m> is a group acting on <m>R</m> by degree-preserving automorphisms, then <m>R^G</m> is a graded subring of <m>R</m>, meaning <m>R^G</m> is graded with respect to the same grading monoid. 
+              In particular, if <m>G</m> acts <m>k</m>-linearly on a polynomial ring over <m>k</m>, the invariant ring is <m>\N</m>-graded.
             </p>
     
             <p>
-              Using this perspective, we can now give a different proof of the finite generation of invariant rings that works under different hypotheses. The proof we will discuss now is essentially Hilbert's proof. To do that, we need another notion that is very useful in commutative algebra.
+              Using this perspective, we can now give a different proof of the finite generation of invariant rings that works under different hypotheses. 
+              The proof we will discuss now is essentially Hilbert's proof. 
+              To do that, we need another notion that is very useful in commutative algebra.
             </p>
           </remark>
   
-          <definition xml:id="defn-direct-summand">
-            <title>Direct Summand</title>
-          <statement>
-            <p>
-              Let <m>\varphi\!:R \to S</m> be a ring homomorphism. We say that <m>R</m> is a <em>direct summand</em> <idx><h>direct summand</h></idx> of <m>S</m> if the map <m>\varphi</m> <em>splits</em> as a map of <m>R</m>-modules], meaning there is an <m>R</m>-module homomorphism <me>\begin{CD}
-              R@&gt;\varphi&gt;&gt; S\\\\
-              R@&lt;&lt;\rho&lt; S
-              \end{CD}</me> such that <m>\rho \varphi</m> is the identity on <m>R</m>.
-            </p>
-          </statement>
+          <definition xml:id="defn-direct-summand"><title>Direct Summand</title>
+            <statement>
+              <p>
+                Let <m>\varphi\!:R \to S</m> be a ring homomorphism. 
+                We say that <m>R</m> is a <em>direct summand</em>  of <m>S</m> if the map <m>\varphi</m> <em>splits</em> as a map of <m>R</m>-modules, meaning there is an <m>R</m>-module homomorphism 
+                <me>\begin{CD}
+                  R@&gt;\varphi&gt;&gt; S\\\\
+                  R@&lt;&lt;\rho&lt; S
+                  \end{CD}
+                </me> 
+                such that <m>\rho \varphi</m> is the identity on <m>R</m>.
+                <idx><h>direct summand</h></idx>
+              </p>
+            </statement>
           </definition>
 
           <remark>
             <p>
-              First, observe that the condition on <m>\rho</m> implies that <m>\varphi</m> must be injective, so we can assume that <m>R \subseteq S</m>, perhaps after renaming some elements. The condition on <m>\rho</m> is that <m>\rho|_R</m> is the identity and <m>\rho(rs)= r\rho(s)</m> for all <m>r \in R</m> and <m>s\in S</m>. We call the map <m>\rho</m> the <em>splitting</em> <idx><h>splitting</h></idx> of the inclusion <m>R \subseteq S</m>. Note that given any <m>R</m>-linear map <m>\rho\!: S \to R</m>, if <m>\rho(1)=1</m> then <m>\rho</m> is a splitting: indeed, <m>\rho(r)=\rho(r \cdot 1) = r \rho(1)=r</m> for all <m>r \in R</m>.
+              First, observe that the condition on <m>\rho</m> implies that <m>\varphi</m> must be injective, so we can assume that <m>R \subseteq S</m>, perhaps after renaming some elements. 
+              The condition on <m>\rho</m> is that <m>\rho|_R</m> is the identity and <m>\rho(rs)= r\rho(s)</m> for all <m>r \in R</m> and <m>s\in S</m>. 
+              We call the map <m>\rho</m> the <em>splitting</em>  of the inclusion <m>R \subseteq S</m>. 
+              Note that given any <m>R</m>-linear map <m>\rho\!: S \to R</m>, if <m>\rho(1)=1</m> then <m>\rho</m> is a splitting: 
+              indeed, <m>\rho(r)=\rho(r \cdot 1) = r \rho(1)=r</m> for all <m>r \in R</m>.
+              <idx><h>splitting</h></idx>
             </p>
           </remark>
   
           <remark>
             <p>
-              The subring <m>R</m> of <m>S</m> is a direct summand of <m>S</m> if and only if there exists an <m>R</m>-submodule of <m>S</m> such that <m>S = R \oplus M</m>. In the language above, <m>M = \ker \rho</m>. Conversely, given a direct sum decomposition <m>S = R \oplus M</m>, the quotient map onto the first component is a splitting.
+              The subring <m>R</m> of <m>S</m> is a direct summand of <m>S</m> if and only if there exists an <m>R</m>-submodule of <m>S</m> such that <m>S = R \oplus M</m>. 
+              In the language above, <m>M = \ker \rho</m>. 
+              Conversely, given a direct sum decomposition <m>S = R \oplus M</m>, the quotient map onto the first component is a splitting.
             </p>
           </remark>
         
-          <definition xml:id="defn-expansion-contraction">
-            <title>Expansion and Contraction</title>
+          <definition xml:id="defn-expansion-contraction"><title>Expansion and Contraction</title>
             <statement>
               <p>
-                Let <m>\varphi\! : R \to S</m> be a ring homomorphism. Given an ideal <m>I</m> in <m>S</m>, we write <m>I \cap R</m> for the <em>contraction</em> <idx><h><m>I\cap R</m></h></idx> <idx><h>contracion</h></idx> of <m>R</m> back into <m>R</m>, meaning the preimage of <m>I</m> via <m>\varphi</m>. In particular, if <m>R \subseteq S</m> is a ring extension, then <m>I \cap R</m> denotes the preimage of <m>I</m> via the inclusion map <m>R \subseteq S</m>. Given a ring map <m>R \to S</m>, and an ideal <m>I</m> in <m>R</m>, the <em>expansion</em> <idx><h>expansion of an ideal</h></idx> <idx><h><m>IS</m></h></idx> of <m>I</m> in <m>S</m> is the ideal of <m>S</m> generated by the image of <m>I</m> via the given ring map; we naturally denote this by <m>IS</m>.
+                Let <m>\varphi\! : R \to S</m> be a ring homomorphism. 
+                Given an ideal <m>I</m> in <m>S</m>, we write <m>I \cap R</m> for the <em>contraction</em> of <m>R</m> back into <m>R</m>, meaning the preimage of <m>I</m> via <m>\varphi</m>. 
+                In particular, if <m>R \subseteq S</m> is a ring extension, then <m>I \cap R</m> denotes the preimage of <m>I</m> via the inclusion map <m>R \subseteq S</m>. 
+                Given a ring map <m>R \to S</m>, and an ideal <m>I</m> in <m>R</m>, the <em>expansion</em> of <m>I</m> in <m>S</m> is the ideal of <m>S</m> generated by the image of <m>I</m> via the given ring map; 
+                we naturally denote this by <m>IS</m>.
+                <idx><h><m>I\cap R</m></h></idx> 
+                <idx><h>contracion</h></idx>
+                <idx><h>expansion of an ideal</h>
+                </idx> <idx><h><m>IS</m></h></idx>
               </p>
             </statement>
           </definition>
   
-          <lemma xml:id="lem-direct-summand-of-ideals-contract">
-            <title>Direct Summand of Ideals Contract</title>
-  
+          <lemma xml:id="lem-direct-summand-of-ideals-contract"><title>Direct Summand of Ideals Contract</title>
             <statement>
               <p>
-                Let <m>R</m> be a direct summand of <m>S</m>. Then, for any ideal <m>I \subseteq R</m>, we have <m>IS \cap R=I</m>.
+                Let <m>R</m> be a direct summand of <m>S</m>. 
+                Then, for any ideal <m>I \subseteq R</m>, we have <m>IS \cap R=I</m>.
               </p>
             </statement>
   
             <proof>
               <p>
-                Let <m>\pi</m> be the corresponding splitting. Clearly, <m>I \subseteq IS \cap R</m>. Conversely, if <m>r \in IS \cap R</m>, we can write <m>r = s_1 f_1 + \cdots + s_t f_t</m> for some <m>f_i \in I</m>, <m>s_i \in S</m>. Applying <m>\pi</m>, we have <me>r = \pi(r) = \pi \left( \sum_{i=1}^t s_i f_i \right) = \sum_{i=1}^t \pi\left( s_i f_i \right) = \sum_{i=1}^t \pi \left( s_i \right) f_i \in I.</me>
+                Let <m>\pi</m> be the corresponding splitting. 
+                Clearly, <m>I \subseteq IS \cap R</m>. 
+                Conversely, if <m>r \in IS \cap R</m>, we can write <m>r = s_1 f_1 + \cdots + s_t f_t</m> for some <m>f_i \in I</m>, <m>s_i \in S</m>. 
+                Applying <m>\pi</m>, we have 
+                <me>r = \pi(r) = \pi \left( \sum_{i=1}^t s_i f_i \right) = \sum_{i=1}^t \pi\left( s_i f_i \right) = \sum_{i=1}^t \pi \left( s_i \right) f_i \in I.</me>
               </p>
             </proof>
           </lemma>
   
-          <proposition xml:id="prop-direct-summand-noetherian">
-            <title>Direct Summand Noetherian</title>
-  
+          <proposition xml:id="prop-direct-summand-noetherian"><title>Direct Summand Noetherian</title>
             <statement> 
               <p>
                 Let <m>R</m> be a direct summand of <m>S</m>. If <m>S</m> is noetherian, then so is <m>R</m>.
@@ -17778,14 +17752,12 @@
             <proof>
               <p>
                 Let 
-                <me>
-                  I_1\subseteq I_2 \subseteq I_3 \subseteq \cdots
-                </me>
-                be a chain of ideals in <m>R</m>. The chain of ideals in <m>S</m> 
-                <me>
-                  I_1 S \subseteq I_2 S \subseteq I_3 S \subseteq \cdots
-                </me> 
-                stabilizes, so there exist <m>J</m>, <m>N</m> such that <m>I_n R = J</m> for <m>n \geqslant N</m>. Contracting to <m>R</m>, we get that <m>I_n = I_n S \cap R = J \cap R</m> for <m>n\geqslant N</m>, so the original chain also stabilizes.
+                <me>I_1\subseteq I_2 \subseteq I_3 \subseteq \cdots</me>
+                be a chain of ideals in <m>R</m>. 
+                The chain of ideals in <m>S</m> 
+                <me>I_1 S \subseteq I_2 S \subseteq I_3 S \subseteq \cdots</me> 
+                stabilizes, so there exist <m>J</m>, <m>N</m> such that <m>I_n R = J</m> for <m>n \geqslant N</m>. 
+                Contracting to <m>R</m>, we get that <m>I_n = I_n S \cap R = J \cap R</m> for <m>n\geqslant N</m>, so the original chain also stabilizes.
               </p>
             </proof>
           </proposition>
@@ -17794,42 +17766,39 @@
             Notice in general a subring of a noetherian ring does not have to be noetherian.
           </p>
   
-          <example xml:id="ex-non-noeth-subring">
-            <title>Non-Noetherian Subgring of Noetherian Ring</title>
-  
+          <example xml:id="ex-non-noeth-subring"><title>Non-Noetherian Subring of Noetherian Ring</title>
             <p>
-             If <m>k</m> is a field, <m>S = k[x,y]</m> is noetherian by <xref text="title" ref="hilbert-basis-theorem"/> , but we claim that the subring 
-             <me>
-              R = k[xy,xy^2,xy^3,\ldots]
-            </me> 
-            of <m>S = k[x,y]</m> is not noetherian. Indeed,
-            <me>
-              (xy) \subseteq (xy,xy^2) \subseteq (xy,xy^2,xy^3) \subseteq \cdots
-            </me>
-            is an ascending chain of ideals of <m>R</m> that does not stabilize. Notice that if we considered the same chain of ideals in <m>S</m>, then it does stabilize, and in fact it is the constant chain <m>(xy)</m>.
+              If <m>k</m> is a field, <m>S = k[x,y]</m> is noetherian by <xref text="title" ref="hilbert-basis-theorem"/> , but we claim that the subring 
+              <me>R = k[xy,xy^2,xy^3,\ldots]</me> 
+              of <m>S = k[x,y]</m> is not noetherian. Indeed,
+              <me>(xy) \subseteq (xy,xy^2) \subseteq (xy,xy^2,xy^3) \subseteq \cdots</me>
+              is an ascending chain of ideals of <m>R</m> that does not stabilize. 
+              Notice that if we considered the same chain of ideals in <m>S</m>, then it does stabilize, and in fact it is the constant chain <m>(xy)</m>.
             </p>
-  
           </example>
   
-          <proposition xml:id="prop-k-linear-action-and-direct-summand">
-            <title><m>K</m>-Linear Action and Direct Summand</title>
-  
-  
+          <proposition xml:id="prop-k-linear-action-and-direct-summand"><title><m>K</m>-Linear Action and Direct Summand</title>
             <statement>
-              
-  
               <p>
-                Let <m>k</m> be a field, and <m>R</m> be a polynomial ring over <m>k</m>. Let <m>G</m> be a finite group acting <m>k</m>-linearly on <m>R</m>. Assume that the characteristic of <m>k</m> does not divide <m>|G|</m>. Then <m>R^G</m> is a direct summand of <m>R</m>.
+                Let <m>k</m> be a field, and <m>R</m> be a polynomial ring over <m>k</m>. 
+                Let <m>G</m> be a finite group acting <m>k</m>-linearly on <m>R</m>. 
+                Assume that the characteristic of <m>k</m> does not divide <m>|G|</m>. 
+                Then <m>R^G</m> is a direct summand of <m>R</m>.
               </p>
-  
             </statement>
   
             <proof>
-  
               <p>
-                We consider the map <m>\rho\!: R \to R^G</m> given by <me>\rho(r)=\frac{1}{|G|} \sum_{g\in G} g\cdot r.</me>First, note that the image of this map lies in <m>R^G</m>, since acting by <m>g</m> just permutes the elements in the sum, so the sum itself remains the same. We claim that this map <m>\rho</m> is a splitting for the inclusion <m>R^G \subseteq R</m>. To see that, let <m>s\in R^G</m> and <m>r\in R</m>. We have <me>\rho(sr)=\frac{1}{|G|} \sum_{g\in G} g\cdot (sr) =\frac{1}{|G|} \sum_{g\in G} (g\cdot s)(g\cdot r) =\frac{1}{|G|} \sum_{g\in G} s(g\cdot r) = s \frac{1}{|G|} \sum_{g\in G} (g\cdot r) = s \rho(r),</me>so <m>\rho</m> is <m>R^G</m>-linear, and for <m>s\in R^G</m>, <me>\rho(s)=\frac{1}{|G|} \sum_{g\in G} g\cdot s=s.</me>
+                We consider the map <m>\rho\!: R \to R^G</m> given by 
+                <me>\rho(r)=\frac{1}{|G|} \sum_{g\in G} g\cdot r.</me>
+                First, note that the image of this map lies in <m>R^G</m>, since acting by <m>g</m> just permutes the elements in the sum, so the sum itself remains the same. 
+                We claim that this map <m>\rho</m> is a splitting for the inclusion <m>R^G \subseteq R</m>. 
+                To see that, let <m>s\in R^G</m> and <m>r\in R</m>. 
+                We have 
+                <me>\rho(sr)=\frac{1}{|G|} \sum_{g\in G} g\cdot (sr) =\frac{1}{|G|} \sum_{g\in G} (g\cdot s)(g\cdot r) =\frac{1}{|G|} \sum_{g\in G} s(g\cdot r) = s \frac{1}{|G|} \sum_{g\in G} (g\cdot r) = s \rho(r),</me>
+                so <m>\rho</m> is <m>R^G</m>-linear, and for <m>s\in R^G</m>, 
+                <me>\rho(s)=\frac{1}{|G|} \sum_{g\in G} g\cdot s=s.</me>
               </p>
-  
             </proof>
           </proposition>
 
@@ -17839,31 +17808,30 @@
             </p>
           </remark>
   
-          <theorem xml:id="thm-hilberts-finiteness-theorem-for-invariants">
-            <title>Hilbert's Finiteness Theorem for Invariants</title>
-  
-  
+          <theorem xml:id="thm-hilberts-finiteness-theorem-for-invariants"><title>Hilbert's Finiteness Theorem for Invariants</title>
             <statement>
-              
-  
               <p>
-                Let <m>k</m> be a field, and <m>R</m> be a polynomial ring over <m>k</m>. Let <m>G</m> be a group acting <m>k</m>-linearly on <m>R</m>. Assume that <m>G</m> is finite and that the characteristic of <m>k</m> does not divide <m>|G|</m>, or more generally, that <m>R^G</m> is a direct summand of <m>R</m>. Then <m>R^G</m> is a finitely generated <m>k</m>-algebra.
+                Let <m>k</m> be a field, and <m>R</m> be a polynomial ring over <m>k</m>. 
+                Let <m>G</m> be a group acting <m>k</m>-linearly on <m>R</m>. 
+                Assume that <m>G</m> is finite and that the characteristic of <m>k</m> does not divide <m>|G|</m>, or more generally, that <m>R^G</m> is a direct summand of <m>R</m>. 
+                Then <m>R^G</m> is a finitely generated <m>k</m>-algebra.
               </p>
-  
             </statement>
   
             <proof>
-  
               <p>
-                Since <m>G</m> acts linearly on <m>R</m>, <m>R^G</m> is an <m>\N</m>-graded subring of <m>R</m> with <m>R_0=k</m>. Since <m>R^G</m> is a direct summand of <m>R</m>, <m>R^G</m> is noetherian by . By our characterization of noetherian graded rings in , <m>R^G</m> is finitely generated over <m>R_0=k</m>.
+                Since <m>G</m> acts linearly on <m>R</m>, <m>R^G</m> is an <m>\N</m>-graded subring of <m>R</m> with <m>R_0=k</m>. 
+                Since <m>R^G</m> is a direct summand of <m>R</m>, <m>R^G</m> is noetherian by . 
+                By our characterization of noetherian graded rings in , <m>R^G</m> is finitely generated over <m>R_0=k</m>.
               </p>
-  
             </proof>
           </theorem>
 
           <remark>
             <p>
-              One important thing about this proof is that it applies to many infinite groups. In particular, for any <em>linearly reductive group</em>, <idx><h>linearly reductive group</h></idx> including <m>\mathrm{GL}_n(\C)</m>, <m>\mathrm{SL}_n(\C)</m>, and <m>(\C^{\times})^n</m>, we can construct a splitting map <m>\rho</m>.
+              One important thing about this proof is that it applies to many infinite groups. 
+              In particular, for any <em>linearly reductive group</em>, including <m>\mathrm{GL}_n(\C)</m>, <m>\mathrm{SL}_n(\C)</m>, and <m>(\C^{\times})^n</m>, we can construct a splitting map <m>\rho</m>.
+              <idx><h>linearly reductive group</h></idx>
             </p>
           </remark>
       
@@ -18003,10 +17971,35 @@
             <statement>
               <p>
                 Let <m>(R,\fm,k)</m> be a local ring. Then one of the following holds: 
-                (a) <m>\char(R)=\char(k)=0</m>. We say that <m>R</m> has <em>equal characteristic zero</em><idx><h>equal characteristic zero</h></idx>. 
-                (b) <m>\char(R)=0</m>, <m>\char(k)=p</m> for a prime <m>p</m>, so <m>R</m> has <em>mixed characteristic</em> <m>(0,p)</m><idx><h>mixed characteristic <m>(0,p)</m></h></idx>
-                (c) <m>\char(R)=\char(k)=p</m> for a prime <m>p</m>, so <m>R</m> has <em>equal characteristic</em> <m>p</m><idx><h>equal characteristic <m>p</m></h></idx>. 
-                (d) <m>\char(R)=p^n</m>, <m>\char(k)=p</m> for a prime <m>p</m> and an integer <m>n&gt;1</m>. If <m>R</m> is reduced, then one of the first three cases holds.
+                <ol>
+                  <li>
+                    <p>
+                      <m>\char(R)=\char(k)=0</m>. We say that <m>R</m> has <em>equal characteristic zero</em>. 
+                      <idx><h>equal characteristic zero</h></idx>
+                    </p>
+                  </li>
+                  
+                  <li>
+                    <p>
+                      <m>\char(R)=0</m>, <m>\char(k)=p</m> for a prime <m>p</m>, so <m>R</m> has <em>mixed characteristic</em> <m>(0,p)</m>
+                      <idx><h>mixed characteristic <m>(0,p)</m></h></idx>
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>\char(R)=\char(k)=p</m> for a prime <m>p</m>, so <m>R</m> has <em>equal characteristic</em> <m>p</m>. 
+                      <idx><h>equal characteristic <m>p</m></h></idx>
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>\char(R)=p^n</m>, <m>\char(k)=p</m> for a prime <m>p</m> and an integer <m>n&gt;1</m>. 
+                      If <m>R</m> is reduced, then one of the first three cases holds.
+                    </p>
+                  </li>
+                </ol>
               </p>
             </statement>
   
@@ -18205,11 +18198,38 @@
             <statement>
               <p>
                 Let <m>W</m> be multiplicatively closed in <m>R</m>. 
-                (a) If <m>I</m> is an ideal in <m>R</m>, then <m>W^{-1} I = I W^{-1} R</m>. 
-                (b) If <m>I</m> is an ideal in <m>R</m>, then <m>W^{-1} I \cap R = \{ r \in R \ | \  wr\in I \textrm{ for some } w\in W\}</m>. 
-                (c) If <m>J</m> is an ideal in <m>W^{-1}R</m>, then <m>W^{-1}(J \cap R) = J</m>. 
-                (d) If <m>\fp</m> is prime and <m>W \cap \fp=\es</m>, then <m>W^{-1}\fp =\fp (W^{-1}R)</m> is prime. 
-                (e) The map <m>\Spec(W^{-1} R) \to \Spec(R)</m> is injective, with image <me>\{\fp \in \Spec(R) \ | \ \fp \cap W = \varnothing\}.</me>
+                <ol>
+                  <li>
+                    <p>
+                      If <m>I</m> is an ideal in <m>R</m>, then <m>W^{-1} I = I W^{-1} R</m>. 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      If <m>I</m> is an ideal in <m>R</m>, then <m>W^{-1} I \cap R = \{ r \in R \ | \  wr\in I \textrm{ for some } w\in W\}</m>. 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      If <m>J</m> is an ideal in <m>W^{-1}R</m>, then <m>W^{-1}(J \cap R) = J</m>. 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      If <m>\fp</m> is prime and <m>W \cap \fp=\es</m>, then <m>W^{-1}\fp =\fp (W^{-1}R)</m> is prime. 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      The map <m>\Spec(W^{-1} R) \to \Spec(R)</m> is injective, with image 
+                      <me>\{\fp \in \Spec(R) \ | \ \fp \cap W = \varnothing\}.</me>
+                    </p>
+                  </li>
+                </ol>
               </p>
             </statement>
   
@@ -18218,56 +18238,71 @@
                 <ol>
                   <li>
                     <p>
-                      Note that <me>W^{-1} I = \left\{ \frac{a}{w} \mid a \in I, w \in W \right\},</me>while <m>I W^{-1}</m> is the ideal generated by all the elements of the form <me>a \cdot \frac{s}{w} \quad \textrm{where } s \in R, w \in W, a \in I.</me>Since we can rewrite <me>a \cdot \frac{s}{w} = \frac{sa}{w}</me>and <m>sa \in I</m>, we conclude that <m>W^{-1} I = I W^{-1} R</m>.
+                      Note that 
+                      <me>W^{-1} I = \left\{ \frac{a}{w} \mid a \in I, w \in W \right\},</me>
+                      while <m>I W^{-1}</m> is the ideal generated by all the elements of the form 
+                      <me>a \cdot \frac{s}{w} \quad \textrm{where } s \in R, w \in W, a \in I.</me>
+                      Since we can rewrite 
+                      <me>a \cdot \frac{s}{w} = \frac{sa}{w}</me>
+                      and <m>sa \in I</m>, we conclude that <m>W^{-1} I = I W^{-1} R</m>.
                     </p>
                   </li>
   
                   <li>
                     <p>
-                      If <m>wr \in I</m> for some <m>w \in W</m>, then <me>\frac{r}{1} = \frac{wr}{w} \in W^{-1} I.</me>Conversely, if <m>r \in W^{-1} I \cap R</m>, then that means that <me>\frac{r}{1} = \frac{a}{w} \textrm{ for some } a \in I, w \in W.</me>By definition of the equivalence relation defining <m>W^{-1}R</m>, this means that there exists <m>u \in W</m> such that<me>u(rw - a \cdot 1) = 0 \Leftrightarrow  r(uw) = wa \in I.</me>Since <m>W</m> is multiplicatively closed, <m>uw \in W</m>, and thus the element <m>t := uw \in W</m> satisfies <m>tr \in I</m>.
+                      If <m>wr \in I</m> for some <m>w \in W</m>, then 
+                      <me>\frac{r}{1} = \frac{wr}{w} \in W^{-1} I.</me>
+                      Conversely, if <m>r \in W^{-1} I \cap R</m>, then that means that 
+                      <me>\frac{r}{1} = \frac{a}{w} \textrm{ for some } a \in I, w \in W.</me>
+                      By definition of the equivalence relation defining <m>W^{-1}R</m>, this means that there exists <m>u \in W</m> such that
+                      <me>u(rw - a \cdot 1) = 0 \Leftrightarrow  r(uw) = wa \in I.</me>
+                      Since <m>W</m> is multiplicatively closed, <m>uw \in W</m>, and thus the element <m>t := uw \in W</m> satisfies <m>tr \in I</m>.
                     </p>
                   </li>
     
                   <li>
                     <p>
-                      The containment <m>W^{-1}(J \cap R) \subseteq J</m> holds for general reasons: given any map <m>f</m>, and a subset <m>J</m> of the target of <m>f</m>, <m>f(f^{-1}(J)) \subseteq J</m>. On the other hand, if <m>\frac{a}{w} \in J</m>, then <m>\frac{a}{1} \in J</m>, since its a unit multiple of an element of <m>J</m>, and thus <m>a \in J \cap R</m>, so <m>\frac{a}{w} \in W^{-1}(J \cap R)</m>.
+                      The containment <m>W^{-1}(J \cap R) \subseteq J</m> holds for general reasons: 
+                      given any map <m>f</m>, and a subset <m>J</m> of the target of <m>f</m>, <m>f(f^{-1}(J)) \subseteq J</m>. 
+                      On the other hand, if <m>\frac{a}{w} \in J</m>, then <m>\frac{a}{1} \in J</m>, since its a unit multiple of an element of <m>J</m>, and thus <m>a \in J \cap R</m>, so <m>\frac{a}{w} \in W^{-1}(J \cap R)</m>.
                     </p>
                   </li>
     
                   <li>
                     <p>
-                      First, since <m>W\cap P =\varnothing</m>, and <m>P</m> is prime, no element of <m>W</m> kills <m>\bar{1}=1 + P</m> in <m>R/P</m>, so <m>\bar{1}/1</m> is nonzero in <m>W^{-1}(R/P)</m>. Thus, <m>W^{-1}R / W^{-1}P \cong W^{-1}(R/P)</m> is nonzero, and a localization of a domain, hence is a domain. Thus, <m>W^{-1}P</m> is prime.
+                      First, since <m>W\cap P =\varnothing</m>, and <m>P</m> is prime, no element of <m>W</m> kills <m>\bar{1}=1 + P</m> in <m>R/P</m>, so <m>\bar{1}/1</m> is nonzero in <m>W^{-1}(R/P)</m>. 
+                      Thus, <m>W^{-1}R / W^{-1}P \cong W^{-1}(R/P)</m> is nonzero, and a localization of a domain, hence is a domain. 
+                      Thus, <m>W^{-1}P</m> is prime.
                     </p>
                   </li>
     
                   <li>
                     <p>
-                      First, by part b), the map <m>P \mapsto W^{-1}P</m>, for <m>S=\{P \in \Spec(R) \ | \ P \cap W = \varnothing\}</m> sends primes to primes. We claim that
+                      First, by part 2), the map <m>P \mapsto W^{-1}P</m>, for <m>S=\{P \in \Spec(R) \ | \ P \cap W = \varnothing\}</m> sends primes to primes. 
+                      We claim that
+                    </p>
+                    <p>
+                      <m>\Spec(W^{-1} R)</m> <m>Q</m> <m>W^{-1}P</m>
+                    </p>
+        
+                    <p>
+                      #empty
+                    </p>
+        
+                    <p>
+                      <m>S</m> <m>Q \cap R</m> <m>P</m> are inverse maps.
+                    </p>
+        
+                    <p>
+                      We have already seen that <m>J=(J\cap R) W^{-1}R</m> for any ideal <m>J</m> in <m>W^{-1}R</m>.
+                    </p>
+        
+                    <p>
+                      If <m>W\cap P=\varnothing</m>, then using part a) and the definition of prime, we have that <me>W^{-1}P \cap R = \lbrace r \in R \, \mid \, rw \in P \textrm{ for some } w \in W \rbrace = \lbrace r \in R \, \mid \, r \in P \rbrace = P.</me>
                     </p>
                   </li>
                 </ol>
               </p>
-  
-              <p>
-                <m>\Spec(W^{-1} R)</m> <m>Q</m> <m>W^{-1}P</m>
-              </p>
-  
-              <p>
-                #empty
-              </p>
-  
-              <p>
-                <m>S</m> <m>Q \cap R</m> <m>P</m> are inverse maps.
-              </p>
-  
-              <p>
-                We have already seen that <m>J=(J\cap R) W^{-1}R</m> for any ideal <m>J</m> in <m>W^{-1}R</m>.
-              </p>
-  
-              <p>
-                If <m>W\cap P=\varnothing</m>, then using part a) and the definition of prime, we have that <me>W^{-1}P \cap R = \lbrace r \in R \, \mid \, rw \in P \textrm{ for some } w \in W \rbrace = \lbrace r \in R \, \mid \, r \in P \rbrace = P.</me>
-              </p>
-  
             </proof>
           </lemma>
   
@@ -18304,37 +18339,35 @@
   
           <example xml:id="ex-kxyxy-has-non-injective-canonical-maps"><title><m>k[x,y]/(xy)</m> has Non Injective Canonical Maps</title>
             <statement>
-              <p></p>
-            </statement>
-  
-            <solution>
               <p>
                 Consider <m>R = k[x,y]/(xy)</m>. 
                 The canonical maps <m>R \longrightarrow R_{(x)}</m> and <m>R \longrightarrow R_y</m> are not injective, since in both cases <m>y</m> is invertible in the localization, and thus
                 <me>x \mapsto \frac{x}{1} = \frac{xy}{y} = \frac{0}{y} = \frac{0}{1}.</me>
               </p>
-            </solution>
+            </statement>
           </example>
   
           <definition xml:id="defn-annihilator"><title>Annihilator</title>
-          <statement>
-            <p>
-              The <em>annihilator</em><idx><h>annihilator</h></idx><idx><h><m>\ann(M)</m></h></idx> of a module <m>M</m> is the ideal
-              <me>\ann(M) :=  \lbrace r \in R \mid rm = 0 \textrm{ for all } m \in M \rbrace.</me>
-            </p>
-          </statement>
+            <statement>
+              <p>
+                The <em>annihilator</em> of a module <m>M</m> is the ideal
+                <me>\ann(M) :=  \lbrace r \in R \mid rm = 0 \textrm{ for all } m \in M \rbrace.</me>
+                <idx><h>annihilator</h></idx><idx><h><m>\ann(M)</m></h></idx>
+              </p>
+            </statement>
           </definition>
   
           <definition xml:id="defn-colon-ideal"><title>Colon Ideal</title>
-          <statement>
-            <p>
-              Let <m>I</m> and <m>J</m> be ideals in a ring <m>R</m>. 
-              The <em>colon</em><idx><h>colon</h></idx> of <m>I</m> and <m>J</m> is the ideal
-              <me>(J : I) :=  \lbrace r \in R \mid rI \subseteq J \rbrace.</me>
-              More generally, if <m>M</m> and <m>N</m> are submodules of some <m>R</m>-module <m>A</m>, the colon of <m>N</m> and <m>M</m> is
-              <me>(N :_R M) :=  \lbrace r \in R \mid rM \subseteq N \rbrace.</me>
-            </p>
-          </statement>
+            <statement>
+              <p>
+                Let <m>I</m> and <m>J</m> be ideals in a ring <m>R</m>. 
+                The <em>colon</em> of <m>I</m> and <m>J</m> is the ideal
+                <me>(J : I) :=  \lbrace r \in R \mid rI \subseteq J \rbrace.</me>
+                More generally, if <m>M</m> and <m>N</m> are submodules of some <m>R</m>-module <m>A</m>, the colon of <m>N</m> and <m>M</m> is
+                <me>(N :_R M) :=  \lbrace r \in R \mid rM \subseteq N \rbrace.</me>
+                <idx><h>colon</h></idx>
+              </p>
+            </statement>
           </definition>
   
           <example xml:id="ex-annihilators-and-colons-are-ideals"><title>Annihilators and Colons are Ideals</title>
@@ -18386,9 +18419,25 @@
               <p>
                 Let <m>M</m> be an <m>R</m>-module, and <m>W</m> a multiplicative set. 
                 Then the following are equivalent: 
-                - <m>\frac{m}{w}\in W^{-1}M \ \text{ is zero}</m> 
-                - <m>vm=0 \textrm{ for some } v\in W</m> 
-                - <m>\ann_R(m) \cap W \neq \es.</m> 
+                <ol>
+                  <li>
+                    <p>
+                      <m>\frac{m}{w}\in W^{-1}M \ \text{ is zero}</m> 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>vm=0 \textrm{ for some } v\in W</m> 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>\ann_R(m) \cap W \neq \es.</m> 
+                    </p>
+                  </li>
+                </ol>
                 Note in particular that this holds for <m>w=1</m>.
               </p>
             </statement>
@@ -18416,7 +18465,8 @@
           <example xml:id="ex-induced-localization-module-homomorphism"><title>Induced Localization Module Homomorphism</title>
             <statement>
               <p>
-                If <m>M\xrightarrow{\alpha} N</m> is an <m>R</m>-module homomorphism, then there is a <m>W^{-1}R</m>-module homomorphism <m>W^{-1}M \xrightarrow{W^{-1}\alpha} W^{-1}N</m><idx><h><m>W\inv\a</m></h></idx> given by the rule <m>W^{-1}\alpha (\frac{m}{w}) = \frac{\alpha(m)}{w}</m>.
+                If <m>M\xrightarrow{\alpha} N</m> is an <m>R</m>-module homomorphism, then there is a <m>W^{-1}R</m>-module homomorphism <m>W^{-1}M \xrightarrow{W^{-1}\alpha} W^{-1}N</m>given by the rule <m>W^{-1}\alpha (\frac{m}{w}) = \frac{\alpha(m)}{w}</m>.
+                <idx><h><m>W\inv\a</m></h></idx> 
               </p>
             </statement>
   
@@ -18523,8 +18573,19 @@
               <p>
                 Let <m>R</m> be a ring, <m>I</m> an ideal, and <m>M</m> a finitely generated <m>R</m>-module. 
                 If <m>IM = M</m>, then: 
-                (a) there is an element <m>r\in 1 + I</m> such that <m>rM=0</m>, and 
-                (b) there is an element <m>a\in I</m> such that <m>am=m</m> for all <m>m\in M</m>.
+                <ol>
+                  <li>
+                    <p>
+                      there is an element <m>r\in 1 + I</m> such that <m>rM=0</m>, and 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      there is an element <m>a\in I</m> such that <m>am=m</m> for all <m>m\in M</m>.
+                    </p>
+                  </li>
+                </ol>
               </p>
             </statement>
   
@@ -18552,7 +18613,7 @@
   
             <proof>
               <p>
-                By <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Proposition - NAK 1|NAK1]], there exists an element <m>r\in 1+\fm</m> that annihilates <m>M</m>. 
+                By <xref ref="prop-nak-1"/>, there exists an element <m>r\in 1+\fm</m> that annihilates <m>M</m>. 
                 Notice that <m>1 \notin \fm</m>, so any such <m>r</m> must be outside of <m>\fm</m>, and thus a unit.
                 Multiplying by its inverse, we conclude that <m>1</m> annihilates <m>M</m>, or equivalently, that <m>M=0</m>.
               </p>
@@ -18571,7 +18632,7 @@
               <p>
                 By taking the quotient by <m>N</m>, we see that 
                 <me>M/N = (N + \fm M)/N = \fm \left( M/N\right).</me> 
-                By <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Theorem - NAK 2|NAK2]], <m>M = N</m>.
+                By <xref ref="thm-nak-2"/>, <m>M = N</m>.
               </p>
             </proof>
           </theorem>
@@ -18591,7 +18652,7 @@
                 The implication <m>(\implies)</m> is clear. 
                 If <m>m_1,\dots, m_s \in M</m> are such that <m>\overline{m_1},\dots,\overline{m_s}</m> generate <m>M/\fm M</m>, consider <m>N= R m_1 + \dots + R m_s \subseteq M</m>. 
                 Since <m>M/\fm M</m> is generated by the image of <m>N,</m> we have <m>M= N + \fm M</m>. 
-                By <xref provisional="cite"/> [[Mathematics/Commutative Algebra/Results/Theorem - NAK 2|NAK2]], <m>M=N</m>.
+                By <xref ref="thm-nak-2"/>, <m>M=N</m>.
               </p>
             </proof>
           </theorem>
@@ -18606,7 +18667,9 @@
             <statement>
               <p>
                 Let <m>(R,\fm)</m> be a local ring, and <m>M</m> a finitely generated module. 
-                A set of elements <m>\{m_1,\dots,m_t\}</m> is a <em>minimal generating set</em><idx><h>minimal generators</h></idx><idx><h>minimal generating set</h></idx> of <m>M</m> if the images of <m>m_1,\dots,m_t</m> form a basis for the <m>R/\fm</m> vector space <m>M/\fm M</m>.
+                A set of elements <m>\{m_1,\dots,m_t\}</m> is a <em>minimal generating set</em> of <m>M</m> if the images of <m>m_1,\dots,m_t</m> form a basis for the <m>R/\fm</m> vector space <m>M/\fm M</m>.
+                <idx><h>minimal generators</h></idx>
+                <idx><h>minimal generating set</h></idx>
               </p>
             </statement>
           </definition>
@@ -18630,9 +18693,10 @@
             <statement>
               <p>
                 Let <m>(R,\fm)</m> be a local ring and <m>N</m> an <m>R</m>-module. 
-                The <em>minimal number of generators</em><idx><h>minimal number of generators</h></idx> of <m>M</m> is 
+                The <em>minimal number of generators</em> of <m>M</m> is 
                 <me>\mu(M) :=  \dim_{R/\fm} \left( M / \fm M \right).</me>
                 Equivalently, this is the number of elements in a minimal generating set for <m>M</m>.
+                <idx><h>minimal number of generators</h></idx>
               </p>
             </statement>
           </definition>
@@ -18641,8 +18705,9 @@
             <statement>
               <p>
                 Let <m>R</m> be an <m>\N</m>-graded ring with <m>R_0</m> a field, and <m>M</m> a finitely generated <m>\Z</m>-graded <m>R</m>-module. 
-                The <em>minimal number of generators</em><idx><h>minimal number of generators</h></idx> of <m>M</m> is 
+                The <em>minimal number of generators</em> of <m>M</m> is 
                 <me>\mu(M) :=  \dim_{R/R_+} \left( M / R_+ M \right).</me>
+                <idx><h>minimal number of generators</h></idx>
               </p>
             </statement>
           </definition>
