@@ -641,22 +641,27 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gen-mod.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Generated Modules</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-algebras.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebras</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-alg-mod-finite.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Algebra and Module Finite</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sess.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Short Exact Sequences</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-noetherian.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Noetherian Rings</span></a></div>
+<div class="toc-title-box"><a href="sec-noetherian.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Noetherian Rings</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-rings" class="internal"><span class="title">Noetherian Rings</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-noetherian-modules" class="internal"><span class="title">Noetherian Modules</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-noetherian.html#subsec-hilbert" class="internal"><span class="title">Hilbert’s Basis Theorem</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-1.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Invariant Rings: Application I</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-1.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Invariant Rings: Application I</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-graded-rings.html" class="internal"><span class="codenumber">10</span> <span class="title">Graded Rings</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-rings.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graded Rings</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-graded-rings.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Graded Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graded-rings.html#subsec-graded-ring" class="internal"><span class="title">Graded Rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-graded-rings.html#subsec-graded-mod" class="internal"><span class="title">Graded Modules and Homomorphisms</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-finite-conditions-graded-algebras.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Finiteness Conditions for Graded Algebras</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inv-rings-2.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Invariant Rings: Application II</span></a></div></li>
 </ul>
@@ -805,7 +810,13 @@ window.MathJax = {
 <div class="para" id="sec-nak-3-1">We will now show a very simple but extremely useful result known as Nakayama’s Lemma. Nakayama himself claimed that this should be attributed to Krull and Azumaya, but it’s not clear which of the three actually had the commutative ring statement first. So some authors (e.g., Matsumura) prefer to refer to it as NAK. There are actually a range of statements, rather than just one, that go under the banner of Nakayama’s Lemma a.k.a. NAK.</div></article><article class="proposition theorem-like" id="prop-nak-1"><h3 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">11.45</span><span class="period">.</span><span class="space"> </span><span class="title">NAK 1.</span>
 </h3>
-<div class="para" id="prop-nak-1-2-1">Let <span class="process-math">\(R\)</span> be a ring, <span class="process-math">\(I\)</span> an ideal, and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module. If <span class="process-math">\(IM = M\text{,}\)</span> then: (a) there is an element <span class="process-math">\(r\in 1 + I\)</span> such that <span class="process-math">\(rM=0\text{,}\)</span> and (b) there is an element <span class="process-math">\(a\in I\)</span> such that <span class="process-math">\(am=m\)</span> for all <span class="process-math">\(m\in M\text{.}\)</span>
+<div class="para logical" id="prop-nak-1-2-1">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring, <span class="process-math">\(I\)</span> an ideal, and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module. If <span class="process-math">\(IM = M\text{,}\)</span> then:</div>
+<ol class="decimal">
+<li id="prop-nak-1-2-1-6-1"><div class="para" id="prop-nak-1-2-1-6-1-1">there is an element <span class="process-math">\(r\in 1 + I\)</span> such that <span class="process-math">\(rM=0\text{,}\)</span> and</div></li>
+<li id="prop-nak-1-2-1-6-2"><div class="para" id="prop-nak-1-2-1-6-2-1">there is an element <span class="process-math">\(a\in I\)</span> such that <span class="process-math">\(am=m\)</span> for all <span class="process-math">\(m\in M\text{.}\)</span>
+</div></li>
+</ol>
 </div></article><details id="prop-nak-1-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="prop-nak-1-3-1">
 <div class="para">Let <span class="process-math">\(M = R m_1 + \cdots + R m_s\text{.}\)</span> By assumption, we have equations</div>
 <div class="displaymath process-math" data-contains-math-knowls="">
@@ -819,19 +830,19 @@ m_1 = a_{11} m_1 + \cdots + a_{1s} m_s \ , \ \dots \ , \ m_s = a_{s1} m_1 + \cdo
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.46</span><span class="period">.</span><span class="space"> </span><span class="title">NAK 2.</span>
 </h3>
 <div class="para" id="thm-nak-2-2-1">Let <span class="process-math">\((R,\fm,k)\)</span> be a local ring, and <span class="process-math">\(M\)</span> be a finitely generated module. If <span class="process-math">\(M=\fm M\text{,}\)</span> then <span class="process-math">\(M=0\text{.}\)</span>
-</div></article><details id="thm-nak-2-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-nak-2-3-1">By <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Commutative Algebra/Results/Proposition - NAK 1|NAK1]], there exists an element <span class="process-math">\(r\in 1+\fm\)</span> that annihilates <span class="process-math">\(M\text{.}\)</span> Notice that <span class="process-math">\(1 \notin \fm\text{,}\)</span> so any such <span class="process-math">\(r\)</span> must be outside of <span class="process-math">\(\fm\text{,}\)</span> and thus a unit. Multiplying by its inverse, we conclude that <span class="process-math">\(1\)</span> annihilates <span class="process-math">\(M\text{,}\)</span> or equivalently, that <span class="process-math">\(M=0\text{.}\)</span>
+</div></article><details id="thm-nak-2-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-nak-2-3-1">By <a href="sec-nak.html#prop-nak-1" class="xref" data-knowl="./knowl/xref/prop-nak-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 11.45: NAK 1">Proposition 11.45</a>, there exists an element <span class="process-math">\(r\in 1+\fm\)</span> that annihilates <span class="process-math">\(M\text{.}\)</span> Notice that <span class="process-math">\(1 \notin \fm\text{,}\)</span> so any such <span class="process-math">\(r\)</span> must be outside of <span class="process-math">\(\fm\text{,}\)</span> and thus a unit. Multiplying by its inverse, we conclude that <span class="process-math">\(1\)</span> annihilates <span class="process-math">\(M\text{,}\)</span> or equivalently, that <span class="process-math">\(M=0\text{.}\)</span>
 </div></article></details><article class="theorem theorem-like" id="thm-nak-3"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.47</span><span class="period">.</span><span class="space"> </span><span class="title">NAK 3.</span>
 </h3>
 <div class="para" id="thm-nak-3-2-1">Let <span class="process-math">\((R,\fm,k)\)</span> be a local ring, and <span class="process-math">\(M\)</span> be a finitely generated module, and <span class="process-math">\(N\)</span> a submodule of <span class="process-math">\(M\text{.}\)</span> If <span class="process-math">\(M = N + \fm M\text{,}\)</span> then <span class="process-math">\(M = N\text{.}\)</span>
 </div></article><details id="thm-nak-3-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="thm-nak-3-3-1">
 <div class="para">By taking the quotient by <span class="process-math">\(N\text{,}\)</span> we see that</div>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-nak-2.html">
 \begin{equation*}
 M/N = (N + \fm M)/N = \fm \left( M/N\right).
 \end{equation*}
 </div>
-<div class="para">By <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Commutative Algebra/Results/Theorem - NAK 2|NAK2]], <span class="process-math">\(M = N\text{.}\)</span>
+<div class="para">By <a href="sec-nak.html#thm-nak-2" class="xref" data-knowl="./knowl/xref/thm-nak-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.46: NAK 2">Theorem 11.46</a>, <span class="process-math">\(M = N\text{.}\)</span>
 </div>
 </div></article></details><article class="theorem theorem-like" id="thm-nak-4"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">11.48</span><span class="period">.</span><span class="space"> </span><span class="title">NAK 4.</span>
@@ -845,15 +856,14 @@ m_1,\dots, m_s \text{ generate } M \Longleftrightarrow \overline{m_1},\dots,\ove
 \end{equation*}
 </div>
 <div class="para">Thus, any generating set for <span class="process-math">\(M\)</span> consists of at least <span class="process-math">\(\dim_k (M/\fm M)\)</span> elements.</div>
-</div></article><details id="thm-nak-4-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-nak-4-3-1">The implication <span class="process-math">\((\implies)\)</span> is clear. If <span class="process-math">\(m_1,\dots, m_s \in M\)</span> are such that <span class="process-math">\(\overline{m_1},\dots,\overline{m_s}\)</span> generate <span class="process-math">\(M/\fm M\text{,}\)</span> consider <span class="process-math">\(N= R m_1 + \dots + R m_s \subseteq M\text{.}\)</span> Since <span class="process-math">\(M/\fm M\)</span> is generated by the image of <span class="process-math">\(N,\)</span> we have <span class="process-math">\(M= N + \fm M\text{.}\)</span> By <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> [[Mathematics/Commutative Algebra/Results/Theorem - NAK 2|NAK2]], <span class="process-math">\(M=N\text{.}\)</span>
+</div></article><details id="thm-nak-4-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-nak-4-3-1">The implication <span class="process-math">\((\implies)\)</span> is clear. If <span class="process-math">\(m_1,\dots, m_s \in M\)</span> are such that <span class="process-math">\(\overline{m_1},\dots,\overline{m_s}\)</span> generate <span class="process-math">\(M/\fm M\text{,}\)</span> consider <span class="process-math">\(N= R m_1 + \dots + R m_s \subseteq M\text{.}\)</span> Since <span class="process-math">\(M/\fm M\)</span> is generated by the image of <span class="process-math">\(N,\)</span> we have <span class="process-math">\(M= N + \fm M\text{.}\)</span> By <a href="sec-nak.html#thm-nak-2" class="xref" data-knowl="./knowl/xref/thm-nak-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.46: NAK 2">Theorem 11.46</a>, <span class="process-math">\(M=N\text{.}\)</span>
 </div></article></details><article class="remark remark-like" id="sec-nak-8"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">11.49</span><span class="period">.</span>
 </h3>
 <div class="para" id="sec-nak-8-1">Since <span class="process-math">\(R/\fm\)</span> is a field, <span class="process-math">\(M/\fm M\)</span> is a vector space over the field <span class="process-math">\(R/\fm\text{.}\)</span>
 </div></article><article class="definition definition-like" id="defn-minimal-generators"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.50</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal Generators.</span>
-</h3> <div class="para" id="defn-minimal-generators-2-1">Let <span class="process-math">\((R,\fm)\)</span> be a local ring, and <span class="process-math">\(M\)</span> a finitely generated module. A set of elements <span class="process-math">\(\{m_1,\dots,m_t\}\)</span> is a <em class="emphasis">minimal generating set</em> of <span class="process-math">\(M\)</span> if the images of <span class="process-math">\(m_1,\dots,m_t\)</span> form a basis for the <span class="process-math">\(R/\fm\)</span> vector space <span class="process-math">\(M/\fm M\text{.}\)</span>
-</div></article><article class="lemma theorem-like" id="lem-min-gen-sets-have-same-cardinality"><h3 class="heading">
+</h3> <div class="para" id="defn-minimal-generators-2-1">Let <span class="process-math">\((R,\fm)\)</span> be a local ring, and <span class="process-math">\(M\)</span> a finitely generated module. A set of elements <span class="process-math">\(\{m_1,\dots,m_t\}\)</span> is a <em class="emphasis">minimal generating set</em> of <span class="process-math">\(M\)</span> if the images of <span class="process-math">\(m_1,\dots,m_t\)</span> form a basis for the <span class="process-math">\(R/\fm\)</span> vector space <span class="process-math">\(M/\fm M\text{.}\)</span> </div></article><article class="lemma theorem-like" id="lem-min-gen-sets-have-same-cardinality"><h3 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">11.51</span><span class="period">.</span><span class="space"> </span><span class="title">Min Gen Sets have Same Cardinality.</span>
 </h3>
 <div class="para" id="lem-min-gen-sets-have-same-cardinality-2-1">Let <span class="process-math">\((R,\fm,k)\)</span> be a local ring and <span class="process-math">\(M\)</span> be a finitely generated module. Any generating set for <span class="process-math">\(M\)</span> contains a minimal generating set, and every minimal generating set has the same cardinality.</div></article><details id="lem-min-gen-sets-have-same-cardinality-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="lem-min-gen-sets-have-same-cardinality-3-1">As a consequence of basic facts about basis for vector spaces</div></article></details><article class="definition definition-like" id="defn-minimal-number-of-generators"><h3 class="heading">
@@ -865,8 +875,7 @@ m_1,\dots, m_s \text{ generate } M \Longleftrightarrow \overline{m_1},\dots,\ove
 \mu(M) :=  \dim_{R/\fm} \left( M / \fm M \right).
 \end{equation*}
 </div>
-<div class="para">Equivalently, this is the number of elements in a minimal generating set for <span class="process-math">\(M\text{.}\)</span>
-</div>
+<div class="para">Equivalently, this is the number of elements in a minimal generating set for <span class="process-math">\(M\text{.}\)</span> </div>
 </div></article><article class="definition definition-like" id="defn-minimal-number-of-generators-graded"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.53</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal Number of Generators (Graded).</span>
 </h3> <div class="para logical" id="defn-minimal-number-of-generators-graded-2-1">
