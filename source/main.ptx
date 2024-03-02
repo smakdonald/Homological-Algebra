@@ -10063,20 +10063,20 @@
                   What is left to check is that given a commutative diagram with exact rows
                 </p>
         
-                <image source="2023_11_27_3974d73438430121205eg-05(2).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-05(2).jpg" width="20%"/>
                   
                 <p>
                   and chosen lifts of the original short exact sequences to projective resolutions, there are maps of complexes such that
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-05.jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-05.jpg" width="20%"/>
           
                 <p>
                   commutes. 
                   Our derived functors <m>L_{i} F</m> will preserve these maps of complexes and the commutativity of the diagram above, so we get commutative diagrams
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-05(3).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-05(3).jpg" width="20%"/>
           
                 <p>
                   for each <m>i</m>. 
@@ -10092,7 +10092,7 @@
                   The commutativity of
                 </p>
         
-                <image source="2023_11_27_3974d73438430121205eg-05(1).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-05(1).jpg" width="20%"/>
                   
                 <p>
                   does imply that <m>\partial^{Q}(P) \subseteq P</m>, so we can say that <m>\partial^{Q}</m> is of the form
@@ -10126,7 +10126,7 @@
                   Writing the corresponding products of matrices, we must have
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-06(1).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-06(1).jpg" width="20%"/>
                   
                 <p>
                   The only nontrivial statement we want to guarantee is that <m>\partial_{n}^{P^{\prime}} \nu_{n}+\mu_{n}^{\prime} \gamma_{n}={ }_{n}{ }_{1} \mu_{n}+\nu_{n}{ }_{1} \partial_{n}^{R}</m>. 
@@ -10143,9 +10143,9 @@
                   <m>\nu_{n}</m> 1. First, we claim that <m>\partial_{n}^{P^{\prime}}{ }_{1}{ }_{n}=0</m>.
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-06(2).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-06(2).jpg" width="20%"/>
                   
-                <image source="2023_11_27_3974d73438430121205eg-06(3).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-06(3).jpg" width="20%"/>
                   
                 <p>
                   By induction,
@@ -10156,7 +10156,7 @@
                   Using this to replace <m>\partial_{n}^{P^{\prime}}{ }_{1} \nu_{n}{ }_{1}</m> in the equation above, we get
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-06.jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-06.jpg" width="20%"/>
           
                 <p>
                   <me>
@@ -10186,20 +10186,20 @@
                   Therefore, <m>{ }_{n}</m> must factor through the <m>\operatorname{ker} \partial_{n}^{P^{\prime}}{ }_{1}</m> :
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-07(2).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-07(2).jpg" width="20%"/>
           
                 <p>
                   On the other hand, <m>P^{\prime}</m> is a resolution and thus exact, so <m>\operatorname{im} \partial_{n}=\operatorname{ker} \partial_{n} 1</m>, and <m>\partial_{n}</m> factors through <m>\operatorname{ker} \partial_{n}{ }_{1}</m> as
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-07(1).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-07(1).jpg" width="20%"/>
                   
                 <p>
                   via some epi <m>\varphi_{n}</m>. 
                   Finally, <m>R_{n}</m> is projective, so there exists <m>\nu_{n}</m> such that
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-07.jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-07.jpg" width="20%"/>
                   
                 <p>
                   commutes - this was the <m>\nu_{n}</m> we were searching for.
@@ -10246,7 +10246,7 @@
                   By assumption (1), we get a long exact sequence on the <m>T_{i}</m>, and by (2), there exist isomorphisms <m>\tau_{0}</m> such that the following is a commutative diagram:
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-07(3).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-07(3).jpg" width="20%"/>
           
                 <p>
                   By <m>(3), T_{1}(P)=0</m>, and <m>L_{1} F(P)=0</m> by construction. 
@@ -10304,7 +10304,7 @@
                   It remains to show that these isomorphisms are natural, that is, that any <m>R</m>-module map <m>f: M \rightarrow N</m> gives rise to commutative diagrams
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-08.jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-08.jpg" width="20%"/>
                   
                 <p>
                   We will prove this by induction on <m>i</m>. 
@@ -10319,13 +10319,13 @@
                   Moreover, an argument similar to the one we used above shows that we can define a map <m>h</m> giving a commutative diagram
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-09.jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-09.jpg" width="20%"/>
                   
                 <p>
                   Now consider the following diagram:
                 </p>
           
-                <image source="2023_11_27_3974d73438430121205eg-09(1).jpg"/>
+                <image source="2023_11_27_3974d73438430121205eg-09(1).jpg" width="20%"/>
                   
                 <p>
                   The big square and (1) commute by definition of <m>\tau_{i}</m>.
@@ -12144,19 +12144,19 @@
                   Let <m>x</m> and <m>y</m> be objects in our additive category, and consider their product, which exists by assumption:
                 </p>
     
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-02.jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-02.jpg" width="20%"/>
               
                 <p>
                   The universal property of the product give arrows <m>\iota_{1}</m> and <m>\iota_{2}</m> such that
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-02(1).jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-02(1).jpg" width="20%"/>
                   
                 <p>
                   and
                 </p>
           
-                <image source='2024_01_10_e73c1aec4ffc24ca9984g-02(2).jpg'/> 
+                <image source='2024_01_10_e73c1aec4ffc24ca9984g-02(2).jpg' width="20%"/> 
           
                 <p>
                   commute.
@@ -12164,7 +12164,7 @@
                   Given an object <m>w</m> and arrows <m>x \stackrel{f}{\rightarrow} w</m> and <m>y \stackrel{g}{\rightarrow} w</m>, we need to show that there exists a unique arrow <m>h</m> such that
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-03.jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-03.jpg" width="20%"/>
                   
                 <p>
                   commutes.
@@ -12183,7 +12183,7 @@
                   Then <m>h-h^{\prime}</m> satisfies <m>\left(h-h^{\prime}\right) \iota_{1}=f-f=0</m> and <m>\left(h-h^{\prime}\right) \iota_{2}=g-g=0</m>, so it's sufficient to show that the 0 arrow is the unique arrow <m>\psi</m> such that
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-03(2).jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-03(2).jpg" width="20%"/>
                 
                 <p>
                   commutes. 
@@ -12210,7 +12210,7 @@
                 If <m>\mathcal{A}</m> is additive category, the object <m>A \oplus B</m> is characterized by the existence of arrows
               </p>
     
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-03(1).jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-03(1).jpg" width="20%"/>
             
               <p>
                 such that
@@ -12339,7 +12339,7 @@
                   </ul>
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-05(1).jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-05(1).jpg" width="20%"/>
                   
                 <p>
                   commutes. We denote the kernel of <m>f</m> by <m>\operatorname{ker} f</m>.
@@ -12356,7 +12356,7 @@
                 But then
               </p>
         
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-05(2).jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-05(2).jpg" width="20%"/>
                 
               <p>
                 commutes, and <m>f \circ 0=0</m>, so 0 factors uniquely through the kernel. But both <m>g</m> and <m>z \stackrel{0}{\rightarrow} k</m> are such factorizations, so <m>g=0</m>.
@@ -12377,7 +12377,7 @@
                 If <m>k_{1} \stackrel{i_{1}}{\longrightarrow} x</m> and <m>k_{2} \xrightarrow{i_{2}} x</m> are both kernels of <m>f</m>, then there exist unique arrows <m>g</m> and <m>h</m> such that
               </p>
         
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-05.jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-05.jpg" width="20%"/>
                 
               <p>
                 commutes. 
@@ -12416,7 +12416,7 @@
                   </ul>
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-06.jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-06.jpg" width="20%"/>
                   
                 <p>
                   commutes.
@@ -12492,7 +12492,7 @@
                   Then <m>g</m> factors uniquely through ker coker <m>f</m>, so we get a unique arrow such that
                 </p>
             
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-07(2).jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-07(2).jpg" width="20%"/>
     
                 <p>
                   commutes.
@@ -12506,7 +12506,7 @@
                   Given an <m>R</m>-module homomorphism <m>f: M \rightarrow N</m>, we get a commutative diagram
                 </p>
             
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-07(1).jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-07(1).jpg" width="20%"/>
     
                 <p>
                   The map <m>\psi</m> is the isomorphism given by the First Isomorphism Theorem.
@@ -12564,7 +12564,7 @@
                 As described in Remark 7.19, we have a commutative diagram
               </p>
   
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-07.jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-07.jpg" width="20%"/>
   
               <p>
                 where <m>\psi</m> is now assumed to be an iso. 
@@ -12673,14 +12673,14 @@
                 Suppose that <m>g</m> factors through <m>f</m>, meaning that there exists <m>h</m> such that
               </p>
               
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-09.jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-09.jpg" width="20%"/>
   
               <p>
                 commutes. 
                 Then <m>(\operatorname{coker} f) \circ g=(\operatorname{coker} f) \circ f \circ h=0</m>, so <m>g</m> factors through <m>\operatorname{ker}(\operatorname{coker} f)=\operatorname{im} f</m>, meaning we have another commutative diagram
               </p>
           
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-09(2).jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-09(2).jpg" width="20%"/>
             </remark>
   
             <exercise xml:id="exe-84">
@@ -12698,8 +12698,6 @@
               </p>
             </exercise>
 
-
-            
           </subsection>
 
         </section>
@@ -12719,7 +12717,7 @@
                   A map of complexes <m>f: C \longrightarrow D</m> between two chain complexes is a sequence of arrows <m>f_{n}</m> such that the diagram
                 </p>
           
-               <image source="2024_01_10_e73c1aec4ffc24ca9984g-09(1).jpg"/>
+               <image source="2024_01_10_e73c1aec4ffc24ca9984g-09(1).jpg" width="20%"/>
                   
                 <p>
                   commutes. 
@@ -12756,14 +12754,14 @@
                   The universal property of <m>\operatorname{ker} \partial_{n}</m> gives us a unique arrow <m>\delta_{n+1}</m> such that
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-10.jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-10.jpg" width="20%"/>
                   
                 <p>
                   commutes. 
                   The commutativity of <m>\operatorname{ker} f_{n+1} \longrightarrow C_{n+1}</m> together with <m>\partial_{n} \partial_{n+1}=0</m> and the
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-10(2).jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-10(2).jpg" width="20%"/>
                   
                 <p>
                   fact that <m>\operatorname{ker} f_{n-1}</m> is a mono imply that <m>\delta_{n} \delta_{n+1}=0</m>. 
@@ -12800,14 +12798,14 @@
                 By Remark 7.22, we can factor <m>f</m> as an epi followed by <m>\operatorname{im} f</m>.
               </p>
         
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-10(1).jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-10(1).jpg" width="20%"/>
                 
               <p>
                 Since <m>g \circ \operatorname{im} f \circ \operatorname{epi}=g f=0</m>, we must have <m>g \circ \operatorname{im} f=0</m>, so <m>\operatorname{im} f</m> factors uniquely through ker <m>g</m>. 
                 Most importantly, there is a canonical arrow <m>\operatorname{im} f \longrightarrow \operatorname{ker} g</m>.
               </p>
         
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-11.jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-11.jpg" width="20%"/>
             </remark>
   
             <definition xml:id="def-7.32">
@@ -12894,13 +12892,13 @@
               Let <m>\mathcal{A}</m> be an abelian category and <m>C \stackrel{f}{\rightarrow} D</m> a map of complexes in <m>\operatorname{Ch}(\mathcal{A})</m>. Fix an integer <m>n</m>. We get induced arrows <m>B_{n}(f)</m> and <m>Z_{n}(f)</m>, since <m>B_{n}</m> and <m>Z_{n}</m> are additive functors. This gives us a commutative diagram
             </p>
       
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-12.jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-12.jpg" width="20%"/>
               
             <p>
               where <m>\alpha</m> and <m>\beta</m> are the canonical arrows. To construct <m>\mathrm{H}_{n}(f)</m>, we claim that there is a unique arrow coker <m>\alpha \longrightarrow</m> coker <m>\beta</m> making the diagram commute. This is all explained in the commutative diagram
             </p>
       
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-12(1).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-12(1).jpg" width="20%"/>
               
             <p>
               where coker <m>\beta \circ\left(Z_{n}(f)\right) \circ \alpha=\operatorname{coker} \beta \circ \beta \circ B_{n}(f)=0</m>, which gives us a unique factorization <m>\mathrm{H}_{n}(f)</m> through coker <m>\alpha</m>.
@@ -12924,7 +12922,7 @@
                   Let <m>\mathcal{A}</m> be an abelian category and <m>f, g: F \longrightarrow G</m> be maps complexes in <m>\mathrm{Ch}(\mathcal{A})</m>. A homotopy, sometimes referred to as a chain homotopy, between <m>f</m> and <m>g</m> is a sequence of arrows <m>h_{n}: F_{n} \longrightarrow G_{n+1}</m>
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-12(2).jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-12(2).jpg" width="20%"/>
                   
                 <p>
                   such that
@@ -13217,7 +13215,7 @@
                   The adjointness of the pair <m>(L, R)</m> gives us a commutative diagram
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-16.jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-16.jpg" width="20%"/>
                   
                 <p>
                   where the vertical maps are bijections of sets. 
@@ -13227,7 +13225,7 @@
                   Moreover, for any objects <m>A</m> and <m>B</m>, the natural bijection <m>\operatorname{Hom}_{\mathcal{A}}(A, R B) \cong \operatorname{Hom}_{\mathcal{A}}(L A, B)</m> must always send 0 to 0, since
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-16(1).jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-16(1).jpg" width="20%"/>
                   
                 <p>
                   commutes. 
@@ -13291,7 +13289,7 @@
                   Consider an abelian category <m>\mathcal{A}</m> and a commutative diagram
                 </p>
   
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-17.jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-17.jpg" width="20%"/>
               
                 <p>
                   If the rows of the diagram are exact, then there exists an exact sequence
@@ -13318,7 +13316,7 @@
                   Given an abelian category <m>\mathcal{A}</m>, consider the following commutative diagram in <m>\mathcal{A}</m> with exact rows:
                 </p>
   
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-18.jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-18.jpg" width="20%"/>
               
                 <p>
                   If <m>b</m> and <m>d</m> are epi and <m>e</m> is a mono, then <m>c</m> is an epi. 
@@ -13365,13 +13363,13 @@
                 An object <m>P</m> is projective if and only if every arrow <m>P \longrightarrow Y</m> factors through every epi <m>X \longrightarrow Y</m> :
               </p>
   
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-18(2).jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-18(2).jpg" width="20%"/>
               
               <p>
                 and an object <m>E</m> is injective if and only if every arrow <m>X \longrightarrow E</m> factors through every mono <m>X \longrightarrow Y</m> :
               </p>
       
-               <image source="2024_01_10_e73c1aec4ffc24ca9984g-18(1).jpg"/>
+               <image source="2024_01_10_e73c1aec4ffc24ca9984g-18(1).jpg" width="20%"/>
             </remark>
   
             <exercise xml:id="exe-93">
@@ -13445,7 +13443,7 @@
                   Now we find an epi <m>P_{1} \stackrel{\varepsilon_{1}}{\longrightarrow} K_{0}:=\operatorname{ker} \varepsilon</m>, and set <m>P_{1} \xrightarrow{\partial_{1}} P_{0}</m> to be the composition
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-19.jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-19.jpg" width="20%"/>
                   
                 <p>
                   We proceed the same way, at each step taking a projective <m>P_{n}</m> and an epi <m>\varepsilon_{n}: P_{n} \longrightarrow \operatorname{ker} \partial_{n-1}</m>, and setting <m>\partial_{n+1}</m> to be the composition <m>\left(\operatorname{ker} \partial_{n-1}\right) \circ \varepsilon_{n}</m>. 
@@ -13534,14 +13532,14 @@
               Proof. If <m>C</m> is projective, there exists <m>h</m> such that
             </p>
     
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-20.jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-20.jpg" width="20%"/>
               
             <p>
               commutes, so <m>g h=\operatorname{id}_{C}</m> and <m>g</m> is a splitting. 
               If <m>A</m> is injective, there exists <m>h</m> such that
             </p>
       
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-20(1).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-20(1).jpg" width="20%"/>
               
             <p>
               commutes, so <m>h f=\operatorname{id}_{A}</m>, and <m>h</m> is a splitting.
@@ -13585,7 +13583,7 @@
                   Lemma 7.59. Let <m>\mathcal{A}</m> be an abelian category, <m>(P, \partial)</m> in <m>\mathrm{Ch}_{\geqslant 0}(\mathcal{A})</m> with each <m>P_{i}</m> projective, <m>P_{0} \xrightarrow{\partial_{0}} M</m> an arrow in <m>\mathcal{A}</m> such that <m>\partial_{0} \partial_{1}=0</m> and <m>(Q, \delta)</m> a projective resolution of <m>N</m>. Given any <m>M \stackrel{f}{\rightarrow}</m> in <m>\mathcal{A}</m>, there exists a map of complexes <m>P \xrightarrow{\varphi} Q</m> such that
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-21(2).jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-21(2).jpg" width="20%"/>
                   
                 <p>
                   commutes, which is unique up to homotopy.
@@ -13598,7 +13596,7 @@
                 </p>
           
           
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-21(1).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-21(1).jpg" width="20%"/>
                   
                 <p>
                   commutes.
@@ -13609,21 +13607,21 @@
                 </p>
           
           
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-21(3).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-21(3).jpg" width="20%"/>
                   
                 <p>
                   commutes. Commutativity gives <m>\delta_{n-1} \varphi_{n-1} \partial_{n}=\varphi_{n-2} \partial_{n-1} \partial_{n}=0</m>, so <m>\varphi_{n-1} \partial_{n}</m> factors through the kernel of <m>\delta_{n-1}</m>.
                 </p>
           
           
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-21.jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-21.jpg" width="20%"/>
                   
                 <p>
                   Since <m>Q</m> is a projective resolution of <m>N</m>, the arrow <m>Q_{n} \longrightarrow Z_{n-1}(Q)</m> above is an epi, so the arrow <m>P_{n} \longrightarrow Z_{n-1}(Q)</m> we just constructed factors through <m>Q_{n}</m>, giving us <m>\varphi_{n}</m> such that
                 </p>
           
           
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-22(2).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-22(2).jpg" width="20%"/>
                   
                 <p>
                   commutes.
@@ -13638,14 +13636,14 @@
                 </p>
           
           
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-22.jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-22.jpg" width="20%"/>
                   
                 <p>
                   We will construct a nullhomotopy for <m>\varphi</m> inductively. Set <m>h_{n}=0</m> for all <m>n&lt;0</m>. The commutativity of the rightmost square says that <m>\delta_{0} \varphi_{0}=0</m>, so <m>\operatorname{im} \varphi_{0} \subseteq \operatorname{ker} \delta_{0}=\operatorname{im} \delta_{1}</m>. Since <m>\partial_{0} \varpi_{0}=0, \varphi_{0}</m> factors through <m>Z_{0}(Q)</m>. But <m>Q_{1} \rightarrow Z_{0}(Q)</m> is an epi and <m>P_{0}</m> is projective, there exists <m>H_{0}</m> such that
                 </p>
           
           
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-22(1).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-22(1).jpg" width="20%"/>
                   
                 <p>
                   commutes. So <m>H_{0}</m> satisfies <m>\delta_{0} H_{0}=\varphi_{0}</m>. Set <m>H_{-1}=0</m>.
@@ -13669,7 +13667,7 @@
                 </p>
           
           
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-23(1).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-23(1).jpg" width="20%"/>
                   
                 <p>
                   commutes. This <m>H_{n}</m> must then satisfy <m>\delta_{n-1} H_{n}+H_{n-1} \partial_{n}=\varphi_{n}</m>, and ultimately <m>H</m> is a homotopy between <m>\varphi</m> and 0 .
@@ -13722,13 +13720,13 @@
                 </p>
           
           
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-23(2).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-23(2).jpg" width="20%"/>
                   
                 <p>
                   commutes. Set <m>\partial_{0}^{Q}:=\left(f \partial_{0}^{P}\right) \oplus \gamma</m>. The universal property of the coproduct guarantees that
                 </p>
           
-                  <image source='2024_01_10_e73c1aec4ffc24ca9984g-23.jpg'/> 
+                  <image source='2024_01_10_e73c1aec4ffc24ca9984g-23.jpg' width="20%"/> 
           
                 <p>
                   commutes. 
@@ -13738,7 +13736,7 @@
                   We then proceed by induction, and at each step we apply the base case to
                 </p>
           
-                <image source="2024_01_10_e73c1aec4ffc24ca9984g-24.jpg"/>
+                <image source="2024_01_10_e73c1aec4ffc24ca9984g-24.jpg" width="20%"/>
                   
                 <p>
                   where the vertical arrows are epi because <m>P</m> and <m>R</m> are projective resolutions and thus exact.
@@ -14070,7 +14068,7 @@
         
         <section xml:id="sec-what-is-spectral"><title>Intro to Spectral Sequences</title>
 
-          <subsection xml:id="subsec-"><title>What is a Spectral Sequence?</title>
+          <subsection xml:id="subsec-spectral"><title>What is a Spectral Sequence?</title>
 
             <blockquote>
               <p>
@@ -14166,7 +14164,7 @@
                       For a fixed <m>r</m>, the collection of modules <m>E_{r}=E_{r}^{p, q}</m> is called the <m>r</m> th page or sheet of the spectral sequence. 
                       We think of each page as living in <m>\mathbb{Z}^{2}</m>, and depict the <m>r</m> th page by putting <m>E_{r}^{p, q}</m> in the point with coordinates <m>(p, q)</m> :
                     </p>
-                    <image source="2024_01_10_e73c1aec4ffc24ca9984g-29(3).jpg"/>
+                    <image source="2024_01_10_e73c1aec4ffc24ca9984g-29(3).jpg" width="20%"/>
                   </li>
                 
                   <li>
@@ -14198,15 +14196,15 @@
               The differential in the <m>r</m> th page is a map of degree <m>(r,-r+1)</m>. 
               Here are some examples:
             </p>
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-29.jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-29.jpg" width="20%"/>
             <p>
               0th page
             </p>
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-29(1).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-29(1).jpg" width="20%"/>
             <p>
               1st page
             </p>
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-29(2).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-29(2).jpg" width="20%"/>
             <p>
               2nd page
             </p>
@@ -14228,7 +14226,7 @@
                       For a fixed <m>r</m>, the collection of objects <m>E_{r}=E_{r}^{p, q}</m> is called the <m>r</m> th page or sheet of the spectral sequence. 
                       We think of each page as living in <m>\mathbb{Z}^{2}</m>, and depict the <m>r</m> th page by putting <m>E_{r}^{p, q}</m> in the point with coordinates <m>(p, q)</m> :
                     </p>
-                    <image source="2024_01_10_e73c1aec4ffc24ca9984g-30(1).jpg"/>
+                    <image source="2024_01_10_e73c1aec4ffc24ca9984g-30(1).jpg" width="20%"/>
                   </li>
                 
                   <li>
@@ -14259,15 +14257,15 @@
             <p>
               Remark 8.4. The differential in the <m>r</m> th page is a map of degree <m>(-r, r-1)</m>.
             </p>
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-30(2).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-30(2).jpg" width="20%"/>
             <p>
               0th page
             </p>
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-30.jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-30.jpg" width="20%"/>
             <p>
               1st page
             </p>
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-30(3).jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-30(3).jpg" width="20%"/>
             <p>
               2nd page
             </p>
@@ -14541,7 +14539,7 @@
                 of submodules of <m>C_{n}</m>. A filtration of <m>C</m> gives us commutative diagrams
               </p>
   
-              <image source="2024_01_10_e73c1aec4ffc24ca9984g-33.jpg"/>
+              <image source="2024_01_10_e73c1aec4ffc24ca9984g-33.jpg" width="20%"/>
               
               <p>
                 where the rows are given by the differential on <m>C</m> and its restrictions to the appropriate modules.
@@ -14862,7 +14860,7 @@
             Each column of the <m>E^{0}</m> page contains a complex, one of the levels of the filtration.
           </p>
     
-          <image source="2024_01_10_e73c1aec4ffc24ca9984g-38.jpg"/>
+          <image source="2024_01_10_e73c1aec4ffc24ca9984g-38.jpg" width="20%"/>
             
           <p>
             Next, let
@@ -14942,7 +14940,7 @@
             Note that we denote the differential on both complexes <m>A</m> and <m>B</m> by the same letter since the differential on <m>A</m> is just the restriction of the differential on <m>B</m>. So the <m>E^{0}</m> page looks like
           </p>
     
-          <image source="2024_01_10_e73c1aec4ffc24ca9984g-40.jpg"/>
+          <image source="2024_01_10_e73c1aec4ffc24ca9984g-40.jpg" width="20%"/>
             
           <p>
             where only the 0th and first columns are nonzero.
@@ -15099,7 +15097,7 @@
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-43(1).jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-43(1).jpg" width="20%"/>
             
           <p>
             The First Filtration
@@ -15118,7 +15116,7 @@
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-43.jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-43.jpg" width="20%"/>
             
           <p>
             The Second Filtration
@@ -15172,7 +15170,7 @@
             we conclude that <m>d_{0}</m> is precisely the vertical differential <m>d^{v}</m> of the original double complex <m>C</m>. Thus the <m>E_{0}</m> page looks like <m>E^{0}</m> 
           </p>
 
-          <image source='2024_01_10_e73c1aec4ffc24ca9984g-44.jpg'/>
+          <image source='2024_01_10_e73c1aec4ffc24ca9984g-44.jpg' width="20%"/>
 
           <p>
             Then <m>E_{p, q}^{1}=\mathrm{H}_{q}^{v}\left(C_{p, \bullet}\right)</m>, and
@@ -15247,7 +15245,7 @@
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-45.jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-45.jpg" width="20%"/>
             
           <p>
             Then <m>E_{p, q}^{1}=\mathrm{H}_{q}^{h}\left(C_{\bullet, p}\right)</m>, and
@@ -15338,21 +15336,21 @@
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-46(2).jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-46(2).jpg" width="20%"/>
             
           <p>
             0th page
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-46.jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-46.jpg" width="20%"/>
             
           <p>
             1st page
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-46(1).jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-46(1).jpg" width="20%"/>
             
           <p>
             2nd page
@@ -15387,7 +15385,7 @@
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-47.jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-47.jpg" width="20%"/>
             
           <p>
             then there exists an exact sequence
@@ -15402,7 +15400,7 @@
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-47(1).jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-47(1).jpg" width="20%"/>
             
           <p>
             Now notice that <m>M</m> is a first quadrant double complex with exact rows, so by the Acyclic Assembly Lemma, <m>\operatorname{Tot}^{\oplus}(M)</m> is exact. We can also prove that <m>\operatorname{Tot}^{\oplus}(M)</m> is exact by computing the spectral sequence arising from the Second Filtration on <m>M</m>, which under our new and improved notation from Remark 8.48 has
@@ -15425,14 +15423,14 @@
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-47(3).jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-47(3).jpg" width="20%"/>
             
           <p>
             Now whatever <m>E^{2}</m> is, since <m>d^{2}</m> is a <m>(-2,1)</m> degree map, the only possible nonzero differential on <m>E^{2}</m> is <m>d^{2}: E_{2,0}^{2} \rightarrow E_{0,1}^{2}</m>. Moreover, all the differentials on all the higher pages vanish, simply because there are not enough nonzero modules already, so <m>E^{3}=E^{\infty}</m>. But we know that <m>\operatorname{Tot}^{\oplus}(M)</m> is exact, so in fact since our filtrations are finite we must necessarily have <m>E^{\infty}=0</m>. In particular, the only potentially nonzero objects in <m>E^{2}</m> are <m>E_{0,1}^{2}</m> and <m>E_{2,0}^{2}</m>, so this proves the exactness of
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-47(2).jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-47(2).jpg" width="20%"/>
             
           <p>
             Moreover, the fact that <m>E_{0,1}^{2}</m> and <m>E_{2,0}^{2}</m> are the only possible nonzero objects in <m>E^{2}</m> together with the fact that and <m>E_{0,1}^{3}=0=E_{2,0}^{3}</m> imply that <m>d^{2}: E_{0,1}^{2} \rightarrow E_{2,10}^{2}</m> must be an isomorphism. More precisely, we get an isomorphism
@@ -15447,7 +15445,7 @@
           </p>
     
   
-      <image source="2024_01_10_e73c1aec4ffc24ca9984g-48.jpg"/>
+      <image source="2024_01_10_e73c1aec4ffc24ca9984g-48.jpg" width="20%"/>
             
           <p>
             where the map <m>\partial</m> obtained by composition is the connecting homomorphism we dreamed of.
@@ -15501,7 +15499,7 @@
                 Exercise 98. Consider the following first quadrant double complex <m>C</m> :
               </p>
           
-            <image source="2024_01_10_e73c1aec4ffc24ca9984g-49.jpg"/>
+            <image source="2024_01_10_e73c1aec4ffc24ca9984g-49.jpg" width="20%"/>
                 
               <p>
                 a) Compute the spectral sequence associated to the First Filtration (I) until it stabilizes.

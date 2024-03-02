@@ -4384,9 +4384,9 @@ var ptx_lunr_docs = [
   "body": "  A cohomological spectral sequence consists of the following data:   A family of -modules ranging over all integers with . For a fixed , the collection of modules is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :     Differentials so -module homomorphisms such that , or more precisely,     Isomorphisms meaning for every .      "
 },
 {
-  "id": "subsec--9",
+  "id": "subsec-spectral-9",
   "level": "2",
-  "url": "sec-what-is-spectral.html#subsec--9",
+  "url": "sec-what-is-spectral.html#subsec-spectral-9",
   "type": "Remark",
   "number": "8.2",
   "title": "",
@@ -4402,9 +4402,9 @@ var ptx_lunr_docs = [
   "body": "  A homological spectral sequence is a sequence consists of the following data:   A family of -modules ranging over all integers with . For a fixed , the collection of objects is called the th page or sheet of the spectral sequence. We think of each page as living in , and depict the th page by putting in the point with coordinates :     Differentials and for each isomorphisms , meaning for every .    Isomorphisms meaning for every .      "
 },
 {
-  "id": "subsec--12",
+  "id": "subsec-spectral-12",
   "level": "2",
-  "url": "sec-what-is-spectral.html#subsec--12",
+  "url": "sec-what-is-spectral.html#subsec-spectral-12",
   "type": "Remark",
   "number": "8.4",
   "title": "",
