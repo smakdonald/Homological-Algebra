@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Foundational Knowledge</title>
+<title>The Koszul Complex</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -123,7 +123,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-rings.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-depth-grade.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-depth-grade.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-depth-m2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
 \newcommand{\Ass}{\operatorname{Ass}}
 \def\Aut{\operatorname{Aut}}
 \def\can{{\mathrm {can}}}
@@ -687,9 +687,9 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-part">
+<li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="part-commutative-algebra-ii.html" class="internal"><span class="codenumber">III</span> <span class="title">Commutative Algebra II</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-domains-ii.html" class="internal"><span class="codenumber">15</span> <span class="title">Domains II</span></a></div>
 <ul class="structural toc-item-list">
@@ -704,11 +704,11 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-depth-grade.html" class="internal"><span class="codenumber">16</span> <span class="title">Depth and Grade</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-depth-grade.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Depth and Grade</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-koszul.html" class="internal"><span class="codenumber">16.2</span> <span class="title">The Koszul Complex</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-koszul.html" class="internal"><span class="codenumber">16.2</span> <span class="title">The Koszul Complex</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-depth-m2.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Macaulay2</span></a></div></li>
 </ul>
 </li>
@@ -748,10 +748,10 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-backmatter contains-active">
+<li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-appendix active">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
 <div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="codenumber">A</span> <span class="title">Foundational Knowledge</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Ring Theory</span></a></div></li>
@@ -799,16 +799,285 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="appendix" id="backmatter-2"><h2 class="heading">
-<span class="type">Appendix</span><span class="space"> </span><span class="codenumber">A</span><span class="space"> </span><span class="title">Foundational Knowledge</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-koszul"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">16.2</span><span class="space"> </span><span class="title">The Koszul Complex</span>
 </h2>
-<nav class="summary-links"><ul>
-<li><a href="sec-rings.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Ring Theory</span></a></li>
-<li><a href="sec-modules.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Module Theory</span></a></li>
-<li><a href="sec-topology.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Topology</span></a></li>
-</ul></nav></section></div>
+<div class="para logical" id="sec-koszul-2">
+<div class="para">Let <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> be chain complexes with differentials <span class="process-math">\(\partial^C\)</span> and <span class="process-math">\(\partial^D\text{,}\)</span> respectively. Recall the definition of the tensor product complex <span class="process-math">\(C\otimes_R D\)</span> (see Grifo 915: Remark 6.14): For all <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(C\otimes_R D)_n=\bigoplus_{p+q=n}C_p\otimes_R D_{q}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\partial^{C\otimes_R D}_n(c\otimes d)=\partial^C_p(c)\otimes 1 + (-1)^p\otimes \partial_q^D(d)
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(c\in C_p\)</span> and <span class="process-math">\(d\in D_q\)</span> and <span class="process-math">\(p+q=n\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="sec-koszul-3">For ease of notation, we often supress the superscripts and subscripts on the differentials so long as they are clear from the context. For an element <span class="process-math">\(c\)</span> of a complex <span class="process-math">\(C\text{,}\)</span> we define the <em class="emphasis">degree</em> of <span class="process-math">\(c\text{,}\)</span> denoted <span class="process-math">\(|c|\text{,}\)</span> to be <span class="process-math">\(p\)</span> if <span class="process-math">\(c\in C_p\text{.}\)</span> Thus, the differential of <span class="process-math">\(C\otimes_R D\)</span> can be expressed as</div>
+<div class="para logical" id="sec-koszul-4"><div class="displaymath process-math">
+\begin{equation*}
+\partial(c\otimes d)=\partial(c)\otimes 1 + (-1)^{|c|} \otimes \partial(d).
+\end{equation*}
+</div></div>
+<article class="definition definition-like" id="def-"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.24</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def--1-1">
+<div class="para">
+<dfn class="terminology">Definition 70</dfn>. Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\({\bf x}=x_1,\dots,x_n\)</span> a sequence of elements in <span class="process-math">\(R\text{.}\)</span> We define the Koszul complex <span class="process-math">\(K(\bf x)\)</span> of <span class="process-math">\(\bf x\)</span> (on <span class="process-math">\(R\)</span>) inductively as follows: When <span class="process-math">\(n=1\text{,}\)</span> we define <span class="process-math">\(K(x_1)\)</span> to be the complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to R\xrightarrow{x} R\to 0,
+\end{equation*}
+</div>
+<div class="para">where the <span class="process-math">\(R\)</span> on the right is in homological degree <span class="process-math">\(0\text{.}\)</span> Suppose <span class="process-math">\(n&gt;1\)</span> and let <span class="process-math">\({\bf x'}=x_1,\dots,x_{n-1}\text{.}\)</span> Assume that <span class="process-math">\(K({\bf x'})\)</span> has been defined. Then we set <span class="process-math">\(K({\bf x}):=K({\bf x'})\otimes_R K(x_n)\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="kos-2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">16.25</span><span class="period">.</span>
+</h3>
+<div class="para" id="kos-2-1">
+<dfn class="terminology">Example 71</dfn>.</div> <div class="para logical" id="kos-2-2">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(x,y\)</span> elements of <span class="process-math">\(R\text{.}\)</span> Let’s find <span class="process-math">\(K(x,y)=K(x)\otimes_R K(y)\text{.}\)</span> So <span class="process-math">\(K(x,y)\)</span> is the complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(0\to R\xrightarrow{x} R\to 0) \otimes (0\to R\xrightarrow{y}R\to 0).
+\end{equation*}
+</div>
+<div class="para">To track degrees, let’s write <span class="process-math">\(K(x)\)</span> as <span class="process-math">\(0\to K_1\xrightarrow{x} K_0\to 0\)</span> and <span class="process-math">\(K(y)\)</span> as <span class="process-math">\(0\to L_1\xrightarrow{y}L_0\to 0\text{,}\)</span> where <span class="process-math">\(K_i=L_i=R\)</span> for all <span class="process-math">\(i=0,1\text{.}\)</span> Then <span class="process-math">\(K(x)\otimes K(y)\)</span> has the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to K_1\otimes_R L_1 \xrightarrow{\partial_2} (K_0\otimes L_1)\oplus (K_1\otimes_R L_0)\xrightarrow{\partial_1} K_0\otimes_R L_0\to 0.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="kos-2-3">
+<div class="para">Using the rule for the differential of a tensor product of complexes, we obtain</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\partial_2(1\otimes 1)&amp;=x\otimes 1 - 1\otimes y\\
+\partial_1(1_{K_0}\otimes 1_{L_1})&amp;= 0\otimes 1 + 1\otimes y=1\otimes y\\
+\partial_1(1_{K_1}\otimes 1_{L_0})&amp;= x\otimes 1 -  1\otimes 0= x\otimes 1\\
+\partial_0(1\otimes 1)&amp;= 0\otimes 1+1\otimes 0 = 0\otimes 0.
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para" id="kos-2-4">Now, each <span class="process-math">\(K_i\otimes L_j\cong R\)</span> by virtue of the map sending <span class="process-math">\(1\otimes 1\)</span> to <span class="process-math">\(1\text{.}\)</span> Under this identification, the resulting complex is</div> <div class="para logical" id="kos-2-5">
+<div class="displaymath process-math">
+\begin{equation*}
+0\to R\xrightarrow{\begin{pmatrix} x\\ -y \end{pmatrix}} R^2\xrightarrow{\begin{pmatrix} y &amp; x\end{pmatrix}}R\to 0,
+\end{equation*}
+</div>
+<div class="para">where again the rightmost <span class="process-math">\(R\)</span> is in degree 0.</div>
+</div></article><article class="definition definition-like" id="def-72"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.26</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-72-1-1">Let <span class="process-math">\(\bf x\)</span> be a (finite) sequence of elements of <span class="process-math">\(R\)</span> and <span class="process-math">\(M\)</span> an <span class="process-math">\(R\)</span>-module. Then the Koszul complex of <span class="process-math">\(\bf x\)</span> on <span class="process-math">\(M\)</span> is defined to be <span class="process-math">\(K({\bf x};M):=K({\bf x})\otimes_R M\text{.}\)</span>
+</div></article><article class="example example-like" id="sec-koszul-8"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">16.27</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-koszul-8-1">
+<dfn class="terminology">Example 73</dfn>.  Let <span class="process-math">\(R=k[x,y]\)</span> be a polynomial ring over a field <span class="process-math">\(k\)</span> and let <span class="process-math">\(M=R/(y)\text{.}\)</span> Then using Example <a href="sec-koszul.html#kos-2" class="xref" data-knowl="./knowl/xref/kos-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 16.25">Example 16.25</a> and that <span class="process-math">\(M\cong k[x]\text{,}\)</span> we have <span class="process-math">\(K(x,y;M)=K(x,y)\otimes_R R/(y)\)</span> is isomorphic to</div> <div class="para logical" id="sec-koszul-8-2"><div class="displaymath process-math">
+\begin{equation*}
+0\to k[x]\xrightarrow{\begin{pmatrix} x\\ 0 \end{pmatrix}} k[x]^2\xrightarrow{\begin{pmatrix} 0 &amp; x\end{pmatrix}}k[x]\to 0.
+\end{equation*}
+</div></div></article><article class="definition definition-like" id="def-74"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">16.28</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-74-1-1">
+<dfn class="terminology">Definition 74</dfn>.  Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(C\)</span> a complex of <span class="process-math">\(R\)</span>-module. Then the shift or suspension  <span class="process-math">\(\mathsf{\Sigma}C\)</span> of <span class="process-math">\(C\)</span> is the complex defined by <span class="process-math">\((\mathsf{\Sigma}C)_i=C_{i-1}\)</span> and <span class="process-math">\(\partial^{\mathsf{\Sigma}C}=-\partial^C\text{.}\)</span> Note that <span class="process-math">\(\operatorname{H}_i(\mathsf{\Sigma}C)=\operatorname{H}_{i-1}(C)\text{.}\)</span>
+</div></article><div class="para logical" id="sec-koszul-10">
+<div class="para">
+<dfn class="terminology">Construction 75</dfn>.  Let <span class="process-math">\(C\)</span> be a complex of <span class="process-math">\(R\)</span>-modules and <span class="process-math">\(x\in R\text{.}\)</span> Let <span class="process-math">\(C(x)\)</span> denote the complex <span class="process-math">\(C\otimes_R K(x)\text{.}\)</span> Note that for all <span class="process-math">\(i\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C(x)_i=(C_{i-1}\otimes_R R)\oplus (C_i\otimes_R R)\cong C_{i-1}\oplus C_{i}.
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\((u,v)\in C(x)_{i-1}\text{,}\)</span> where <span class="process-math">\(u\in C_{i-1}\)</span> and <span class="process-math">\(v\in C_i\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\partial^{C(x)}(u,v)&amp;=\partial^{C(x)}(u\otimes 1 + v\otimes 1)\\
+&amp;=\partial(u)\otimes 1+ (-1)^{|u|}u\otimes x + \partial(v)\otimes 1+(-1)^{|v|}v \otimes 0\\
+&amp;=(\partial(u), \partial(v)+(-1)^{|u|}xu)\in C(x)_{i-1}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">There exists chain maps <span class="process-math">\(\alpha:C\to C(x)\)</span> and <span class="process-math">\(\beta:C(x)\to \mathsf{\Sigma}C\)</span> given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\alpha(v)&amp;:=(0,v)\in C(x)_i\\
+\beta(u,v)&amp;:=(-1)^{|u|}u\in (\mathsf{\Sigma}C)_i
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">for <span class="process-math">\(u\in C_{i-1}\)</span> and <span class="process-math">\(v\in C_i\text{.}\)</span> One can easily check that these maps commute with differentials, and so are indeed chain maps. (Keep in mind that the differential of <span class="process-math">\(\mathsf{\Sigma}C\)</span> is <span class="process-math">\(-\partial^C\text{.}\)</span>) Hence, we have a short exact sequence of complexes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to C\xrightarrow{\alpha} C(x)\xrightarrow{\beta} \mathsf{\Sigma}C\to 0.
+\end{equation*}
+</div>
+<div class="para">This leads to the long exact sequence on homology</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \to \operatorname{H}_i(C)\xrightarrow{\alpha_*}\operatorname{H}_i(C(x))\xrightarrow{\beta_*}\operatorname{H}_{i-1}(C) \xrightarrow{\delta_{i-1}} \operatorname{H}_{i-1}(C)\to \cdots,
+\end{equation*}
+</div>
+<div class="para">where here we have used the identification <span class="process-math">\(\operatorname{H}_i(\mathsf{\Sigma}C)\)</span> with <span class="process-math">\(\operatorname{H}_{i-1}(C)\text{.}\)</span>
+</div>
+</div>
+<article class="lemma theorem-like" id="lem-76"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">16.29</span><span class="period">.</span>
+</h3>
+<div class="para" id="lem-76-1-1">
+<dfn class="terminology">Lemma 76</dfn>. The connecting homomorphism <span class="process-math">\(\delta_{i-1}:\operatorname{H}_{i-1}(C)\to \operatorname{H}_{i-1}(C)\)</span> in the long exact sequence above is multiplication by <span class="process-math">\(x\)</span> for all <span class="process-math">\(i\text{.}\)</span>
+</div></article><details id="lem-76-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="lem-76-2-1">Proof. This is a classic diagram chase argument. Consider the commutative diagram</div> <div class="para" id="lem-76-2-2">Let <span class="process-math">\(\overline{z}\in \operatorname{H}_i(\mathsf{\Sigma}C)=\operatorname{H}_{i-1}(C)\text{,}\)</span> where <span class="process-math">\(z\in C_{i-1}\)</span> is a cycle. Lift <span class="process-math">\(z\)</span> via <span class="process-math">\(\beta\)</span> to <span class="process-math">\(((-1)^{|z|}z,0)\in C_{i-1}\oplus C_{i}\text{.}\)</span> Then <span class="process-math">\(\partial^{C(x)}((-1)^{|z|}z,0)=(0,xz)\)</span> and <span class="process-math">\(\alpha^{-1}(0,xz)=xz\text{.}\)</span> (Note: here we are using <span class="process-math">\(z\)</span> is a cycle in <span class="process-math">\(C\text{.}\)</span>) Hence, <span class="process-math">\(\delta_{i-1}(\overline{z})=\overline{xz}=x\overline{z}\text{,}\)</span> where <span class="process-math">\(\overline{*}\)</span> denotes image in homology. ◻</div></article></details><article class="proposition theorem-like" id="prop-77"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">16.30</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="prop-77-1-1">
+<div class="para">
+<dfn class="terminology">Proposition 77</dfn>.  Let <span class="process-math">\(R\)</span> be a ring, <span class="process-math">\(M\)</span> an <span class="process-math">\(R\)</span>-module, and <span class="process-math">\({\bf x}=x_1,\dots,x_n\in R\)</span> be a sequence of elements. Let <span class="process-math">\(K^M=K(\bold x;M)\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="prop-77-1-1-7-1"><div class="para" id="prop-77-1-1-7-1-1">
+<span class="process-math">\(K^M_i\cong M^{\binom{n}{i}}\)</span> for all <span class="process-math">\(i\text{;}\)</span> in particular, <span class="process-math">\(K^M_i=0\)</span> for <span class="process-math">\(i&lt;0\)</span> and <span class="process-math">\(i&gt;n\text{.}\)</span>
+</div></li>
+<li id="prop-77-1-1-7-2"><div class="para" id="prop-77-1-1-7-2-1">For all i, <span class="process-math">\(\partial(K^M_i)\subseteq (\bold x)K^M_{i-1}\text{;}\)</span>
+</div></li>
+<li id="prop-77-1-1-7-3"><div class="para" id="prop-77-1-1-7-3-1"><span class="process-math">\(H_0(K^M)=M/(\bold x)M\text{.}\)</span></div></li>
+<li id="prop-77-1-1-7-4"><div class="para" id="prop-77-1-1-7-4-1"><span class="process-math">\(H_n(K^M)=(0:_M (\bold x))\text{.}\)</span></div></li>
+<li id="prop-77-1-1-7-5"><div class="para" id="prop-77-1-1-7-5-1">If <span class="process-math">\(\bold x\)</span> is an <span class="process-math">\(M\)</span>-sequence then <span class="process-math">\(H_i(K^M)=0\)</span> for <span class="process-math">\(i\geqslant 1\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="prop-77-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="prop-77-2-1">
+<div class="para">Proof. We proceed by induction on <span class="process-math">\(n\text{.}\)</span> In the case <span class="process-math">\(n=1\text{,}\)</span> <span class="process-math">\(K^M\)</span> is the complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to M\xrightarrow{x_1}M\to 0.
+\end{equation*}
+</div>
+<div class="para">It is clear part (a) holds and that <span class="process-math">\(H_0(K^M)\cong M/x_1M\text{,}\)</span> <span class="process-math">\(H_1(K^M)=(0:_Mx_1)\)</span> and <span class="process-math">\(\partial(K^M_1)=x_1M\text{.}\)</span> If <span class="process-math">\(x_1\)</span> is regular on <span class="process-math">\(M\)</span> then <span class="process-math">\(\operatorname{H}_1(K^M)=0\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="prop-77-2-2">
+<div class="para">Suppose <span class="process-math">\(n&gt;1\)</span> and all parts hold for smaller values. Let <span class="process-math">\(\bold x' =x_1,\dots,x_{n-1}\)</span> and <span class="process-math">\(C=K(\bold x';M)\text{.}\)</span> Note that <span class="process-math">\(K^M=C(x_n)\text{.}\)</span> From Construction <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "const" missing or not unique]</code> we have that <span class="process-math">\(K^M_i=C(x_n)_i\cong C_{i-1}\oplus C_i\text{.}\)</span> By the <span class="process-math">\(n-1\)</span> case, we have <span class="process-math">\(C_{i-1}\cong M^{\binom{n}{i-1}}\)</span> and <span class="process-math">\(C_i\cong M^{\binom{n}{i}}\)</span> for all <span class="process-math">\(i\text{.}\)</span> Part (a) now follows. Furthermore, <span class="process-math">\(\partial^C(C_i)\subseteq (\bold x')C_i\)</span> for all <span class="process-math">\(i\text{.}\)</span> From Construction <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "const" missing or not unique]</code>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\partial(K^M_i)=\partial(C(x)_i)\subseteq ((\bold x')C_{i-2}, (\bold x')C_{i-1} + x_nC_{i-1})\subseteq (\bold x)C(x)_i.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="prop-77-2-3">
+<div class="para">For the remaining parts, we have by Construction <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "const" missing or not unique]</code> and Lemma <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "connect" missing or not unique]</code> the long exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\cdots \to \operatorname{H}_i(C)\to \operatorname{H}_i(K^M)\to \operatorname{H}_{i-1}(C) \xrightarrow{x_n} \operatorname{H}_{i-1}(C)\to \cdots
+\end{equation*}
+</div>
+<div class="para">By the induction hypothesis, <span class="process-math">\(\operatorname{H}_{n-1}(C)=(0:_M (\bold x'))\)</span> and <span class="process-math">\(\operatorname{H}_0(C)\cong M/(\bold x')M\text{.}\)</span> From the l.e.s. above, we have the exact sequences</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+0\to H_n(K^M)\to (0:_M (\bold x'))\xrightarrow{x_n} (0:_M (\bold x'))
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+M/(\bold x')M \xrightarrow{x_n} M/(\bold x')M\to \operatorname{H}_0(K^M)\to 0.
+\end{equation*}
+</div>
+<div class="para">This proves (b) and (c).</div>
+</div> <div class="para logical" id="prop-77-2-4">
+<div class="para">Suppose <span class="process-math">\(\bold x\)</span> is an <span class="process-math">\(M\)</span>-sequence. By induction, we have that <span class="process-math">\(\operatorname{H}_i(C)=0\)</span> for all <span class="process-math">\(i\geqslant 1\text{.}\)</span> From the long exact sequence above we obtain <span class="process-math">\(\operatorname{H}_i(K^M)=0\)</span> for <span class="process-math">\(i\geqslant 2\text{.}\)</span> It also yields the exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to \operatorname{H}_1(K^M)\to M/(\bold x')M\xrightarrow{x_n} M/(\bold x')M.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(x_n\)</span> is a regular element on <span class="process-math">\(M/(\bold x')M\)</span> we conclude <span class="process-math">\(\operatorname{H}_1(K^M)=0\text{.}\)</span> ◻</div>
+</div></article></details><div class="para" id="sec-koszul-13">The converse of part (d) of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "kos-basic" missing or not unique]</code> holds in strengthened form under certain conditions:</div>
+<article class="theorem theorem-like" id="thm-78"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.31</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-78-1-1">
+<dfn class="terminology">Theorem 78</dfn>.  Let <span class="process-math">\(R\)</span> be a Noetherian ring, <span class="process-math">\(M\)</span> a non-zero finitely generated <span class="process-math">\(R\)</span>-module, and <span class="process-math">\(\bold x=x_1,\dots,x_n\in J(R)\text{.}\)</span> Let <span class="process-math">\(K^M\)</span> denote <span class="process-math">\(K(\bold x; M)\text{.}\)</span> The following are equivalent:</div> <div class="para logical" id="thm-78-1-2"><ol class="decimal">
+<li id="thm-78-1-2-1-1"><div class="para" id="thm-78-1-2-1-1-1">
+<span class="process-math">\(\bold x\)</span> is an <span class="process-math">\(M\)</span>-sequence;</div></li>
+<li id="thm-78-1-2-1-2"><div class="para" id="thm-78-1-2-1-2-1">
+<span class="process-math">\(\operatorname{H}_i(K^M)=0\)</span> for all <span class="process-math">\(i\geqslant 1\text{;}\)</span>
+</div></li>
+<li id="thm-78-1-2-1-3"><div class="para" id="thm-78-1-2-1-3-1"><span class="process-math">\(\operatorname{H}_1(K^M)=0\text{.}\)</span></div></li>
+</ol></div></article><details id="thm-78-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-78-2-1">Proof. From Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "kos-basic" missing or not unique]</code>, we have (a) implies (b), and the implication (b) to (c) is obvious. We prove (c) implies (a) by induction on <span class="process-math">\(n\text{.}\)</span> Suppose <span class="process-math">\(n=1\text{.}\)</span> Since <span class="process-math">\((0:_M x_1)=\operatorname{H}_1 K(x_1;M)=0\)</span> we have that <span class="process-math">\(x_1\)</span> is a non-zero-divisor on <span class="process-math">\(M\text{.}\)</span> And as <span class="process-math">\(x_1M\neq M\)</span> by Nakayama’s lemma, we see that <span class="process-math">\(x_1\)</span> is <span class="process-math">\(M\)</span>-regular.</div> <div class="para logical" id="thm-78-2-2">
+<div class="para">Suppose that <span class="process-math">\(n&gt;1\text{.}\)</span> As in the proof of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "kos-basic" missing or not unique]</code>, we have the long exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\cdots \to \operatorname{H}_i(C)\to \operatorname{H}_i(K^M)\to \operatorname{H}_{i-1}(C) \xrightarrow{x_n} \operatorname{H}_{i-1}(C)\to \cdots,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(C=K(\bold x';M)\)</span> and <span class="process-math">\(\bold x'=x_1,\dots,x_{n-1}\text{.}\)</span> From the assumption <span class="process-math">\(\operatorname{H}_1(K^M)=0\)</span> we obtain the exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\operatorname{H}_1(C)\xrightarrow{x_n} \operatorname{H}_1(C)\to 0.
+\end{equation*}
+</div>
+<div class="para">Thus, <span class="process-math">\(x\operatorname{H}_1(C)=\operatorname{H}_1(C)\text{.}\)</span> Since <span class="process-math">\(x_n\in J(R)\)</span> and <span class="process-math">\(\operatorname{H}_1(C)\)</span> is finitely generated (since <span class="process-math">\(C_1\cong M^{n-1}\)</span> is Noetherian), we obtain that <span class="process-math">\(\operatorname{H}_1(C)=0\text{.}\)</span> By the induction hypothesis, <span class="process-math">\(\bold x'\)</span> is an <span class="process-math">\(M\)</span>-sequence. From the exact sequence</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+0\to \operatorname{H}_0(C)\xrightarrow{x_n} \operatorname{H}_0(C)
+\end{equation*}
+</div>
+<div class="para">we conclude that <span class="process-math">\(x_n\)</span> is a non-zero-divisor on <span class="process-math">\(M/(\bold x')M\text{.}\)</span> Since <span class="process-math">\((\bold x)M\neq M\)</span> by Nakayama, we conclude that <span class="process-math">\(\bold x\)</span> is an <span class="process-math">\(M\)</span>-sequence. ◻</div>
+</div></article></details><article class="corollary theorem-like" id="cor-79"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">16.32</span><span class="period">.</span>
+</h3>
+<div class="para" id="cor-79-1-1">
+<dfn class="terminology">Corollary 79</dfn>.  Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(\bold x=x_1,\dots,x_n\)</span> an <span class="process-math">\(R\)</span>-sequence. Then <span class="process-math">\(K(\bold x)\)</span> is a free resolution of <span class="process-math">\(R/(\bold x)\)</span> of length <span class="process-math">\(n\text{.}\)</span>
+</div></article><details id="cor-79-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-79-2-1">Proof. This is clear from parts (a) and(e) of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "kos-basic" missing or not unique]</code>.</div></article></details><article class="corollary theorem-like" id="cor-minl"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">16.33</span><span class="period">.</span>
+</h3>
+<div class="para" id="cor-minl-1-1">
+<dfn class="terminology">Corollary 80</dfn>.  Let <span class="process-math">\((R,m)\)</span> be a local ring and <span class="process-math">\(\bold x=x_1,\dots, x_n\in m\)</span> an <span class="process-math">\(R\)</span>-sequence. Then <span class="process-math">\(K(\bold x)\)</span> is a minimal free resolution of <span class="process-math">\(R/(\bold x)\text{.}\)</span> In particular, <span class="process-math">\(\operatorname{pd}_R R/(\bold x)=n\text{.}\)</span>
+</div></article><details id="cor-minl-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor-minl-2-1">Proof. Note that <span class="process-math">\(K(\bold x)\)</span> is a free resolution of <span class="process-math">\(R/(\bold x)\)</span> be the previous resolution. From part (b) of Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "kos-basic" missing or not unique]</code>, <span class="process-math">\(\partial(K(\bold x))\subseteq (\bold x)K(\bold x)\subseteq mK(\bold x)\text{.}\)</span> Hence, <span class="process-math">\(K(\bold x)\)</span> is minimal. ◻</div></article></details><article class="lemma theorem-like" id="lem-pd"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">16.34</span><span class="period">.</span>
+</h3>
+<div class="para" id="lem-pd-1-1">
+<dfn class="terminology">Lemma 81</dfn>.  Let <span class="process-math">\((R,m)\)</span> be a local ring and <span class="process-math">\(M\)</span> a finitely generated <span class="process-math">\(R\)</span>-module with <span class="process-math">\(\operatorname{pd}_R M=t\text{.}\)</span> Then <span class="process-math">\(\operatorname{Ext}^t_R(M,N)\neq 0\)</span> for every nonzero finitely generated <span class="process-math">\(R\)</span>-module <span class="process-math">\(N\text{.}\)</span>
+</div></article><details id="lem-pd-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="lem-pd-2-1">
+<div class="para">Proof. Let <span class="process-math">\(F_{\bullet}\)</span> be a minimal free resolution of <span class="process-math">\(M\text{.}\)</span> Let <span class="process-math">\(F_{\bullet}\)</span> be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to F_t\xrightarrow{\phi_t} F_{t-1}\to \cdots \to F_0\to 0,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\phi_t(F_t)\subseteq mF_{t-1}\text{.}\)</span> Applying <span class="process-math">\(\operatorname{Hom}_R(-,N)\text{,}\)</span> we have the complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_R(F_{t-1},M)\xrightarrow{\phi_t^*} \operatorname{Hom}_R(F_{t},M)\to 0.
+\end{equation*}
+</div>
+<div class="para">It is easy to see that <span class="process-math">\(\phi_t^*(\operatorname{Hom}_R(F_{t-1},N))\subseteq m\operatorname{Hom}_R(F_t,N)\text{.}\)</span> Since <span class="process-math">\(\operatorname{Hom}_R(F_t,N)\neq 0\text{,}\)</span> we see that <span class="process-math">\(\operatorname{Ext}^t_R(M,N)=\operatorname{coker}\phi_t^*\neq 0\)</span> by Nakayama. ◻</div>
+</div></article></details><article class="theorem theorem-like" id="thm-82"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.35</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-82-1-1">
+<dfn class="terminology">Theorem 82</dfn>.  Let <span class="process-math">\((R,m)\)</span> be a local ring and <span class="process-math">\(M\)</span> a nonzero finitely generated <span class="process-math">\(R\)</span>-module of finite injective dimension. Then <span class="process-math">\(\operatorname{id}_R M=\operatorname{depth}R\text{.}\)</span>
+</div></article><details id="thm-82-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="thm-82-2-1">
+<div class="para">Proof. Let <span class="process-math">\(p=\operatorname{depth}R\)</span> and <span class="process-math">\(r=\operatorname{id}_R M\text{.}\)</span> Let <span class="process-math">\(\bold x=x_1,\dots,x_p\in m\)</span> be a maximal <span class="process-math">\(R\)</span>-sequence. Then <span class="process-math">\(\operatorname{pd}_R R/(\bold x)=p\)</span> by Corollary <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "minl" missing or not unique]</code>. Hence, by Lemma <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "pd" missing or not unique]</code>, we obtain that <span class="process-math">\(\operatorname{Ext}^p_R(R/(\bold x),M)\neq 0\text{.}\)</span> Thus, <span class="process-math">\(r=\operatorname{id}_R M\geqslant p\text{.}\)</span> Also note <span class="process-math">\(\operatorname{depth}R/(\bold x)=0\)</span> since <span class="process-math">\(\bold x\)</span> is a maximal <span class="process-math">\(R\)</span>-sequence. Thus, <span class="process-math">\(m\in \operatorname{Ass}_R R/(\bold x)\text{,}\)</span> so there exists an injection <span class="process-math">\(R/m\hookrightarrow R/(\bold x)\text{.}\)</span> Applying <span class="process-math">\(\operatorname{Hom}_R(-,M)\)</span> to the resulting short exact sequence,</div>
+<div class="displaymath process-math" data-contains-math-knowls="  ">
+\begin{equation*}
+\cdots\to \operatorname{Ext}^r_R(R/(\bold x), M)\to \operatorname{Ext}^r_R(R/m,M)\to 0,
+\end{equation*}
+</div>
+<div class="para">where we have used that <span class="process-math">\(\operatorname{Ext}^i(A,M)=0\)</span> for all <span class="process-math">\(i&gt;r=\operatorname{id}_RM\)</span> for all <span class="process-math">\(R\)</span>-modules <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(\operatorname{id}_R M=r\text{,}\)</span> we have <span class="process-math">\(\operatorname{Ext}^r_R(R/m,M)\neq 0\)</span> by Proposition <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "bass-id" missing or not unique]</code>. Thus, <span class="process-math">\(\operatorname{Ext}^r_R(R/(\bold x),M)\neq 0\text{,}\)</span> which implies <span class="process-math">\(r\leqslant p\text{.}\)</span> ◻</div>
+</div></article></details></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-rings.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-depth-grade.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-depth-m2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

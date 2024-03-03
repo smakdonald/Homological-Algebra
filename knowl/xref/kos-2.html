@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">16.25</span><span class="period">.</span>
+</h3>
+<div class="para">
+<dfn class="terminology">Example 71</dfn>.</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring and <span class="process-math">\(x,y\)</span> elements of <span class="process-math">\(R\text{.}\)</span> Let’s find <span class="process-math">\(K(x,y)=K(x)\otimes_R K(y)\text{.}\)</span> So <span class="process-math">\(K(x,y)\)</span> is the complex</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(0\to R\xrightarrow{x} R\to 0) \otimes (0\to R\xrightarrow{y}R\to 0).
+\end{equation*}
+</div>
+<div class="para">To track degrees, let’s write <span class="process-math">\(K(x)\)</span> as <span class="process-math">\(0\to K_1\xrightarrow{x} K_0\to 0\)</span> and <span class="process-math">\(K(y)\)</span> as <span class="process-math">\(0\to L_1\xrightarrow{y}L_0\to 0\text{,}\)</span> where <span class="process-math">\(K_i=L_i=R\)</span> for all <span class="process-math">\(i=0,1\text{.}\)</span> Then <span class="process-math">\(K(x)\otimes K(y)\)</span> has the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to K_1\otimes_R L_1 \xrightarrow{\partial_2} (K_0\otimes L_1)\oplus (K_1\otimes_R L_0)\xrightarrow{\partial_1} K_0\otimes_R L_0\to 0.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Using the rule for the differential of a tensor product of complexes, we obtain</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\partial_2(1\otimes 1)&amp;=x\otimes 1 - 1\otimes y\\
+\partial_1(1_{K_0}\otimes 1_{L_1})&amp;= 0\otimes 1 + 1\otimes y=1\otimes y\\
+\partial_1(1_{K_1}\otimes 1_{L_0})&amp;= x\otimes 1 -  1\otimes 0= x\otimes 1\\
+\partial_0(1\otimes 1)&amp;= 0\otimes 1+1\otimes 0 = 0\otimes 0.
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para">Now, each <span class="process-math">\(K_i\otimes L_j\cong R\)</span> by virtue of the map sending <span class="process-math">\(1\otimes 1\)</span> to <span class="process-math">\(1\text{.}\)</span> Under this identification, the resulting complex is</div> <div class="para logical">
+<div class="displaymath process-math">
+\begin{equation*}
+0\to R\xrightarrow{\begin{pmatrix} x\\ -y \end{pmatrix}} R^2\xrightarrow{\begin{pmatrix} y &amp; x\end{pmatrix}}R\to 0,
+\end{equation*}
+</div>
+<div class="para">where again the rightmost <span class="process-math">\(R\)</span> is in degree 0.</div>
+</div></article><span class="incontext"><a class="internal" href="sec-koszul.html#kos-2">in-context</a></span>
+</body>
+</html>
