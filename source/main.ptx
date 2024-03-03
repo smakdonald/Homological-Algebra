@@ -700,6 +700,7 @@
 
       </chapter>
 
+      <!--
       <chapter xml:id="ch-categories"><title>Categories for the Working Homological Algebraist</title>
 
         <section xml:id="sec-categories"><title>Categories</title>
@@ -2094,6 +2095,7 @@
         </section>
         
       </chapter>
+      -->
 
       <chapter xml:id="ch-chain-complexes"><title>The Category of Chain Complexes</title>
 
@@ -15563,7 +15565,7 @@
           </p>
 
           <definition xml:id="def-generated-module"><title>Generated Module</title>
-          <idx><h>basis</h></idx><idx><h>free module</h></idx><idx><h>generating set</h></idx><idx><h>generators for an <m>R</m>-module</h></idx>
+            <idx><h>basis</h></idx><idx><h>free module</h></idx><idx><h>generating set</h></idx><idx><h>generators for an <m>R</m>-module</h></idx>
             <statement>
               <p>
                 Let <m>M</m> be an <m>R</m>-module and <m>\Gamma \subseteq M</m>. 
@@ -15788,8 +15790,6 @@
 
             <sage language="macaulay2">
               <input>
-                R = QQ[x,y,z];
-                M = R^3;
                 I = ideal"xy,yz"
                 N = module I
               </input>
@@ -15817,10 +15817,6 @@
 
             <sage language="macaulay2">
               <input>
-                R = QQ[x,y,z];
-                M = R^3;
-                I = ideal"xy,yz";
-                N = module I;
                 phi = map(R^1,R^2,{{x*y,y*z}})
                 L = image phi
               </input>
@@ -15859,12 +15855,6 @@
 
             <sage language="macaulay2">
               <input>
-                R = QQ[x,y,z];
-                M = R^3;
-                I = ideal"xy,yz";
-                N = module I;
-                phi = map(R^1,R^2,{{x*y,y*z}});
-                L = image phi;
                 psi = map(R^2,R^1,{{-z},{y}})
                 K = coker psi
               </input>
@@ -23905,6 +23895,268 @@
           
         </section>
 
+        <section xml:id="sec-koszul"><title>The Koszul Complex</title>
+          <p>
+            Let <m>C</m> and <m>D</m> be chain complexes with differentials <m>\partial^C</m> and <m>\partial^D</m>, respectively. 
+            Recall the definition of the tensor product complex <m>C\otimes_R D</m> (see Grifo 915: Remark 6.14): For all <m>n</m>,
+            <me>(C\otimes_R D)_n=\bigoplus_{p+q=n}C_p\otimes_R D_{q}</me>
+            and <me>\partial^{C\otimes_R D}_n(c\otimes d)=\partial^C_p(c)\otimes 1 + (-1)^p\otimes \partial_q^D(d)</me> for <m>c\in C_p</m> and <m>d\in D_q</m> and <m>p+q=n</m>.
+          </p>
+        
+          <p>
+            For ease of notation, we often supress the superscripts and subscripts on the differentials so long as they are clear from the context. For an element <m>c</m> of a complex <m>C</m>, we define the <em>degree</em> of <m>c</m>, denoted <m>|c|</m>, to be <m>p</m> if <m>c\in C_p</m>. Thus, the differential of <m>C\otimes_R D</m> can be expressed as
+          </p>
+        
+          <p>
+            <me>\partial(c\otimes d)=\partial(c)\otimes 1 + (-1)^{|c|} \otimes \partial(d).</me>
+          </p>
+
+          <definition xml:id="def-">
+            <statement>
+              <p>
+                <term>Definition 70</term>.  
+                Let <m>R</m> be a ring and <m>{\bf x}=x_1,\dots,x_n</m> a sequence of elements in <m>R</m>. We define the Koszul complex <m>K(\bf x)</m> of <m>\bf x</m> (on <m>R</m>) inductively as follows: When <m>n=1</m>, we define <m>K(x_1)</m> to be the complex <me>0\to R\xrightarrow{x} R\to 0,</me> where the <m>R</m> on the right is in homological degree <m>0</m>. Suppose <m>n&gt;1</m> and let <m>{\bf x'}=x_1,\dots,x_{n-1}</m>. Assume that <m>K({\bf x'})</m> has been defined. Then we set <m>K({\bf x}):=K({\bf x'})\otimes_R K(x_n)</m>.
+                
+              </p> 
+            </statement>
+          </definition>
+
+          <example xml:id="kos-2">
+            <p>
+              <term>Example 71</term>.  
+            </p>
+          
+            <p>
+              Let <m>R</m> be a ring and <m>x,y</m> elements of <m>R</m>. Let’s find <m>K(x,y)=K(x)\otimes_R K(y)</m>. So <m>K(x,y)</m> is the complex <me>(0\to R\xrightarrow{x} R\to 0) \otimes (0\to R\xrightarrow{y}R\to 0).</me> To track degrees, let’s write <m>K(x)</m> as <m>0\to K_1\xrightarrow{x} K_0\to 0</m> and <m>K(y)</m> as <m>0\to L_1\xrightarrow{y}L_0\to 0</m>, where <m>K_i=L_i=R</m> for all <m>i=0,1</m>. Then <m>K(x)\otimes K(y)</m> has the form <me>0\to K_1\otimes_R L_1 \xrightarrow{\partial_2} (K_0\otimes L_1)\oplus (K_1\otimes_R L_0)\xrightarrow{\partial_1} K_0\otimes_R L_0\to 0.</me>
+            </p>
+          
+            <p>
+              Using the rule for the differential of a tensor product of complexes, we obtain <me>\begin{aligned}
+          \partial_2(1\otimes 1)&amp;=x\otimes 1 - 1\otimes y\\
+          \partial_1(1_{K_0}\otimes 1_{L_1})&amp;= 0\otimes 1 + 1\otimes y=1\otimes y\\
+          \partial_1(1_{K_1}\otimes 1_{L_0})&amp;= x\otimes 1 -  1\otimes 0= x\otimes 1\\
+          \partial_0(1\otimes 1)&amp;= 0\otimes 1+1\otimes 0 = 0\otimes 0.
+          \end{aligned}</me>
+            </p>
+          
+            <p>
+              Now, each <m>K_i\otimes L_j\cong R</m> by virtue of the map sending <m>1\otimes 1</m> to <m>1</m>. Under this identification, the resulting complex is
+            </p>
+          
+            <p>
+              <me>0\to R\xrightarrow{\begin{pmatrix} x\\ -y \end{pmatrix}} R^2\xrightarrow{\begin{pmatrix} y &amp; x\end{pmatrix}}R\to 0,</me> where again the rightmost <m>R</m> is in degree 0.
+            </p>
+          </example>
+        
+        
+        <definition xml:id="def-72">
+            <statement>
+              <p>
+                Let <m>\bf x</m> be a (finite) sequence of elements of <m>R</m> and <m>M</m> an <m>R</m>-module. Then the Koszul complex of <m>\bf x</m> on <m>M</m> is defined to be <m>K({\bf x};M):=K({\bf x})\otimes_R M</m>.
+              </p> 
+            </statement>
+          </definition>
+
+          <example>
+            <p>
+              <term>Example 73</term>.  Let <m>R=k[x,y]</m> be a polynomial ring over a field <m>k</m> and let <m>M=R/(y)</m>. Then using Example <xref ref="kos-2" /> and that <m>M\cong k[x]</m>, we have <m>K(x,y;M)=K(x,y)\otimes_R R/(y)</m> is isomorphic to
+            </p>
+          
+            <p>
+              <me>0\to k[x]\xrightarrow{\begin{pmatrix} x\\ 0 \end{pmatrix}} k[x]^2\xrightarrow{\begin{pmatrix} 0 &amp; x\end{pmatrix}}k[x]\to 0.</me>
+            </p>
+          </example>
+        
+        <definition xml:id="def-74">
+            <statement>
+          <p>
+            <term>Definition 74</term>.  Let <m>R</m> be a ring and <m>C</m> a complex of <m>R</m>-module. Then the shift or suspension  <m>\mathsf{\Sigma}C</m> of <m>C</m> is the complex defined by <m>(\mathsf{\Sigma}C)_i=C_{i-1}</m> and <m>\partial^{\mathsf{\Sigma}C}=-\partial^C</m>. Note that <m>\operatorname{H}_i(\mathsf{\Sigma}C)=\operatorname{H}_{i-1}(C)</m>.
+          </p> </statement>
+          </definition>
+        
+          <p>
+            <term>Construction 75</term>.  Let <m>C</m> be a complex of <m>R</m>-modules and <m>x\in R</m>. Let <m>C(x)</m> denote the complex <m>C\otimes_R K(x)</m>. Note that for all <m>i</m> <me>C(x)_i=(C_{i-1}\otimes_R R)\oplus (C_i\otimes_R R)\cong C_{i-1}\oplus C_{i}.</me> Let <m>(u,v)\in C(x)_{i-1}</m>, where <m>u\in C_{i-1}</m> and <m>v\in C_i</m>. Then <me>\begin{aligned}
+        \partial^{C(x)}(u,v)&amp;=\partial^{C(x)}(u\otimes 1 + v\otimes 1)\\
+        &amp;=\partial(u)\otimes 1+ (-1)^{|u|}u\otimes x + \partial(v)\otimes 1+(-1)^{|v|}v \otimes 0\\
+        &amp;=(\partial(u), \partial(v)+(-1)^{|u|}xu)\in C(x)_{i-1}.
+        \end{aligned}</me> There exists chain maps <m>\alpha:C\to C(x)</m> and <m>\beta:C(x)\to \mathsf{\Sigma}C</m> given by <me>\begin{aligned}
+        \alpha(v)&amp;:=(0,v)\in C(x)_i\\
+        \beta(u,v)&amp;:=(-1)^{|u|}u\in (\mathsf{\Sigma}C)_i
+        \end{aligned}</me> for <m>u\in C_{i-1}</m> and <m>v\in C_i</m>. One can easily check that these maps commute with differentials, and so are indeed chain maps. (Keep in mind that the differential of <m>\mathsf{\Sigma}C</m> is <m>-\partial^C</m>.) Hence, we have a short exact sequence of complexes <me>0\to C\xrightarrow{\alpha} C(x)\xrightarrow{\beta} \mathsf{\Sigma}C\to 0.</me> This leads to the long exact sequence on homology <me>\cdots \to \operatorname{H}_i(C)\xrightarrow{\alpha_*}\operatorname{H}_i(C(x))\xrightarrow{\beta_*}\operatorname{H}_{i-1}(C) \xrightarrow{\delta_{i-1}} \operatorname{H}_{i-1}(C)\to \cdots,</me> where here we have used the identification <m>\operatorname{H}_i(\mathsf{\Sigma}C)</m> with <m>\operatorname{H}_{i-1}(C)</m>.
+          </p>
+
+          <lemma xml:id="lem-76">
+            <statement>
+              <p>
+                <term>Lemma 76</term>.  
+                The connecting homomorphism <m>\delta_{i-1}:\operatorname{H}_{i-1}(C)\to \operatorname{H}_{i-1}(C)</m> in the long exact sequence above is multiplication by <m>x</m> for all <m>i</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. This is a classic diagram chase argument. Consider the commutative diagram
+              </p>
+            
+              <p>
+                Let <m>\overline{z}\in \operatorname{H}_i(\mathsf{\Sigma}C)=\operatorname{H}_{i-1}(C)</m>, where <m>z\in C_{i-1}</m> is a cycle. Lift <m>z</m> via <m>\beta</m> to <m>((-1)^{|z|}z,0)\in C_{i-1}\oplus C_{i}</m>. Then <m>\partial^{C(x)}((-1)^{|z|}z,0)=(0,xz)</m> and <m>\alpha^{-1}(0,xz)=xz</m>. (Note: here we are using <m>z</m> is a cycle in <m>C</m>.) Hence, <m>\delta_{i-1}(\overline{z})=\overline{xz}=x\overline{z}</m>, where <m>\overline{*}</m> denotes image in homology. ◻
+              </p>
+            </proof>
+          </lemma>
+
+          <proposition xml:id="prop-77">
+            <statement>
+              <p>
+                <term>Proposition 77</term>.  Let <m>R</m> be a ring, <m>M</m> an <m>R</m>-module, and <m>{\bf x}=x_1,\dots,x_n\in R</m> be a sequence of elements. Let <m>K^M=K(\bold x;M)</m>.
+                <ol>
+                  <li>
+                    <p>
+                  <m>K^M_i\cong M^{\binom{n}{i}}</m> for all <m>i</m>; in particular, <m>K^M_i=0</m> for <m>i&lt;0</m> and <m>i&gt;n</m>.
+                </p>
+                  </li>
+              
+                  <li>
+                    <p>
+                  For all i, <m>\partial(K^M_i)\subseteq (\bold x)K^M_{i-1}</m>;
+                </p>
+                  </li>
+              
+                  <li>
+                    <p>
+                  <m>H_0(K^M)=M/(\bold x)M</m>.
+                </p>
+                  </li>
+              
+                  <li>
+                    <p>
+                  <m>H_n(K^M)=(0:_M (\bold x))</m>.
+                </p>
+                  </li>
+              
+                  <li>
+                    <p>
+                  If <m>\bold x</m> is an <m>M</m>-sequence then <m>H_i(K^M)=0</m> for <m>i\geqslant 1</m>.
+                </p>
+                  </li>
+                </ol></p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. We proceed by induction on <m>n</m>. In the case <m>n=1</m>, <m>K^M</m> is the complex <me>0\to M\xrightarrow{x_1}M\to 0.</me> It is clear part (a) holds and that <m>H_0(K^M)\cong M/x_1M</m>, <m>H_1(K^M)=(0:_Mx_1)</m> and <m>\partial(K^M_1)=x_1M</m>. If <m>x_1</m> is regular on <m>M</m> then <m>\operatorname{H}_1(K^M)=0</m>.
+              </p>
+            
+              <p>
+                Suppose <m>n&gt;1</m> and all parts hold for smaller values. Let <m>\bold x' =x_1,\dots,x_{n-1}</m> and <m>C=K(\bold x';M)</m>. Note that <m>K^M=C(x_n)</m>. From Construction <xref ref="const" /> we have that <m>K^M_i=C(x_n)_i\cong C_{i-1}\oplus C_i</m>. By the <m>n-1</m> case, we have <m>C_{i-1}\cong M^{\binom{n}{i-1}}</m> and <m>C_i\cong M^{\binom{n}{i}}</m> for all <m>i</m>. Part (a) now follows. Furthermore, <m>\partial^C(C_i)\subseteq (\bold x')C_i</m> for all <m>i</m>. From Construction <xref ref="const" />, we have <me>\partial(K^M_i)=\partial(C(x)_i)\subseteq ((\bold x')C_{i-2}, (\bold x')C_{i-1} + x_nC_{i-1})\subseteq (\bold x)C(x)_i.</me>
+              </p>
+            
+              <p>
+                For the remaining parts, we have by Construction <xref ref="const" /> and Lemma <xref ref="connect" /> the long exact sequence <me>\cdots \to \operatorname{H}_i(C)\to \operatorname{H}_i(K^M)\to \operatorname{H}_{i-1}(C) \xrightarrow{x_n} \operatorname{H}_{i-1}(C)\to \cdots</me> By the induction hypothesis, <m>\operatorname{H}_{n-1}(C)=(0:_M (\bold x'))</m> and <m>\operatorname{H}_0(C)\cong M/(\bold x')M</m>. From the l.e.s. above, we have the exact sequences <me>0\to H_n(K^M)\to (0:_M (\bold x'))\xrightarrow{x_n} (0:_M (\bold x'))</me> and <me>M/(\bold x')M \xrightarrow{x_n} M/(\bold x')M\to \operatorname{H}_0(K^M)\to 0.</me> This proves (b) and (c).
+              </p>
+            
+              <p>
+                Suppose <m>\bold x</m> is an <m>M</m>-sequence. By induction, we have that <m>\operatorname{H}_i(C)=0</m> for all <m>i\geqslant 1</m>. From the long exact sequence above we obtain <m>\operatorname{H}_i(K^M)=0</m> for <m>i\geqslant 2</m>. It also yields the exact sequence <me>0\to \operatorname{H}_1(K^M)\to M/(\bold x')M\xrightarrow{x_n} M/(\bold x')M.</me> Since <m>x_n</m> is a regular element on <m>M/(\bold x')M</m> we conclude <m>\operatorname{H}_1(K^M)=0</m>. ◻
+              </p>
+            </proof>
+          </proposition>
+        
+          <p>
+            The converse of part (d) of Proposition <xref ref="kos-basic" /> holds in strengthened form under certain conditions:
+          </p>
+
+          <theorem xml:id="thm-78">
+            <statement>
+              <p>
+                <term>Theorem 78</term>.  Let <m>R</m> be a Noetherian ring, <m>M</m> a non-zero finitely generated <m>R</m>-module, and <m>\bold x=x_1,\dots,x_n\in J(R)</m>. Let <m>K^M</m> denote <m>K(\bold x; M)</m>. The following are equivalent:
+              </p>
+            
+              <p><ol>
+                <li>
+                  <p>
+                <m>\bold x</m> is an <m>M</m>-sequence;
+              </p>
+                </li>
+            
+                <li>
+                  <p>
+                <m>\operatorname{H}_i(K^M)=0</m> for all <m>i\geqslant 1</m>;
+              </p>
+                </li>
+            
+                <li>
+                  <p>
+                <m>\operatorname{H}_1(K^M)=0</m>.
+              </p>
+                </li>
+            
+              </ol></p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. From Proposition <xref ref="kos-basic" />, we have (a) implies (b), and the implication (b) to (c) is obvious. We prove (c) implies (a) by induction on <m>n</m>. Suppose <m>n=1</m>. Since <m>(0:_M x_1)=\operatorname{H}_1 K(x_1;M)=0</m> we have that <m>x_1</m> is a non-zero-divisor on <m>M</m>. And as <m>x_1M\neq M</m> by Nakayama’s lemma, we see that <m>x_1</m> is <m>M</m>-regular.
+              </p>
+            
+              <p>
+                Suppose that <m>n&gt;1</m>. As in the proof of Proposition <xref ref="kos-basic" />, we have the long exact sequence <me>\cdots \to \operatorname{H}_i(C)\to \operatorname{H}_i(K^M)\to \operatorname{H}_{i-1}(C) \xrightarrow{x_n} \operatorname{H}_{i-1}(C)\to \cdots,</me> where <m>C=K(\bold x';M)</m> and <m>\bold x'=x_1,\dots,x_{n-1}</m>. From the assumption <m>\operatorname{H}_1(K^M)=0</m> we obtain the exact sequence <me>\operatorname{H}_1(C)\xrightarrow{x_n} \operatorname{H}_1(C)\to 0.</me> Thus, <m>x\operatorname{H}_1(C)=\operatorname{H}_1(C)</m>. Since <m>x_n\in J(R)</m> and <m>\operatorname{H}_1(C)</m> is finitely generated (since <m>C_1\cong M^{n-1}</m> is Noetherian), we obtain that <m>\operatorname{H}_1(C)=0</m>. By the induction hypothesis, <m>\bold x'</m> is an <m>M</m>-sequence. From the exact sequence <me>0\to \operatorname{H}_0(C)\xrightarrow{x_n} \operatorname{H}_0(C)</me> we conclude that <m>x_n</m> is a non-zero-divisor on <m>M/(\bold x')M</m>. Since <m>(\bold x)M\neq M</m> by Nakayama, we conclude that <m>\bold x</m> is an <m>M</m>-sequence. ◻
+              </p>
+            </proof>
+          </theorem>
+
+          <corollary xml:id="cor-79">
+            <statement>
+              <p>
+                <term>Corollary 79</term>.  Let <m>R</m> be a ring and <m>\bold x=x_1,\dots,x_n</m> an <m>R</m>-sequence. Then <m>K(\bold x)</m> is a free resolution of <m>R/(\bold x)</m> of length <m>n</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. This is clear from parts (a) and(e) of Proposition <xref ref="kos-basic" />.
+              </p>
+            </proof>
+          </corollary>
+
+          <corollary xml:id="cor-minl">
+            <statement>
+              <p>
+                <term>Corollary 80</term>.  Let <m>(R,m)</m> be a local ring and <m>\bold x=x_1,\dots, x_n\in m</m> an <m>R</m>-sequence. Then <m>K(\bold x)</m> is a minimal free resolution of <m>R/(\bold x)</m>. In particular, <m>\operatorname{pd}_R R/(\bold x)=n</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. Note that <m>K(\bold x)</m> is a free resolution of <m>R/(\bold x)</m> be the previous resolution. From part (b) of Proposition <xref ref="kos-basic" />, <m>\partial(K(\bold x))\subseteq (\bold x)K(\bold x)\subseteq mK(\bold x)</m>. Hence, <m>K(\bold x)</m> is minimal. ◻
+              </p></proof>
+          </corollary>
+
+          <lemma xml:id="lem-pd">
+            <statement>
+              <p>
+                <term>Lemma 81</term>.  Let <m>(R,m)</m> be a local ring and <m>M</m> a finitely generated <m>R</m>-module with <m>\operatorname{pd}_R M=t</m>. Then <m>\operatorname{Ext}^t_R(M,N)\neq 0</m> for every nonzero finitely generated <m>R</m>-module <m>N</m>.
+              </p>
+            </statement>
+            <proof>
+              <p>
+                Proof. Let <m>F_{\bullet}</m> be a minimal free resolution of <m>M</m>. Let <m>F_{\bullet}</m> be <me>0\to F_t\xrightarrow{\phi_t} F_{t-1}\to \cdots \to F_0\to 0,</me> where <m>\phi_t(F_t)\subseteq mF_{t-1}</m>. Applying <m>\operatorname{Hom}_R(-,N)</m>, we have the complex <me>\operatorname{Hom}_R(F_{t-1},M)\xrightarrow{\phi_t^*} \operatorname{Hom}_R(F_{t},M)\to 0.</me> It is easy to see that <m>\phi_t^*(\operatorname{Hom}_R(F_{t-1},N))\subseteq m\operatorname{Hom}_R(F_t,N)</m>. Since <m>\operatorname{Hom}_R(F_t,N)\neq 0</m>, we see that <m>\operatorname{Ext}^t_R(M,N)=\operatorname{coker}\phi_t^*\neq 0</m> by Nakayama. ◻
+              </p></proof>
+          </lemma>
+
+          <theorem xml:id="thm-82">
+            <statement>
+              <p>
+                <term>Theorem 82</term>.  Let <m>(R,m)</m> be a local ring and <m>M</m> a nonzero finitely generated <m>R</m>-module of finite injective dimension. Then <m>\operatorname{id}_R M=\operatorname{depth}R</m>.
+              </p>
+            </statement>
+            <proof>
+              <p>
+                Proof. Let <m>p=\operatorname{depth}R</m> and <m>r=\operatorname{id}_R M</m>. Let <m>\bold x=x_1,\dots,x_p\in m</m> be a maximal <m>R</m>-sequence. Then <m>\operatorname{pd}_R R/(\bold x)=p</m> by Corollary <xref ref="minl" />. Hence, by Lemma <xref ref="pd" />, we obtain that <m>\operatorname{Ext}^p_R(R/(\bold x),M)\neq 0</m>. Thus, <m>r=\operatorname{id}_R M\geqslant p</m>. Also note <m>\operatorname{depth}R/(\bold x)=0</m> since <m>\bold x</m> is a maximal <m>R</m>-sequence. Thus, <m>m\in \operatorname{Ass}_R R/(\bold x)</m>, so there exists an injection <m>R/m\hookrightarrow R/(\bold x)</m>. Applying <m>\operatorname{Hom}_R(-,M)</m> to the resulting short exact sequence, <me>\cdots\to \operatorname{Ext}^r_R(R/(\bold x), M)\to \operatorname{Ext}^r_R(R/m,M)\to 0,</me> where we have used that <m>\operatorname{Ext}^i(A,M)=0</m> for all <m>i&gt;r=\operatorname{id}_RM</m> for all <m>R</m>-modules <m>A</m>. Since <m>\operatorname{id}_R M=r</m>, we have <m>\operatorname{Ext}^r_R(R/m,M)\neq 0</m> by Proposition <xref ref="bass-id" />. Thus, <m>\operatorname{Ext}^r_R(R/(\bold x),M)\neq 0</m>, which implies <m>r\leqslant p</m>. ◻
+              </p>
+              </proof>
+          </theorem>
+          
+        </section>
+
         <section xml:id="sec-depth-m2"><title>Macaulay2</title>
 
           <sage language="macaulay2">
@@ -23956,11 +24208,13 @@
           <proposition xml:id="prop-2.11-2">
             <statement>
               <p>
-                Let <m>\theta: M \rightarrow N</m> be a one-to-one map of <m>R</m>-modules. The following are equivalent:
+                Let <m>\theta: M \rightarrow N</m> be a one-to-one map of <m>R</m>-modules. 
+                The following are equivalent:
                 <ol>
                   <li>
                     <p>
-                      For any map <m>\alpha: N \rightarrow L, \alpha \circ \theta</m> is one-to-one <m>\Rightarrow \alpha</m> is one-to-one. In particular, if <m>M \subseteq N</m>, then <m>\left.\alpha\right|_{M}</m> is one-to-one <m>\Rightarrow \alpha</m> is one-to-one.
+                      For any map <m>\alpha: N \rightarrow L, \alpha \circ \theta</m> is one-to-one <m>\Rightarrow \alpha</m> is one-to-one. 
+                      In particular, if <m>M \subseteq N</m>, then <m>\left.\alpha\right|_{M}</m> is one-to-one <m>\Rightarrow \alpha</m> is one-to-one.
                     </p>
                   </li>
           
@@ -23981,17 +24235,28 @@
 
             <proof>
               <p>
-                (1) <m>\Rightarrow</m> (2): 
-                If <m>N^{\prime} \subseteq N</m> is nonzero, then <m>\alpha: N \rightarrow N / N^{\prime}</m> is not one-to-one, hence <m>\alpha \circ \theta: M \rightarrow</m> <m>N / N^{\prime}</m> is not either, so <m>M \cap N^{\prime} \neq 0</m>.
-              </p>
-        
-              <p>
-                <m>(2) \Rightarrow(3)</m>: 
-                This is the special case of a cyclic submodule.
-              </p>
-        
-              <p>
-                <m>(3) \Rightarrow(1)</m>: Given a nonzero element in <m>n \in \operatorname{ker}(\alpha), n</m> has a nonzero multiple in <m>\theta(M)</m>, and any multiple of <m>n</m> is still in the kernel of <m>\alpha</m>.
+                <ol>
+                  <li>
+                    <p>
+                      (1) <m>\Rightarrow</m> (2): 
+                      If <m>N^{\prime} \subseteq N</m> is nonzero, then <m>\alpha: N \rightarrow N / N^{\prime}</m> is not one-to-one, hence <m>\alpha \circ \theta: M \rightarrow</m> <m>N / N^{\prime}</m> is not either, so <m>M \cap N^{\prime} \neq 0</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>(2) \Rightarrow(3)</m>: 
+                      This is the special case of a cyclic submodule.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>(3) \Rightarrow(1)</m>: 
+                      Given a nonzero element in <m>n \in \operatorname{ker}(\alpha), n</m> has a nonzero multiple in <m>\theta(M)</m>, and any multiple of <m>n</m> is still in the kernel of <m>\alpha</m>.
+                    </p>
+                  </li>
+                </ol>
               </p>
             </proof>
           </proposition>
@@ -24010,15 +24275,15 @@
             If <m>A \subseteq B</m> is essential, then anything in <m>B</m> can get multiplied back into <m>A</m>, whereas if <m>A</m> is a generating set for <m>B</m>, anything in <m>B</m> can be obtained by multiplying from elements in <m>A</m> (and adding).
           </p>
 
-          <example>
+          <example xml:id="def-2.11-2">
             <p>
-              Example 2.13. If <m>W</m> is a multiplicative set consisting of nonzerodivisors on <m>M</m>, then <m>W^{-1} M</m> is an essential extension of <m>M</m>. In particular, the fraction field of a domain is an essential extension of it.
+              If <m>W</m> is a multiplicative set consisting of nonzerodivisors on <m>M</m>, then <m>W^{-1} M</m> is an essential extension of <m>M</m>. In particular, the fraction field of a domain is an essential extension of it.
             </p>
           </example>
 
-          <example>
+          <example xml:id="def-2.14-2">
             <p>
-              Example 2.14. If <m>M</m> is a (nonzero) <m>I</m>-torsion module, that is, every element of <m>M</m> is killed by a power of <m>I</m>, then <m>\operatorname{ann}_{M}(I) \subseteq M</m> is an essential extension.
+              If <m>M</m> is a (nonzero) <m>I</m>-torsion module, that is, every element of <m>M</m> is killed by a power of <m>I</m>, then <m>\operatorname{ann}_{M}(I) \subseteq M</m> is an essential extension.
             </p>
           </example>
 
@@ -24187,9 +24452,8 @@
             </statement>
           </definition>
 
-          <example>
+          <example xml:id="def-2.21-2">
             <p>
-              Example 2.21.
               <me>0(\rightarrow \mathbb{Z}) \rightarrow \mathbb{Q} \rightarrow \mathbb{Q} / \mathbb{Z} \rightarrow 0</me>
             </p>
       
@@ -25908,9 +26172,10 @@
         </section>
         
       </chapter>
-
       
     </part>
+
+    
 
     <backmatter xml:id="backmatter"><title>Backmatter</title>
 
@@ -26333,6 +26598,1401 @@
           <p>
             
           </p>
+          
+        </section>
+
+      </appendix>
+
+      <appendix><title>A Lifetime Supply of Category Theory</title>
+
+        <section xml:id="sec-categories"><title>Categories</title>
+  
+          <objectives>
+            <ul>
+              <li>
+                
+              </li>
+            </ul>
+          </objectives>
+
+          <introduction>
+            <p>
+              Most fields in modern mathematics follow the same basic recipe: there is a main type of object one wants to study - groups, rings, modules, topological spaces, etc - and a natural notion of arrows between these - group homomorphisms, ring homomorphisms, module homomorphisms, continuous maps, etc. 
+              The objects are often sets with some extra structure, and the arrows are often maps between the objects that preserve whatever that extra structure is. 
+              Category theory is born of this realization, by abstracting the basic notions that make math and studying them all at the same time. 
+              How many times have we felt a sense of déjà vu when learning about a new field of math? Category theory unifies all those ideas we have seen over and over in different contexts.
+            </p>
+  
+            <p>
+              Category theory is an entire field of mathematics in its own right. 
+              As such, there is a lot to say about category theory, and unfortunately it doesn't all fit in the little time we have to cover it in this course. 
+              You are strongly encouraged to learn more about category theory, for example from [ML98] or [Rie17].
+            </p>
+        
+            <p>
+              Before we go any further, note that there is a long and fun story about why we use the word collection when describing the objects in a category. 
+              Not all collections are allowed to be sets, an issue that was first discovered by Russel with his famous Russel's Paradox. 
+              <fn>The collection of all sets that don't contain themselves cannot be a set. Do you see why? </fn>
+              Russel exposed the fact that one has to be careful with how we formalize set theory. 
+              We follow the ZFC (Zermelo-Fraenkel with choice, short for the Zermelo-Fraenkel axioms plus the Axiom of Choice) axiomatization of set theory, and while we will not discuss the details of this formalization here, you are encouraged to read more on the subject.
+            </p>
+          </introduction>
+
+          <subsection xml:id="subsec-cat"><title>Definition and First Examples</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  We'll only use as much category theory as is necessary. Famous last words...
+                </q>
+              </p>
+              <attribution>Roman Abramovich</attribution>
+            </blockquote>
+          
+            <p>
+              A category consists of a collection of objects and arrows or morphisms between those objects. 
+              While these are often sets and some kind of functions between them, beware that this will not always be the case. 
+              We will use the words morphism and arrows interchangeably, though arrow has the advantage of reminding us we are not necessarily talking about functions.
+            </p>
+
+            <definition xml:id="def-category"><title>Category</title>
+              <statement>
+                <p>
+                  A <em>category</em> <m>\mathscr{C}</m> consists of three different pieces of data:
+                  <ul>
+                    <li>
+                      <p>
+                        a collection of <em>objects</em>, <m>\mathbf{ob}(\mathscr{C}),</m>
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        for each two objects, say <m>A</m> and <m>B</m>, a collection <m>\operatorname{Hom}_{\mathscr{C}}(A, B)</m> of <em>arrows</em> or <em>morphisms</em> from <m>A</m> to <m>B</m>, and
+                      </p>
+                    </li>
+          
+                    <li>
+                      <p>
+                        for each three objects <m>A, B</m>, and <m>C</m>, a <em>composition</em>
+                      </p>
+                  
+                      <p>
+                        <me>
+                          \begin{gathered}
+                          \operatorname{Hom}_{\mathscr{C}}(A, B) \times \operatorname{Hom}_{\mathscr{C}}(B, C) \longrightarrow \operatorname{Hom}_{\mathscr{C}}(A, C) . \\
+                          (f, g) \longmapsto g \circ f
+                          \end{gathered}
+                        </me>
+                      </p>
+                    </li>
+                  </ul>
+                  </p>
+          
+                <p>
+                  We will often drop the <m>\circ</m> and write simply <m>gf</m> for <m>g \circ f</m>.
+                </p>
+          
+                <p>
+                  These ingredients satisfy the following axioms:
+                  <ol>
+                    <li>
+                      <p>
+                        The <m>\operatorname{Hom}_{\mathscr{C}}(A, B)</m> are all disjoint. 
+                        In particular, if <m>f</m> is an arrow in <m>\mathscr{C}</m>, we can talk about its <em>source</em> <m>A</m> and its <em>target</em> <m>B</m> as the objects such that <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m>.
+                      </p>
+                    </li>
+            
+                    <li>
+                      <p>
+                        For each object <m>A</m>, there is an <em>identity arrow</em> <m>1_{A} \in \operatorname{Hom}_{\mathscr{C}}(A, A)</m> such that <m>1_{A} \circ f=f</m> and <m>g \circ 1_{A}=g</m> for all <m>f \in \operatorname{Hom}_{\mathscr{C}}(B, A)</m> and all <m>g \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m>.
+                      </p>
+                    </li>
+            
+                    <li>
+                      <p>
+                        Composition is <em>associative</em>: <m>f \circ(g \circ h)=(f \circ g) \circ h</m> for all appropriately chosen arrows.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </definition>
+
+            <convention>
+              <p>
+                We sometimes write <m>f: A \rightarrow B</m> or <m>A \stackrel{f}{\rightarrow} B</m> for an arrow <m>f \in \operatorname{Hom}(A, B)</m>.
+              </p>
+            </convention>
+
+            <exercise xml:id="exe-1"><title>Unique Identity Morphism</title>
+              <statement>
+                <p>
+                  Every object in a category has a unique identity morphism.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  
+                </p>
+              </solution>
+            </exercise>
+
+            <p>
+              Here are some categories you have likely encountered before:
+            </p>
+
+            <example xml:id="ex-categories"><title>Categories</title>
+              <tabular>
+                <row bottom="minor">
+                  <cell halign="center"><term>Category</term></cell>
+                  <cell halign="center"><term>Objects</term></cell>
+                  <cell halign="center"><term>Morphisms</term></cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Set</m></cell>
+                  <cell halign="center">sets</cell>
+                  <cell halign="center">functions</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Grp</m></cell>
+                  <cell halign="center">groups</cell>
+                  <cell halign="center">group homomorphisms</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Ab</m></cell>
+                  <cell halign="center">abelian groups</cell>
+                  <cell halign="center">abelian group homomorphisms</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Ring</m></cell>
+                  <cell halign="center">rings</cell>
+                  <cell halign="center">ring homomorphisms</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>R\Mod</m></cell>
+                  <cell halign="center"><m>R</m>-modules</cell>
+                  <cell halign="center"><m>R</m>-maps</cell>
+                </row>
+                <row>
+                  <cell halign="center"><m>\Top</m></cell>
+                  <cell halign="center">topological spaces</cell>
+                  <cell halign="center">continuous functions</cell>
+                </row>
+              </tabular>
+            </example>
+
+            <p>
+              While the collections of objects and arrows might not actually be sets, sometimes they are.
+            </p>
+
+            <definition xml:id="def-locally-small"><title>Locally Small</title>
+              <statement>
+                <p>
+                  A category <m>\mathscr{C}</m> is <em>locally small</em> if for all objects <m>A</m> and <m>B</m> in <m>\mathscr{C}, \operatorname{Hom}_{\mathscr{C}}(A, B)</m> is a set. 
+                  A category <m>\mathscr{C}</m> is <em>small</em> if it is locally small and the collection of all objects in <m>\mathscr{C}</m> is a set.
+                </p>
+              </statement>
+            </definition>
+        
+            <p>
+              In fact, one can define a small category as one where the collection of all arrows is a set. 
+              It follows immediately that the collection of all objects is also a set, since it must be a subset of the set of arrows - for each object, there is an identity arrow.
+            </p>
+
+            <p>
+              Many important categories are at least locally small. 
+            </p>
+
+            <example>
+              <p>
+                <m>\Set</m> is locally small but not small. 
+              </p>
+            </example>
+
+            <definition xml:id="def-concrete">
+              <statement>
+                <p>
+                  Categories where the objects are sets with some extra structure and the arrows are some kind of functions between the objects are called concrete.
+                </p>
+              </statement>
+            </definition>
+
+            <p>
+              All of the categories we have seen thus far have been conctrete, but this is not the case in general.
+            </p>
+
+            <example xml:id="non-concrete-categories"><title>Non-Concrete Categories</title>
+              <p>
+                <ol>
+                  <li xml:id="ex-poset-category"><title><m>\PO(X)</m></title>
+                    <p>
+                      Given a partially ordered set <m>(X, \leqslant)</m>, we can regard <m>X</m> itself as a category: 
+                      the objects are the elements of <m>X</m>, and for each <m>x</m> and <m>y</m> in <m>X, \operatorname{Hom}_{X}(x, y)</m> is either a singleton if <m>x \leqslant y</m> or empty if <m>x \neq y</m>. 
+                      There is only one possible way to define composition, and the transitive property of <m>\leqslant</m> guarantees that the composition of arrows is indeed well-defined: 
+                      if there is an arrow <m>i \rightarrow j</m> and an arrow <m>j \rightarrow k</m>, then <m>i \leqslant j</m> and <m>j \leqslant k</m>, so <m>i \leqslant k</m> and thus there is a unique arrow <m>i \rightarrow k</m>. 
+                      This category is locally small, since all nonempty <m>\Hom</m>-sets are in fact singletons. 
+                      It is in fact small, since the objects are by construction the set <m>X</m>.
+                    </p>
+                  </li>
+
+                  <li xml:id="poset-categories-2"><title><m>\mathbf{n}</m></title>
+                    <p>
+                      For each positive integer <m>n</m>, the category <m>\mathbf{n}</m> has <m>n</m> objects <m>0,1, \ldots, n-1</m> and <m>\operatorname{Hom}(i, j)</m> is either empty if <m>i&gt;j</m> or a singleton if <m>i \leqslant j</m>. 
+                      As <xref ref="ex-poset-category"/>, composition is defined in the only way possible, and things work out. 
+                      This is the poset category for the poset <m>(\{0,1, \ldots, n-1\}, \leqslant)</m> with the usual <m>\leqslant</m>.
+                    </p>
+                  </li>
+
+                  <li xml:id="ex-mat-category"><title><m>\textbf{Mat}-k</m></title>
+                    <p>
+                      Fix a field <m>k</m>. 
+                      We define a category <m>\textbf{Mat}-k</m> with objects all positive integers, and given two positive integers <m>a</m> and <m>b</m>, the <m>\operatorname{Hom}</m>-set <m>\operatorname{Hom}(a, b)</m> consists of all <m>b \times a</m> matrices with entries in <m>k</m>. 
+                      The composition rule is given by product of matrices: given <m>A \in \operatorname{Hom}(a, b)</m> and <m>B \in \operatorname{Hom}(b, c)</m>, the composition <m>B \circ A</m> is the matrix <m>B A \in \operatorname{Hom}(a, c)</m>. 
+                      For each object <m>a</m>, its identity arrow is given by the <m>a \times a</m> identity matrix.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+
+            <remark>
+              <p>
+                A locally small category with just one element is completely determined by its unique <m>\Hom</m>-set; 
+                it thus consists of a set <m>S</m> with an associative operation that has an identity element, which we call a monoid. 
+              </p>
+            </remark>
+
+          </subsection>
+
+          <subsection xml:id="subsec-diagrams-arrows"><title>Diagrams and Morphisms</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  Make big plans; aim high in hope and work, remembering that a noble, logical diagram once recorded will not die.
+                </q>
+              </p>
+              <attribution>Daniel Burnham</attribution>
+            </blockquote>
+
+            <p>
+              A key insight we get from category theory is that many important concepts can be understood through diagrams. 
+              Homological algebra is in many ways the study of commutative diagrams. 
+              One way to formalize what a diagram is involves talking about functors, which we will discuss in Section 1.2; here is a more down to earth definition.
+            </p>
+
+            <definition xml:id="def-diagram"><title>Diagram</title>
+              <statement>
+                <p>
+                  A <em>diagram</em> in a category <m>\mathscr{C}</m> is a directed multigraph whose vertices are objects in <m>\mathrm{C}</m> and whose arrows/edges are morphisms in <m>\mathscr{C}</m>. 
+                  A <em>commutative diagram</em> in <m>\mathscr{C}</m> is a diagram in which for each pair of vertices <m>A</m> and <m>B</m>, any two paths from <m>A</m> to <m>B</m> compose to the same morphism.
+                </p>
+              </statement>
+            </definition>
+
+            <example xml:id="ex-commutative-diagram"><title>Commutative Diagram</title>
+              <p>
+                The diagram
+              </p>
+              <image source="2023_08_28_614593e69373955f3addg-11.jpg" width="20%"/>
+              <p>
+                commutes if and only if <m>g f=v u</m>.
+              </p>
+            </example>
+        
+            <p>
+              There are some special types of arrows we will want to consider.
+            </p>
+
+            <definition xml:id="def-inverses"><title>Morphism Inverses</title>
+              <statement>
+                <p>
+                  Let <m>\mathscr{C}</m> be any category.
+                  <ul>
+                    <li>
+                      <p>
+                        An arrow <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m> is <em>left invertible</em> if there exists <m>g \in \operatorname{Hom}_{\mathscr{C}}(B, A)</m> such that <m>g f=1_{A}</m>. 
+                        In this case, we say that <m>g</m> is the left inverse of <m>f</m>. 
+                        So <m>g</m> is a left inverse of <m>f</m> if the diagram
+                      </p>
+                      <image source="2023_08_28_614593e69373955f3addg-11(1).jpg" width="20%"/>
+                      <p>
+                        commutes.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        An arrow <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m> is <em>right invertible</em> if there exists <m>g \in \operatorname{Hom}_{\mathscr{C}}(B, A)</m> such that <m>f g=1_{B}</m>. 
+                        In this case, we say that <m>g</m> is the right inverse of <m>f</m>. So <m>g</m> is a right inverse of <m>f</m> if the diagram
+                      </p>
+                      <image source="2023_08_28_614593e69373955f3addg-12.jpg" width="20%"/>
+                      <p>
+                        commutes.
+                      </p>
+                    </li>
+                
+                    <li>
+                      <p>
+                        An arrow <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m> is an <em>isomorphism</em> if there exists <m>g \in \operatorname{Hom}_{\mathscr{C}}(B, A)</m> such that <m>g f=1_{A}</m> and <m>f g=1_{B}</m>. 
+                        Unsurprisingly, such an arrow <m>g</m> is called the <em>inverse</em> of <m>f</m>.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </statement>
+            </definition>
+
+            <example xml:id="ex-isomorphisms"><title>Isomorphisms</title>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      In <m>\Grp</m>, <m>\Ring</m>, and <m>R\Mod</m> the isomorphisms are the morphisms that are bijective functions.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      In contrast, in <m>\Top</m> the isomorphisms are the homeomorphisms, which are the bijective continuous functions with continuous inverses. 
+                      These are not the same thing as just the bijective continuous functions.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+
+          </subsection>
+
+          <subsection xml:id="subsec-sub-dual"><title>Opposite Categories and Subcategories</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  The life of this world is nothing but the harmony of opposites.
+                </q>
+              </p>
+              <attribution>Rumi</attribution>
+            </blockquote>
+      
+            <p>
+              We will now continue to follow a familiar pattern and define the related concepts one can guess should be defined.
+            </p>
+
+            <definition xml:id="def-subcategory"><title>Subcategory</title>
+              <statement>
+                <p>
+                  A <em>subcategory</em> <m>\mathscr{C}</m> of a category <m>\mathscr{D}</m> consists of a subcollection of the objects of <m>\mathscr{D}</m> and a subcollection of the morphisms of <m>\mathscr{D}</m> such that the following hold:
+                  <ul>
+                    <li>
+                      <p>
+                        For every object <m>C</m> in <m>\mathscr{C}</m>, the arrow <m>1_{C} \in \operatorname{Hom}_{\mathscr{D}}(C, C)</m> is an arrow in <m>\mathscr{C}</m>.
+                      </p>
+                    </li>
+              
+                    <li>
+                      <p>
+                        For every arrow in <m>\mathscr{C}</m>, its source and target in <m>\mathscr{D}</m> are objects in <m>\mathscr{C}</m>.
+                      </p>
+                    </li>
+              
+                    <li>
+                      <p>
+                        For every pair of arrows <m>f</m> and <m>g</m> in <m>\mathscr{C}</m> such that <m>f g</m> is an arrow that makes sense in <m>\mathscr{D}</m>, <m>f g</m> is an arrow in <m>\mathscr{C}</m>.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </statement>
+            </definition>
+        
+            <p>
+              In particular, <m>\mathscr{C}</m> is a category in its own right.
+            </p>
+
+            <example xml:id="ex-subcategories"><title>Subcategories</title>
+              <p>
+                The category of finitely generated <m>R</m>-modules with <m>R</m>-module homomorphisms is a subcategory of <m>R</m><m>\Mod</m>.
+              </p>
+            </example>
+
+            <example xml:id="ex-more-categories"><title>Subcategories of Vector Spaces</title>
+              <p>
+                Let <m>k</m> be a field.
+                <ol>
+                  <li>
+                    <p>
+                      The collection of finite dimensional <m>k</m>-vector spaces with all linear transformations is a category.
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      The collection of all <m>n</m>-dimensional <m>k</m>-vector spaces with all linear transformations is a category.
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      The collection of all <m>k</m>-vector spaces (or <m>n</m>-dimensional vector spaces) with linear isomorphisms is a category.
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      The collection of all <m>k</m>-vector spaces (or <m>n</m>-dimensional vector spaces) with nonzero linear transformations is not a category, since it is not closed under composition.
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      The collection of all <m>n</m>-dimensional vector spaces with linear transformations of determinant 0 is not a category, since it does not have identity maps.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+            
+            <definition xml:id="def-full-subcategory"><title>Full Subcategory</title>
+              <statement>
+                <p>
+                  A subcategory <m>\mathscr{C}</m> of <m>\mathscr{D}</m> is a <em>full subcategory</em> if <m>\mathscr{C}</m> includes all of the arrows in <m>\mathscr{D}</m> between any two objects in <m>\mathscr{C}</m>.
+                </p>
+              </statement>
+            </definition>
+
+            <example xml:id="ex-full-subcategories"><title>Full Subcategories</title>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      The category <m>\mathbf{Ab}</m> of abelian groups is a full subcategory of <m>\Grp</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Since every group is a set, and every homomorphism is a function, <m>\Grp</m> is a subcategory of <m>\Set</m>. 
+                      However, not every function between two groups is a group homomorphism, so <m>\Grp</m> is not a full subcategory of <m>\Set</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      The category whose objects are all sets and with arrows all bijections is a subcategory of <m>\Set</m> that is not full.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+        
+            <p>
+              Here is another way of constructing a new category out of an old one.
+            </p>
+
+            <definition xml:id="def-opposite-category"><title>Opposite Category</title>
+              <statement>
+                <p>
+                  Let <m>\mathscr{C}</m> be a category. 
+                  The <em>opposite category</em> of <m>\mathscr{C}</m>, denoted <m>\mathscr{C}^{op}</m>, is a category whose objects are the objects of <m>\mathscr{C}</m>, and such that each arrow <m>f \in \operatorname{Hom}_{\mathscr{C} \text { op }}(A, B)</m> is the same as some arrow in <m>\operatorname{Hom}_{\mathscr{C}}(B, A)</m>. 
+                  The composition <m>f g</m> of two morphisms <m>f</m> and <m>g</m> in <m>\mathscr{C}^{\text {op }}</m> is defined as the composition <m>g f</m> in <m>\mathscr{C}</m>.
+                </p>
+              </statement>
+            </definition>
+        
+            <p>
+              Many objects and concepts one might want to describe are obtained from existing ones by flipping the arrows. 
+              Opposite categories give us the formal framework to talk about such things. 
+              We will often want to refer to dual notions, which will essentially mean considering the same notion in a category <m>\mathscr{C}</m> and in the opposite category <m>\mathscr{C}^{\mathrm{op}}</m>; 
+              in practice, this means we should flip all the arrows involved.
+              We will see examples of this later on.
+            </p>
+        
+            <p>
+              The dual category construction gives us a formal framework to talk about dual notions. 
+              We will often make a statement in a category <m>\mathscr{C}</m> and make comments about the dual statement; 
+              in practice, this corresponds to simply switching the way all arrows go. 
+              Here are some examples of dual notions and statements:
+            </p>
+        
+            <table><title></title>
+              <tabular>
+              <row bottom="minor">
+                <cell halign="center"><term>source</term></cell>
+                <cell halign="center"><term>target</term></cell>
+              </row>
+              <row>
+                <cell halign="center">epi</cell>
+                <cell halign="center">mono</cell>
+              </row>
+              <row>
+                <cell halign="center"><m>g</m> is a right inverse for <m>f</m></cell>
+                <cell halign="center"><m>g</m> is a left inverse for <m>f</m></cell>
+              </row>
+              <row>
+                <cell halign="center"><m>f</m> is invertible</cell>
+                <cell halign="center"><m>f</m> is invertible</cell>
+              </row>
+              <row>
+                <cell halign="center">initial objects</cell>
+                <cell halign="center">terminal objects</cell>
+              </row>
+              <row>
+                <cell halign="center">homology</cell>
+                <cell halign="center">cohomology</cell>
+              </row>
+              </tabular>
+            </table>
+        
+            <p>
+              Note that the dual of the dual is the original statement; 
+              we can make this more formal by saying that <m>\left(\mathscr{C}^{\mathrm{op}}\right)^{\text {op }}=\mathscr{C}</m>. 
+              Sometimes we can easily prove a statement by dualizing; however, this is not always straightforward, and one needs to carefully dualize all portions of the statement in question. 
+              Nevertheless, Sanders MacLane, one of the fathers of category theory, wrote that "If any statement about a category is deducible from the axioms for a category, the dual statement is likely deducible".
+              One of the upshots of duality is that any theorem in category theory must simultaneously prove two theorems: the original statement and its dual. 
+              But for this to hold, we need proofs that use the abstraction of a purely categorical proof.
+            </p>
+        
+            <p>
+              Opposite categories are more interesting than they might appear at first; 
+              there is more than just flipping all the arrows. 
+              For example, consider the opposite category of Set. 
+              For any nonempty set <m>X</m>, there is a unique morphism in Set (a function) <m>i: \emptyset \rightarrow X</m>, but there are no functions <m>X \rightarrow \emptyset</m>, so <m>i^{\text {op }}: \emptyset \rightarrow X</m> is not a function. 
+              Thus thinking about Set <m>{ }^{\text {op }}</m> is a bit difficult. 
+              One can show that this is the category of complete atomic Boolean algebras - but we won't concern ourselves with what that means.
+            </p>
+
+          </subsection>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+
+                </p>
+              </li>
+            </ul>
+          </outcomes>
+          
+        </section>
+
+        <section xml:id="sec-functors"><title>Functors</title>
+
+          <objectives>
+            <ul>
+              <li>
+                <xref text="title" ref="def-category"/>
+                <xref text="title" ref="def-inverses"/>
+                <xref text="title" ref="def-diagram"/>
+              </li>
+            </ul>
+          </objectives>
+
+          <subsection xml:id="subsec-functors"><title>Functor? Damn Near Killed 'er!</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  If you're brave enough to say goodbye, life will reward you with a new hello.
+                </q>
+              </p>
+              <attribution>Paulo Coelho</attribution>
+            </blockquote>
+            
+            <p>
+              Many mathematical constructions are functorial, in the sense that they behave well with respect to morphisms. 
+              In the formalism of category theory, this means that we can think of a functorial construction as a functor.
+            </p>
+
+            <definition xml:id="def-functor"><title>Functor</title>
+              <statement>
+                <p>
+                  Let <m>\mathscr{C}</m> and <m>\mathscr{D}</m> be categories. 
+                  A covariant functor <m>F: \mathscr{C} \longrightarrow \mathscr{D}</m> is a mapping that assigns to each object <m>A</m> in <m>\mathscr{C}</m> an object <m>F(A)</m> in <m>\mathscr{D}</m>, and to each arrow <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m> an arrow <m>F(f) \in \operatorname{Hom}_{\mathscr{D}}(F(A), F(B))</m>, such that
+                  <ul>
+                    <li>
+                      <p>
+                        <m>F</m> preserves the composition of maps, meaning <m>F(f g)=F(f) F(g)</m> for all arrows <m>f</m> and <m>g</m> in <m>\mathscr{C}</m>, and
+                      </p>
+                    </li>
+          
+                    <li>
+                      <p>
+                        <m>F</m> preserves the identity arrows, meaning <m>F\left(1_{A}\right)=1_{F(A)}</m> for all objects <m>A</m> in <m>\mathscr{C}</m>.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+            
+                <p>
+                  A <em>contravariant functor</em> <m>F: \mathscr{C} \longrightarrow \mathscr{D}</m> is a mapping that assigns to each object <m>A</m> in <m>\mathscr{C}</m> an object <m>F(A)</m> in <m>\mathscr{D}</m>, and to each arrow <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m> an arrow <m>F(f) \in \operatorname{Hom}_{\mathscr{D}}(F(B), F(A))</m>, such that
+                  <ul>
+                    <li>
+                      <p>
+                        <m>F</m> preserves the composition of maps, meaning <m>F(f g)=F(g) F(f)</m> for all composable arrows <m>f</m> and <m>g</m> in <m>\mathscr{C}</m>, and
+                      </p>
+                    </li>
+          
+                    <li>
+                      <p>
+                        <m>F</m> preserves the identity arrows, meaning <m>F\left(1_{A}\right)=1_{F(A)}</m> for all objects <m>A</m> in <m>\mathscr{C}</m>.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </statement>
+            </definition>
+      
+            <p>
+              So a contravariant functor is a functor that flips all the arrows. 
+              We can also describe a contravariant functor as a covariant functor from <m>\mathscr{C}</m> to the opposite category of <m>\mathscr{D}</m>, <m>\mathscr{D}{ }^{\text {op }}</m>.
+            </p>
+
+            <remark>
+              <p>
+                A contravariant functor <m>F: \mathscr{C} \longrightarrow \mathscr{D}</m> can be thought of as a covariant functor <m>\mathscr{C}^{\text {op }} \longrightarrow \mathscr{D}</m>, or also as a covariant functor <m>\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}</m>. 
+                If using one of these conventions, one needs to be careful, however, when composing functors, so that the respective sources and targets match up correctly.
+                While we haven't specially discussed how one composes functors, it should be clear that applying a functor <m>F: \mathscr{C} \longrightarrow \mathscr{D}</m> and <m>G: \mathscr{D} \longrightarrow \mathscr{E}</m> is the same as applying a functor <m>\mathscr{C} \longrightarrow \mathscr{D}</m>, which we can write as <m>G F</m>.
+              </p>
+        
+              <p>
+                For example, if <m>F: \mathscr{C} \longrightarrow \mathscr{D}</m> and <m>G: \mathscr{D} \longrightarrow \mathscr{E}</m> are both contravariant functors, the composition <m>G F: \mathscr{C} \longrightarrow \mathscr{E}</m> is a covariant functor, since
+              </p>
+              <image source="2023_08_28_614593e69373955f3addg-15.jpg"/>
+              <p>
+                So we could think of <m>F</m> as a covariant functor <m>\mathscr{C} \longrightarrow \mathscr{D}^{\text {op }}</m> and <m>G</m> as a covariant functor <m>\mathscr{D}^{\text {op }} \longrightarrow \mathscr{E}</m>. 
+                Similarly, if <m>F: \mathscr{C} \longrightarrow \mathscr{D}</m> is a covariant functor and <m>G: \mathscr{D} \longrightarrow \mathscr{E}</m> is a contravariant functor, <m>G F: \mathscr{C} \longrightarrow \mathscr{E}</m> is a contravariant functor. 
+                In this case, we can think of <m>G</m> as a covariant functor <m>\mathscr{D} \longrightarrow \mathscr{E}^{\mathrm{op}}</m>, so that <m>G F</m> is now a covariant functor <m>\mathscr{C} \longrightarrow \mathscr{E}^{\mathrm{op}}</m>.
+              </p>
+            </remark>
+
+            <exercise xml:id="exe-8"><title>Functors Preserve Isomorphisms</title>
+              <statement>
+                <p>
+                  Show that functors preserve isomorphisms.
+                </p>
+              </statement>
+            </exercise>
+
+            <p>
+              Here are some examples of functors you may have encountered before.
+            </p>
+
+            <example><title>Functors</title>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      Many categories one may think about are concrete categories, where the objects are sets with some extra structure, and the arrows are functions between those sets that preserved that extra structure. 
+                      The <term>forgetful functor</term> from such a category to <m>\Set</m> is the functor that, just as the name says, forgets that extra structure, and sees only the underlying sets and functions of sets. 
+                      For example, the forgetful functor <m>\mathbf{G r} \longrightarrow</m> <m>\Set</m> sends each group to its underlying set, and each group homomorphism to the corresponding function of sets.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      The <term>identity functor</term> <m>1_{\mathscr{C}}</m> on any category <m>\mathscr{C}</m> does what the name suggests: it sends each object to itself and each arrow to itself.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Given a group <m>G</m>, the subgroup <m>[G, G]</m> of <m>G</m> generated by the set of commutators
+                      <me>
+                        \left\{g h g^{-1} h^{-1} \mid g, h \in G\right\}
+                      </me>
+                      is a normal subgroup, and the quotient <m>G^{\text {ab }}:=G /[G, G]</m> is called the abelianization of <m>G</m>. 
+                      The group <m>G^{\text {ab }}</m> is abelian. 
+                      Given a group homomorphism <m>f: G \rightarrow H, f</m> automatically takes commutators to commutators, so it induces a homomorphism <m>\tilde{f}: G^{\mathrm{ab}} \rightarrow H^{\mathrm{ab}}</m>. 
+                      More precisely, abelianization gives a covariant functor from <m>\Grp</m> to <m>\Ab</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      The <em>unit group functor</em> <m>-^{*}</m> : <m>\Ring</m> <m>\rightarrow</m> <m>\Grp</m> sends a ring <m>R</m> to its group of units <m>R^{*}</m>. 
+                      To see this is indeed a functor, we should check it behaves well on morphisms; 
+                      and indeed if <m>f: R \rightarrow S</m> is a ring homomorphism, and <m>u \in R^{*}</m> is a unit in <m>R</m>, then
+                      <me>
+                        f(u) f\left(u^{-1}\right)=f\left(u u^{-1}\right)=f\left(1_{R}\right)=1_{S},
+                      </me>
+                      so <m>f(u)</m> is a unit in <m>S</m>. 
+                      Thus <m>f</m> induces a function <m>R^{*} \rightarrow S^{*}</m> given by restriction of <m>f</m> to <m>R^{*}</m>, which must therefore be a group homomorphism since <m>f</m> preserves products.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Fix a field <m>k</m>. 
+                      Given a vector space <m>V</m>, the collection <m>V^{*}</m> of linear transformations from <m>V</m> to <m>k</m> is again a <m>k</m>-vector space, the <em>dual vector space</em> of <m>V</m>. If <m>\varphi: W \rightarrow V</m> is a linear transformation and <m>\ell: V \rightarrow K</m> is an element of <m>V^{*}</m>, then <m>\ell \circ \varphi: W \rightarrow k</m> is in <m>W^{*}</m>. 
+                      Doing this for all elements <m>\ell \in V^{*}</m> gives a function <m>\varphi^{*}: V^{*} \rightarrow W^{*}</m>, and one can show that <m>\varphi^{*}</m> is a linear transformation. 
+                      The assignment that sends each vector space <m>V</m> to its dual vector space <m>V^{*}</m> and each linear transformation <m>\varphi</m> to <m>\varphi^{*}</m> is a contravariant functor on Vect- <m>k</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Localization is a functor. 
+                      Let <m>R</m> be a ring and <m>W</m> be a multiplicatively closed set in <m>R</m>. 
+                      There is localization at <m>W</m> induces a a functor <m>R</m><m>\mod</m> <m>\longrightarrow W^{-1} R</m><m>\mod</m> that sends each <m>R</m>-module <m>M</m> to <m>W^{-1} M</m>, and each <m>R</m>-module homomorphism <m>\alpha: M \longrightarrow N</m> to the <m>R</m>-module homomorphism <m>W^{-1} \alpha: W^{-1} M \longrightarrow W^{-1} N</m>.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+      
+            <exercise xml:id="exe-8.5">
+              <statement>
+                <p>
+                  If we apply a covariant functor to a diagram, then we get a diagram of the same shape: 
+                </p>
+                <image source='2023_08_28_614593e69373955f3addg-16.jpg'/>
+                <p>
+                  However, if we apply a contravariant functor to the same diagram, we get a similar diagram but with the arrows reversed:
+                </p> 
+                <image source='2023_08_28_614593e69373955f3addg-17.jpg'/>
+              </statement>
+            </exercise>
+
+          </subsection>
+
+          <subsection xml:id="subsec-funcor-props"><title>Properties of Functors</title>
+            
+            <blockquote>
+              <p>
+                <q>
+
+                </q>
+              </p>
+              <attribution></attribution>
+            </blockquote>
+
+            <p>
+              If we think about functors as functions between categories, it's natural to consider what would be the appropriate versions of the notions of injective or surjective.
+            </p>
+
+            <definition xml:id="def-functor-properties">
+              <statement>
+                <p>
+                  A covariant functor <m>F: \mathscr{C} \longrightarrow \mathscr{D}</m> between locally small categories is
+                  <ul>
+                    <li>
+                      <p>
+                        <em>faithful</em> if all the functions of sets
+                        <me>
+                          \begin{gathered}
+                          \operatorname{Hom}_{\mathscr{C}}(A, B) \longrightarrow \operatorname{Hom}_{\mathscr{D}}(F(A), F(B)) \\
+                          f \longmapsto F(f)
+                          \end{gathered}
+                        </me>
+                        are injective.
+                      </p>
+                    </li>
+              
+                    <li>
+                      <p>
+                        <em>full</em> if all the functions of sets
+                        <me>
+                          \begin{gathered}
+                          \operatorname{Hom}_{\mathscr{C}}(A, B) \longrightarrow \operatorname{Hom}_{\mathscr{D}}(F(A), F(B)) \\
+                          f \longmapsto F(f)
+                          \end{gathered}
+                        </me>
+                        are surjective.
+                      </p>
+                    </li>
+              
+                    <li>
+                      <p>
+                        <em>fully faithful</em> if it is full and faithful.
+                      </p>
+                    </li>
+              
+                    <li>
+                      <p>
+                        <em>essentially surjective</em> if every object <m>d</m> in <m>\mathscr{D}</m> is isomorphic to <m>F c</m> for <m>c</m> in <m>\mathscr{C}</m>.
+                      </p>
+                    </li>
+            
+                    <li>
+                      <p>
+                        an <em>embedding</em> if it is fully faithful and injective on objects.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </statement>
+            </definition>
+
+            <example><title>Forgetfull Functor is Faithful</title>
+              <p>
+                The forgetful functor <m>R</m><m>\mod</m> <m>\longrightarrow</m> <m>\Set</m> is faithful since any two maps of <m>R</m>-modules with the same source and target coincide if and only if they are the same function of sets. 
+                This functor is not full, since there not every functions between the underlying sets of two <m>R</m>-modules is an <m>R</m>-module homomorphism.
+              </p>
+            </example>
+
+            <remark>
+              <p>
+                A fully faithful functor is not necessarily injective on objects, but it is injective on objects up to isomorphism.
+              </p>
+            </remark>
+
+            <exercise xml:id="exe-9">
+              <statement>
+                <p>
+                  Show that every fully faithful functor <m>\mathscr{C} \longrightarrow \mathscr{D}</m> reflects isos:
+                  <ol>
+                    <li>
+                      <p>
+                        If <m>f</m> is an arrow in <m>\mathscr{C}</m> such that <m>F (f )</m> is an iso, then <m>f</m> is an iso.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If <m>F (X)</m> and <m>F (Y )</m> are isomorphic, then the objects <m>X</m> and <m>Y</m> are isomorphic in <m>\mathscr{C}</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </exercise>
+
+            <remark>
+              <p>
+                A subcategory <m>\mathscr{C}</m> of <m>\mathscr{D}</m> is <em>full</em> if the inclusion functor <m>\mathscr{C} \longrightarrow \mathscr{D}</m> is full.
+              </p>
+            </remark>
+
+            <example><title>Full Subcategories</title>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      The category <m>\mathbf{A b}</m> of abelian groups is a full subcategory of <m>\Grp</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      The category whose objects are all sets and with arrows all bijections is a subcategory of <m>\Set</m> that is not full. 
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+
+          </subsection>
+
+          <subsection xml:id="subsec-hom-functors"><title>The <m>\Hom</m> Functors</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  
+                </q>
+              </p>
+              <attribution></attribution>
+            </blockquote>
+
+            <p>
+              To close this section, here are the two of the most important functors we will discuss this semester:
+            </p>
+
+            <definition xml:id="def-hom-functor"><title><m>\Hom</m> Functors</title>
+              <statement>
+                <p>
+                  Let <m>\mathscr{C}</m> be a locally small category. 
+                  An object <m>A</m> in <m>\mathscr{C}</m> induces two <m>\Hom</m> functors:
+                  <ul>
+                    <li>
+                      <p>
+                        The covariant functor <m>\operatorname{Hom}_{\mathscr{C}}(A,-): \mathscr{C} \longrightarrow</m> Set is defined as follows:
+                      </p>
+                      <image source="2023_08_28_614593e69373955f3addg-18(1).jpg"/>
+                      <p>
+                        We may refer to this functor as the covariant functor represented by <m>A</m>. 
+                        Given an arrow <m>f</m> in <m>\mathscr{C}</m>, we write <m>f_{*}:=\operatorname{Hom}_{\mathscr{C}}(A, f)</m>. 
+                        It is easier to see what <m>f_{*}</m> does through the following commutative diagram:
+                        <me>
+                          f_{*}=\operatorname{Hom}_{\mathscr{C}}(A, f):
+                        </me>
+                      </p>
+                      <image source="2023_08_28_614593e69373955f3addg-18(3).jpg" width="30%"/>
+                    </li>
+                  
+                    <li>
+                      <p>
+                        The contravariant functor <m>\operatorname{Hom}_{\mathscr{C}}(-, B): \mathscr{C} \longrightarrow\Set</m> is defined as follows:
+                      </p>
+                      <image source="2023_08_28_614593e69373955f3addg-18(2).jpg"/>
+                      <p>
+                        We may refer to this functor as the contravariant functor represented by <m>B</m>. 
+                        Given an arrow <m>f</m> in <m>\mathscr{C}</m>, we write <m>f^{*}:=\operatorname{Hom}_{\mathscr{C}}(A,-)</m>. 
+                        It is easier to see what <m>f^{*}</m> does through the following commutative diagram:
+                        <me>
+                          f^{*}=\operatorname{Hom}_{\mathscr{C}}(f, B):
+                        </me>
+                      </p>
+                      <image source="2023_08_28_614593e69373955f3addg-18.jpg" width="30%"/>
+                    </li>
+                  </ul>
+                </p>
+              </statement>
+            </definition>
+
+            <exercise xml:id="exe-10">
+              <statement>
+                <p>
+                  Check that <m>\operatorname{Hom}(A,-)</m> and <m>\operatorname{Hom}(-, B)</m> are indeed functors.
+                </p>
+              </statement>
+            </exercise>
+      
+            <p>
+              We will be particularly interested in the <m>\Hom</m>-functors in the category <m>R</m><m>\mod</m>, which we will study in detail in a later chapter.
+            </p>
+          </subsection>
+
+          <conclusion>
+            <p>
+              Functors we will be using:
+              Hom, tensor, homology, localization
+            </p>
+          </conclusion>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+                  Functors are generalizatons of functions that allow us to move between categories. 
+                  They can be either covariant or contravariant.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Two extremely important functors are the <m>\Hom</m> functors.
+                </p>
+              </li>
+            </ul>
+          </outcomes>
+
+        </section>
+
+        <section xml:id="sec-natural-transformations"><title>Natural Transformations</title>
+
+          <objectives>
+            <ul>
+              <li>
+                Definitions: functor, hom sets, diagram, hom functors
+              </li>
+            </ul>
+          </objectives>
+
+          <subsection xml:id="subsec-natural"><title>Natural Transformations</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  The beauty of the natural world lies in the details.
+                </q>
+              </p>
+              <attribution>Natalie Angier</attribution>
+            </blockquote>
+            
+            <definition xml:id="def-natural-transformation">
+              <statement>
+                <p>
+                  Let <m>F</m> and <m>G</m> be covariant functors <m>\mathscr{C} \longrightarrow \mathscr{D}</m>. 
+                  A <em>natural transformation</em> between <m>F</m> and <m>G</m> is a mapping that to each object <m>A</m> in <m>\mathscr{C}</m> assigns an arrow <m>\eta_{A} \in \operatorname{Hom}_{\mathscr{D}}(F(A), G(A))</m> such that for all <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m>, the diagram
+                </p>
+                <image source="2023_08_28_614593e69373955f3addg-19(1).jpg" width="30%"/>
+                <p>
+                  commutes. 
+                  A natural isomorphism is a <em>natural transformation</em> <m>\eta</m> where each <m>\eta_{A}</m> is an isomorphism. 
+                  We sometimes write
+                </p>
+                <image source="2023_08_28_614593e69373955f3addg-19(2).jpg" width="30%"/>
+                <p>
+                  or simply <m>\eta: F \Longrightarrow G</m>.
+                </p>
+
+                <p>
+                  Let <m>F</m> and <m>G</m> be contravariant functors <m>\mathscr{C} \longrightarrow \mathscr{D}</m>. 
+                  A natural transformation between <m>F</m> and <m>G</m> is a mapping that to each object <m>A</m> in <m>\mathscr{C}</m> assigns an arrow <m>\eta_{A} \in \operatorname{Hom}_{\mathscr{D}}(F(A), G(A))</m> such that for all <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m>, the diagram
+                </p>
+                <image source="2023_08_28_614593e69373955f3addg-19.jpg" width="30%"/>
+                <p>
+                  commutes.
+                </p>
+              </statement>
+            </definition>
+
+            <p>
+              Often, when studying a particular topic, we sometimes say a certain map is natural to mean that there is actually a natural transformation behind it.
+            </p>
+
+            <example>
+              <p>
+                Recall the abelianization functor we discussed in Example 1.26. 
+                The abelianization comes equipped with a natural projection map <m>\pi_{G}: G \longrightarrow G^{\text {ab }}</m>, the usual quotient map from <m>G</m> to a normal subgroup. 
+                Here we mean natural in two different ways: both that this is common sense map to consider, and that this is in fact coming from a natural transformation. 
+                What's happening behind the scenes is that abelianization is a functor <m>ab: \Grp\longrightarrow \Grp</m>. 
+                On objects, the abelianizations functor is defined as <m>G \mapsto G^{\text {ab }}</m>. 
+                Given an arrow, meaning a group homomorphism <m>G \stackrel{f}{\rightarrow} H</m>, one can check that <m>[G, G]</m> is contained in the kernel of <m>\pi_{H} f</m>, so <m>\pi_{H} f</m> factors through <m>G^{\text {ab }}</m>, and there exists a group homomorphism <m>f^{\mathrm{ab}}</m> making the following diagram commute:
+              </p>
+              <image source="2023_08_28_614593e69373955f3addg-19(3).jpg" width="30%"/>
+              <p>
+                So the abelianization functor takes the arrow <m>f</m> to <m>f^{\text {ab }}</m>. 
+                The commutativity of the diagram above says that <m>\pi_{-}</m>is a natural transformation between the identity functor on <m>\Grp</m> and the abelianization functor, which we can write more compactly as
+                <me>
+                  \operatorname{Grp} \underset{\frac{\mathrm{id}}{\Downarrow \pi}}{\stackrel{\mathrm{ab}}{\longrightarrow}} \operatorname{Grp}.
+                </me>
+              </p>
+            </example>
+
+            <definition xml:id="def-functor-category"><title>Functor Category</title>
+              <statement>
+                <p>
+                  Let <m>F, G: \mathscr{C} \longrightarrow \mathscr{D}</m> be two functors between the categories <m>\mathscr{C}</m> and <m>\mathscr{D}</m>. 
+                  We write
+                  <me>
+                    \operatorname{Nat}(F, G)=\{\text { natural transformations } F \longrightarrow G\}.
+                  </me>
+                </p>
+          
+                <p>
+                  Given two categories <m>\mathscr{C}</m> and <m>\mathscr{D}</m>, one can build a <em>functor category</em>
+                  <fn>Yes, the madness is neverending.</fn>
+                  with objects all covariant functors <m>\mathscr{C} \longrightarrow \mathscr{D}</m>, and arrows the corresponding natural transformations. 
+                  This category is denoted <m>\mathscr{D}^{\mathscr{C}}</m>. 
+                  Sometimes one writes <m>\operatorname{Hom}(F, G)</m> for <m>\operatorname{Nat}(F, G)</m>, but we will avoid that, as it might make things even more confusing.
+                </p>
+              </statement>
+            </definition>
+      
+            <p>
+              For the functor category to truly be a category, though, we need to know how to compose natural transformations.
+            </p>
+
+            <remark><title>Composition of Natural Transformations</title>
+              <p>
+                Consider natural transformations
+              </p>
+              <image source="2023_08_28_614593e69373955f3addg-20(3).jpg" width="30%"/>
+              <p>
+                and
+              </p>
+              <image source="2023_08_28_614593e69373955f3addg-20(1).jpg" width="30%"/>
+              <p>
+                We can compose them for form a new natural transformation
+              </p>
+              <image source="2023_08_28_614593e69373955f3addg-20.jpg" width="30%"/>
+              <p>
+                We should think of this composition as happening vertically. 
+                For each object <m>C</m> in <m>\mathscr{C}, \eta \varphi</m> sends <m>C</m> to the arrow <m>F(A) \stackrel{\varphi_{A}}{\longrightarrow} G(A) \stackrel{\eta_{A}}{\longrightarrow} H(A)</m>. 
+                This makes the diagram
+              </p>
+              <image source="2023_08_28_614593e69373955f3addg-20(2).jpg" width="30%"/>
+              <p>
+                commute.
+              </p>
+            </remark>
+
+            <exercise xml:id="exe-11">
+              <statement>
+                <p>
+                  Show that a natural transformation <m>\eta: \mathscr{C} \Longrightarrow \mathscr{D}</m> is a natural isomorphism if and only if there exists a natural transformation <m>\mu: \mathscr{D} \Longrightarrow \mathscr{C}</m> such that <m>\eta \circ \mu</m> is the identity natural isomorphism on <m>G</m> and <m>\mu \circ \eta</m> is the identity natural isomorphism on <m>F</m>.
+                </p>
+              </statement>
+            </exercise>
+
+            <definition xml:id="def-equivalent-categories"><title>Equivalent Categories</title>
+              <statement>
+                <p>
+                  Two categories <m>\mathscr{C}</m> and <m>\mathscr{D}</m> are equivalent if there exist functors <m>F: \mathscr{C} \rightarrow \mathscr{D}</m> and <m>G: \mathscr{D} \rightarrow \mathscr{C}</m> and two natural isomorphisms <m>\alpha: G F \Longrightarrow 1_{\mathscr{C}}</m> and <m>\beta: F G \Longrightarrow 1_{\mathscr{D}}</m>. 
+                  We say that a functor <m>F: \mathscr{C} \rightarrow \mathscr{D}</m> is an equivalence of categories if there exists a functor <m>G</m> and natural isomorphisms <m>\alpha</m> and <m>\beta</m> as above.
+              </p>
+              </statement>
+            </definition>
+
+            <p>
+              If one assumes the Axiom of Choice, this is the right notion of isomorphism of two categories (though not in the categorical sense!); better said, two categories that are equivalent are essentially the same. 
+              Note that this does not mean that there is a bijection between the objects of <m>\mathscr{C}</m> and the objects of <m>\mathscr{D}</m>. 
+              In fact, one can show that a functor is an equivalence of categories if and only if it is fully faithful and essentially surjective - though this fact requires the Axiom of Choice!
+            </p>
+
+            <exercise xml:id="exe-13">
+              <statement>
+                <p>
+                  Let <m>\mathscr{C}</m> be the category with one object <m>C</m> and a unique arrow <m>1_{C}</m>. Let <m>\mathscr{D}</m> be the category with two objects <m>D_{1}</m> and <m>D_{2}</m> and four arrows: 
+                  the identities <m>1_{D_{i}}</m> and two isomorphisms <m>\alpha: D_{1} \rightarrow D_{2}</m> and <m>\beta: D_{2} \rightarrow D_{1}</m>. 
+                  Let <m>\mathscr{E}</m> be the category with two objects <m>E_{1}</m> and <m>E_{2}</m> and only two arrows, <m>1_{E_{1}}</m> and <m>1_{E_{2}}</m>.
+                  <ol>
+                    <li>
+                      <p>
+                        Show that <m>\mathscr{C}</m> and <m>\mathscr{D}</m> are equivalent categories.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Show that <m>\mathscr{C}</m> and <m>\mathscr{E}</m> are not equivalent categories.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </exercise>
+
+          </subsection>
+
+          <subsection xml:id="subsec-yoneda"><title>The Yoneda Lemma</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  If it walks like a duck and homs like a duck, it's naturally isomorphic to a duck.
+                </q>
+              </p>
+              <attribution>Twitter User @_julesh_</attribution>
+            </blockquote>
+            
+            <p>
+              Even though this is only a short introduction to category theory, we would be remiss not to mention the <xref text="title" ref="thm-yoneda"/>, arguably the most important statement in category theory.
+            </p>
+
+            <theorem xml:id="thm-yoneda"><title>Yoneda Lemma</title>
+              <statement>
+                <p>
+                  Let <m>\mathscr{C}</m> be a locally small category, and fix an object <m>A</m> in <m>\mathscr{C}</m>. 
+                  Let <m>F: \mathscr{C} \longrightarrow</m> Set be a covariant functor. 
+                  Then there is a bijection
+                  <me>\operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(A,-), F\right) \stackrel{\gamma}{\longrightarrow} F(A)</me>
+                  Moreover, this correspondence is natural in both <m>A</m> and <m>F</m>.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>\varphi</m> be a natural transformation in <m>\operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(A,-), F\right)</m>. 
+                  The proof of the Yoneda Lemma is essentially the following diagram:
+                </p>
+                <image source="2023_08_28_614593e69373955f3addg-21.jpg"/>
+                <p>
+                  Our bijection will be defined by <m>\gamma(\varphi):=\varphi_{A}\left(1_{A}\right)</m>. 
+                  We should first check that this makes sense: 
+                  arrows in Set are just functions between sets, and so <m>\varphi_{A}</m> is a function of sets <m>\operatorname{Hom}_{\mathscr{C}}(A, A) \longrightarrow F(A)</m>. 
+                  Also, <m>\operatorname{Hom}_{\mathscr{C}}(A, A)</m> is a set that contains at least the element <m>1_{A}</m>, and <m>\varphi_{A}\left(1_{A}\right)</m> is some element in the set <m>F(A)</m>.
+                </p>
+          
+                <p>
+                  Given any fixed <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, X)</m>, the fact that <m>\varphi</m> is a natural transformation translates into the outer commutative diagram. 
+                  In particular, the maps of sets <m>F(f) \varphi_{A}</m> and <m>\varphi_{X} \operatorname{Hom}_{\mathscr{C}}(A, f)</m> coincide, and must in particular take <m>1_{A}</m> to the same element in <m>F(X)</m>. 
+                  This is the commutativity of the inner diagram, with <m>u:=\varphi_{A}\left(1_{A}\right)</m>.
+                </p>
+          
+                <p>
+                  The commutativity of the diagram above says that <m>\varphi</m> is completely determined by <m>\varphi_{A}\left(1_{A}\right)</m>, since for any other object <m>X</m> in <m>\mathscr{C}</m> and any arrow <m>f \in \operatorname{Hom}_{\mathscr{C}}(A, X)</m>, we necessarily have <m>\varphi_{X}(f)=F(f) \varphi_{A}\left(1_{A}\right)</m>. 
+                  In particular, our map <m>\gamma(\varphi)=\varphi_{A}\left(1_{A}\right)</m> is injective. 
+                  Moreover, note that each choice of <m>u \in F(A)</m> gives rise to a different natural transformation <m>\varphi</m> by setting <m>\varphi_{X}(f)=F(f) u</m>. 
+                  So our map <m>\gamma</m> is indeed a bijection.
+                </p>
+          
+                <p>
+                  We now have two naturality statements to prove. 
+                  Naturality in the functor means that given a natural isomorphism <m>\eta: F \longrightarrow G</m>, the diagram
+                </p>
+                <image source="2023_08_28_614593e69373955f3addg-22.jpg" width="50%"/>
+                <p>
+                  commutes. 
+                  Given a natural transformation <m>\varphi</m> between <m>\operatorname{Hom}_{\mathscr{C}}(A,-)</m> and <m>F</m>,
+                  <me>
+                    \begin{array}{rlr}
+                    \eta_{A} \circ \gamma_{F}(\varphi) &amp; =\eta_{A}\left(\varphi_{A}\left(1_{A}\right)\right) &amp; \text { by definition of } \gamma \\
+                    &amp; =(\eta \circ \varphi)_{A}\left(1_{A}\right) &amp; \text { by definition of composition of natural transformations } \\
+                    &amp; =\gamma_{G}(\eta \circ \varphi) &amp; \text { by definition of } \gamma \\
+                    &amp; =\gamma_{G} \circ \eta_{*}(\varphi) &amp; \text { by definition of } \eta_{*}
+                    \end{array}
+                  </me>
+                  so commutativity does hold. 
+                  Naturality on the object means that given an arrow <m>f: A \longrightarrow B</m>, the diagram
+                </p>
+                <image source="2023_08_28_614593e69373955f3addg-22(1).jpg" width="50%"/>
+                <p>
+                  commutes. 
+                  Given a natural transformation <m>\varphi</m> between <m>\operatorname{Hom}_{\mathscr{C}}(A,-)</m> and <m>F</m>,
+                  <me>
+                    F(f) \circ \gamma_{A}(\varphi)=F(f)\left(\varphi_{A}\left(1_{A}\right)\right)
+                  </me>
+                  while
+                  <me>
+                    \gamma_{B} \circ\left(f^{*}\right)^{*}(\varphi)=\gamma_{B}\left(\varphi \circ f^{*}\right)=\left(\varphi \circ f^{*}\right)_{B}\left(1_{B}\right)
+                  </me>
+                  Now notice that
+                  <me>
+                    \begin{array}{r}
+                    \operatorname{Hom}_{\mathscr{C}}(B, B) \stackrel{f^{*}}{\longrightarrow} \operatorname{Hom}_{\mathscr{C}}(A, B) \stackrel{\varphi_{B}}{\longrightarrow} F(B) . \\
+                    1_{B} \longmapsto f \longmapsto \varphi_{B}(f)
+                    \end{array}
+                  </me>
+                </p>
+
+                <p>
+                  Let's look back at the big commutative diagram we started our proof with: it says in particular that <m>\varphi_{B}(f)=F(f)\left(\varphi_{A}\left(1_{A}\right)\right)</m>. 
+                  So commutativity does hold, and we are done. 
+                </p>
+              </proof>
+            </theorem>
+
+            <p>
+              One can naturally (pun intended) define the notion of functor category of contravariant functors, and then prove the corresponding <xref text="title" ref="thm-yoneda"/>, which will instead use the contravariant Hom functor.
+            </p>
+
+            <exploration><title>Contravariant version of the Yoneda Lemma</title>
+              <p>
+                Let <m>\mathscr{C}</m> be a locally small category, and fix an object <m>B</m> in <m>\mathscr{C}</m>. Let <m>F: \mathscr{C} \longrightarrow</m> Set be a contravariant functor. 
+                Then there is a bijection
+                <me>
+                  \text { Nat }\left(\operatorname{Hom}_{\mathscr{C}}(-, B), F\right) \stackrel{\gamma}{\longrightarrow} F(B).
+                </me>
+              </p>
+            </exploration>
+
+            <p>
+              In a way, the <xref text="title" ref="thm-yoneda"/> says that to give a natural transformation between the functors <m>\operatorname{Hom}_{\mathscr{C}}(A,-)</m> and <m>F</m> is choosing an element in <m>F(A)</m>.
+            </p>
+
+            <remark>
+              <p>
+                Notice that the <xref text="title" ref="thm-yoneda"/> says in particular that the collection of all natural transformations from <m>\operatorname{Hom}_{\mathscr{C}}(A,-)</m> to <m>F</m> is a set. 
+                This wasn't clear a priori, since the collection of objects in <m>\mathscr{C}</m> is not necessarily a set.
+              </p>
+            </remark>
+
+            <remark>
+              <p>
+                If we apply the <xref text="title" ref="thm-yoneda"/> to the case when <m>F</m> itself is also a Hom functor, say <m>F=\operatorname{Hom}_{\mathscr{C}}(B,-)</m>, the <xref text="title" ref="thm-yoneda"/> says that there is a bijection between <m>\operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(A,-), \operatorname{Hom}_{\mathscr{C}}(B,-)\right)</m> and <m>\operatorname{Hom}_{\mathscr{C}}(B, A)</m>. 
+                In particular, each arrow in <m>\mathscr{C}</m> determines a natural transformation between Hom functors.
+              </p>
+            </remark>
+      
+            <p>
+              One of the consequences of the <xref text="title" ref="thm-yoneda"/> is the Yoneda Embedding, which roughly says that every locally small category can be embedded into the category of contravariant functors from <m>\mathscr{C}</m> to Set. 
+              In particular, the Yoneda embedding says that natural transformations between representable functors correspond to arrows between the representing objects.
+            </p>
+
+            <theorem xml:id="thm-yondea-embedding"><title>Yoneda Embedding</title>
+              <statement>
+                <p>
+                  Let <m>\mathscr{C}</m> be a locally small category. The covariant functor
+                </p>
+                <image source="2023_08_28_614593e69373955f3addg-23(1).jpg" width="50%"/>
+                <p>
+                  from <m>\mathscr{C}</m> to the category of contravariant functors <m>\mathscr{C} \longrightarrow</m> Set is an embedding. 
+                  Moreover, the contravariant functor 
+                </p>
+                <image source="2023_08_28_614593e69373955f3addg-23.jpg" width="50%"/>
+                <p>
+                  from the category <m>\mathscr{C}</m> to the category of covariant functors <m>\mathscr{C} \longrightarrow</m> Set is also an embedding.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  First, note that our functors are injective on objects because the <m>\Hom</m>-sets in our category are all disjoint. 
+                  We need to check that given objects <m>A</m> and <m>B</m> in <m>\mathscr{C}</m>, we have bijections
+                  <me>
+                    \operatorname{Hom}_{\mathscr{C}}(A, B) \cong \operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(-, A), \operatorname{Hom}_{\mathscr{C}}(-, B)\right)
+                  </me>
+                  and
+                  <me>
+                    \operatorname{Hom}_{\mathscr{C} \text { op }}(A, B) \cong \operatorname{Nat}\left(\operatorname{Hom}_{\mathscr{C}}(A,-) \operatorname{Hom}_{\mathscr{C}}(B,-)\right).
+                  </me>
+                </p>
+          
+                <p>
+                  We will do the details for the first one, and leave the second as an exercise.
+                </p>
+          
+                <p>
+                  First, let us take a sanity check and confirm that indeed our proposed functors take arrows <m>f: A \longrightarrow B</m> in <m>\mathscr{C}</m> to natural transformations between <m>\operatorname{Hom}_{\mathscr{C}}(-, A)</m> and <m>\operatorname{Hom}_{\mathscr{C}}(-, B)</m>. 
+                  This is essentially the content of Remark 1.43, but let's carefully check the details. 
+                  The <xref text="title" ref="thm-yoneda"/> applied here tells us that each natural transformation <m>\varphi</m> between <m>\mathrm{Hom}_{\mathscr{C}}(-, A)</m> and <m>F=\operatorname{Hom}_{\mathscr{C}}(-, B)</m> corresponds to an element <m>u \in \operatorname{Hom}_{\mathscr{C}}(A, B)</m>, which we obtain by taking <m>u:=\varphi_{A}\left(1_{A}\right)</m>. 
+                  As we discussed in the proof of the <xref text="title" ref="thm-yoneda"/>, we can recover <m>\varphi</m> from <m>u</m> by taking the natural transformation <m>\varphi</m> that for each object <m>X</m> in <m>\mathscr{C}</m> has <m>\varphi_{X}: \operatorname{Hom}_{\mathscr{C}}(X, A) \longrightarrow \operatorname{Hom}_{\mathscr{C}}(X, B)</m> given by <m>\varphi_{X}(f)=\operatorname{Hom}_{\mathscr{C}}(f, B)(u)=f_{*}(u)</m>.
+                </p>
+          
+                <p>
+                  We can see that different arrows <m>f</m> give rise to different natural transformations by applying the resulting natural transformation <m>f_{;} *</m> to the identity arrow <m>1_{A}</m>, which takes it to <m>f</m>. 
+                  Moreover, the <xref text="title" ref="thm-yoneda"/> tells us that every natural transformation <m>\varphi</m> between <m>\operatorname{Hom}_{\mathscr{C}}(-, A)</m> and <m>\operatorname{Hom}_{\mathscr{C}}(-, B)</m> is the image of some <m>u</m>, as described above.
+                </p>
+              </proof>
+            </theorem>
+      
+            <p>
+              The functors that are naturally isomorphic to some Hom functor are important.
+            </p>
+
+            <definition xml:id="def-representable-functor">
+              <statement>
+                <p>
+                  A covariant functor <m>F: \mathscr{C} \longrightarrow \Set</m> is <em>representable</em> if there exists an object <m>A</m> in <m>\mathscr{C}</m> such that <m>F</m> is naturally isomorphic to <m>\operatorname{Hom}_{\mathscr{C}}(A,-)</m>. 
+                  A contravariant functor <m>F: \mathscr{C} \longrightarrow \Set</m> is <em>representable</em> if there exists an object <m>B</m> in <m>\mathscr{C}</m> such that <m>F</m> is naturally isomorphic to <m>\operatorname{Hom}_{\mathscr{C}}(-, B)</m>.
+                </p>
+              </statement>
+            </definition>
+
+            <example>
+              <p>
+                We claim that the identity functor Set <m>\longrightarrow</m> Set is representable. 
+                Let 1 be a singleton set. 
+                Given any set <m>X</m>, there is a bijection between elements <m>x \in X</m> and functions <m>\mathbf{1} \longrightarrow X</m> sending the one element in <m>\mathbf{1}</m> to each <m>x</m>. 
+                Moreover, given any other set <m>Y</m>, and a function <m>f: X \longrightarrow Y</m>, our bijections make the following diagram commute:
+              </p>
+              <image source="2023_08_28_614593e69373955f3addg-24.jpg" width="30%"/>
+              <p>
+                This data gives a natural isomorphism between the identity functor and <m>\operatorname{Hom}_{\text {Set }}(\mathbf{1},-)</m>.
+              </p>
+            </example>
+
+            <exercise xml:id="exe-14">
+              <statement>
+                <p>
+                  Show that the forgetful functor <m>\Grp \longrightarrow \Set</m> is representable.
+                </p>
+              </statement>
+            </exercise>
+
+            <exercise xml:id="exe-15">
+              <statement>
+                <p>
+                  Given a ring <m>R</m>, show that the forgetful functor <m>R\Mod \longrightarrow \Set</m> is representable.
+                </p>
+              </statement>
+            </exercise>
+
+            <p>
+              A representable functor encodes a universal property of the object that represents it. 
+              For example, in Example 1.46, mapping out of the singleton set is the same as choosing an element <m>x</m> in a set <m>X</m>. 
+              We have all seen constructions that are at first a bit messy but that end up satisfying some nice universal property that makes everything work out. 
+              At the end of the day, a universal property allows us to ignore the messy details and focus on the universal property, which usually says everything we need to know about the construction. 
+              And as you may have already realized, universal properties are everywhere. 
+              Before we give a formal definition, we want to discuss some important examples.
+            </p>
+
+          </subsection>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+
+                </p>
+              </li>
+            </ul>
+          </outcomes>
           
         </section>
 
