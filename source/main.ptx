@@ -24898,10 +24898,369 @@
 
         <section xml:id="sec-mathis"><title>Mathis Duality</title>
 
-          <p></p>
-          
-        </section>
+          <p>
+            In the previous worksheet, we encountered the Matlis duality functor in a special setting. 
+            We define it the same way in general.
+          </p>
+
+          <definition xml:id="def-2.34-2">
+            <statement>
+              <p>
+                Definition 2.34. Let <m>(R, \mathfrak{m}, k)</m> be a local ring. 
+                The Matlis duality functor is <m>(-)^{\vee}=\operatorname{Hom}_{R}\left(-, E_{R}(k)\right)</m>.
+              </p>
+            </statement>
+          </definition>
+    
+          <p>
+            We expect this functor to behave like vector space duality <m>\operatorname{Hom}_{k}(-, k)</m>. 
+            A more homological motivation for this functor is given by the fact hom into an injective is exact, and the only indecomposable injective into which every module could admit a nonzero map is <m>E_{R}(k)</m>.
+          </p>
+    
+          <p>
+            We hope/expect this to be a duality in some sense. 
+            The following lemma gives a few first ways in which this is true.
+          </p>
+
+          <lemma xml:id="lem-2.35-2">
+            <statement>
+              <p>
+                Let <m>(R, \mathfrak{m}, k)</m> be a local ring and <m>M</m> be an <m>R</m>-module. 
+                Then
+                <ol>
+                  <li>
+                    <p>
+                      the natural map <m>M \rightarrow M^{\vee \vee}</m> is injective,
+                    </p>
+                  </li>
         
+                  <li>
+                    <p>
+                      <m>\ell\left(M^{\vee}\right)=\ell(M)</m>, and
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      if <m>\ell(M)&lt;\infty</m>, then <m>M \cong M^{\vee \vee}</m>.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                For nonzero <m>x \in M</m> set <m>L=R x \subseteq M</m>, and consider the composed map <m>L \rightarrow L / \mathfrak{m} L \cong</m> <m>K \rightarrow E_{R}(k)</m>. 
+                This map extends to a homomorphism of <m>R</m>-modules <m>\epsilon: M \rightarrow E_{R}(k)</m> with <m>\epsilon(x) \neq 0</m>.
+                <ol>
+                  <li>
+                    <p>
+                      First, we assume that <m>\ell(M)</m> is finite, and induce on length. 
+                      Note that <m>k</m> is the only simple module over <m>R</m>, and thus the subquotients in any decomposition series are isomorphic to <m>k</m>.
+                      Therefore, if <m>\ell(M)=1</m>, then <m>M \cong k</m>, and the result follows from <m>\operatorname{Hom}_{R}(k, E(k)) \cong k</m>. When <m>\ell(M) \geqslant 2</m>, the composition series of <m>M</m> gives an exact sequence
+                      <me>0 \longrightarrow L \longrightarrow M \longrightarrow k \longrightarrow 0</me>
+                      Since length is additive on exact sequences, <m>\ell(L)=\ell(M)-1</m>. 
+                      By induction hypothesis, <m>\ell\left(L^{\vee}\right)=\ell(L)</m>. 
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      On the other hand, since <m>(-)^{\vee}</m> is an exact functor, applying <m>(-)^{\vee}</m> to the short exact sequence above yields a short exact sequence
+                      <me>0 \longrightarrow k \longrightarrow M^{\vee} \longrightarrow L^{\vee} \longrightarrow 0 \text {. }</me>
+                    </p>
+
+                    <p>
+                      By additivity of <m>\ell</m> on this short exact sequence, <m>\ell\left(M^{\vee}\right)=\ell\left(L^{\vee}\right)+1</m>. 
+                      Thus <m>\ell\left(M^{\vee}\right)=\ell(L)+1=</m> <m>\ell(M)</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      From the first two parts, we have that <m>M \rightarrow M^{\vee \vee}</m> is injective, and <m>\ell(M)=\ell\left(M^{\vee \vee}\right)</m>, so the map must be surjective as well.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </proof>
+          </lemma>
+
+          <remark>
+            <p>
+              Remark 2.36. 
+              The natural map "evaluate at" from <m>M</m> to <m>M^{\vee \vee}</m> commmutes with double-duals: given <m>f: M \rightarrow N</m>, the diagram
+            </p>
+            <image source="2023_12_05_e2b943b5b28c6794a270g-037.jpg"/>
+            <p>
+              commutes.
+            </p>
+          </remark>
+    
+          <p>
+            Our goal now is to bootstrap up this duality from the finite length case to local rings in general. 
+            The following statement on compatibility of injective hulls will be the key.
+          </p>
+
+          <theorem xml:id="thm-2.37-2">
+            <statement>
+              <p>
+                Let <m>\varphi:(R, \mathfrak{m}, k) \longrightarrow(S, \mathfrak{n}, \ell)</m> be a local homomorphism of local rings. 
+                If <m>S</m> is module-finite over the image of <m>R</m>, then <m>\operatorname{Hom}_{R}\left(S, E_{R}(k)\right)=E_{S}(\ell)</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                We ahve that <m>S / \mathfrak{m} S \cong S \otimes_{R} k</m> has finite length, so <m>\mathfrak{m} S</m> is <m>\mathfrak{n}</m>-primary. 
+                Since some power of <m>\mathfrak{n}</m> is contained in <m>\mathfrak{m} S</m>, and <m>E_{R}(k)</m> is <m>\mathfrak{m}</m>-torsion, <m>\operatorname{Hom}_{R}\left(S, E_{R}(k)\right)</m> is <m>\mathfrak{n}</m>-torsion as an <m>S</m>-module. 
+                It is also injective by Lemma ??. 
+                Thus, by the structure theorem, it is isomorphic to some number of copies of <m>E_{S}(\ell)</m>. 
+                We know that this number of copies is the <m>\ell</m>-vector space dimension of <m>\operatorname{Hom}_{S}\left(\ell, \operatorname{Hom}_{R}\left(S, E_{R}(k)\right)\right)</m>. 
+                Consider the isomorphisms
+                <me>
+                  \begin{aligned}
+                  \operatorname{Hom}_{S}\left(\ell, \operatorname{Hom}_{R}\left(S, E_{R}(k)\right)\right) &amp; \cong \operatorname{Hom}_{R}\left(\ell \otimes_{S} S, E_{R}(k)\right) \\
+                  &amp; \cong \operatorname{Hom}_{R}\left(\ell \otimes_{k} k, E_{R}(k)\right) \\
+                  &amp; \cong \operatorname{Hom}_{k}\left(\ell, \operatorname{Hom}_{R}\left(k, E_{R}(k)\right)\right) \\
+                  &amp; \cong \operatorname{Hom}_{k}(\ell, k) .
+                  \end{aligned}
+                </me>
+                The last hom module is a one-dimensional <m>\ell</m>-vector space, so <m>\operatorname{Hom}_{R}\left(S, E_{R}(k)\right) \cong E_{S}(\ell)</m>.
+              </p>
+            </proof>
+          </theorem>
+
+          <remark>
+            <p>
+              Remark 2.38. 
+              Let <m>(R, \mathfrak{m}, k)</m> be a local ring. 
+              For each ideal <m>I</m> in <m>R</m>, the theorem above implies that the injective hull of <m>k</m> over <m>R / I</m> is <m>\left(0:_{E_{R}(k)} I\right)</m>. 
+              In particular, since <m>E_{R}(k)</m> is <m>\mathfrak{m}</m>-torsion, one has
+              <me>E_{R}(k)=\bigcup_{t}\left(0:_{E_{R}(k)} \mathfrak{m}^{t}\right)=\bigcup_{t} E_{R / \mathfrak{m}^{t}}(k)</me>
+            </p>
+          </remark>
+
+          <remark>
+            <p>
+              Remark 2.39. 
+              Let <m>(R, \mathfrak{m})</m> is local, and <m>M</m> is an <m>\mathfrak{m}</m>-torsion <m>R</m>-module, then <m>M</m> is naturally a <m>\widehat{R}</m> module: 
+              if <m>\mathfrak{m}^{n} x=0</m>, and <m>\widehat{r} \in \widehat{R}</m>, take some <m>r \in R</m> such that <m>r-\widehat{r} \in \mathfrak{m}^{n}</m>, and set <m>\widehat{r} m=r m</m>. 
+              One sees easily that this action is well-defined, and additionally, that any <m>R</m>-linear endomorphism of <m>M</m> is also an <m>\widehat{R}</m>-linear endomorphism.
+            </p>
+          </remark>
+
+          <theorem xml:id="thm-2.40-2">
+            <statement>
+              <p>
+                Theorem 2.40. 
+                Let <m>(R, \mathfrak{m}, k)</m> be a local ring, <m>\widehat{R}</m> its <m>\mathfrak{m}</m>-adic completion, and <m>E=E_{R}(k)</m>. 
+                Then,
+                <ol>
+                  <li>
+                    <p>
+                      <m>E_{\widehat{R}}(k)=E</m>, and
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      there is an isomorphism of <m>\widehat{R}</m>-modules:
+                      <me>
+                        \begin{aligned}
+                        &amp; \widehat{R} \longrightarrow R^{\vee \vee}=\operatorname{Hom}_{R}(E, E) . \\
+                        &amp; r \longmapsto(e \mapsto r e)
+                        \end{aligned}
+                      </me>
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                The containment <m>k \subseteq E</m> is an essential extension of <m>R</m>-modules, and thus of <m>\widehat{R}</m>-modules as well. 
+                Given an essential extension <m>E \subseteq M</m> of <m>\widehat{R}</m>-modules, <m>M</m> must be <m>\mathfrak{m}</m>-torsion, since it has the same associated primes (just <m>\mathfrak{m}</m> ). 
+                Therefore, <m>R m=\widehat{R} m</m> for each <m>m \in M</m>, which implies that <m>E \subseteq M</m> is also an essential extension of <m>R</m>-modules. 
+                Hence <m>M=E</m>, and we conclude that <m>E=E_{\widehat{R}}(k)</m>.
+              </p>
+        
+              <p>
+                Since <m>E</m> is <m>\mathfrak{m}</m>-torsion, <m>\operatorname{Hom}_{\widehat{R}}(E, E)=\operatorname{Hom}_{R}(E, E)</m>, so we may assume that <m>\widehat{R}</m> is complete for the rest of the proof. 
+                Then, we can identify the given map <m>R \rightarrow R^{\vee \vee}</m> with the natural map <m>r \mapsto(\phi \mapsto \phi(r))</m>. 
+                Hence, this map is injective.
+              </p>
+        
+              <p>
+                When <m>R</m> is artinian, <m>\ell(R)&lt;\infty</m>, so the map <m>R \rightarrow R^{\vee \vee}</m> is an isomorphism.
+              </p>
+        
+              <p>
+                For each <m>i \geqslant 1</m>, set <m>R_{i}:=R / \mathfrak{m}^{i}</m>. 
+                The <m>R_{i}</m>-module <m>E_{i}=\left(0:_{E} \mathfrak{m}^{i}\right)</m> is the injective hull of <m>k</m> as an <m>R_{i}</m>-module. 
+                For each <m>\varphi \in \operatorname{Hom}_{R}(E, E), \varphi\left(E_{i}\right) \subseteq E_{i}</m>, and thus <m>\varphi</m> restricts to an element of <m>\operatorname{Hom}_{R_{i}}\left(E_{i}, E_{i}\right)=R_{i}</m>, where the equality holds because <m>R_{i}</m> is artinian. 
+                Consequently, <m>\varphi</m> restricted to <m>E_{i}</m> is multiplication by an element <m>\overline{r_{i}} \in R_{i}</m>, with <m>r_{i+1}-r_{i} \in \mathfrak{m}^{i}</m>. 
+                Thus <m>\varphi</m> is multiplication by the element <m>\varliminf_{\longleftarrow} r_{i}</m> in <m>R</m>.
+              </p>
+            </proof>
+          </theorem>
+
+          <remark>
+            <p>
+              Remark 2.41. 
+              We have a pretty concrete idea of what any injective module in any noetherian ring looks like now. 
+              They are direct sums of modules <m>E_{R}(R / \mathfrak{p})</m> for primes <m>\mathfrak{p}</m>, and
+              <m>E_{R}(R / \mathfrak{p}) \cong E_{R_{\mathfrak{p}}}\left(R_{\mathfrak{p}} / \mathfrak{p} R_{\mathfrak{p}}\right) \cong E_{\widehat{R_{\mathfrak{p}}}}\left(\widehat{R_{\mathfrak{p}}} / \mathfrak{p} \widehat{R_{\mathfrak{p}}}\right) \cong\left\{\begin{array}{l}E_{K \llbracket \underline{x} / I}(K) \cong \operatorname{ann}_{I}\left(E_{K \llbracket \rrbracket}(K)\right) \cong \operatorname{ann}_{I}\left(K\left[\underline{\left.\left.x^{-1}\right]\right)}\right.\right. \\ E_{V \llbracket \underline{x} \rrbracket / I}(V / p V) \cong \operatorname{ann}_{I}\left(E_{V \llbracket \underline{x} \rrbracket}(V / p V)\right) \cong \operatorname{ann}_{I}(\star),\end{array}\right.</m>
+              where <m>K\left[\underline{x^{-1}}\right]</m> is the continuous hom module you described in the worksheet, and <m>\star</m> is the analogous mixed characteristic thing you described in the homework. 
+              Note that <m>K \cong R_{\mathfrak{p}} / \mathfrak{p} R_{\mathfrak{p}}</m>.
+            </p>
+          </remark>
+
+          <definition xml:id="def-2.42-2">
+            <statement>
+              <p>
+                An <m>R</m>-module <m>M</m> is artinian if every descending chain of submodules of <m>M</m> eventually stabilizes.
+              </p>
+            </statement>
+          </definition>
+
+          <p>
+            It is evident that submodules and quotient modules of artinian modules are also artinian. 
+            We recall that artinian rings - rings that satisfy the DCC condition on ideals - are necessarily noetherian, and hence have finite length. 
+            This is not true for modules.
+          </p>
+
+          <corollary xml:id="cor-2.43">
+            <statement>
+              <p>
+                For a local ring <m>(R, \mathfrak{m}, k)</m>, the module <m>E_{R}(k)</m> is artinian.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Consider a chain of submodules <m>E_{R}(k) \supseteq E_{1} \supseteq E_{2} \supseteq \cdots</m>. 
+                Applying the functor <m>(-)^{\vee}</m> yields surjections
+                <me>\widehat{R} \longrightarrow E_{1}^{\vee} \longrightarrow E_{2}^{\vee} \longrightarrow \cdots</me>
+                The ideals <m>\operatorname{ker}\left(\widehat{R} \longrightarrow E_{i}^{\vee}\right)</m> form an ascending chain of ideals, and thus stabilize. 
+                Thus <m>E_{i}^{\vee} \longrightarrow E_{i+1}^{\vee}</m> is an isomorphism for <m>i \gg 0</m>. 
+                Since <m>(-)^{\vee}</m> is faithful, it follows that <m>E_{i}=E_{i+1}</m> for <m>i \gg 0</m>.
+              </p>
+            </proof>
+          </corollary>
+
+          <theorem xml:id="thm-2.44-2">
+            <statement>
+              <p>
+                Let <m>(R, \mathfrak{m}, k)</m> be a local ring and <m>M</m> be an <m>R</m>-module. 
+                The following conditions are equivalent:
+                <ol>
+                  <li>
+                    <p>
+                      <m>M</m> is <m>\mathfrak{m}</m>-torsion and the rank of the socle of <m>M</m> is finite.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>M</m> is an essential extension of a <m>k</m>-vector space of finite rank.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>M</m> can be embedded in a finite direct sum of copies of <m>E_{R}(k)</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>M</m> is artinian.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                The implications <m>(1) \Rightarrow(2) \Rightarrow(3) \Rightarrow(4)</m> are straightforward. 
+                To show <m>(4) \Rightarrow(1)</m>, consider <m>x \in M</m>, and the descending chain <m>R x \supseteq \mathfrak{m} x \supseteq \mathfrak{m}^{2} x \supseteq \cdots</m>, which stabilizes. 
+                Therefore, <m>\mathfrak{m}^{t+1} x=\mathfrak{m}^{t} x</m> for some <m>t</m>, which by NAK implies that <m>\mathfrak{m}^{t} x=0</m>. 
+                Therefore, <m>M</m> is <m>\mathfrak{m}</m>-torsion. 
+                Finally, the socle of <m>M</m> is artinian and a <m>k</m>-vector space, so it must have finite rank.
+              </p>
+            </proof>
+          </theorem>
+
+          <theorem xml:id="thm-2.45"><title>Matlis duality</title>
+            <statement>
+              <p>
+                Let <m>(R, \mathfrak{m}, k)</m> be a complete local ring, and <m>M</m> be an <m>R</m>-module.
+                <ol>
+                  <li>
+                    <p>
+                      If <m>M</m> is noetherian, then <m>M^{\vee}</m> is artinian.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      If <m>M</m> is artinian, then <m>M^{\vee}</m> is noetherian.
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      If <m>M</m> is artinian or noetherian, then the map <m>M \longrightarrow M^{\vee \vee}</m> is an isomorphism.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Write <m>E=E_{R}(k)</m>. 
+                If <m>M</m> is noetherian, consider a presentation
+                <me>R^{m} \longrightarrow R^{n} \longrightarrow M \longrightarrow 0 \text {. }</me>
+                Applying <m>(-)^{\vee}</m>, we get an exact sequence
+                <me>0 \longrightarrow M^{\vee} \longrightarrow E^{n} \longrightarrow E^{m} \text {. }</me>
+              </p>
+        
+              <p>
+                The module <m>\left(R^{n}\right)^{\vee} \cong E^{n}</m> is artinian, hence so is the submodule <m>M^{\vee}</m>. 
+                Applying <m>(-)^{\vee}</m> again, we get the commutative diagram
+              </p>
+        
+              <image source="2023_12_05_e2b943b5b28c6794a270g-040(1).jpg"/>
+               
+              <p>
+                and thus <m>M \cong M^{\vee \vee}</m>.
+              </p>
+        
+              <p>
+                Similarly, if <m>M</m> is artinian, we note that <m>R \cong R^{\vee \vee}</m> implies <m>E \cong R^{\vee} \cong R^{\vee \vee \vee} \cong E^{\vee \vee}</m>. 
+                Embed <m>M</m> into some <m>E^{a}</m>; 
+                since the cokernel is a quotient of an artinian module, hence artinian, we get a left-exact sequence
+                <me>0 \longrightarrow M \longrightarrow E^{a} \longrightarrow E^{b}</me>
+              </p>
+        
+              <p>
+                As before, we obtain a commutative diagram
+              </p>
+        
+              <image source="2023_12_05_e2b943b5b28c6794a270g-040.jpg"/>
+                     
+              <p>
+                and thus <m>M \cong M^{\vee \vee}</m>.
+              </p>
+            </proof>
+          </theorem>
+
+        </section>
       </chapter>
 
       <chapter xml:id="ch-loco"><title>Local Cohomology</title>
@@ -25024,12 +25383,8 @@
               It is easy to see that these isomorphisms are functorial.
             </p>
           </proof>
-    
-    <!-- div attr= class="center"-->
-        <figure>
-          <caption>image</caption>
+
           <image source="2023_12_05_e2b943b5b28c6794a270g-042.jpg"/>
-        </figure><!--</div attr= class="center">-->
 
         <remark>
           <p>
@@ -25125,11 +25480,9 @@
             Example 3.7.
           </p>
       
-      <!-- div attr= class="center"-->
-          <figure>
-            <caption>image</caption>
+      
+            
             <image source="2023_12_05_e2b943b5b28c6794a270g-044.jpg"/>
-          </figure><!--</div attr= class="center">-->
       
           <p>
             As with the Koszul complex, easy inductions show that
@@ -25216,11 +25569,9 @@
               (1) Since <m>\check{C} \bullet(f ; R)</m> consists of flat modules,
             </p>
         
-        <!-- div attr= class="center"-->
-            <figure>
-              <caption>image</caption>
+       
               <image source="Loco/2023_12_05_e2b943b5b28c6794a270g-045.jpg"/>
-        </figure><!--</div attr= class="center">-->
+       
         
             <p>
               is a short exact sequence of complexes, so this induces a long exact sequence in cohomology.
@@ -25357,11 +25708,9 @@
               Then, there is a commutative diagram
             </p>
         
-        <!-- div attr= class="center"-->
-            <figure>
-              <caption>image</caption>
+        
               <image source="Loco/2023_12_05_e2b943b5b28c6794a270g-046.jpg"/>
-        </figure><!--</div attr= class="center">-->
+        
         
             <p>
               where bottom zero on the right comes from Step 2. This induces an isomorphism <m>H_{I}^{i}(M) \cong \check{H}^{i}(f ; M)</m>. 
@@ -25780,7 +26129,8 @@
         <section xml:id="sec-local-duality"><title>Local Duality</title>
 
           <p>
-            Let <m>\mathfrak{m}</m> be the maximal ideal of <m>R</m>. We know that:
+            Let <m>\mathfrak{m}</m> be the maximal ideal of <m>R</m>. 
+            We know that:
             <ul>
               <li>
                 <p>
@@ -25925,7 +26275,7 @@
             <p>
               (Ext-Tor dualities). If <m>(R, \mathfrak{m})</m> be a local ring of dimension <m>d</m>, and let <m>(-)^{\vee}</m> denote the Matlis duality functor.
             </p>
-            <!-- div attr= class="center"-->
+            
           <image source="2023_12_05_e2b943b5b28c6794a270g-056"/>
 
         <p><ol>
@@ -25945,11 +26295,6 @@
           <proof>
             <p>
               Let <m>P_{\bullet}(\longrightarrow M)</m> be a projective resolution of <m>M</m>.
-
-            </p>
-
-            <p>
-              1.
             </p>
         
             <p>
@@ -26011,9 +26356,6 @@
           </statement>
 
           <proof>
-            <p>
-              Proof. 1.
-            </p>
         
             <p>
               <me>\mathrm{H}_{\mathfrak{m}}^{i}(M) \cong \operatorname{Tor}_{d-i}^{R}\left(M, \mathrm{H}_{\mathfrak{m}}^{d}(R)\right) \cong \operatorname{Tor}_{d-i}^{R}\left(M, R^{\vee}\right) \cong \operatorname{Ext}_{R}^{d-i}(M, R)^{\vee} .</me>
@@ -26038,51 +26380,59 @@
         <p>
           One often finds the just the first statement as local duality, but the second "opposite of local duality" is quite useful as well.
         </p>
-    
-        <p>
-          Remark 4.6. By the exact same proof, if <m>R</m> is Cohen-Macaulay and <m>W</m> is some finitely generated module such that <m>W^{\vee} \cong \mathrm{H}_{\mathfrak{m}}^{d}(R)</m>, then
-        </p>
-    
-        <p><ul>
-          <li>
-              <p>
-          If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)=\operatorname{Ext}_{R}^{d-i}(M, W)^{\vee}</m>.
-        </p>
-          </li>
-    
-          <li>
-              <p>
-          If <m>R</m> is complete, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee}=\operatorname{Ext}_{R}^{d-i}(M, W)</m> by the same proof.
-        </p>
-          </li>
-    
-        </ul></p>
-    
+
+        <remark>
+          <p>
+            Remark 4.6. By the exact same proof, if <m>R</m> is Cohen-Macaulay and <m>W</m> is some finitely generated module such that <m>W^{\vee} \cong \mathrm{H}_{\mathfrak{m}}^{d}(R)</m>, then
+          </p>
+          <p><ul>
+            <li>
+                <p>
+            If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)=\operatorname{Ext}_{R}^{d-i}(M, W)^{\vee}</m>.
+          </p>
+            </li>
+      
+            <li>
+                <p>
+            If <m>R</m> is complete, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee}=\operatorname{Ext}_{R}^{d-i}(M, W)</m> by the same proof.
+          </p>
+            </li>
+      
+          </ul></p>
+        </remark>
+
         <p>
           We will return to this later.
         </p>
     
         <p>
-          Local duality is a powerful tool to study local cohomology modules. Part of its power comes from its flexibility: there are many different rings, modules, and indices to plug in. Here are some special cases:
-        </p>
-    
-        <p>
-          Example 4.7. Let <m>(R, \mathfrak{m})</m> be a local ring, and <m>(S, \mathfrak{n})</m> another local ring such that <m>S</m> is regular, and <m>R</m> is a quotient of <m>S</m>. (Such an <m>S</m> exists whenever <m>R</m> is complete, or essentially of finite type over a field or <m>\mathbb{Z}</m>.) Then, since <m>R</m> is a finitely generated <m>S</m>-module, <m>\mathrm{H}_{\mathfrak{m}}^{i}(R) \cong \mathrm{H}_{\mathfrak{n}}^{i}(R) \cong \operatorname{Ext}_{S}^{\operatorname{dim}(S)-i}(R, S)^{\vee}</m> for all <m>i</m>.
-        </p>
-    
-        <p>
-          Example 4.8. Let <m>(R, \mathfrak{m}) \rightarrow(S, \mathfrak{n})</m> be a map of complete local rings, and suppose that <m>R</m> is regular, e.g., a power series ring over a field <m>K</m>. Then, <m>\mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(S)^{\vee} \cong \operatorname{Hom}_{R}(S, R)</m>.
-        </p>
-    
-        <p>
-          Here is an important application of Local Duality. Note that we are not assuming that <m>R</m> is regular in the statement.
+          Local duality is a powerful tool to study local cohomology modules. 
+          Part of its power comes from its flexibility: there are many different rings, modules, and indices to plug in. 
+          Here are some special cases:
         </p>
 
-        <theorem xml:id="thm-4.9-2">
+        <example>
+          <p>
+            Example 4.7. Let <m>(R, \mathfrak{m})</m> be a local ring, and <m>(S, \mathfrak{n})</m> another local ring such that <m>S</m> is regular, and <m>R</m> is a quotient of <m>S</m>. (Such an <m>S</m> exists whenever <m>R</m> is complete, or essentially of finite type over a field or <m>\mathbb{Z}</m>.) Then, since <m>R</m> is a finitely generated <m>S</m>-module, <m>\mathrm{H}_{\mathfrak{m}}^{i}(R) \cong \mathrm{H}_{\mathfrak{n}}^{i}(R) \cong \operatorname{Ext}_{S}^{\operatorname{dim}(S)-i}(R, S)^{\vee}</m> for all <m>i</m>.
+          </p>
+        </example>
+
+        <example>
+          <p>
+            Example 4.8. Let <m>(R, \mathfrak{m}) \rightarrow(S, \mathfrak{n})</m> be a map of complete local rings, and suppose that <m>R</m> is regular, e.g., a power series ring over a field <m>K</m>. Then, <m>\mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(S)^{\vee} \cong \operatorname{Hom}_{R}(S, R)</m>.
+          </p>
+        </example>
+
+        <p>
+          Here is an important application of Local Duality. 
+          Note that we are not assuming that <m>R</m> is regular in the statement.
+        </p>
+
+        <theorem xml:id="thm-4.9-2"><title>Grothendieck Nonvanishing</title>
           <statement>
             <p>
-              Theorem 4.9 (Grothendieck nonvanishing). Let <m>(R, \mathfrak{m}, k)</m> be a local ring and <m>M</m> a finitely generated <m>R</m>-module. Then <m>\operatorname{cd}(\mathfrak{m}, M)=\operatorname{dim}(M)</m>.
-
+              Let <m>(R, \mathfrak{m}, k)</m> be a local ring and <m>M</m> a finitely generated <m>R</m>-module. 
+              Then <m>\operatorname{cd}(\mathfrak{m}, M)=\operatorname{dim}(M)</m>.
             </p>
           </statement>
 
@@ -26128,30 +26478,628 @@
             </p>
           </proof>
         </theorem>
-    
+
+        <remark>
+          <p>
+            Remark 4.10. 
+            A consequence of this argument, by taking <m>M=R / I</m>, is that if <m>R</m> is a regular local ring (or any ring for which Local Duality holds!) there are equalities for any ideal <m>I \subset R</m> :
+          </p>
+      
+          <p>
+            <me>\operatorname{depth}_{I}(R)=\operatorname{height}(I)=\operatorname{dim}(R)-\operatorname{dim}(R / I)</me>
+          </p>
+      
+          <p>
+            Of course, these can be obtained more directly (for Cohen-Macaulay rings).
+          </p>
+        </remark>
+
         <p>
-          Remark 4.10. A consequence of this argument, by taking <m>M=R / I</m>, is that if <m>R</m> is a regular local ring (or any ring for which Local Duality holds!) there are equalities for any ideal <m>I \subset R</m> :
-        </p>
-    
-        <p>
-          <me>\operatorname{depth}_{I}(R)=\operatorname{height}(I)=\operatorname{dim}(R)-\operatorname{dim}(R / I)</me>
-        </p>
-    
-        <p>
-          Of course, these can be obtained more directly (for Cohen-Macaulay rings).
-        </p>
-    
-        <p>
-          Following Remark ??, we should be able to generalize local duality, so that we can compute local cohomology as duals of Ext modules over rings that are more relevant. The best generalization would be in the case of a Cohen-Macaulay local ring <m>R</m> such that <m>R^{\vee} \cong \mathrm{H}_{\mathfrak{m}}^{d}(R)</m>. Failing that, we would like to understand when a f.g. module <m>K</m> such that <m>K^{\vee} \cong H_{\mathfrak{m}}^{d}(R)</m> exists over a CM local ring, and how else we might recognize such a <m>K</m>.
+          Following Remark ??, we should be able to generalize local duality, so that we can compute local cohomology as duals of Ext modules over rings that are more relevant. 
+          The best generalization would be in the case of a Cohen-Macaulay local ring <m>R</m> such that <m>R^{\vee} \cong \mathrm{H}_{\mathfrak{m}}^{d}(R)</m>. 
+          Failing that, we would like to understand when a f.g. module <m>K</m> such that <m>K^{\vee} \cong H_{\mathfrak{m}}^{d}(R)</m> exists over a CM local ring, and how else we might recognize such a <m>K</m>.
         </p>
           
         </section>
 
         <section xml:id="sec-gorenstein"><title>Gorenstein Rings</title>
 
-          <p>
+          <subsection xml:id="subsec-gorenstein"><title>Gorenstein</title>
             
+            <p>
+              Now, we pursue the injective analogues of the questions we addressed in the Section on Auslander, Buchsbaum, and Serre: 
+              What is the injective dimension of a finitely generated module when it is finite? 
+              Are there natural conditions on a ring that ensure finite injective dimension for all, or for some reasonable class, of finitely generated modules? 
+              To start, we make an observation about Bass numbers.
+            </p>
+
+            <definition xml:id="def-4.11-2">
+              <statement>
+                <p>
+                  Definition 4.11. The injective dimension of a finitely generated <m>R</m>-module <m>M</m>, denoted <m>\operatorname{injdim}_{R}(M)</m>, is the length of its minimal injective resolution. Note that any injective resolution of <m>M</m> has length at least equal to that of the minimal injective resoltuion, since a Bass number can be computed as an Ext, whose nonvanishing implies nonvanishing in that spot for any injective resolution.
+                </p>
+              </statement>
+            </definition>
+
+            <proposition xml:id="prop-4.12-2">
+              <statement>
+                <p>
+                  Proposition 4.12. Let <m>R</m> be noetherian, and <m>M</m> finitely generated. If <m>\mu_{i, \mathfrak{p}}(M) \neq 0</m>, for some prime <m>\mathfrak{p}</m>, then <m>\mu_{i+1, \mathfrak{q}}(M) \neq 0</m> for all <m>\mathfrak{q}</m> with <m>\mathrm{ht}(\mathfrak{q} / \mathfrak{p})=1</m>.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Proof. Since Bass numbers behave well under localization, we can localize at <m>\mathfrak{q}</m>, and assume that <m>\operatorname{dim}(R / \mathfrak{p})=1</m>. Pick <m>x \in \mathfrak{q} \backslash \mathfrak{p}</m>. From the SES
+                </p>
+          
+                <p>
+                  <me>0 \rightarrow R / \mathfrak{p} \stackrel{x}{\longrightarrow} R / \mathfrak{p} \rightarrow R /(\mathfrak{p}+(x)) \rightarrow 0</me>
+                </p>
+          
+                <p>
+                  we get the LES
+                </p>
+          
+                <p>
+                  <me>\cdots \rightarrow \operatorname{Ext}_{R}^{i}(R / \mathfrak{p}, M) \stackrel{x}{\longrightarrow} \operatorname{Ext}_{R}^{i}(R / \mathfrak{p}, M) \rightarrow \operatorname{Ext}_{R}^{i+1}(R /(\mathfrak{p}+(x)), M) \rightarrow \cdots</me>
+                </p>
+          
+                <p>
+                  Suppose that <m>\mu_{i+1, \mathfrak{q}}(M)=0</m>. Then, <m>\operatorname{Ext}_{R}^{i+1}(R / \mathfrak{q}, M)=0</m>. The module <m>R /(\mathfrak{p}+(x))</m> has finite length, and an induction on length (similar arguments we saw earlier) shows that <m>\operatorname{Ext}_{R}^{i+1}(R /(\mathfrak{p}+(x)), M)=</m> 0 as well. It then follows by NAK that <m>\operatorname{Ext}_{R}^{i}(R / \mathfrak{p}, M)=0</m>, so <m>\mu_{i, \mathfrak{p}}(M)=0</m>.
+                </p>
+              </proof>
+            </proposition>
+
+            <corollary xml:id="cor-4.13-2">
+              <statement>
+                <p>
+                  Corollary 4.13. Let <m>R</m> be noetherian, and <m>M</m> a finitely generated <m>R</m>-module.
+                </p>
+          
+                <p><ol>
+                  <li>
+                        <p>
+                  <m>\operatorname{injdim}_{R}(M)=\max \left\{i \mid \operatorname{Ext}_{R}^{i}(R / \mathfrak{m}, M) \neq 0, \mathfrak{m}\right.</m> a maximal ideal <m>\}</m>.
+                </p>
+                  </li>
+          
+                  <li>
+                        <p>
+                  <m>\operatorname{injdim}_{R}(M) \geq \operatorname{dim}(M)</m>.
+                </p>
+                  </li>
+          
+                </ol></p>
+              </statement>
+
+              <proof>
+                <p>
+                  Proof. The first statement is clear. For the second, we recall that the associated primes of <m>M</m> are the same as those of <m>E_{R}(M)</m>, so the zeroth Bass numbers are nonzero for the associated primes of <m>M</m>. Then, we are guaranteed a chain of Bass numbers as long as <m>\operatorname{dim}(M)=\max \{\operatorname{dim}(R / \mathfrak{p}) \mid \mathfrak{p} \in</m> <m>\operatorname{Ass}(M)\}</m>.
+                </p>
+              </proof>
+            </corollary>
+
+            <p>
+              The following is the injective analogue of Auslander-Buchsbaum.
+            </p>
+
+            <theorem xml:id="thm-4.14-2">
+              <statement>
+                <p>
+                  Let <m>(R, \mathfrak{m}, k)</m> be a local ring, and <m>M</m> a finitely generated module. If <m>M</m> has finite injective dimension, then <m>\operatorname{injdim}_{R}(M)=\operatorname{depth}(R)</m>.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Proof. Set <m>e=\operatorname{injdim}_{R}(M)</m> and <m>d=\operatorname{depth}(R)</m>. Let <m>\underline{x}=x_{1}, \ldots, x_{d}</m> be a maximal <m>R</m>-sequence.
+                </p>
+          
+                <p>
+                  To see <m>e \geq d</m>, compute <m>\operatorname{Ext}_{R}^{d}(R / \underline{x} R, M)</m> by the Koszul complex: this is <m>H^{d}(\underline{x} ; M)=M / \underline{x} M \neq 0</m>, so the injective resolution of <m>M</m> is at least this long.
+                </p>
+          
+                <p>
+                  To see <m>e \leq d</m>, we can take a SES <m>0 \rightarrow k \rightarrow R / \underline{x} R \rightarrow C \rightarrow 0</m> and the LES
+                </p>
+          
+                <p>
+                  <me>\cdots \rightarrow \operatorname{Ext}_{R}^{e}(R / \underline{x} R, M) \rightarrow \operatorname{Ext}_{R}^{e}(k, M) \rightarrow \operatorname{Ext}_{R}^{e+1}(C, M) \rightarrow \cdots</me>
+                </p>
+          
+                <p>
+                  From the definition of <m>e</m>, the last term vanishes. Then, by Corollary ??(1), <m>\operatorname{Ext}_{R}^{e}(k, M) \neq 0</m>, so <m>\operatorname{Ext}_{R}^{e}(R / \underline{x} R, M) \neq 0</m>. Thus, <m>e \leq \operatorname{pd}(R / \underline{x} R)=d</m>.
+                </p>
+              </proof>
+            </theorem>
+      
+            <p>
+              We now pursue an analogue of Auslander-Buchsbaum-Serre. 
+              Here is one such statement:
+            </p>
+
+            <remark>
+              <p>
+                Remark 4.15. 
+                Let <m>(R, \mathfrak{m}, k)</m> be local. 
+                If <m>\operatorname{injdim}_{R}(k)&lt;\infty</m>, then <m>R</m> is regular (and conversely). 
+                Indeed, we know <m>\operatorname{injdim}_{R}(k)=\max \left\{t \mid \operatorname{Ext}_{R}^{t}(k, k) \neq 0\right\}</m>. 
+                If we take a minimal resolution <m>P_{\bullet} \rightarrow k</m>, the maps in <m>\operatorname{Hom}_{R}\left(P_{\bullet}, k\right)</m> are all zero, so <m>\operatorname{Ext}_{R}^{t}(k, k) \cong k^{\beta_{t}}</m>. 
+                Thus, <m>k</m> has finite injective dimension if and only if it has finite projective dimension.
+              </p>
+            </remark>
+
+            <definition xml:id="def-4.16-2">
+              <statement>
+                <p>
+                  Definition 4.16 (Gorenstein local ring). 
+                  A local ring <m>(R, \mathfrak{m}, k)</m> is Gorenstein if for every system of parameters <m>x_{1}, \ldots, x_{d}</m>,
+                </p>
+          
+                <p><ul>
+                  <li>
+                        <p>
+                  <m>x_{1}, \ldots, x_{d}</m> is a regular sequence (so <m>R</m> is <m>C M</m> )
+                </p>
+                  </li>
+          
+                  <li>
+                        <p>
+                  the ideal <m>\left(x_{1}, \ldots, x_{d}\right)</m> is irreducible: it cannot be written as <m>I \cap J</m> for <m>I, J \supsetneq\left(x_{1}, \ldots, x_{d}\right)</m>.
+                </p>
+                  </li>
+          
+                </ul></p>
+              </statement>
+            </definition>
+      
+            <p>
+              This class of rings can be characterized in many ways. 
+              Bass was the first to point this out, and to illustrate to importance of this class of rings. 
+              We will start this pursuit with artinian rings.
+            </p>
+
+            <theorem xml:id="thm-4.17-2">
+              <statement>
+                <p>
+                  Let <m>(R, \mathfrak{m}, k)</m> be an artinian local ring. TFAE:
+                </p>
+          
+                <p><ol>
+                  <li>
+                        <p>
+                  <m>R</m> is Gorenstein: (0) is irreducible
+                </p>
+                  </li>
+          
+                  <li>
+                        <p>
+                  <m>\operatorname{dim}_{k}(\operatorname{soc}(R))=1</m>
+                </p>
+                  </li>
+          
+                  <li>
+                        <p>
+                  <m>E_{R}(k) \cong R</m>
+                </p>
+                  </li>
+          
+                  <li>
+                        <p>
+                  <m>\operatorname{injdim}_{R}(R)&lt;\infty</m>
+                </p>
+                  </li>
+          
+                </ol></p>
+          
+                <p>
+                  4’) <m>R</m> is an injective <m>R</m>-module
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Proof. (1) <m>\Rightarrow(2)</m> : Given two linearly independent elements <m>f, g</m> in the socle, <m>(f) \cap(g)=0</m>.
+                </p>
+          
+                <p>
+                  <m>(2) \Rightarrow(1): R</m> is <m>\mathfrak{m}</m>-torsion, hence is an essential extension of its socle, so any ideal contains a nonzero element there. If the socle is 1-dimensional, any ideal contains the whole socle.
+                </p>
+          
+                <p>
+                  <m>(2) \Rightarrow(3): R</m> is an essential extension of <m>k</m>, so it embeds into <m>E_{R}(k)</m>. Since <m>\ell(R)=\ell\left(R^{\vee}\right)=</m> <m>\ell\left(E_{R}(k)\right)</m>, this is an isomorphism.
+                </p>
+          
+                <p>
+                  <m>(3) \Rightarrow(2)</m> : The socle of <m>E</m> is a copy of <m>k</m>.
+                </p>
+          
+                <p>
+                  <m>(3) \Rightarrow\left(4^{\prime}\right)</m> : Trivial.
+                </p>
+          
+                <p>
+                  <m>\left(4^{\prime}\right) \Rightarrow(3)</m> : The only injectives are copies of <m>E</m>, and <m>R</m> is an indecomposable module, so this is the only option from the structure theory.
+                </p>
+          
+                <p>
+                  <m>\left(4^{\prime}\right) \Rightarrow(4)</m> : Trivial.
+                </p>
+          
+                <p>
+                  <m>(4) \Rightarrow\left(4^{\prime}\right)</m> : Because injective dimension is the depth.
+                </p>
+              </proof>
+            </theorem>
+            
+            <p>
+              We note that if <m>R</m> is artinian, then it contains a copy of <m>k</m>, and we can reinterpret (3) as saying that <m>R \cong \operatorname{Hom}_{k}(R, k)</m>.
+            </p>
+      
+            <p>
+              We now want to extend this theorem to higher dimensions. We will use another theorem of Rees on Ext.
+            </p>
+
+            <theorem xml:id="thm-4.18-2">
+              <statement>
+                <p>
+                  Let <m>M, N</m> be <m>R</m>-modules, and <m>x \in \operatorname{ann}(M)</m> be <m>R</m>-regular and <m>N</m>-regular. 
+                  Then <m>\operatorname{Ext}_{R}^{i+1}(M, N) \cong \operatorname{Ext}_{R / x R}^{i}(M, N / x N)</m> for all <m>i \geq 0</m>.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Proof. We will apply the same strategy as in the Fundamental Theorem of Local Cohomology to see that for the left-exact functor <m>F(-)=\operatorname{Hom}_{R / x R}(-, N / x N)</m> from <m>R / x R</m>-modules to <m>R / x R</m> modules, its right derived functors are <m>R^{i} F(-)=\operatorname{Ext}_{R}^{i+1}(-, N)</m>. Note that <m>M</m> is an <m>R / x R</m>-module by hypothesis. By definition, <m>R^{i} F(-)=\operatorname{Ext}_{R / x R}^{i}(M, N / x N)</m>, so this will establish the theorem.
+                </p>
+          
+                <p>
+                  Step 1: The functors agree when <m>i=0</m>. Indeed, for the SES of <m>R</m>-modules <m>0 \rightarrow N \stackrel{x}{\longrightarrow} N \rightarrow</m> <m>N / x N \rightarrow 0</m>, there is an LES
+                </p>
+          
+                <p>
+                  <me>\cdots \rightarrow \operatorname{Hom}_{R}(M, N) \rightarrow \operatorname{Hom}_{R}(M, N / x N) \rightarrow \operatorname{Ext}_{R}^{1}(M, N) \stackrel{x}{\longrightarrow} \operatorname{Ext}_{R}^{1}(M, N) \rightarrow \cdots</me>
+                </p>
+          
+                <p>
+                  We observe that <m>\operatorname{Hom}_{R}(M, N)=0</m> (any element in <m>M</m> has to map to something killed by <m>x</m> ), that <m>\operatorname{Hom}_{R}(M, N / x N)=\operatorname{Hom}_{R / x R}(M, N / x N)</m> (since both sides are killed by <m>x</m> ), and <m>x</m> kills <m>\operatorname{Ext}_{R}^{1}(M, N)</m> (since it kills <m>M</m> ). The specified isomorphism follows.
+                </p>
+          
+                <p>
+                  Step 2: <m>\operatorname{Ext}_{R}^{i+1}(-, N)</m> vanishes for free <m>R / x R</m>-modules for <m>i&gt;0</m>. Indeed, a free <m>R / x R</m>-module has a free <m>R</m>-resolution of length one, so computing the Ext from this resolution shows the vanishing.
+                </p>
+          
+                <p>
+                  Step 3: This follows in the same way as Step 3 of the Fundamental Theorem of Local Cohomology. We leave this as an exercise.
+                </p>
+              </proof>
+            </theorem>
+
+            <theorem xml:id="thm-4.19-2">
+              <statement>
+                <p>
+                  Theorem 4.19. Let <m>(R, \mathfrak{m}, k)</m> be a local ring of dimension <m>d</m>. TFAE:
+                </p>
+          
+                <p><ol>
+                  <li>
+                        <p>
+                  <m>R</m> is Gorenstein
+                </p>
+                  </li>
+          
+                </ol></p>
+          
+                <p>
+                  1’) <m>R</m> is <m>C M</m> and some <m>S O P</m> generates an irreducible ideal
+                </p>
+          
+                <p><ol>
+                  <li>
+                        <p>
+                  <m>\operatorname{Ext}_{R}^{i}(k, R) \cong \begin{cases}0 &amp; i&lt;d \\ k &amp; i=d\end{cases}</m>
+                </p>
+                  </li>
+          
+                  <li>
+                        <p>
+                  <m>R</m> is <m>C M</m> and <m>\mathrm{H}_{\mathfrak{m}}^{d}(R) \cong E_{R}(k)</m>.
+                </p>
+                  </li>
+          
+                  <li>
+                        <p>
+                  <m>\operatorname{injdim}_{R}(R)&lt;\infty</m>
+                </p>
+                  </li>
+          
+                </ol></p>
+          
+                <p>
+                  4’) <m>\operatorname{injdim}_{R}(R)=d</m>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Proof. First we want to observe that every condition implies that <m>R</m> is Cohen-Macaulay. For (2), this is due to Rees’s theorem on depth and Ext (the one from a while ago). For (4), and consequently for <m>(4 ')</m>, this follows from <m>\operatorname{dim}(R) \leq \operatorname{injdim}_{R}(R)=\operatorname{depth}(R)</m>. For the others, this is explicit. We assume that <m>R</m> is Cohen-Macaulay henceforth.
+                </p>
+          
+                <p>
+                  <m>(1) \Rightarrow\left(1^{\prime}\right)</m> : trivial
+                </p>
+          
+                <p>
+                  <m>\left(1^{\prime}\right) \Rightarrow(2)</m> : The Ext vanishings follow from <m>\mathrm{CM}</m> as noted above. Now, let <m>(\underline{x})</m> be the given irreducible parameter ideal. The zero ideal in <m>R /(\underline{x})</m> is then irreducible, and by the artinian case, <m>\operatorname{Hom}_{R / \underline{x} R}(k, R / \underline{x} R) \cong k</m>. Applying the previous theorem <m>d</m> times, we obtain that <m>\operatorname{Ext}_{R}^{d}(k, R) \cong k</m>.
+                </p>
+          
+                <p>
+                  <m>(2) \Rightarrow(1)</m> : Given any SOP <m>\underline{x}</m> of <m>R</m>, as in the previous implication (backwards), we see that <m>\operatorname{Hom}_{R / \underline{x} R}(k, R / \underline{x} R) \cong k</m>, and apply the artinian case to see that <m>(0)</m> is irreducible in <m>R / \underline{x} R</m>, so <m>(\underline{x})</m> is irreducible in <m>R</m>.
+                </p>
+          
+                <p>
+                  As a consequence of these implications, we see that if <m>R</m> is Gorenstein local, and <m>\underline{x}</m> a SOP, then <m>R</m> is Gorenstein iff <m>R / \underline{x} R</m> is.
+                </p>
+          
+                <p>
+                  <m>(1) \Rightarrow\left(4^{\prime}\right) \Rightarrow(4) \Rightarrow(1)</m> : Applying Rees’s recent theorem again, we find that if <m>\underline{x}</m> is an SOP, then
+                </p>
+          
+                <p>
+                  <m>\operatorname{injdim}_{R}(R)=\max \left\{t \mid \operatorname{Ext}_{R}^{t}(k, R) \neq 0\right\}=d+\max \left\{t \mid \operatorname{Ext}_{R / \underline{x} R}^{t}(k, R / \underline{x} R) \neq 0\right\}=d+\operatorname{injdim}_{R / \underline{x} R}(R / \underline{x} R)</m>.
+                </p>
+          
+                <p>
+                  Then, <m>R</m> is Gorenstein implies <m>R / \underline{x} R</m> is too, and that it has injective dimension zero (by the artinian case), so <m>R</m> has injective dimension <m>d</m>. If <m>R</m> has finite injective dimension, so does <m>R / \underline{x} R</m>, so it is Gorenstein, and <m>R</m> is too.
+                </p>
+          
+                <p>
+                  <m>(2)+\left(4^{\prime}\right) \Rightarrow(3)</m> : By <m>(2)</m>, know that <m>\mu_{i, \mathfrak{m}}(R)</m> is zero for <m>i&lt;d</m> and is one for <m>i=d</m>; by (4) it is zero for <m>i&gt;d</m>. Thus, taking <m>\Gamma_{\mathfrak{m}}</m> of an injective resolution of <m>R</m> leaves just one copy of <m>E_{R}(k)</m> in cohomological degree <m>d</m>.
+                </p>
+          
+                <p>
+                  <m>(3) \Rightarrow(2)</m> : Again, the Ext vanishing is a consequence of Cohen-Macaulayness. By the Lemma on ascending Bass numbers, <m>\operatorname{Ext}_{R}^{d}(k, R) \neq 0</m>. In the Theorem characterizing Bass numbers in terms of Ext, we saw that if <m>E^{\bullet}</m> is an injective resolution of <m>R, \operatorname{Hom}_{R}\left(k, E^{\bullet}\right)</m> has vanishing differentials; this was explicitly stated and established as a claim. This means that, in a minimal injective resolution, any socle element is in the kernel of the differential. Now consider <m>\Gamma_{\mathfrak{m}}\left(E^{\bullet}\right)</m>. This is zero up to cohomological dimension <m>d</m>. Then, we have
+                </p>
+          
+                <p>
+                  <me>0 \rightarrow E_{R}(k)^{\oplus \mu_{d, \mathfrak{m}}} \stackrel{d}{\longrightarrow} E_{R}(k)^{\oplus \mu_{d+1, \mathfrak{m}}} \rightarrow \cdots</me>
+                </p>
+          
+                <p>
+                  and <m>k^{\oplus \mu_{d, \mathfrak{m}}} \cong \operatorname{soc}\left(E_{R}(k)^{\oplus \mu_{d, \mathfrak{m}}}\right) \subseteq \operatorname{ker}(d)=\mathrm{H}_{\mathfrak{m}}^{d}(R)</m>.
+                </p>
+              </proof>
+            </theorem>
+
+            <p>
+              The following is now evident from the remark after the proof of Local Duality for regular rings.
+            </p>
+
+            <corollary xml:id="cor-4.20-2">
+              <statement>
+                <p>
+                  Corollary 4.20 (Local Duality for Gorenstein rings). Let <m>(R, \mathfrak{m}, k)</m> be a Gorenstein local ring of dimension <m>d</m>. Then
+                </p>
+          
+                <p><ol>
+                  <li>
+                        <p>
+                  If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)=\operatorname{Ext}_{d-i}^{R}(M, R)^{\vee}</m>.
+                </p>
+                  </li>
+          
+                  <li>
+                        <p>
+                  If <m>R</m> is complete and <m>M</m> is arbitrary, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee}=\operatorname{Ext}_{d-i}^{R}(M, R)</m>.
+                </p>
+                  </li>
+          
+                </ol></p>
+          
+                <p>
+                  These isomorphisms are functorial in <m>M</m>.
+                </p>
+              </statement>
+            </corollary>
+
+          </subsection>
+    
+          <subsection xml:id="worksheet-on-gorenstein-rings"><title>Worksheet on Gorenstein rings</title>
+    
+          <p>
+            <ol>
+              <li>
+                  <p>
+            Let <m>(R, \mathfrak{m}, k)</m> be a local ring. Show <m>{ }^{1}</m> the following:
           </p>
+            </li>
+    
+          </ol></p>
+    
+          <p>
+            (a) <m>R</m> is Gorenstein if and only if <m>\widehat{R}</m> is Gorenstein.
+          </p>
+    
+          <p>
+            (b) If <m>x_{1}, \ldots, x_{i}</m> is a regular sequence, then <m>R</m> is Gorenstein if and only if <m>R /\left(x_{1}, \ldots, x_{i}\right)</m> is Gorenstein.
+          </p>
+    
+          <p>
+            (c) If <m>R</m> is Gorenstein, and <m>\mathfrak{p} \in \operatorname{Spec}(R)</m>, then <m>R_{\mathfrak{p}}</m> is Gorenstein.
+          </p>
+
+          <definition xml:id="def-4.21-2">
+            <statement>
+              <p>
+                Definition 4.21. A local ring <m>(R, \mathfrak{m}, k)</m> is a complete intersection if there is a surjection from a complete regular local ring <m>S</m> onto <m>\widehat{R}</m> with the kernel generated by a regular sequence.
+              </p>
+            </statement>
+          </definition>
+
+          <remark>
+            <p>
+              Remark 4.22. The following are equivalent:
+            </p>
+      
+            <p><ul>
+              <li>
+                    <p>
+              <m>R</m> is a complete intersection;
+            </p>
+              </li>
+      
+              <li>
+                    <p>
+              For every <m>{ }^{2}</m> surjection from a complete RLR <m>S \rightarrow \widehat{R}</m>, the kernel is generated by a regular sequence;
+            </p>
+              </li>
+      
+            </ul></p>
+      
+            <p>
+              and IF there exists a surjection from an RLR onto <m>R</m> itself,
+            </p>
+      
+            <p><ul>
+              <li>
+                    <p>
+              For every surjection from an RLR <m>S \rightarrow R</m>, the kernel is generated by a regular sequence.
+            </p>
+              </li>
+      
+            </ul></p>
+          </remark>
+
+          <p>
+            Not all of these equivalences are obvious, but we will use them freely.
+          </p>
+    
+          <p><ol>
+            <li>
+                  <p>
+            Show that if <m>R</m> is a complete intersection, then <m>R</m> is Gorenstein.
+          </p>
+            </li>
+    
+            <li>
+                  <p>
+            Let <m>K</m> be a field. For each of the following rings <m>R</m> determine: Is <m>R</m> Gorenstein? Is <m>R</m> CohenMacaulay? Is <m>R</m> a complete intersection? Reuse your work from old worksheets and HW when convenient.
+          </p>
+            </li>
+    
+          </ol></p>
+    
+          <p>
+            (a) <m>R=\frac{K \llbracket x, y \rrbracket}{\left(x^{2}, x y\right)}</m>.
+          </p>
+    
+          <p>
+            (b) <m>R=\frac{K \llbracket x, y, z \rrbracket}{(x y, x z, y z)}</m>.
+          </p>
+    
+          <p>
+            (c) <m>R=\frac{K \llbracket x, y, z \rrbracket}{\left(x^{2}, y^{2}, z^{2}, x(y-z),(x-y) z\right)}</m>.
+          </p>
+    
+          <p>
+            (d) <m>R=\frac{K\left[X_{2 \times 3}\right]_{\mathfrak{m}}}{I_{2}\left(X_{2 \times 3}\right)}</m>, where <m>\mathfrak{m}</m> is the ideal generated by the entries of <m>X</m>. 
+
+          </p>
+    
+          <p>
+            (e) <m>R=K[x, y]_{\mathfrak{m}}^{(2)}</m>, where <m>\mathfrak{m}</m> is the ideal generated by the positive degree forms.
+          </p>
+    
+          <p>
+            (f) <m>R=K[x, y]_{\mathfrak{m}}^{(3)}</m>, where <m>\mathfrak{m}</m> is the ideal generated by the positive degree forms.
+          </p>
+    
+          <p>
+            (g) <m>R=K[x, y, z]_{\mathfrak{m}}^{(3)}</m>, where <m>\mathfrak{m}</m> is the ideal generated by the positive degree forms.
+          </p>
+    
+          <p><ol>
+            <li>
+                  <p>
+            Let <m>(R, \mathfrak{m})</m> and <m>(S, \mathfrak{n})</m> be two complete Gorenstein local rings, with <m>R=S / I</m>.
+          </p>
+            </li>
+    
+          </ol></p>
+    
+          <p>
+            (a) Use Local Duality to show that <m>\operatorname{Ext}_{S}^{t}(R, S)= \begin{cases}0 &amp; t&lt;\operatorname{dim}(S)-\operatorname{dim}(R) \\ R &amp; t=\operatorname{dim}(S)-\operatorname{dim}(R)\end{cases}</m>
+          </p>
+    
+          <p>
+            (b) Suppose moreover that <m>S</m> is regular. Let <m>P_{\bullet} \rightarrow R</m> be the minimal free resolution of <m>R</m> as an <m>S</m>-module. Show that, <m>P_{\bullet} \cong \operatorname{Hom}_{S}\left(P_{\bullet}, S\right)</m>
+          </p>
+    
+    <!-- div attr= class="CJK"-->
+          <p>
+            UTF8mj渄
+          </p><!--</div attr= class="CJK">-->
+    
+          <p>
+            (c) With the same assumptions as in the previous part, show that <m>\operatorname{Tor}_{i}^{S}(R, M) \cong \operatorname{Ext}_{S}^{i}(R, M)</m> for all <m>S</m>-modules <m>M</m>.
+          </p>
+    
+          <p><ol>
+            <li>
+                  <p>
+            A numerical semigroup is a subsemigroup <m>S</m> of <m>\mathbb{N}</m>; our convention is that <m>0 \in S</m>. A numerical semigroup ring is a ring of the form <m>K[S]:=K\left[\left\{x^{s} \mid s \in S\right\}\right] \subseteq K[x]</m>. Assume that the GCD of the elements in <m>S</m> is 1 . Then, there is a largest number <m>f_{S} \in \mathbb{N}</m> such that <m>f_{S} \notin S</m>, called the Frobenius number of <m>S</m>.
+          </p>
+            </li>
+    
+          </ol></p>
+    
+          <p>
+            (a) Show that <m>\mathrm{H}_{\mathfrak{m}}^{1}(K[S])</m> is generated as a <m>K</m> vector space by <m>\left\{x^{a} \mid a \leq f_{S} \text { and } a \notin S\right\} !^{5}</m>
+          </p>
+    
+          <p>
+            (b) Show that <m>K[S]_{\mathfrak{m}}</m> is Gorenstein if and only if
+          </p>
+    
+          <p>
+            <me>\left\{c \mid 0 \leq c \leq f_{S}, c \notin S\right\}=\left\{f_{S}-d \mid 0 \leq d \leq f_{S}, d \in S\right\}</me>
+          </p>
+    
+          <p>
+            (c) Check this criterion with <m>K \llbracket x^{3}, x^{7} \rrbracket, K \llbracket x^{3}, x^{5}, x^{7} \rrbracket</m>, and <m>K \llbracket x^{4}, x^{5}, x^{6} \rrbracket</m>.
+          </p>
+    
+          <p><ol>
+            <li>
+                  <p>
+            Show that if <m>R</m> is a Gorenstein local ring, and <m>M</m> is a finitely generated <m>R</m>-module, then <m>M</m> has finite projective dimension if and only if <m>M</m> has finite injective dimension.
+          </p>
+            </li>
+    
+          </ol></p>
+    
+          <p>
+            We summarize some implications and non-implications on the structural properties of local rings we have encountered:
+          </p>
+    
+          <p>
+            <me>\text { regular } \Rightarrow \text { complete intersection } \Rightarrow \text { Gorenstein } \Rightarrow \text { Cohen-Macaulay }</me>
+          </p>
+    
+          <p>
+            complete intersection <m>\nRightarrow</m> regular: <m>K[x] /\left(x^{2}\right), K\left[x^{2}, x y, y^{2}\right], \frac{K[x, y, z, u, v, w]}{\left(u^{2}+v^{2}+w^{2}, x^{2}+y^{2}+z^{2}\right)}, \ldots</m>
+          </p>
+    
+          <p>
+            Gorenstein <m>\nRightarrow</m> complete intersection: <m>R=\frac{K \llbracket x, y, z \rrbracket}{\left(x^{2}, y^{2}, z^{2}, x(y-z),(x-y) z\right)}, R=K[x, y, z]_{\mathfrak{m}}^{(3)}, \ldots</m>
+          </p>
+    
+          <p>
+            Cohen-Macaulay <m>\nRightarrow</m> Gorenstein: <m>R=\frac{K \llbracket x, y, z \rrbracket}{(x y, x z, y z)}, R=\frac{K\left[X_{2 \times 3}\right]_{\mathfrak{m}}}{I_{2}\left(X_{2 \times 3}\right)}, K \llbracket x^{3}, x^{5}, x^{7} \rrbracket, \ldots</m>
+          </p>
+
+          </subsection>
           
         </section>
 

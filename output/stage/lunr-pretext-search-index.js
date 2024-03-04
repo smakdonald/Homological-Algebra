@@ -8593,7 +8593,115 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "18.3",
   "title": "Mathis Duality",
-  "body": "Mathis Duality   "
+  "body": "Mathis Duality  In the previous worksheet, we encountered the Matlis duality functor in a special setting. We define it the same way in general.    Definition 2.34. Let be a local ring. The Matlis duality functor is .    We expect this functor to behave like vector space duality . A more homological motivation for this functor is given by the fact hom into an injective is exact, and the only indecomposable injective into which every module could admit a nonzero map is .  We hope\/expect this to be a duality in some sense. The following lemma gives a few first ways in which this is true.    Let be a local ring and be an -module. Then   the natural map is injective,     , and    if , then .       For nonzero set , and consider the composed map  . This map extends to a homomorphism of -modules with .   First, we assume that is finite, and induce on length. Note that is the only simple module over , and thus the subquotients in any decomposition series are isomorphic to . Therefore, if , then , and the result follows from . When , the composition series of gives an exact sequence Since length is additive on exact sequences, . By induction hypothesis, .    On the other hand, since is an exact functor, applying to the short exact sequence above yields a short exact sequence   By additivity of on this short exact sequence, . Thus  .    From the first two parts, we have that is injective, and , so the map must be surjective as well.        Remark 2.36. The natural map \"evaluate at\" from to commmutes with double-duals: given , the diagram   commutes.   Our goal now is to bootstrap up this duality from the finite length case to local rings in general. The following statement on compatibility of injective hulls will be the key.    Let be a local homomorphism of local rings. If is module-finite over the image of , then .    We ahve that has finite length, so is -primary. Since some power of is contained in , and is -torsion, is -torsion as an -module. It is also injective by Lemma ??. Thus, by the structure theorem, it is isomorphic to some number of copies of . We know that this number of copies is the -vector space dimension of . Consider the isomorphisms The last hom module is a one-dimensional -vector space, so .     Remark 2.38. Let be a local ring. For each ideal in , the theorem above implies that the injective hull of over is . In particular, since is -torsion, one has     Remark 2.39. Let is local, and is an -torsion -module, then is naturally a module: if , and , take some such that , and set . One sees easily that this action is well-defined, and additionally, that any -linear endomorphism of is also an -linear endomorphism.     Theorem 2.40. Let be a local ring, its -adic completion, and . Then,    , and    there is an isomorphism of -modules:        The containment is an essential extension of -modules, and thus of -modules as well. Given an essential extension of -modules, must be -torsion, since it has the same associated primes (just ). Therefore, for each , which implies that is also an essential extension of -modules. Hence , and we conclude that .  Since is -torsion, , so we may assume that is complete for the rest of the proof. Then, we can identify the given map with the natural map . Hence, this map is injective.  When is artinian, , so the map is an isomorphism.  For each , set . The -module is the injective hull of as an -module. For each , and thus restricts to an element of , where the equality holds because is artinian. Consequently, restricted to is multiplication by an element , with . Thus is multiplication by the element in .     Remark 2.41. We have a pretty concrete idea of what any injective module in any noetherian ring looks like now. They are direct sums of modules for primes , and where is the continuous hom module you described in the worksheet, and is the analogous mixed characteristic thing you described in the homework. Note that .     An -module is artinian if every descending chain of submodules of eventually stabilizes.    It is evident that submodules and quotient modules of artinian modules are also artinian. We recall that artinian rings - rings that satisfy the DCC condition on ideals - are necessarily noetherian, and hence have finite length. This is not true for modules.    For a local ring , the module is artinian.    Consider a chain of submodules . Applying the functor yields surjections The ideals form an ascending chain of ideals, and thus stabilize. Thus is an isomorphism for . Since is faithful, it follows that for .      Let be a local ring and be an -module. The following conditions are equivalent:    is -torsion and the rank of the socle of is finite.     is an essential extension of a -vector space of finite rank.     can be embedded in a finite direct sum of copies of .     is artinian.       The implications are straightforward. To show , consider , and the descending chain , which stabilizes. Therefore, for some , which by NAK implies that . Therefore, is -torsion. Finally, the socle of is artinian and a -vector space, so it must have finite rank.    Matlis duality   Let be a complete local ring, and be an -module.   If is noetherian, then is artinian.    If is artinian, then is noetherian.    If is artinian or noetherian, then the map is an isomorphism.       Write . If is noetherian, consider a presentation Applying , we get an exact sequence   The module is artinian, hence so is the submodule . Applying again, we get the commutative diagram   and thus .  Similarly, if is artinian, we note that implies . Embed into some ; since the cokernel is a quotient of an artinian module, hence artinian, we get a left-exact sequence   As before, we obtain a commutative diagram   and thus .    "
+},
+{
+  "id": "def-2.34-2",
+  "level": "2",
+  "url": "sec-mathis.html#def-2.34-2",
+  "type": "Definition",
+  "number": "18.23",
+  "title": "",
+  "body": "  Definition 2.34. Let be a local ring. The Matlis duality functor is .   "
+},
+{
+  "id": "lem-2.35-2",
+  "level": "2",
+  "url": "sec-mathis.html#lem-2.35-2",
+  "type": "Lemma",
+  "number": "18.24",
+  "title": "",
+  "body": "  Let be a local ring and be an -module. Then   the natural map is injective,     , and    if , then .       For nonzero set , and consider the composed map  . This map extends to a homomorphism of -modules with .   First, we assume that is finite, and induce on length. Note that is the only simple module over , and thus the subquotients in any decomposition series are isomorphic to . Therefore, if , then , and the result follows from . When , the composition series of gives an exact sequence Since length is additive on exact sequences, . By induction hypothesis, .    On the other hand, since is an exact functor, applying to the short exact sequence above yields a short exact sequence   By additivity of on this short exact sequence, . Thus  .    From the first two parts, we have that is injective, and , so the map must be surjective as well.      "
+},
+{
+  "id": "sec-mathis-7",
+  "level": "2",
+  "url": "sec-mathis.html#sec-mathis-7",
+  "type": "Remark",
+  "number": "18.25",
+  "title": "",
+  "body": " Remark 2.36. The natural map \"evaluate at\" from to commmutes with double-duals: given , the diagram   commutes.  "
+},
+{
+  "id": "thm-2.37-2",
+  "level": "2",
+  "url": "sec-mathis.html#thm-2.37-2",
+  "type": "Theorem",
+  "number": "18.26",
+  "title": "",
+  "body": "  Let be a local homomorphism of local rings. If is module-finite over the image of , then .    We ahve that has finite length, so is -primary. Since some power of is contained in , and is -torsion, is -torsion as an -module. It is also injective by Lemma ??. Thus, by the structure theorem, it is isomorphic to some number of copies of . We know that this number of copies is the -vector space dimension of . Consider the isomorphisms The last hom module is a one-dimensional -vector space, so .   "
+},
+{
+  "id": "sec-mathis-10",
+  "level": "2",
+  "url": "sec-mathis.html#sec-mathis-10",
+  "type": "Remark",
+  "number": "18.27",
+  "title": "",
+  "body": " Remark 2.38. Let be a local ring. For each ideal in , the theorem above implies that the injective hull of over is . In particular, since is -torsion, one has   "
+},
+{
+  "id": "sec-mathis-11",
+  "level": "2",
+  "url": "sec-mathis.html#sec-mathis-11",
+  "type": "Remark",
+  "number": "18.28",
+  "title": "",
+  "body": " Remark 2.39. Let is local, and is an -torsion -module, then is naturally a module: if , and , take some such that , and set . One sees easily that this action is well-defined, and additionally, that any -linear endomorphism of is also an -linear endomorphism.  "
+},
+{
+  "id": "thm-2.40-2",
+  "level": "2",
+  "url": "sec-mathis.html#thm-2.40-2",
+  "type": "Theorem",
+  "number": "18.29",
+  "title": "",
+  "body": "  Theorem 2.40. Let be a local ring, its -adic completion, and . Then,    , and    there is an isomorphism of -modules:        The containment is an essential extension of -modules, and thus of -modules as well. Given an essential extension of -modules, must be -torsion, since it has the same associated primes (just ). Therefore, for each , which implies that is also an essential extension of -modules. Hence , and we conclude that .  Since is -torsion, , so we may assume that is complete for the rest of the proof. Then, we can identify the given map with the natural map . Hence, this map is injective.  When is artinian, , so the map is an isomorphism.  For each , set . The -module is the injective hull of as an -module. For each , and thus restricts to an element of , where the equality holds because is artinian. Consequently, restricted to is multiplication by an element , with . Thus is multiplication by the element in .   "
+},
+{
+  "id": "sec-mathis-13",
+  "level": "2",
+  "url": "sec-mathis.html#sec-mathis-13",
+  "type": "Remark",
+  "number": "18.30",
+  "title": "",
+  "body": " Remark 2.41. We have a pretty concrete idea of what any injective module in any noetherian ring looks like now. They are direct sums of modules for primes , and where is the continuous hom module you described in the worksheet, and is the analogous mixed characteristic thing you described in the homework. Note that .  "
+},
+{
+  "id": "def-2.42-2",
+  "level": "2",
+  "url": "sec-mathis.html#def-2.42-2",
+  "type": "Definition",
+  "number": "18.31",
+  "title": "",
+  "body": "  An -module is artinian if every descending chain of submodules of eventually stabilizes.   "
+},
+{
+  "id": "cor-2.43",
+  "level": "2",
+  "url": "sec-mathis.html#cor-2.43",
+  "type": "Corollary",
+  "number": "18.32",
+  "title": "",
+  "body": "  For a local ring , the module is artinian.    Consider a chain of submodules . Applying the functor yields surjections The ideals form an ascending chain of ideals, and thus stabilize. Thus is an isomorphism for . Since is faithful, it follows that for .   "
+},
+{
+  "id": "thm-2.44-2",
+  "level": "2",
+  "url": "sec-mathis.html#thm-2.44-2",
+  "type": "Theorem",
+  "number": "18.33",
+  "title": "",
+  "body": "  Let be a local ring and be an -module. The following conditions are equivalent:    is -torsion and the rank of the socle of is finite.     is an essential extension of a -vector space of finite rank.     can be embedded in a finite direct sum of copies of .     is artinian.       The implications are straightforward. To show , consider , and the descending chain , which stabilizes. Therefore, for some , which by NAK implies that . Therefore, is -torsion. Finally, the socle of is artinian and a -vector space, so it must have finite rank.   "
+},
+{
+  "id": "thm-2.45",
+  "level": "2",
+  "url": "sec-mathis.html#thm-2.45",
+  "type": "Theorem",
+  "number": "18.34",
+  "title": "Matlis duality.",
+  "body": "Matlis duality   Let be a complete local ring, and be an -module.   If is noetherian, then is artinian.    If is artinian, then is noetherian.    If is artinian or noetherian, then the map is an isomorphism.       Write . If is noetherian, consider a presentation Applying , we get an exact sequence   The module is artinian, hence so is the submodule . Applying again, we get the commutative diagram   and thus .  Similarly, if is artinian, we note that implies . Embed into some ; since the cokernel is a quotient of an artinian module, hence artinian, we get a left-exact sequence   As before, we obtain a commutative diagram   and thus .   "
 },
 {
   "id": "sec-def-loco",
@@ -8602,7 +8710,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "19.1",
   "title": "Definitions of Local Cohomology",
-  "body": "Definitions of Local Cohomology  Recall that we defined . Now, with the theory of injectives we have so far, we can prove some properties about these functors. But first we want to collect some other definitions of local cohomology. Some of our descriptions involve direct limits. We recall a couple of facts about direct limits.    Given a directed system of modules its direct limit is the module , equipped with maps for all , satisfying the property that, if there are maps that commute with the maps in the system, then there is a unique map such that for all .  This notion is functorial: given two directed systems of complexes, and maps of complexes for each that commute with the maps in the systems, there is an induced map on the direct limits.  Direct limits can be realized explicitly as follows: every element is represented by a class with . Two classes are the same if and only if for some , the images of and under the composed transition maps agree in . In particular, an element represents the zero class if and only if it is in the kernel of a large composition of the transition map.  Similar considerations hold for systems indexed by an arbitrary poset ; this consists of a collection of modules for , and commuting maps for all .     Remark 3.2. We defined the tensor product of complexes in terms of homological notation before. The same definition works with cohomological indexing.     (1) If     is a directed system of complexes, then     (2) Given two directed systems of complexes, and , we have     The same considerations hold for arbitrary direct limits.      Let be a noetherian ring and an ideal in . For all , there is an isomorphism of functors   Moreover, if is a sequence of ideals such that for all there exist such that and , then      Proof. It is enough to show the later statement. Note that     Then, if is an injective resolution, then     It is easy to see that these isomorphisms are functorial.     image     Remark 3.5. Earlier, we saw that Koszul cohomology and measure similar things, and are equal when , is generated by a regular sequence. Since form an -sequence as well in this case, we obtain isomorphisms though we should take care that we have the right maps in the directed system.  In general, Koszul cohomology and are not the same; we have seen examples in the homework. However, we will soon see that they agree in the direct limit; the isomorphism above holds for all ideals in a noetherian ring!   Let be an -module and . To compute the limit of the system we can replace by , where are the elements killed by some composition of the maps .   so the direct limit is . Note that we have a commutative square    image    so we can identify with .  Now consider a directed system of (cohomological) Koszul complexes. that is,   The limit of this system of Koszul complexes is the Čech complex of on :   Given a sequence of elements , the maps given by 1 on on , induce maps   Note that     Definition 3.6 (Čech complex). We define the Čech complex of on as This is also sometimes denoted as .     Example 3.7.    image    As with the Koszul complex, easy inductions show that        The maps between components corresponding to subsets are zero if , and if .     Note that    We will now study these cohomology modules.    Proposition 3.8. Let and .   (1) Given a short exact sequence of R-modules     there is a long exact sequence       (2) For an arbitrary direct limit system, .    (3) For any family of modules .    (4) (invariance of base) If is a ring map, an -module, then          Proof.  (1) Since consists of flat modules,    image    is a short exact sequence of complexes, so this induces a long exact sequence in cohomology.     (3) This is easy to see, since the Cech complex is compatible with the direct sum decomposition.  (4) Follows from the same property noted for Koszul complexes.      Theorem 3.9 (Fundamental Theorem of Local Cohomology). Let be a noetherian ring and an ideal. Then, for all -modules ,   These isomorphisms are functorial in and extend to isomorphisms of long exact sequences given a short exact sequence     We have seen that and . To show that , we proceed in the following steps:  Step 1: Show and are canonically isomorphic.  Step 2: Show that for any injective module .  Step 3: Use the previous steps to conclude the proof.  Proof of Step 1:     We note that the last equality uses finite generation of in a crucial way; only the containment \" \" holds in general without this.  Proof of Step 2: By the structure theorem for injectives over noetherian rings, , where   By the direct sum property, we may replace by . By the invariance of base property, we may replace by . Now, is an injective hull of the residue field, so it is artinian, and we write where the are modules of finite length. It suffices to show that the vanishing holds for modules of finite length.  We claim that if the desired vanishing holds for , then it holds for all modules of finite length (which would complete Step 2). We induce on the length of . If , then write , with . The long exact sequence gives and by the induction hypothesis, for , establishing the claim.  Applying the invariance of base property again, we may assume without loss of generality that .  There are multiple ways to deal with this case. We note that if , then , and if , then . It is then an easy exercise, which we leave to you, to show that for and 0 for if all 's are zero, and that for all otherwise.  Of course, this step relied crucially on the structure theorem for injectives over noetherian rings.  Proof of Step 3: This follows in complete generality from the previous steps.  We proceed by induction on , with the base case being Step 1 . Now, let .  We assume that we have a canonical isomorphism between and for all and all . Embed into an injective to get a short exact sequence   Then, there is a commutative diagram    image    where bottom zero on the right comes from Step 2. This induces an isomorphism . We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.    These four different descriptions of local cohomology all have different advantages for attacking problems.  The descriptions (1) and (1') are computed from injective resolutions, as opposed to (2) and '), which are computed from generators. We might think of the former as being more natural, and the latter as being more flexible.  We note that the descriptions (1) and (2) are made entirely from \"big\" modules that are somehow nice, whereas the descriptions (1') and (2') realize local cohomology as limits of finitely generated modules (if is). Some natural questions to ask already are whether we can realize the limits in (1') and (2') as filtered limits \/ unions, and whether the resulting limits are determined in some sense by finite stages in the limit system. We will see a few results of this form, but it's worth noting that questions of this form are an active topic of research.  "
+  "body": "Definitions of Local Cohomology  Recall that we defined . Now, with the theory of injectives we have so far, we can prove some properties about these functors. But first we want to collect some other definitions of local cohomology. Some of our descriptions involve direct limits. We recall a couple of facts about direct limits.    Given a directed system of modules its direct limit is the module , equipped with maps for all , satisfying the property that, if there are maps that commute with the maps in the system, then there is a unique map such that for all .  This notion is functorial: given two directed systems of complexes, and maps of complexes for each that commute with the maps in the systems, there is an induced map on the direct limits.  Direct limits can be realized explicitly as follows: every element is represented by a class with . Two classes are the same if and only if for some , the images of and under the composed transition maps agree in . In particular, an element represents the zero class if and only if it is in the kernel of a large composition of the transition map.  Similar considerations hold for systems indexed by an arbitrary poset ; this consists of a collection of modules for , and commuting maps for all .     Remark 3.2. We defined the tensor product of complexes in terms of homological notation before. The same definition works with cohomological indexing.     (1) If     is a directed system of complexes, then     (2) Given two directed systems of complexes, and , we have     The same considerations hold for arbitrary direct limits.      Let be a noetherian ring and an ideal in . For all , there is an isomorphism of functors   Moreover, if is a sequence of ideals such that for all there exist such that and , then      Proof. It is enough to show the later statement. Note that     Then, if is an injective resolution, then     It is easy to see that these isomorphisms are functorial.     Remark 3.5. Earlier, we saw that Koszul cohomology and measure similar things, and are equal when , is generated by a regular sequence. Since form an -sequence as well in this case, we obtain isomorphisms though we should take care that we have the right maps in the directed system.  In general, Koszul cohomology and are not the same; we have seen examples in the homework. However, we will soon see that they agree in the direct limit; the isomorphism above holds for all ideals in a noetherian ring!   Let be an -module and . To compute the limit of the system we can replace by , where are the elements killed by some composition of the maps .   so the direct limit is . Note that we have a commutative square    image    so we can identify with .  Now consider a directed system of (cohomological) Koszul complexes. that is,   The limit of this system of Koszul complexes is the Čech complex of on :   Given a sequence of elements , the maps given by 1 on on , induce maps   Note that     Definition 3.6 (Čech complex). We define the Čech complex of on as This is also sometimes denoted as .     Example 3.7.   As with the Koszul complex, easy inductions show that        The maps between components corresponding to subsets are zero if , and if .     Note that    We will now study these cohomology modules.    Proposition 3.8. Let and .   (1) Given a short exact sequence of R-modules     there is a long exact sequence       (2) For an arbitrary direct limit system, .    (3) For any family of modules .    (4) (invariance of base) If is a ring map, an -module, then          Proof.  (1) Since consists of flat modules,   is a short exact sequence of complexes, so this induces a long exact sequence in cohomology.     (3) This is easy to see, since the Cech complex is compatible with the direct sum decomposition.  (4) Follows from the same property noted for Koszul complexes.      Theorem 3.9 (Fundamental Theorem of Local Cohomology). Let be a noetherian ring and an ideal. Then, for all -modules ,   These isomorphisms are functorial in and extend to isomorphisms of long exact sequences given a short exact sequence     We have seen that and . To show that , we proceed in the following steps:  Step 1: Show and are canonically isomorphic.  Step 2: Show that for any injective module .  Step 3: Use the previous steps to conclude the proof.  Proof of Step 1:     We note that the last equality uses finite generation of in a crucial way; only the containment \" \" holds in general without this.  Proof of Step 2: By the structure theorem for injectives over noetherian rings, , where   By the direct sum property, we may replace by . By the invariance of base property, we may replace by . Now, is an injective hull of the residue field, so it is artinian, and we write where the are modules of finite length. It suffices to show that the vanishing holds for modules of finite length.  We claim that if the desired vanishing holds for , then it holds for all modules of finite length (which would complete Step 2). We induce on the length of . If , then write , with . The long exact sequence gives and by the induction hypothesis, for , establishing the claim.  Applying the invariance of base property again, we may assume without loss of generality that .  There are multiple ways to deal with this case. We note that if , then , and if , then . It is then an easy exercise, which we leave to you, to show that for and 0 for if all 's are zero, and that for all otherwise.  Of course, this step relied crucially on the structure theorem for injectives over noetherian rings.  Proof of Step 3: This follows in complete generality from the previous steps.  We proceed by induction on , with the base case being Step 1 . Now, let .  We assume that we have a canonical isomorphism between and for all and all . Embed into an injective to get a short exact sequence   Then, there is a commutative diagram   where bottom zero on the right comes from Step 2. This induces an isomorphism . We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.    These four different descriptions of local cohomology all have different advantages for attacking problems.  The descriptions (1) and (1') are computed from injective resolutions, as opposed to (2) and '), which are computed from generators. We might think of the former as being more natural, and the latter as being more flexible.  We note that the descriptions (1) and (2) are made entirely from \"big\" modules that are somehow nice, whereas the descriptions (1') and (2') realize local cohomology as limits of finitely generated modules (if is). Some natural questions to ask already are whether we can realize the limits in (1') and (2') as filtered limits \/ unions, and whether the resulting limits are determined in some sense by finite stages in the limit system. We will see a few results of this form, but it's worth noting that questions of this form are an active topic of research.  "
 },
 {
   "id": "def-3.1-2",
@@ -8650,20 +8758,11 @@ var ptx_lunr_docs = [
   "body": " Proof. It is enough to show the later statement. Note that     Then, if is an injective resolution, then     It is easy to see that these isomorphisms are functorial.  "
 },
 {
-  "id": "sec-def-loco-8",
-  "level": "2",
-  "url": "sec-def-loco.html#sec-def-loco-8",
-  "type": "Figure",
-  "number": "19.5",
-  "title": "",
-  "body": " image   "
-},
-{
   "id": "sec-def-loco-9",
   "level": "2",
   "url": "sec-def-loco.html#sec-def-loco-9",
   "type": "Remark",
-  "number": "19.6",
+  "number": "19.5",
   "title": "",
   "body": " Remark 3.5. Earlier, we saw that Koszul cohomology and measure similar things, and are equal when , is generated by a regular sequence. Since form an -sequence as well in this case, we obtain isomorphisms though we should take care that we have the right maps in the directed system.  In general, Koszul cohomology and are not the same; we have seen examples in the homework. However, we will soon see that they agree in the direct limit; the isomorphism above holds for all ideals in a noetherian ring!  "
 },
@@ -8672,7 +8771,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#sec-def-loco-12",
   "type": "Figure",
-  "number": "19.7",
+  "number": "19.6",
   "title": "",
   "body": " image   "
 },
@@ -8681,7 +8780,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#def-3.6-2",
   "type": "Definition",
-  "number": "19.8",
+  "number": "19.7",
   "title": "",
   "body": "  Definition 3.6 (Čech complex). We define the Čech complex of on as This is also sometimes denoted as .   "
 },
@@ -8690,27 +8789,27 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-def-loco.html#sec-def-loco-20",
   "type": "Example",
-  "number": "19.9",
+  "number": "19.8",
   "title": "",
-  "body": " Example 3.7.    image    As with the Koszul complex, easy inductions show that        The maps between components corresponding to subsets are zero if , and if .     Note that   "
+  "body": " Example 3.7.   As with the Koszul complex, easy inductions show that        The maps between components corresponding to subsets are zero if , and if .     Note that   "
 },
 {
   "id": "prop-3.8-2",
   "level": "2",
   "url": "sec-def-loco.html#prop-3.8-2",
   "type": "Proposition",
-  "number": "19.11",
+  "number": "19.9",
   "title": "",
-  "body": "  Proposition 3.8. Let and .   (1) Given a short exact sequence of R-modules     there is a long exact sequence       (2) For an arbitrary direct limit system, .    (3) For any family of modules .    (4) (invariance of base) If is a ring map, an -module, then          Proof.  (1) Since consists of flat modules,    image    is a short exact sequence of complexes, so this induces a long exact sequence in cohomology.     (3) This is easy to see, since the Cech complex is compatible with the direct sum decomposition.  (4) Follows from the same property noted for Koszul complexes.   "
+  "body": "  Proposition 3.8. Let and .   (1) Given a short exact sequence of R-modules     there is a long exact sequence       (2) For an arbitrary direct limit system, .    (3) For any family of modules .    (4) (invariance of base) If is a ring map, an -module, then          Proof.  (1) Since consists of flat modules,   is a short exact sequence of complexes, so this induces a long exact sequence in cohomology.     (3) This is easy to see, since the Cech complex is compatible with the direct sum decomposition.  (4) Follows from the same property noted for Koszul complexes.   "
 },
 {
   "id": "thm-3.9-2",
   "level": "2",
   "url": "sec-def-loco.html#thm-3.9-2",
   "type": "Theorem",
-  "number": "19.13",
+  "number": "19.10",
   "title": "",
-  "body": "  Theorem 3.9 (Fundamental Theorem of Local Cohomology). Let be a noetherian ring and an ideal. Then, for all -modules ,   These isomorphisms are functorial in and extend to isomorphisms of long exact sequences given a short exact sequence     We have seen that and . To show that , we proceed in the following steps:  Step 1: Show and are canonically isomorphic.  Step 2: Show that for any injective module .  Step 3: Use the previous steps to conclude the proof.  Proof of Step 1:     We note that the last equality uses finite generation of in a crucial way; only the containment \" \" holds in general without this.  Proof of Step 2: By the structure theorem for injectives over noetherian rings, , where   By the direct sum property, we may replace by . By the invariance of base property, we may replace by . Now, is an injective hull of the residue field, so it is artinian, and we write where the are modules of finite length. It suffices to show that the vanishing holds for modules of finite length.  We claim that if the desired vanishing holds for , then it holds for all modules of finite length (which would complete Step 2). We induce on the length of . If , then write , with . The long exact sequence gives and by the induction hypothesis, for , establishing the claim.  Applying the invariance of base property again, we may assume without loss of generality that .  There are multiple ways to deal with this case. We note that if , then , and if , then . It is then an easy exercise, which we leave to you, to show that for and 0 for if all 's are zero, and that for all otherwise.  Of course, this step relied crucially on the structure theorem for injectives over noetherian rings.  Proof of Step 3: This follows in complete generality from the previous steps.  We proceed by induction on , with the base case being Step 1 . Now, let .  We assume that we have a canonical isomorphism between and for all and all . Embed into an injective to get a short exact sequence   Then, there is a commutative diagram    image    where bottom zero on the right comes from Step 2. This induces an isomorphism . We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.   "
+  "body": "  Theorem 3.9 (Fundamental Theorem of Local Cohomology). Let be a noetherian ring and an ideal. Then, for all -modules ,   These isomorphisms are functorial in and extend to isomorphisms of long exact sequences given a short exact sequence     We have seen that and . To show that , we proceed in the following steps:  Step 1: Show and are canonically isomorphic.  Step 2: Show that for any injective module .  Step 3: Use the previous steps to conclude the proof.  Proof of Step 1:     We note that the last equality uses finite generation of in a crucial way; only the containment \" \" holds in general without this.  Proof of Step 2: By the structure theorem for injectives over noetherian rings, , where   By the direct sum property, we may replace by . By the invariance of base property, we may replace by . Now, is an injective hull of the residue field, so it is artinian, and we write where the are modules of finite length. It suffices to show that the vanishing holds for modules of finite length.  We claim that if the desired vanishing holds for , then it holds for all modules of finite length (which would complete Step 2). We induce on the length of . If , then write , with . The long exact sequence gives and by the induction hypothesis, for , establishing the claim.  Applying the invariance of base property again, we may assume without loss of generality that .  There are multiple ways to deal with this case. We note that if , then , and if , then . It is then an easy exercise, which we leave to you, to show that for and 0 for if all 's are zero, and that for all otherwise.  Of course, this step relied crucially on the structure theorem for injectives over noetherian rings.  Proof of Step 3: This follows in complete generality from the previous steps.  We proceed by induction on , with the base case being Step 1 . Now, let .  We assume that we have a canonical isomorphism between and for all and all . Embed into an injective to get a short exact sequence   Then, there is a commutative diagram   where bottom zero on the right comes from Step 2. This induces an isomorphism . We omit the verification that this isomorphism does not depend on the choice of embedding into an injective, and that these isomorphisms are compatible with the connecting maps of long exact sequences.   "
 },
 {
   "id": "sec-cech-complex",
@@ -8737,7 +8836,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "20.1",
   "title": "Local Duality",
-  "body": "Local Duality  Let be the maximal ideal of . We know that:   If is a finitely generated -module, then is an artinian module;    If is a polyonomial ring over a field , then .     The Matlis duals of are evidently finitely generated modules (if is complete), and we might hope that they can be realized by formulas in terms of finitely generated elements.  We will see that this turns out to be true. We will establish formulas of this form for an increasingly general class of rings. Along the way, to understand the new class of rings we will meet, we will pursue a more refined study of injective resolutions.  We will give two proofs of this fact.    If is a regular local ring of dimension , then .    First, we note that both and stay the same if is replaced by its completion, so we may assume that is complete. By Cohen's Structure Theorem, , or where is a field and a DVR.  We have seen this by explicit computation for (worksheet) or , where is a DVR (#2 on HW #2). Also, if , then, from the SES , we get the LES where the last terms is zero since . Consequently,   Thus, this holds for all complete regular rings.    When is regular, the following is an injective resolution of (by #6 HW #2):   By applying to this resolution, we are only left with in the -th spot.    If you don't believe in homework, don't worry; we will generalize this soon.  Exercise 4.2.    If is a flat -module, then for all and all -modules .    If is exact and each is flat (we say this is a flat resolution of ), then  for all .       If is Cohen-Macaulay, and is an R-module, then for all . This isomorphism is functorial in .    Let be an SOP for . The augmented Čech complex      flat resolution    0           is exact, since the lower local cohomologies vanish. Thus, is a flat resolution of . Then,       We note that there is a switch from cohomological indexing of Čech complex and homological indexing of a flat resolution.    (Ext-Tor dualities). If be a local ring of dimension , and let denote the Matlis duality functor.      If is a finitely generated -module, then .    These isomorphisms are functorial in .    Let be a projective resolution of .  1.     Given a map , we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.     By taking a minimal resolution, we may assume that is a complex of finitely generated free -modules. In this case, there is a natural isomorphism (exercise!)      Taking homology gives the isomorphism.    To help remember which hypothesis goes with which situation in the following, one might keep in mind that Matlis duals of artinian modules are complete.    Theorem 4.5 (Local Duality). Let be a regular local ring of dimension . Then     If is a finitely generated -module, then .    If is complete and is arbitrary, then .     These isomorphisms are functorial in .    Proof. 1.        Since is complete, . Then,          One often finds the just the first statement as local duality, but the second \"opposite of local duality\" is quite useful as well.  Remark 4.6. By the exact same proof, if is Cohen-Macaulay and is some finitely generated module such that , then    If is a finitely generated -module, then .    If is complete, then by the same proof.    We will return to this later.  Local duality is a powerful tool to study local cohomology modules. Part of its power comes from its flexibility: there are many different rings, modules, and indices to plug in. Here are some special cases:  Example 4.7. Let be a local ring, and another local ring such that is regular, and is a quotient of . (Such an exists whenever is complete, or essentially of finite type over a field or .) Then, since is a finitely generated -module, for all .  Example 4.8. Let be a map of complete local rings, and suppose that is regular, e.g., a power series ring over a field . Then, .  Here is an important application of Local Duality. Note that we are not assuming that is regular in the statement.    Theorem 4.9 (Grothendieck nonvanishing). Let be a local ring and a finitely generated -module. Then .    We already know . Without loss of generality, we can assume that is a faithful module, by invariance of base. Complete; is -faithful, , and . Therefore, we may assume without loss of generality that and are complete.  Now is a quotient of a power series ring, so by invariance of base we may assume without loss of generality that is a regular ring. Note, however, that is not necessarily faithful anymore.  We claim that if the depth of on an -module is , then . This is essentially the same as Rees's Theorem, but we include the argument anyway. Indeed, by induction on the depth (if positive), we can assume that for an -regular element in . From the usual LES, we see that, for acts injectively on , but annihilates this module as well, so it must be the zero module. This establishes the claim.  Now, by Local Duality, . Since Matlis Duality is faithful, the indicated Ext is nonzero if and only if its dual is. Thus,     Since , equality holds throughout.    Remark 4.10. A consequence of this argument, by taking , is that if is a regular local ring (or any ring for which Local Duality holds!) there are equalities for any ideal :     Of course, these can be obtained more directly (for Cohen-Macaulay rings).  Following Remark ??, we should be able to generalize local duality, so that we can compute local cohomology as duals of Ext modules over rings that are more relevant. The best generalization would be in the case of a Cohen-Macaulay local ring such that . Failing that, we would like to understand when a f.g. module such that exists over a CM local ring, and how else we might recognize such a .  "
+  "body": "Local Duality  Let be the maximal ideal of . We know that:   If is a finitely generated -module, then is an artinian module;    If is a polyonomial ring over a field , then .     The Matlis duals of are evidently finitely generated modules (if is complete), and we might hope that they can be realized by formulas in terms of finitely generated elements.  We will see that this turns out to be true. We will establish formulas of this form for an increasingly general class of rings. Along the way, to understand the new class of rings we will meet, we will pursue a more refined study of injective resolutions.  We will give two proofs of this fact.    If is a regular local ring of dimension , then .    First, we note that both and stay the same if is replaced by its completion, so we may assume that is complete. By Cohen's Structure Theorem, , or where is a field and a DVR.  We have seen this by explicit computation for (worksheet) or , where is a DVR (#2 on HW #2). Also, if , then, from the SES , we get the LES where the last terms is zero since . Consequently,   Thus, this holds for all complete regular rings.    When is regular, the following is an injective resolution of (by #6 HW #2):   By applying to this resolution, we are only left with in the -th spot.    If you don't believe in homework, don't worry; we will generalize this soon.  Exercise 4.2.    If is a flat -module, then for all and all -modules .    If is exact and each is flat (we say this is a flat resolution of ), then  for all .       If is Cohen-Macaulay, and is an R-module, then for all . This isomorphism is functorial in .    Let be an SOP for . The augmented Čech complex      flat resolution    0           is exact, since the lower local cohomologies vanish. Thus, is a flat resolution of . Then,       We note that there is a switch from cohomological indexing of Čech complex and homological indexing of a flat resolution.    (Ext-Tor dualities). If be a local ring of dimension , and let denote the Matlis duality functor.     If is a finitely generated -module, then .    These isomorphisms are functorial in .    Let be a projective resolution of .     Given a map , we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.     By taking a minimal resolution, we may assume that is a complex of finitely generated free -modules. In this case, there is a natural isomorphism (exercise!)      Taking homology gives the isomorphism.    To help remember which hypothesis goes with which situation in the following, one might keep in mind that Matlis duals of artinian modules are complete.    Theorem 4.5 (Local Duality). Let be a regular local ring of dimension . Then     If is a finitely generated -module, then .    If is complete and is arbitrary, then .     These isomorphisms are functorial in .          Since is complete, . Then,          One often finds the just the first statement as local duality, but the second \"opposite of local duality\" is quite useful as well.   Remark 4.6. By the exact same proof, if is Cohen-Macaulay and is some finitely generated module such that , then    If is a finitely generated -module, then .    If is complete, then by the same proof.     We will return to this later.  Local duality is a powerful tool to study local cohomology modules. Part of its power comes from its flexibility: there are many different rings, modules, and indices to plug in. Here are some special cases:   Example 4.7. Let be a local ring, and another local ring such that is regular, and is a quotient of . (Such an exists whenever is complete, or essentially of finite type over a field or .) Then, since is a finitely generated -module, for all .    Example 4.8. Let be a map of complete local rings, and suppose that is regular, e.g., a power series ring over a field . Then, .   Here is an important application of Local Duality. Note that we are not assuming that is regular in the statement.  Grothendieck Nonvanishing   Let be a local ring and a finitely generated -module. Then .    We already know . Without loss of generality, we can assume that is a faithful module, by invariance of base. Complete; is -faithful, , and . Therefore, we may assume without loss of generality that and are complete.  Now is a quotient of a power series ring, so by invariance of base we may assume without loss of generality that is a regular ring. Note, however, that is not necessarily faithful anymore.  We claim that if the depth of on an -module is , then . This is essentially the same as Rees's Theorem, but we include the argument anyway. Indeed, by induction on the depth (if positive), we can assume that for an -regular element in . From the usual LES, we see that, for acts injectively on , but annihilates this module as well, so it must be the zero module. This establishes the claim.  Now, by Local Duality, . Since Matlis Duality is faithful, the indicated Ext is nonzero if and only if its dual is. Thus,     Since , equality holds throughout.     Remark 4.10. A consequence of this argument, by taking , is that if is a regular local ring (or any ring for which Local Duality holds!) there are equalities for any ideal :     Of course, these can be obtained more directly (for Cohen-Macaulay rings).   Following Remark ??, we should be able to generalize local duality, so that we can compute local cohomology as duals of Ext modules over rings that are more relevant. The best generalization would be in the case of a Cohen-Macaulay local ring such that . Failing that, we would like to understand when a f.g. module such that exists over a CM local ring, and how else we might recognize such a .  "
 },
 {
   "id": "lem-4.1",
@@ -8773,7 +8872,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "20.5",
   "title": "",
-  "body": "  (Ext-Tor dualities). If be a local ring of dimension , and let denote the Matlis duality functor.      If is a finitely generated -module, then .    These isomorphisms are functorial in .    Let be a projective resolution of .  1.     Given a map , we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.     By taking a minimal resolution, we may assume that is a complex of finitely generated free -modules. In this case, there is a natural isomorphism (exercise!)      Taking homology gives the isomorphism.   "
+  "body": "  (Ext-Tor dualities). If be a local ring of dimension , and let denote the Matlis duality functor.     If is a finitely generated -module, then .    These isomorphisms are functorial in .    Let be a projective resolution of .     Given a map , we can lift to a map on projective resolutions, and it is easy to see that we get commuting maps through all of the isomorphisms above.     By taking a minimal resolution, we may assume that is a complex of finitely generated free -modules. In this case, there is a natural isomorphism (exercise!)      Taking homology gives the isomorphism.   "
 },
 {
   "id": "thm-4.5",
@@ -8782,16 +8881,52 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "20.6",
   "title": "",
-  "body": "  Theorem 4.5 (Local Duality). Let be a regular local ring of dimension . Then     If is a finitely generated -module, then .    If is complete and is arbitrary, then .     These isomorphisms are functorial in .    Proof. 1.        Since is complete, . Then,         "
+  "body": "  Theorem 4.5 (Local Duality). Let be a regular local ring of dimension . Then     If is a finitely generated -module, then .    If is complete and is arbitrary, then .     These isomorphisms are functorial in .          Since is complete, . Then,         "
+},
+{
+  "id": "sec-local-duality-15",
+  "level": "2",
+  "url": "sec-local-duality.html#sec-local-duality-15",
+  "type": "Remark",
+  "number": "20.7",
+  "title": "",
+  "body": " Remark 4.6. By the exact same proof, if is Cohen-Macaulay and is some finitely generated module such that , then    If is a finitely generated -module, then .    If is complete, then by the same proof.    "
+},
+{
+  "id": "sec-local-duality-18",
+  "level": "2",
+  "url": "sec-local-duality.html#sec-local-duality-18",
+  "type": "Example",
+  "number": "20.8",
+  "title": "",
+  "body": " Example 4.7. Let be a local ring, and another local ring such that is regular, and is a quotient of . (Such an exists whenever is complete, or essentially of finite type over a field or .) Then, since is a finitely generated -module, for all .  "
+},
+{
+  "id": "sec-local-duality-19",
+  "level": "2",
+  "url": "sec-local-duality.html#sec-local-duality-19",
+  "type": "Example",
+  "number": "20.9",
+  "title": "",
+  "body": " Example 4.8. Let be a map of complete local rings, and suppose that is regular, e.g., a power series ring over a field . Then, .  "
 },
 {
   "id": "thm-4.9-2",
   "level": "2",
   "url": "sec-local-duality.html#thm-4.9-2",
   "type": "Theorem",
-  "number": "20.7",
+  "number": "20.10",
+  "title": "Grothendieck Nonvanishing.",
+  "body": "Grothendieck Nonvanishing   Let be a local ring and a finitely generated -module. Then .    We already know . Without loss of generality, we can assume that is a faithful module, by invariance of base. Complete; is -faithful, , and . Therefore, we may assume without loss of generality that and are complete.  Now is a quotient of a power series ring, so by invariance of base we may assume without loss of generality that is a regular ring. Note, however, that is not necessarily faithful anymore.  We claim that if the depth of on an -module is , then . This is essentially the same as Rees's Theorem, but we include the argument anyway. Indeed, by induction on the depth (if positive), we can assume that for an -regular element in . From the usual LES, we see that, for acts injectively on , but annihilates this module as well, so it must be the zero module. This establishes the claim.  Now, by Local Duality, . Since Matlis Duality is faithful, the indicated Ext is nonzero if and only if its dual is. Thus,     Since , equality holds throughout.   "
+},
+{
+  "id": "sec-local-duality-22",
+  "level": "2",
+  "url": "sec-local-duality.html#sec-local-duality-22",
+  "type": "Remark",
+  "number": "20.11",
   "title": "",
-  "body": "  Theorem 4.9 (Grothendieck nonvanishing). Let be a local ring and a finitely generated -module. Then .    We already know . Without loss of generality, we can assume that is a faithful module, by invariance of base. Complete; is -faithful, , and . Therefore, we may assume without loss of generality that and are complete.  Now is a quotient of a power series ring, so by invariance of base we may assume without loss of generality that is a regular ring. Note, however, that is not necessarily faithful anymore.  We claim that if the depth of on an -module is , then . This is essentially the same as Rees's Theorem, but we include the argument anyway. Indeed, by induction on the depth (if positive), we can assume that for an -regular element in . From the usual LES, we see that, for acts injectively on , but annihilates this module as well, so it must be the zero module. This establishes the claim.  Now, by Local Duality, . Since Matlis Duality is faithful, the indicated Ext is nonzero if and only if its dual is. Thus,     Since , equality holds throughout.   "
+  "body": " Remark 4.10. A consequence of this argument, by taking , is that if is a regular local ring (or any ring for which Local Duality holds!) there are equalities for any ideal :     Of course, these can be obtained more directly (for Cohen-Macaulay rings).  "
 },
 {
   "id": "sec-gorenstein",
@@ -8800,7 +8935,115 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "20.2",
   "title": "Gorenstein Rings",
-  "body": "Gorenstein Rings    "
+  "body": "Gorenstein Rings  Gorenstein  Now, we pursue the injective analogues of the questions we addressed in the Section on Auslander, Buchsbaum, and Serre: What is the injective dimension of a finitely generated module when it is finite? Are there natural conditions on a ring that ensure finite injective dimension for all, or for some reasonable class, of finitely generated modules? To start, we make an observation about Bass numbers.    Definition 4.11. The injective dimension of a finitely generated -module , denoted , is the length of its minimal injective resolution. Note that any injective resolution of has length at least equal to that of the minimal injective resoltuion, since a Bass number can be computed as an Ext, whose nonvanishing implies nonvanishing in that spot for any injective resolution.      Proposition 4.12. Let be noetherian, and finitely generated. If , for some prime , then for all with .    Proof. Since Bass numbers behave well under localization, we can localize at , and assume that . Pick . From the SES     we get the LES     Suppose that . Then, . The module has finite length, and an induction on length (similar arguments we saw earlier) shows that 0 as well. It then follows by NAK that , so .      Corollary 4.13. Let be noetherian, and a finitely generated -module.     a maximal ideal .     .      Proof. The first statement is clear. For the second, we recall that the associated primes of are the same as those of , so the zeroth Bass numbers are nonzero for the associated primes of . Then, we are guaranteed a chain of Bass numbers as long as  .    The following is the injective analogue of Auslander-Buchsbaum.    Let be a local ring, and a finitely generated module. If has finite injective dimension, then .    Proof. Set and . Let be a maximal -sequence.  To see , compute by the Koszul complex: this is , so the injective resolution of is at least this long.  To see , we can take a SES and the LES     From the definition of , the last term vanishes. Then, by Corollary ??(1), , so . Thus, .    We now pursue an analogue of Auslander-Buchsbaum-Serre. Here is one such statement:   Remark 4.15. Let be local. If , then is regular (and conversely). Indeed, we know . If we take a minimal resolution , the maps in are all zero, so . Thus, has finite injective dimension if and only if it has finite projective dimension.     Definition 4.16 (Gorenstein local ring). A local ring is Gorenstein if for every system of parameters ,     is a regular sequence (so is )    the ideal is irreducible: it cannot be written as for .      This class of rings can be characterized in many ways. Bass was the first to point this out, and to illustrate to importance of this class of rings. We will start this pursuit with artinian rings.    Let be an artinian local ring. TFAE:     is Gorenstein: (0) is irreducible                   4’) is an injective -module    Proof. (1) : Given two linearly independent elements in the socle, .   is -torsion, hence is an essential extension of its socle, so any ideal contains a nonzero element there. If the socle is 1-dimensional, any ideal contains the whole socle.   is an essential extension of , so it embeds into . Since  , this is an isomorphism.   : The socle of is a copy of .   : Trivial.   : The only injectives are copies of , and is an indecomposable module, so this is the only option from the structure theory.   : Trivial.   : Because injective dimension is the depth.    We note that if is artinian, then it contains a copy of , and we can reinterpret (3) as saying that .  We now want to extend this theorem to higher dimensions. We will use another theorem of Rees on Ext.    Theorem 4.18. Let be -modules, and be -regular and -regular. Then for all .    Proof. We will apply the same strategy as in the Fundamental Theorem of Local Cohomology to see that for the left-exact functor from -modules to modules, its right derived functors are . Note that is an -module by hypothesis. By definition, , so this will establish the theorem.  Step 1: The functors agree when . Indeed, for the SES of -modules  , there is an LES     We observe that (any element in has to map to something killed by ), that (since both sides are killed by ), and kills (since it kills ). The specified isomorphism follows.  Step 2: vanishes for free -modules for . Indeed, a free -module has a free -resolution of length one, so computing the Ext from this resolution shows the vanishing.  Step 3: This follows in the same way as Step 3 of the Fundamental Theorem of Local Cohomology. We leave this as an exercise.      Theorem 4.19. Let be a local ring of dimension . TFAE:     is Gorenstein    1’) is and some generates an irreducible ideal          is and .         4’)     Proof. First we want to observe that every condition implies that is Cohen-Macaulay. For (2), this is due to Rees’s theorem on depth and Ext (the one from a while ago). For (4), and consequently for , this follows from . For the others, this is explicit. We assume that is Cohen-Macaulay henceforth.   : trivial   : The Ext vanishings follow from as noted above. Now, let be the given irreducible parameter ideal. The zero ideal in is then irreducible, and by the artinian case, . Applying the previous theorem times, we obtain that .   : Given any SOP of , as in the previous implication (backwards), we see that , and apply the artinian case to see that is irreducible in , so is irreducible in .  As a consequence of these implications, we see that if is Gorenstein local, and a SOP, then is Gorenstein iff is.   : Applying Rees’s recent theorem again, we find that if is an SOP, then   .  Then, is Gorenstein implies is too, and that it has injective dimension zero (by the artinian case), so has injective dimension . If has finite injective dimension, so does , so it is Gorenstein, and is too.   : By , know that is zero for and is one for ; by (4) it is zero for . Thus, taking of an injective resolution of leaves just one copy of in cohomological degree .   : Again, the Ext vanishing is a consequence of Cohen-Macaulayness. By the Lemma on ascending Bass numbers, . In the Theorem characterizing Bass numbers in terms of Ext, we saw that if is an injective resolution of has vanishing differentials; this was explicitly stated and established as a claim. This means that, in a minimal injective resolution, any socle element is in the kernel of the differential. Now consider . This is zero up to cohomological dimension . Then, we have     and .    The following is now evident from the remark after the proof of Local Duality for regular rings.    Corollary 4.20 (Local Duality for Gorenstein rings). Let be a Gorenstein local ring of dimension . Then    If is a finitely generated -module, then .    If is complete and is arbitrary, then .    These isomorphisms are functorial in .     Worksheet on Gorenstein rings     Let be a local ring. Show the following:    (a) is Gorenstein if and only if is Gorenstein.  (b) If is a regular sequence, then is Gorenstein if and only if is Gorenstein.  (c) If is Gorenstein, and , then is Gorenstein.    Definition 4.21. A local ring is a complete intersection if there is a surjection from a complete regular local ring onto with the kernel generated by a regular sequence.     Remark 4.22. The following are equivalent:     is a complete intersection;    For every surjection from a complete RLR , the kernel is generated by a regular sequence;    and IF there exists a surjection from an RLR onto itself,    For every surjection from an RLR , the kernel is generated by a regular sequence.     Not all of these equivalences are obvious, but we will use them freely.    Show that if is a complete intersection, then is Gorenstein.    Let be a field. For each of the following rings determine: Is Gorenstein? Is CohenMacaulay? Is a complete intersection? Reuse your work from old worksheets and HW when convenient.    (a) .  (b) .  (c) .  (d) , where is the ideal generated by the entries of .  (e) , where is the ideal generated by the positive degree forms.  (f) , where is the ideal generated by the positive degree forms.  (g) , where is the ideal generated by the positive degree forms.    Let and be two complete Gorenstein local rings, with .    (a) Use Local Duality to show that   (b) Suppose moreover that is regular. Let be the minimal free resolution of as an -module. Show that,    UTF8mj渄  (c) With the same assumptions as in the previous part, show that for all -modules .    A numerical semigroup is a subsemigroup of ; our convention is that . A numerical semigroup ring is a ring of the form . Assume that the GCD of the elements in is 1 . Then, there is a largest number such that , called the Frobenius number of .    (a) Show that is generated as a vector space by   (b) Show that is Gorenstein if and only if     (c) Check this criterion with , and .    Show that if is a Gorenstein local ring, and is a finitely generated -module, then has finite projective dimension if and only if has finite injective dimension.    We summarize some implications and non-implications on the structural properties of local rings we have encountered:     complete intersection regular:   Gorenstein complete intersection:   Cohen-Macaulay Gorenstein:    "
+},
+{
+  "id": "def-4.11-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#def-4.11-2",
+  "type": "Definition",
+  "number": "20.12",
+  "title": "",
+  "body": "  Definition 4.11. The injective dimension of a finitely generated -module , denoted , is the length of its minimal injective resolution. Note that any injective resolution of has length at least equal to that of the minimal injective resoltuion, since a Bass number can be computed as an Ext, whose nonvanishing implies nonvanishing in that spot for any injective resolution.   "
+},
+{
+  "id": "prop-4.12-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#prop-4.12-2",
+  "type": "Proposition",
+  "number": "20.13",
+  "title": "",
+  "body": "  Proposition 4.12. Let be noetherian, and finitely generated. If , for some prime , then for all with .    Proof. Since Bass numbers behave well under localization, we can localize at , and assume that . Pick . From the SES     we get the LES     Suppose that . Then, . The module has finite length, and an induction on length (similar arguments we saw earlier) shows that 0 as well. It then follows by NAK that , so .   "
+},
+{
+  "id": "cor-4.13-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#cor-4.13-2",
+  "type": "Corollary",
+  "number": "20.14",
+  "title": "",
+  "body": "  Corollary 4.13. Let be noetherian, and a finitely generated -module.     a maximal ideal .     .      Proof. The first statement is clear. For the second, we recall that the associated primes of are the same as those of , so the zeroth Bass numbers are nonzero for the associated primes of . Then, we are guaranteed a chain of Bass numbers as long as  .   "
+},
+{
+  "id": "thm-4.14-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#thm-4.14-2",
+  "type": "Theorem",
+  "number": "20.15",
+  "title": "",
+  "body": "  Let be a local ring, and a finitely generated module. If has finite injective dimension, then .    Proof. Set and . Let be a maximal -sequence.  To see , compute by the Koszul complex: this is , so the injective resolution of is at least this long.  To see , we can take a SES and the LES     From the definition of , the last term vanishes. Then, by Corollary ??(1), , so . Thus, .   "
+},
+{
+  "id": "subsec-gorenstein-9",
+  "level": "2",
+  "url": "sec-gorenstein.html#subsec-gorenstein-9",
+  "type": "Remark",
+  "number": "20.16",
+  "title": "",
+  "body": " Remark 4.15. Let be local. If , then is regular (and conversely). Indeed, we know . If we take a minimal resolution , the maps in are all zero, so . Thus, has finite injective dimension if and only if it has finite projective dimension.  "
+},
+{
+  "id": "def-4.16-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#def-4.16-2",
+  "type": "Definition",
+  "number": "20.17",
+  "title": "",
+  "body": "  Definition 4.16 (Gorenstein local ring). A local ring is Gorenstein if for every system of parameters ,     is a regular sequence (so is )    the ideal is irreducible: it cannot be written as for .     "
+},
+{
+  "id": "thm-4.17-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#thm-4.17-2",
+  "type": "Theorem",
+  "number": "20.18",
+  "title": "",
+  "body": "  Let be an artinian local ring. TFAE:     is Gorenstein: (0) is irreducible                   4’) is an injective -module    Proof. (1) : Given two linearly independent elements in the socle, .   is -torsion, hence is an essential extension of its socle, so any ideal contains a nonzero element there. If the socle is 1-dimensional, any ideal contains the whole socle.   is an essential extension of , so it embeds into . Since  , this is an isomorphism.   : The socle of is a copy of .   : Trivial.   : The only injectives are copies of , and is an indecomposable module, so this is the only option from the structure theory.   : Trivial.   : Because injective dimension is the depth.   "
+},
+{
+  "id": "thm-4.18-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#thm-4.18-2",
+  "type": "Theorem",
+  "number": "20.19",
+  "title": "",
+  "body": "  Theorem 4.18. Let be -modules, and be -regular and -regular. Then for all .    Proof. We will apply the same strategy as in the Fundamental Theorem of Local Cohomology to see that for the left-exact functor from -modules to modules, its right derived functors are . Note that is an -module by hypothesis. By definition, , so this will establish the theorem.  Step 1: The functors agree when . Indeed, for the SES of -modules  , there is an LES     We observe that (any element in has to map to something killed by ), that (since both sides are killed by ), and kills (since it kills ). The specified isomorphism follows.  Step 2: vanishes for free -modules for . Indeed, a free -module has a free -resolution of length one, so computing the Ext from this resolution shows the vanishing.  Step 3: This follows in the same way as Step 3 of the Fundamental Theorem of Local Cohomology. We leave this as an exercise.   "
+},
+{
+  "id": "thm-4.19-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#thm-4.19-2",
+  "type": "Theorem",
+  "number": "20.20",
+  "title": "",
+  "body": "  Theorem 4.19. Let be a local ring of dimension . TFAE:     is Gorenstein    1’) is and some generates an irreducible ideal          is and .         4’)     Proof. First we want to observe that every condition implies that is Cohen-Macaulay. For (2), this is due to Rees’s theorem on depth and Ext (the one from a while ago). For (4), and consequently for , this follows from . For the others, this is explicit. We assume that is Cohen-Macaulay henceforth.   : trivial   : The Ext vanishings follow from as noted above. Now, let be the given irreducible parameter ideal. The zero ideal in is then irreducible, and by the artinian case, . Applying the previous theorem times, we obtain that .   : Given any SOP of , as in the previous implication (backwards), we see that , and apply the artinian case to see that is irreducible in , so is irreducible in .  As a consequence of these implications, we see that if is Gorenstein local, and a SOP, then is Gorenstein iff is.   : Applying Rees’s recent theorem again, we find that if is an SOP, then   .  Then, is Gorenstein implies is too, and that it has injective dimension zero (by the artinian case), so has injective dimension . If has finite injective dimension, so does , so it is Gorenstein, and is too.   : By , know that is zero for and is one for ; by (4) it is zero for . Thus, taking of an injective resolution of leaves just one copy of in cohomological degree .   : Again, the Ext vanishing is a consequence of Cohen-Macaulayness. By the Lemma on ascending Bass numbers, . In the Theorem characterizing Bass numbers in terms of Ext, we saw that if is an injective resolution of has vanishing differentials; this was explicitly stated and established as a claim. This means that, in a minimal injective resolution, any socle element is in the kernel of the differential. Now consider . This is zero up to cohomological dimension . Then, we have     and .   "
+},
+{
+  "id": "cor-4.20-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#cor-4.20-2",
+  "type": "Corollary",
+  "number": "20.21",
+  "title": "",
+  "body": "  Corollary 4.20 (Local Duality for Gorenstein rings). Let be a Gorenstein local ring of dimension . Then    If is a finitely generated -module, then .    If is complete and is arbitrary, then .    These isomorphisms are functorial in .   "
+},
+{
+  "id": "def-4.21-2",
+  "level": "2",
+  "url": "sec-gorenstein.html#def-4.21-2",
+  "type": "Definition",
+  "number": "20.22",
+  "title": "",
+  "body": "  Definition 4.21. A local ring is a complete intersection if there is a surjection from a complete regular local ring onto with the kernel generated by a regular sequence.   "
+},
+{
+  "id": "worksheet-on-gorenstein-rings-7",
+  "level": "2",
+  "url": "sec-gorenstein.html#worksheet-on-gorenstein-rings-7",
+  "type": "Remark",
+  "number": "20.23",
+  "title": "",
+  "body": " Remark 4.22. The following are equivalent:     is a complete intersection;    For every surjection from a complete RLR , the kernel is generated by a regular sequence;    and IF there exists a surjection from an RLR onto itself,    For every surjection from an RLR , the kernel is generated by a regular sequence.    "
 },
 {
   "id": "sec-canonical-mod",
