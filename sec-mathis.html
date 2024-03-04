@@ -741,7 +741,13 @@ window.MathJax = {
 <div class="toc-title-box"><a href="ch-canonical.html" class="internal"><span class="codenumber">20</span> <span class="title">The Canonical Module</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-local-duality.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Local Duality</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gorenstein.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Gorenstein Rings</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-gorenstein.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Gorenstein Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gorenstein.html#subsec-gorenstein" class="internal"><span class="title">Gorenstein</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gorenstein.html#worksheet-on-gorenstein-rings" class="internal"><span class="title">Worksheet on Gorenstein rings</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-canonical-mod.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Canonical Modules</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-graded-local-duality.html" class="internal"><span class="codenumber">20.4</span> <span class="title">Graded Local Duality and Regularity</span></a></div></li>
 </ul>
@@ -802,7 +808,180 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-mathis"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">18.3</span><span class="space"> </span><span class="title">Mathis Duality</span>
 </h2>
-<div class="para" id="sec-mathis-2"></div></section></div>
+<div class="para" id="sec-mathis-2">In the previous worksheet, we encountered the Matlis duality functor in a special setting. We define it the same way in general.</div>
+<article class="definition definition-like" id="def-2.34-2"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">18.23</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-2.34-2-1-1">Definition 2.34. Let <span class="process-math">\((R, \mathfrak{m}, k)\)</span> be a local ring. The Matlis duality functor is <span class="process-math">\((-)^{\vee}=\operatorname{Hom}_{R}\left(-, E_{R}(k)\right)\text{.}\)</span>
+</div></article><div class="para" id="sec-mathis-4">We expect this functor to behave like vector space duality <span class="process-math">\(\operatorname{Hom}_{k}(-, k)\text{.}\)</span> A more homological motivation for this functor is given by the fact hom into an injective is exact, and the only indecomposable injective into which every module could admit a nonzero map is <span class="process-math">\(E_{R}(k)\text{.}\)</span>
+</div>
+<div class="para" id="sec-mathis-5">We hope/expect this to be a duality in some sense. The following lemma gives a few first ways in which this is true.</div>
+<article class="lemma theorem-like" id="lem-2.35-2"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">18.24</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="lem-2.35-2-1-1">
+<div class="para">Let <span class="process-math">\((R, \mathfrak{m}, k)\)</span> be a local ring and <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module. Then</div>
+<ol class="decimal">
+<li id="lem-2.35-2-1-1-4-1"><div class="para" id="lem-2.35-2-1-1-4-1-1">the natural map <span class="process-math">\(M \rightarrow M^{\vee \vee}\)</span> is injective,</div></li>
+<li id="lem-2.35-2-1-1-4-2"><div class="para" id="lem-2.35-2-1-1-4-2-1">
+<span class="process-math">\(\ell\left(M^{\vee}\right)=\ell(M)\text{,}\)</span> and</div></li>
+<li id="lem-2.35-2-1-1-4-3"><div class="para" id="lem-2.35-2-1-1-4-3-1">if <span class="process-math">\(\ell(M)&lt;\infty\text{,}\)</span> then <span class="process-math">\(M \cong M^{\vee \vee}\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="lem-2.35-2-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="lem-2.35-2-2-1">
+<div class="para">For nonzero <span class="process-math">\(x \in M\)</span> set <span class="process-math">\(L=R x \subseteq M\text{,}\)</span> and consider the composed map <span class="process-math">\(L \rightarrow L / \mathfrak{m} L \cong\)</span> <span class="process-math">\(K \rightarrow E_{R}(k)\text{.}\)</span> This map extends to a homomorphism of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(\epsilon: M \rightarrow E_{R}(k)\)</span> with <span class="process-math">\(\epsilon(x) \neq 0\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="lem-2.35-2-2-1-8-1"><div class="para logical" id="lem-2.35-2-2-1-8-1-1">
+<div class="para">First, we assume that <span class="process-math">\(\ell(M)\)</span> is finite, and induce on length. Note that <span class="process-math">\(k\)</span> is the only simple module over <span class="process-math">\(R\text{,}\)</span> and thus the subquotients in any decomposition series are isomorphic to <span class="process-math">\(k\text{.}\)</span> Therefore, if <span class="process-math">\(\ell(M)=1\text{,}\)</span> then <span class="process-math">\(M \cong k\text{,}\)</span> and the result follows from <span class="process-math">\(\operatorname{Hom}_{R}(k, E(k)) \cong k\text{.}\)</span> When <span class="process-math">\(\ell(M) \geqslant 2\text{,}\)</span> the composition series of <span class="process-math">\(M\)</span> gives an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow L \longrightarrow M \longrightarrow k \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">Since length is additive on exact sequences, <span class="process-math">\(\ell(L)=\ell(M)-1\text{.}\)</span> By induction hypothesis, <span class="process-math">\(\ell\left(L^{\vee}\right)=\ell(L)\text{.}\)</span>
+</div>
+</div></li>
+<li id="lem-2.35-2-2-1-8-2">
+<div class="para logical" id="lem-2.35-2-2-1-8-2-1">
+<div class="para">On the other hand, since <span class="process-math">\((-)^{\vee}\)</span> is an exact functor, applying <span class="process-math">\((-)^{\vee}\)</span> to the short exact sequence above yields a short exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow k \longrightarrow M^{\vee} \longrightarrow L^{\vee} \longrightarrow 0 \text {. }
+\end{equation*}
+</div>
+</div>
+<div class="para" id="lem-2.35-2-2-1-8-2-2">By additivity of <span class="process-math">\(\ell\)</span> on this short exact sequence, <span class="process-math">\(\ell\left(M^{\vee}\right)=\ell\left(L^{\vee}\right)+1\text{.}\)</span> Thus <span class="process-math">\(\ell\left(M^{\vee}\right)=\ell(L)+1=\)</span> <span class="process-math">\(\ell(M)\text{.}\)</span>
+</div>
+</li>
+<li id="lem-2.35-2-2-1-8-3"><div class="para" id="lem-2.35-2-2-1-8-3-1">From the first two parts, we have that <span class="process-math">\(M \rightarrow M^{\vee \vee}\)</span> is injective, and <span class="process-math">\(\ell(M)=\ell\left(M^{\vee \vee}\right)\text{,}\)</span> so the map must be surjective as well.</div></li>
+</ol>
+</div></article></details><article class="remark remark-like" id="sec-mathis-7"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">18.25</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-mathis-7-1">Remark 2.36. The natural map "evaluate at" from <span class="process-math">\(M\)</span> to <span class="process-math">\(M^{\vee \vee}\)</span> commmutes with double-duals: given <span class="process-math">\(f: M \rightarrow N\text{,}\)</span> the diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_12_05_e2b943b5b28c6794a270g-037.jpg" class="contained"></div> <div class="para" id="sec-mathis-7-3">commutes.</div></article><div class="para" id="sec-mathis-8">Our goal now is to bootstrap up this duality from the finite length case to local rings in general. The following statement on compatibility of injective hulls will be the key.</div>
+<article class="theorem theorem-like" id="thm-2.37-2"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">18.26</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm-2.37-2-1-1">Let <span class="process-math">\(\varphi:(R, \mathfrak{m}, k) \longrightarrow(S, \mathfrak{n}, \ell)\)</span> be a local homomorphism of local rings. If <span class="process-math">\(S\)</span> is module-finite over the image of <span class="process-math">\(R\text{,}\)</span> then <span class="process-math">\(\operatorname{Hom}_{R}\left(S, E_{R}(k)\right)=E_{S}(\ell)\text{.}\)</span>
+</div></article><details id="thm-2.37-2-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="thm-2.37-2-2-1">
+<div class="para">We ahve that <span class="process-math">\(S / \mathfrak{m} S \cong S \otimes_{R} k\)</span> has finite length, so <span class="process-math">\(\mathfrak{m} S\)</span> is <span class="process-math">\(\mathfrak{n}\)</span>-primary. Since some power of <span class="process-math">\(\mathfrak{n}\)</span> is contained in <span class="process-math">\(\mathfrak{m} S\text{,}\)</span> and <span class="process-math">\(E_{R}(k)\)</span> is <span class="process-math">\(\mathfrak{m}\)</span>-torsion, <span class="process-math">\(\operatorname{Hom}_{R}\left(S, E_{R}(k)\right)\)</span> is <span class="process-math">\(\mathfrak{n}\)</span>-torsion as an <span class="process-math">\(S\)</span>-module. It is also injective by Lemma ??. Thus, by the structure theorem, it is isomorphic to some number of copies of <span class="process-math">\(E_{S}(\ell)\text{.}\)</span> We know that this number of copies is the <span class="process-math">\(\ell\)</span>-vector space dimension of <span class="process-math">\(\operatorname{Hom}_{S}\left(\ell, \operatorname{Hom}_{R}\left(S, E_{R}(k)\right)\right)\text{.}\)</span> Consider the isomorphisms</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\operatorname{Hom}_{S}\left(\ell, \operatorname{Hom}_{R}\left(S, E_{R}(k)\right)\right) &amp; \cong \operatorname{Hom}_{R}\left(\ell \otimes_{S} S, E_{R}(k)\right) \\
+&amp; \cong \operatorname{Hom}_{R}\left(\ell \otimes_{k} k, E_{R}(k)\right) \\
+&amp; \cong \operatorname{Hom}_{k}\left(\ell, \operatorname{Hom}_{R}\left(k, E_{R}(k)\right)\right) \\
+&amp; \cong \operatorname{Hom}_{k}(\ell, k) .
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">The last hom module is a one-dimensional <span class="process-math">\(\ell\)</span>-vector space, so <span class="process-math">\(\operatorname{Hom}_{R}\left(S, E_{R}(k)\right) \cong E_{S}(\ell)\text{.}\)</span>
+</div>
+</div></article></details><article class="remark remark-like" id="sec-mathis-10"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">18.27</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec-mathis-10-1">
+<div class="para">Remark 2.38. Let <span class="process-math">\((R, \mathfrak{m}, k)\)</span> be a local ring. For each ideal <span class="process-math">\(I\)</span> in <span class="process-math">\(R\text{,}\)</span> the theorem above implies that the injective hull of <span class="process-math">\(k\)</span> over <span class="process-math">\(R / I\)</span> is <span class="process-math">\(\left(0:_{E_{R}(k)} I\right)\text{.}\)</span> In particular, since <span class="process-math">\(E_{R}(k)\)</span> is <span class="process-math">\(\mathfrak{m}\)</span>-torsion, one has</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_{R}(k)=\bigcup_{t}\left(0:_{E_{R}(k)} \mathfrak{m}^{t}\right)=\bigcup_{t} E_{R / \mathfrak{m}^{t}}(k)
+\end{equation*}
+</div>
+</div></article><article class="remark remark-like" id="sec-mathis-11"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">18.28</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-mathis-11-1">Remark 2.39. Let <span class="process-math">\((R, \mathfrak{m})\)</span> is local, and <span class="process-math">\(M\)</span> is an <span class="process-math">\(\mathfrak{m}\)</span>-torsion <span class="process-math">\(R\)</span>-module, then <span class="process-math">\(M\)</span> is naturally a <span class="process-math">\(\widehat{R}\)</span> module: if <span class="process-math">\(\mathfrak{m}^{n} x=0\text{,}\)</span> and <span class="process-math">\(\widehat{r} \in \widehat{R}\text{,}\)</span> take some <span class="process-math">\(r \in R\)</span> such that <span class="process-math">\(r-\widehat{r} \in \mathfrak{m}^{n}\text{,}\)</span> and set <span class="process-math">\(\widehat{r} m=r m\text{.}\)</span> One sees easily that this action is well-defined, and additionally, that any <span class="process-math">\(R\)</span>-linear endomorphism of <span class="process-math">\(M\)</span> is also an <span class="process-math">\(\widehat{R}\)</span>-linear endomorphism.</div></article><article class="theorem theorem-like" id="thm-2.40-2"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">18.29</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="thm-2.40-2-1-1">
+<div class="para">Theorem 2.40. Let <span class="process-math">\((R, \mathfrak{m}, k)\)</span> be a local ring, <span class="process-math">\(\widehat{R}\)</span> its <span class="process-math">\(\mathfrak{m}\)</span>-adic completion, and <span class="process-math">\(E=E_{R}(k)\text{.}\)</span> Then,</div>
+<ol class="decimal">
+<li id="thm-2.40-2-1-1-5-1"><div class="para" id="thm-2.40-2-1-1-5-1-1">
+<span class="process-math">\(E_{\widehat{R}}(k)=E\text{,}\)</span> and</div></li>
+<li id="thm-2.40-2-1-1-5-2"><div class="para logical" id="thm-2.40-2-1-1-5-2-1">
+<div class="para">there is an isomorphism of <span class="process-math">\(\widehat{R}\)</span>-modules:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; \widehat{R} \longrightarrow R^{\vee \vee}=\operatorname{Hom}_{R}(E, E) . \\
+&amp; r \longmapsto(e \mapsto r e)
+\end{aligned}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><details id="thm-2.40-2-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-2.40-2-2-1">The containment <span class="process-math">\(k \subseteq E\)</span> is an essential extension of <span class="process-math">\(R\)</span>-modules, and thus of <span class="process-math">\(\widehat{R}\)</span>-modules as well. Given an essential extension <span class="process-math">\(E \subseteq M\)</span> of <span class="process-math">\(\widehat{R}\)</span>-modules, <span class="process-math">\(M\)</span> must be <span class="process-math">\(\mathfrak{m}\)</span>-torsion, since it has the same associated primes (just <span class="process-math">\(\mathfrak{m}\)</span> ). Therefore, <span class="process-math">\(R m=\widehat{R} m\)</span> for each <span class="process-math">\(m \in M\text{,}\)</span> which implies that <span class="process-math">\(E \subseteq M\)</span> is also an essential extension of <span class="process-math">\(R\)</span>-modules. Hence <span class="process-math">\(M=E\text{,}\)</span> and we conclude that <span class="process-math">\(E=E_{\widehat{R}}(k)\text{.}\)</span>
+</div> <div class="para" id="thm-2.40-2-2-2">Since <span class="process-math">\(E\)</span> is <span class="process-math">\(\mathfrak{m}\)</span>-torsion, <span class="process-math">\(\operatorname{Hom}_{\widehat{R}}(E, E)=\operatorname{Hom}_{R}(E, E)\text{,}\)</span> so we may assume that <span class="process-math">\(\widehat{R}\)</span> is complete for the rest of the proof. Then, we can identify the given map <span class="process-math">\(R \rightarrow R^{\vee \vee}\)</span> with the natural map <span class="process-math">\(r \mapsto(\phi \mapsto \phi(r))\text{.}\)</span> Hence, this map is injective.</div> <div class="para" id="thm-2.40-2-2-3">When <span class="process-math">\(R\)</span> is artinian, <span class="process-math">\(\ell(R)&lt;\infty\text{,}\)</span> so the map <span class="process-math">\(R \rightarrow R^{\vee \vee}\)</span> is an isomorphism.</div> <div class="para" id="thm-2.40-2-2-4">For each <span class="process-math">\(i \geqslant 1\text{,}\)</span> set <span class="process-math">\(R_{i}:=R / \mathfrak{m}^{i}\text{.}\)</span> The <span class="process-math">\(R_{i}\)</span>-module <span class="process-math">\(E_{i}=\left(0:_{E} \mathfrak{m}^{i}\right)\)</span> is the injective hull of <span class="process-math">\(k\)</span> as an <span class="process-math">\(R_{i}\)</span>-module. For each <span class="process-math">\(\varphi \in \operatorname{Hom}_{R}(E, E), \varphi\left(E_{i}\right) \subseteq E_{i}\text{,}\)</span> and thus <span class="process-math">\(\varphi\)</span> restricts to an element of <span class="process-math">\(\operatorname{Hom}_{R_{i}}\left(E_{i}, E_{i}\right)=R_{i}\text{,}\)</span> where the equality holds because <span class="process-math">\(R_{i}\)</span> is artinian. Consequently, <span class="process-math">\(\varphi\)</span> restricted to <span class="process-math">\(E_{i}\)</span> is multiplication by an element <span class="process-math">\(\overline{r_{i}} \in R_{i}\text{,}\)</span> with <span class="process-math">\(r_{i+1}-r_{i} \in \mathfrak{m}^{i}\text{.}\)</span> Thus <span class="process-math">\(\varphi\)</span> is multiplication by the element <span class="process-math">\(\varliminf_{\longleftarrow} r_{i}\)</span> in <span class="process-math">\(R\text{.}\)</span>
+</div></article></details><article class="remark remark-like" id="sec-mathis-13"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">18.30</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-mathis-13-1">Remark 2.41. We have a pretty concrete idea of what any injective module in any noetherian ring looks like now. They are direct sums of modules <span class="process-math">\(E_{R}(R / \mathfrak{p})\)</span> for primes <span class="process-math">\(\mathfrak{p}\text{,}\)</span> and <span class="process-math">\(E_{R}(R / \mathfrak{p}) \cong E_{R_{\mathfrak{p}}}\left(R_{\mathfrak{p}} / \mathfrak{p} R_{\mathfrak{p}}\right) \cong E_{\widehat{R_{\mathfrak{p}}}}\left(\widehat{R_{\mathfrak{p}}} / \mathfrak{p} \widehat{R_{\mathfrak{p}}}\right) \cong\left\{\begin{array}{l}E_{K \llbracket \underline{x} / I}(K) \cong \operatorname{ann}_{I}\left(E_{K \llbracket \rrbracket}(K)\right) \cong \operatorname{ann}_{I}\left(K\left[\underline{\left.\left.x^{-1}\right]\right)}\right.\right. \\ E_{V \llbracket \underline{x} \rrbracket / I}(V / p V) \cong \operatorname{ann}_{I}\left(E_{V \llbracket \underline{x} \rrbracket}(V / p V)\right) \cong \operatorname{ann}_{I}(\star),\end{array}\right.\)</span> where <span class="process-math">\(K\left[\underline{x^{-1}}\right]\)</span> is the continuous hom module you described in the worksheet, and <span class="process-math">\(\star\)</span> is the analogous mixed characteristic thing you described in the homework. Note that <span class="process-math">\(K \cong R_{\mathfrak{p}} / \mathfrak{p} R_{\mathfrak{p}}\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-2.42-2"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">18.31</span><span class="period">.</span>
+</h3>
+<div class="para" id="def-2.42-2-1-1">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is artinian if every descending chain of submodules of <span class="process-math">\(M\)</span> eventually stabilizes.</div></article><div class="para" id="sec-mathis-15">It is evident that submodules and quotient modules of artinian modules are also artinian. We recall that artinian rings - rings that satisfy the DCC condition on ideals - are necessarily noetherian, and hence have finite length. This is not true for modules.</div>
+<article class="corollary theorem-like" id="cor-2.43"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">18.32</span><span class="period">.</span>
+</h3>
+<div class="para" id="cor-2.43-1-1">For a local ring <span class="process-math">\((R, \mathfrak{m}, k)\text{,}\)</span> the module <span class="process-math">\(E_{R}(k)\)</span> is artinian.</div></article><details id="cor-2.43-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="cor-2.43-2-1">
+<div class="para">Consider a chain of submodules <span class="process-math">\(E_{R}(k) \supseteq E_{1} \supseteq E_{2} \supseteq \cdots\text{.}\)</span> Applying the functor <span class="process-math">\((-)^{\vee}\)</span> yields surjections</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\widehat{R} \longrightarrow E_{1}^{\vee} \longrightarrow E_{2}^{\vee} \longrightarrow \cdots
+\end{equation*}
+</div>
+<div class="para">The ideals <span class="process-math">\(\operatorname{ker}\left(\widehat{R} \longrightarrow E_{i}^{\vee}\right)\)</span> form an ascending chain of ideals, and thus stabilize. Thus <span class="process-math">\(E_{i}^{\vee} \longrightarrow E_{i+1}^{\vee}\)</span> is an isomorphism for <span class="process-math">\(i \gg 0\text{.}\)</span> Since <span class="process-math">\((-)^{\vee}\)</span> is faithful, it follows that <span class="process-math">\(E_{i}=E_{i+1}\)</span> for <span class="process-math">\(i \gg 0\text{.}\)</span>
+</div>
+</div></article></details><article class="theorem theorem-like" id="thm-2.44-2"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">18.33</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="thm-2.44-2-1-1">
+<div class="para">Let <span class="process-math">\((R, \mathfrak{m}, k)\)</span> be a local ring and <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module. The following conditions are equivalent:</div>
+<ol class="decimal">
+<li id="thm-2.44-2-1-1-4-1"><div class="para" id="thm-2.44-2-1-1-4-1-1">
+<span class="process-math">\(M\)</span> is <span class="process-math">\(\mathfrak{m}\)</span>-torsion and the rank of the socle of <span class="process-math">\(M\)</span> is finite.</div></li>
+<li id="thm-2.44-2-1-1-4-2"><div class="para" id="thm-2.44-2-1-1-4-2-1">
+<span class="process-math">\(M\)</span> is an essential extension of a <span class="process-math">\(k\)</span>-vector space of finite rank.</div></li>
+<li id="thm-2.44-2-1-1-4-3"><div class="para" id="thm-2.44-2-1-1-4-3-1">
+<span class="process-math">\(M\)</span> can be embedded in a finite direct sum of copies of <span class="process-math">\(E_{R}(k)\text{.}\)</span>
+</div></li>
+<li id="thm-2.44-2-1-1-4-4"><div class="para" id="thm-2.44-2-1-1-4-4-1">
+<span class="process-math">\(M\)</span> is artinian.</div></li>
+</ol>
+</div></article><details id="thm-2.44-2-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="thm-2.44-2-2-1">The implications <span class="process-math">\((1) \Rightarrow(2) \Rightarrow(3) \Rightarrow(4)\)</span> are straightforward. To show <span class="process-math">\((4) \Rightarrow(1)\text{,}\)</span> consider <span class="process-math">\(x \in M\text{,}\)</span> and the descending chain <span class="process-math">\(R x \supseteq \mathfrak{m} x \supseteq \mathfrak{m}^{2} x \supseteq \cdots\text{,}\)</span> which stabilizes. Therefore, <span class="process-math">\(\mathfrak{m}^{t+1} x=\mathfrak{m}^{t} x\)</span> for some <span class="process-math">\(t\text{,}\)</span> which by NAK implies that <span class="process-math">\(\mathfrak{m}^{t} x=0\text{.}\)</span> Therefore, <span class="process-math">\(M\)</span> is <span class="process-math">\(\mathfrak{m}\)</span>-torsion. Finally, the socle of <span class="process-math">\(M\)</span> is artinian and a <span class="process-math">\(k\)</span>-vector space, so it must have finite rank.</div></article></details><article class="theorem theorem-like" id="thm-2.45"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">18.34</span><span class="period">.</span><span class="space"> </span><span class="title">Matlis duality.</span>
+</h3>
+<div class="para logical" id="thm-2.45-2-1">
+<div class="para">Let <span class="process-math">\((R, \mathfrak{m}, k)\)</span> be a complete local ring, and <span class="process-math">\(M\)</span> be an <span class="process-math">\(R\)</span>-module.</div>
+<ol class="decimal">
+<li id="thm-2.45-2-1-4-1"><div class="para" id="thm-2.45-2-1-4-1-1">If <span class="process-math">\(M\)</span> is noetherian, then <span class="process-math">\(M^{\vee}\)</span> is artinian.</div></li>
+<li id="thm-2.45-2-1-4-2"><div class="para" id="thm-2.45-2-1-4-2-1">If <span class="process-math">\(M\)</span> is artinian, then <span class="process-math">\(M^{\vee}\)</span> is noetherian.</div></li>
+<li id="thm-2.45-2-1-4-3"><div class="para" id="thm-2.45-2-1-4-3-1">If <span class="process-math">\(M\)</span> is artinian or noetherian, then the map <span class="process-math">\(M \longrightarrow M^{\vee \vee}\)</span> is an isomorphism.</div></li>
+</ol>
+</div></article><details id="thm-2.45-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="thm-2.45-3-1">
+<div class="para">Write <span class="process-math">\(E=E_{R}(k)\text{.}\)</span> If <span class="process-math">\(M\)</span> is noetherian, consider a presentation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R^{m} \longrightarrow R^{n} \longrightarrow M \longrightarrow 0 \text {. }
+\end{equation*}
+</div>
+<div class="para">Applying <span class="process-math">\((-)^{\vee}\text{,}\)</span> we get an exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow M^{\vee} \longrightarrow E^{n} \longrightarrow E^{m} \text {. }
+\end{equation*}
+</div>
+</div> <div class="para" id="thm-2.45-3-2">The module <span class="process-math">\(\left(R^{n}\right)^{\vee} \cong E^{n}\)</span> is artinian, hence so is the submodule <span class="process-math">\(M^{\vee}\text{.}\)</span> Applying <span class="process-math">\((-)^{\vee}\)</span> again, we get the commutative diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_12_05_e2b943b5b28c6794a270g-040(1).jpg" class="contained"></div> <div class="para" id="thm-2.45-3-4">and thus <span class="process-math">\(M \cong M^{\vee \vee}\text{.}\)</span>
+</div> <div class="para logical" id="thm-2.45-3-5">
+<div class="para">Similarly, if <span class="process-math">\(M\)</span> is artinian, we note that <span class="process-math">\(R \cong R^{\vee \vee}\)</span> implies <span class="process-math">\(E \cong R^{\vee} \cong R^{\vee \vee \vee} \cong E^{\vee \vee}\text{.}\)</span> Embed <span class="process-math">\(M\)</span> into some <span class="process-math">\(E^{a}\text{;}\)</span> since the cokernel is a quotient of an artinian module, hence artinian, we get a left-exact sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow M \longrightarrow E^{a} \longrightarrow E^{b}
+\end{equation*}
+</div>
+</div> <div class="para" id="thm-2.45-3-6">As before, we obtain a commutative diagram</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2023_12_05_e2b943b5b28c6794a270g-040.jpg" class="contained"></div> <div class="para" id="thm-2.45-3-8">and thus <span class="process-math">\(M \cong M^{\vee \vee}\text{.}\)</span>
+</div></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-injective-noetherian.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-loco.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
