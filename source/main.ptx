@@ -1793,9 +1793,9 @@
       </chapter>
       -->
 
-      <chapter xml:id="ch-chain-complexes"><title>The Category of Chain Complexes</title>
+      <chapter xml:id="ch-chain-complexes"><title>Chain Complexes</title>
 
-        <section xml:id="sec-chain-complexes"><title></title>
+        <section xml:id="sec-chain-complexes"><title>The Category of Chain Complexes</title>
 
           <subsection xml:id="subsec-complex"><title>Chain Complexes and Short Exact Sequences</title>
 
@@ -25261,6 +25261,7 @@
           </theorem>
 
         </section>
+
       </chapter>
 
       <chapter xml:id="ch-loco"><title>Local Cohomology</title>
