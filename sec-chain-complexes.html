@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Derived Functors</title>
+<title></title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -123,7 +123,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-proj-inj-ab.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-abelian-categories.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-spectral-sequences.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-chain-complexes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chain-complexes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-compelx-maps.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\ann{\operatorname{ann}}
 \newcommand{\Ass}{\operatorname{Ass}}
 \def\Aut{\operatorname{Aut}}
 \def\can{{\mathrm {can}}}
@@ -414,10 +414,10 @@ window.MathJax = {
 <li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">1</span> <span class="title">The Category of Chain Complexes</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-chain-complexes.html" class="internal"><span class="codenumber">1.1</span> <span class="title"></span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-chain-complexes.html#subsec-complex" class="internal"><span class="title">Chain Complexes and Short Exact Sequences</span></a></div></li>
@@ -551,9 +551,9 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-abelian-categories.html" class="internal"><span class="codenumber">6</span> <span class="title">Abelian Categories</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-abelian-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">What’s an Abelian Category?</span></a></div>
 <ul class="structural toc-item-list">
@@ -586,7 +586,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proj-inj-ab.html#subsec-res-ab" class="internal"><span class="title">Unique Resolutions and the Horseshoe Lemma: Revisited</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-derived-functors-ab.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Derived Functors</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-derived-functors-ab.html#subsec-derived-ab" class="internal"><span class="title">Derived Functors: Revisited</span></a></div></li></ul>
 </li>
@@ -811,205 +811,210 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-derived-functors-ab"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">6.5</span><span class="space"> </span><span class="title">Derived Functors</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-chain-complexes"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title"></span>
 </h2>
-<section class="subsection" id="subsec-derived-ab"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Derived Functors: Revisited</span>
+<section class="subsection" id="subsec-complex"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Chain Complexes and Short Exact Sequences</span>
 </h3>
-<div class="para" id="subsec-derived-ab-2">We are now ready to define derived functors in full generality. The definitions will match the definitions over <span class="process-math">\(R\)</span>-modules; the one notable addition from <span class="process-math">\(R\)</span>-Mod to the general case is the new need to worry about whether the abelian category in question has enough injectives or enough projectives.</div>
-<article class="definition definition-like" id="def-7.62"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.84</span><span class="period">.</span><span class="space"> </span><span class="title">Derived functors.</span>
-</h4> <div class="para" id="def-7.62-2-1">Let <span class="process-math">\(\mathcal{A}\)</span> and <span class="process-math">\(\mathcal{B}\)</span> be abelian categories.</div> <div class="para logical" id="def-7.62-2-2">
-<div class="para">Let <span class="process-math">\(F: \mathcal{A} \longrightarrow \mathcal{B}\)</span> be a covariant right exact functor. If <span class="process-math">\(\mathcal{A}\)</span> has enough projectives, the left derived functors of <span class="process-math">\(F\)</span> are a sequence of functors <span class="process-math">\(L_{i} F: \mathcal{A} \longrightarrow \mathcal{B}, i \geqslant 0\text{,}\)</span> defined as follows:</div>
+<div class="para" id="subsec-complex-2">Homological algebra first appeared in the study of topological spaces. Roughly speaking, homology is a way of associating a sequence of abelian groups (or modules, or other more sophisticated algebraic objects) to another object, for example a topological space. The homology of a topological space encodes topological information about the space in algebraic language - this is what algebraic topology is all about.</div>
+<div class="para" id="subsec-complex-3">More formally, we will study complexes and their homology from a more abstract perspective. While algebraic topologists are often concerned with complexes of abelian groups, we will work a bit more generally with complexes of <span class="process-math">\(R\)</span>-modules. The basic assumptions and notation about rings and modules we will use in this class can be found in Appendix A. As an appetizer, we begin with some basic homological algebra definitions.</div>
+<article class="definition definition-like" id="def-chain-complex"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Chain Complex.</span>
+</h4> <div class="para logical" id="def-chain-complex-2-1">
+<div class="para">A <em class="emphasis">chain complex</em> of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(\left(C_{\bullet}, \partial_{\bullet}\right)\text{,}\)</span> also referred to simply as a <em class="emphasis">complex</em>, is a sequence of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(C_{i}\)</span> and <span class="process-math">\(R\)</span>-module homomorphisms</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow C_{n+1} \stackrel{\partial_{n+1}}{\longrightarrow} C_{n} \stackrel{\partial_{n}}{\longrightarrow} C_{n-1} \longrightarrow \cdots
+\end{equation*}
+</div>
+<div class="para">such that <span class="process-math">\(\partial_{n} \partial_{n+1}=0\)</span> for all <span class="process-math">\(n\text{.}\)</span> The maps <span class="process-math">\(\partial_{n}\)</span> are the <em class="emphasis">differentials</em> of our complex. </div>
+</div></article><article class="convention remark-like" id="subsec-complex-5"><h4 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-complex-5-1">We may sometimes omit the differentials <span class="process-math">\(\partial_{n}\)</span> and simply refer to the complex <span class="process-math">\(C_{\bullet}\)</span> or even <span class="process-math">\(C\text{;}\)</span> we may also sometimes refer to <span class="process-math">\(\partial_{\bullet}\)</span> as the differential of <span class="process-math">\(C_{\bullet}\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-ses"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Exact Sequences.</span>
+</h4> <div class="para logical" id="def-ses-2-1">
+<div class="para">The complex <span class="process-math">\(\left(C_{\bullet}, \partial_{\bullet}\right)\)</span> is exact at <span class="process-math">\(n\)</span> if im <span class="process-math">\(\partial_{n+1}=\operatorname{ker} \partial_{n}\text{.}\)</span> An exact sequence is a complex that is exact everywhere. More precisely, an exact sequence of <span class="process-math">\(R\)</span>-modules is a sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cdots \stackrel{f_{n-1}}{\longrightarrow} C_{n} \stackrel{f_{n}}{\longrightarrow} C_{n+1} \stackrel{f_{n+1}}{\longrightarrow} \cdots
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R\)</span>-modules and <span class="process-math">\(R\)</span>-module homomorphisms such that <span class="process-math">\(\operatorname{im} f_{n}=\operatorname{ker} f_{n+1}\)</span> for all <span class="process-math">\(n\text{.}\)</span> An exact sequence of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is a short exact sequence, sometimes written ses. </div>
+</div></article><article class="exercise exercise-like" id="rem-0.2"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="rem-0.2-1-1">The condition that <span class="process-math">\(\partial_{n} \partial_{n+1}=0\)</span> for all <span class="process-math">\(n\)</span> implies that <span class="process-math">\(\im \partial_{n+1} \subseteq \operatorname{ker} \partial_{n}\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="thm-0.4"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="thm-0.4-1">
+<div class="para">The sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow M \stackrel{f}{\longrightarrow} N
+\end{equation*}
+</div>
+<div class="para">is exact if and only if <span class="process-math">\(f\)</span> is injective. Similarly,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+M \stackrel{f}{\longrightarrow} N \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is exact if and only if <span class="process-math">\(f\)</span> is surjective. So</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+\end{equation*}
+</div>
+<div class="para">is a short exact sequence if and only if</div>
 <ul class="disc">
-<li id="def-7.62-2-2-5-1"><div class="para logical" id="def-7.62-2-2-5-1-1">
-<div class="para">For each object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> fix a projective resolution <span class="process-math">\(P\)</span> of <span class="process-math">\(A\text{,}\)</span> and set</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F(A):=\mathrm{H}_{i}(F(P))
-\end{equation*}
-</div>
-</div></li>
-<li id="def-7.62-2-2-5-2"><div class="para logical" id="def-7.62-2-2-5-2-1">
-<div class="para">Given an arrow <span class="process-math">\(f: A \rightarrow B\text{,}\)</span> fix projective resolutions <span class="process-math">\(P \longrightarrow A\)</span> and <span class="process-math">\(Q \longrightarrow B\text{,}\)</span> and a map of complexes <span class="process-math">\(\varphi: P \rightarrow Q\)</span> lifting <span class="process-math">\(f\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F(f):=\mathrm{H}_{i}(F(\varphi))
-\end{equation*}
-</div>
-</div></li>
+<li id="thm-0.4-1-6-1"><div class="para" id="thm-0.4-1-6-1-1">
+<span class="process-math">\(f\)</span> is injective</div></li>
+<li id="thm-0.4-1-6-2"><div class="para" id="thm-0.4-1-6-2-1">
+<span class="process-math">\(g\)</span> is surjective</div></li>
+<li id="thm-0.4-1-6-3"><div class="para" id="thm-0.4-1-6-3-1"><span class="process-math">\(\operatorname{im} f=\operatorname{ker} g\text{.}\)</span></div></li>
 </ul>
-</div> <div class="para logical" id="def-7.62-2-3">
-<div class="para">Let <span class="process-math">\(F: \mathcal{A} \longrightarrow \mathcal{B}\)</span> be a covariant left exact functor. If <span class="process-math">\(\mathcal{A}\)</span> has enough injectives, the right derived functors of <span class="process-math">\(F\)</span> are a sequence of functors <span class="process-math">\(R^{i} F: \mathcal{A} \longrightarrow \mathcal{B}, i \geqslant 0\text{,}\)</span> defined as follows:</div>
-<ul class="disc">
-<li id="def-7.62-2-3-5-1"><div class="para logical" id="def-7.62-2-3-5-1-1">
-<div class="para">For each object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> fix an injective resolution <span class="process-math">\(E\)</span> of <span class="process-math">\(A\text{,}\)</span> and set</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F(A):=\mathrm{H}^{i}(F(E))
-\end{equation*}
+</div></article><div class="para" id="subsec-complex-9">When this is indeed a short exact sequence, we can identify <span class="process-math">\(A\)</span> with its image <span class="process-math">\(f(A)\text{,}\)</span> and <span class="process-math">\(A=\operatorname{ker} g\text{.}\)</span> Moreover, since <span class="process-math">\(g\)</span> is surjective, by the First Isomorphism Theorem we conclude that <span class="process-math">\(C \cong B / f(A)\text{,}\)</span> so we might abuse notation and identify <span class="process-math">\(C\)</span> with <span class="process-math">\(B / A\text{.}\)</span>
 </div>
-</div></li>
-<li id="def-7.62-2-3-5-2"><div class="para logical" id="def-7.62-2-3-5-2-1">
-<div class="para">Given an arrow <span class="process-math">\(f: A \rightarrow B\text{,}\)</span> fix injective resolutions <span class="process-math">\(A \longrightarrow E\)</span> and <span class="process-math">\(B \longrightarrow I\text{,}\)</span> and a map of complexes <span class="process-math">\(\varphi: P \rightarrow Q\)</span> extending <span class="process-math">\(f\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F(f):=\mathrm{H}^{i}(F(\varphi))
-\end{equation*}
-</div>
-</div></li>
-</ul>
-</div> <div class="para" id="def-7.62-2-4">Let <span class="process-math">\(F: \mathcal{A} \longrightarrow \mathcal{B}\)</span> be a contravariant left exact functor. If <span class="process-math">\(\mathcal{A}\)</span> has enough projectives, the right derived functors of <span class="process-math">\(F\)</span> are a sequence of functors <span class="process-math">\(R^{i} F: \mathcal{A} \longrightarrow \mathcal{B}, i \geqslant 0\text{,}\)</span> defined as follows:</div> <div class="para logical" id="def-7.62-2-5"><ul class="disc">
-<li id="def-7.62-2-5-1-1"><div class="para logical" id="def-7.62-2-5-1-1-1">
-<div class="para">For each object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> fix a projective resolution <span class="process-math">\(P\)</span> of <span class="process-math">\(A\text{,}\)</span> and set</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F(A):=\mathrm{H}^{i}(F(P))
-\end{equation*}
-</div>
-</div></li>
-<li id="def-7.62-2-5-1-2"><div class="para logical" id="def-7.62-2-5-1-2-1">
-<div class="para">Given an arrow <span class="process-math">\(f: A \rightarrow B\text{,}\)</span> fix projective resolutions <span class="process-math">\(P \longrightarrow A\)</span> and <span class="process-math">\(Q \longrightarrow B\text{,}\)</span> and a map of complexes <span class="process-math">\(\varphi: P \rightarrow Q\)</span> extending <span class="process-math">\(f\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-R^{i} F(f):=\mathrm{H}^{i}(F(\varphi))
-\end{equation*}
-</div>
-</div></li>
-</ul></div> <div class="para logical" id="def-7.62-2-6">
-<div class="para">Finally, let <span class="process-math">\(F: \mathcal{A} \longrightarrow \mathcal{B}\)</span> be a contravariant right exact functor. If <span class="process-math">\(\mathcal{A}\)</span> has enough injectives, the left derived functors of <span class="process-math">\(F\)</span> are a sequence of functors <span class="process-math">\(L_{i} F: \mathcal{A} \longrightarrow \mathcal{B}, i \geqslant 0\text{,}\)</span> defined as follows:</div>
-<ul class="disc">
-<li id="def-7.62-2-6-5-1"><div class="para logical" id="def-7.62-2-6-5-1-1">
-<div class="para">For each object <span class="process-math">\(A\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> fix an injective resolution <span class="process-math">\(E\)</span> of <span class="process-math">\(A\text{,}\)</span> and set</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F(A):=\mathrm{H}_{i}(F(E))
-\end{equation*}
-</div>
-</div></li>
-<li id="def-7.62-2-6-5-2"><div class="para logical" id="def-7.62-2-6-5-2-1">
-<div class="para">Given an arrow <span class="process-math">\(f: A \rightarrow B\text{,}\)</span> fix injective resolutions <span class="process-math">\(A \longrightarrow E\)</span> and <span class="process-math">\(B \longrightarrow I\text{,}\)</span> and a map of complexes <span class="process-math">\(\varphi: E \rightarrow I\)</span> extending <span class="process-math">\(f\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-L_{i} F(f):=\mathrm{H}_{i}(F(\varphi))
-\end{equation*}
-</div>
-</div></li>
-</ul>
-</div></article><article class="remark remark-like" id="rem-7.63"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.85</span><span class="period">.</span>
+<article class="convention remark-like" id="subsec-complex-10"><h4 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="rem-7.63-1">If <span class="process-math">\(F\)</span> is exact, then <span class="process-math">\(\mathrm{H}_{i}(F(C))=F\left(\mathrm{H}_{i}(C)\right)\text{,}\)</span> so <span class="process-math">\(L_{i} F=0\)</span> for all <span class="process-math">\(i&gt;0\text{.}\)</span>
-</div></article><article class="remark remark-like" id="rem-7.64"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.86</span><span class="period">.</span>
-</h4>
-<div class="para" id="rem-7.64-1">If <span class="process-math">\(P\)</span> is projective, then <span class="process-math">\(0 \longrightarrow P \longrightarrow 0\)</span> is a projective resolution of <span class="process-math">\(P\text{,}\)</span> and thus <span class="process-math">\(L_{i} F(P)=0\)</span> for all <span class="process-math">\(i&gt;0\text{.}\)</span> Similarly, if <span class="process-math">\(E\)</span> is injective then <span class="process-math">\(R^{i} F(E)=0\text{.}\)</span>
-</div></article><article class="proposition theorem-like" id="prop-7.65"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">6.87</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="prop-7.65-1-1">
-<div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category with enough projectives, and <span class="process-math">\(F\)</span> a covariant right exact functor.</div>
-<ol class="decimal">
-<li id="prop-7.65-1-1-3-1"><div class="para" id="prop-7.65-1-1-3-1-1">
-<span class="process-math">\(L_{i} F(A)\)</span> is well-defined up to isomorphism for every object <span class="process-math">\(A\text{.}\)</span>
-</div></li>
-<li id="prop-7.65-1-1-3-2"><div class="para" id="prop-7.65-1-1-3-2-1">
-<span class="process-math">\(L_{i} F(f)\)</span> is well-defined for every arrow <span class="process-math">\(f\text{.}\)</span>
-</div></li>
-<li id="prop-7.65-1-1-3-3"><div class="para" id="prop-7.65-1-1-3-3-1">
-<span class="process-math">\(L_{i} F\)</span> is an additive functor for each <span class="process-math">\(i\text{.}\)</span>
-</div></li>
-<li id="prop-7.65-1-1-3-4"><div class="para" id="prop-7.65-1-1-3-4-1"><span class="process-math">\(L_{0} F=F\text{.}\)</span></div></li>
-</ol>
-</div></article><details id="prop-7.65-2" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="prop-7.65-2-1"><ol class="decimal">
-<li id="prop-7.65-2-1-1-1"><div class="para" id="prop-7.65-2-1-1-1-1">Let <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> be projective resolutions of <span class="process-math">\(A\text{.}\)</span> Theorem 5.17 gives us maps of complexes <span class="process-math">\(\varphi: P \rightarrow Q\)</span> and <span class="process-math">\(\psi: Q \rightarrow P\)</span> such that <span class="process-math">\(\varphi \psi\)</span> is homotopic to <span class="process-math">\(1_{Q}\)</span> and <span class="process-math">\(\psi \varphi\)</span> is homotopic to <span class="process-math">\(1_{P}\text{.}\)</span> Additive functors preserve homotopies, by Remark 7.37, so <span class="process-math">\(F(\varphi) F(\psi)\)</span> and <span class="process-math">\(F(\psi) F(\varphi)\)</span> are homotopic to the corresponding identity arrows. Homotopic maps induce the same map in homology, by Exercise 90. Therefore, <span class="process-math">\(F(\varphi)\)</span> and <span class="process-math">\(F(\psi)\)</span> induce isomorphisms in homology.</div></li>
-<li id="prop-7.65-2-1-1-2"><div class="para" id="prop-7.65-2-1-1-2-1">Fix projective resolutions <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> of <span class="process-math">\(M\)</span> and <span class="process-math">\(N\text{.}\)</span> Any two lifts <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> of <span class="process-math">\(f: M \longrightarrow N\)</span> to <span class="process-math">\(P \longrightarrow Q\)</span> are homotopic, by Lemma 7.59. Additive functors preserve homotopies, by Remark 7.37, so <span class="process-math">\(F(\varphi)\)</span> and <span class="process-math">\(F(\psi)\)</span> are homotopic. Homotopic maps induce the same map in homology, by Exercise 90, so <span class="process-math">\(L_{i} F(\varphi)=L_{i} F(\psi)\)</span> for each <span class="process-math">\(i\text{.}\)</span>
-</div></li>
-<li id="prop-7.65-2-1-1-3"><div class="para" id="prop-7.65-2-1-1-3-1">Given an arrow <span class="process-math">\(f\text{,}\)</span> fix a lift <span class="process-math">\(\varphi\)</span> of <span class="process-math">\(f\)</span> to projective resolutions of the source and target. Since <span class="process-math">\(F\)</span> is an additive functor, <span class="process-math">\(\mathrm{H}_{i}(F(\varphi))\)</span> is a homomorphism for each <span class="process-math">\(i\text{,}\)</span> and thus <span class="process-math">\(L_{i} F(f)\)</span> is a homomorphism between the corresponding <span class="process-math">\(\Hom\)</span>-groups, which as we’ve seen is independent of our choice of <span class="process-math">\(\varphi\text{.}\)</span>
-</div></li>
-<li id="prop-7.65-2-1-1-4">
-<div class="para logical" id="prop-7.65-2-1-1-4-1">
-<div class="para">Let <span class="process-math">\(A\)</span> be any object and <span class="process-math">\(P\)</span> be a projective resolution of <span class="process-math">\(A\text{.}\)</span> Since <span class="process-math">\(P\)</span> is right exact, and</div>
+<div class="para" id="subsec-complex-10-1">We write <span class="process-math">\(A \rightarrow B\)</span> to denote a surjective map, and <span class="process-math">\(A \hookrightarrow B\)</span> to denote an injective map.</div></article><article class="definition definition-like" id="def-cokernel"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Cokernel.</span>
+</h4> <div class="para logical" id="def-cokernel-2-1">
+<div class="para">The cokernel of a map of <span class="process-math">\(R\)</span>-modules <span class="process-math">\(A \stackrel{f}{\rightarrow} B\)</span> is the module</div>
 <div class="displaymath process-math">
 \begin{equation*}
-P_{1} \longrightarrow P_{0} \longrightarrow A \longrightarrow 0
+\text { coker } f:=B / \operatorname{im}(f).
 \end{equation*}
 </div>
-<div class="para">is exact, then so is</div>
-</div>
-<div class="para logical" id="prop-7.65-2-1-1-4-2"><div class="displaymath process-math">
+</div></article><article class="exercise exercise-like" id="rem-0.7"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.8</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="rem-0.7-1-1">
+<div class="para">We can rephrase <a href="sec-chain-complexes.html#thm-0.4" class="xref" data-knowl="./knowl/xref/thm-0.4.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5">Theorem 1.5</a> in a fancier language: if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-0.4.html">
 \begin{equation*}
-F\left(P_{1}\right) \longrightarrow F\left(P_{0}\right) \longrightarrow F(A) \longrightarrow 0 \text {. }
+0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
 \end{equation*}
-</div></div>
-<div class="para" id="prop-7.65-2-1-1-4-3">We claim that <span class="process-math">\(\mathrm{H}_{0}(F(P))=F(A)\text{.}\)</span> By Exercise 84, <span class="process-math">\(\operatorname{ker}\left(F\left(P_{0}\right) \longrightarrow 0\right)=1_{F\left(P_{0}\right)}\text{,}\)</span> so the canonical arrow <span class="process-math">\(\operatorname{im} F\left(\partial_{1}\right) \longrightarrow F\left(P_{0}\right)\)</span> is precisely the image of <span class="process-math">\(F\left(\partial_{1}\right)\text{.}\)</span> By exactness of the last sequence we wrote above, <span class="process-math">\(\operatorname{im} F\left(\partial_{1}\right)=\operatorname{ker}\left(F\left(P_{0}\right) \longrightarrow F(A)\right)\text{.}\)</span> On the other hand, exactness at <span class="process-math">\(F(A)\)</span> says that <span class="process-math">\(F\left(P_{0}\right) \longrightarrow F(A)\)</span> is an epi, by Exercise 86 . Every epi is the cokernel of its kernel, so <span class="process-math">\(F\left(P_{0}\right) \longrightarrow F(A)\)</span> is the cokernel of <span class="process-math">\(\operatorname{im} F\left(\partial_{1}\right)\text{,}\)</span> which we saw was exactly the canonical arrow <span class="process-math">\(B_{1}(F(P)) \longrightarrow Z_{0}(F(P))\text{.}\)</span> Therefore, <span class="process-math">\(\mathrm{H}_{0}(F(P))=F(A)\text{,}\)</span> the target of the cokernel of <span class="process-math">\(B_{1}(F(P)) \longrightarrow Z_{0}(F(P))\text{.}\)</span>
 </div>
-</li>
-</ol></div></article></details><article class="exercise exercise-like" id="exe-95"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6.88</span><span class="period">.</span>
+<div class="para">is a short exact sequence, then <span class="process-math">\(A=\operatorname{ker} g\)</span> and <span class="process-math">\(C=\operatorname{coker} f\text{.}\)</span>
+</div>
+</div></article><article class="example example-like" id="subsec-complex-13"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="exe-95-1-1">
-<div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be an abelian category with enough injectives, and <span class="process-math">\(F\)</span> a covariant left exact functor.</div>
-<ol class="decimal">
-<li id="exe-95-1-1-3-1"><div class="para" id="exe-95-1-1-3-1-1">
-<span class="process-math">\(R^{i} F(A)\)</span> is well-defined up to isomorphism.</div></li>
-<li id="exe-95-1-1-3-2"><div class="para" id="exe-95-1-1-3-2-1">
-<span class="process-math">\(R^{i} F(f)\)</span> is well-defined for every arrow <span class="process-math">\(f\text{.}\)</span>
-</div></li>
-<li id="exe-95-1-1-3-3"><div class="para" id="exe-95-1-1-3-3-1">
-<span class="process-math">\(R^{i} F(f)\)</span> is an additive functor for every <span class="process-math">\(i\text{.}\)</span>
-</div></li>
-<li id="exe-95-1-1-3-4"><div class="para" id="exe-95-1-1-3-4-1"><span class="process-math">\(R^{0} F=F\text{.}\)</span></div></li>
-</ol>
-</div></article><article class="remark remark-like" id="rem-7.66"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.89</span><span class="period">.</span>
-</h4>
-<div class="para" id="rem-7.66-1">If <span class="process-math">\(\mathcal{A}\)</span> is an abelian category with enough injectives, then <span class="process-math">\(\mathcal{A}^{\text {op }}\)</span> is an abelian category with enough projectives. This gives us a relationship between left derived and right derived functors: <span class="process-math">\(R^{i} F=\left(L_{i} F^{\mathrm{op}}\right)^{\mathrm{op}}\text{.}\)</span>
-</div></article><article class="theorem theorem-like" id="thm-7.67"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.90</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="thm-7.67-1-1">
-<div class="para">Let <span class="process-math">\(T_{i}: \mathcal{A} \longrightarrow \mathcal{B}\)</span> be a sequence of additive covariant functors between abelian categories, where <span class="process-math">\(\mathcal{A}\)</span> has enough projectives, and <span class="process-math">\(F: \mathcal{A} \longrightarrow \mathcal{B}\)</span> a right exact functor. Suppose the following hold:</div>
-<ol class="decimal">
-<li id="thm-7.67-1-1-4-1"><div class="para logical" id="thm-7.67-1-1-4-1-1">
-<div class="para">For every short exact sequence <span class="process-math">\(0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> we get a natural long exact sequence</div>
+<div class="para logical" id="subsec-complex-13-1">
+<div class="para">Let <span class="process-math">\(\pi\)</span> be the canonical projection <span class="process-math">\(\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z}\text{.}\)</span> The following is a short exact sequence:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\cdots \longrightarrow T_{2}(C) \longrightarrow T_{1}(A) \longrightarrow T_{1}(B) \longrightarrow T_{1}(C) \longrightarrow T_{0}(A) \longrightarrow T_{0}(B) \longrightarrow T_{0}(C) \longrightarrow 0
+0 \longrightarrow \mathbb{Z} \stackrel{2}{\longrightarrow} \mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0
 \end{equation*}
 </div>
-</div></li>
-<li id="thm-7.67-1-1-4-2"><div class="para" id="thm-7.67-1-1-4-2-1">
-<span class="process-math">\(T_{0}\)</span> is naturally isomorphic to <span class="process-math">\(F\text{.}\)</span>
-</div></li>
-<li id="thm-7.67-1-1-4-3"><div class="para" id="thm-7.67-1-1-4-3-1">
-<span class="process-math">\(T_{n}(P)=0\)</span> for every projective object <span class="process-math">\(P\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> and all <span class="process-math">\(n \geqslant 1\text{.}\)</span>
-</div></li>
-</ol>
-</div> <div class="para" id="thm-7.67-1-2">Then <span class="process-math">\(T_{n}\)</span> is naturally isomorphic to <span class="process-math">\(L_{n} F\)</span> for all <span class="process-math">\(n\text{.}\)</span>
-</div> <div class="para logical" id="thm-7.67-1-3">
-<div class="para">Similarly, suppose <span class="process-math">\(T_{i}: \mathcal{A} \longrightarrow \mathcal{B}\)</span> is a sequence of additive covariant functors, where <span class="process-math">\(\mathcal{A}\)</span> has enough injectives, and <span class="process-math">\(F: \mathcal{A} \longrightarrow \mathcal{B}\)</span> a left exact functor such that</div>
-<ol class="decimal">
-<li id="thm-7.67-1-3-4-1"><div class="para logical" id="thm-7.67-1-3-4-1-1">
-<div class="para">For every short exact sequence <span class="process-math">\(0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> we get a long exact sequence</div>
+</div></article><article class="example example-like" id="subsec-complex-14"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-complex-14-1">
+<div class="para">Let <span class="process-math">\(R=k[x]\)</span> be a polynomial ring over the field <span class="process-math">\(k\text{.}\)</span> The following is a short exact sequence:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-0 \longrightarrow T_{0}(A) \longrightarrow T_{0}(B) \longrightarrow T_{0}(C) \longrightarrow T_{1}(A) \longrightarrow T_{1}(B) \longrightarrow T_{1}(C) \longrightarrow \cdots
+0 \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R /\igen x \longrightarrow 0 \text {. }
 \end{equation*}
 </div>
-</div></li>
-<li id="thm-7.67-1-3-4-2"><div class="para" id="thm-7.67-1-3-4-2-1">
-<span class="process-math">\(T_{0}\)</span> is naturally isomorphic to <span class="process-math">\(F\text{.}\)</span>
-</div></li>
-<li id="thm-7.67-1-3-4-3"><div class="para" id="thm-7.67-1-3-4-3-1">
-<span class="process-math">\(T_{n}(E)=0\)</span> for every injective object <span class="process-math">\(E\)</span> in <span class="process-math">\(\mathcal{A}\text{,}\)</span> and all <span class="process-math">\(n \geqslant 1\text{.}\)</span>
-</div></li>
-</ol>
-</div> <div class="para" id="thm-7.67-1-4">Then <span class="process-math">\(T_{n}\)</span> is naturally isomorphic to <span class="process-math">\(R^{n} F\)</span> for all <span class="process-math">\(n\text{.}\)</span>
-</div></article></section></section></div>
+</div> <div class="para" id="subsec-complex-14-2">The first map is multiplication by <span class="process-math">\(x\text{,}\)</span> and the second map is the canonical projection.</div></article><article class="example example-like" id="subsec-complex-15"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-complex-15-1">
+<div class="para">Given an ideal <span class="process-math">\(I\)</span> in a ring <span class="process-math">\(R\text{,}\)</span> the inclusion map <span class="process-math">\(\iota: I \rightarrow R\)</span> and the canonical projection <span class="process-math">\(\pi: R \rightarrow R / I\)</span> give us the following short exact sequence:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \longrightarrow I \stackrel{\iota}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R / I \longrightarrow 0
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="subsec-complex-16"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-complex-16-1">Let <span class="process-math">\(R=k[x] /\igen x\text{.}\)</span> The following complex is exact:</div> <div class="para logical" id="subsec-complex-16-2"><div class="displaymath process-math">
+\begin{equation*}
+\cdots \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\cdot x}{\longrightarrow} R \longrightarrow \cdots
+\end{equation*}
+</div></div> <div class="para" id="subsec-complex-16-3">Indeed, the image and the kernel of multiplication by <span class="process-math">\(x\)</span> are both <span class="process-math">\(\igen x\text{.}\)</span>
+</div></article><div class="para" id="subsec-complex-17">Sometimes we can show that certain modules vanish or compute them explicitly when they do not vanish by seeing that they fit in some naturally constructed exact sequence involving other modules we understand better. We will discuss this in more detail when we talk about long exact sequences.</div>
+<article class="remark remark-like" id="subsec-complex-18"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-complex-18-1">The complex <span class="process-math">\(0 \longrightarrow M \stackrel{f}{\longrightarrow} N \longrightarrow 0\)</span> is exact if and only if <span class="process-math">\(f\)</span> is an isomorphism.</div></article><article class="remark remark-like" id="subsec-complex-19"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.14</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-complex-19-1">The complex <span class="process-math">\(0 \longrightarrow M \longrightarrow 0\)</span> is exact if and only if <span class="process-math">\(M=0\text{.}\)</span>
+</div></article></section><section class="subsection" id="subsec-homology"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Homology</span>
+</h3>
+<div class="para" id="subsec-homology-2">Historically, chain complexes first appeared in topology. To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.</div>
+<article class="definition definition-like" id="def-homology"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Homology.</span>
+</h4> <div class="para logical" id="def-homology-2-1">
+<div class="para">The homology of the complex <span class="process-math">\(\left(C_{\bullet}, \partial_{\bullet}\right)\)</span> is the sequence of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}\left(C_{\bullet}\right)=\mathrm{H}_{n}(C):=\frac{\operatorname{ker} \partial_{n}}{\operatorname{im} \partial_{n+1}} .
+\end{equation*}
+</div>
+</div> <div class="para" id="def-homology-2-2">The <span class="process-math">\(n\)</span>th homology of <span class="process-math">\(\left(C_{\bullet}, \partial_{\bullet}\right)\)</span> is <span class="process-math">\(\mathrm{H}_{n}(C)\text{.}\)</span>
+</div></article><article class="convention remark-like" id="subsec-homology-4"><h4 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.16</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-homology-4-1">The submodules <span class="process-math">\(Z_{n}\left(C_{\bullet}\right)=Z_{n}(C):=\operatorname{ker} \partial_{n} \subseteq C_{n}\)</span> are sometimes called <em class="emphasis">cycles</em>, while the submodules <span class="process-math">\(B_{n}\left(C_{\bullet}\right)=B_{n}(C):=\operatorname{im} \partial_{n+1} \subseteq C_{n}\)</span> are sometimes called <em class="emphasis">boundaries</em>. One sometimes uses the word boundary to refer an element of <span class="process-math">\(B_{n}(C)\)</span> (an <span class="process-math">\(n\)</span>-boundary), and the word cycle to refer to an element of <span class="process-math">\(Z_{n}(C)\)</span> (an <span class="process-math">\(n\)</span>-cycle).</div></article><article class="remark remark-like" id="subsec-homology-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.17</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-homology-5-1">The homology of a complex measures how far our complex is from being exact at each point. Again, we can talk about the cohomology of a cochain complex instead, which we write as <span class="process-math">\(\mathrm{H}^{n}(C)\text{;}\)</span> we will for now not worry about the distinction.</div></article><article class="exercise exercise-like" id="rem-0.15"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.18</span><span class="period">.</span>
+</h4>
+<div class="para" id="rem-0.15-1-1">Note that <span class="process-math">\(\left(C_{\bullet}, \partial_{\bullet}\right)\)</span> is exact at <span class="process-math">\(n\)</span> if and only if <span class="process-math">\(\mathrm{H}_{n}\left(C_{\bullet}\right)=0\text{.}\)</span>
+</div></article><article class="example example-like" id="subsec-homology-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.19</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-homology-7-1">
+<div class="para">Let <span class="process-math">\(R=k[x] /\igen{x^3}\text{.}\)</span> Consider the following complex:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_{\bullet}=\cdots \longrightarrow R \stackrel{\cdot x^{2}}{\longrightarrow} R \stackrel{\cdot x^{2}}{\longrightarrow} R \longrightarrow \cdots .
+\end{equation*}
+</div>
+<div class="para">The image of multiplication by <span class="process-math">\(x^{2}\)</span> is <span class="process-math">\(\igen{x^2}\text{,}\)</span> while the the kernel of multiplication by <span class="process-math">\(x^{2}\)</span> is <span class="process-math">\(\igen{x} \supseteq\igen{x^2}\text{.}\)</span> For all <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{H}_{n}\left(F_{\bullet}\right)=\igen{x} /\igen{x^2} \cong R /\igen{x}
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="subsec-homology-8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-homology-8-1">Let <span class="process-math">\(\mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z}\)</span> be the canonical projection map. Then</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/2023_08_28_614593e69373955f3addg-07.jpg" class="contained"></div> <div class="para logical" id="subsec-homology-8-3">
+<div class="para">is a complex of abelian groups, since the image of multiplication by <span class="process-math">\(4\)</span> is <span class="process-math">\(4 \mathbb{Z}\text{,}\)</span> and that is certainly contained in <span class="process-math">\(\operatorname{ker} \pi=2 \mathbb{Z}\text{.}\)</span> The homology of <span class="process-math">\(C\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{ll}
+\mathrm{H}_{n}(C)=0 &amp; \text { for } n \geqslant 3 \\
+\mathrm{H}_{2}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}{\operatorname{im}(0 \longrightarrow \mathbb{Z})}=\frac{0}{0}=0 &amp; \\
+\mathrm{H}_{1}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{\pi}{\rightarrow} \mathbb{Z} / 2 \mathbb{Z})}{\operatorname{im}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}=\frac{2 \mathbb{Z}}{4 \mathbb{Z}} \cong \mathbb{Z} / 2 \mathbb{Z} &amp; \\
+\mathrm{H}_{0}(C)=\frac{\operatorname{ker}(\mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0)}{\operatorname{im}(\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z})}=\frac{\mathbb{Z} / 2 \mathbb{Z}}{\mathbb{Z} / 2 \mathbb{Z}}=0 &amp; \text { for } n&lt;0 \\
+\mathrm{H}_{n}(C)=0 &amp;
+\end{array}
+\end{equation*}
+</div>
+</div> <div class="para" id="subsec-homology-8-4">Notice that our complex is exact at <span class="process-math">\(2\)</span> and <span class="process-math">\(0\text{.}\)</span> The exactness at <span class="process-math">\(2\)</span> says that the map <span class="process-math">\(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z}\)</span> is injective, while exactness at <span class="process-math">\(0\)</span> says that <span class="process-math">\(\pi\)</span> is surjective.</div></article><div class="para" id="subsec-homology-9">Before we can continue any further into the world of homological algebra, we will need some categorical language. We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-proj-inj-ab.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-spectral-sequences.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-chain-complexes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-compelx-maps.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
