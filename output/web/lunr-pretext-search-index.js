@@ -19,191 +19,191 @@ var ptx_lunr_docs = [
   "body": " The content and structure have been heavily based on the courses and notes of the following faculty:    Eloísa Grifo      Jack Jeffries      Alexandra Seceleanu      Mark Walker  Mark has somehow managed to be the only member of the mathematics faculty to not have so much as a single page on the UNL website. Luckily, there are workarounds.      And, as always, I reserve a speical thank you for Erin McNicholas and Inga Johnson for forever tinting the world of mathematics purple.  "
 },
 {
-  "id": "ch-intro",
+  "id": "sec-chain-complexes",
   "level": "1",
-  "url": "ch-intro.html",
-  "type": "Chapter",
-  "number": "0",
-  "title": "Where are we going?",
-  "body": "Where are we going?  Chain Complexes and Short Exact Sequences  Homological algebra first appeared in the study of topological spaces. Roughly speaking, homology is a way of associating a sequence of abelian groups (or modules, or other more sophisticated algebraic objects) to another object, for example a topological space. The homology of a topological space encodes topological information about the space in algebraic language - this is what algebraic topology is all about.  More formally, we will study complexes and their homology from a more abstract perspective. While algebraic topologists are often concerned with complexes of abelian groups, we will work a bit more generally with complexes of -modules. The basic assumptions and notation about rings and modules we will use in this class can be found in Appendix A. As an appetizer, we begin with some basic homological algebra definitions.  Chain Complex   A chain complex of -modules , also referred to simply as a complex , is a sequence of -modules and -module homomorphisms such that for all . The maps are the differentials of our complex. chain complex  differential      We may sometimes omit the differentials and simply refer to the complex or even ; we may also sometimes refer to as the differential of .   Exact Sequences   The complex is exact at if im . An exact sequence is a complex that is exact everywhere. More precisely, an exact sequence of -modules is a sequence of -modules and -module homomorphisms such that for all . An exact sequence of the form is a short exact sequence, sometimes written ses. exact sequence  short exact sequence      The condition that for all implies that .    The sequence is exact if and only if is injective. Similarly, is exact if and only if is surjective. So is a short exact sequence if and only if    is injective     is surjective     .      When this is indeed a short exact sequence, we can identify with its image , and . Moreover, since is surjective, by the First Isomorphism Theorem we conclude that , so we might abuse notation and identify with .   We write to denote a surjective map, and to denote an injective map.   Cokernel   The cokernel of a map of -modules is the module      We can rephrase in a fancier language: if is a short exact sequence, then and .    Let be the canonical projection . The following is a short exact sequence:     Let be a polynomial ring over the field . The following is a short exact sequence:   The first map is multiplication by , and the second map is the canonical projection.    Given an ideal in a ring , the inclusion map and the canonical projection give us the following short exact sequence:     Let . The following complex is exact:     Indeed, the image and the kernel of multiplication by are both .   Sometimes we can show that certain modules vanish or compute them explicitly when they do not vanish by seeing that they fit in some naturally constructed exact sequence involving other modules we understand better. We will discuss this in more detail when we talk about long exact sequences.   The complex is exact if and only if is an isomorphism.    The complex is exact if and only if .    Homology  Historically, chain complexes first appeared in topology. To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.  Homology   The homology of the complex is the sequence of -modules   The th homology of is .     The submodules are sometimes called cycles , while the submodules are sometimes called boundaries . One sometimes uses the word boundary to refer an element of (an -boundary), and the word cycle to refer to an element of (an -cycle).    The homology of a complex measures how far our complex is from being exact at each point. Again, we can talk about the cohomology of a cochain complex instead, which we write as ; we will for now not worry about the distinction.    Note that is exact at if and only if .    Let . Consider the following complex: The image of multiplication by is , while the the kernel of multiplication by is . For all ,     Let be the canonical projection map. Then   is a complex of abelian groups, since the image of multiplication by is , and that is certainly contained in . The homology of is   Notice that our complex is exact at and . The exactness at says that the map is injective, while exactness at says that is surjective.   Before we can continue any further into the world of homological algebra, we will need some categorical language. We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.   "
+  "url": "sec-chain-complexes.html",
+  "type": "Section",
+  "number": "1.1",
+  "title": "",
+  "body": " Chain Complexes and Short Exact Sequences  Homological algebra first appeared in the study of topological spaces. Roughly speaking, homology is a way of associating a sequence of abelian groups (or modules, or other more sophisticated algebraic objects) to another object, for example a topological space. The homology of a topological space encodes topological information about the space in algebraic language - this is what algebraic topology is all about.  More formally, we will study complexes and their homology from a more abstract perspective. While algebraic topologists are often concerned with complexes of abelian groups, we will work a bit more generally with complexes of -modules. The basic assumptions and notation about rings and modules we will use in this class can be found in Appendix A. As an appetizer, we begin with some basic homological algebra definitions.  Chain Complex   A chain complex of -modules , also referred to simply as a complex , is a sequence of -modules and -module homomorphisms such that for all . The maps are the differentials of our complex. chain complex  differential      We may sometimes omit the differentials and simply refer to the complex or even ; we may also sometimes refer to as the differential of .   Exact Sequences   The complex is exact at if im . An exact sequence is a complex that is exact everywhere. More precisely, an exact sequence of -modules is a sequence of -modules and -module homomorphisms such that for all . An exact sequence of the form is a short exact sequence, sometimes written ses. exact sequence  short exact sequence      The condition that for all implies that .    The sequence is exact if and only if is injective. Similarly, is exact if and only if is surjective. So is a short exact sequence if and only if    is injective     is surjective     .      When this is indeed a short exact sequence, we can identify with its image , and . Moreover, since is surjective, by the First Isomorphism Theorem we conclude that , so we might abuse notation and identify with .   We write to denote a surjective map, and to denote an injective map.   Cokernel   The cokernel of a map of -modules is the module      We can rephrase in a fancier language: if is a short exact sequence, then and .    Let be the canonical projection . The following is a short exact sequence:     Let be a polynomial ring over the field . The following is a short exact sequence:   The first map is multiplication by , and the second map is the canonical projection.    Given an ideal in a ring , the inclusion map and the canonical projection give us the following short exact sequence:     Let . The following complex is exact:     Indeed, the image and the kernel of multiplication by are both .   Sometimes we can show that certain modules vanish or compute them explicitly when they do not vanish by seeing that they fit in some naturally constructed exact sequence involving other modules we understand better. We will discuss this in more detail when we talk about long exact sequences.   The complex is exact if and only if is an isomorphism.    The complex is exact if and only if .    Homology  Historically, chain complexes first appeared in topology. To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.  Homology   The homology of the complex is the sequence of -modules   The th homology of is .     The submodules are sometimes called cycles , while the submodules are sometimes called boundaries . One sometimes uses the word boundary to refer an element of (an -boundary), and the word cycle to refer to an element of (an -cycle).    The homology of a complex measures how far our complex is from being exact at each point. Again, we can talk about the cohomology of a cochain complex instead, which we write as ; we will for now not worry about the distinction.    Note that is exact at if and only if .    Let . Consider the following complex: The image of multiplication by is , while the the kernel of multiplication by is . For all ,     Let be the canonical projection map. Then   is a complex of abelian groups, since the image of multiplication by is , and that is certainly contained in . The homology of is   Notice that our complex is exact at and . The exactness at says that the map is injective, while exactness at says that is surjective.   Before we can continue any further into the world of homological algebra, we will need some categorical language. We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.   "
 },
 {
   "id": "def-chain-complex",
   "level": "2",
-  "url": "ch-intro.html#def-chain-complex",
+  "url": "sec-chain-complexes.html#def-chain-complex",
   "type": "Definition",
-  "number": "0.1",
+  "number": "1.1",
   "title": "Chain Complex.",
   "body": "Chain Complex   A chain complex of -modules , also referred to simply as a complex , is a sequence of -modules and -module homomorphisms such that for all . The maps are the differentials of our complex. chain complex  differential    "
 },
 {
-  "id": "ch-intro-2-5",
+  "id": "subsec-complex-5",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-2-5",
+  "url": "sec-chain-complexes.html#subsec-complex-5",
   "type": "Convention",
-  "number": "0.2",
+  "number": "1.2",
   "title": "",
   "body": " We may sometimes omit the differentials and simply refer to the complex or even ; we may also sometimes refer to as the differential of .  "
 },
 {
   "id": "def-ses",
   "level": "2",
-  "url": "ch-intro.html#def-ses",
+  "url": "sec-chain-complexes.html#def-ses",
   "type": "Definition",
-  "number": "0.3",
+  "number": "1.3",
   "title": "Exact Sequences.",
   "body": "Exact Sequences   The complex is exact at if im . An exact sequence is a complex that is exact everywhere. More precisely, an exact sequence of -modules is a sequence of -modules and -module homomorphisms such that for all . An exact sequence of the form is a short exact sequence, sometimes written ses. exact sequence  short exact sequence    "
 },
 {
   "id": "rem-0.2",
   "level": "2",
-  "url": "ch-intro.html#rem-0.2",
+  "url": "sec-chain-complexes.html#rem-0.2",
   "type": "Exercise",
-  "number": "0.4",
+  "number": "1.4",
   "title": "",
   "body": " The condition that for all implies that .  "
 },
 {
   "id": "thm-0.4",
   "level": "2",
-  "url": "ch-intro.html#thm-0.4",
+  "url": "sec-chain-complexes.html#thm-0.4",
   "type": "Theorem",
-  "number": "0.5",
+  "number": "1.5",
   "title": "",
   "body": " The sequence is exact if and only if is injective. Similarly, is exact if and only if is surjective. So is a short exact sequence if and only if    is injective     is surjective     .     "
 },
 {
-  "id": "ch-intro-2-10",
+  "id": "subsec-complex-10",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-2-10",
+  "url": "sec-chain-complexes.html#subsec-complex-10",
   "type": "Convention",
-  "number": "0.6",
+  "number": "1.6",
   "title": "",
   "body": " We write to denote a surjective map, and to denote an injective map.  "
 },
 {
   "id": "def-cokernel",
   "level": "2",
-  "url": "ch-intro.html#def-cokernel",
+  "url": "sec-chain-complexes.html#def-cokernel",
   "type": "Definition",
-  "number": "0.7",
+  "number": "1.7",
   "title": "Cokernel.",
   "body": "Cokernel   The cokernel of a map of -modules is the module    "
 },
 {
   "id": "rem-0.7",
   "level": "2",
-  "url": "ch-intro.html#rem-0.7",
+  "url": "sec-chain-complexes.html#rem-0.7",
   "type": "Exercise",
-  "number": "0.8",
+  "number": "1.8",
   "title": "",
   "body": " We can rephrase in a fancier language: if is a short exact sequence, then and .  "
 },
 {
-  "id": "ch-intro-2-13",
+  "id": "subsec-complex-13",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-2-13",
+  "url": "sec-chain-complexes.html#subsec-complex-13",
   "type": "Example",
-  "number": "0.9",
+  "number": "1.9",
   "title": "",
   "body": " Let be the canonical projection . The following is a short exact sequence:   "
 },
 {
-  "id": "ch-intro-2-14",
+  "id": "subsec-complex-14",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-2-14",
+  "url": "sec-chain-complexes.html#subsec-complex-14",
   "type": "Example",
-  "number": "0.10",
+  "number": "1.10",
   "title": "",
   "body": " Let be a polynomial ring over the field . The following is a short exact sequence:   The first map is multiplication by , and the second map is the canonical projection.  "
 },
 {
-  "id": "ch-intro-2-15",
+  "id": "subsec-complex-15",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-2-15",
+  "url": "sec-chain-complexes.html#subsec-complex-15",
   "type": "Example",
-  "number": "0.11",
+  "number": "1.11",
   "title": "",
   "body": " Given an ideal in a ring , the inclusion map and the canonical projection give us the following short exact sequence:   "
 },
 {
-  "id": "ch-intro-2-16",
+  "id": "subsec-complex-16",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-2-16",
+  "url": "sec-chain-complexes.html#subsec-complex-16",
   "type": "Example",
-  "number": "0.12",
+  "number": "1.12",
   "title": "",
   "body": " Let . The following complex is exact:     Indeed, the image and the kernel of multiplication by are both .  "
 },
 {
-  "id": "ch-intro-2-18",
+  "id": "subsec-complex-18",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-2-18",
+  "url": "sec-chain-complexes.html#subsec-complex-18",
   "type": "Remark",
-  "number": "0.13",
+  "number": "1.13",
   "title": "",
   "body": " The complex is exact if and only if is an isomorphism.  "
 },
 {
-  "id": "ch-intro-2-19",
+  "id": "subsec-complex-19",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-2-19",
+  "url": "sec-chain-complexes.html#subsec-complex-19",
   "type": "Remark",
-  "number": "0.14",
+  "number": "1.14",
   "title": "",
   "body": " The complex is exact if and only if .  "
 },
 {
   "id": "def-homology",
   "level": "2",
-  "url": "ch-intro.html#def-homology",
+  "url": "sec-chain-complexes.html#def-homology",
   "type": "Definition",
-  "number": "0.15",
+  "number": "1.15",
   "title": "Homology.",
   "body": "Homology   The homology of the complex is the sequence of -modules   The th homology of is .   "
 },
 {
-  "id": "ch-intro-3-4",
+  "id": "subsec-homology-4",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-3-4",
+  "url": "sec-chain-complexes.html#subsec-homology-4",
   "type": "Convention",
-  "number": "0.16",
+  "number": "1.16",
   "title": "",
   "body": " The submodules are sometimes called cycles , while the submodules are sometimes called boundaries . One sometimes uses the word boundary to refer an element of (an -boundary), and the word cycle to refer to an element of (an -cycle).  "
 },
 {
-  "id": "ch-intro-3-5",
+  "id": "subsec-homology-5",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-3-5",
+  "url": "sec-chain-complexes.html#subsec-homology-5",
   "type": "Remark",
-  "number": "0.17",
+  "number": "1.17",
   "title": "",
   "body": " The homology of a complex measures how far our complex is from being exact at each point. Again, we can talk about the cohomology of a cochain complex instead, which we write as ; we will for now not worry about the distinction.  "
 },
 {
   "id": "rem-0.15",
   "level": "2",
-  "url": "ch-intro.html#rem-0.15",
+  "url": "sec-chain-complexes.html#rem-0.15",
   "type": "Exercise",
-  "number": "0.18",
+  "number": "1.18",
   "title": "",
   "body": " Note that is exact at if and only if .  "
 },
 {
-  "id": "ch-intro-3-7",
+  "id": "subsec-homology-7",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-3-7",
+  "url": "sec-chain-complexes.html#subsec-homology-7",
   "type": "Example",
-  "number": "0.19",
+  "number": "1.19",
   "title": "",
   "body": " Let . Consider the following complex: The image of multiplication by is , while the the kernel of multiplication by is . For all ,   "
 },
 {
-  "id": "ch-intro-3-8",
+  "id": "subsec-homology-8",
   "level": "2",
-  "url": "ch-intro.html#ch-intro-3-8",
+  "url": "sec-chain-complexes.html#subsec-homology-8",
   "type": "Example",
-  "number": "0.20",
+  "number": "1.20",
   "title": "",
   "body": " Let be the canonical projection map. Then   is a complex of abelian groups, since the image of multiplication by is , and that is certainly contained in . The homology of is   Notice that our complex is exact at and . The exactness at says that the map is injective, while exactness at says that is surjective.  "
 },
@@ -212,16 +212,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-compelx-maps.html",
   "type": "Section",
-  "number": "1.1",
-  "title": "Maps of Complexes",
-  "body": "Maps of Complexes    Definitions: category, complex     We are finally ready to introduce the category of chain complexes, and to talk more about exact sequences in homology.   Establishing    A chain is no stronger than its weakest link, and life is after all a chain.   William James   Unsurprisingly, we can form a category of complexes, but to do that we need the right definition of maps between complexes. We also take this section as a chance to set up some definitions we will need later. One thing to keep in mind as we build our basic definitions: we also want homology to be functorial.  Chain Map   Let and be complexes. A map of complexes or a chain map , which we write as or simply , is a sequence of homomorphisms of -modules such that the following diagram commutes:   This means that for all .    Map vs. Chain Map  Note that throughout, whenever we call a function between -modules and a map , we really mean to say it is a homomorphism of -modules.   Zero and Identity Chain Maps  The zero and the identity maps of complexes are exactly what they sound like: the zero map is 0 in every homological degree, and the identity map is the identity in every homological degree.   This is the notion of morphism we would want to form a category of chain complexes.  Category of Chain Complexes   Let be a ring. The category of chain complexes of -modules, denoted or simply , is the category with objects all chain complexes of -modules and arrows all maps of complexes of -modules.     When , we write for , the category of chain complexes of abelian groups.   Note that the identity maps defined above are precisely the identity arrows in the category of chain complexes.  Understanding    Verify that is indeed a category.    Show that the isomorphisms in the category are precisely the maps of complexes   such that is an isomorphism for all .     Subcomplexes and Quotient Complexes   Given complexes and is a subcomplex of if is a submodule of for all , and the inclusion maps define a map of complexes .  Given a subcomplex of , the quotient of by is the complex that has in homological degree , with differential induced by the differential on .    Subcomplex Maps are Well-Defined  If is a subcomplex of , then the differential on satisfies . Therefore, induces a map of -modules for all , so that our definition of the differential on actually makes sense.   We can also talk about kernels and cokernels of maps of complexes.  Kernel, Cokernel   Given any map of complexes , the kernel of is the subcomplex of that we can assemble from the the kernels . More precisely, is the complex where the differentials are simply the corresponding restrictions of the differentials on .  Similarly, the image of is the subcomplex of . where the differentials are given by restriction of the corresponding differentials in . The cokernel of is the quotient complex .    Again, there are some details to check.   Show that the kernel, image, and cokernel of a complex map are indeed complexes.    The Homology Functor  This is a good notion of map of complexes: it induces homomorphisms in homology, which in particular allows us to say that homology is a functor.  Induced Homomorphisms on Homology   Let be a map of complexes. For all restricts to homomorphisms    and     .   As a consequence, induces homomorphisms on homology .     Since , any element , say , is taken to   Similarly, if , then so . Finally, the restriction of to sends into , and thus it induces a well-defined homomorphism on the quotients .    Induced Map in Homology   Let be a map of complexes. We call the map the induced map in homology , and sometimes denote it by .    Homology Functor  One can show that preserves compositions, and that moreover, the map in homology induced by the identity is the identity. Thus taking th homology is a functor which takes each map of complexes to the -module homomorphism    Quasi-Isomorphism   A map of chain complexes is a quasi-isomorphism if it induces an isomorphism in homology, meaning is an isomorphism of -modules for all . If there exists a quasi-isomorphism between two complexes and , we say that and are quasi-isomorphic , and write .     Note that saying that if is a quasi-isomorphism between and is a stronger statement that the fact that for all : it also says that there are isomorphisms that are all induced by .   Not all quasi-isomorphisms are isomorphisms, as the following example shows:   Let denote the projection map from to . The chain map   is a quasi-isomorphism.   When we look at the induced map of on homology, the only index where the induced homomorphism may not be is at . Observe however, that is the identity map, as is mapped to and is mapped to . Thus is indeed a quasi-isomorphism.    Homotopy    Transformation is not automatic. It must be learned; it must be led.   W. Edwards Deming   Homotopy   Let be maps complexes. A homotopy , sometimes referred to as a chain homotopy , between and is a sequence of maps    such that for all . If there exists a homotopy between and , we say that and are homotopic or that they have the same homotopy type . We write to say that and are homotopic. If is homotopic to the zero map, we say is nullhomotopic , and write . This should not be confused with the notation on complexes.    Homotopy is an Equivalence Relation  Homotopy is an equivalence relation.   The equivalence classes under homotopy are called homotopy classes. Homotopy is an interesting equivalence relation because homotopic maps induce the same map on homology.  Nullhomotopic Maps Induce Zero Map in Homology   Let be maps of complexes. If is homotopic to , then for all . In particular, every nullhomotopic map induces the zero map in homology.    Let be homotopic maps of complexes, and let be a homotopy between and . We claim that the map of complexes (defined in the obvious way) sends cycles to boundaries. If , then The map on homology induced by must then be the map, so and induce the same map on homology. Here we are implicitly using the fact that , which we leave as an exercise to be further explored in .     Let be maps of complexes. Show that for all .       This makes homology an additive functor , which we define explicitly in .   Notice, however, that the converse is false: the induced map in homology can be the zero map (for all homological degrees) even if the original map of complexes is not nullhomotopic.   Consider the following map of complexes:   Show that this map is not nullhomotopic, but that the induced map in homology is zero.   Suppose by way of contradiction that is nullhomotopic. Thus , where the arise from the definition of homotopy. Consider . As and , by the given equality we must have . Thus must map to either or in . However, the following shows that neither can be the case:     As and in , we have reached a contradiction. Thus, is not nullhomotopic.  However, the induced map in homology at the degree is where . As for all , we see that . As this was the only location where the homology could have been nonzero, we see that the induced map on is zero.   Homotopy Equivalent   If and are maps of complexes such that is homotopic to the identity map on and is homotopic to the identity chain map on , we say that and are homotopy equivalences and and are homotopy equivalent .    Homotopy Equvivalences are Quasi-Isomorphisms   Homotopy equivalences are quasi-isomorphisms.    If and are such that is homotopic to and is homotopic to , then by the map induces the identity map on homology. So for all we have Therefore, and must both be isomorphisms.    The converse is false.   Let denote the projection map from to . The chain map   is a quasi-isomorphism but not a homotopy equivalence.       The relation , meaning \"there is a quasi-isomorphism from to \", is not symmetric: in , there is no quasi-isomorphism going in the opposite direction of the one given.    Complexes of Complexes    Every complex problem has a simple solution that doesn't work.   H.L. Mencken   Now that we know about maps between complexes, it's time to point out that we can also talk about complexes of complexes and exact sequences of complexes. While we will later formalize this a little better when we discover that is an abelian category , let's for now give quick definitions that we can use.  Complexes in   A complex in is a sequence of complexes of -modules and chain maps between them such that for all . A complex of complexes is a diagram of the form   where is the module in homological degree in the complex . The th column corresponds to the complex , and every row is also a complex. The vertical maps are the differentials on each individual complex; the horizontal maps are the differentials on the complex of complexes.    Given a complex in , we can talk about cycles and boundaries, which are a sequence of subcomplexes of the complexes in , and thus its homology. Such a complex is exact if for all .  Short Exact Sequences in   A short exact sequence of complexes is an exact complex in of the form Equivalently, a short exact sequence of complexes is a commutative diagram   where the rows are exact and the columns are complexes.                 "
+  "number": "1.2",
+  "title": "The Category of Chain Complexes",
+  "body": "The Category of Chain Complexes    Definitions: category, complex     We are finally ready to introduce the category of chain complexes, and to talk more about exact sequences in homology.   Establishing    A chain is no stronger than its weakest link, and life is after all a chain.   William James   Unsurprisingly, we can form a category of complexes, but to do that we need the right definition of maps between complexes. We also take this section as a chance to set up some definitions we will need later. One thing to keep in mind as we build our basic definitions: we also want homology to be functorial.  Chain Map   Let and be complexes. A map of complexes or a chain map , which we write as or simply , is a sequence of homomorphisms of -modules such that the following diagram commutes:   This means that for all .    Map vs. Chain Map  Note that throughout, whenever we call a function between -modules and a map , we really mean to say it is a homomorphism of -modules.   Zero and Identity Chain Maps  The zero and the identity maps of complexes are exactly what they sound like: the zero map is 0 in every homological degree, and the identity map is the identity in every homological degree.   This is the notion of morphism we would want to form a category of chain complexes.  Category of Chain Complexes   Let be a ring. The category of chain complexes of -modules, denoted or simply , is the category with objects all chain complexes of -modules and arrows all maps of complexes of -modules.     When , we write for , the category of chain complexes of abelian groups.   Note that the identity maps defined above are precisely the identity arrows in the category of chain complexes.  Understanding    Verify that is indeed a category.    Show that the isomorphisms in the category are precisely the maps of complexes   such that is an isomorphism for all .     Subcomplexes and Quotient Complexes   Given complexes and is a subcomplex of if is a submodule of for all , and the inclusion maps define a map of complexes .  Given a subcomplex of , the quotient of by is the complex that has in homological degree , with differential induced by the differential on .    Subcomplex Maps are Well-Defined  If is a subcomplex of , then the differential on satisfies . Therefore, induces a map of -modules for all , so that our definition of the differential on actually makes sense.   We can also talk about kernels and cokernels of maps of complexes.  Kernel, Cokernel   Given any map of complexes , the kernel of is the subcomplex of that we can assemble from the the kernels . More precisely, is the complex where the differentials are simply the corresponding restrictions of the differentials on .  Similarly, the image of is the subcomplex of . where the differentials are given by restriction of the corresponding differentials in . The cokernel of is the quotient complex .    Again, there are some details to check.   Show that the kernel, image, and cokernel of a complex map are indeed complexes.    The Homology Functor  This is a good notion of map of complexes: it induces homomorphisms in homology, which in particular allows us to say that homology is a functor.  Induced Homomorphisms on Homology   Let be a map of complexes. For all restricts to homomorphisms    and     .   As a consequence, induces homomorphisms on homology .     Since , any element , say , is taken to   Similarly, if , then so . Finally, the restriction of to sends into , and thus it induces a well-defined homomorphism on the quotients .    Induced Map in Homology   Let be a map of complexes. We call the map the induced map in homology , and sometimes denote it by .    Homology Functor  One can show that preserves compositions, and that moreover, the map in homology induced by the identity is the identity. Thus taking th homology is a functor which takes each map of complexes to the -module homomorphism    Quasi-Isomorphism   A map of chain complexes is a quasi-isomorphism if it induces an isomorphism in homology, meaning is an isomorphism of -modules for all . If there exists a quasi-isomorphism between two complexes and , we say that and are quasi-isomorphic , and write .     Note that saying that if is a quasi-isomorphism between and is a stronger statement that the fact that for all : it also says that there are isomorphisms that are all induced by .   Not all quasi-isomorphisms are isomorphisms, as the following example shows:   Let denote the projection map from to . The chain map   is a quasi-isomorphism.   When we look at the induced map of on homology, the only index where the induced homomorphism may not be is at . Observe however, that is the identity map, as is mapped to and is mapped to . Thus is indeed a quasi-isomorphism.    Homotopy    Transformation is not automatic. It must be learned; it must be led.   W. Edwards Deming   Homotopy   Let be maps complexes. A homotopy , sometimes referred to as a chain homotopy , between and is a sequence of maps    such that for all . If there exists a homotopy between and , we say that and are homotopic or that they have the same homotopy type . We write to say that and are homotopic. If is homotopic to the zero map, we say is nullhomotopic , and write . This should not be confused with the notation on complexes.    Homotopy is an Equivalence Relation  Homotopy is an equivalence relation.   The equivalence classes under homotopy are called homotopy classes. Homotopy is an interesting equivalence relation because homotopic maps induce the same map on homology.  Nullhomotopic Maps Induce Zero Map in Homology   Let be maps of complexes. If is homotopic to , then for all . In particular, every nullhomotopic map induces the zero map in homology.    Let be homotopic maps of complexes, and let be a homotopy between and . We claim that the map of complexes (defined in the obvious way) sends cycles to boundaries. If , then The map on homology induced by must then be the map, so and induce the same map on homology. Here we are implicitly using the fact that , which we leave as an exercise to be further explored in .     Let be maps of complexes. Show that for all .       This makes homology an additive functor , which we define explicitly in .   Notice, however, that the converse is false: the induced map in homology can be the zero map (for all homological degrees) even if the original map of complexes is not nullhomotopic.   Consider the following map of complexes:   Show that this map is not nullhomotopic, but that the induced map in homology is zero.   Suppose by way of contradiction that is nullhomotopic. Thus , where the arise from the definition of homotopy. Consider . As and , by the given equality we must have . Thus must map to either or in . However, the following shows that neither can be the case:     As and in , we have reached a contradiction. Thus, is not nullhomotopic.  However, the induced map in homology at the degree is where . As for all , we see that . As this was the only location where the homology could have been nonzero, we see that the induced map on is zero.   Homotopy Equivalent   If and are maps of complexes such that is homotopic to the identity map on and is homotopic to the identity chain map on , we say that and are homotopy equivalences and and are homotopy equivalent .    Homotopy Equvivalences are Quasi-Isomorphisms   Homotopy equivalences are quasi-isomorphisms.    If and are such that is homotopic to and is homotopic to , then by the map induces the identity map on homology. So for all we have Therefore, and must both be isomorphisms.    The converse is false.   Let denote the projection map from to . The chain map   is a quasi-isomorphism but not a homotopy equivalence.       The relation , meaning \"there is a quasi-isomorphism from to \", is not symmetric: in , there is no quasi-isomorphism going in the opposite direction of the one given.    Complexes of Complexes    Every complex problem has a simple solution that doesn't work.   H.L. Mencken   Now that we know about maps between complexes, it's time to point out that we can also talk about complexes of complexes and exact sequences of complexes. While we will later formalize this a little better when we discover that is an abelian category , let's for now give quick definitions that we can use.  Complexes in   A complex in is a sequence of complexes of -modules and chain maps between them such that for all . A complex of complexes is a diagram of the form   where is the module in homological degree in the complex . The th column corresponds to the complex , and every row is also a complex. The vertical maps are the differentials on each individual complex; the horizontal maps are the differentials on the complex of complexes.    Given a complex in , we can talk about cycles and boundaries, which are a sequence of subcomplexes of the complexes in , and thus its homology. Such a complex is exact if for all .  Short Exact Sequences in   A short exact sequence of complexes is an exact complex in of the form Equivalently, a short exact sequence of complexes is a commutative diagram   where the rows are exact and the columns are complexes.                 "
 },
 {
   "id": "sec-compelx-maps-2",
   "level": "2",
   "url": "sec-compelx-maps.html#sec-compelx-maps-2",
   "type": "Reminders and Recollections",
-  "number": "1.1",
+  "number": "1.2",
   "title": "",
   "body": "  Definitions: category, complex   "
 },
@@ -230,7 +230,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.1",
   "type": "Definition",
-  "number": "1.1",
+  "number": "1.21",
   "title": "Chain Map.",
   "body": "Chain Map   Let and be complexes. A map of complexes or a chain map , which we write as or simply , is a sequence of homomorphisms of -modules such that the following diagram commutes:   This means that for all .   "
 },
@@ -239,7 +239,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#subsec-ch-r-5",
   "type": "Convention",
-  "number": "1.2",
+  "number": "1.22",
   "title": "Map vs. Chain Map.",
   "body": "Map vs. Chain Map  Note that throughout, whenever we call a function between -modules and a map , we really mean to say it is a homomorphism of -modules.  "
 },
@@ -248,7 +248,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#ex-2.2",
   "type": "Example",
-  "number": "1.3",
+  "number": "1.23",
   "title": "Zero and Identity Chain Maps.",
   "body": "Zero and Identity Chain Maps  The zero and the identity maps of complexes are exactly what they sound like: the zero map is 0 in every homological degree, and the identity map is the identity in every homological degree.  "
 },
@@ -257,7 +257,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.3",
   "type": "Definition",
-  "number": "1.4",
+  "number": "1.24",
   "title": "Category of Chain Complexes.",
   "body": "Category of Chain Complexes   Let be a ring. The category of chain complexes of -modules, denoted or simply , is the category with objects all chain complexes of -modules and arrows all maps of complexes of -modules.   "
 },
@@ -266,7 +266,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#subsec-ch-r-9",
   "type": "Convention",
-  "number": "1.5",
+  "number": "1.25",
   "title": "<span class=\"process-math\">\\(\\mathrm{Ch}(\\Ab)\\)<\/span>.",
   "body": " When , we write for , the category of chain complexes of abelian groups.  "
 },
@@ -275,7 +275,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-25",
   "type": "Exercise",
-  "number": "1.6",
+  "number": "1.26",
   "title": "Understanding <span class=\"process-math\">\\(\\mathrm{Ch}(R)\\)<\/span>.",
   "body": "Understanding    Verify that is indeed a category.    Show that the isomorphisms in the category are precisely the maps of complexes   such that is an isomorphism for all .    "
 },
@@ -284,7 +284,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.13",
   "type": "Definition",
-  "number": "1.7",
+  "number": "1.27",
   "title": "Subcomplexes and Quotient Complexes.",
   "body": "Subcomplexes and Quotient Complexes   Given complexes and is a subcomplex of if is a submodule of for all , and the inclusion maps define a map of complexes .  Given a subcomplex of , the quotient of by is the complex that has in homological degree , with differential induced by the differential on .   "
 },
@@ -293,7 +293,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-30",
   "type": "Exercise",
-  "number": "1.8",
+  "number": "1.28",
   "title": "Subcomplex Maps are Well-Defined.",
   "body": "Subcomplex Maps are Well-Defined  If is a subcomplex of , then the differential on satisfies . Therefore, induces a map of -modules for all , so that our definition of the differential on actually makes sense.  "
 },
@@ -302,7 +302,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.14",
   "type": "Definition",
-  "number": "1.9",
+  "number": "1.29",
   "title": "Kernel, Cokernel.",
   "body": "Kernel, Cokernel   Given any map of complexes , the kernel of is the subcomplex of that we can assemble from the the kernels . More precisely, is the complex where the differentials are simply the corresponding restrictions of the differentials on .  Similarly, the image of is the subcomplex of . where the differentials are given by restriction of the corresponding differentials in . The cokernel of is the quotient complex .   "
 },
@@ -311,7 +311,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-31",
   "type": "Exercise",
-  "number": "1.10",
+  "number": "1.30",
   "title": "",
   "body": " Show that the kernel, image, and cokernel of a complex map are indeed complexes.  "
 },
@@ -320,7 +320,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#lem-2.4",
   "type": "Lemma",
-  "number": "1.11",
+  "number": "1.31",
   "title": "Induced Homomorphisms on Homology.",
   "body": "Induced Homomorphisms on Homology   Let be a map of complexes. For all restricts to homomorphisms    and     .   As a consequence, induces homomorphisms on homology .     Since , any element , say , is taken to   Similarly, if , then so . Finally, the restriction of to sends into , and thus it induces a well-defined homomorphism on the quotients .   "
 },
@@ -329,7 +329,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.5",
   "type": "Definition",
-  "number": "1.12",
+  "number": "1.32",
   "title": "Induced Map in Homology.",
   "body": "Induced Map in Homology   Let be a map of complexes. We call the map the induced map in homology , and sometimes denote it by .   "
 },
@@ -338,7 +338,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-25.5",
   "type": "Exercise",
-  "number": "1.13",
+  "number": "1.33",
   "title": "Homology Functor.",
   "body": "Homology Functor  One can show that preserves compositions, and that moreover, the map in homology induced by the identity is the identity. Thus taking th homology is a functor which takes each map of complexes to the -module homomorphism   "
 },
@@ -347,7 +347,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.6",
   "type": "Definition",
-  "number": "1.14",
+  "number": "1.34",
   "title": "Quasi-Isomorphism.",
   "body": "Quasi-Isomorphism   A map of chain complexes is a quasi-isomorphism if it induces an isomorphism in homology, meaning is an isomorphism of -modules for all . If there exists a quasi-isomorphism between two complexes and , we say that and are quasi-isomorphic , and write .   "
 },
@@ -356,7 +356,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#rem-2.7",
   "type": "Remark",
-  "number": "1.15",
+  "number": "1.35",
   "title": "",
   "body": " Note that saying that if is a quasi-isomorphism between and is a stronger statement that the fact that for all : it also says that there are isomorphisms that are all induced by .  "
 },
@@ -365,7 +365,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-26",
   "type": "Exercise",
-  "number": "1.16",
+  "number": "1.36",
   "title": "",
   "body": " Let denote the projection map from to . The chain map   is a quasi-isomorphism.   When we look at the induced map of on homology, the only index where the induced homomorphism may not be is at . Observe however, that is the identity map, as is mapped to and is mapped to . Thus is indeed a quasi-isomorphism.  "
 },
@@ -374,7 +374,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.8",
   "type": "Definition",
-  "number": "1.17",
+  "number": "1.37",
   "title": "Homotopy.",
   "body": "Homotopy   Let be maps complexes. A homotopy , sometimes referred to as a chain homotopy , between and is a sequence of maps    such that for all . If there exists a homotopy between and , we say that and are homotopic or that they have the same homotopy type . We write to say that and are homotopic. If is homotopic to the zero map, we say is nullhomotopic , and write . This should not be confused with the notation on complexes.   "
 },
@@ -383,7 +383,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-27",
   "type": "Exercise",
-  "number": "1.18",
+  "number": "1.38",
   "title": "Homotopy is an Equivalence Relation.",
   "body": "Homotopy is an Equivalence Relation  Homotopy is an equivalence relation.  "
 },
@@ -392,7 +392,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#lem-2.9",
   "type": "Lemma",
-  "number": "1.19",
+  "number": "1.39",
   "title": "Nullhomotopic Maps Induce Zero Map in Homology.",
   "body": "Nullhomotopic Maps Induce Zero Map in Homology   Let be maps of complexes. If is homotopic to , then for all . In particular, every nullhomotopic map induces the zero map in homology.    Let be homotopic maps of complexes, and let be a homotopy between and . We claim that the map of complexes (defined in the obvious way) sends cycles to boundaries. If , then The map on homology induced by must then be the map, so and induce the same map on homology. Here we are implicitly using the fact that , which we leave as an exercise to be further explored in .   "
 },
@@ -401,7 +401,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-27.5",
   "type": "Exercise",
-  "number": "1.20",
+  "number": "1.40",
   "title": "",
   "body": " Let be maps of complexes. Show that for all .     "
 },
@@ -410,7 +410,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#subsec-homotopy-8",
   "type": "Remark",
-  "number": "1.21",
+  "number": "1.41",
   "title": "",
   "body": " This makes homology an additive functor , which we define explicitly in .  "
 },
@@ -419,7 +419,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-28",
   "type": "Exercise",
-  "number": "1.22",
+  "number": "1.42",
   "title": "",
   "body": " Consider the following map of complexes:   Show that this map is not nullhomotopic, but that the induced map in homology is zero.   Suppose by way of contradiction that is nullhomotopic. Thus , where the arise from the definition of homotopy. Consider . As and , by the given equality we must have . Thus must map to either or in . However, the following shows that neither can be the case:     As and in , we have reached a contradiction. Thus, is not nullhomotopic.  However, the induced map in homology at the degree is where . As for all , we see that . As this was the only location where the homology could have been nonzero, we see that the induced map on is zero.  "
 },
@@ -428,7 +428,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.10",
   "type": "Definition",
-  "number": "1.23",
+  "number": "1.43",
   "title": "Homotopy Equivalent.",
   "body": "Homotopy Equivalent   If and are maps of complexes such that is homotopic to the identity map on and is homotopic to the identity chain map on , we say that and are homotopy equivalences and and are homotopy equivalent .   "
 },
@@ -437,7 +437,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#cor-2.11",
   "type": "Corollary",
-  "number": "1.24",
+  "number": "1.44",
   "title": "Homotopy Equvivalences are Quasi-Isomorphisms.",
   "body": "Homotopy Equvivalences are Quasi-Isomorphisms   Homotopy equivalences are quasi-isomorphisms.    If and are such that is homotopic to and is homotopic to , then by the map induces the identity map on homology. So for all we have Therefore, and must both be isomorphisms.   "
 },
@@ -446,7 +446,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#exe-29",
   "type": "Exercise",
-  "number": "1.25",
+  "number": "1.45",
   "title": "",
   "body": " Let denote the projection map from to . The chain map   is a quasi-isomorphism but not a homotopy equivalence.     "
 },
@@ -455,7 +455,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#rem-2.12",
   "type": "Remark",
-  "number": "1.26",
+  "number": "1.46",
   "title": "",
   "body": " The relation , meaning \"there is a quasi-isomorphism from to \", is not symmetric: in , there is no quasi-isomorphism going in the opposite direction of the one given.  "
 },
@@ -464,7 +464,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.15",
   "type": "Definition",
-  "number": "1.27",
+  "number": "1.47",
   "title": "Complexes in <span class=\"process-math\">\\(\\mathrm{Ch}(R)\\)<\/span>.",
   "body": "Complexes in   A complex in is a sequence of complexes of -modules and chain maps between them such that for all . A complex of complexes is a diagram of the form   where is the module in homological degree in the complex . The th column corresponds to the complex , and every row is also a complex. The vertical maps are the differentials on each individual complex; the horizontal maps are the differentials on the complex of complexes.   "
 },
@@ -473,7 +473,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#def-2.16",
   "type": "Definition",
-  "number": "1.28",
+  "number": "1.48",
   "title": "Short Exact Sequences in <span class=\"process-math\">\\(\\mathrm{Ch}(R)\\)<\/span>.",
   "body": "Short Exact Sequences in   A short exact sequence of complexes is an exact complex in of the form Equivalently, a short exact sequence of complexes is a commutative diagram   where the rows are exact and the columns are complexes.   "
 },
@@ -482,7 +482,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-compelx-maps.html#sec-compelx-maps-8",
   "type": "Summary",
-  "number": "1.1",
+  "number": "1.2",
   "title": "",
   "body": "           "
 },
@@ -491,7 +491,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-split.html",
   "type": "Section",
-  "number": "1.2",
+  "number": "1.3",
   "title": "Split Exact Sequences",
   "body": "Split Exact Sequences        Definition and the Splitting Lemma    The split in you is clear.   John Cantwell Kiley   In this section, we will discuss short exact sequences of modules in a bit more detail. We note, however, that everything we will discuss here can be extended for short exact sequences of complexes, and that the generalization is not too difficult: one just needs to replace modules with complexes and maps of modules by maps of complexes.  Trivial Short Exact Sequences  Fix a ring , and let and be -modules. Consider the inclusion of into the first component of the direct sum, and the projection map onto the second component of the product. These two maps fit into a short exact sequence These are sometimes called trivial short exact sequences .   On the one hand, the short exact sequences that look like this one are very important; on the other hand, not all short exact sequences are of this type.  Split Short Exact Sequences   We say that a short exact sequence  splits or is a split short exact sequence if it is isomorphic to where is the inclusion of the first component and is the projection onto the second component.    Splitting Lemma   Consider the short exact sequence of -modules. The following are equivalent:   There exists a homomorphism of -modules such that .    There exists a homomorphism of -modules such that .    The short exact sequence splits.      Proof: and  First, we will show that c implies a and b. If the sequence splits, then consider an isomorphism of complexes   meaning that the diagram commutes and , and are isomorphisms of -modules, is the inclusion in the first component, and is the projection onto the second component. Let be the projection onto the first component, and be the inclusion onto the first component. Now consider the maps and . Then and Therefore, c implies a and b.   Proof:  Now suppose that a holds, and let's show that the sequence splits. First, we need to show that . Every can be written as where , and so . This shows that . Moreover, if , then , so , and . Now when we restrict to becomes injective. We claim it is also surjective, and thus an isomorphism. Indeed, for any we can pick such that , since is surjective, and we showed that we can write for some . Then Finally, note that , so we conclude that , via the isomorphism given by Since and , so , where is the inclusion on the first factor. If denotes the projection onto the second factor, . Together, these two facts say that the following is a map of complexes:   Since is an isomorphism, so is our map of complexes, and thus our original sequence is a split exact sequence. This shows that a implies .   Proof:  Now assume b holds. Every can be written as where and so . This shows that . Moreover, if , then Therefore, . Now is injective, since , and thus . Since , we conclude that , via the isomorphism Finally, let denote the inclusion of the first factor, and denote the projection onto the second factor. By construction, . Moreover, so . Together, these say that the diagram   commutes, and must then be an isomorphism of short exact sequences.    Splittings   Given a split short exact sequence maps and satisfying the conditions of the Splitting Lemma are called splittings .     In the split short exact sequence the canonical projection and the usual inclusion are splittings.    When Do Short Exact Sequences Split?         The Rank-Nulity Theorem can be recast in this setting as a consequence of the fact that every short exact sequence of -vector spaces splits.  Splittings in Vector Spaces     Let be a field. Show that every short exact sequence of -vector spaces splits.    Prove the Rank-Nulity Theorem using : show that given any linear transformation of -vector spaces,          Let be a short exact sequence of -vector spaces. Thus is injective. Let be a basis for . As is injective it maps linearly independent sets to linearly independent sets, and so , where is a linearly independent in .  As proved so deliciously in 818 (and 815), in vector spaces we can extend any linearly independent set into a basis (with some help from Zorn), and thus we extend into a basis . Using the UMP for free modules there exists a unique -vector space homomorphism such that for all , where maps to whenever .  Let and consider . As for and ,   Thus . Therefore, by the Splitting Lemma, every exact sequence of -vector spaces splits.    Let be a linear transformation. Then and are both subspaces (just in different places). Consider the sequence where is the natural inclusion and is restricted to its image. As is injective and is surjective (by definition), this sequence is exact. By part . the sequence splits. Thus , which implies that , completing the proof.      But over a general ring, not every short exact sequence splits.   The short exact sequence is not split. Indeed, does not have any 2 -torsion elements, so it is not isomorphic to .  An alternative explanation is that there is no splitting to the inclusion . On the one hand, every -module map is given by multiplication by a fixed integer , so a splitting would be of the form for some fixed . On the other hand, our proposed splitting must send to , but there is no integer solution to .   More surprisingly, a short exact sequence of the form is not necessarily split, not unless is the inclusion of the first component and is the projection onto the second component, as the next example will show.   Consider the short exact sequence where is the inclusion of the subgroup generated by 2, so , and is the quotient onto that subgroup, meaning . This is not a split short exact sequence, because . Now let be the direct sum of infinitely many copies of . Then and the sequence with and is still exact. The middle term is indeed isomorphic to the direct sum of the other two: And yet this is not a split exact sequence: if we had a splitting of , then its restriction to the first factor would give us a splitting of , which we know cannot exist, since does not split.   Given splittings and for a short exact sequence as in , we can quickly show that our short exact sequence splits using the Five Lemma. To prove the Five Lemma, one needs to use diagram chasing. Diagram chasing is a common technique in homological algebra, which essentially consists of tracing elements around in the diagram. We will see some examples of diagram chasing in the next section.  The Five Lemma  Consider the following commutative diagram of -modules with exact rows:   Show that if , and are isomorphisms, then is an isomorphism.    Given a short exact sequence, suppose we have -module homomorphisms and    such that and . Then we get an induced map such that the diagram   commutes. The guarantees that must be an isomorphism, so our diagram is an isomorphism of short exact sequences.   There are many ways in which -Mod behaves better than the category of groups, and this is one of them.   The does not hold if we replace -modules with the category of groups. For example, consider the symmetric group on 3 elements and the inclusion of the alternating group in . Notice that is precisely the kernel of the sign map which sends even permutations to and odd permutations to . Therefore, is a short exact sequence. When writing exact sequences of nonabelian groups such as this one, one sometimes uses for instead of , to indicate that trivial group. So our short exact sequence is   Moreover, this exact sequence is not split, since is not abelian but is, and thus . However, any group homomorphism defined by sending the generator to any two cycle is a splitting for our short exact sequence, meaning signo .  Funny enough, there is no splitting for the inclusion , since there are no nontrivial homomorphisms has no elements of order , so a group homomorphism must send every -cycle in must be sent to the identity, but -cycles generate .   We will return to the topic of split short exact sequences when we talk about projective and injective modules.   Fix a ring . Show that if is a free -module, then every short exact sequence of -modules splits.            "
 },
@@ -500,7 +500,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#sec-split-2",
   "type": "Reminders and Recollections",
-  "number": "1.2",
+  "number": "1.3",
   "title": "",
   "body": "     "
 },
@@ -509,7 +509,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#ex-2.17",
   "type": "Example",
-  "number": "1.29",
+  "number": "1.49",
   "title": "Trivial Short Exact Sequences.",
   "body": "Trivial Short Exact Sequences  Fix a ring , and let and be -modules. Consider the inclusion of into the first component of the direct sum, and the projection map onto the second component of the product. These two maps fit into a short exact sequence These are sometimes called trivial short exact sequences .  "
 },
@@ -518,7 +518,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#def-2.18",
   "type": "Definition",
-  "number": "1.30",
+  "number": "1.50",
   "title": "Split Short Exact Sequences.",
   "body": "Split Short Exact Sequences   We say that a short exact sequence  splits or is a split short exact sequence if it is isomorphic to where is the inclusion of the first component and is the projection onto the second component.   "
 },
@@ -527,7 +527,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#lem-2.19",
   "type": "Lemma",
-  "number": "1.31",
+  "number": "1.51",
   "title": "Splitting Lemma.",
   "body": "Splitting Lemma   Consider the short exact sequence of -modules. The following are equivalent:   There exists a homomorphism of -modules such that .    There exists a homomorphism of -modules such that .    The short exact sequence splits.      Proof: and  First, we will show that c implies a and b. If the sequence splits, then consider an isomorphism of complexes   meaning that the diagram commutes and , and are isomorphisms of -modules, is the inclusion in the first component, and is the projection onto the second component. Let be the projection onto the first component, and be the inclusion onto the first component. Now consider the maps and . Then and Therefore, c implies a and b.   Proof:  Now suppose that a holds, and let's show that the sequence splits. First, we need to show that . Every can be written as where , and so . This shows that . Moreover, if , then , so , and . Now when we restrict to becomes injective. We claim it is also surjective, and thus an isomorphism. Indeed, for any we can pick such that , since is surjective, and we showed that we can write for some . Then Finally, note that , so we conclude that , via the isomorphism given by Since and , so , where is the inclusion on the first factor. If denotes the projection onto the second factor, . Together, these two facts say that the following is a map of complexes:   Since is an isomorphism, so is our map of complexes, and thus our original sequence is a split exact sequence. This shows that a implies .   Proof:  Now assume b holds. Every can be written as where and so . This shows that . Moreover, if , then Therefore, . Now is injective, since , and thus . Since , we conclude that , via the isomorphism Finally, let denote the inclusion of the first factor, and denote the projection onto the second factor. By construction, . Moreover, so . Together, these say that the diagram   commutes, and must then be an isomorphism of short exact sequences.   "
 },
@@ -536,7 +536,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#def-2.20",
   "type": "Definition",
-  "number": "1.32",
+  "number": "1.52",
   "title": "Splittings.",
   "body": "Splittings   Given a split short exact sequence maps and satisfying the conditions of the Splitting Lemma are called splittings .   "
 },
@@ -545,7 +545,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#rem-2.21",
   "type": "Remark",
-  "number": "1.33",
+  "number": "1.53",
   "title": "",
   "body": " In the split short exact sequence the canonical projection and the usual inclusion are splittings.  "
 },
@@ -554,7 +554,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#exe-32",
   "type": "Exercise",
-  "number": "1.34",
+  "number": "1.54",
   "title": "Splittings in Vector Spaces.",
   "body": "Splittings in Vector Spaces     Let be a field. Show that every short exact sequence of -vector spaces splits.    Prove the Rank-Nulity Theorem using : show that given any linear transformation of -vector spaces,          Let be a short exact sequence of -vector spaces. Thus is injective. Let be a basis for . As is injective it maps linearly independent sets to linearly independent sets, and so , where is a linearly independent in .  As proved so deliciously in 818 (and 815), in vector spaces we can extend any linearly independent set into a basis (with some help from Zorn), and thus we extend into a basis . Using the UMP for free modules there exists a unique -vector space homomorphism such that for all , where maps to whenever .  Let and consider . As for and ,   Thus . Therefore, by the Splitting Lemma, every exact sequence of -vector spaces splits.    Let be a linear transformation. Then and are both subspaces (just in different places). Consider the sequence where is the natural inclusion and is restricted to its image. As is injective and is surjective (by definition), this sequence is exact. By part . the sequence splits. Thus , which implies that , completing the proof.     "
 },
@@ -563,7 +563,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#ex-2.22",
   "type": "Example",
-  "number": "1.35",
+  "number": "1.55",
   "title": "",
   "body": " The short exact sequence is not split. Indeed, does not have any 2 -torsion elements, so it is not isomorphic to .  An alternative explanation is that there is no splitting to the inclusion . On the one hand, every -module map is given by multiplication by a fixed integer , so a splitting would be of the form for some fixed . On the other hand, our proposed splitting must send to , but there is no integer solution to .  "
 },
@@ -572,7 +572,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#ex-2.23",
   "type": "Example",
-  "number": "1.36",
+  "number": "1.56",
   "title": "",
   "body": " Consider the short exact sequence where is the inclusion of the subgroup generated by 2, so , and is the quotient onto that subgroup, meaning . This is not a split short exact sequence, because . Now let be the direct sum of infinitely many copies of . Then and the sequence with and is still exact. The middle term is indeed isomorphic to the direct sum of the other two: And yet this is not a split exact sequence: if we had a splitting of , then its restriction to the first factor would give us a splitting of , which we know cannot exist, since does not split.  "
 },
@@ -581,7 +581,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#five-lemma",
   "type": "Exercise",
-  "number": "1.37",
+  "number": "1.57",
   "title": "The Five Lemma.",
   "body": "The Five Lemma  Consider the following commutative diagram of -modules with exact rows:   Show that if , and are isomorphisms, then is an isomorphism.  "
 },
@@ -590,7 +590,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#rem-2.24",
   "type": "Remark",
-  "number": "1.38",
+  "number": "1.58",
   "title": "",
   "body": " Given a short exact sequence, suppose we have -module homomorphisms and    such that and . Then we get an induced map such that the diagram   commutes. The guarantees that must be an isomorphism, so our diagram is an isomorphism of short exact sequences.  "
 },
@@ -599,7 +599,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#rem-2.25",
   "type": "Remark",
-  "number": "1.39",
+  "number": "1.59",
   "title": "",
   "body": " The does not hold if we replace -modules with the category of groups. For example, consider the symmetric group on 3 elements and the inclusion of the alternating group in . Notice that is precisely the kernel of the sign map which sends even permutations to and odd permutations to . Therefore, is a short exact sequence. When writing exact sequences of nonabelian groups such as this one, one sometimes uses for instead of , to indicate that trivial group. So our short exact sequence is   Moreover, this exact sequence is not split, since is not abelian but is, and thus . However, any group homomorphism defined by sending the generator to any two cycle is a splitting for our short exact sequence, meaning signo .  Funny enough, there is no splitting for the inclusion , since there are no nontrivial homomorphisms has no elements of order , so a group homomorphism must send every -cycle in must be sent to the identity, but -cycles generate .  "
 },
@@ -608,7 +608,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#exe-35",
   "type": "Exercise",
-  "number": "1.40",
+  "number": "1.60",
   "title": "",
   "body": " Fix a ring . Show that if is a free -module, then every short exact sequence of -modules splits.  "
 },
@@ -617,7 +617,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-split.html#sec-split-5",
   "type": "Summary",
-  "number": "1.2",
+  "number": "1.3",
   "title": "",
   "body": "       "
 },
@@ -626,7 +626,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-les.html",
   "type": "Section",
-  "number": "1.3",
+  "number": "1.4",
   "title": "Long Exact Sequences",
   "body": "Long Exact Sequences        The Snake Lemma         A long exact sequence is just what it sounds like: an exact sequence that is, well, long. Usually, we use the term long exact sequence to refer to any exact sequence, especially if it is not a short exact sequence. So in particular, a long exact sequence does not literally have to be that long.  Long exact sequences arise naturally in various ways, and are often induced by some short exact sequence. The first long exact sequence one encounters is the long exact sequence on homology. All other long exact sequences are, in some way, a special case of this one. The main tool we need to build it is the Snake Lemma.  Snake Lemma   Consider the commutative diagram of -modules   If the rows of the diagram are exact, then there exists an exact sequence Given , pick such that , and such that . Then The picture to keep in mind (and which explains the name of the lemma) is the following:     If , then by commutativity, so . Similarly, if then . So   We claim that the sequence obtained by restriction is exact. On the one hand, we already know that the original maps satisfy , so their restrictions must satisfy this as well, guaranteeing that On the other and, if is such that , then by exactness of the original sequence there exists such that ; we only need to check that we can choose such satisfying . An indeed, by commutativity, any with satisfies and since is injective, we must have . So we have shown that the following is an exact sequence:   Similarly, if , the commutativity of the diagram guarantees that , and if , then . So the maps restrict to maps which then induce maps To make the notation less heavy, we denote the induced maps on the quotients by and . Again, the fact that automatically gives us that the restrictions satisfy so we only need to check equality. Consider such that , meaning that , meaning that . Let be such that . Since is surjective, there exists such that , and by commutativity, Then . Let be such that . Now in coker we have This concludes the proof of exactness of and coker .  We still need to show the parts of the statement related to the connecting homomorphism . Our definition of can be visualized as follows:   Let's recap the process in words. First, we fix . Since is surjective, we can always pick such that . Since ker , by commutativity we have so . Therefore, there exists such that . In fact, since is injective, there exists a unique such that . Our definition of sets The fact that is a homomorphism of -modules follows from the fact that all the maps involved are homomorphisms of -modules: given , and such that we have So Therefore, . Similarly, given any , and , so . We now need to show the following:   Points 2) and 3) together say that the sequence is exact, and this will complete the proof.  First, let's show that is well-defined. Ultimately, our definition of only involves one choice, when we pick such that ; we need to show that does not depend on the choice of . Given such that , by exactness we have . Therefore, there exists such that . Notice that is such that Thus our definition says that . Since , we conclude that , so for any choice of . Now consider any . Again, to show is well-defined, we need only to show it does not depend on the choice of such that . Consider such that and such that Note that and since we must have Thus and this concludes our proof that is well-defined.  Now we show 2): that .  If , then the only such that is . Therefore, , so . On the other hand, let be such that . That means that for any such that we must have for some . Let be such that . Then     so . Since ,     We conclude that , and this shows 2 .  Now we show 3 ), that is, .  Let be such that . In , this says that , so we can choose such that . Using commutativity and the fact that , we have     This shows that , and thus . Finally, if and , then       Connecting Homomorphism   The map in the is the connecting homomorphism .    The proof of the is what we call a diagram chase, for reasons that may be obvious by now: we followed the diagram in the natural way, and everything worked out in the end. The is another classical example of a diagram chase.   The Long Exact Sequence in Homology         Now that we have the , we can construct the long exact sequence in homology:  Long Exact Sequence in Homology   Given a short exact sequence in  there are connecting homomorphisms such that is an exact sequence.    For each , we have short exact sequences   The condition that and are maps of complexes implies, by , that and take cycles to cycles, so we get exact sequences Again by , the condition that and are maps of complexes also implies that and both take boundaries to boundaries, so that we get exact sequences   Let be any complex. The boundary maps on induce maps that send to , so we get induced maps . Applying this general fact to , and , and putting all this together, we have a commutative diagram with exact rows   For any complex , and   The now gives us exact sequences   Finally, we glue all these together to obtain the long exact sequence in homology.     It's helpful to carefully consider how to compute the connecting homomorphisms in the long exact sequence in homology, which we can easily put together from the proof of the . Suppose that . When we view as an element in , we can find such that , since is surjective by assumption. Since is a map of complexes, we have so . In fact, note that , so   Thus there exists such that . Finally,   So in summary, the recipe goes as follows: given , we find such that and such that , and    We will soon see that long exact sequences appear everywhere, and that they are very helpful. Before we see more examples, we want to highlight a connection between long and short exact sequences.   Suppose that is a long exact sequence. This long exact sequence breaks into the short exact sequences   The first map is simply the inclusion of the submodule into , while the second map is the canonical projection onto the quotient. While it is clear that is injective and is surjective, exactness at the middle is less obvious. This follows from the exactness of the original complex, which gives .   The long exact sequence in homology is natural.  Naturality of the long exact sequence in homology   Any commutative diagram in    with exact rows induces a commutative diagram with exact rows     The rows of the resulting diagram are the long exact sequences in homology induced by each row of the original diagram, as in . So the content of the theorem is that the maps induced in homology by , and make the diagram commute. The commutativity of   follows from the fact that is a functor, so we only need to check commutativity of the square   that involves the connecting homomorphisms and . Consider the following commutative diagram:   Given , we need to check that in . To compute , we find a lift such that , and with , and set . So . On the other hand, to compute , we start by finding such that . By commutativity of the right back square   we can choose , since   Next we take such that , and set . By commutativity of the middle square   we have   By our choice of , we have and by commutativity of the front left square   we have   So we can take . Finally, this means , as we wanted to prove.     Let be a short exact sequence in . We can think of as saying that the induced maps on homology and and the connecting homomorphism are all natural transformations. More precisely, consider the category SES of short exact sequences of -modules, which is a full subcategory of . Homology gives us functors SES -Mod that given a short exact sequence return the -modules , or . A map between two short exact sequences then induces -module homomorphisms between the corresponding homologies. With this framework, says that , and and the connecting homomorphism are all natural transformations between the corresponding homology functors.            "
 },
@@ -635,7 +635,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#sec-les-2",
   "type": "Reminders and Recollections",
-  "number": "1.3",
+  "number": "1.4",
   "title": "",
   "body": "     "
 },
@@ -644,7 +644,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#thm-2.26",
   "type": "Theorem",
-  "number": "1.41",
+  "number": "1.61",
   "title": "Snake Lemma.",
   "body": "Snake Lemma   Consider the commutative diagram of -modules   If the rows of the diagram are exact, then there exists an exact sequence Given , pick such that , and such that . Then The picture to keep in mind (and which explains the name of the lemma) is the following:     If , then by commutativity, so . Similarly, if then . So   We claim that the sequence obtained by restriction is exact. On the one hand, we already know that the original maps satisfy , so their restrictions must satisfy this as well, guaranteeing that On the other and, if is such that , then by exactness of the original sequence there exists such that ; we only need to check that we can choose such satisfying . An indeed, by commutativity, any with satisfies and since is injective, we must have . So we have shown that the following is an exact sequence:   Similarly, if , the commutativity of the diagram guarantees that , and if , then . So the maps restrict to maps which then induce maps To make the notation less heavy, we denote the induced maps on the quotients by and . Again, the fact that automatically gives us that the restrictions satisfy so we only need to check equality. Consider such that , meaning that , meaning that . Let be such that . Since is surjective, there exists such that , and by commutativity, Then . Let be such that . Now in coker we have This concludes the proof of exactness of and coker .  We still need to show the parts of the statement related to the connecting homomorphism . Our definition of can be visualized as follows:   Let's recap the process in words. First, we fix . Since is surjective, we can always pick such that . Since ker , by commutativity we have so . Therefore, there exists such that . In fact, since is injective, there exists a unique such that . Our definition of sets The fact that is a homomorphism of -modules follows from the fact that all the maps involved are homomorphisms of -modules: given , and such that we have So Therefore, . Similarly, given any , and , so . We now need to show the following:   Points 2) and 3) together say that the sequence is exact, and this will complete the proof.  First, let's show that is well-defined. Ultimately, our definition of only involves one choice, when we pick such that ; we need to show that does not depend on the choice of . Given such that , by exactness we have . Therefore, there exists such that . Notice that is such that Thus our definition says that . Since , we conclude that , so for any choice of . Now consider any . Again, to show is well-defined, we need only to show it does not depend on the choice of such that . Consider such that and such that Note that and since we must have Thus and this concludes our proof that is well-defined.  Now we show 2): that .  If , then the only such that is . Therefore, , so . On the other hand, let be such that . That means that for any such that we must have for some . Let be such that . Then     so . Since ,     We conclude that , and this shows 2 .  Now we show 3 ), that is, .  Let be such that . In , this says that , so we can choose such that . Using commutativity and the fact that , we have     This shows that , and thus . Finally, if and , then      "
 },
@@ -653,7 +653,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#def-2.27",
   "type": "Definition",
-  "number": "1.42",
+  "number": "1.62",
   "title": "Connecting Homomorphism.",
   "body": "Connecting Homomorphism   The map in the is the connecting homomorphism .   "
 },
@@ -662,7 +662,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#thm-2.28",
   "type": "Theorem",
-  "number": "1.43",
+  "number": "1.63",
   "title": "Long Exact Sequence in Homology.",
   "body": "Long Exact Sequence in Homology   Given a short exact sequence in  there are connecting homomorphisms such that is an exact sequence.    For each , we have short exact sequences   The condition that and are maps of complexes implies, by , that and take cycles to cycles, so we get exact sequences Again by , the condition that and are maps of complexes also implies that and both take boundaries to boundaries, so that we get exact sequences   Let be any complex. The boundary maps on induce maps that send to , so we get induced maps . Applying this general fact to , and , and putting all this together, we have a commutative diagram with exact rows   For any complex , and   The now gives us exact sequences   Finally, we glue all these together to obtain the long exact sequence in homology.   "
 },
@@ -671,7 +671,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#rem-2.29",
   "type": "Remark",
-  "number": "1.44",
+  "number": "1.64",
   "title": "",
   "body": " It's helpful to carefully consider how to compute the connecting homomorphisms in the long exact sequence in homology, which we can easily put together from the proof of the . Suppose that . When we view as an element in , we can find such that , since is surjective by assumption. Since is a map of complexes, we have so . In fact, note that , so   Thus there exists such that . Finally,   So in summary, the recipe goes as follows: given , we find such that and such that , and   "
 },
@@ -680,7 +680,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#rem-2.30",
   "type": "Remark",
-  "number": "1.45",
+  "number": "1.65",
   "title": "",
   "body": " Suppose that is a long exact sequence. This long exact sequence breaks into the short exact sequences   The first map is simply the inclusion of the submodule into , while the second map is the canonical projection onto the quotient. While it is clear that is injective and is surjective, exactness at the middle is less obvious. This follows from the exactness of the original complex, which gives .  "
 },
@@ -689,7 +689,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#thm-2.31",
   "type": "Theorem",
-  "number": "1.46",
+  "number": "1.66",
   "title": "Naturality of the long exact sequence in homology.",
   "body": "Naturality of the long exact sequence in homology   Any commutative diagram in    with exact rows induces a commutative diagram with exact rows     The rows of the resulting diagram are the long exact sequences in homology induced by each row of the original diagram, as in . So the content of the theorem is that the maps induced in homology by , and make the diagram commute. The commutativity of   follows from the fact that is a functor, so we only need to check commutativity of the square   that involves the connecting homomorphisms and . Consider the following commutative diagram:   Given , we need to check that in . To compute , we find a lift such that , and with , and set . So . On the other hand, to compute , we start by finding such that . By commutativity of the right back square   we can choose , since   Next we take such that , and set . By commutativity of the middle square   we have   By our choice of , we have and by commutativity of the front left square   we have   So we can take . Finally, this means , as we wanted to prove.   "
 },
@@ -698,7 +698,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#rem-2.32",
   "type": "Remark",
-  "number": "1.47",
+  "number": "1.67",
   "title": "",
   "body": " Let be a short exact sequence in . We can think of as saying that the induced maps on homology and and the connecting homomorphism are all natural transformations. More precisely, consider the category SES of short exact sequences of -modules, which is a full subcategory of . Homology gives us functors SES -Mod that given a short exact sequence return the -modules , or . A map between two short exact sequences then induces -module homomorphisms between the corresponding homologies. With this framework, says that , and and the connecting homomorphism are all natural transformations between the corresponding homology functors.  "
 },
@@ -707,7 +707,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-les.html#sec-les-5",
   "type": "Summary",
-  "number": "1.3",
+  "number": "1.4",
   "title": "",
   "body": "       "
 },
@@ -8935,7 +8935,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "20.2",
   "title": "Gorenstein Rings",
-  "body": "Gorenstein Rings  Gorenstein  Now, we pursue the injective analogues of the questions we addressed in the Section on Auslander, Buchsbaum, and Serre: What is the injective dimension of a finitely generated module when it is finite? Are there natural conditions on a ring that ensure finite injective dimension for all, or for some reasonable class, of finitely generated modules? To start, we make an observation about Bass numbers.    Definition 4.11. The injective dimension of a finitely generated -module , denoted , is the length of its minimal injective resolution. Note that any injective resolution of has length at least equal to that of the minimal injective resoltuion, since a Bass number can be computed as an Ext, whose nonvanishing implies nonvanishing in that spot for any injective resolution.      Proposition 4.12. Let be noetherian, and finitely generated. If , for some prime , then for all with .    Proof. Since Bass numbers behave well under localization, we can localize at , and assume that . Pick . From the SES     we get the LES     Suppose that . Then, . The module has finite length, and an induction on length (similar arguments we saw earlier) shows that 0 as well. It then follows by NAK that , so .      Corollary 4.13. Let be noetherian, and a finitely generated -module.     a maximal ideal .     .      Proof. The first statement is clear. For the second, we recall that the associated primes of are the same as those of , so the zeroth Bass numbers are nonzero for the associated primes of . Then, we are guaranteed a chain of Bass numbers as long as  .    The following is the injective analogue of Auslander-Buchsbaum.    Let be a local ring, and a finitely generated module. If has finite injective dimension, then .    Proof. Set and . Let be a maximal -sequence.  To see , compute by the Koszul complex: this is , so the injective resolution of is at least this long.  To see , we can take a SES and the LES     From the definition of , the last term vanishes. Then, by Corollary ??(1), , so . Thus, .    We now pursue an analogue of Auslander-Buchsbaum-Serre. Here is one such statement:   Remark 4.15. Let be local. If , then is regular (and conversely). Indeed, we know . If we take a minimal resolution , the maps in are all zero, so . Thus, has finite injective dimension if and only if it has finite projective dimension.     Definition 4.16 (Gorenstein local ring). A local ring is Gorenstein if for every system of parameters ,     is a regular sequence (so is )    the ideal is irreducible: it cannot be written as for .      This class of rings can be characterized in many ways. Bass was the first to point this out, and to illustrate to importance of this class of rings. We will start this pursuit with artinian rings.    Let be an artinian local ring. TFAE:     is Gorenstein: (0) is irreducible                   4’) is an injective -module    Proof. (1) : Given two linearly independent elements in the socle, .   is -torsion, hence is an essential extension of its socle, so any ideal contains a nonzero element there. If the socle is 1-dimensional, any ideal contains the whole socle.   is an essential extension of , so it embeds into . Since  , this is an isomorphism.   : The socle of is a copy of .   : Trivial.   : The only injectives are copies of , and is an indecomposable module, so this is the only option from the structure theory.   : Trivial.   : Because injective dimension is the depth.    We note that if is artinian, then it contains a copy of , and we can reinterpret (3) as saying that .  We now want to extend this theorem to higher dimensions. We will use another theorem of Rees on Ext.    Theorem 4.18. Let be -modules, and be -regular and -regular. Then for all .    Proof. We will apply the same strategy as in the Fundamental Theorem of Local Cohomology to see that for the left-exact functor from -modules to modules, its right derived functors are . Note that is an -module by hypothesis. By definition, , so this will establish the theorem.  Step 1: The functors agree when . Indeed, for the SES of -modules  , there is an LES     We observe that (any element in has to map to something killed by ), that (since both sides are killed by ), and kills (since it kills ). The specified isomorphism follows.  Step 2: vanishes for free -modules for . Indeed, a free -module has a free -resolution of length one, so computing the Ext from this resolution shows the vanishing.  Step 3: This follows in the same way as Step 3 of the Fundamental Theorem of Local Cohomology. We leave this as an exercise.      Theorem 4.19. Let be a local ring of dimension . TFAE:     is Gorenstein    1’) is and some generates an irreducible ideal          is and .         4’)     Proof. First we want to observe that every condition implies that is Cohen-Macaulay. For (2), this is due to Rees’s theorem on depth and Ext (the one from a while ago). For (4), and consequently for , this follows from . For the others, this is explicit. We assume that is Cohen-Macaulay henceforth.   : trivial   : The Ext vanishings follow from as noted above. Now, let be the given irreducible parameter ideal. The zero ideal in is then irreducible, and by the artinian case, . Applying the previous theorem times, we obtain that .   : Given any SOP of , as in the previous implication (backwards), we see that , and apply the artinian case to see that is irreducible in , so is irreducible in .  As a consequence of these implications, we see that if is Gorenstein local, and a SOP, then is Gorenstein iff is.   : Applying Rees’s recent theorem again, we find that if is an SOP, then   .  Then, is Gorenstein implies is too, and that it has injective dimension zero (by the artinian case), so has injective dimension . If has finite injective dimension, so does , so it is Gorenstein, and is too.   : By , know that is zero for and is one for ; by (4) it is zero for . Thus, taking of an injective resolution of leaves just one copy of in cohomological degree .   : Again, the Ext vanishing is a consequence of Cohen-Macaulayness. By the Lemma on ascending Bass numbers, . In the Theorem characterizing Bass numbers in terms of Ext, we saw that if is an injective resolution of has vanishing differentials; this was explicitly stated and established as a claim. This means that, in a minimal injective resolution, any socle element is in the kernel of the differential. Now consider . This is zero up to cohomological dimension . Then, we have     and .    The following is now evident from the remark after the proof of Local Duality for regular rings.    Corollary 4.20 (Local Duality for Gorenstein rings). Let be a Gorenstein local ring of dimension . Then    If is a finitely generated -module, then .    If is complete and is arbitrary, then .    These isomorphisms are functorial in .     Worksheet on Gorenstein rings     Let be a local ring. Show the following:    (a) is Gorenstein if and only if is Gorenstein.  (b) If is a regular sequence, then is Gorenstein if and only if is Gorenstein.  (c) If is Gorenstein, and , then is Gorenstein.    Definition 4.21. A local ring is a complete intersection if there is a surjection from a complete regular local ring onto with the kernel generated by a regular sequence.     Remark 4.22. The following are equivalent:     is a complete intersection;    For every surjection from a complete RLR , the kernel is generated by a regular sequence;    and IF there exists a surjection from an RLR onto itself,    For every surjection from an RLR , the kernel is generated by a regular sequence.     Not all of these equivalences are obvious, but we will use them freely.    Show that if is a complete intersection, then is Gorenstein.    Let be a field. For each of the following rings determine: Is Gorenstein? Is CohenMacaulay? Is a complete intersection? Reuse your work from old worksheets and HW when convenient.    (a) .  (b) .  (c) .  (d) , where is the ideal generated by the entries of .  (e) , where is the ideal generated by the positive degree forms.  (f) , where is the ideal generated by the positive degree forms.  (g) , where is the ideal generated by the positive degree forms.    Let and be two complete Gorenstein local rings, with .    (a) Use Local Duality to show that   (b) Suppose moreover that is regular. Let be the minimal free resolution of as an -module. Show that,    UTF8mj渄  (c) With the same assumptions as in the previous part, show that for all -modules .    A numerical semigroup is a subsemigroup of ; our convention is that . A numerical semigroup ring is a ring of the form . Assume that the GCD of the elements in is 1 . Then, there is a largest number such that , called the Frobenius number of .    (a) Show that is generated as a vector space by   (b) Show that is Gorenstein if and only if     (c) Check this criterion with , and .    Show that if is a Gorenstein local ring, and is a finitely generated -module, then has finite projective dimension if and only if has finite injective dimension.    We summarize some implications and non-implications on the structural properties of local rings we have encountered:     complete intersection regular:   Gorenstein complete intersection:   Cohen-Macaulay Gorenstein:    "
+  "body": "Gorenstein Rings  Gorenstein  Now, we pursue the injective analogues of the questions we addressed in the Section on Auslander, Buchsbaum, and Serre: What is the injective dimension of a finitely generated module when it is finite? Are there natural conditions on a ring that ensure finite injective dimension for all, or for some reasonable class, of finitely generated modules? To start, we make an observation about Bass numbers.    Definition 4.11. The injective dimension of a finitely generated -module , denoted , is the length of its minimal injective resolution. Note that any injective resolution of has length at least equal to that of the minimal injective resoltuion, since a Bass number can be computed as an Ext, whose nonvanishing implies nonvanishing in that spot for any injective resolution.      Proposition 4.12. Let be noetherian, and finitely generated. If , for some prime , then for all with .    Proof. Since Bass numbers behave well under localization, we can localize at , and assume that . Pick . From the SES     we get the LES     Suppose that . Then, . The module has finite length, and an induction on length (similar arguments we saw earlier) shows that 0 as well. It then follows by NAK that , so .      Corollary 4.13. Let be noetherian, and a finitely generated -module.     a maximal ideal .     .      Proof. The first statement is clear. For the second, we recall that the associated primes of are the same as those of , so the zeroth Bass numbers are nonzero for the associated primes of . Then, we are guaranteed a chain of Bass numbers as long as  .    The following is the injective analogue of Auslander-Buchsbaum.    Let be a local ring, and a finitely generated module. If has finite injective dimension, then .    Proof. Set and . Let be a maximal -sequence.  To see , compute by the Koszul complex: this is , so the injective resolution of is at least this long.  To see , we can take a SES and the LES     From the definition of , the last term vanishes. Then, by Corollary ??(1), , so . Thus, .    We now pursue an analogue of Auslander-Buchsbaum-Serre. Here is one such statement:   Remark 4.15. Let be local. If , then is regular (and conversely). Indeed, we know . If we take a minimal resolution , the maps in are all zero, so . Thus, has finite injective dimension if and only if it has finite projective dimension.     Definition 4.16 (Gorenstein local ring). A local ring is Gorenstein if for every system of parameters ,     is a regular sequence (so is )    the ideal is irreducible: it cannot be written as for .      This class of rings can be characterized in many ways. Bass was the first to point this out, and to illustrate to importance of this class of rings. We will start this pursuit with artinian rings.    Let be an artinian local ring. TFAE:     is Gorenstein: (0) is irreducible                   4’) is an injective -module    Proof. (1) : Given two linearly independent elements in the socle, .   is -torsion, hence is an essential extension of its socle, so any ideal contains a nonzero element there. If the socle is 1-dimensional, any ideal contains the whole socle.   is an essential extension of , so it embeds into . Since  , this is an isomorphism.   : The socle of is a copy of .   : Trivial.   : The only injectives are copies of , and is an indecomposable module, so this is the only option from the structure theory.   : Trivial.   : Because injective dimension is the depth.    We note that if is artinian, then it contains a copy of , and we can reinterpret (3) as saying that .  We now want to extend this theorem to higher dimensions. We will use another theorem of Rees on Ext.    Let be -modules, and be -regular and -regular. Then for all .    We will apply the same strategy as in the Fundamental Theorem of Local Cohomology to see that for the left-exact functor from -modules to modules, its right derived functors are . Note that is an -module by hypothesis. By definition, , so this will establish the theorem.  Step 1: The functors agree when . Indeed, for the SES of -modules  , there is an LES   We observe that (any element in has to map to something killed by ), that (since both sides are killed by ), and kills (since it kills ). The specified isomorphism follows.  Step 2: vanishes for free -modules for . Indeed, a free -module has a free -resolution of length one, so computing the Ext from this resolution shows the vanishing.  Step 3: This follows in the same way as Step 3 of the Fundamental Theorem of Local Cohomology. We leave this as an exercise.      Let be a local ring of dimension . TFAE:    is Gorenstein    1’) is and some generates an irreducible ideal          is and .         4’)     Proof. First we want to observe that every condition implies that is Cohen-Macaulay. For (2), this is due to Rees’s theorem on depth and Ext (the one from a while ago). For (4), and consequently for , this follows from . For the others, this is explicit. We assume that is Cohen-Macaulay henceforth.   : trivial   : The Ext vanishings follow from as noted above. Now, let be the given irreducible parameter ideal. The zero ideal in is then irreducible, and by the artinian case, . Applying the previous theorem times, we obtain that .   : Given any SOP of , as in the previous implication (backwards), we see that , and apply the artinian case to see that is irreducible in , so is irreducible in .  As a consequence of these implications, we see that if is Gorenstein local, and a SOP, then is Gorenstein iff is.   : Applying Rees’s recent theorem again, we find that if is an SOP, then   .  Then, is Gorenstein implies is too, and that it has injective dimension zero (by the artinian case), so has injective dimension . If has finite injective dimension, so does , so it is Gorenstein, and is too.   : By , know that is zero for and is one for ; by (4) it is zero for . Thus, taking of an injective resolution of leaves just one copy of in cohomological degree .   : Again, the Ext vanishing is a consequence of Cohen-Macaulayness. By the Lemma on ascending Bass numbers, . In the Theorem characterizing Bass numbers in terms of Ext, we saw that if is an injective resolution of has vanishing differentials; this was explicitly stated and established as a claim. This means that, in a minimal injective resolution, any socle element is in the kernel of the differential. Now consider . This is zero up to cohomological dimension . Then, we have     and .    The following is now evident from the remark after the proof of Local Duality for regular rings.    Corollary 4.20 (Local Duality for Gorenstein rings). Let be a Gorenstein local ring of dimension . Then    If is a finitely generated -module, then .    If is complete and is arbitrary, then .    These isomorphisms are functorial in .     Worksheet on Gorenstein rings     Let be a local ring. Show the following:    (a) is Gorenstein if and only if is Gorenstein.  (b) If is a regular sequence, then is Gorenstein if and only if is Gorenstein.  (c) If is Gorenstein, and , then is Gorenstein.    Definition 4.21. A local ring is a complete intersection if there is a surjection from a complete regular local ring onto with the kernel generated by a regular sequence.     Remark 4.22. The following are equivalent:     is a complete intersection;    For every surjection from a complete RLR , the kernel is generated by a regular sequence;    and IF there exists a surjection from an RLR onto itself,    For every surjection from an RLR , the kernel is generated by a regular sequence.     Not all of these equivalences are obvious, but we will use them freely.    Show that if is a complete intersection, then is Gorenstein.    Let be a field. For each of the following rings determine: Is Gorenstein? Is CohenMacaulay? Is a complete intersection? Reuse your work from old worksheets and HW when convenient.    (a) .  (b) .  (c) .  (d) , where is the ideal generated by the entries of .  (e) , where is the ideal generated by the positive degree forms.  (f) , where is the ideal generated by the positive degree forms.  (g) , where is the ideal generated by the positive degree forms.    Let and be two complete Gorenstein local rings, with .    (a) Use Local Duality to show that   (b) Suppose moreover that is regular. Let be the minimal free resolution of as an -module. Show that,    UTF8mj渄  (c) With the same assumptions as in the previous part, show that for all -modules .    A numerical semigroup is a subsemigroup of ; our convention is that . A numerical semigroup ring is a ring of the form . Assume that the GCD of the elements in is 1 . Then, there is a largest number such that , called the Frobenius number of .    (a) Show that is generated as a vector space by   (b) Show that is Gorenstein if and only if     (c) Check this criterion with , and .    Show that if is a Gorenstein local ring, and is a finitely generated -module, then has finite projective dimension if and only if has finite injective dimension.    We summarize some implications and non-implications on the structural properties of local rings we have encountered:     complete intersection regular:   Gorenstein complete intersection:   Cohen-Macaulay Gorenstein:    "
 },
 {
   "id": "def-4.11-2",
@@ -9007,7 +9007,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "20.19",
   "title": "",
-  "body": "  Theorem 4.18. Let be -modules, and be -regular and -regular. Then for all .    Proof. We will apply the same strategy as in the Fundamental Theorem of Local Cohomology to see that for the left-exact functor from -modules to modules, its right derived functors are . Note that is an -module by hypothesis. By definition, , so this will establish the theorem.  Step 1: The functors agree when . Indeed, for the SES of -modules  , there is an LES     We observe that (any element in has to map to something killed by ), that (since both sides are killed by ), and kills (since it kills ). The specified isomorphism follows.  Step 2: vanishes for free -modules for . Indeed, a free -module has a free -resolution of length one, so computing the Ext from this resolution shows the vanishing.  Step 3: This follows in the same way as Step 3 of the Fundamental Theorem of Local Cohomology. We leave this as an exercise.   "
+  "body": "  Let be -modules, and be -regular and -regular. Then for all .    We will apply the same strategy as in the Fundamental Theorem of Local Cohomology to see that for the left-exact functor from -modules to modules, its right derived functors are . Note that is an -module by hypothesis. By definition, , so this will establish the theorem.  Step 1: The functors agree when . Indeed, for the SES of -modules  , there is an LES   We observe that (any element in has to map to something killed by ), that (since both sides are killed by ), and kills (since it kills ). The specified isomorphism follows.  Step 2: vanishes for free -modules for . Indeed, a free -module has a free -resolution of length one, so computing the Ext from this resolution shows the vanishing.  Step 3: This follows in the same way as Step 3 of the Fundamental Theorem of Local Cohomology. We leave this as an exercise.   "
 },
 {
   "id": "thm-4.19-2",
@@ -9016,7 +9016,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "20.20",
   "title": "",
-  "body": "  Theorem 4.19. Let be a local ring of dimension . TFAE:     is Gorenstein    1’) is and some generates an irreducible ideal          is and .         4’)     Proof. First we want to observe that every condition implies that is Cohen-Macaulay. For (2), this is due to Rees’s theorem on depth and Ext (the one from a while ago). For (4), and consequently for , this follows from . For the others, this is explicit. We assume that is Cohen-Macaulay henceforth.   : trivial   : The Ext vanishings follow from as noted above. Now, let be the given irreducible parameter ideal. The zero ideal in is then irreducible, and by the artinian case, . Applying the previous theorem times, we obtain that .   : Given any SOP of , as in the previous implication (backwards), we see that , and apply the artinian case to see that is irreducible in , so is irreducible in .  As a consequence of these implications, we see that if is Gorenstein local, and a SOP, then is Gorenstein iff is.   : Applying Rees’s recent theorem again, we find that if is an SOP, then   .  Then, is Gorenstein implies is too, and that it has injective dimension zero (by the artinian case), so has injective dimension . If has finite injective dimension, so does , so it is Gorenstein, and is too.   : By , know that is zero for and is one for ; by (4) it is zero for . Thus, taking of an injective resolution of leaves just one copy of in cohomological degree .   : Again, the Ext vanishing is a consequence of Cohen-Macaulayness. By the Lemma on ascending Bass numbers, . In the Theorem characterizing Bass numbers in terms of Ext, we saw that if is an injective resolution of has vanishing differentials; this was explicitly stated and established as a claim. This means that, in a minimal injective resolution, any socle element is in the kernel of the differential. Now consider . This is zero up to cohomological dimension . Then, we have     and .   "
+  "body": "  Let be a local ring of dimension . TFAE:    is Gorenstein    1’) is and some generates an irreducible ideal          is and .         4’)     Proof. First we want to observe that every condition implies that is Cohen-Macaulay. For (2), this is due to Rees’s theorem on depth and Ext (the one from a while ago). For (4), and consequently for , this follows from . For the others, this is explicit. We assume that is Cohen-Macaulay henceforth.   : trivial   : The Ext vanishings follow from as noted above. Now, let be the given irreducible parameter ideal. The zero ideal in is then irreducible, and by the artinian case, . Applying the previous theorem times, we obtain that .   : Given any SOP of , as in the previous implication (backwards), we see that , and apply the artinian case to see that is irreducible in , so is irreducible in .  As a consequence of these implications, we see that if is Gorenstein local, and a SOP, then is Gorenstein iff is.   : Applying Rees’s recent theorem again, we find that if is an SOP, then   .  Then, is Gorenstein implies is too, and that it has injective dimension zero (by the artinian case), so has injective dimension . If has finite injective dimension, so does , so it is Gorenstein, and is too.   : By , know that is zero for and is one for ; by (4) it is zero for . Thus, taking of an injective resolution of leaves just one copy of in cohomological degree .   : Again, the Ext vanishing is a consequence of Cohen-Macaulayness. By the Lemma on ascending Bass numbers, . In the Theorem characterizing Bass numbers in terms of Ext, we saw that if is an injective resolution of has vanishing differentials; this was explicitly stated and established as a claim. This means that, in a minimal injective resolution, any socle element is in the kernel of the differential. Now consider . This is zero up to cohomological dimension . Then, we have     and .   "
 },
 {
   "id": "cor-4.20-2",
@@ -9052,7 +9052,241 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "20.3",
   "title": "Canonical Modules",
-  "body": "Canonical Modules    "
+  "body": "Canonical Modules    A canonical module over a Cohen-Macaulay local ring is a finitely generated module such that .     Example 4.24. For a Cohen-Macaulay local ring , the rank one free module is a canonical module if and only if is Gorenstein. There are missing footnotes here    Example 4.25. If is complete local (and CM), then, by Matlis duality, is noetherian and , so is a canonical module. Moreover, if is noetherian and , then , so all canonical modules of are isomorphic.    Example 4.26. If is artinian local (and hence complete), then all of is -torsion, so  . Since is a canonical module in this case.   In our original proof of local duality in the regular case, we noted that the proof worked in greater generality. Our definition of canonical module is designed to exactly fulfill that situation.  Local Duality for Cohen-Macaulay rings   Let be a Cohen-Macaulay local ring of dimension , and a canonical module.    If is a finitely generated -module, then .    If is complete and is arbitrary, then .    These isomorphisms are functorial in .  Of course, we want to find conditions under which canonical modules exist, and to have methods to find them.      Let be a homomorphism of local rings. Suppose that is module-finite over the image of : e.g., , or is a module-finite inclusion.   and .  For any -module , as A-modules or as -modules.    This follows from the lemma on the behavior of the injective hull of the residue field under such maps and Hom-tensor adjunction:     These isomorphisms are all valid as -modules or as -modules.  The following proposition is the key source of canonical modules.    Let be a homomorphism of local rings. Suppose that is module-finite over the image of : e.g., , or is a module-finite inclusion.  Suppose that and are Cohen-Macaulay, and that is a canonical module for . Then is a canonical module for .    Since and are finitely generated -modules, the -modules are noetherian -modules. They are -modules as well, and noetherian -modules as such.  We then apply local duality over , and the previous lemma: Since local duality is functorial, the map for any induces the same map on both sides, so this is an isomorphism of -modules.      If is a quotient of a Gorenstein local ring , then has a canonical module, namely, , where .     Example 4.31. In the first homework, you showed that for and is Cohen-Macaulay, and is the cokernel of the map given by the matrix . Evidently, this two-generated module is a canonical module for .    Example 4.32. Let , and . We can write  . We have that is a canonical module for . To understand this module more concretely, note that is generated by the maps dual to the basis of over specified above. Evidently, , so we can ignore as a generator. The maps both decrease degrees by 3 , so neither is a multiple of the other. One relation between the maps is given above. It is easy to find a few more: and .   Our next goal is to show that canonical modules are unique up to isomorphism when they exist. We want to do this by reducing to the complete case, where we have already observed this. To this end, we will collect a few facts on completion and Matlis duality.    Let be local, and and be finitely generated -modules.     If , then .     .     , where the latter dual is as a -module.        Let be an isomorphism, in particular, surjective. First, we note that     Thus, we can pick such that . If satisfies , with , take with , so . Thus, , and hence by NAK.  Similarly, we can find a surjection , and hence a surjection . Since is finitely generated, must be an isomorphism, hence injective. Then, must be injective too, hence an isomorphism.    We have already seen that . Then, given a presentation       applying double duality gives   and thus .     Recall that . Since is artinian, and applying flat base change      .     If is a local ring, then a finitely generated module is a canonical module for if and only if is a canonical module for . Consequently, any two canonical modules for are isomorphic.    The first statement follows immediately from part (3) above.  If and are canonical modules for , then and are canonical modules for . As noted earlier, this implies that , so by part (1) of the previous lemma, .    Here is one application of the uniqueness of canonical modules.    Let be a , and an ideal. If is Gorenstein, then the minimal free resolution of as an -module is symmetric: with (up to change of bases).    Let . More naturally, the claim is that after reindexing the latter (changing the indices from cohomological to homological  . The complex has homology . The complex vanishes past position by Auslander-Buchsbaum. The homology below degree vanishes by Rees (or local duality). The homology at position is a canonical module for , so must be itself, since is Gorenstein. Thus, after the reindexing is a minimal free resolution for . Any two minimal free resolutions are isomorphic (exercise!).      Proposition 4.36. Let be Cohen-Macaulay, be a canonical module for , and  be a regular sequence on . Then     is a canonical module for , and     is a regular sequence on .    In particular, a canonical module is a maximal Cohen-Macaulay module.    Proof. For the first statement, compute .  We prove (2) by induction on . Suppose both statements are true for , and set to be . Then, . Applying (1), . We apply local duality to see that . Thus, is a nonzerodivisor on .      Lemma 4.37. Let be a Cohen-Macaulay local ring with canonical module . Then by the map \"multiply by \".    Proof. Since is faithfully flat over , it suffices to check to isomorphism after tensoring with . Since both sides are finitely generated, this is the same as completing, which turns into , and into . Thus, we can assume that is complete. Then, if is a SOP for , write . Then .  We claim that . Indeed, an -linear map induces a sequence of maps such that . This gives an element in the inverse limit. Conversely, given such a sequence of maps with the same compatibility property, one can define an -linear map from to by the rule   Since is artinian, . Then, by the natural map, and passing to the inverse limit gives the isomorphism.    A CM local ring has a canonical module if and only if it is a quotient of a Gorenstein ring. Given a ring and a module , the trivial extension or idealization of by is the with -module structure and multiplication . It is easy to check that this structure makes into a ring in which is an ideal with square zero, and . If is local, then is local as well.    Proposition 4.38. Let be a Cohen-Macaulay local ring with canonical module . The trivial extension is a Gorenstein local ring. Thus, if has a canonical module, is a quotient of a Gorenstein ring.    Proof. Note that is a finitely generated -module. Since a regular sequence on is also regular on , this ring is also Cohen-Macaulay.  We compute a canonical module for as . As an -module, this Hom is isomorphic to . I’ll leave to you as an exercise the routine check that the module structure on this induced by the premultiplication action on agrees with the structure of .    We now show that canonical modules localize. We could work with the construction above to do this, but we will give a slightly more flexible proof. We prepare for this with a lemma.    Lemma 4.39. Let be a Cohen-Macaulay local ring, and be an ideal. Then .    Proof. Since height and  , it suffices to show the equality for prime ideals, so let be prime. By the worksheet on CM rings, we know that height , and for all . Setting , take a regular sequence . Since is a regular sequence, height , so must be a minimal prime of . Then is CM of . But , so , as required.      Proposition 4.40. If is a Cohen-Macaulay local ring, is a canonical module, and , then is a canonical module for .    Proof. Let be a Gorenstein ring mapping onto , so that . Let , and be the contraction of in . We note that if , since is Cohen-Macaulay, by the previous lemma,   Then, is a canonical module for , since is Gorenstein.    Exercise 4.41. Show that the minimal injective resolution of a canonical module has the same form as the minimal injective resolution of a RLR we found in the last homework.  Exercise 4.42. Show that if is a Cohen-Macaulay local ring that is a quotient of a Gorenstein ring, a module is a canonical module for if and only if is finitely generated and     Let be a local ring with canonical module . Suppose that for every minimal prime of is Gorenstein , e.g., is reduced. Then there is some ideal I of such that . If , then every associated prime of has height one.    We note that if is reduced, and , then is a field, so \"e.g.\" is valid.  First, we show that is isomorphic to an ideal. The point is that for all minimal primes of , using the exercise above and the hypothesis. If is the set of nonzerodivisors of , which is the same as the set of nonzerodivisors on , then  . Then, an isomorphism restricts to an injection from . If is a generating set for , and , then is an injective map from to .  Now, we show that such an ideal has all associated primes of height one. To obtain a contradiction, suppose we have some of height at least two. We have that is of dimension at least two, with canonical module , so . On the other hand, , and , so . This is the desired contradiction.    We recall the following fact about factorization:  Exercise 4.44. If is a UFD, and is such that every associated prime of has height one, then is principal.  The following is now evident.    If is a Cohen-Macaulay UFD, and is a quotient of a Gorenstein ring, then is Gorenstein.     has a canonical module isomorphic to an unmixed height one ideal, which is necessarily principal. Thus, the canonical module is isomorphic to itself.    It turns out that one cannot drop the Cohen-Macaulay hypothesis in the previous theorem.   Example 4.46. Let , and . Let be a group of order two, where is the identity. Let act on by the rule and for all . Consider the ring of invariants with maximal ideal , the contraction of . We claim that is a UFD that is not Cohen-Macaulay.   is a UFD: We show that is a UFD. Consider an element . Since is a UFD, admits a factorization into -irreducibles:   Then, We say that such an is generically Gorenstein  Each must be irreducible, since one could apply to a nontrivial factorization to get a nontrivial factorization of . Thus, there is some such that for some units . But, the only unit in is 1 . Thus, we can regroup the ’s in such a way that with all ’s and ’s irreducible in , and . In particular, any irreducible element of must be of the form or . It is then clear that any factorization of into -irreducibles must be of the (unique!) form  is Cohen-Macaulay: By the Theorem on symmetric polynomials, is rank two free module over the polynomial subring . After self-tensoring, we see that is a rank eight free module over the polynomial subring . Since consists of invariants, , so is a Noether normalization of . Hence, is a SOP for .  We claim that is not a regular sequence in . Indeed, we have the relation since every monomial in the expansion appears twice and has characteristic two. Each of the (-) elements above invariant, so this is a relation in , and gives a relation in .  Now, we observe that the set of linear forms fixed by the group action is generated over by . The 2 -form cannot be generated by these linear forms, so . We claim that as well; we leave this as an easy exercise for you. Then, we conclude that is a zerodivisor in . Therefore, is not Cohen-Macaulay.    Example 4.47. We now give a brief indication of a local ring with no canonical module. The hard work for this example is due to Ferrand and Raynaud, Fibres formelles d’un anneau locale nothérian, who give an example of a 1-dimensional local domain such that is not generically Gorenstein: for some minimal prime of is not Gorenstein.  Note that is Cohen-Macaulay, simply because it contains a nonzerodivisor. Suppose, that has a canonical module . Then, since is a domain, and hence generically Gorenstein, there is an ideal of pure height one, which hence is -primary, such that . Then, is CM, with canonical module , which is also -primary. Thus, is not contained in any . Thus, for , we have which contradicts the fact that is not generically Gorenstein.  Later examples of T. Ogoma exhibit Cohen-Macaulay UFDs that are not Gorenstein, hence, that have no canonical module.   "
+},
+{
+  "id": "def-4.23-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#def-4.23-2",
+  "type": "Definition",
+  "number": "20.24",
+  "title": "",
+  "body": "  A canonical module over a Cohen-Macaulay local ring is a finitely generated module such that .   "
+},
+{
+  "id": "sec-canonical-mod-3",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-3",
+  "type": "Example",
+  "number": "20.25",
+  "title": "",
+  "body": " Example 4.24. For a Cohen-Macaulay local ring , the rank one free module is a canonical module if and only if is Gorenstein. There are missing footnotes here  "
+},
+{
+  "id": "sec-canonical-mod-4",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-4",
+  "type": "Example",
+  "number": "20.26",
+  "title": "",
+  "body": " Example 4.25. If is complete local (and CM), then, by Matlis duality, is noetherian and , so is a canonical module. Moreover, if is noetherian and , then , so all canonical modules of are isomorphic.  "
+},
+{
+  "id": "sec-canonical-mod-5",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-5",
+  "type": "Example",
+  "number": "20.27",
+  "title": "",
+  "body": " Example 4.26. If is artinian local (and hence complete), then all of is -torsion, so  . Since is a canonical module in this case.  "
+},
+{
+  "id": "thm-4.27-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#thm-4.27-2",
+  "type": "Theorem",
+  "number": "20.28",
+  "title": "Local Duality for Cohen-Macaulay rings.",
+  "body": "Local Duality for Cohen-Macaulay rings   Let be a Cohen-Macaulay local ring of dimension , and a canonical module.    If is a finitely generated -module, then .    If is complete and is arbitrary, then .    These isomorphisms are functorial in .  Of course, we want to find conditions under which canonical modules exist, and to have methods to find them.   "
+},
+{
+  "id": "lem-4.28-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#lem-4.28-2",
+  "type": "Lemma",
+  "number": "20.29",
+  "title": "",
+  "body": "  Let be a homomorphism of local rings. Suppose that is module-finite over the image of : e.g., , or is a module-finite inclusion.   and .  For any -module , as A-modules or as -modules.    This follows from the lemma on the behavior of the injective hull of the residue field under such maps and Hom-tensor adjunction:    "
+},
+{
+  "id": "prop-4.29-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#prop-4.29-2",
+  "type": "Proposition",
+  "number": "20.30",
+  "title": "",
+  "body": "  Let be a homomorphism of local rings. Suppose that is module-finite over the image of : e.g., , or is a module-finite inclusion.  Suppose that and are Cohen-Macaulay, and that is a canonical module for . Then is a canonical module for .    Since and are finitely generated -modules, the -modules are noetherian -modules. They are -modules as well, and noetherian -modules as such.  We then apply local duality over , and the previous lemma: Since local duality is functorial, the map for any induces the same map on both sides, so this is an isomorphism of -modules.   "
+},
+{
+  "id": "cor-4.30-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#cor-4.30-2",
+  "type": "Corollary",
+  "number": "20.31",
+  "title": "",
+  "body": "  If is a quotient of a Gorenstein local ring , then has a canonical module, namely, , where .   "
+},
+{
+  "id": "sec-canonical-mod-13",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-13",
+  "type": "Example",
+  "number": "20.32",
+  "title": "",
+  "body": " Example 4.31. In the first homework, you showed that for and is Cohen-Macaulay, and is the cokernel of the map given by the matrix . Evidently, this two-generated module is a canonical module for .  "
+},
+{
+  "id": "sec-canonical-mod-14",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-14",
+  "type": "Example",
+  "number": "20.33",
+  "title": "",
+  "body": " Example 4.32. Let , and . We can write  . We have that is a canonical module for . To understand this module more concretely, note that is generated by the maps dual to the basis of over specified above. Evidently, , so we can ignore as a generator. The maps both decrease degrees by 3 , so neither is a multiple of the other. One relation between the maps is given above. It is easy to find a few more: and .  "
+},
+{
+  "id": "lem-4.33-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#lem-4.33-2",
+  "type": "Lemma",
+  "number": "20.34",
+  "title": "",
+  "body": "  Let be local, and and be finitely generated -modules.     If , then .     .     , where the latter dual is as a -module.      "
+},
+{
+  "id": "sec-canonical-mod-17",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-17",
+  "type": "Proof",
+  "number": "20.3.1",
+  "title": "",
+  "body": " Let be an isomorphism, in particular, surjective. First, we note that     Thus, we can pick such that . If satisfies , with , take with , so . Thus, , and hence by NAK.  Similarly, we can find a surjection , and hence a surjection . Since is finitely generated, must be an isomorphism, hence injective. Then, must be injective too, hence an isomorphism.    We have already seen that . Then, given a presentation       applying double duality gives   and thus .     Recall that . Since is artinian, and applying flat base change      .  "
+},
+{
+  "id": "prop-4.34-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#prop-4.34-2",
+  "type": "Proposition",
+  "number": "20.35",
+  "title": "",
+  "body": "  If is a local ring, then a finitely generated module is a canonical module for if and only if is a canonical module for . Consequently, any two canonical modules for are isomorphic.    The first statement follows immediately from part (3) above.  If and are canonical modules for , then and are canonical modules for . As noted earlier, this implies that , so by part (1) of the previous lemma, .   "
+},
+{
+  "id": "cor-4.35-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#cor-4.35-2",
+  "type": "Corollary",
+  "number": "20.36",
+  "title": "",
+  "body": "  Let be a , and an ideal. If is Gorenstein, then the minimal free resolution of as an -module is symmetric: with (up to change of bases).    Let . More naturally, the claim is that after reindexing the latter (changing the indices from cohomological to homological  . The complex has homology . The complex vanishes past position by Auslander-Buchsbaum. The homology below degree vanishes by Rees (or local duality). The homology at position is a canonical module for , so must be itself, since is Gorenstein. Thus, after the reindexing is a minimal free resolution for . Any two minimal free resolutions are isomorphic (exercise!).   "
+},
+{
+  "id": "prop-4.36",
+  "level": "2",
+  "url": "sec-canonical-mod.html#prop-4.36",
+  "type": "Proposition",
+  "number": "20.37",
+  "title": "",
+  "body": "  Proposition 4.36. Let be Cohen-Macaulay, be a canonical module for , and  be a regular sequence on . Then     is a canonical module for , and     is a regular sequence on .    In particular, a canonical module is a maximal Cohen-Macaulay module.    Proof. For the first statement, compute .  We prove (2) by induction on . Suppose both statements are true for , and set to be . Then, . Applying (1), . We apply local duality to see that . Thus, is a nonzerodivisor on .   "
+},
+{
+  "id": "lem-4.37-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#lem-4.37-2",
+  "type": "Lemma",
+  "number": "20.38",
+  "title": "",
+  "body": "  Lemma 4.37. Let be a Cohen-Macaulay local ring with canonical module . Then by the map \"multiply by \".    Proof. Since is faithfully flat over , it suffices to check to isomorphism after tensoring with . Since both sides are finitely generated, this is the same as completing, which turns into , and into . Thus, we can assume that is complete. Then, if is a SOP for , write . Then .  We claim that . Indeed, an -linear map induces a sequence of maps such that . This gives an element in the inverse limit. Conversely, given such a sequence of maps with the same compatibility property, one can define an -linear map from to by the rule   Since is artinian, . Then, by the natural map, and passing to the inverse limit gives the isomorphism.   "
+},
+{
+  "id": "prop-4.38-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#prop-4.38-2",
+  "type": "Proposition",
+  "number": "20.39",
+  "title": "",
+  "body": "  Proposition 4.38. Let be a Cohen-Macaulay local ring with canonical module . The trivial extension is a Gorenstein local ring. Thus, if has a canonical module, is a quotient of a Gorenstein ring.    Proof. Note that is a finitely generated -module. Since a regular sequence on is also regular on , this ring is also Cohen-Macaulay.  We compute a canonical module for as . As an -module, this Hom is isomorphic to . I’ll leave to you as an exercise the routine check that the module structure on this induced by the premultiplication action on agrees with the structure of .   "
+},
+{
+  "id": "lem-4.39-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#lem-4.39-2",
+  "type": "Lemma",
+  "number": "20.40",
+  "title": "",
+  "body": "  Lemma 4.39. Let be a Cohen-Macaulay local ring, and be an ideal. Then .    Proof. Since height and  , it suffices to show the equality for prime ideals, so let be prime. By the worksheet on CM rings, we know that height , and for all . Setting , take a regular sequence . Since is a regular sequence, height , so must be a minimal prime of . Then is CM of . But , so , as required.   "
+},
+{
+  "id": "prop-4.40-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#prop-4.40-2",
+  "type": "Proposition",
+  "number": "20.41",
+  "title": "",
+  "body": "  Proposition 4.40. If is a Cohen-Macaulay local ring, is a canonical module, and , then is a canonical module for .    Proof. Let be a Gorenstein ring mapping onto , so that . Let , and be the contraction of in . We note that if , since is Cohen-Macaulay, by the previous lemma,   Then, is a canonical module for , since is Gorenstein.   "
+},
+{
+  "id": "sec-canonical-mod-28",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-28",
+  "type": "Exercise",
+  "number": "20.42",
+  "title": "",
+  "body": "Exercise 4.41. Show that the minimal injective resolution of a canonical module has the same form as the minimal injective resolution of a RLR we found in the last homework. "
+},
+{
+  "id": "sec-canonical-mod-29",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-29",
+  "type": "Exercise",
+  "number": "20.43",
+  "title": "",
+  "body": "Exercise 4.42. Show that if is a Cohen-Macaulay local ring that is a quotient of a Gorenstein ring, a module is a canonical module for if and only if is finitely generated and  "
+},
+{
+  "id": "prop-4.43-2",
+  "level": "2",
+  "url": "sec-canonical-mod.html#prop-4.43-2",
+  "type": "Proposition",
+  "number": "20.44",
+  "title": "",
+  "body": "  Let be a local ring with canonical module . Suppose that for every minimal prime of is Gorenstein , e.g., is reduced. Then there is some ideal I of such that . If , then every associated prime of has height one.    We note that if is reduced, and , then is a field, so \"e.g.\" is valid.  First, we show that is isomorphic to an ideal. The point is that for all minimal primes of , using the exercise above and the hypothesis. If is the set of nonzerodivisors of , which is the same as the set of nonzerodivisors on , then  . Then, an isomorphism restricts to an injection from . If is a generating set for , and , then is an injective map from to .  Now, we show that such an ideal has all associated primes of height one. To obtain a contradiction, suppose we have some of height at least two. We have that is of dimension at least two, with canonical module , so . On the other hand, , and , so . This is the desired contradiction.   "
+},
+{
+  "id": "sec-canonical-mod-32",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-32",
+  "type": "Exercise",
+  "number": "20.45",
+  "title": "",
+  "body": "Exercise 4.44. If is a UFD, and is such that every associated prime of has height one, then is principal. "
+},
+{
+  "id": "thm-4.45",
+  "level": "2",
+  "url": "sec-canonical-mod.html#thm-4.45",
+  "type": "Theorem",
+  "number": "20.46",
+  "title": "",
+  "body": "  If is a Cohen-Macaulay UFD, and is a quotient of a Gorenstein ring, then is Gorenstein.     has a canonical module isomorphic to an unmixed height one ideal, which is necessarily principal. Thus, the canonical module is isomorphic to itself.   "
+},
+{
+  "id": "sec-canonical-mod-36",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-36",
+  "type": "Example",
+  "number": "20.47",
+  "title": "",
+  "body": " Example 4.46. Let , and . Let be a group of order two, where is the identity. Let act on by the rule and for all . Consider the ring of invariants with maximal ideal , the contraction of . We claim that is a UFD that is not Cohen-Macaulay.   is a UFD: We show that is a UFD. Consider an element . Since is a UFD, admits a factorization into -irreducibles:   Then, We say that such an is generically Gorenstein  Each must be irreducible, since one could apply to a nontrivial factorization to get a nontrivial factorization of . Thus, there is some such that for some units . But, the only unit in is 1 . Thus, we can regroup the ’s in such a way that with all ’s and ’s irreducible in , and . In particular, any irreducible element of must be of the form or . It is then clear that any factorization of into -irreducibles must be of the (unique!) form  is Cohen-Macaulay: By the Theorem on symmetric polynomials, is rank two free module over the polynomial subring . After self-tensoring, we see that is a rank eight free module over the polynomial subring . Since consists of invariants, , so is a Noether normalization of . Hence, is a SOP for .  We claim that is not a regular sequence in . Indeed, we have the relation since every monomial in the expansion appears twice and has characteristic two. Each of the (-) elements above invariant, so this is a relation in , and gives a relation in .  Now, we observe that the set of linear forms fixed by the group action is generated over by . The 2 -form cannot be generated by these linear forms, so . We claim that as well; we leave this as an easy exercise for you. Then, we conclude that is a zerodivisor in . Therefore, is not Cohen-Macaulay.  "
+},
+{
+  "id": "sec-canonical-mod-37",
+  "level": "2",
+  "url": "sec-canonical-mod.html#sec-canonical-mod-37",
+  "type": "Example",
+  "number": "20.48",
+  "title": "",
+  "body": " Example 4.47. We now give a brief indication of a local ring with no canonical module. The hard work for this example is due to Ferrand and Raynaud, Fibres formelles d’un anneau locale nothérian, who give an example of a 1-dimensional local domain such that is not generically Gorenstein: for some minimal prime of is not Gorenstein.  Note that is Cohen-Macaulay, simply because it contains a nonzerodivisor. Suppose, that has a canonical module . Then, since is a domain, and hence generically Gorenstein, there is an ideal of pure height one, which hence is -primary, such that . Then, is CM, with canonical module , which is also -primary. Thus, is not contained in any . Thus, for , we have which contradicts the fact that is not generically Gorenstein.  Later examples of T. Ogoma exhibit Cohen-Macaulay UFDs that are not Gorenstein, hence, that have no canonical module.  "
 },
 {
   "id": "sec-graded-local-duality",

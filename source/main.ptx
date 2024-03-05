@@ -396,310 +396,6 @@
 
     <part xml:id="part-homalg"><title>Homological Algebra</title>
 
-      <chapter xml:id="ch-intro"><title>Where are we going?</title>
-
-        <paragraphs><title>Chain Complexes and Short Exact Sequences</title>
-          
-          <p>
-            Homological algebra first appeared in the study of topological spaces. 
-            Roughly speaking, homology is a way of associating a sequence of abelian groups (or modules, or other more sophisticated algebraic objects) to another object, for example a topological space. 
-            The homology of a topological space encodes topological information about the space in algebraic language - this is what algebraic topology is all about.
-          </p>
-      
-          <p>
-            More formally, we will study complexes and their homology from a more abstract perspective. 
-            While algebraic topologists are often concerned with complexes of abelian groups, we will work a bit more generally with complexes of <m>R</m>-modules. 
-            The basic assumptions and notation about rings and modules we will use in this class can be found in Appendix A. 
-            As an appetizer, we begin with some basic homological algebra definitions.
-          </p>
-
-          <definition xml:id="def-chain-complex"><title>Chain Complex</title>
-            <statement>
-              <p>
-                A <em>chain complex</em> of <m>R</m>-modules <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m>, also referred to simply as a <em>complex</em>, is a sequence of <m>R</m>-modules <m>C_{i}</m> and <m>R</m>-module homomorphisms
-                <me>
-                  \cdots \longrightarrow C_{n+1} \stackrel{\partial_{n+1}}{\longrightarrow} C_{n} \stackrel{\partial_{n}}{\longrightarrow} C_{n-1} \longrightarrow \cdots
-                </me>
-                such that <m>\partial_{n} \partial_{n+1}=0</m> for all <m>n</m>. 
-                The maps <m>\partial_{n}</m> are the <em>differentials</em> of our complex.
-                <idx><h>chain complex</h></idx>
-                <idx><h>differential</h></idx>
-              </p>
-            </statement>
-          </definition>
-
-          <convention>
-            <p>
-              We may sometimes omit the differentials <m>\partial_{n}</m> and simply refer to the complex <m>C_{\bullet}</m> or even <m>C</m>; 
-              we may also sometimes refer to <m>\partial_{\bullet}</m> as the differential of <m>C_{\bullet}</m>.
-            </p>
-          </convention>
-
-          <definition xml:id="def-ses"><title>Exact Sequences</title>
-            <statement>
-              <p>
-                The complex <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if im <m>\partial_{n+1}=\operatorname{ker} \partial_{n}</m>. 
-                An exact sequence is a complex that is exact everywhere. 
-                More precisely, an exact sequence of <m>R</m>-modules is a sequence
-                <me>
-                  \cdots \stackrel{f_{n-1}}{\longrightarrow} C_{n} \stackrel{f_{n}}{\longrightarrow} C_{n+1} \stackrel{f_{n+1}}{\longrightarrow} \cdots
-                </me>
-                of <m>R</m>-modules and <m>R</m>-module homomorphisms such that <m>\operatorname{im} f_{n}=\operatorname{ker} f_{n+1}</m> for all <m>n</m>. 
-                An exact sequence of the form
-                <me>
-                  0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0
-                </me>
-                is a short exact sequence, sometimes written ses.
-                <idx><h>exact sequence</h></idx>
-                <idx><h>short exact sequence</h></idx>
-              </p>
-            </statement>
-          </definition>
-
-          <exercise xml:id="rem-0.2">
-            <statement>
-              <p>
-                The condition that <m>\partial_{n} \partial_{n+1}=0</m> for all <m>n</m> implies that <m>\im \partial_{n+1} \subseteq \operatorname{ker} \partial_{n}</m>.
-              </p>
-            </statement>
-          </exercise>
-      
-          <theorem xml:id="thm-0.4">
-            <p>
-              The sequence
-              <me>
-                0 \longrightarrow M \stackrel{f}{\longrightarrow} N
-              </me>
-              is exact if and only if <m>f</m> is injective. 
-              Similarly,
-              <me>
-                M \stackrel{f}{\longrightarrow} N \longrightarrow 0
-              </me>
-              is exact if and only if <m>f</m> is surjective. 
-              So
-              <me>
-                0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
-              </me>
-              is a short exact sequence if and only if
-              <ul>
-                <li>
-                  <p>
-                    <m>f</m> is injective
-                  </p>
-                </li>
-        
-                <li>
-                  <p>
-                    <m>g</m> is surjective
-                  </p>
-                </li>
-          
-                <li>
-                  <p>
-                    <m>\operatorname{im} f=\operatorname{ker} g</m>.
-                  </p>
-                </li>
-              </ul>
-            </p>
-          </theorem>
-      
-          <p>
-            When this is indeed a short exact sequence, we can identify <m>A</m> with its image <m>f(A)</m>, and <m>A=\operatorname{ker} g</m>. 
-            Moreover, since <m>g</m> is surjective, by the First Isomorphism Theorem we conclude that <m>C \cong B / f(A)</m>, so we might abuse notation and identify <m>C</m> with <m>B / A</m>.
-          </p>
-
-          <convention>
-            <p>
-              We write <m>A \rightarrow B</m> to denote a surjective map, and <m>A \hookrightarrow B</m> to denote an injective map.
-            </p>
-          </convention>
-
-          <definition xml:id="def-cokernel"><title>Cokernel</title>
-            <statement>
-              <p>
-                The cokernel of a map of <m>R</m>-modules <m>A \stackrel{f}{\rightarrow} B</m> is the module
-                <me>
-                  \text { coker } f:=B / \operatorname{im}(f).
-                </me>
-              </p>
-            </statement>
-          </definition>
-
-          <exercise xml:id="rem-0.7">
-            <statement>
-              <p>
-                We can rephrase <xref ref="thm-0.4"/> in a fancier language: if
-                <me>
-                  0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
-                </me>
-                is a short exact sequence, then <m>A=\operatorname{ker} g</m> and <m>C=\operatorname{coker} f</m>.
-              </p>
-            </statement>
-          </exercise>
-
-          <example>
-            <p>
-              Let <m>\pi</m> be the canonical projection <m>\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z}</m>. 
-              The following is a short exact sequence:
-              <me>
-                0 \longrightarrow \mathbb{Z} \stackrel{2}{\longrightarrow} \mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0
-              </me>
-            </p>
-          </example>
-
-          <example>
-            <p>
-              Let <m>R=k[x]</m> be a polynomial ring over the field <m>k</m>. 
-              The following is a short exact sequence:
-              <me>
-                0 \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R /\igen x \longrightarrow 0 \text {. }
-              </me>
-            </p>
-        
-            <p>
-              The first map is multiplication by <m>x</m>, and the second map is the canonical projection.
-            </p>
-          </example>
-
-          <example>
-            <p>
-              Given an ideal <m>I</m> in a ring <m>R</m>, the inclusion map <m>\iota: I \rightarrow R</m> and the canonical projection <m>\pi: R \rightarrow R / I</m> give us the following short exact sequence:
-              <me>
-                0 \longrightarrow I \stackrel{\iota}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R / I \longrightarrow 0
-              </me>
-            </p>
-          </example>
-
-          <example>
-            <p>
-              Let <m>R=k[x] /\igen x</m>. 
-              The following complex is exact:
-            </p>
-        
-            <p>
-              <me>
-                \cdots \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\cdot x}{\longrightarrow} R \longrightarrow \cdots
-              </me>
-            </p>
-        
-            <p>
-              Indeed, the image and the kernel of multiplication by <m>x</m> are both <m>\igen x</m>.
-            </p>
-          </example>
-      
-          <p>
-            Sometimes we can show that certain modules vanish or compute them explicitly when they do not vanish by seeing that they fit in some naturally constructed exact sequence involving other modules we understand better. 
-            We will discuss this in more detail when we talk about long exact sequences.
-          </p>
-
-          <remark>
-            <p>
-              The complex <m>0 \longrightarrow M \stackrel{f}{\longrightarrow} N \longrightarrow 0</m> is exact if and only if <m>f</m> is an isomorphism.
-            </p>
-          </remark>
-
-          <remark>
-            <p>
-              The complex <m>0 \longrightarrow M \longrightarrow 0</m> is exact if and only if <m>M=0</m>.
-            </p>
-          </remark>
-
-        </paragraphs>
-
-        <paragraphs><title>Homology</title>
-    
-          <p>
-            Historically, chain complexes first appeared in topology. 
-            To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.
-          </p>
-
-          <definition xml:id="def-homology"><title>Homology</title>
-            <statement>
-              <p>
-                The homology of the complex <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is the sequence of <m>R</m>-modules
-                <me>
-                  \mathrm{H}_{n}\left(C_{\bullet}\right)=\mathrm{H}_{n}(C):=\frac{\operatorname{ker} \partial_{n}}{\operatorname{im} \partial_{n+1}} .
-                </me>
-              </p>
-          
-              <p>
-                The <m>n</m>th homology of <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is <m>\mathrm{H}_{n}(C)</m>. 
-              </p>
-            </statement>
-          </definition>
-
-          <convention>
-            <p>
-              The submodules <m>Z_{n}\left(C_{\bullet}\right)=Z_{n}(C):=\operatorname{ker} \partial_{n} \subseteq C_{n}</m> are sometimes called <em>cycles</em>, while the submodules <m>B_{n}\left(C_{\bullet}\right)=B_{n}(C):=\operatorname{im} \partial_{n+1} \subseteq C_{n}</m> are sometimes called <em>boundaries</em>. 
-              One sometimes uses the word boundary to refer an element of <m>B_{n}(C)</m> (an <m>n</m>-boundary), and the word cycle to refer to an element of <m>Z_{n}(C)</m> (an <m>n</m>-cycle).
-            </p>
-          </convention>
-
-          <remark>
-            <p>
-              The homology of a complex measures how far our complex is from being exact at each point. 
-              Again, we can talk about the cohomology of a cochain complex instead, which we write as <m>\mathrm{H}^{n}(C)</m>; we will for now not worry about the distinction.
-            </p>
-          </remark>
-
-          <exercise xml:id="rem-0.15">
-            <statement>
-              <p>
-                Note that <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if and only if <m>\mathrm{H}_{n}\left(C_{\bullet}\right)=0</m>. 
-              </p>
-            </statement>
-          </exercise>
-
-          <example>
-            <p>
-              Let <m>R=k[x] /\igen{x^3}</m>. 
-              Consider the following complex:
-              <me>
-                F_{\bullet}=\cdots \longrightarrow R \stackrel{\cdot x^{2}}{\longrightarrow} R \stackrel{\cdot x^{2}}{\longrightarrow} R \longrightarrow \cdots .
-              </me>
-              The image of multiplication by <m>x^{2}</m> is <m>\igen{x^2}</m>, while the the kernel of multiplication by <m>x^{2}</m> is <m>\igen{x} \supseteq\igen{x^2}</m>. 
-              For all <m>n</m>,
-              <me>
-                \mathrm{H}_{n}\left(F_{\bullet}\right)=\igen{x} /\igen{x^2} \cong R /\igen{x}
-              </me>
-            </p>
-          </example>
-
-          <example>
-            <p>
-              Let <m>\mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z}</m> be the canonical projection map. 
-              Then
-            </p>
-            <image source="2023_08_28_614593e69373955f3addg-07.jpg" width="50%"/>
-            <p>
-              is a complex of abelian groups, since the image of multiplication by <m>4</m> is <m>4 \mathbb{Z}</m>, and that is certainly contained in <m>\operatorname{ker} \pi=2 \mathbb{Z}</m>. 
-              The homology of <m>C</m> is
-              <me>
-                \begin{array}{ll}
-                \mathrm{H}_{n}(C)=0 &amp; \text { for } n \geqslant 3 \\
-                \mathrm{H}_{2}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}{\operatorname{im}(0 \longrightarrow \mathbb{Z})}=\frac{0}{0}=0 &amp; \\
-                \mathrm{H}_{1}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{\pi}{\rightarrow} \mathbb{Z} / 2 \mathbb{Z})}{\operatorname{im}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}=\frac{2 \mathbb{Z}}{4 \mathbb{Z}} \cong \mathbb{Z} / 2 \mathbb{Z} &amp; \\
-                \mathrm{H}_{0}(C)=\frac{\operatorname{ker}(\mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0)}{\operatorname{im}(\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z})}=\frac{\mathbb{Z} / 2 \mathbb{Z}}{\mathbb{Z} / 2 \mathbb{Z}}=0 &amp; \text { for } n&lt;0 \\
-                \mathrm{H}_{n}(C)=0 &amp;
-                \end{array}
-              </me>
-            </p>
-        
-            <p>
-              Notice that our complex is exact at <m>2</m> and <m>0</m>. 
-              The exactness at <m>2</m> says that the map <m>\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z}</m> is injective, while exactness at <m>0</m> says that <m>\pi</m> is surjective.
-            </p>
-          </example>
-      
-          <p>
-            Before we can continue any further into the world of homological algebra, we will need some categorical language. 
-            We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.
-          </p>
-
-        </paragraphs>
-
-      </chapter>
-
       <!--
       <chapter xml:id="ch-categories"><title>Categories for the Working Homological Algebraist</title>
 
@@ -2099,7 +1795,311 @@
 
       <chapter xml:id="ch-chain-complexes"><title>The Category of Chain Complexes</title>
 
-        <section xml:id="sec-compelx-maps"><title>Maps of Complexes</title>
+        <section xml:id="sec-chain-complexes"><title></title>
+
+          <subsection xml:id="subsec-complex"><title>Chain Complexes and Short Exact Sequences</title>
+
+            <p>
+              Homological algebra first appeared in the study of topological spaces. 
+              Roughly speaking, homology is a way of associating a sequence of abelian groups (or modules, or other more sophisticated algebraic objects) to another object, for example a topological space. 
+              The homology of a topological space encodes topological information about the space in algebraic language - this is what algebraic topology is all about.
+            </p>
+        
+            <p>
+              More formally, we will study complexes and their homology from a more abstract perspective. 
+              While algebraic topologists are often concerned with complexes of abelian groups, we will work a bit more generally with complexes of <m>R</m>-modules. 
+              The basic assumptions and notation about rings and modules we will use in this class can be found in Appendix A. 
+              As an appetizer, we begin with some basic homological algebra definitions.
+            </p>
+  
+            <definition xml:id="def-chain-complex"><title>Chain Complex</title>
+              <statement>
+                <p>
+                  A <em>chain complex</em> of <m>R</m>-modules <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m>, also referred to simply as a <em>complex</em>, is a sequence of <m>R</m>-modules <m>C_{i}</m> and <m>R</m>-module homomorphisms
+                  <me>
+                    \cdots \longrightarrow C_{n+1} \stackrel{\partial_{n+1}}{\longrightarrow} C_{n} \stackrel{\partial_{n}}{\longrightarrow} C_{n-1} \longrightarrow \cdots
+                  </me>
+                  such that <m>\partial_{n} \partial_{n+1}=0</m> for all <m>n</m>. 
+                  The maps <m>\partial_{n}</m> are the <em>differentials</em> of our complex.
+                  <idx><h>chain complex</h></idx>
+                  <idx><h>differential</h></idx>
+                </p>
+              </statement>
+            </definition>
+  
+            <convention>
+              <p>
+                We may sometimes omit the differentials <m>\partial_{n}</m> and simply refer to the complex <m>C_{\bullet}</m> or even <m>C</m>; 
+                we may also sometimes refer to <m>\partial_{\bullet}</m> as the differential of <m>C_{\bullet}</m>.
+              </p>
+            </convention>
+  
+            <definition xml:id="def-ses"><title>Exact Sequences</title>
+              <statement>
+                <p>
+                  The complex <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if im <m>\partial_{n+1}=\operatorname{ker} \partial_{n}</m>. 
+                  An exact sequence is a complex that is exact everywhere. 
+                  More precisely, an exact sequence of <m>R</m>-modules is a sequence
+                  <me>
+                    \cdots \stackrel{f_{n-1}}{\longrightarrow} C_{n} \stackrel{f_{n}}{\longrightarrow} C_{n+1} \stackrel{f_{n+1}}{\longrightarrow} \cdots
+                  </me>
+                  of <m>R</m>-modules and <m>R</m>-module homomorphisms such that <m>\operatorname{im} f_{n}=\operatorname{ker} f_{n+1}</m> for all <m>n</m>. 
+                  An exact sequence of the form
+                  <me>
+                    0 \longrightarrow A \longrightarrow B \longrightarrow C \longrightarrow 0
+                  </me>
+                  is a short exact sequence, sometimes written ses.
+                  <idx><h>exact sequence</h></idx>
+                  <idx><h>short exact sequence</h></idx>
+                </p>
+              </statement>
+            </definition>
+  
+            <exercise xml:id="rem-0.2">
+              <statement>
+                <p>
+                  The condition that <m>\partial_{n} \partial_{n+1}=0</m> for all <m>n</m> implies that <m>\im \partial_{n+1} \subseteq \operatorname{ker} \partial_{n}</m>.
+                </p>
+              </statement>
+            </exercise>
+        
+            <theorem xml:id="thm-0.4">
+              <p>
+                The sequence
+                <me>
+                  0 \longrightarrow M \stackrel{f}{\longrightarrow} N
+                </me>
+                is exact if and only if <m>f</m> is injective. 
+                Similarly,
+                <me>
+                  M \stackrel{f}{\longrightarrow} N \longrightarrow 0
+                </me>
+                is exact if and only if <m>f</m> is surjective. 
+                So
+                <me>
+                  0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+                </me>
+                is a short exact sequence if and only if
+                <ul>
+                  <li>
+                    <p>
+                      <m>f</m> is injective
+                    </p>
+                  </li>
+          
+                  <li>
+                    <p>
+                      <m>g</m> is surjective
+                    </p>
+                  </li>
+            
+                  <li>
+                    <p>
+                      <m>\operatorname{im} f=\operatorname{ker} g</m>.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </theorem>
+        
+            <p>
+              When this is indeed a short exact sequence, we can identify <m>A</m> with its image <m>f(A)</m>, and <m>A=\operatorname{ker} g</m>. 
+              Moreover, since <m>g</m> is surjective, by the First Isomorphism Theorem we conclude that <m>C \cong B / f(A)</m>, so we might abuse notation and identify <m>C</m> with <m>B / A</m>.
+            </p>
+  
+            <convention>
+              <p>
+                We write <m>A \rightarrow B</m> to denote a surjective map, and <m>A \hookrightarrow B</m> to denote an injective map.
+              </p>
+            </convention>
+  
+            <definition xml:id="def-cokernel"><title>Cokernel</title>
+              <statement>
+                <p>
+                  The cokernel of a map of <m>R</m>-modules <m>A \stackrel{f}{\rightarrow} B</m> is the module
+                  <me>
+                    \text { coker } f:=B / \operatorname{im}(f).
+                  </me>
+                </p>
+              </statement>
+            </definition>
+  
+            <exercise xml:id="rem-0.7">
+              <statement>
+                <p>
+                  We can rephrase <xref ref="thm-0.4"/> in a fancier language: if
+                  <me>
+                    0 \longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{g}{\longrightarrow} C \longrightarrow 0
+                  </me>
+                  is a short exact sequence, then <m>A=\operatorname{ker} g</m> and <m>C=\operatorname{coker} f</m>.
+                </p>
+              </statement>
+            </exercise>
+  
+            <example>
+              <p>
+                Let <m>\pi</m> be the canonical projection <m>\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z}</m>. 
+                The following is a short exact sequence:
+                <me>
+                  0 \longrightarrow \mathbb{Z} \stackrel{2}{\longrightarrow} \mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0
+                </me>
+              </p>
+            </example>
+  
+            <example>
+              <p>
+                Let <m>R=k[x]</m> be a polynomial ring over the field <m>k</m>. 
+                The following is a short exact sequence:
+                <me>
+                  0 \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R /\igen x \longrightarrow 0 \text {. }
+                </me>
+              </p>
+          
+              <p>
+                The first map is multiplication by <m>x</m>, and the second map is the canonical projection.
+              </p>
+            </example>
+  
+            <example>
+              <p>
+                Given an ideal <m>I</m> in a ring <m>R</m>, the inclusion map <m>\iota: I \rightarrow R</m> and the canonical projection <m>\pi: R \rightarrow R / I</m> give us the following short exact sequence:
+                <me>
+                  0 \longrightarrow I \stackrel{\iota}{\longrightarrow} R \stackrel{\pi}{\longrightarrow} R / I \longrightarrow 0
+                </me>
+              </p>
+            </example>
+  
+            <example>
+              <p>
+                Let <m>R=k[x] /\igen x</m>. 
+                The following complex is exact:
+              </p>
+          
+              <p>
+                <me>
+                  \cdots \longrightarrow R \stackrel{\cdot x}{\longrightarrow} R \stackrel{\cdot x}{\longrightarrow} R \longrightarrow \cdots
+                </me>
+              </p>
+          
+              <p>
+                Indeed, the image and the kernel of multiplication by <m>x</m> are both <m>\igen x</m>.
+              </p>
+            </example>
+        
+            <p>
+              Sometimes we can show that certain modules vanish or compute them explicitly when they do not vanish by seeing that they fit in some naturally constructed exact sequence involving other modules we understand better. 
+              We will discuss this in more detail when we talk about long exact sequences.
+            </p>
+  
+            <remark>
+              <p>
+                The complex <m>0 \longrightarrow M \stackrel{f}{\longrightarrow} N \longrightarrow 0</m> is exact if and only if <m>f</m> is an isomorphism.
+              </p>
+            </remark>
+  
+            <remark>
+              <p>
+                The complex <m>0 \longrightarrow M \longrightarrow 0</m> is exact if and only if <m>M=0</m>.
+              </p>
+            </remark>
+                
+          </subsection>
+
+          <subsection xml:id="subsec-homology"><title>Homology</title>
+    
+            <p>
+              Historically, chain complexes first appeared in topology. 
+              To study a topological space, one constructs a particular chain complex that arises naturally from information from the space, and then calculates its homology, which ends up encoding important topological information in the form of a sequence of abelian groups.
+            </p>
+  
+            <definition xml:id="def-homology"><title>Homology</title>
+              <statement>
+                <p>
+                  The homology of the complex <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is the sequence of <m>R</m>-modules
+                  <me>
+                    \mathrm{H}_{n}\left(C_{\bullet}\right)=\mathrm{H}_{n}(C):=\frac{\operatorname{ker} \partial_{n}}{\operatorname{im} \partial_{n+1}} .
+                  </me>
+                </p>
+            
+                <p>
+                  The <m>n</m>th homology of <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is <m>\mathrm{H}_{n}(C)</m>. 
+                </p>
+              </statement>
+            </definition>
+  
+            <convention>
+              <p>
+                The submodules <m>Z_{n}\left(C_{\bullet}\right)=Z_{n}(C):=\operatorname{ker} \partial_{n} \subseteq C_{n}</m> are sometimes called <em>cycles</em>, while the submodules <m>B_{n}\left(C_{\bullet}\right)=B_{n}(C):=\operatorname{im} \partial_{n+1} \subseteq C_{n}</m> are sometimes called <em>boundaries</em>. 
+                One sometimes uses the word boundary to refer an element of <m>B_{n}(C)</m> (an <m>n</m>-boundary), and the word cycle to refer to an element of <m>Z_{n}(C)</m> (an <m>n</m>-cycle).
+              </p>
+            </convention>
+  
+            <remark>
+              <p>
+                The homology of a complex measures how far our complex is from being exact at each point. 
+                Again, we can talk about the cohomology of a cochain complex instead, which we write as <m>\mathrm{H}^{n}(C)</m>; we will for now not worry about the distinction.
+              </p>
+            </remark>
+  
+            <exercise xml:id="rem-0.15">
+              <statement>
+                <p>
+                  Note that <m>\left(C_{\bullet}, \partial_{\bullet}\right)</m> is exact at <m>n</m> if and only if <m>\mathrm{H}_{n}\left(C_{\bullet}\right)=0</m>. 
+                </p>
+              </statement>
+            </exercise>
+  
+            <example>
+              <p>
+                Let <m>R=k[x] /\igen{x^3}</m>. 
+                Consider the following complex:
+                <me>
+                  F_{\bullet}=\cdots \longrightarrow R \stackrel{\cdot x^{2}}{\longrightarrow} R \stackrel{\cdot x^{2}}{\longrightarrow} R \longrightarrow \cdots .
+                </me>
+                The image of multiplication by <m>x^{2}</m> is <m>\igen{x^2}</m>, while the the kernel of multiplication by <m>x^{2}</m> is <m>\igen{x} \supseteq\igen{x^2}</m>. 
+                For all <m>n</m>,
+                <me>
+                  \mathrm{H}_{n}\left(F_{\bullet}\right)=\igen{x} /\igen{x^2} \cong R /\igen{x}
+                </me>
+              </p>
+            </example>
+  
+            <example>
+              <p>
+                Let <m>\mathbb{Z} \stackrel{\pi}{\longrightarrow} \mathbb{Z} / 2 \mathbb{Z}</m> be the canonical projection map. 
+                Then
+              </p>
+              <image source="2023_08_28_614593e69373955f3addg-07.jpg" width="50%"/>
+              <p>
+                is a complex of abelian groups, since the image of multiplication by <m>4</m> is <m>4 \mathbb{Z}</m>, and that is certainly contained in <m>\operatorname{ker} \pi=2 \mathbb{Z}</m>. 
+                The homology of <m>C</m> is
+                <me>
+                  \begin{array}{ll}
+                  \mathrm{H}_{n}(C)=0 &amp; \text { for } n \geqslant 3 \\
+                  \mathrm{H}_{2}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}{\operatorname{im}(0 \longrightarrow \mathbb{Z})}=\frac{0}{0}=0 &amp; \\
+                  \mathrm{H}_{1}(C)=\frac{\operatorname{ker}(\mathbb{Z} \stackrel{\pi}{\rightarrow} \mathbb{Z} / 2 \mathbb{Z})}{\operatorname{im}(\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z})}=\frac{2 \mathbb{Z}}{4 \mathbb{Z}} \cong \mathbb{Z} / 2 \mathbb{Z} &amp; \\
+                  \mathrm{H}_{0}(C)=\frac{\operatorname{ker}(\mathbb{Z} / 2 \mathbb{Z} \longrightarrow 0)}{\operatorname{im}(\mathbb{Z} \longrightarrow \mathbb{Z} / 2 \mathbb{Z})}=\frac{\mathbb{Z} / 2 \mathbb{Z}}{\mathbb{Z} / 2 \mathbb{Z}}=0 &amp; \text { for } n&lt;0 \\
+                  \mathrm{H}_{n}(C)=0 &amp;
+                  \end{array}
+                </me>
+              </p>
+          
+              <p>
+                Notice that our complex is exact at <m>2</m> and <m>0</m>. 
+                The exactness at <m>2</m> says that the map <m>\mathbb{Z} \stackrel{4}{\rightarrow} \mathbb{Z}</m> is injective, while exactness at <m>0</m> says that <m>\pi</m> is surjective.
+              </p>
+            </example>
+        
+            <p>
+              Before we can continue any further into the world of homological algebra, we will need some categorical language. 
+              We will take a short break to introduce category theory, and then armed with that knowledge we will be ready to study homological algebra.
+            </p>
+                
+          </subsection>
+          
+        </section>
+
+        <section xml:id="sec-compelx-maps"><title>The Category of Chain Complexes</title>
 
           <objectives>
             <ul>
@@ -26751,27 +26751,33 @@
 
               <proof>
                 <p>
-                  Proof. We will apply the same strategy as in the Fundamental Theorem of Local Cohomology to see that for the left-exact functor <m>F(-)=\operatorname{Hom}_{R / x R}(-, N / x N)</m> from <m>R / x R</m>-modules to <m>R / x R</m> modules, its right derived functors are <m>R^{i} F(-)=\operatorname{Ext}_{R}^{i+1}(-, N)</m>. Note that <m>M</m> is an <m>R / x R</m>-module by hypothesis. By definition, <m>R^{i} F(-)=\operatorname{Ext}_{R / x R}^{i}(M, N / x N)</m>, so this will establish the theorem.
+                  We will apply the same strategy as in the Fundamental Theorem of Local Cohomology to see that for the left-exact functor <m>F(-)=\operatorname{Hom}_{R / x R}(-, N / x N)</m> from <m>R / x R</m>-modules to <m>R / x R</m> modules, its right derived functors are <m>R^{i} F(-)=\operatorname{Ext}_{R}^{i+1}(-, N)</m>. 
+                  Note that <m>M</m> is an <m>R / x R</m>-module by hypothesis. 
+                  By definition, <m>R^{i} F(-)=\operatorname{Ext}_{R / x R}^{i}(M, N / x N)</m>, so this will establish the theorem.
                 </p>
           
                 <p>
-                  Step 1: The functors agree when <m>i=0</m>. Indeed, for the SES of <m>R</m>-modules <m>0 \rightarrow N \stackrel{x}{\longrightarrow} N \rightarrow</m> <m>N / x N \rightarrow 0</m>, there is an LES
-                </p>
-          
-                <p>
+                  Step 1: 
+                  The functors agree when <m>i=0</m>. 
+                  Indeed, for the SES of <m>R</m>-modules <m>0 \rightarrow N \stackrel{x}{\longrightarrow} N \rightarrow</m> <m>N / x N \rightarrow 0</m>, there is an LES
                   <me>\cdots \rightarrow \operatorname{Hom}_{R}(M, N) \rightarrow \operatorname{Hom}_{R}(M, N / x N) \rightarrow \operatorname{Ext}_{R}^{1}(M, N) \stackrel{x}{\longrightarrow} \operatorname{Ext}_{R}^{1}(M, N) \rightarrow \cdots</me>
                 </p>
           
                 <p>
-                  We observe that <m>\operatorname{Hom}_{R}(M, N)=0</m> (any element in <m>M</m> has to map to something killed by <m>x</m> ), that <m>\operatorname{Hom}_{R}(M, N / x N)=\operatorname{Hom}_{R / x R}(M, N / x N)</m> (since both sides are killed by <m>x</m> ), and <m>x</m> kills <m>\operatorname{Ext}_{R}^{1}(M, N)</m> (since it kills <m>M</m> ). The specified isomorphism follows.
+                  We observe that <m>\operatorname{Hom}_{R}(M, N)=0</m> (any element in <m>M</m> has to map to something killed by <m>x</m> ), that <m>\operatorname{Hom}_{R}(M, N / x N)=\operatorname{Hom}_{R / x R}(M, N / x N)</m> (since both sides are killed by <m>x</m> ), and <m>x</m> kills <m>\operatorname{Ext}_{R}^{1}(M, N)</m> (since it kills <m>M</m> ). 
+                  The specified isomorphism follows.
                 </p>
           
                 <p>
-                  Step 2: <m>\operatorname{Ext}_{R}^{i+1}(-, N)</m> vanishes for free <m>R / x R</m>-modules for <m>i&gt;0</m>. Indeed, a free <m>R / x R</m>-module has a free <m>R</m>-resolution of length one, so computing the Ext from this resolution shows the vanishing.
+                  Step 2: 
+                  <m>\operatorname{Ext}_{R}^{i+1}(-, N)</m> vanishes for free <m>R / x R</m>-modules for <m>i&gt;0</m>. 
+                  Indeed, a free <m>R / x R</m>-module has a free <m>R</m>-resolution of length one, so computing the Ext from this resolution shows the vanishing.
                 </p>
           
                 <p>
-                  Step 3: This follows in the same way as Step 3 of the Fundamental Theorem of Local Cohomology. We leave this as an exercise.
+                  Step 3:
+                  This follows in the same way as Step 3 of the Fundamental Theorem of Local Cohomology.
+                  We leave this as an exercise.
                 </p>
               </proof>
             </theorem>
@@ -26779,42 +26785,41 @@
             <theorem xml:id="thm-4.19-2">
               <statement>
                 <p>
-                  Theorem 4.19. Let <m>(R, \mathfrak{m}, k)</m> be a local ring of dimension <m>d</m>. TFAE:
-                </p>
-          
-                <p><ol>
-                  <li>
-                        <p>
-                  <m>R</m> is Gorenstein
-                </p>
-                  </li>
-          
-                </ol></p>
-          
-                <p>
-                  1’) <m>R</m> is <m>C M</m> and some <m>S O P</m> generates an irreducible ideal
-                </p>
-          
-                <p><ol>
-                  <li>
-                        <p>
-                  <m>\operatorname{Ext}_{R}^{i}(k, R) \cong \begin{cases}0 &amp; i&lt;d \\ k &amp; i=d\end{cases}</m>
-                </p>
-                  </li>
-          
-                  <li>
-                        <p>
-                  <m>R</m> is <m>C M</m> and <m>\mathrm{H}_{\mathfrak{m}}^{d}(R) \cong E_{R}(k)</m>.
-                </p>
-                  </li>
-          
-                  <li>
-                        <p>
-                  <m>\operatorname{injdim}_{R}(R)&lt;\infty</m>
-                </p>
-                  </li>
-          
-                </ol></p>
+                  Let <m>(R, \mathfrak{m}, k)</m> be a local ring of dimension <m>d</m>. 
+                  TFAE:
+                  <ol>
+                    <li>
+                      <p>
+                        <m>R</m> is Gorenstein
+                      </p>
+                    </li>
+            
+                  </ol></p>
+            
+                  <p>
+                    1’) <m>R</m> is <m>C M</m> and some <m>S O P</m> generates an irreducible ideal
+                  </p>
+            
+                  <p><ol>
+                    <li>
+                          <p>
+                    <m>\operatorname{Ext}_{R}^{i}(k, R) \cong \begin{cases}0 &amp; i&lt;d \\ k &amp; i=d\end{cases}</m>
+                  </p>
+                    </li>
+            
+                    <li>
+                          <p>
+                    <m>R</m> is <m>C M</m> and <m>\mathrm{H}_{\mathfrak{m}}^{d}(R) \cong E_{R}(k)</m>.
+                  </p>
+                    </li>
+            
+                    <li>
+                          <p>
+                    <m>\operatorname{injdim}_{R}(R)&lt;\infty</m>
+                  </p>
+                    </li>
+            
+                  </ol></p>
           
                 <p>
                   4’) <m>\operatorname{injdim}_{R}(R)=d</m>
@@ -27105,10 +27110,634 @@
 
         <section xml:id="sec-canonical-mod"><title>Canonical Modules</title>
 
+          <definition xml:id="def-4.23-2">
+            <statement>
+              <p>
+                A canonical module over a Cohen-Macaulay local ring <m>(R, \mathfrak{m}, k)</m> is a finitely generated module <m>\omega_{R}</m> such that <m>\operatorname{Hom}_{R}\left(\omega_{R}, E_{R}(k)\right) \cong \mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(R)</m>.
+              </p>
+            </statement>
+          </definition>
+
+          <example>
+            <p>
+              Example 4.24. 
+              For a Cohen-Macaulay local ring <m>(R, \mathfrak{m}, k)</m>, the rank one free module <m>R</m> is a canonical module if and only if <m>R</m> is Gorenstein.
+              There are missing footnotes here
+            </p>
+          </example>
+
+          <example>
+            <p>
+              Example 4.25. 
+              If <m>R</m> is complete local (and CM), then, by Matlis duality, <m>\omega_{R}=\mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(R)^{\vee}</m> is noetherian and <m>\omega_{R}^{\vee}=\mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(R)^{\vee \vee}=\mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(R)</m>, so <m>\omega_{R}</m> is a canonical module. Moreover, if <m>M</m> is noetherian and <m>M^{\vee} \cong \mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(R)</m>, then <m>M \cong M^{\vee \vee} \cong \mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(R)^{\vee}=\omega_{R}</m>, so all canonical modules of <m>R</m> are isomorphic.
+            </p>
+          </example>
+
+          <example>
+            <p>
+              Example 4.26. 
+              If <m>R</m> is artinian local (and hence complete), then all of <m>R</m> is <m>\mathfrak{m}</m>-torsion, so <m>R=</m> <m>\mathrm{H}_{\mathfrak{m}}^{0}(R)</m>. Since <m>E_{R}(k)^{\vee} \cong R, E_{R}(k)</m> is a canonical module in this case.
+            </p>
+          </example>
+
           <p>
-            
+            In our original proof of local duality in the regular case, we noted that the proof worked in greater generality. 
+            Our definition of canonical module is designed to exactly fulfill that situation.
           </p>
+
+          <theorem xml:id="thm-4.27-2"><title>Local Duality for Cohen-Macaulay rings</title>
+            <statement>
+              <p>
+                Let <m>(R, \mathfrak{m}, k)</m> be a Cohen-Macaulay local ring of dimension <m>d</m>, and <m>\omega_{R}</m> a canonical module.
+              </p>
+        
+              <p><ol>
+                <li>
+                      <p>
+                If <m>M</m> is a finitely generated <m>R</m>-module, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)=\operatorname{Ext}_{d-i}^{R}\left(M, \omega_{R}\right)^{\vee}</m>.
+              </p>
+                </li>
+        
+                <li>
+                      <p>
+                If <m>R</m> is complete and <m>M</m> is arbitrary, then <m>\mathrm{H}_{\mathfrak{m}}^{i}(M)^{\vee}=\operatorname{Ext}_{d-i}^{R}\left(M, \omega_{R}\right)</m>.
+              </p>
+                </li>
+        
+              </ol></p>
+        
+              <p>
+                These isomorphisms are functorial in <m>M</m>.
+              </p>
+        
+              <p>
+                Of course, we want to find conditions under which canonical modules exist, and to have methods to find them.
+              </p>
+            </statement>
+          </theorem>
+
+          <lemma xml:id="lem-4.28-2">
+            <statement>
+              <p>
+                Let <m>\varphi:(A, \mathfrak{n}, l) \rightarrow(R, \mathfrak{m}, k)</m> be a homomorphism of local rings. 
+                Suppose that <m>R</m> is module-finite over the image of <m>A</m> : e.g., <m>R=A / I</m>, or <m>A \subseteq R</m> is a module-finite inclusion.
+              </p>
+        
+              <p>
+                <m>\operatorname{Set}(-)^{\vee_{A}}=\operatorname{Hom}_{A}\left(-, E_{A}(l)\right)</m> and <m>(-)^{\vee_{R}}=\operatorname{Hom}_{R}\left(-, E_{R}(k)\right)</m>.
+              </p>
+        
+              <p>
+                For any <m>R</m>-module <m>M, M^{\vee_{A}} \cong M^{\vee_{R}}</m>, as A-modules or as <m>R</m>-modules.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                This follows from the lemma on the behavior of the injective hull of the residue field under such maps and Hom-tensor adjunction:
+                <me>\operatorname{Hom}_{A}\left(M, E_{A}(l)\right)=\operatorname{Hom}_{A}\left(M \otimes_{R} R, E_{A}(l)\right)=\operatorname{Hom}_{R}\left(M, \operatorname{Hom}_{A}\left(R, E_{A}(l)\right)=\operatorname{Hom}_{R}\left(M, E_{R}(k)\right) .\right.</me>
+              </p>
+            </proof>
+          </lemma>
           
+          <p>
+            These isomorphisms are all valid as <m>A</m>-modules or as <m>R</m>-modules.
+          </p>
+    
+          <p>
+            The following proposition is the key source of canonical modules.
+          </p>
+
+          <proposition xml:id="prop-4.29-2">
+            <statement>
+              <p>
+                Let <m>\varphi:(A, \mathfrak{n}, l) \rightarrow(R, \mathfrak{m}, k)</m> be a homomorphism of local rings. 
+                Suppose that <m>R</m> is module-finite over the image of <m>A</m> : e.g., <m>R=A / I</m>, or <m>A \subseteq R</m> is a module-finite inclusion.
+              </p>
+        
+              <p>
+                Suppose that <m>A</m> and <m>R</m> are Cohen-Macaulay, and that <m>\omega_{A}</m> is a canonical module for <m>A</m>. 
+                Then <m>\operatorname{Ext}_{A}^{\operatorname{dim}(A)-\operatorname{dim}(R)}\left(R, \omega_{A}\right)</m> is a canonical module for <m>R</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Since <m>R</m> and <m>\omega_{A}</m> are finitely generated <m>A</m>-modules, the <m>A</m>-modules <m>\operatorname{Ext}_{A}^{\bullet}\left(R, \omega_{A}\right)</m> are noetherian <m>A</m>-modules. 
+                They are <m>R</m>-modules as well, and noetherian <m>R</m>-modules as such.
+              </p>
+        
+              <p>
+                We then apply local duality over <m>A</m>, and the previous lemma:
+                <me>\mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(R)}(R)=\mathrm{H}_{\mathfrak{n}}^{\operatorname{dim}(R)}(R)=\operatorname{Ext}_{A}^{\operatorname{dim}(A)-\operatorname{dim}(R)}\left(R, \omega_{A}\right)^{\vee_{A}}=\operatorname{Ext}_{A}^{\operatorname{dim}(A)-\operatorname{dim}(R)}\left(R, \omega_{A}\right)^{\vee_{R}}</me>
+                Since local duality is functorial, the map <m>R \stackrel{\cdot r}{\longrightarrow} R</m> for any <m>r \in R</m> induces the same map on both sides, so this is an isomorphism of <m>R</m>-modules.
+              </p>
+            </proof>
+          </proposition>
+
+          <corollary xml:id="cor-4.30-2">
+            <statement>
+              <p>
+                If <m>R</m> is a <m>C M</m> quotient of a Gorenstein local ring <m>A</m>, then <m>R</m> has a canonical module, namely, <m>\omega_{R}=\operatorname{Ext}_{A}^{c}(R, A)</m>, where <m>c=\operatorname{dim}(A)-\operatorname{dim}(R)</m>.
+              </p>
+            </statement>
+          </corollary>
+
+          <example>
+            <p>
+              Example 4.31. 
+              In the first homework, you showed that for <m>A=K\left[X_{2 \times 3}\right]</m> and <m>R=A / I_{2}(X), R</m> is Cohen-Macaulay, and <m>\operatorname{Ext}_{A}^{2}(R, A)</m> is the cokernel of the map <m>A^{3} \rightarrow A^{2}</m> given by the matrix <m>X^{T}</m>. 
+              Evidently, this two-generated module is a canonical module for <m>R</m>.
+            </p>
+          </example>
+
+          <example>
+            <p>
+              Example 4.32. 
+              Let <m>R=K\left[x^{3}, x^{2} y, x y^{2}, y^{3}\right]</m>, and <m>A=K\left[x^{3}, y^{3}\right]</m>. 
+              We can write <m>R=A \oplus x^{2} y A \oplus</m> <m>x y^{2} A</m>. We have that <m>\operatorname{Hom}_{A}(R, A)</m> is a canonical module for <m>R</m>. 
+              To understand this module more concretely, note that <m>\operatorname{Hom}_{A}(R, A)</m> is generated by the maps <m>\phi_{1}, \phi_{x^{2} y}, \phi_{x y^{2}}</m> dual to the basis of <m>R</m> over <m>A</m> specified above. 
+              Evidently, <m>\phi_{1}=x^{2} y \cdot \phi_{x^{2} y}=x y^{2} \cdot \phi_{x y^{2}}</m>, so we can ignore <m>\phi_{1}</m> as a generator. 
+              The maps <m>\phi_{x^{2} y}, \phi_{x y^{2}}</m> both decrease degrees by 3 , so neither is a multiple of the other. 
+              One relation between the maps is given above. 
+              It is easy to find a few more: <m>x^{3} \cdot \phi_{x^{2} y}=x^{2} y \cdot \phi_{x y^{2}}</m> and <m>x y^{2} \cdot \phi_{x^{2} y}=y^{3} \cdot \phi_{x y^{2}}</m>.
+            </p>
+          </example>
+    
+          <p>
+            Our next goal is to show that canonical modules are unique up to isomorphism when they exist. 
+            We want to do this by reducing to the complete case, where we have already observed this. 
+            To this end, we will collect a few facts on completion and Matlis duality.
+          </p>
+
+          <lemma xml:id="lem-4.33-2">
+            <statement>
+              <p>
+                Let <m>(R, \mathfrak{m}, k)</m> be local, and <m>M</m> and <m>N</m> be finitely generated <m>R</m>-modules.
+              </p>
+        
+              <p>
+                <ol>
+                <li>
+                      <p>
+                If <m>\widehat{M} \cong \widehat{N}</m>, then <m>M \cong N</m>.
+              </p>
+                </li>
+        
+                <li>
+                      <p>
+                <m>M^{\vee \vee} \cong \widehat{M}</m>.
+              </p>
+                </li>
+        
+                <li>
+                      <p>
+                <m>M^{\vee} \cong \widehat{M}^{\vee}</m>, where the latter dual is as a <m>\widehat{R}</m>-module.
+              </p>
+                </li>
+        
+              </ol>
+            </p>
+            </statement>
+          </lemma>
+
+          <proof>
+            <p>
+              Let <m>\phi: \widehat{M} \rightarrow \widehat{N}</m> be an isomorphism, in particular, surjective. 
+              First, we note that
+            </p>
+      
+            <p>
+              <me>\operatorname{Hom}_{\widehat{R}}(\widehat{M}, \widehat{N}) \cong \widehat{R} \otimes_{R} \operatorname{Hom}_{R}(M, N) \cong \operatorname{Hom}_{R}(M, N)</me>
+            </p>
+      
+            <p>
+              Thus, we can pick <m>\alpha \in \operatorname{Hom}_{R}(M, N)</m> such that <m>\phi-\widehat{\alpha} \in \mathfrak{m H o m}_{R}(M, N)</m>. 
+              If <m>n \in N</m> satisfies <m>n=\phi\left(m^{\prime}\right)</m>, with <m>m^{\prime} \in \widehat{M}</m>, take <m>m \in M</m> with <m>m-m^{\prime} \in \mathfrak{m} \widehat{M}</m>, so <m>\alpha(m) \in n+\mathfrak{m} N</m>. 
+              Thus, <m>N \subseteq \operatorname{im}(\alpha)+\mathfrak{m} N</m>, and hence <m>\operatorname{im}(\alpha)=N</m> by NAK.
+            </p>
+      
+            <p>
+              Similarly, we can find a surjection <m>\psi: N \rightarrow M</m>, and hence a surjection <m>\psi \circ \alpha: M \rightarrow M</m>. 
+              Since <m>M</m> is finitely generated, <m>\psi \circ \alpha: M \rightarrow M</m> must be an isomorphism, hence injective. 
+              Then, <m>\alpha: M \rightarrow N</m> must be injective too, hence an isomorphism.
+            </p>
+      
+            <p><ol>
+              <li>
+                    <p>
+              We have already seen that <m>R^{\vee \vee} \cong \widehat{R}</m>. 
+              Then, given a presentation
+            </p>
+              </li>
+      
+            </ol></p>
+      
+            <p>
+              <me>R^{a} \stackrel{A}{\longrightarrow} R^{b} \rightarrow M \rightarrow 0</me>
+            </p>
+      
+            <p>
+              applying double duality gives
+            </p>
+      
+      
+            <image source="2023_12_05_e2b943b5b28c6794a270g-065.jpg"/>
+      
+            <p>
+              and thus <m>M^{\vee \vee} \cong \widehat{M}</m>.
+            </p>
+      
+            <p>
+              <ol>
+              <li>
+                    <p>
+              Recall that <m>E_{R}(k) \cong \widehat{R} \otimes_{R} E_{R}(k) \cong E_{\widehat{R}}(k)</m>. 
+              Since <m>M^{\vee}</m> is artinian, and applying flat base change
+            </p>
+              </li>
+      
+            </ol>
+          </p>
+      
+            <p>
+              <m>\operatorname{Hom}_{R}\left(M, E_{R}(k)\right) \cong \widehat{R} \otimes_{R} \operatorname{Hom}_{R}\left(M, E_{R}(k)\right) \cong \operatorname{Hom}_{\widehat{R}}\left(\widehat{R} \otimes_{R} M, \widehat{R} \otimes_{R} E_{R}(k)\right) \cong \operatorname{Hom}_{\widehat{R}}\left(\widehat{M}, E_{\widehat{R}}(k)\right)</m>.
+            </p>
+          </proof>
+
+          <proposition xml:id="prop-4.34-2">
+            <statement>
+              <p>
+                If <m>(R, \mathfrak{m}, k)</m> is a <m>C M</m> local ring, then a finitely generated module <m>\omega</m> is a canonical module for <m>R</m> if and only if <m>\widehat{\omega}</m> is a canonical module for <m>\widehat{R}</m>. 
+                Consequently, any two canonical modules for <m>R</m> are isomorphic.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                The first statement follows immediately from part (3) above.
+              </p>
+        
+              <p>
+                If <m>M</m> and <m>N</m> are canonical modules for <m>R</m>, then <m>\widehat{M}</m> and <m>\widehat{N}</m> are canonical modules for <m>\widehat{R}</m>. 
+                As noted earlier, this implies that <m>\widehat{M} \cong \widehat{N}</m>, so by part (1) of the previous lemma, <m>M \cong N</m>.
+              </p>
+            </proof>
+          </proposition>
+
+          <p>
+            Here is one application of the uniqueness of canonical modules.
+          </p>
+
+          <corollary xml:id="cor-4.35-2">
+            <statement>
+              <p>
+                Let <m>(R, \mathfrak{m}, k)</m> be a <m>R L R</m>, and <m>I \subseteq R</m> an ideal. 
+                If <m>R / I</m> is Gorenstein, then the minimal free resolution <m>P_{\bullet}</m> of <m>R / I</m> as an <m>R</m>-module is symmetric:
+                <me>0 \rightarrow R \stackrel{A_{c-1}}{\longrightarrow} R^{\beta_{1}} \stackrel{A_{c-2}}{\longrightarrow} R^{\beta_{2}} \cdots \stackrel{A_{2}}{\longrightarrow} R^{\beta_{2}} \stackrel{A_{1}}{\longrightarrow} R^{\beta_{1}} \stackrel{A_{0}}{\longrightarrow} R(\rightarrow R / I) \rightarrow 0</me>
+                with <m>A_{c-1}=A_{0}^{T}, A_{c-2}=A_{1}^{T}</m> (up to change of bases).
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Let <m>c=\operatorname{dim}(R)-\operatorname{dim}(R / I)</m>. 
+                More naturally, the claim is that <m>P_{\bullet} \cong \operatorname{Hom}_{R}\left(P_{\bullet}, R\right)</m> after reindexing the latter (changing the indices from cohomological <m>0,1, \ldots, c</m> to homological <m>c, c-</m> <m>1, \ldots, 0)</m>. 
+                The complex <m>\operatorname{Hom}_{R}\left(P_{\bullet}, R\right)</m> has homology <m>\operatorname{Ext}_{R}^{\bullet}(R / I, R)</m>. 
+                The complex vanishes past position <m>c</m> by Auslander-Buchsbaum. 
+                The homology below degree <m>c</m> vanishes by Rees (or local duality). 
+                The homology at position <m>c</m> is a canonical module for <m>R / I</m>, so must be <m>R / I</m> itself, since <m>R / I</m> is Gorenstein. 
+                Thus, <m>\operatorname{Hom}_{R}\left(P_{\bullet}, R\right)</m> after the reindexing is a minimal free resolution for <m>R / I</m>. 
+                Any two minimal free resolutions are isomorphic (exercise!).
+              </p>
+            </proof>
+          </corollary>
+
+          <proposition xml:id="prop-4.36">
+            <statement>
+              <p>
+                Proposition 4.36. 
+                Let <m>(R, \mathfrak{m}, k)</m> be Cohen-Macaulay, <m>\omega_{R}</m> be a canonical module for <m>R</m>, and <m>\underline{f}=</m> <m>f_{1}, \ldots, f_{t}</m> be a regular sequence on <m>R</m>. 
+                Then
+              </p>
+        
+              <p><ol>
+                <li>
+                      <p>
+                <m>\omega_{R} / f \omega_{R}</m> is a canonical module for <m>R / f R</m>, and
+              </p>
+                </li>
+        
+                <li>
+                      <p>
+                <m>f</m> is a regular sequence on <m>\omega_{R}</m>.
+              </p>
+                </li>
+        
+              </ol></p>
+        
+              <p>
+                In particular, a canonical module is a maximal Cohen-Macaulay module.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. 
+                For the first statement, compute <m>\operatorname{Ext}_{R}^{t}(R / \underline{f} R, \omega) \cong H^{t}(\underline{f} ; \omega) \cong \omega_{R} / \underline{f} \omega_{R}</m>.
+              </p>
+        
+              <p>
+                We prove (2) by induction on <m>t</m>. 
+                Suppose both statements are true for <m>f^{\prime}=f_{1}, \ldots, f_{t-1}</m>, and set <m>\bar{M}</m> to be <m>M / \underline{f}^{\prime} M</m>. 
+                Then, <m>\operatorname{ann}_{\bar{\omega}}\left(f_{t}\right) \cong \operatorname{Hom}_{\bar{R}}\left(\bar{R} / f_{t} \bar{R}, \bar{\omega}\right)</m>. 
+                Applying (1), <m>\bar{\omega} \cong \omega_{\bar{R}}</m>. We apply local duality to see that <m>\operatorname{Hom}_{\bar{R}}\left(\bar{R} / f_{t} \bar{R}, \bar{\omega}\right)^{\vee} \cong \mathrm{H}_{\mathfrak{m}}^{\operatorname{dim}(\bar{R})}\left(\bar{R} / f_{t} \bar{R}\right)=0</m>. 
+                Thus, <m>f_{t}</m> is a nonzerodivisor on <m>\bar{\omega}</m>.
+              </p>
+            </proof>
+          </proposition>
+
+          <lemma xml:id="lem-4.37-2">
+            <statement>
+              <p>
+                Lemma 4.37. 
+                Let <m>(R, \mathfrak{m}, k)</m> be a Cohen-Macaulay local ring with canonical module <m>\omega_{R}</m>. 
+                Then <m>R \cong \operatorname{Hom}_{R}\left(\omega_{R}, \omega_{R}\right)</m> by the map <m>r \mapsto</m> "multiply by <m>r</m> ".
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. 
+                Since <m>\widehat{R}</m> is faithfully flat over <m>R</m>, it suffices to check to isomorphism after tensoring with <m>\widehat{R}</m>. 
+                Since both sides are finitely generated, this is the same as completing, which turns <m>R</m> into <m>\widehat{R}</m>, and <m>\operatorname{Hom}_{R}\left(\omega_{R}, \omega_{R}\right)</m> into <m>\operatorname{Hom}_{\widehat{R}}\left(\omega_{\widehat{R}}, \omega_{\widehat{R}}\right)</m>. 
+                Thus, we can assume that <m>R</m> is complete. 
+                Then, if <m>f_{1}, \ldots, f_{d}</m> is a SOP for <m>R</m>, write <m>R_{t}=R /\left(f_{1}^{t}, \ldots, f_{d}^{t}\right)</m>. 
+                Then <m>\omega_{R}=\lim _{\longleftarrow} \omega_{R} \otimes_{R} R_{t}=\lim \omega_{R_{t}}</m>.
+              </p>
+        
+              <p>
+                We claim that <m>\operatorname{Hom}_{R}\left(\omega_{R}, \omega_{R}\right) \cong \lim _{\longleftarrow} \operatorname{Hom}_{R_{t}}\left(\omega_{R_{t}}, \omega_{R_{t}}\right)</m>. 
+                Indeed, an <m>R</m>-linear map <m>f: \omega_{R} \rightarrow \omega_{R}</m> induces a sequence of maps <m>f_{t}=f \otimes_{R} R_{t}: \omega_{R_{t}} \rightarrow \omega_{R_{t}}</m> such that <m>f_{t+1} \otimes_{R_{t+1}} R_{t}=f_{t}</m>. 
+                This gives an element in the inverse limit. 
+                Conversely, given such a sequence of maps <m>\left\{f_{n}\right\}</m> with the same compatibility property, one can define an <m>R</m>-linear map <m>f</m> from <m>\omega_{R}</m> to <m>\omega_{R}</m> by the rule
+                <me>f(w) \bmod \left(x_{1}^{t}, \ldots, x_{d}^{t}\right) \omega_{R}:=f_{n}(w) \bmod \left(x_{1}^{t}, \ldots, x_{d}^{t}\right) \omega_{R}</me>
+              </p>
+        
+              <p>
+                Since <m>R_{t}</m> is artinian, <m>\omega_{R_{t}} \cong E_{R_{t}}</m>. 
+                Then, <m>\operatorname{Hom}_{R_{t}}\left(E_{R_{t}}, E_{R_{t}}\right) \cong R_{t}</m> by the natural map, and passing to the inverse limit gives the isomorphism.
+              </p>
+            </proof>
+          </lemma>
+    
+          <p>
+            A CM local ring has a canonical module if and only if it is a quotient of a Gorenstein ring. 
+            Given a ring <m>R</m> and a module <m>M</m>, the trivial extension or idealization of <m>R</m> by <m>M</m> is the <m>\operatorname{ring} R \rtimes M</m> with <m>R</m>-module structure <m>R \rtimes M \cong R \oplus M</m> and multiplication <m>(r, m)\left(r^{\prime}, m^{\prime}\right)=\left(r r^{\prime}, r m^{\prime}+r^{\prime} m\right)</m>. 
+            It is easy to check that this structure makes <m>R \rtimes M</m> into a ring in which <m>0 \oplus M</m> is an ideal with square zero, and <m>R \cong(R \rtimes M) /(0 \oplus M)</m>. 
+            If <m>(R, \mathfrak{m})</m> is local, then <m>(R \rtimes M, \mathfrak{m} \oplus M)</m> is local as well.
+          </p>
+
+          <proposition xml:id="prop-4.38-2">
+            <statement>
+              <p>
+                Proposition 4.38. 
+                Let <m>(R, \mathfrak{m}, k)</m> be a Cohen-Macaulay local ring with canonical module <m>\omega_{R}</m>. 
+                The trivial extension <m>R \rtimes \omega_{R}</m> is a Gorenstein local ring. 
+                Thus, if <m>R</m> has a canonical module, <m>R</m> is a quotient of a Gorenstein ring.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. 
+                Note that <m>R \rtimes \omega_{R}</m> is a finitely generated <m>R</m>-module. 
+                Since a regular sequence on <m>R</m> is also regular on <m>\omega_{R}</m>, this ring is also Cohen-Macaulay.
+              </p>
+        
+              <p>
+                We compute a canonical module for <m>R \rtimes \omega_{R}</m> as <m>\operatorname{Hom}_{R}\left(R \rtimes \omega_{R}, \omega_{R}\right)</m>. 
+                As an <m>R</m>-module, this Hom is isomorphic to <m>\operatorname{Hom}_{R}\left(R, \omega_{R}\right) \oplus \operatorname{Hom}_{R}\left(\omega_{R}, \omega_{R}\right) \cong \omega \oplus R</m>. 
+                I’ll leave to you as an exercise the routine check that the module structure on this <m>\omega \oplus R</m> induced by the premultiplication action on <m>\operatorname{Hom}_{R}\left(R \rtimes \omega_{R}, \omega_{R}\right)</m> agrees with the structure of <m>R \rtimes \omega_{R}</m>.
+              </p>
+            </proof>
+          </proposition>
+
+          <p>
+            We now show that canonical modules localize. 
+            We could work with the construction above to do this, but we will give a slightly more flexible proof. 
+            We prepare for this with a lemma.
+          </p>
+
+          <lemma xml:id="lem-4.39-2">
+            <statement>
+              <p>
+                Lemma 4.39. 
+                Let <m>(R, \mathfrak{m}, k)</m> be a Cohen-Macaulay local ring, and <m>I \subseteq R</m> be an ideal. 
+                Then <m>\operatorname{height}(I)=\operatorname{dim}(R)-\operatorname{dim}(R / I)</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. 
+                Since height <m>(I)=\min \{\operatorname{height}(\mathfrak{p}) \mid \mathfrak{p} \in \operatorname{Min}(I)\}</m> and <m>\operatorname{dim}(R / I)=\max \{\operatorname{dim}(R / \mathfrak{p}) \mid \mathfrak{p} \in</m> <m>\operatorname{Min}(I)\}</m>, it suffices to show the equality for prime ideals, so let <m>\mathfrak{p}</m> be prime. 
+                By the worksheet on CM rings, we know that height <m>(\mathfrak{p})=\operatorname{depth}_{\mathfrak{p}}(R)</m>, and <m>\operatorname{dim}(R)=\operatorname{dim}(R / \mathfrak{q})</m> for all <m>\mathfrak{q} \in \operatorname{Ass}(R)</m>. 
+                Setting <m>h=\operatorname{height}(\mathfrak{p})</m>, take a regular sequence <m>f_{1}, \ldots, f_{h} \subseteq \mathfrak{p}</m>. 
+                Since <m>f</m> is a regular sequence, height <m>(f)=h</m>, so <m>\mathfrak{p}</m> must be a minimal prime of <m>(f)</m>. 
+                Then <m>R /(f)</m> is CM of <m>\operatorname{dimension} \operatorname{dim}(R)-h</m>. 
+                But <m>\mathfrak{p} \in \operatorname{Ass}(R /(f))</m>, so <m>\operatorname{dim}(R / \mathfrak{p})=\operatorname{dim}(R)-h</m>, as required.
+              </p>
+            </proof>
+          </lemma>
+
+          <proposition xml:id="prop-4.40-2">
+            <statement>
+              <p>
+                Proposition 4.40. 
+                If <m>(R, \mathfrak{m}, k)</m> is a Cohen-Macaulay local ring, <m>\omega_{R}</m> is a canonical module, and <m>\mathfrak{p} \in \operatorname{Spec}(R)</m>, then <m>\omega_{R_{\mathfrak{p}}}</m> is a canonical module for <m>R_{\mathfrak{p}}</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Proof. 
+                Let <m>(S, \mathfrak{n}, l)</m> be a Gorenstein ring mapping onto <m>R</m>, so that <m>\omega_{R} \cong \operatorname{Ext}_{S}^{\operatorname{dim}(S)-\operatorname{dim}(R)}(R, S)</m>. 
+                Let <m>\mathfrak{p} \in \operatorname{Spec}(R)</m>, and <m>\mathfrak{q}</m> be the contraction of <m>\mathfrak{p}</m> in <m>S</m>. 
+                We note that if <m>R=S / I</m>, since <m>S</m> is Cohen-Macaulay, by the previous lemma,
+                <me>\operatorname{dim}\left(S_{\mathfrak{q}}\right)-\operatorname{dim}\left(R_{\mathfrak{p}}\right)=\operatorname{height}_{S_{\mathfrak{q}}}\left(I S_{\mathfrak{q}}\right)=\operatorname{height}_{S}(I)=\operatorname{dim}(S)-\operatorname{dim}(R)</me>
+              </p>
+        
+              <p>
+                Then,
+                <me>\left(\omega_{R}\right)_{\mathfrak{p}} \cong\left(\operatorname{Ext}_{S}^{\operatorname{dim}(S)-\operatorname{dim}(R)}(R, S)\right)_{\mathfrak{p}} \cong \operatorname{Ext}_{S_{\mathfrak{q}}}^{\operatorname{dim}(S)-\operatorname{dim}(R)}\left(R_{\mathfrak{p}}, S_{\mathfrak{q}}\right) \cong \operatorname{Ext}_{S_{\mathfrak{q}}}^{\operatorname{dim}\left(S_{\mathfrak{q}}\right)-\operatorname{dim}\left(R_{\mathfrak{p}}\right)}\left(R_{\mathfrak{p}}, S_{\mathfrak{q}}\right)</me>
+                is a canonical module for <m>R_{\mathfrak{p}}</m>, since <m>S_{\mathfrak{q}}</m> is Gorenstein.
+              </p>
+            </proof>
+          </proposition>
+
+          <exercise>
+            <p>
+              Exercise 4.41. 
+              Show that the minimal injective resolution of a canonical module has the same form as the minimal injective resolution of a RLR we found in the last homework.
+            </p>
+          </exercise>
+
+          <exercise>
+            <p>
+              Exercise 4.42. Show that if <m>(R, \mathfrak{m}, k)</m> is a Cohen-Macaulay local ring that is a quotient of a Gorenstein ring, a module <m>M</m> is a canonical module for <m>R</m> if and only if <m>M</m> is finitely generated and
+              <me>\operatorname{Ext}_{R}^{i}(k, M) \cong \begin{cases}k &amp; \text { if } i=\operatorname{dim}(R) \\ 0 &amp; \text { if } i \neq \operatorname{dim}(R)\end{cases}</me>
+            </p>
+          </exercise>
+
+          <proposition xml:id="prop-4.43-2">
+            <statement>
+              <p>
+                Let <m>(R, \mathfrak{m}, k)</m> be a <m>C M</m> local ring with canonical module <m>\omega_{R}</m>. 
+                Suppose that for every minimal prime <m>\mathfrak{p}</m> of <m>R, R_{\mathfrak{p}}</m> is Gorenstein <m>{ }^{6}</m>, e.g., <m>R</m> is reduced. 
+                Then there is some ideal I of <m>R</m> such that <m>\omega_{R} \cong I</m>. 
+                If <m>I \cong \omega_{R}</m>, then every associated prime of <m>R / I</m> has height one.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                We note that if <m>R</m> is reduced, and <m>\mathfrak{p} \in \operatorname{Min}(R)</m>, then <m>R_{\mathfrak{p}}</m> is a field, so "e.g." is valid.
+              </p>
+        
+              <p>
+                First, we show that <m>\omega_{R}</m> is isomorphic to an ideal. 
+                The point is that <m>\left(\omega_{R}\right)_{\mathfrak{p}} \cong \omega_{R_{\mathfrak{p}}} \cong R_{\mathfrak{p}}</m> for all minimal primes <m>\mathfrak{p}</m> of <m>R</m>, using the exercise above and the hypothesis. 
+                If <m>W</m> is the set of nonzerodivisors of <m>R</m>, which is the same as the set of nonzerodivisors on <m>\omega_{R}</m>, then <m>W^{-1} \omega_{R} \cong</m> <m>\prod \omega_{R_{\mathfrak{p}}} \cong \prod R_{\mathfrak{p}} \cong W^{-1} R</m>. 
+                Then, an isomorphism <m>W^{-1} \omega_{R} \cong W^{-1} R</m> restricts to an injection from <m>\alpha: \omega_{R} \hookrightarrow W^{-1} R</m>. 
+                If <m>w_{1}, \ldots, w_{t}</m> is a generating set for <m>\omega_{R}</m>, and <m>\alpha\left(w_{i}\right)=r_{i} / s_{i}</m>, then <m>s_{1} \cdots s_{t} \alpha</m> is an injective map from <m>\omega_{R}</m> to <m>R</m>.
+              </p>
+        
+              <p>
+                Now, we show that such an ideal has all associated primes of height one. 
+                To obtain a contradiction, suppose we have some <m>\mathfrak{q} \in \operatorname{Ass}(R / I)</m> of height at least two. 
+                We have that <m>R_{\mathfrak{q}}</m> is <m>\mathrm{CM}</m> of dimension at least two, with canonical module <m>I R_{\mathfrak{q}}</m>, so <m>\operatorname{depth}\left(I R_{\mathfrak{q}}\right) \geq 2</m>. 
+                On the other hand, <m>\operatorname{depth}\left(R_{\mathfrak{q}} / I R_{\mathfrak{q}}\right)=0</m>, and <m>\operatorname{depth}\left(R_{\mathfrak{q}}\right) \geq 2</m>, so <m>\operatorname{depth}\left(I R_{\mathfrak{q}}\right)=1</m>. 
+                This is the desired contradiction.
+              </p>
+            </proof>
+          </proposition>
+
+          <p>
+            We recall the following fact about factorization:
+          </p>
+
+          <exercise>
+            <p>
+              Exercise 4.44. 
+              If <m>R</m> is a UFD, and <m>I \subseteq R</m> is such that every associated prime of <m>R / I</m> has height one, then <m>I</m> is principal.
+            </p>
+          </exercise>
+    
+          <p>
+            The following is now evident.
+          </p>
+
+          <theorem xml:id="thm-4.45">
+            <statement>
+              <p>
+                If <m>(R, \mathfrak{m}, k)</m> is a Cohen-Macaulay UFD, and <m>R</m> is a quotient of a Gorenstein ring, then <m>R</m> is Gorenstein.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                <m>R</m> has a canonical module isomorphic to an unmixed height one ideal, which is necessarily principal. 
+                Thus, the canonical module is isomorphic to <m>R</m> itself.
+              </p>
+            </proof>
+          </theorem>
+    
+          <p>
+            It turns out that one cannot drop the Cohen-Macaulay hypothesis in the previous theorem.
+          </p>
+
+          <example>
+            <p>
+              Example 4.46. 
+              Let <m>S=\mathbb{F}_{2}\left[x_{1}, x_{2}, x_{3}, y_{1}, y_{2}, y_{3}\right]</m>, and <m>\mathfrak{n}=\left(x_{1}, \ldots, y_{3}\right)</m>. 
+              Let <m>G=\{e, \sigma\}</m> be a group of order two, where <m>e</m> is the identity. 
+              Let <m>G</m> act on <m>S</m> by the rule <m>\sigma\left(x_{i}\right)=y_{i}</m> and <m>\sigma\left(y_{i}\right)=x_{i}</m> for all <m>i</m>. 
+              Consider the ring of invariants <m>S^{G}</m> with maximal ideal <m>\mathfrak{m}</m>, the contraction of <m>\mathfrak{n}</m>. 
+              We claim that <m>\left(S_{\mathfrak{m}}^{G}, \mathfrak{m}, \mathbb{F}_{2}\right)</m> is a UFD that is not Cohen-Macaulay.
+            </p>
+      
+            <p>
+              <m>S_{\mathfrak{m}}^{G}</m> is a UFD: 
+              We show that <m>S^{G}</m> is a UFD. Consider an element <m>f \in S^{G}</m>. 
+              Since <m>S</m> is a UFD, <m>f</m> admits a factorization into <m>S</m>-irreducibles:
+              <me>f=a_{1} \cdots a_{t}</me>
+            </p>
+      
+            <p>
+              Then,
+              <me>a_{1} \cdots a_{t}=f=\sigma(f)=\sigma\left(a_{1}\right) \cdots \sigma\left(a_{t}\right) .</me> 
+               We say that such an <m>R</m> is generically Gorenstein
+            </p>
+      
+            <p>
+              Each <m>\sigma\left(a_{i}\right)</m> must be irreducible, since one could apply <m>\sigma</m> to a nontrivial factorization to get a nontrivial factorization of <m>a_{i}</m>. 
+              Thus, there is some <m>\tau \in \mathcal{S}_{t}</m> such that <m>\sigma\left(a_{i}\right)=u_{i} a_{\tau(i)}</m> for some units <m>u_{i}</m>. 
+              But, the only unit in <m>S</m> is 1 . 
+              Thus, we can regroup the <m>a_{i}</m> ’s in such a way that
+              <me>f=b_{1} \cdots b_{r} \cdot c_{1} \cdots c_{s} \cdot \sigma\left(c_{1}\right) \cdots \sigma\left(c_{s}\right)</me>
+              with all <m>b_{i}</m> ’s and <m>c_{i}</m> ’s irreducible in <m>S, \sigma\left(b_{i}\right)=b_{i}</m>, and <m>\sigma\left(c_{i}\right) \neq c_{i}</m>. In particular, any irreducible element of <m>S^{G}</m> must be of the form <m>b_{1}</m> or <m>\left(c_{1} \sigma\left(c_{1}\right)\right)</m>. 
+              It is then clear that any factorization of <m>f</m> into <m>S^{G}</m>-irreducibles must be of the (unique!) form
+              <me>f=b_{1} \cdots b_{r} \cdot\left(c_{1} \sigma\left(c_{1}\right)\right) \cdots\left(c_{s} \sigma\left(c_{s}\right)\right) .</me>
+              <m>S_{\mathfrak{m}}^{G}</m> is Cohen-Macaulay: 
+              By the Theorem on symmetric polynomials, <m>\mathbb{F}_{2}\left[x_{1}, y_{1}\right]</m> is rank two free module over the polynomial subring <m>\mathbb{F}_{2}\left[x_{1}+y_{1}, x_{1} y_{1}\right]</m>. 
+              After self-tensoring, we see that <m>S</m> is a rank eight free module over the polynomial subring <m>A=\mathbb{F}_{2}\left[\left\{x_{i}+y_{i}, x_{i} y_{i} \mid i=1,2,3\right\}\right]</m>. 
+              Since <m>A</m> consists of invariants, <m>A \subseteq S^{G} \subseteq S</m>, so <m>A</m> is a Noether normalization of <m>S^{G}</m>. 
+              Hence, <m>\left\{x_{i}+y_{i}, x_{i} y_{i} \mid i=1,2,3\right\}</m> is a SOP for <m>S_{\mathfrak{m}}^{G}</m>.
+            </p>
+      
+            <p>
+              We claim that <m>x_{1}+y_{1}, x_{2}+y_{2}, x_{3}+y_{3}</m> is not a regular sequence in <m>S_{\mathfrak{m}}^{G}</m>. 
+              Indeed, we have the relation
+              <me>\left(x_{1}+y_{1}\right)\left(x_{2} y_{3}+x_{3} y_{2}\right)+\left(x_{2}+y_{2}\right)\left(x_{1} y_{3}+x_{3} y_{1}\right)+\left(x_{3}+y_{3}\right)\left(x_{1} y_{2}+x_{2} y_{1}\right)=0</me>
+              since every monomial in the expansion appears twice and <m>S^{G}</m> has characteristic two. 
+              Each of the (-) elements above invariant, so this is a relation in <m>S^{G}</m>, and gives a relation in <m>S_{\mathfrak{m}}^{G}</m>.
+            </p>
+      
+            <p>
+              Now, we observe that the set of linear forms fixed by the group action is generated over <m>\mathbb{F}_{2}</m> by <m>x_{1}+y_{1}, x_{2}+y_{2}, x_{3}+y_{3}</m>. 
+              The 2 -form <m>x_{1} y_{2}+x_{2} y_{1}</m> cannot be generated by these linear forms, so <m>x_{1} y_{2}+x_{2} y_{1} \notin\left(x_{1}+y_{1}, x_{2}+y_{2}\right) S^{G}</m>. 
+              We claim that <m>x_{1} y_{2}+x_{2} y_{1} \notin\left(x_{1}+y_{1}, x_{2}+y_{2}\right) S_{\mathfrak{m}}^{G}</m> as well;
+              we leave this as an easy exercise for you. 
+              Then, we conclude that <m>x_{3}+y_{3}</m> is a zerodivisor in <m>S_{\mathfrak{m}}^{G} /\left(x_{1}+y_{1}, x_{2}+y_{2}\right) S_{\mathfrak{m}}^{G}</m>. 
+              Therefore, <m>S_{\mathfrak{m}}^{G}</m> is not Cohen-Macaulay.
+            </p>
+          </example>
+
+          <example>
+            <p>
+              Example 4.47. 
+              We now give a brief indication of a <m>\mathrm{CM}</m> local ring with no canonical module. 
+              The hard work for this example is due to Ferrand and Raynaud, Fibres formelles d’un anneau locale nothérian, who give an example of a 1-dimensional local domain <m>(R, \mathfrak{m}, k)</m> such that <m>\widehat{R}</m> is not generically Gorenstein: 
+              for some minimal prime <m>\mathfrak{p}</m> of <m>\widehat{R}, \widehat{R}_{\mathfrak{p}}</m> is not Gorenstein.
+            </p>
+      
+            <p>
+              Note that <m>R</m> is Cohen-Macaulay, simply because it contains a nonzerodivisor. 
+              Suppose, that <m>R</m> has a canonical module <m>\omega</m>. 
+              Then, since <m>R</m> is a domain, and hence generically Gorenstein, there is an ideal <m>I</m> of pure height one, which hence is <m>\mathfrak{m}</m>-primary, such that <m>\omega \cong I</m>. 
+              Then, <m>\widehat{R}</m> is CM, with canonical module <m>\widehat{\omega} \cong \widehat{I}</m>, which is also <m>\mathfrak{m}</m>-primary. 
+              Thus, <m>\widehat{I}</m> is not contained in any <m>\mathfrak{p} \in \operatorname{Min}(\widehat{R})</m>. 
+              Thus, for <m>\mathfrak{p} \in \operatorname{Min}(\widehat{R})</m>, we have
+              <me>\widehat{R}_{\mathfrak{p}}=\widehat{I}_{\mathfrak{p}} \cong \widehat{\omega}_{\mathfrak{p}}</me>
+              which contradicts the fact that <m>\widehat{R}</m> is not generically Gorenstein.
+            </p>
+      
+            <p>
+              Later examples of T. Ogoma exhibit Cohen-Macaulay UFDs that are not Gorenstein, hence, that have no canonical module.
+            </p>
+          </example>
+
         </section>
 
         <section xml:id="sec-graded-local-duality"><title>Graded Local Duality and Regularity</title>
@@ -27122,8 +27751,6 @@
       </chapter>
       
     </part>
-
-    
 
     <backmatter xml:id="backmatter"><title>Backmatter</title>
 

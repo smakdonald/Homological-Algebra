@@ -414,12 +414,18 @@ window.MathJax = {
 <li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="part-homalg.html" class="internal"><span class="codenumber">I</span> <span class="title">Homological Algebra</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-intro.html" class="internal"><span class="codenumber">0</span> <span class="title">Where are we going?</span></a></div></li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-chain-complexes.html" class="internal"><span class="codenumber">1</span> <span class="title">The Category of Chain Complexes</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Maps of Complexes</span></a></div>
+<div class="toc-title-box"><a href="sec-chain-complexes.html" class="internal"><span class="codenumber">1.1</span> <span class="title"></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-chain-complexes.html#subsec-complex" class="internal"><span class="title">Chain Complexes and Short Exact Sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-chain-complexes.html#subsec-homology" class="internal"><span class="title">Homology</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-compelx-maps.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Category of Chain Complexes</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-ch-r" class="internal"><span class="title">Establishing <span class="process-math">\(\mathrm{Ch}(R)\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-compelx-maps.html#subsec-homology-functor" class="internal"><span class="title">The Homology Functor</span></a></div></li>
@@ -428,14 +434,14 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section active">
-<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Split Exact Sequences</span></a></div>
+<div class="toc-title-box"><a href="sec-split.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Split Exact Sequences</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-splitting" class="internal"><span class="title">Definition and the Splitting Lemma</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-split.html#subsec-when-split" class="internal"><span class="title">When Do Short Exact Sequences Split?</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Long Exact Sequences</span></a></div>
+<div class="toc-title-box"><a href="sec-les.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Long Exact Sequences</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-snake" class="internal"><span class="title">The Snake Lemma</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-les.html#subsec-long-exact" class="internal"><span class="title">The Long Exact Sequence in Homology</span></a></div></li>
@@ -806,7 +812,7 @@ window.MathJax = {
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-split"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Split Exact Sequences</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Split Exact Sequences</span>
 </h2>
 <article class="objectives goal-like" id="sec-split-2"><h3 class="heading"><span class="type">Reminders and Recollections</span></h3>
 <ul class="disc"><li id="sec-split-2-1-1"><div class="para" id="p-derived-sec-split-2-1-1"></div></li></ul></article><section class="subsection" id="subsec-splitting"><h3 class="heading hide-type">
@@ -817,7 +823,7 @@ window.MathJax = {
 </blockquote>
 <div class="para" id="subsec-splitting-3">In this section, we will discuss short exact sequences of modules in a bit more detail. We note, however, that everything we will discuss here can be extended for short exact sequences of complexes, and that the generalization is not too difficult: one just needs to replace modules with complexes and maps of modules by maps of complexes.</div>
 <article class="example example-like" id="ex-2.17"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.29</span><span class="period">.</span><span class="space"> </span><span class="title">Trivial Short Exact Sequences.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.49</span><span class="period">.</span><span class="space"> </span><span class="title">Trivial Short Exact Sequences.</span>
 </h4> <div class="para logical" id="ex-2.17-2">
 <div class="para">Fix a ring <span class="process-math">\(R\text{,}\)</span> and let <span class="process-math">\(A\)</span> and <span class="process-math">\(C\)</span> be <span class="process-math">\(R\)</span>-modules. Consider the inclusion <span class="process-math">\(i: A \rightarrow A \oplus C\)</span> of <span class="process-math">\(A\)</span> into the first component of the direct sum, and the projection map <span class="process-math">\(\pi: A \oplus C \rightarrow C\)</span> onto the second component of the product. These two maps fit into a short exact sequence</div>
 <div class="displaymath process-math">
@@ -828,7 +834,7 @@ window.MathJax = {
 <div class="para">These are sometimes called <em class="emphasis">trivial short exact sequences</em>.</div>
 </div></article><div class="para" id="subsec-splitting-5">On the one hand, the short exact sequences that look like this one are very important; on the other hand, not all short exact sequences are of this type.</div>
 <article class="definition definition-like" id="def-2.18"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.30</span><span class="period">.</span><span class="space"> </span><span class="title">Split Short Exact Sequences.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.50</span><span class="period">.</span><span class="space"> </span><span class="title">Split Short Exact Sequences.</span>
 </h4> <div class="para logical" id="def-2.18-2-1">
 <div class="para">We say that a short exact sequence</div>
 <div class="displaymath process-math">
@@ -845,7 +851,7 @@ window.MathJax = {
 </div>
 <div class="para">where <span class="process-math">\(i\)</span> is the inclusion of the first component and <span class="process-math">\(p\)</span> is the projection onto the second component.</div>
 </div></article><article class="lemma theorem-like" id="lem-2.19"><h4 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.31</span><span class="period">.</span><span class="space"> </span><span class="title">Splitting Lemma.</span>
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.51</span><span class="period">.</span><span class="space"> </span><span class="title">Splitting Lemma.</span>
 </h4>
 <div class="para logical" id="lem-2.19-2-1">
 <div class="para">Consider the short exact sequence</div>
@@ -954,7 +960,7 @@ g \psi(a, c)=\underbrace{g f}_{0}(a)+\underbrace{g r}_{\mathrm{id}_{C}}(c)=c
 </div>
 <div class="para">so <span class="process-math">\(g \psi=p\text{.}\)</span> Together, these say that the diagram</div>
 </div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-059.jpg" class="contained"></div> <div class="para" id="lem-2.19-5-4">commutes, and must then be an isomorphism of short exact sequences.</div></article></details><article class="definition definition-like" id="def-2.20"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.32</span><span class="period">.</span><span class="space"> </span><span class="title">Splittings.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.52</span><span class="period">.</span><span class="space"> </span><span class="title">Splittings.</span>
 </h4> <div class="para logical" id="def-2.20-2-1">
 <div class="para">Given a split short exact sequence</div>
 <div class="displaymath process-math">
@@ -964,7 +970,7 @@ g \psi(a, c)=\underbrace{g f}_{0}(a)+\underbrace{g r}_{\mathrm{id}_{C}}(c)=c
 </div>
 <div class="para">maps <span class="process-math">\(q\)</span> and <span class="process-math">\(r\)</span> satisfying the conditions of the Splitting Lemma are called <em class="emphasis">splittings</em>.</div>
 </div></article><article class="remark remark-like" id="rem-2.21"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.33</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.53</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="rem-2.21-1">
 <div class="para">In the split short exact sequence</div>
@@ -982,12 +988,12 @@ g \psi(a, c)=\underbrace{g f}_{0}(a)+\underbrace{g r}_{\mathrm{id}_{C}}(c)=c
 </blockquote>
 <div class="para" id="subsec-when-split-3">The Rank-Nulity Theorem can be recast in this setting as a consequence of the fact that every short exact sequence of <span class="process-math">\(k\)</span>-vector spaces splits.</div>
 <article class="exercise exercise-like" id="exe-32"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.34</span><span class="period">.</span><span class="space"> </span><span class="title">Splittings in Vector Spaces.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.54</span><span class="period">.</span><span class="space"> </span><span class="title">Splittings in Vector Spaces.</span>
 </h4>
 <div class="para logical" id="exe-32-2-1"><ol class="decimal">
 <li id="exe-32-2-1-1-1"><div class="para" id="exe-32-2-1-1-1-1">Let <span class="process-math">\(k\)</span> be a field. Show that every short exact sequence of <span class="process-math">\(k\)</span>-vector spaces splits.</div></li>
 <li id="exe-32-2-1-1-2"><div class="para logical" id="exe-32-2-1-1-2-1">
-<div class="para">Prove the Rank-Nulity Theorem using <a href="sec-split.html#exe-32" class="xref" data-knowl="./knowl/xref/exe-32.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.34: Splittings in Vector Spaces">Exercise 1.34</a>: show that given any linear transformation <span class="process-math">\(T: V \rightarrow W\)</span> of <span class="process-math">\(k\)</span>-vector spaces,</div>
+<div class="para">Prove the Rank-Nulity Theorem using <a href="sec-split.html#exe-32" class="xref" data-knowl="./knowl/xref/exe-32.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.54: Splittings in Vector Spaces">Exercise 1.54</a>: show that given any linear transformation <span class="process-math">\(T: V \rightarrow W\)</span> of <span class="process-math">\(k\)</span>-vector spaces,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exe-32.html">
 \begin{equation*}
 \operatorname{dim}(\operatorname{im} T)+\operatorname{dim}(\operatorname{ker} T)=\operatorname{dim} V
@@ -1023,7 +1029,7 @@ qf(a) = qf\left(\sum\limits_ix_iv_i\right)=q\left(\sum\limits_ix_iw_i\right)=\su
 </div></li>
 </ol></div></div></details></div></article><div class="para" id="subsec-when-split-5">But over a general ring, not every short exact sequence splits.</div>
 <article class="example example-like" id="ex-2.22"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.35</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.55</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="ex-2.22-1">
 <div class="para">The short exact sequence</div>
@@ -1045,7 +1051,7 @@ qf(a) = qf\left(\sum\limits_ix_iv_i\right)=q\left(\sum\limits_ix_iw_i\right)=\su
 <div class="para">is not necessarily split, not unless <span class="process-math">\(f\)</span> is the inclusion of the first component and <span class="process-math">\(g\)</span> is the projection onto the second component, as the next example will show.</div>
 </div>
 <article class="example example-like" id="ex-2.23"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.36</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.56</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="ex-2.23-1">
 <div class="para">Consider the short exact sequence</div>
@@ -1085,12 +1091,12 @@ M:=\bigoplus_{\mathbb{N}}(\mathbb{Z} /(2) \oplus \mathbb{Z} /(4))
 \end{equation*}
 </div>
 <div class="para">does not split.</div>
-</div></article><div class="para" id="subsec-when-split-9">Given splittings <span class="process-math">\(q\)</span> and <span class="process-math">\(r\)</span> for a short exact sequence as in <a href="sec-split.html#lem-2.19" class="xref" data-knowl="./knowl/xref/lem-2.19.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.31: Splitting Lemma">Lemma 1.31</a>, we can quickly show that our short exact sequence splits using the Five Lemma. To prove the Five Lemma, one needs to use diagram chasing. Diagram chasing is a common technique in homological algebra, which essentially consists of tracing elements around in the diagram. We will see some examples of diagram chasing in the next section.</div>
+</div></article><div class="para" id="subsec-when-split-9">Given splittings <span class="process-math">\(q\)</span> and <span class="process-math">\(r\)</span> for a short exact sequence as in <a href="sec-split.html#lem-2.19" class="xref" data-knowl="./knowl/xref/lem-2.19.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.51: Splitting Lemma">Lemma 1.51</a>, we can quickly show that our short exact sequence splits using the Five Lemma. To prove the Five Lemma, one needs to use diagram chasing. Diagram chasing is a common technique in homological algebra, which essentially consists of tracing elements around in the diagram. We will see some examples of diagram chasing in the next section.</div>
 <article class="exercise exercise-like" id="five-lemma"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.37</span><span class="period">.</span><span class="space"> </span><span class="title">The Five Lemma.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.57</span><span class="period">.</span><span class="space"> </span><span class="title">The Five Lemma.</span>
 </h4>
 <div class="para" id="five-lemma-2-1">Consider the following commutative diagram of <span class="process-math">\(R\)</span>-modules with exact rows:</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-060.jpg" class="contained"></div> <div class="para" id="five-lemma-2-3">Show that if <span class="process-math">\(a, b, d\text{,}\)</span> and <span class="process-math">\(e\)</span> are isomorphisms, then <span class="process-math">\(c\)</span> is an isomorphism.</div></article><article class="remark remark-like" id="rem-2.24"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.38</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.58</span><span class="period">.</span>
 </h4>
 <div class="para" id="rem-2.24-1">Given a short exact sequence, suppose we have <span class="process-math">\(R\)</span>-module homomorphisms <span class="process-math">\(q\)</span> and <span class="process-math">\(r\)</span>
 </div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-061.jpg" class="contained"></div> <div class="para logical" id="rem-2.24-3">
@@ -1104,12 +1110,12 @@ M:=\bigoplus_{\mathbb{N}}(\mathbb{Z} /(2) \oplus \mathbb{Z} /(4))
 \end{equation*}
 </div>
 <div class="para">such that the diagram</div>
-</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-061(1).jpg" class="contained"></div> <div class="para" id="rem-2.24-5">commutes. The <a href="sec-split.html#five-lemma" class="xref" data-knowl="./knowl/xref/five-lemma.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.37: The Five Lemma">The Five Lemma</a> guarantees that <span class="process-math">\(\varphi\)</span> must be an isomorphism, so our diagram is an isomorphism of short exact sequences.</div></article><div class="para" id="subsec-when-split-12">There are many ways in which <span class="process-math">\(R\)</span>-Mod behaves better than the category of groups, and this is one of them.</div>
+</div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/2023_10_23_e2d6a27704be928b3deeg-061(1).jpg" class="contained"></div> <div class="para" id="rem-2.24-5">commutes. The <a href="sec-split.html#five-lemma" class="xref" data-knowl="./knowl/xref/five-lemma.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.57: The Five Lemma">The Five Lemma</a> guarantees that <span class="process-math">\(\varphi\)</span> must be an isomorphism, so our diagram is an isomorphism of short exact sequences.</div></article><div class="para" id="subsec-when-split-12">There are many ways in which <span class="process-math">\(R\)</span>-Mod behaves better than the category of groups, and this is one of them.</div>
 <article class="remark remark-like" id="rem-2.25"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.39</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.59</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="rem-2.25-1">
-<div class="para">The <a href="sec-split.html#lem-2.19" class="xref" data-knowl="./knowl/xref/lem-2.19.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.31: Splitting Lemma">Splitting Lemma</a> does not hold if we replace <span class="process-math">\(R\)</span>-modules with the category <span class="process-math">\(\Grp\)</span> of groups. For example, consider the symmetric group on 3 elements <span class="process-math">\(S_{3}\)</span> and the inclusion <span class="process-math">\(A_{3} \hookrightarrow S_{3}\)</span> of the alternating group in <span class="process-math">\(S_{3}\text{.}\)</span> Notice that <span class="process-math">\(A_{3}\)</span> is precisely the kernel of the sign map</div>
+<div class="para">The <a href="sec-split.html#lem-2.19" class="xref" data-knowl="./knowl/xref/lem-2.19.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.51: Splitting Lemma">Splitting Lemma</a> does not hold if we replace <span class="process-math">\(R\)</span>-modules with the category <span class="process-math">\(\Grp\)</span> of groups. For example, consider the symmetric group on 3 elements <span class="process-math">\(S_{3}\)</span> and the inclusion <span class="process-math">\(A_{3} \hookrightarrow S_{3}\)</span> of the alternating group in <span class="process-math">\(S_{3}\text{.}\)</span> Notice that <span class="process-math">\(A_{3}\)</span> is precisely the kernel of the sign map</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-2.19.html">
 \begin{equation*}
 \operatorname{sign}: S_{3} \longrightarrow \mathbb{Z} / 2
@@ -1131,7 +1137,7 @@ M:=\bigoplus_{\mathbb{N}}(\mathbb{Z} /(2) \oplus \mathbb{Z} /(4))
 </div> <div class="para" id="rem-2.25-3">Funny enough, there is no splitting for the inclusion <span class="process-math">\(A_{3} \subseteq S_{3}\text{,}\)</span> since there are no nontrivial homomorphisms <span class="process-math">\(S_{3} \rightarrow A_{3}: A_{3}\)</span> has no elements of order <span class="process-math">\(2\text{,}\)</span> so a group homomorphism <span class="process-math">\(S_{3} \rightarrow A_{3}\)</span> must send every <span class="process-math">\(2\)</span>-cycle in <span class="process-math">\(S_{3}\)</span> must be sent to the identity, but <span class="process-math">\(2\)</span>-cycles generate <span class="process-math">\(S_{3}\text{.}\)</span>
 </div></article><div class="para" id="subsec-when-split-14">We will return to the topic of split short exact sequences when we talk about projective and injective modules.</div>
 <article class="exercise exercise-like" id="exe-35"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.40</span><span class="period">.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.60</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="exe-35-1-1">
 <div class="para">Fix a ring <span class="process-math">\(R\text{.}\)</span> Show that if <span class="process-math">\(F\)</span> is a free <span class="process-math">\(R\)</span>-module, then every short exact sequence of <span class="process-math">\(R\)</span>-modules</div>
