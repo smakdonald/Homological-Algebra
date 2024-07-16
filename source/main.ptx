@@ -24161,7 +24161,6 @@
 
           <sage language="macaulay2">
             <input>
-              loadPackage "Depth"
               A = QQ[x_1..x_3]/ideal(x_1^2, x_1*x_2)
               depth A
             </input>
@@ -24169,7 +24168,6 @@
 
           <sage language="macaulay2">
             <input>
-              loadPackage "Depth"
               Q1 = QQ[x,y,z] / ideal(x^3-y*z, z^3)
               isCM Q1
 
@@ -24180,6 +24178,47 @@
               isCM Q3
             </input>
           </sage>
+
+          <sage language="macaulay2">
+            <input>
+              needsPackage "Complexes";
+
+              S = ZZ/101[a..d]
+              I = ideal(b^2-a*c, b*c-a*d, c^2-b*d)
+              F1 = map(S^1,,matrix{{I_0, I_1, I_2}})
+              F2 = map(source F1,,matrix{             {0, I_2, -I_1},             {-I_2, 0, I_0},             {I_1, -I_0, 0}             })
+              F3 = map(source F2,,matrix{{I_0}, {I_1}, {I_2}})
+              C = complex {F1, F2, F3}
+            </input>
+          </sage>
+
+          <sage language="macaulay2">
+            <input>
+              needsPackage "Complexes";              
+              R = ZZ
+              I = ideal(2)
+              F1 = map(R^1,,matrix{{I_0}})              
+              F2 := map(R^1/I, R^1, matrix{{}});
+              C = complex {F1, F2}
+            </input>
+          </sage>
+
+          <sage language="macaulay2">
+            <input>
+              R = ZZ[x];  -- Define the polynomial ring
+              I = ideal(2x)
+              M = R^1/I;  -- Define a module over R
+
+              -- Compute the free resolution of M
+              resM = res M;
+
+              -- Print the resolution
+              resM
+              pdim M
+            </input>
+          </sage>
+
+
 
         </section>
         
